@@ -1,6 +1,6 @@
 # Programma — Informatica, Classe 1
 
-**Versione 0.1** — 26/07/2026
+**Versione 0.2** — 26/07/2026
 *Fonte versionata del programma. È la mappa del primo anno: da qui nasceranno,
 un modulo alla volta, il libro di testo e l'eserciziario della Classe 1.*
 
@@ -12,6 +12,22 @@ un modulo alla volta, il libro di testo e l'eserciziario della Classe 1.*
 
 ---
 
+## Che corso è (e che corso NON è)
+
+Questo **non** è un corso di "informatica di base" fatto di clic semplici: quelle
+cose i ragazzi le vedono altrove. Qui facciamo **tutta l'informatica**, con un
+taglio **più tecnico e ambizioso** — da futuri **tecnici**, non da semplici
+utenti. Vogliamo che capiscano **come funzionano davvero** le cose: cosa succede
+dentro un programma, come viaggiano i dati in rete, cosa c'è dentro un computer
+e come si configura, monta e mette in funzione.
+
+**Il trucco per non spaventarli:** contenuti più avanzati, **stesso metodo** —
+piccoli passi, una vittoria concreta a ogni tappa, tanto pratico, poca teoria e
+solo quella che serve al fare. "Avanzato" qui vuol dire **profondo e vero**, non
+"difficile e respingente".
+
+---
+
 ## A chi è rivolto e con che spirito
 
 Siamo in una **prima** di **istituto professionale**. Molti ragazzi arrivano da
@@ -19,195 +35,236 @@ percorsi difficili, alcuni con un background migratorio, alcuni già "scartati"
 da altre scuole. Qui **non sono scarti**: gli diamo un corso fatto bene, con
 dignità, pensato per **aprire porte** e portare a **sbocchi lavorativi migliori**.
 
-Sono **principianti veri**. Alcuni non hanno un computer a casa, alcuni non hanno
-mai gestito un account o organizzato dei file. Quindi si parte **dal primo
-mattoncino**, senza dare per scontato niente e senza mai far sentire nessuno
-"indietro".
-
 **Le regole che valgono per ogni modulo:**
 - **Vinci subito (≈10 min):** la prima cosa che fanno deve funzionare quasi da
   sola. La prima vittoria è ciò che impedisce la fuga.
-- **Fallo tuo:** in ogni attività scelgono qualcosa di **loro** — il colore, il
-  nome, la foto, il testo. L'ownership è il gancio più forte.
+- **Fallo tuo:** in ogni attività scelgono qualcosa di **loro** — il budget, il
+  PC dei sogni, il colore, il nome, la foto.
 - **Mostralo:** ogni pezzo dev'essere **mostrabile** — al compagno, sul telefono,
-  a casa. "L'ho fatto io" motiva più di un voto.
+  a casa.
 - **Errore = zero vergogna:** annullare è facile, sbagliare è normale ("capita a
-  tutti, anche ai professionisti"). Nessuno si sente stupido, mai.
+  tutti, anche ai professionisti").
 - **La prova del nove — "saperlo spiegare":** se sanno raccontare a voce, con
   parole loro, cosa hanno fatto, la competenza c'è davvero.
 
 ---
 
-## Il vincolo pratico della scuola: niente installazioni
+## Il vincolo pratico della scuola: niente installazioni (dove si può)
 
 A scuola installare software richiede l'amministratore di sistema (lento). Quindi
-prediligiamo tutto ciò che gira **da browser** o è **portabile**:
+prediligiamo tutto ciò che gira **da browser** o è **portabile** — con
+l'eccezione, voluta, dei moduli in cui **mettere le mani è il punto** (montaggio
+del PC, installazione del sistema operativo): lì si lavora su **macchine di
+laboratorio/di recupero**, non sui PC "buoni" della scuola.
 
-| Modulo | Come lo facciamo senza installare |
+| Modulo | Come lo facciamo |
 |---|---|
-| **Suite Google** | Tutto **da browser** (Chrome/Edge): zero software. |
-| **Informatica di base** | File, cartelle e sistema operativo si usano già sul PC della scuola; la parte "internet e sicurezza" è da browser. |
-| **Lazarus** | Se non è già installato in laboratorio, esiste in versione **portabile** (una cartella, doppio clic). In ripiego totale, un ambiente Pascal **online** da browser. |
-| **Assemblaggio PC** | Si lavora sull'**hardware fisico** (PC di recupero, componenti di scorta); dove serve un simulatore, si usa un **sito da browser**. |
+| Software / editor / compilatore | Editor da browser o portabili; poi Lazarus (portabile) per "vedere" un compilatore vero. |
+| Reti e apparati di casa | Teoria + osservazione di apparati veri (router, switch); simulatore da browser dove serve. |
+| Configurazione PC su Amazon | Tutto **da browser**: catalogo Amazon + un Foglio Google per la lista componenti. |
+| Montaggio fisico + sistema operativo | Su **PC di laboratorio/recupero**, non sui PC di produzione della scuola. |
+| G Suite (lato tecnico) | Tutto **da browser**. |
+| Lazarus | Versione **portabile** (una cartella, doppio clic); ripiego: Pascal online. |
 
 ---
 
-## I quattro moduli dell'anno
+## I moduli dell'anno
 
-L'anno è diviso in **quattro moduli**. L'ordine è pensato per una difficoltà che
-cresce piano e per dare **subito** ai ragazzi strumenti utili e mostrabili.
+Sei moduli. I primi cinque costruiscono il "tecnico"; **Lazarus parte a metà
+anno (o prima)** e corre fino a fine anno, in parallelo agli ultimi moduli, come
+ponte verso il secondo anno.
 
-### Modulo 1 — Suite Google: gli strumenti di tutti i giorni
-*Prima vittoria facile e utilissima: un documento vero, condiviso, fatto da me.*
+### Modulo 1 — Cos'è l'informatica davvero: software, editor, compilatore
+*Apriamo il cofano: cosa c'è dietro un "programma", una parola alla volta.*
 
-**Perché per primo:** è il modulo con la vittoria più immediata e la ricaduta più
-concreta. Serve a scuola in tutte le materie e serve nel mondo del lavoro. Dà
-subito ai ragazzi un posto **loro** dove tenere le cose (il Drive) — che useremo
-poi in tutti gli altri moduli.
+**Perché per primo:** dà le **parole giuste** e il modello mentale che regge
+tutto l'anno. È il modulo che segna la differenza tra "so usare il PC" e "**so
+come funziona**".
 
 **Cosa impariamo:**
-- **Account e accesso** in sicurezza: cos'è un account, la password, uscire da un
-  computer condiviso.
-- **Google Drive:** file e cartelle nel cloud, caricare/scaricare, organizzare.
-- **Documenti** (come Word, ma nel browser): scrivere, formattare, inserire
-  immagini.
-- **Presentazioni** (come PowerPoint): qualche slide con foto e testo.
-- **Fogli** (come Excel/il foglio di calcolo): tabelle e **somma automatica** —
-  il ponte perfetto verso la "calcolatrice" del modulo Lazarus.
-- **Gmail:** scrivere un'email seria (oggetto, destinatario, allegato).
-- **Collaborazione:** condividere un file, scrivere in due sullo stesso
-  documento, i commenti. È la prima esperienza di **lavoro in team**.
+- **Hardware e software:** la differenza, ma andando a fondo — cos'è davvero un
+  programma (istruzioni che la macchina esegue una dopo l'altra).
+- **Cos'è un editor:** il posto dove si **scrive** (testo o codice). Non fa girare
+  niente: scrive e basta.
+- **Cos'è un compilatore:** il **traduttore** che prende quello che scrivo io
+  (il "sorgente") e lo trasforma in un **programma che il computer sa eseguire**.
+  La catena: *scrivo nel'editor → il compilatore traduce → nasce l'eseguibile*.
+- **Linguaggi di programmazione** in due parole: perché ne esistono tanti.
+- **Dati, bit e byte:** come si misura la roba digitale (KB/MB/GB), quanto "pesa"
+  una foto o un video.
 
-**Prima vittoria (≈10 min):** un documento con **il mio nome grande, il mio
-colore e una mia foto**, salvato nel mio Drive. Fatto.
+**Prima vittoria (≈10 min):** scrivere due righe in un editor e **vedere con i
+propri occhi** la differenza tra un file di testo e un programma che gira.
 
-**Progetto mostrabile:** una mini-presentazione **"Chi sono"** (3 slide) o una
-locandina per qualcosa che gli piace.
-
-**Competenze spendibili:** sapersi muovere negli strumenti d'ufficio nel cloud —
-richiesta base in quasi ogni lavoro.
+**Ponte:** questo modulo prepara **Lazarus** — lì il compilatore lo useranno per
+davvero, e capiranno *cosa* sta succedendo quando premono "Esegui".
 
 ---
 
-### Modulo 2 — Informatica di base: come funziona davvero
-*Capire la macchina che usiamo tutti i giorni, senza paura e senza magia.*
+### Modulo 2 — Le reti: come viaggiano i dati
+*Quando mando un messaggio, cosa succede davvero? Seguiamo il pacchetto.*
 
-**Perché qui:** ora che usano il computer per fare cose (Modulo 1), diamo le
-**parole** e i **concetti** per capirlo. Questo modulo prepara il terreno sia a
-Lazarus (il software) sia all'assemblaggio (l'hardware).
+**Perché qui:** le reti sono il cuore del percorso pluriennale (arriveranno a
+**Cisco Packet Tracer** negli anni successivi). Qui si mettono le fondamenta, in
+modo concreto e visibile.
 
 **Cosa impariamo:**
-- **Hardware e software:** la differenza, con esempi che toccano ("questo lo
-  tocco" vs "questo è un programma").
-- **Le parti di un computer, a grandi linee:** cervello (CPU), memoria di lavoro
-  (RAM), memoria che resta (disco/SSD), schermo, tastiera. Solo assaggio: i
-  dettagli tornano nel Modulo 4.
-- **Il sistema operativo:** cos'è Windows, il desktop, le finestre.
-- **File e cartelle sul serio:** creare, rinominare, spostare, cercare; le
-  **estensioni** (`.docx`, `.png`, `.exe`) e cosa vogliono dire.
-- **Come si misura la roba digitale:** bit e byte, KB/MB/GB — quanto "pesa" una
-  foto, un video.
-- **Internet in due parole:** cos'è il web, un sito, un indirizzo; cercare bene.
-- **Sicurezza e cittadinanza digitale:** password robuste, truffe/phishing,
-  rispetto online, cosa NON pubblicare. Tema serio, tono pratico.
+- **Cos'è una rete:** computer che si parlano.
+- **I pacchetti:** i dati non viaggiano "interi", si spezzano in **pacchetti**
+  che partono, viaggiano e si **ricompongono** all'arrivo. L'idea chiave di
+  Internet.
+- **Gli indirizzi (IP)** spiegati semplice: ogni dispositivo ha un "numero di
+  casa" in rete.
+- **Gli apparati di rete che hai in casa**, cosa fa ciascuno:
+  - **Modem** — la porta verso Internet (il "cancello di casa").
+  - **Router** — smista il traffico tra i dispositivi e Internet (il "vigile").
+  - **Switch** — collega più dispositivi via cavo (la "ciabatta intelligente").
+  - **Access Point / Wi-Fi** — la rete senza fili.
+- **Internet come "rete di reti".**
 
-**Prima vittoria (≈10 min):** metto ordine nel **mio** Drive/desktop — cartelle
-con i miei nomi, ogni cosa al suo posto. Piccolo ma soddisfa.
+**Prima vittoria (≈10 min):** **disegnare la rete di casa propria** — chi è il
+modem, chi il router, cosa è attaccato via cavo e cosa via Wi-Fi. Poi guardare un
+apparato **vero** e riconoscerne le porte.
 
-**Progetto mostrabile:** una **scheda "dentro il mio computer"** (con la Suite
-Google del Modulo 1): una pagina che spiega, con parole mie, le parti del PC.
-
-**Competenze spendibili:** alfabetizzazione digitale di base + sicurezza — la
-differenza tra chi "smanetta e basta" e chi **capisce**.
+**Ponte:** è il primo passo verso Cisco Packet Tracer (2°–4° anno).
 
 ---
 
-### Modulo 3 — Lazarus: la prima programmazione
-*Faccio io un programma che funziona, con i bottoni e le caselle di testo.*
+### Modulo 3 — L'hardware e la configurazione del PC (con Amazon e un budget)
+*Ti do 700 euro: mettimi insieme il PC migliore possibile. Come un vero tecnico.*
 
-**Perché qui:** è il primo, vero contatto con la **programmazione**. Si aggancia
-a ciò che sanno già usare (moduli e finestre) e apre la strada che in **seconda
-e terza** diventerà **Godot**. Lazarus è il gradino giusto: si trascinano
-componenti su una finestra e si scrive poco codice per farli reagire.
+**Perché qui:** è il modulo che li accende. Trasforma una noiosa lista di
+componenti in una **caccia al tesoro con un budget** — realistica, utile, e con
+cifre vere che vedono ogni giorno.
+
+**Cosa impariamo:**
+- **I componenti, uno per uno, e cosa conta di ciascuno:** scheda madre, **CPU**
+  (il processore), **RAM**, **SSD/HDD** (memoria che resta), **scheda video**
+  (GPU), **alimentatore**, case, raffreddamento.
+- **Come leggere una specifica:** cosa vogliono dire i numeri (GHz, GB, TB…).
+- **La compatibilità di base:** perché non tutti i pezzi vanno insieme (es. il
+  **socket** della CPU e la scheda madre).
+- **Configurare un PC su Amazon dentro un budget:** dato un tetto di spesa (es.
+  **500 · 800 · 1200 €**), scegliere i componenti giusti e compatibili, e
+  motivare le scelte.
+
+**Prima vittoria (≈10 min):** **"il mio PC entro il budget"** — una lista dei
+componenti con prezzi, messa in un **Foglio Google** che fa la **somma** e dice
+se sfori o no.
+
+**Progetto mostrabile:** a gruppi, **la miglior build a parità di budget** — si
+confrontano le scelte e si "difende" la propria (prova del nove: sai spiegare
+perché quella CPU e non un'altra?).
+
+---
+
+### Modulo 4 — Montaggio fisico e sistema operativo
+*Dalla lista alla macchina vera: la monto, la accendo, ci installo Windows.*
+
+**Perché qui:** dopo aver **scelto** i pezzi (Modulo 3), li **montano** davvero.
+Il salto dal virtuale al fisico è potentissimo per la motivazione.
+
+**Cosa impariamo:**
+- **Sicurezza prima di tutto:** staccare la corrente, l'elettricità statica (il
+  braccialetto antistatico), come si maneggiano i pezzi.
+- **Montare e smontare un PC vero:** dove va ogni componente, i connettori, i
+  versi giusti (niente forza bruta).
+- **Il primo avvio e il BIOS/UEFI** in due parole: capire se la macchina "vede"
+  tutto.
+- **Installare il sistema operativo da zero:** preparare una **chiavetta
+  avviabile**, installare Windows (o Linux), i primi passi dopo l'installazione.
+- **I tool di sistema più importanti:** Gestione attività (Task Manager),
+  Gestione dispositivi, gestione dischi, driver, impostazioni/pannello di
+  controllo, backup. Cosa guardare quando "qualcosa non va".
+
+**Prima vittoria (≈10 min):** un PC montato dal gruppo che **si accende** — la
+foto/video del "momento accensione". Soddisfazione enorme.
+
+**Progetto mostrabile:** un PC di recupero **montato e con il sistema operativo
+installato**, pronto all'uso. Roba da tecnico.
+
+---
+
+### Modulo 5 — G Suite, il lato tecnico (le cose difficili)
+*Non le basi: le cose che fanno dire "non sapevo si potesse fare".*
+
+**Perché qui:** le basi della G Suite le vedono con altri. Noi puntiamo alla
+parte **tecnica e potente**, quella spendibile in un ufficio vero.
+
+**Cosa impariamo (selezione, la tariamo strada facendo):**
+- **Permessi e condivisione fine:** chi può **vedere**, chi **commentare**, chi
+  **modificare**; cartelle condivise; link e loro rischi.
+- **Fogli sul serio:** formule vere (**SOMMA, SE, CERCA**), grafici, filtri —
+  aggancia il "conto" della calcolatrice di Lazarus.
+- **Moduli (Form):** creare un quiz/sondaggio che **raccoglie le risposte in
+  automatico** dentro un Foglio.
+- **Organizzazione avanzata del Drive** e la **cronologia delle versioni** di un
+  file (tornare indietro nel tempo).
+
+**Prima vittoria (≈10 min):** un **modulo/quiz** che, appena un compagno
+risponde, riempie da solo una tabella. Effetto "magia".
+
+---
+
+### Modulo 6 — Lazarus: la prima programmazione (da metà anno)
+*Adesso i programmi non li uso: li FACCIO io. Bottoni, finestre, tutto mio.*
+
+**Perché qui e quando:** parte **da metà anno (o prima)** e corre in parallelo
+fino a giugno. È il coronamento dell'anno e il **ponte diretto al secondo anno**
+(Godot e Lazarus più avanzati). Aggancia il Modulo 1: qui il **compilatore** che
+avevano solo sentito nominare lo usano premendo "Esegui".
 
 **Cosa impariamo (piccoli passi):**
-- **Cos'è un programma e cos'è un ambiente di sviluppo** (l'IDE): la finestra
-  dove costruiamo.
-- **La Form:** la finestra del nostro programma.
-- **I primi componenti:** **TButton** (il bottone), **TEdit** (la casella di
-  testo), **TLabel** (una scritta).
-- **Le proprietà:** **Caption** (il testo mostrato), il colore, la posizione —
-  si cambiano nell'Object Inspector, cliccando.
-- **L'evento click:** far succedere qualcosa quando premo il bottone
-  (`Button1Click`).
-- **Le variabili** e un pizzico di logica: leggere un TEdit, fare un conto,
-  mostrare il risultato in una TLabel.
-- **Il progetto che tutti riconoscono: la calcolatrice.** Da "somma due numeri" a
-  qualcosa di più completo, un pulsante alla volta.
+- **L'ambiente di sviluppo (l'IDE)** e la **Form**, la finestra del programma.
+- **I componenti:** **TButton** (bottone), **TEdit** (casella di testo), **TLabel**
+  (scritta), **TMemo** (testo su più righe — per un mini blocco note).
+- **Le proprietà:** **Caption**, colori, posizione — si cambiano cliccando.
+- **L'evento click:** far succedere qualcosa quando premo un bottone.
+- **Variabili e un po' di logica:** leggo un TEdit, faccio un conto, mostro il
+  risultato in una TLabel.
+- **Programmini veri:** una **calcolatrice**, un **mini blocco note** con TMemo,
+  un **quiz a bottoni**.
 
-**Prima vittoria (≈10 min):** un bottone che, quando lo premo, cambia la scritta
-sullo schermo — "Ciao, *il mio nome*!". Il primo programma **mio** che reagisce.
+**Prima vittoria (≈10 min):** un bottone che, premuto, cambia la scritta:
+"Ciao, *il mio nome*!". Il primo programma **mio** che reagisce.
 
-**Progetto mostrabile:** una **calcolatrice** personalizzata (colori, nome
-scelto da loro) — o un mini "quiz a bottoni".
-
-**Ponte verso il futuro:** questi stessi concetti — componenti, proprietà,
-eventi — in Godot diventano **nodi, proprietà, segnali**. Chi capisce qui, in
-seconda parte avvantaggiato.
-
-**Competenze spendibili:** la logica del "input → elaborazione → output", che è
-il cuore di **ogni** programmazione.
+**Ponte:** componenti → proprietà → eventi qui; in **Godot** (2° anno) diventano
+**nodi → proprietà → segnali**. Chi capisce ora, in seconda parte avvantaggiato.
 
 ---
 
-### Modulo 4 — Assemblaggio del PC: le mani sull'hardware
-*Smonto e rimonto un computer vero. E riparte. Roba da tecnico.*
+## Il filo dell'anno (sequenza e periodi indicativi)
 
-**Perché per ultimo:** è il modulo più "fisico" e più spettacolare — un ottimo
-finale d'anno. Chiude il cerchio: nel Modulo 2 hanno **capito** le parti, qui le
-**toccano** e le **montano**.
-
-**Cosa impariamo:**
-- **I componenti, uno per uno:** scheda madre, **CPU** (il processore), **RAM**
-  (i banchi di memoria), **alimentatore**, **disco/SSD**, **scheda video**,
-  ventole/dissipatore, il case.
-- **Cosa fa ciascuno** e come si riconosce a occhio.
-- **La sicurezza prima di tutto:** stacca la corrente, l'elettricità statica (il
-  braccialetto antistatico), come si maneggiano i pezzi.
-- **Il montaggio, passo passo:** dove va ogni pezzo, i connettori, i versi
-  giusti (niente forza bruta).
-- **Il primo avvio:** accendere, il **BIOS/UEFI** in due parole, capire se "vede"
-  tutto.
-- **Diagnosi base:** non parte? Cosa controllo per primo (alimentazione, RAM ben
-  inserita, connettori).
-
-**Prima vittoria (≈10 min):** **riconoscere e nominare** i pezzi di un PC aperto
-sul banco — e prendere in mano la CPU (con le dovute cautele). Sembra da esperti.
-
-**Progetto mostrabile:** a gruppi, **montare un PC** (anche di recupero) e
-**farlo partire**. Video/foto del "momento accensione" — soddisfazione enorme.
-
-**Competenze spendibili:** è una **competenza da tecnico** vera e cercata: montare,
-riconoscere guasti semplici, fare manutenzione. Uno sbocco lavorativo concreto.
-
----
-
-## Il filo dell'anno (sequenza e ganci)
-
-I moduli non sono compartimenti stagni: ognuno **usa** il precedente.
-
-| # | Modulo | Si aggancia a… | Vittoria mostrabile |
-|---|---|---|---|
-| 1 | Suite Google | (partenza) | Documento/presentazione "Chi sono" |
-| 2 | Informatica di base | usa Drive/Documenti del M1 | Scheda "dentro il mio computer" |
-| 3 | Lazarus | l'idea di "conto" dei Fogli (M1), i concetti del M2 | Calcolatrice personalizzata |
-| 4 | Assemblaggio PC | le parti "capite" nel M2 | Un PC montato che si accende |
+| Periodo | In primo piano | In parallelo |
+|---|---|---|
+| Inizio anno | M1 Software/editor/compilatore · M2 Reti | — |
+| Autunno–inverno | M3 Configurazione PC (Amazon + budget) | inizio M5 G Suite tecnica |
+| Metà anno | M4 Montaggio + sistema operativo | **inizia M6 Lazarus** |
+| Seconda metà | M6 Lazarus (programmini) | completamento M4/M5 |
 
 **Trasversale a tutto l'anno — il quaderno dello studente:** ogni ragazzo tiene
-un **suo** quaderno (in Documenti Google, dal Modulo 1) che cresce a ogni
-lezione: cosa ho fatto, uno screenshot/foto, cosa ho capito con parole mie. A
-fine anno è un portfolio **loro** di cui essere fieri — ed è la "prova del nove"
-del saper spiegare.
+un **suo** quaderno (in Documenti Google) che cresce a ogni lezione: cosa ho
+fatto, uno screenshot/foto, cosa ho capito con parole mie. A fine anno è un
+portfolio **loro** di cui essere fieri — ed è la "prova del nove" del saper
+spiegare.
+
+---
+
+## Dove porta: il percorso pluriennale
+
+Questo primo anno getta **fondamenta larghe**. Ecco dove conducono, così ogni
+modulo ha un "perché" grande dietro:
+
+| Anno | Cosa si fa |
+|---|---|
+| **1° (questo)** | Fondamenta di tutta l'informatica (software, reti, hardware, sistema operativo, G Suite tecnica) + **primo Lazarus** da metà anno. |
+| **2°** | **Godot** e **Lazarus** più avanzati (programmazione vera) + **introduzione alle reti con Cisco Packet Tracer**. |
+| **3°** | Si **rafforza un filone**: le **reti** (Cisco Packet Tracer), la **programmazione**, oppure l'**assemblaggio/hardware** — a seconda del gruppo. |
+| **4°** | **Cisco Packet Tracer avanzato:** progettare una **rete reale**. Traguardo già dimostrato quest'anno: la rete di una **scuola su due piani** — due aule di informatica più segreteria e amministrazione — con **backbone** (le dorsali che collegano tutto). |
+
+> Il quarto anno non è un sogno: è **già stato fatto**. Questo è ciò che i
+> ragazzi possono davvero raggiungere partendo da qui. Serve a noi (per tenere la
+> rotta) e a loro (per sapere dove stanno andando).
 
 ---
 
@@ -216,14 +273,12 @@ del saper spiegare.
 Come nel corso di Godot, le **regole sono chiare fin da subito** e non si basano
 sul "copiare bene":
 
-1. **Il lavoro che funziona è il biglietto d'ingresso, non il voto.** Consegnare
-   la cosa fatta ti fa "entrare alla prova".
+1. **Il lavoro che funziona è il biglietto d'ingresso, non il voto.**
 2. **Il voto nasce dalla prova dal vivo:** me lo **spieghi** a parole tue, oppure
-   ti do il tuo lavoro con **un piccolo errore** e lo **rimetti a posto** lì per lì.
+   ti do il tuo lavoro con **un piccolo intoppo** e lo **rimetti a posto** lì per lì.
 3. **Il patto con l'AI e con i compagni:** si usano per **imparare**, non per
-   consegnare senza capire. La prova del nove è sempre: *lo sai spiegare da solo?*
+   consegnare senza capire.
 4. **Zero vergogna:** usare gli aiuti è permesso e normale; sbagliare è normale.
-   L'unica cosa che conta è che, alla fine, **tu abbia capito**.
 
 ---
 
@@ -242,9 +297,8 @@ Questo file è la **mappa**. Da qui, un modulo alla volta, produrremo i contenut
 veri (in `classe-1/manuale.md` e `classe-1/eserciziario.md`, con lo stesso stile
 e la stessa impaginazione del corso di Godot):
 
-1. **Modulo 1 — Suite Google:** prima scheda "Vinci subito" (il documento "Chi
-   sono") + le schede a 4 livelli di aiuto.
-2. Poi, a seguire, i Moduli 2, 3, 4.
+1. **Modulo 1 — Software, editor, compilatore:** prima scheda "Vinci subito".
+2. A seguire gli altri moduli, con Lazarus (M6) da preparare per metà anno.
 3. Adattare il generatore PDF (`manuale/_build/`) per una copertina "Corso di
    Informatica — Classe 1" (oggi è marcato "Corso di Godot").
 
@@ -257,4 +311,5 @@ cambia il contenuto, si bumpa la versione e si aggiunge una voce al changelog.
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
-| 0.1 | 26/07/2026 | Prima stesura del programma della Classe 1: i quattro moduli (Suite Google, Informatica di base, Lazarus, Assemblaggio PC), la sequenza dell'anno con i ganci tra moduli, valutazione, uso dell'AI e roadmap dei contenuti. |
+| 0.1 | 26/07/2026 | Prima stesura: quattro moduli generici (Suite Google, informatica di base, Lazarus, assemblaggio PC), sequenza dell'anno, valutazione, uso AI. |
+| 0.2 | 26/07/2026 | Riscrittura sulla visione di Nicola: taglio **tecnico/avanzato** (non "informatica di base"). Sei moduli — Software/editor/compilatore · Reti e pacchetti e apparati di casa · Configurazione PC su Amazon con budget · Montaggio fisico + sistema operativo + tool · G Suite lato tecnico · Lazarus da metà anno (bottoni, finestre, Label, Memo). Aggiunto il **percorso pluriennale** (2°–4° anno) fino a **Cisco Packet Tracer** e alla rete di scuola del 4° anno. |
