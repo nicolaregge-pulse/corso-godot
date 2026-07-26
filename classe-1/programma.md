@@ -1,6 +1,6 @@
 # Programma — Informatica, Classe 1
 
-**Versione 0.2** — 26/07/2026
+**Versione 0.3** — 26/07/2026
 *Fonte versionata del programma. È la mappa del primo anno: da qui nasceranno,
 un modulo alla volta, il libro di testo e l'eserciziario della Classe 1.*
 
@@ -25,6 +25,34 @@ e come si configura, monta e mette in funzione.
 piccoli passi, una vittoria concreta a ogni tappa, tanto pratico, poca teoria e
 solo quella che serve al fare. "Avanzato" qui vuol dire **profondo e vero**, non
 "difficile e respingente".
+
+---
+
+## Una scatola flessibile, cucita sui ragazzi
+
+I sei moduli **non** sono un percorso rigido da percorrere tutto uguale per
+tutti. Sono **contenitori** — delle **manopole** che il docente apre o chiude a
+seconda di **come la classe lo segue**. Il programma è la scatola; il vestito lo
+cuciamo addosso ai ragazzi che abbiamo davanti.
+
+- **Classe in difficoltà** → si spinge di più sulla **G Suite** e sulle
+  competenze **subito spendibili**: cose concrete che aprono lavoro anche a chi
+  fa più fatica.
+- **Classe che va forte** → si va lunghi su **Lazarus** e sulla programmazione,
+  fino ad arrivare (negli anni) a **configurare reti complesse**.
+- In mezzo, ogni sfumatura: si allunga un modulo, se ne accorcia un altro, si
+  anticipa o si rimanda. Nessun modulo è "obbligatorio nella sua interezza".
+
+**Il metro di ogni scelta è uno solo:** dare a **questi** ragazzi il **massimo
+delle chance** di trovare un lavoro e di essere **valutati nel mondo del lavoro**.
+Non "finire il programma": **spendere bene** il tempo che abbiamo con loro.
+
+> **Il senso di tutto.** Sono quasi tutti extracomunitari e ragazze in
+> difficoltà, "scarti" di altre scuole. Per loro questo corso vuole essere una
+> **nuova spiaggia**: un posto dove si riparte, si viene trattati con dignità e
+> si esce con qualcosa di vero in mano. La flessibilità della scatola serve
+> esattamente a questo — non lasciare indietro nessuno e portare ognuno il più
+> lontano che può.
 
 ---
 
@@ -268,6 +296,28 @@ modulo ha un "perché" grande dietro:
 
 ---
 
+## Serbatoio di idee extra (competenze spendibili nel lavoro)
+
+Cose **alla loro portata** che nel mondo del lavoro pesano, da pescare quando la
+classe lo permette (in prima, seconda, terza — e in quarta quando la facciamo).
+Non sono moduli obbligatori: sono **carte in più** da mettere nel loro bagaglio.
+
+| Idea | Perché è spendibile | Perché è alla loro portata |
+|---|---|---|
+| **Crimpare i cavi di rete** (montare i connettori sui cavi con la pinza) | Lavoro vero da tecnico di rete; si vede subito se funziona | Manuale, economico, "figo"; si lega al Modulo 2 (reti) e a Cisco |
+| **Riparazione e manutenzione PC** (sostituire un pezzo, pulire, reinstallare) | Sbocco concreto: assistenza, negozi, "help desk" (il banco assistenza) | È il naturale seguito del montaggio (Modulo 4) |
+| **Digitazione veloce alla tastiera** (scrivere senza guardare) | Utile in **ogni** lavoro d'ufficio; fa risparmiare ore | Si allena da browser, gratis, un po' per volta |
+| **Competenze per il lavoro:** scrivere il **curriculum**, un'**email seria**, prepararsi a un **colloquio** | Per questi ragazzi può cambiare le cose davvero | Si fa con la G Suite che già usano (Modulo 1/5) |
+| **Una tua pagina web** (le basi di HTML e CSS, i "mattoni" dei siti) | Base per tanti lavori digitali; portfolio da mostrare | Risultato visibile subito → motiva (Mostralo) |
+| **Linux, primo assaggio** (un altro sistema operativo, gratuito) | Molto richiesto nel mondo tecnico e delle reti | Si prova sui PC di laboratorio (Modulo 4) |
+| **Sicurezza informatica di base** (password, truffe online, copie di sicurezza) | Ogni azienda la chiede; poca teoria, molto buonsenso | Si aggancia a reti (Modulo 2) e sistema operativo (Modulo 4) |
+| **Certificazioni** (un "patentino" ufficiale: ICDL oggi, Cisco negli anni dopo) | Un pezzo di carta riconosciuto vale nel curriculum | Traguardo a tappe, coerente col percorso pluriennale |
+
+> Come sempre: si aggiunge ciò che **serve a loro** e che **riescono a
+> mostrare**. Meglio poche cose fatte bene e spendibili, che tante di fretta.
+
+---
+
 ## Come si valuta
 
 Come nel corso di Godot, le **regole sono chiare fin da subito** e non si basano
@@ -303,13 +353,15 @@ e la stessa impaginazione del corso di Godot):
    Informatica — Classe 1" (oggi è marcato "Corso di Godot").
 
 Ogni consegna sarà **versionata** e **congelata** come i manuali di Godot: se
-cambia il contenuto, si bumpa la versione e si aggiunge una voce al changelog.
+cambia il contenuto, si **alza il numero di versione** e si aggiunge una riga
+alla tabella delle modifiche in fondo.
 
 ---
 
-## Changelog del programma
+## Storia delle versioni (le modifiche fatte)
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
 | 0.1 | 26/07/2026 | Prima stesura: quattro moduli generici (Suite Google, informatica di base, Lazarus, assemblaggio PC), sequenza dell'anno, valutazione, uso AI. |
 | 0.2 | 26/07/2026 | Riscrittura sulla visione di Nicola: taglio **tecnico/avanzato** (non "informatica di base"). Sei moduli — Software/editor/compilatore · Reti e pacchetti e apparati di casa · Configurazione PC su Amazon con budget · Montaggio fisico + sistema operativo + tool · G Suite lato tecnico · Lazarus da metà anno (bottoni, finestre, Label, Memo). Aggiunto il **percorso pluriennale** (2°–4° anno) fino a **Cisco Packet Tracer** e alla rete di scuola del 4° anno. |
+| 0.3 | 26/07/2026 | Aggiunta la sezione "Una **scatola flessibile**": i moduli sono manopole che si aprono/chiudono in base alla classe, tutto al servizio delle chance di lavoro (la "nuova spiaggia"). Aggiunto il "**serbatoio di idee extra**" con competenze spendibili alla loro portata (crimpare cavi, riparazione PC, digitazione, curriculum/colloquio, pagina web, Linux, sicurezza, certificazioni). Tolte parole inglesi non spiegate ("bump" → "alzare il numero di versione"; "changelog" → "storia delle versioni"). |
