@@ -1,3 +1,6 @@
+# Dipendenze npm (Playwright) — si reinstallano con "npm install", non si versionano
+node_modules/
+
 # Artefatti intermedi generati durante la creazione del PDF (non versionati)
 manuale.html
 eserciziario.html
