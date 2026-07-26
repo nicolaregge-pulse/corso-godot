@@ -22,9 +22,10 @@ const PDF_PATH = path.join(BUILD_DIR, '..', info.pdf);
   const page = await browser.newPage();
   await page.goto('file://' + HTML_PATH, { waitUntil: 'networkidle' });
 
-  // Piè di pagina con numero di pagina (non sulla copertina: la prima pagina
-  // resta pulita perché usiamo margini e Chromium mostra il footer ovunque,
-  // ma il numero parte da 1 = copertina; accettabile per un libro di corso).
+  // Piè di pagina in TRE parti: a sinistra "Corso di Godot", al centro la
+  // versione, a destra il numero di pagina.
+  const fLeft = info.footerLeft || 'Corso di Godot';
+  const fMid = info.footerMid || '';
   await page.pdf({
     path: PDF_PATH,
     format: 'A4',
@@ -35,9 +36,10 @@ const PDF_PATH = path.join(BUILD_DIR, '..', info.pdf);
     footerTemplate:
       '<div style="width:100%; font-size:8px; color:#8a97a5; ' +
       'font-family: Segoe UI, Arial, sans-serif; padding:0 16mm; ' +
-      'display:flex; justify-content:space-between;">' +
-      '<span>Corso di Godot</span>' +
-      '<span>Pag. <span class="pageNumber"></span> / <span class="totalPages"></span></span>' +
+      'display:flex; justify-content:space-between; align-items:center;">' +
+      '<span style="flex:1; text-align:left;">' + fLeft + '</span>' +
+      '<span style="flex:1; text-align:center;">' + fMid + '</span>' +
+      '<span style="flex:1; text-align:right;">Pag. <span class="pageNumber"></span> / <span class="totalPages"></span></span>' +
       '</div>',
   });
 
