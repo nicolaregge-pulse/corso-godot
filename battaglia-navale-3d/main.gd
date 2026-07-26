@@ -31,11 +31,17 @@ const COL_ACQUA := Color(0.25, 0.55, 0.95, 0.14)     # celle d'acqua (trasparent
 const COL_BOMBATA := Color(0.45, 0.50, 0.55, 0.32)   # celle già colpite
 const COL_MIRINO := Color(0.25, 1.0, 0.70, 0.55)     # la cella puntata dal mirino
 const COL_SUB := Color(0.92, 0.80, 0.12)             # il sottomarino (giallo)
+const COL_ASSE_X := Color(1.0, 0.55, 0.55)           # colonne (lettere MAIUSCOLE)
+const COL_ASSE_Y := Color(0.55, 1.0, 0.65)           # file (lettere minuscole)
+const COL_ASSE_Z := Color(1.0, 0.92, 0.45)           # profondità (numeri)
 
 # ---- Nodi / stato ------------------------------------------
 var _perno_camera: Node3D
 var _celle := {}              # Vector3i -> StaticBody3D
 var _stato := {}              # Vector3i -> "acqua" | "bombata"
+var _lbl_x := []              # etichette colonne (A B C…)
+var _lbl_y := []              # etichette file (a b c…)
+var _lbl_z := []              # etichette profondità (1 2 3…)
 var _cursore: Vector3i        # la cella puntata dal mirino
 var _sub_coord: Vector3i
 var _sottomarino: Node3D
@@ -122,23 +128,45 @@ func _crea_etichette_assi() -> void:
 	for i in LATO:
 		var p := (i - (LATO - 1) / 2.0) * SPAZIO
 		# Colonna: LETTERE MAIUSCOLE (rosso) sotto il cubo
-		_fai_etichetta(char(65 + i), Vector3(p, -bordo, bordo), Color(1.0, 0.6, 0.6))
+		_lbl_x.append(_fai_etichetta(char(65 + i), Vector3(p, -bordo, bordo)))
 		# Fila: lettere minuscole (verde) a sinistra
-		_fai_etichetta(char(97 + i), Vector3(-bordo, p, bordo), Color(0.6, 1.0, 0.7))
+		_lbl_y.append(_fai_etichetta(char(97 + i), Vector3(-bordo, p, bordo)))
 		# Profondità: NUMERI (giallo) in basso a sinistra, verso il fondo
-		_fai_etichetta(str(i + 1), Vector3(-bordo, -bordo, p), Color(1.0, 0.95, 0.5))
+		_lbl_z.append(_fai_etichetta(str(i + 1), Vector3(-bordo, -bordo, p)))
 
 
-func _fai_etichetta(txt: String, pos: Vector3, colore: Color) -> void:
+func _fai_etichetta(txt: String, pos: Vector3) -> Label3D:
 	var l := Label3D.new()
 	l.text = txt
 	l.position = pos
-	l.font_size = 80
-	l.pixel_size = 0.006
-	l.modulate = colore
 	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	l.no_depth_test = true
 	add_child(l)
+	return l
+
+
+# Ingrandisce e illumina la tripletta di coordinate della cella puntata
+func _evidenzia_coordinate() -> void:
+	for i in _lbl_x.size():
+		_stile_etichetta(_lbl_x[i], i == _cursore.x, COL_ASSE_X)
+	for i in _lbl_y.size():
+		_stile_etichetta(_lbl_y[i], i == _cursore.y, COL_ASSE_Y)
+	for i in _lbl_z.size():
+		_stile_etichetta(_lbl_z[i], i == _cursore.z, COL_ASSE_Z)
+
+
+func _stile_etichetta(l: Label3D, selezionata: bool, base: Color) -> void:
+	if selezionata:
+		l.pixel_size = 0.013
+		l.font_size = 130
+		l.modulate = Color.WHITE
+		l.outline_modulate = base
+		l.outline_size = 18
+	else:
+		l.pixel_size = 0.006
+		l.font_size = 80
+		l.modulate = base
+		l.outline_size = 0
 
 
 # ---- Inizio (o ri-inizio) di una partita ----
@@ -150,6 +178,7 @@ func _nuova_partita() -> void:
 	_cursore = Vector3i(LATO / 2, LATO / 2, LATO / 2)   # mirino al centro
 	for coord in _celle:
 		_ridisegna_cella(coord)
+	_evidenzia_coordinate()
 
 	if _sottomarino != null and is_instance_valid(_sottomarino):
 		_sottomarino.queue_free()
@@ -198,6 +227,19 @@ func _crea_sottomarino() -> Node3D:
 	return sub
 
 
+# ---- Girare il cubo con i tasti A/D/W/S (in continuo) ----
+func _process(delta: float) -> void:
+	var v := 1.3 * delta
+	if Input.is_key_pressed(KEY_A):
+		_perno_camera.rotation.y += v
+	if Input.is_key_pressed(KEY_D):
+		_perno_camera.rotation.y -= v
+	if Input.is_key_pressed(KEY_W):
+		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.3, 1.3)
+	if Input.is_key_pressed(KEY_S):
+		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.3, 1.3)
+
+
 # ---- Input: tastiera (mirino + spara + rigioca), mouse (gira) ----
 func _unhandled_input(event: InputEvent) -> void:
 	# Girare la telecamera trascinando il mouse
@@ -232,6 +274,7 @@ func _muovi_cursore(delta: Vector3i) -> void:
 	_cursore = nuovo
 	_ridisegna_cella(vecchio)
 	_ridisegna_cella(_cursore)
+	_evidenzia_coordinate()
 	_aggiorna_testo()
 
 

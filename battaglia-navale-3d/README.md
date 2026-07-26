@@ -19,8 +19,10 @@ Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 - **Frecce ← → ↑ ↓** = muovi il **mirino** (la cella che brilla di verde) su colonna e fila.
 - **Q / E** = profondità (avanti / indietro).
 - **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
-- **Mouse trascinato** = giri attorno al cubo (per vederlo bene in 3D).
+- **A / D / W / S** oppure **mouse trascinato** = giri attorno al cubo (per vederlo bene in 3D).
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
+
+Quando punti una cella, la sua **tripletta di coordinate** (attorno al cubo) diventa **grande e bianca**, così vedi subito cosa hai selezionato.
 
 ## Come si apre (per Nicola)
 1. `[APP — Godot]` nella finestra iniziale (il *Gestore progetti*), in alto a
