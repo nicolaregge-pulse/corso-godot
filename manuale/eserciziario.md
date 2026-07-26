@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot 🎯
 
-**Versione 0.1** — 26/07/2026
+**Versione 0.2** — 26/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -20,6 +20,17 @@ livello successivo **solo se sei bloccato**:
 
 *(Nel file `.md` i livelli 2–4 sono a scomparsa: clicca sul triangolino per
 aprirli. Nel PDF sono già aperti.)*
+
+> 🕹️ **Oltre agli esercizi numerati ci sono i "Progetti BOSS":** giochi già
+> pronti, più grossi, che non si copiano riga per riga — si **aprono, si
+> giocano e si rendono propri** (cambi colori, titolo, ci metti una tua foto).
+> Sono il premio: la cosa figa da mostrare subito agli amici. Il codice è già
+> nel repository, lo capiremo un pezzo alla volta.
+
+> ℹ️ **Nota per il docente:** per ora gli esercizi sono raccolti *così come
+> nascono*, non in ordine di difficoltà. Più avanti li riordineremo (per
+> difficoltà o per quando si svolgono in classe). L'importante adesso è
+> raccoglierli.
 
 ---
 
@@ -226,8 +237,73 @@ func _aggiorna_punteggio() -> void:
 
 ---
 
+## Esercizio BOSS — Affonda la Bonomi 🌊💣
+*(Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.)*
+
+### 🟢 Descrizione
+La solita battaglia navale, ma **in tre dimensioni**: al posto della griglia a
+righe e colonne c'è un **cubo** di celle d'acqua. Dentro è nascosto **un
+sottomarino**. Muovi un **mirino** e lanci una **bomba di profondità**: esplode e
+colpisce una zona **3×3×3** attorno al punto. Se il sottomarino è lì → **COLPITO!**
+Questo gioco è **già fatto**: il tuo compito è **aprirlo, giocarci e farlo tuo**.
+
+<details>
+<summary>🟡 Aiuto — come aprirlo e giocarci</summary>
+
+1. `[APP — Godot]` finestra iniziale (*Gestore progetti*), in alto a destra
+   **`Importa`** → scegli la cartella **`battaglia-navale-3d`** e il file
+   **`project.godot`** → **`Importa e modifica`**.
+2. Premi **`F5`** (Esegui). All'avvio scegli **quanti cubi per lato** (da **4**,
+   facilissimo, fino a **10**, difficile).
+3. Comandi (le lettere sono disposte come **tre colonne della tastiera**):
+   - **Q / A** = Colonna (rosso) · **W / S** = Fila (verde) · **E / D** = Profondità (giallo)
+   - **SHIFT + le stesse lettere** = gira il cubo · **dito/mouse trascinato** = gira il cubo
+   - **SPAZIO** = lancia la bomba · **↻ / INVIO** = rigioca (richiede di nuovo la difficoltà)
+</details>
+
+<details>
+<summary>🟠 Fallo tuo (la parte più importante!)</summary>
+
+Apri **`battaglia-navale-3d/main.gd`** e cambia queste cose per rendere il gioco
+**tuo** (dopo ogni modifica premi **`F5`** e guarda l'effetto):
+
+- **I colori dell'acqua e del mirino:** in alto trovi righe tipo
+  `const COL_ACQUA := Color(...)` e `const COL_MIRINO := Color(...)`. Cambia i tre
+  numeri (rosso, verde, blu, da 0 a 1) e avrai il **tuo** stile.
+- **La tua foto al posto di Serena:** metti un file **`serena.jpg`** (una tua foto
+  o un meme) nella cartella `battaglia-navale-3d/`: comparirà quando affondi il
+  sottomarino, lampeggiando con il teschio dei pirati.
+- **Il titolo del gioco:** in `project.godot`, alla voce `config/name="..."`,
+  scrivi il **nome che vuoi tu**.
+- **La difficoltà di partenza / la potenza della bomba:** prova a cambiare
+  `RAGGIO_BOMBA` (1 = zona 3×3×3; 2 = zona 5×5×5, molto più potente).
+
+> 🎉 **Mostralo:** quando l'hai personalizzato, fai una partita davanti a un
+> compagno. "Questo l'ho fatto **io**" vale più di qualsiasi voto.
+</details>
+
+<details>
+<summary>🔴 Il codice completo (dov'è e com'è fatto)</summary>
+
+Il codice **c'è già tutto** ed è versionato nel repository, nel file
+**`battaglia-navale-3d/main.gd`** (circa 600 righe). Non va copiato a mano: è il
+nostro **progetto boss**, lo leggeremo **un pezzo alla volta**.
+
+Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
+- il **game loop** `_process(delta)` per girare il cubo (come nell'Esercizio 2);
+- **leggere i tasti** con `Input.is_key_pressed(...)` (come nel muovere il quadrato);
+- **costruire tutto da codice** (celle, luci, telecamera, bottoni) invece che a mano.
+
+> Regola d'oro (vale anche qui): se sai **spiegare a voce** cosa fa un pezzo di
+> codice, quel pezzo è tuo. Partiremo dai pezzi più facili (i colori, i comandi)
+> e saliremo piano piano.
+</details>
+
+---
+
 ## Changelog dell'eserciziario
 
 | Versione | Data | Cosa e' cambiato |
 |---|---|---|
 | 0.1 | 26/07/2026 | Prima stesura: Es.1 (bottone/Caption, ponte da Lazarus), Es.2 (game loop, muovi il quadrato), Es.3 (prendi la moneta: movimento+caduta+punteggio). Formato a 4 livelli di aiuto. |
+| 0.2 | 26/07/2026 | Introdotti i "Progetti BOSS" (giochi pronti da personalizzare). Aggiunto l'Esercizio BOSS "Affonda la Bonomi" (battaglia navale 3D): apri · gioca · fallo tuo · il codice nel repository. |
