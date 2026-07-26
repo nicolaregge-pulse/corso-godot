@@ -153,6 +153,12 @@ def build_body_html(md_text: str) -> str:
             start = i + 1
             break
     body_md = "\n".join(lines[start:]).strip()
+
+    # Toglie il Changelog dal libro dei ragazzi (crea confusione). Resta nel
+    # sorgente .md per tenere lo storico delle versioni, ma non finisce nel PDF.
+    body_md = re.split(r"\n#{1,6}\s+Changelog\b", body_md, maxsplit=1)[0]
+    body_md = re.sub(r"\n-{3,}\s*$", "", body_md).rstrip()
+
     body_md = normalize_lists(body_md)
     body_md = prepare_details(body_md)
 
@@ -188,7 +194,12 @@ def build_body_html(md_text: str) -> str:
                     f'<img src="{uri}" alt="{cap}"/>'
                     + (f'<figcaption>{cap}</figcaption>' if cap else "")
                     + '</figure>')
-        return m.group(0)
+        # Immagine non ancora fornita da Nicola: segnaposto pulito (non rotto),
+        # così si vede DOVE va lo screenshot e con quale nome file.
+        alt_txt = html.unescape(alt) if alt else ""
+        return ('<div class="imgph"><span class="imgph-t">Screenshot da inserire</span>'
+                + (f'<br>{html.escape(alt_txt)}' if alt_txt else "")
+                + f'<br><span class="imgph-f">{html.escape(src)}</span></div>')
 
     body_html = re.sub(
         r'<img\s+alt="(?P<alt>[^"]*)"\s+src="(?P<src>[^"]+)"\s*/?>',
@@ -587,6 +598,21 @@ figure.fig figcaption {
   font-style: italic;
   text-align: center;
 }
+
+/* Segnaposto per uno screenshot non ancora fornito */
+.imgph {
+  margin: 18px 0;
+  padding: 26px 16px;
+  border: 1.5px dashed var(--line);
+  border-radius: 6px;
+  background: #faf8f3;
+  text-align: center;
+  color: var(--muted);
+  font-size: 10.5pt;
+  page-break-inside: avoid;
+}
+.imgph .imgph-t { font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; font-size: 9pt; }
+.imgph .imgph-f { font-family: "Consolas", monospace; font-size: 9pt; color: var(--godot-blue-dark); }
 
 hr {
   border: none;
