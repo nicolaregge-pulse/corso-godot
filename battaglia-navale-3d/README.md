@@ -8,9 +8,18 @@ una zona **3×3×3** attorno al punto. Se il sottomarino è in quella zona → C
 > ⚠️ È una **prima bozza** fatta per Nicola, da provare e migliorare insieme
 > (grafica, effetti, difficoltà). Non è ancora un esercizio per i ragazzi.
 
+## Coordinate di ogni cella
+- **Colonna** = LETTERA MAIUSCOLA (A B C D E)
+- **Fila** = lettera minuscola (a b c d e)
+- **Profondità** = NUMERO (1 2 3 4 5)
+
+Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
+
 ## Come si gioca
-- **Clic sinistro** su una cella = lancia la bomba di profondità.
-- **Frecce ← → ↑ ↓** = giri attorno al cubo (per vederlo bene in 3D).
+- **Frecce ← → ↑ ↓** = muovi il **mirino** (la cella che brilla di verde) su colonna e fila.
+- **Q / E** = profondità (avanti / indietro).
+- **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
+- **Mouse trascinato** = giri attorno al cubo (per vederlo bene in 3D).
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
 
 ## Come si apre (per Nicola)
