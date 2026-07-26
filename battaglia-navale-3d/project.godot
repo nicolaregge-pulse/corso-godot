@@ -1,0 +1,25 @@
+; Motore: Godot 4.7.x
+; "Battaglia Navale 3D" — bombe di profondità (prototipo del corso).
+; Progetto autonomo: si apre questa cartella in Godot e si preme Play.
+
+config_version=5
+
+[application]
+
+config/name="Battaglia Navale 3D"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1152
+window/size/viewport_height=648
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
