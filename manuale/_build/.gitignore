@@ -1,0 +1,7 @@
+# Artefatti intermedi generati durante la creazione del PDF (non versionati)
+manuale.html
+anteprima_full.png
+pg_*.png
+real_*.png
+griglia.png
+__pycache__/
