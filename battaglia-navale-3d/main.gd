@@ -20,9 +20,10 @@ extends Node3D
 #    - SPAZIO         = lancia la bomba sulla cella del mirino
 #    - INVIO          = rigioca
 #
-#  SUL TELEFONO (touch): joypad a schermo per il mirino, tasti Prof−/Prof+
-#  per la profondità, 💣 per la bomba, ↻ per rigiocare, e il DITO trascinato
-#  gira il cubo.
+#  SUL TELEFONO (touch): tre coppie +/- COLORATE (una per asse: Colonna=rosso,
+#  Fila=verde, Profondità=giallo) per muovere il mirino, 💣 grande per la bomba,
+#  ↻ per rigiocare, e il DITO trascinato gira il cubo. Le tre frecce colorate
+#  accanto al cubo mostrano le direzioni dei tre assi.
 # ============================================================
 
 # ---- Parametri (cambiali per sperimentare!) ----------------
@@ -62,6 +63,7 @@ func _ready() -> void:
 	_crea_ambiente()
 	_crea_griglia()
 	_crea_etichette_assi()
+	_crea_gizmo_assi()
 	_crea_comandi_touch()
 	_nuova_partita()
 
@@ -152,6 +154,37 @@ func _fai_etichetta(txt: String, pos: Vector3) -> Label3D:
 	return l
 
 
+# Indicatore dei 3 assi (frecce colorate) accanto al cubo. Sta nel mondo 3D,
+# quindi GIRA insieme al cubo: aiuta a capire quali sono le tre direzioni.
+func _crea_gizmo_assi() -> void:
+	var half := (LATO - 1) / 2.0 * SPAZIO
+	var org := Vector3(half + 0.9, -half - 0.9, half + 0.9)
+	var lung := 1.6
+	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "A→E")   # colonna
+	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "a→e")   # fila
+	_freccia_asse(org, Vector3(0, 0, lung), COL_ASSE_Z, "1→5")   # profondità
+
+
+func _freccia_asse(org: Vector3, dir: Vector3, colore: Color, etich: String) -> void:
+	var spess := 0.07
+	var asta := MeshInstance3D.new()
+	var bm := BoxMesh.new()
+	bm.size = Vector3(max(abs(dir.x), spess), max(abs(dir.y), spess), max(abs(dir.z), spess))
+	asta.mesh = bm
+	asta.material_override = _materiale(colore)
+	asta.position = org + dir * 0.5
+	add_child(asta)
+	var l := Label3D.new()
+	l.text = etich
+	l.position = org + dir * 1.18
+	l.font_size = 72
+	l.pixel_size = 0.008
+	l.modulate = colore
+	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	l.no_depth_test = true
+	add_child(l)
+
+
 # Ingrandisce e illumina la tripletta di coordinate della cella puntata
 func _evidenzia_coordinate() -> void:
 	for i in _lbl_x.size():
@@ -181,30 +214,55 @@ func _stile_etichetta(l: Label3D, selezionata: bool, base: Color) -> void:
 func _crea_comandi_touch() -> void:
 	_touch_layer = CanvasLayer.new()
 	add_child(_touch_layer)
-	var s := Vector2(76, 76)
-	var passo := 82.0
-	# Joypad in basso a sinistra: colonna (← →) e fila (↑ ↓)
-	_btn("↑", s, "bl", Vector2(24 + passo, 24 + 2 * passo), _muovi_cursore.bind(Vector3i(0, 1, 0)))
-	_btn("←", s, "bl", Vector2(24, 24 + passo), _muovi_cursore.bind(Vector3i(-1, 0, 0)))
-	_btn("→", s, "bl", Vector2(24 + 2 * passo, 24 + passo), _muovi_cursore.bind(Vector3i(1, 0, 0)))
-	_btn("↓", s, "bl", Vector2(24 + passo, 24), _muovi_cursore.bind(Vector3i(0, -1, 0)))
-	# Profondità (il numero) ai due angoli bassi del joypad
-	_btn("Prof−", s, "bl", Vector2(24, 24), _muovi_cursore.bind(Vector3i(0, 0, -1)))
-	_btn("Prof+", s, "bl", Vector2(24 + 2 * passo, 24), _muovi_cursore.bind(Vector3i(0, 0, 1)))
-	# FUOCO (in basso a destra) e RIGIOCA (in alto a destra)
-	_btn("💣", Vector2(128, 128), "br", Vector2(28, 28), _spara_touch)
-	_btn("↻ Rigioca", Vector2(150, 54), "tr", Vector2(24, 20), _nuova_partita)
+	var bw := Vector2(80, 58)      # dimensione dei bottoni +/-
+	var passo := 92.0              # distanza verticale tra i tre gruppi
+	# Tre coppie +/- (una per asse), COLORATE come le coordinate e come le
+	# frecce del gizmo: Colonna=rosso, Fila=verde, Profondità=giallo.
+	_gruppo_asse("Colonna  A→E", COL_ASSE_X, Vector3i(1, 0, 0), Vector2(24, 24 + 2 * passo), bw)
+	_gruppo_asse("Fila  a→e", COL_ASSE_Y, Vector3i(0, 1, 0), Vector2(24, 24 + passo), bw)
+	_gruppo_asse("Prof.  1→5", COL_ASSE_Z, Vector3i(0, 0, 1), Vector2(24, 24), bw)
+	# BOMBA grande in basso a destra
+	var bomba := _btn("💣", Vector2(150, 150), "br", Vector2(28, 28), _spara_touch)
+	bomba.add_theme_font_size_override("font_size", 66)
+	# Rigioca in alto a destra
+	_btn("↻", Vector2(74, 58), "tr", Vector2(24, 20), _nuova_partita)
 
 
-func _btn(txt: String, dim: Vector2, corner: String, margine: Vector2, azione: Callable) -> void:
+# Un gruppo "asse": etichetta colorata + bottone (−) + bottone (+)
+func _gruppo_asse(nome: String, colore: Color, piu: Vector3i, base: Vector2, bw: Vector2) -> void:
+	var lab := Label.new()
+	lab.text = nome
+	lab.add_theme_font_size_override("font_size", 17)
+	lab.add_theme_color_override("font_color", colore)
+	lab.add_theme_color_override("font_outline_color", Color.BLACK)
+	lab.add_theme_constant_override("outline_size", 5)
+	_touch_layer.add_child(lab)
+	_ancora(lab, "bl", base + Vector2(4, bw.y + 2), Vector2(200, 22))
+	_bottone_mov("–", bw, base, colore, -piu)
+	_bottone_mov("+", bw, base + Vector2(bw.x + 8, 0), colore, piu)
+
+
+func _bottone_mov(txt: String, dim: Vector2, margine: Vector2, colore: Color, passo: Vector3i) -> void:
+	var b := Button.new()
+	b.text = txt
+	b.focus_mode = Control.FOCUS_NONE
+	b.add_theme_font_size_override("font_size", 36)
+	b.add_theme_color_override("font_color", colore)
+	_touch_layer.add_child(b)
+	_ancora(b, "bl", margine, dim)
+	b.pressed.connect(_muovi_cursore.bind(passo))
+
+
+func _btn(txt: String, dim: Vector2, corner: String, margine: Vector2, azione: Callable) -> Button:
 	var b := Button.new()
 	b.text = txt
 	b.focus_mode = Control.FOCUS_NONE   # così le frecce restano per il gioco
 	b.add_theme_font_size_override("font_size", 26)
-	b.modulate = Color(1, 1, 1, 0.9)
+	b.modulate = Color(1, 1, 1, 0.92)
 	_touch_layer.add_child(b)
 	_ancora(b, corner, margine, dim)
 	b.pressed.connect(azione)
+	return b
 
 
 func _ancora(c: Control, corner: String, m: Vector2, dim: Vector2) -> void:
@@ -291,6 +349,25 @@ func _crea_sottomarino() -> Node3D:
 	peri.material_override = mat
 	peri.position = Vector3(0, 0.50, 0)
 	sub.add_child(peri)
+
+	# Immagine "serena.jpg" sui due fianchi del sottomarino (se presente nel
+	# progetto). Va messa in battaglia-navale-3d/serena.jpg → res://serena.jpg
+	if ResourceLoader.exists("res://serena.jpg"):
+		var tex: Texture2D = load("res://serena.jpg")
+		if tex != null:
+			for z in [0.33, -0.33]:
+				var faccia := MeshInstance3D.new()
+				var q := QuadMesh.new()
+				q.size = Vector2(0.95, 0.62)
+				faccia.mesh = q
+				var mt := StandardMaterial3D.new()
+				mt.albedo_texture = tex
+				mt.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+				faccia.material_override = mt
+				faccia.position = Vector3(0, 0.02, z)
+				if z < 0:
+					faccia.rotation_degrees = Vector3(0, 180, 0)
+				sub.add_child(faccia)
 
 	return sub
 

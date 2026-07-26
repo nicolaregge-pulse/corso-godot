@@ -24,9 +24,11 @@ Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
 
 ## Sul telefono/tablet (touch)
-Ci sono i **pulsanti a schermo**: il joypad in basso a sinistra (mirino), i tasti
-**Prof−/Prof+** per la profondità, il **💣** per la bomba, il **↻** per rigiocare.
-Per **girare il cubo** trascini il **dito** sullo schermo.
+In basso a sinistra ci sono **tre coppie +/- colorate**, una per asse (come le
+coordinate): **Colonna** (rosso), **Fila** (verde), **Profondità** (giallo) → così
+sai sempre quale asse muovi. Le **tre frecce colorate** accanto al cubo mostrano
+le direzioni degli assi e girano insieme al cubo. Il **💣** grande in basso a
+destra lancia la bomba, il **↻** rigioca. Per **girare il cubo** trascini il **dito**.
 
 ## Come portarlo sul telefono (via Web, senza installare niente)
 1. `[APP — Godot]` menù **`Progetto` → `Esporta…`**.
