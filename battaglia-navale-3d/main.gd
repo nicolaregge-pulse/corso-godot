@@ -9,12 +9,12 @@ extends Node3D
 #
 #  All'avvio scegli quanti cubi per lato (da 5 a 10).
 #
-#  COMANDI (6 lettere per il mirino):
-#    - A / D = Colonna (−/+)   · lettere ROSSE
-#    - W / S = Fila (+/−)       · lettere VERDI
-#    - Q / E = Profondità (−/+) · lettere GIALLE
-#    - SHIFT + quelle lettere   = gira il cubo (invece del mirino)
-#    - MOUSE/DITO trascinato    = gira il cubo
+#  COMANDI (3 colonne di tastiera QWERTY, su sopra / giù sotto):
+#    - Q / A = Colonna (+/−)    · lettere ROSSE
+#    - W / S = Fila (+/−)        · lettere VERDI
+#    - E / D = Profondità (+/−)  · lettere GIALLE
+#    - SHIFT + quelle lettere    = gira il cubo (invece del mirino)
+#    - MOUSE/DITO trascinato     = gira il cubo
 #    - SPAZIO = lancia la bomba · INVIO = rigioca
 #
 #  SUL TELEFONO: le tre coppie +/- colorate (in basso a sinistra) muovono
@@ -236,9 +236,9 @@ func _crea_gizmo_assi() -> void:
 	var half := (LATO - 1) / 2.0 * SPAZIO
 	var org := Vector3(half + 0.9, -half - 0.9, half + 0.9)
 	var lung := 1.7
-	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "D", "A")   # colonna
-	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "W", "S")   # fila
-	_freccia_asse(org, Vector3(0, 0, lung), COL_ASSE_Z, "E", "Q")   # profondità
+	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "Q", "A")   # colonna: Q(+) A(−)
+	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "W", "S")   # fila:    W(+) S(−)
+	_freccia_asse(org, Vector3(0, 0, lung), COL_ASSE_Z, "E", "D")   # prof:    E(+) D(−)
 
 
 func _freccia_asse(org: Vector3, dir: Vector3, colore: Color, tasto_piu: String, tasto_meno: String) -> void:
@@ -272,27 +272,32 @@ func _lettera_gizmo(txt: String, pos: Vector3, colore: Color) -> void:
 func _crea_comandi_touch() -> void:
 	_touch_layer = CanvasLayer.new()
 	add_child(_touch_layer)
-	var bw := Vector2(80, 58)
-	var passo := 92.0
-	_gruppo_asse("Colonna  (A/D)", COL_ASSE_X, Vector3i(1, 0, 0), Vector2(24, 24 + 2 * passo), bw)
-	_gruppo_asse("Fila  (W/S)", COL_ASSE_Y, Vector3i(0, 1, 0), Vector2(24, 24 + passo), bw)
-	_gruppo_asse("Prof.  (Q/E)", COL_ASSE_Z, Vector3i(0, 0, 1), Vector2(24, 24), bw)
+	var bw := Vector2(74, 66)      # dimensione di ogni bottone
+	var gap := 8.0                 # spazio tra su e giù
+	var col_w := bw.x + 18.0       # distanza tra una colonna e l'altra
+	# tre colonne verticali affiancate, in basso a sinistra (come la tastiera)
+	_gruppo_asse("Colonna", COL_ASSE_X, "Q", "A", Vector3i(1, 0, 0), Vector2(24 + 0 * col_w, 30), bw, gap)
+	_gruppo_asse("Fila",    COL_ASSE_Y, "W", "S", Vector3i(0, 1, 0), Vector2(24 + 1 * col_w, 30), bw, gap)
+	_gruppo_asse("Prof.",   COL_ASSE_Z, "E", "D", Vector3i(0, 0, 1), Vector2(24 + 2 * col_w, 30), bw, gap)
 	var bomba := _btn("💣", Vector2(150, 150), "br", Vector2(28, 28), _spara_touch)
 	bomba.add_theme_font_size_override("font_size", 66)
 	_btn("↻", Vector2(74, 58), "tr", Vector2(24, 20), _nuova_partita)
 
 
-func _gruppo_asse(nome: String, colore: Color, piu: Vector3i, base: Vector2, bw: Vector2) -> void:
+func _gruppo_asse(nome: String, colore: Color, lett_su: String, lett_giu: String, piu: Vector3i, base: Vector2, bw: Vector2, gap: float) -> void:
+	# bottone GIÙ (in basso) e bottone SU (sopra), impilati come sulla tastiera
+	_bottone_mov(lett_giu, bw, base, colore, -piu)
+	_bottone_mov(lett_su, bw, base + Vector2(0, bw.y + gap), colore, piu)
+	# nome dell'asse, colorato, sopra la colonna
 	var lab := Label.new()
 	lab.text = nome
-	lab.add_theme_font_size_override("font_size", 17)
+	lab.add_theme_font_size_override("font_size", 16)
 	lab.add_theme_color_override("font_color", colore)
 	lab.add_theme_color_override("font_outline_color", Color.BLACK)
 	lab.add_theme_constant_override("outline_size", 5)
+	lab.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_touch_layer.add_child(lab)
-	_ancora(lab, "bl", base + Vector2(4, bw.y + 2), Vector2(210, 22))
-	_bottone_mov("–", bw, base, colore, -piu)
-	_bottone_mov("+", bw, base + Vector2(bw.x + 8, 0), colore, piu)
+	_ancora(lab, "bl", base + Vector2(0, 2 * bw.y + 2 * gap), Vector2(bw.x, 22))
 
 
 func _bottone_mov(txt: String, dim: Vector2, margine: Vector2, colore: Color, passo: Vector3i) -> void:
@@ -353,25 +358,35 @@ func _crea_overlay_serena() -> void:
 	_overlay = CanvasLayer.new()
 	_overlay.layer = 10
 	add_child(_overlay)
-	_serena_root = CenterContainer.new()
+	# Control a tutto schermo: su questo facciamo lampeggiare tutto insieme
+	_serena_root = Control.new()
 	_serena_root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_serena_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_overlay.add_child(_serena_root)
-	var vbox := VBoxContainer.new()
-	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
-	_serena_root.add_child(vbox)
+	# sfondo scuro semitrasparente, così la faccia risalta
+	var sfondo := ColorRect.new()
+	sfondo.color = Color(0, 0, 0, 0.72)
+	sfondo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	sfondo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_serena_root.add_child(sfondo)
+	# la foto: riempie TUTTO lo schermo mantenendo le proporzioni (faccia intera, non deformata)
+	if ResourceLoader.exists("res://serena.jpg"):
+		var rect := TextureRect.new()
+		rect.texture = load("res://serena.jpg")
+		rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+		rect.offset_top = 70          # lascia spazio in alto per fuoco/teschio
+		rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_serena_root.add_child(rect)
+	# fuoco/teschio in alto, centrato
 	var emoji := Label.new()
 	emoji.text = "🔥 💀 🔥"
-	emoji.add_theme_font_size_override("font_size", 100)
+	emoji.add_theme_font_size_override("font_size", 90)
 	emoji.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	vbox.add_child(emoji)
-	if ResourceLoader.exists("res://serena.jpg"):
-		var tex: Texture2D = load("res://serena.jpg")
-		var rect := TextureRect.new()
-		rect.texture = tex
-		rect.custom_minimum_size = Vector2(340, 340)
-		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		vbox.add_child(rect)
+	emoji.set_anchors_preset(Control.PRESET_TOP_WIDE)
+	emoji.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_serena_root.add_child(emoji)
 	_overlay.visible = false
 
 
@@ -415,7 +430,7 @@ func _nuova_partita() -> void:
 	_sottomarino.visible = false
 	add_child(_sottomarino)
 
-	_messaggio = "Muovi il mirino (A/D · W/S · Q/E) e SPAZIO per bombardare!"
+	_messaggio = "Muovi il mirino (Q/A · W/S · E/D) e SPAZIO per bombardare!"
 	_aggiorna_testo()
 
 
@@ -458,17 +473,17 @@ func _process(delta: float) -> void:
 	if not _pronto or not Input.is_key_pressed(KEY_SHIFT):
 		return
 	var v := 1.3 * delta
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_key_pressed(KEY_Q):
 		_perno_camera.rotation.y += v
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_key_pressed(KEY_A):
 		_perno_camera.rotation.y -= v
 	if Input.is_key_pressed(KEY_W):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.4, 1.4)
 	if Input.is_key_pressed(KEY_S):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.4, 1.4)
-	if Input.is_key_pressed(KEY_Q):
-		_perno_camera.rotation.z += v
 	if Input.is_key_pressed(KEY_E):
+		_perno_camera.rotation.z += v
+	if Input.is_key_pressed(KEY_D):
 		_perno_camera.rotation.z -= v
 
 
@@ -485,15 +500,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventKey and event.pressed and not event.echo:
 		# con SHIFT le lettere girano il cubo (in _process): niente mirino
-		if event.shift_pressed and event.keycode in [KEY_A, KEY_D, KEY_W, KEY_S, KEY_Q, KEY_E]:
+		if event.shift_pressed and event.keycode in [KEY_Q, KEY_A, KEY_W, KEY_S, KEY_E, KEY_D]:
 			return
 		match event.keycode:
+			KEY_Q: _muovi_cursore(Vector3i(1, 0, 0))    # colonna +
 			KEY_A: _muovi_cursore(Vector3i(-1, 0, 0))   # colonna −
-			KEY_D: _muovi_cursore(Vector3i(1, 0, 0))    # colonna +
 			KEY_W: _muovi_cursore(Vector3i(0, 1, 0))    # fila +
 			KEY_S: _muovi_cursore(Vector3i(0, -1, 0))   # fila −
-			KEY_Q: _muovi_cursore(Vector3i(0, 0, -1))   # profondità −
 			KEY_E: _muovi_cursore(Vector3i(0, 0, 1))    # profondità +
+			KEY_D: _muovi_cursore(Vector3i(0, 0, -1))   # profondità −
 			KEY_SPACE:
 				if not _vinto:
 					_lancia_bomba(_cursore)

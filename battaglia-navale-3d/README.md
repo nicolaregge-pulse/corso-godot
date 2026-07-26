@@ -21,12 +21,13 @@ sottomarino. Clicca un numero e la partita comincia.
 Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 
 ## Come si gioca (6 tasti + Shift)
-Il **mirino** è la cella che brilla di verde. Lo muovi con **sei lettere**, a
-coppie, ognuna del **colore del suo asse** (le vedi anche sulle frecce accanto al
-cubo):
-- **A / D** = **Colonna** (−/+) → lettere **rosse**
+Il **mirino** è la cella che brilla di verde. Lo muovi con **sei lettere**,
+disposte come le **tre colonne della tastiera QWERTY** (il tasto di sopra = "+",
+quello di sotto = "−"), ognuna del **colore del suo asse** (le vedi anche sulle
+frecce accanto al cubo):
+- **Q / A** = **Colonna** (+/−) → lettere **rosse**
 - **W / S** = **Fila** (+/−) → lettere **verdi**
-- **Q / E** = **Profondità** (−/+) → lettere **gialle**
+- **E / D** = **Profondità** (+/−) → lettere **gialle**
 - **SHIFT + le stesse lettere** = **girano il cubo** invece di muovere il mirino
   (così bastano 6 tasti: lo Shift attiva/disattiva la rotazione).
 - **Mouse trascinato** = gira il cubo (in più, se vuoi).
@@ -41,12 +42,13 @@ file **`serena.jpg`** nella cartella `battaglia-navale-3d/` (se non c'è, restan
 solo le emoji del fuoco e del teschio).
 
 ## Sul telefono/tablet (touch)
-In basso a sinistra ci sono **tre coppie +/- colorate**, una per asse (come le
-coordinate): **Colonna** (rosso), **Fila** (verde), **Profondità** (giallo) → così
-sai sempre quale asse muovi. Le **tre frecce colorate** accanto al cubo mostrano
-le direzioni degli assi (con su scritte le lettere-tasto) e girano insieme al
-cubo. Il **💣** grande in basso a destra lancia la bomba, il **↻** rigioca. Per
-**girare il cubo** trascini il **dito**.
+In basso a sinistra ci sono **tre colonnine di bottoni colorate**, una per asse
+(come sulla tastiera): **Colonna** (rosso, Q/A), **Fila** (verde, W/S),
+**Profondità** (giallo, E/D) → il bottone **sopra** muove in "+", quello
+**sotto** in "−", così sai sempre quale asse muovi. Le **tre frecce colorate**
+accanto al cubo mostrano le direzioni degli assi (con su scritte le lettere-tasto)
+e girano insieme al cubo. Il **💣** grande in basso a destra lancia la bomba, il
+**↻** rigioca. Per **girare il cubo** trascini il **dito**.
 
 ## Come portarlo sul telefono (via Web, senza installare niente)
 1. `[APP — Godot]` menù **`Progetto` → `Esporta…`**.
