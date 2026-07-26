@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot 🎯
 
-**Versione 0.3** — 26/07/2026
+**Versione 0.4** — 26/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -35,7 +35,7 @@ aprirli. Nel PDF sono già aperti.)*
 ---
 
 ## Esercizio 1 — Il bottone che saluta 👋
-*(Ponte da Lazarus: è il tuo `Button1Click` che cambia una `Caption`!)*
+*Ponte da Lazarus: è il tuo `Button1Click` che cambia una `Caption`!*
 
 ### 🟢 Descrizione
 Crea una schermata con **un bottone** e **una scritta**. Quando premi il
@@ -93,7 +93,7 @@ func _quando_premo() -> void:
 ---
 
 ## Esercizio 2 — Muovi il quadrato 🟦
-*(Concetto nuovo: il **game loop**, cioe' `_process`.)*
+*Concetto nuovo: il **game loop**, cioe' `_process`.*
 
 ### 🟢 Descrizione
 Fai comparire un **quadrato** che puoi muovere in tutte le direzioni con le
@@ -148,7 +148,7 @@ func _process(delta: float) -> void:
 ---
 
 ## Esercizio 3 — Prendi la moneta 🪙
-*(Mette insieme: movimento + oggetto che cade + punteggio. Verso il gioco vero.)*
+*Mette insieme: movimento + oggetto che cade + punteggio. Verso il gioco vero.*
 
 ### 🟢 Descrizione
 Un **cestino** in basso (che muovi con le frecce ← →) e una **moneta** che cade
@@ -238,7 +238,7 @@ func _aggiorna_punteggio() -> void:
 ---
 
 ## Esercizio BOSS — Affonda la Bonomi 🌊💣
-*(Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.)*
+*Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.*
 
 ### 🟢 Descrizione
 La solita battaglia navale, ma **in tre dimensioni**: al posto della griglia a
@@ -310,3 +310,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.1 | 26/07/2026 | Prima stesura: Es.1 (bottone/Caption, ponte da Lazarus), Es.2 (game loop, muovi il quadrato), Es.3 (prendi la moneta: movimento+caduta+punteggio). Formato a 4 livelli di aiuto. |
 | 0.2 | 26/07/2026 | Introdotti i "Progetti BOSS" (giochi pronti da personalizzare). Aggiunto l'Esercizio BOSS "Affonda la Bonomi" (battaglia navale 3D): apri · gioca · fallo tuo · il codice nel repository. |
 | 0.3 | 26/07/2026 | Aggiunto lo screenshot del gioco "Affonda la Bonomi" nell'Esercizio BOSS. |
+| 0.4 | 26/07/2026 | Stile: sottotitoli degli esercizi senza parentesi (titolo + sottotitolo centrato più piccolo); blocchi di codice nero-su-bianco (fondo chiaro) per stampare senza sprecare toner. |
