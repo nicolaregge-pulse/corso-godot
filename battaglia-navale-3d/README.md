@@ -35,11 +35,12 @@ frecce accanto al cubo):
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
 
 ## Quando colpisci 💥
-Se la bomba prende il sottomarino, esplode e compare a tutto schermo la faccia
-di **Serena** con 🔥 💀 🔥 che **lampeggia**; poi l'overlay sparisce e si vede il
-**sottomarino affondato** (inclinato). Per far comparire la foto basta mettere un
-file **`serena.jpg`** nella cartella `battaglia-navale-3d/` (se non c'è, restano
-solo le emoji del fuoco e del teschio).
+Se la bomba prende il sottomarino, esplode e a tutto schermo si **alternano
+lampeggiando** la faccia di **Serena** e un **teschio con le ossa** (☠, la
+bandiera dei pirati), della stessa dimensione; poi l'overlay sparisce e si vede
+il **sottomarino affondato** (inclinato). Per far comparire la foto basta mettere
+un file **`serena.jpg`** nella cartella `battaglia-navale-3d/` (se non c'è, resta
+solo il teschio).
 
 ## Sul telefono/tablet (touch)
 In basso a sinistra ci sono **tre colonnine di bottoni colorate**, una per asse

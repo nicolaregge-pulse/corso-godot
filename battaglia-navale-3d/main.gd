@@ -51,6 +51,8 @@ var _touch_layer: CanvasLayer
 var _menu: CanvasLayer
 var _overlay: CanvasLayer
 var _serena_root: Control
+var _serena_img: TextureRect
+var _serena_teschio: Label
 var _mat_acqua: StandardMaterial3D
 var _mat_bombata: StandardMaterial3D
 var _mat_mirino: StandardMaterial3D
@@ -366,40 +368,55 @@ func _crea_overlay_serena() -> void:
 	_serena_root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_serena_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_overlay.add_child(_serena_root)
-	# sfondo scuro semitrasparente, così la faccia risalta
+	# sfondo scuro semitrasparente, così la faccia/teschio risaltano
 	var sfondo := ColorRect.new()
 	sfondo.color = Color(0, 0, 0, 0.72)
 	sfondo.set_anchors_preset(Control.PRESET_FULL_RECT)
 	sfondo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_serena_root.add_child(sfondo)
-	# la foto: riempie TUTTO lo schermo mantenendo le proporzioni (faccia intera, non deformata)
+	# la faccia di Serena: riempie lo schermo mantenendo le proporzioni (faccia intera)
 	if ResourceLoader.exists("res://serena.jpg"):
-		var rect := TextureRect.new()
-		rect.texture = load("res://serena.jpg")
-		rect.set_anchors_preset(Control.PRESET_FULL_RECT)
-		rect.offset_top = 70          # lascia spazio in alto per fuoco/teschio
-		rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		_serena_root.add_child(rect)
-	# fuoco/teschio in alto, centrato
-	var emoji := Label.new()
-	emoji.text = "🔥 💀 🔥"
-	emoji.add_theme_font_size_override("font_size", 90)
-	emoji.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	emoji.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	emoji.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_serena_root.add_child(emoji)
+		_serena_img = TextureRect.new()
+		_serena_img.texture = load("res://serena.jpg")
+		_serena_img.set_anchors_preset(Control.PRESET_FULL_RECT)
+		_serena_img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		_serena_img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		_serena_img.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_serena_root.add_child(_serena_img)
+	# il teschio con le ossa (bandiera dei pirati), STESSA area, sopra la faccia:
+	# i due si alternano lampeggiando (vedi _mostra_serena_esplode)
+	_serena_teschio = Label.new()
+	_serena_teschio.text = "☠"
+	_serena_teschio.add_theme_font_size_override("font_size", 420)
+	_serena_teschio.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_serena_teschio.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_serena_teschio.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_serena_teschio.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_serena_root.add_child(_serena_teschio)
 	_overlay.visible = false
 
 
 func _mostra_serena_esplode() -> void:
 	_overlay.visible = true
 	_serena_root.modulate = Color(1, 1, 1, 1)
-	var tw := create_tween().set_loops(4)
-	tw.tween_property(_serena_root, "modulate:a", 0.2, 0.14)
-	tw.tween_property(_serena_root, "modulate:a", 1.0, 0.14)
-	get_tree().create_timer(1.6).timeout.connect(_fine_serena)
+	# lampeggio alternato: prima la faccia, poi il teschio, di seguito
+	_scambia_serena(true)
+	if _serena_img != null:
+		var tw := create_tween().set_loops(4)
+		tw.tween_interval(0.22)
+		tw.tween_callback(_scambia_serena.bind(false))   # mostra il teschio
+		tw.tween_interval(0.22)
+		tw.tween_callback(_scambia_serena.bind(true))    # rimostra la faccia
+	get_tree().create_timer(2.0).timeout.connect(_fine_serena)
+
+
+func _scambia_serena(mostra_faccia: bool) -> void:
+	# se non c'è la foto, si vede solo il teschio
+	if _serena_img != null and is_instance_valid(_serena_img):
+		_serena_img.modulate.a = 1.0 if mostra_faccia else 0.0
+		_serena_teschio.modulate.a = 0.0 if mostra_faccia else 1.0
+	else:
+		_serena_teschio.modulate.a = 1.0
 
 
 func _fine_serena() -> void:
