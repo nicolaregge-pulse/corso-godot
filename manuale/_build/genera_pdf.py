@@ -371,6 +371,7 @@ body {
 /* ---------- COPERTINA ---------- */
 .cover {
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -407,13 +408,13 @@ body {
 }
 .cover .emoji { font-size: 22pt; font-style: normal; }
 .cover .meta {
-  margin-top: 46px;
-  padding: 10px 24px;
-  border: 1px solid var(--godot-blue);
-  color: var(--godot-blue-dark);
-  font-size: 12.5pt;
+  position: absolute;
+  bottom: 22mm;
+  left: 0;
+  right: 0;
+  color: var(--muted);
+  font-size: 11pt;
   letter-spacing: 0.5px;
-  background: #fff;
 }
 .cover .author {
   margin-top: 24px;
@@ -667,7 +668,6 @@ def main():
     <div class="title">{html.escape(cfg['title'])}</div>
     <div class="rule-cover"></div>
     <div class="subtitle">{html.escape(COVER_SUBTITLE)}</div>
-    <div class="meta">{html.escape(meta_line)}</div>
     <div class="author">{html.escape(COVER_AUTHOR)}</div>
   </section>
   <main>
@@ -683,8 +683,11 @@ def main():
     # Es. "manuale" v0.2 -> manuale-v0.2.pdf   (regola nel CLAUDE.md).
     slug = (version or "0.0").strip().replace(" ", "")
     pdf_name = f"{key}-v{slug}.pdf"
+    footer_mid = f"Versione {version}" if version else ""
     (BUILD_DIR / ".build.json").write_text(
-        json.dumps({"html": out_html.name, "pdf": pdf_name}), encoding="utf-8"
+        json.dumps({"html": out_html.name, "pdf": pdf_name,
+                    "footerLeft": COVER_SUBTITLE, "footerMid": footer_mid}),
+        encoding="utf-8",
     )
     print(f"Nome PDF consegnabile: {pdf_name}")
 

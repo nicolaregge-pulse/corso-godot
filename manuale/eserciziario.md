@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.5** — 26/07/2026
+**Versione 0.6** — 26/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -312,3 +312,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.3 | 26/07/2026 | Aggiunto lo screenshot del gioco "Affonda la Bonomi" nell'Esercizio BOSS. |
 | 0.4 | 26/07/2026 | Stile: sottotitoli degli esercizi senza parentesi, titolo più sottotitolo centrato; blocchi di codice nero-su-bianco su fondo chiaro per stampare senza sprecare toner. |
 | 0.5 | 26/07/2026 | Aspetto più sobrio: rimosse icone/emoji; parentesi tolte da titoli e grassetti; screenshot del BOSS spostato in cima all'esercizio; le frasi tra virgolette non si spezzano a fine riga. |
+| 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
