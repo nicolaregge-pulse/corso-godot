@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot 🎮
 
-**Versione 0.3** — 26/07/2026
+**Versione 0.4** — 26/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus**
@@ -300,3 +300,4 @@ stai facendo non serve a niente.
 | 0.1 | 26/07/2026 | Prima stesura: Cap. 0 (Godot vs Lazarus), Cap. 1 (i 4 concetti), Cap. 2 (GDScript, game loop), Cap. 3 (Chirurgo Pasticcione), regola uso AI. |
 | 0.2 | 26/07/2026 | Aggiunte due schede iniziali: Scheda 1 "Come si valutano i compiti" e Scheda 2 "Scrivere in Markdown" (con la tabella dei segnetti e come partire da un modello). |
 | 0.3 | 26/07/2026 | Aggiunto il Capitolo 4 "Il percorso: dagli esercizi al progetto boss": collega i 3 esercizi ai concetti, spiega cos'è un progetto boss e il passaggio 2D→3D, e come proporre "Affonda la Bonomi" ai ragazzi a gradini (con screenshot). |
+| 0.4 | 26/07/2026 | Stile: sottotitoli delle schede/capitoli resi come sottotitolo centrato più piccolo; blocchi di codice nero-su-bianco (fondo chiaro) per stampare senza sprecare toner. |

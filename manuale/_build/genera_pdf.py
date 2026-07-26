@@ -264,6 +264,15 @@ def transform_chapter_openers(html_str: str) -> str:
     def repl(m):
         attrs = m.group("attrs") or ""
         inner = m.group("inner").strip()
+        # Se subito dopo il titolo c'è un paragrafo tutto in corsivo, lo tiriamo
+        # dentro l'apertura come SOTTOTITOLO (centrato, più piccolo). Così basta
+        # scrivere *testo* sotto il titolo, senza parentesi.
+        sub = m.group("sub")
+        sub_html = ""
+        if sub:
+            subm = re.match(r"\s*<p><em>(?P<t>.*?)</em></p>\s*$", sub, flags=re.DOTALL)
+            if subm:
+                sub_html = f'<div class="csub">{subm.group("t").strip()}</div>'
         # separa "Capitolo N" / "Esercizio N" / "Scheda N" da " — resto del titolo"
         mm = re.match(r"^((?:Capitolo|Scheda|Esercizio)\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
         if mm:
@@ -273,16 +282,18 @@ def transform_chapter_openers(html_str: str) -> str:
                 '<div class="chapter">'
                 f'<div class="kicker">{kicker}</div>'
                 f'<h2{attrs} class="ctitle">{title}</h2>'
+                f'{sub_html}'
                 "</div>"
             )
         return (
             '<div class="chapter">'
             f'<h2{attrs} class="ctitle">{inner}</h2>'
+            f'{sub_html}'
             "</div>"
         )
 
     return re.sub(
-        r"<h2(?P<attrs>[^>]*)>(?P<inner>.*?)</h2>",
+        r"<h2(?P<attrs>[^>]*)>(?P<inner>.*?)</h2>(?P<sub>\s*<p><em>.*?</em></p>)?",
         repl, html_str, flags=re.DOTALL,
     )
 
@@ -400,6 +411,16 @@ h2.ctitle {
   max-width: 88%;
   page-break-after: avoid;
 }
+.chapter .csub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12.5pt;
+  color: var(--muted);
+  margin: 10px auto 0;
+  max-width: 82%;
+  line-height: 1.4;
+}
+.chapter .csub code { font-style: normal; }
 .chapter::after {
   content: "";
   display: block;
@@ -442,9 +463,11 @@ code {
   border: 1px solid var(--line);
 }
 
+/* Codice: NERO SU BIANCO (fondo chiaro) — pensato per la STAMPA: niente
+   blocchi scuri che sprecano toner. Colori di sintassi scuri, ben leggibili. */
 pre.code {
-  background: #22282f;
-  color: #e6edf3;
+  background: #faf8f3;
+  color: #1c1712;
   padding: 14px 16px;
   border-radius: 6px;
   white-space: pre-wrap;       /* manda a capo le righe lunghe: niente testo tagliato */
@@ -454,7 +477,7 @@ pre.code {
   text-align: left;
   page-break-inside: avoid;
   margin: 14px 0 16px;
-  border: 1px solid #2b3543;
+  border: 1px solid var(--line);
 }
 pre.code code {
   background: none;
@@ -463,10 +486,10 @@ pre.code code {
   color: inherit;
   font-size: inherit;
 }
-pre.code .kw  { color: #ff9d6b; font-weight: 600; }
-pre.code .str { color: #a5e075; }
-pre.code .num { color: #d4a0ff; }
-pre.code .com { color: #7d8896; font-style: italic; }
+pre.code .kw  { color: #9a3b0c; font-weight: 700; }
+pre.code .str { color: #276b2a; }
+pre.code .num { color: #6a34a8; }
+pre.code .com { color: #8a7f6f; font-style: italic; }
 
 /* ---------- TABELLE ---------- */
 table {
