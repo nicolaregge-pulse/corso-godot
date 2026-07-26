@@ -201,30 +201,69 @@ def build_body_html(md_text: str) -> str:
         code_repl, body_html, flags=re.DOTALL,
     )
 
+    body_html = transform_chapter_openers(body_html)
+
     return body_html
+
+
+def transform_chapter_openers(html_str: str) -> str:
+    """Trasforma ogni <h2> in un'apertura di capitolo in stile libro.
+
+    "Capitolo 0 — Cos'è Godot"  ->  occhiello "Capitolo 0" (centrato, piccolo)
+    + titolo grande centrato. Gli <h2> senza "Capitolo N" diventano un titolo
+    centrato senza occhiello (es. "Changelog del manuale").
+    """
+    def repl(m):
+        attrs = m.group("attrs") or ""
+        inner = m.group("inner").strip()
+        # separa "Capitolo N" da " — resto del titolo" (trattino tra spazi)
+        mm = re.match(r"^(Capitolo\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
+        if mm:
+            kicker = mm.group(1)
+            title = mm.group(2)
+            return (
+                '<div class="chapter">'
+                f'<div class="kicker">{kicker}</div>'
+                f'<h2{attrs} class="ctitle">{title}</h2>'
+                "</div>"
+            )
+        return (
+            '<div class="chapter">'
+            f'<h2{attrs} class="ctitle">{inner}</h2>'
+            "</div>"
+        )
+
+    return re.sub(
+        r"<h2(?P<attrs>[^>]*)>(?P<inner>.*?)</h2>",
+        repl, html_str, flags=re.DOTALL,
+    )
 
 
 CSS = r"""
 :root {
-  --godot-blue: #478cbf;
-  --godot-blue-dark: #35597a;
-  --ink: #21252b;
-  --muted: #5b6672;
-  --line: #d7dde3;
-  --code-bg: #f4f6f8;
-  --tip-bg: #eaf3fa;
-  --tip-border: #478cbf;
+  --godot-blue: #3a6ea5;
+  --godot-blue-dark: #2b3f57;
+  --ink: #201b16;
+  --muted: #6a6259;
+  --line: #d9d0c2;
+  --code-bg: #f5f2ec;
+  --tip-bg: #f6f1e6;
+  --tip-border: #b8933f;
+  --serif: Georgia, "Times New Roman", "Liberation Serif", "DejaVu Serif", serif;
 }
 
 * { box-sizing: border-box; }
 
-html { font-size: 11.2pt; }
+html { font-size: 11.7pt; }
 
 body {
   margin: 0;
   color: var(--ink);
-  font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.55;
+  font-family: var(--serif);
+  line-height: 1.62;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -238,67 +277,107 @@ body {
   justify-content: center;
   text-align: center;
   page-break-after: always;
-  background: linear-gradient(160deg, #ffffff 0%, #eef4f9 100%);
+  background: linear-gradient(170deg, #ffffff 0%, #f3ede1 100%);
 }
 .cover img.logo {
-  width: 220px;
+  width: 190px;
   height: auto;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 .cover .title {
-  font-size: 46pt;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-family: var(--serif);
+  font-size: 50pt;
+  font-weight: 700;
   color: var(--ink);
   line-height: 1.05;
   margin: 0;
 }
-.cover .subtitle {
-  font-size: 24pt;
-  font-weight: 600;
-  color: var(--godot-blue);
-  margin: 6px 0 0;
+.cover .rule-cover {
+  width: 90px;
+  height: 2px;
+  background: var(--godot-blue);
+  margin: 20px 0 18px;
 }
-.cover .emoji { font-size: 30pt; margin-top: 10px; }
+.cover .subtitle {
+  font-size: 22pt;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--godot-blue);
+  margin: 0;
+}
+.cover .emoji { font-size: 22pt; font-style: normal; }
 .cover .meta {
-  margin-top: 40px;
-  padding: 14px 26px;
-  border: 2px solid var(--godot-blue);
-  border-radius: 12px;
+  margin-top: 46px;
+  padding: 10px 24px;
+  border: 1px solid var(--godot-blue);
   color: var(--godot-blue-dark);
-  font-size: 13pt;
-  font-weight: 600;
+  font-size: 12.5pt;
+  letter-spacing: 0.5px;
   background: #fff;
 }
 .cover .author {
-  margin-top: 26px;
+  margin-top: 24px;
   color: var(--muted);
   font-size: 12pt;
+  font-style: italic;
 }
 
 /* ---------- CONTENUTO ---------- */
 main { padding: 0; }
 
-h1, h2, h3, h4 { line-height: 1.2; color: var(--ink); }
-
-h2 {
-  font-size: 21pt;
-  margin: 0 0 14px;
-  padding-bottom: 8px;
-  border-bottom: 3px solid var(--godot-blue);
+/* ---------- APERTURA DI CAPITOLO (stile libro) ---------- */
+.chapter {
   page-break-before: always;
+  text-align: center;
+  margin: 0 0 30px;
+  padding-top: 6mm;
+}
+main > .chapter:first-child { page-break-before: avoid; }
+.chapter .kicker {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--godot-blue);
+  margin-bottom: 12px;
+}
+h2.ctitle {
+  font-family: var(--serif);
+  font-size: 27pt;
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--ink);
+  margin: 0 auto;
+  max-width: 88%;
   page-break-after: avoid;
 }
-/* il primo h2 non deve forzare una pagina vuota dopo la copertina */
-main > h2:first-child { page-break-before: avoid; }
+.chapter::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--godot-blue);
+  margin: 16px auto 0;
+}
 
+/* sottotitoli di sezione dentro il capitolo */
 h3 {
-  font-size: 15pt;
+  font-family: var(--serif);
+  font-size: 15.5pt;
+  font-weight: 700;
+  font-style: italic;
   color: var(--godot-blue-dark);
-  margin: 22px 0 8px;
+  text-align: left;
+  margin: 26px 0 8px;
   page-break-after: avoid;
 }
-h4 { font-size: 13pt; margin: 16px 0 6px; }
+h4 {
+  font-size: 12.5pt;
+  text-align: left;
+  margin: 18px 0 6px;
+  page-break-after: avoid;
+}
 
 p { margin: 0 0 11px; }
 
@@ -308,23 +387,24 @@ strong { color: #16324a; }
 
 code {
   font-family: "SFMono-Regular", "Consolas", "Liberation Mono", Menlo, monospace;
-  font-size: 0.88em;
+  font-size: 0.85em;
   background: var(--code-bg);
   padding: 1px 5px;
-  border-radius: 4px;
+  border-radius: 3px;
   border: 1px solid var(--line);
 }
 
 pre.code {
-  background: #1e2530;
+  background: #22282f;
   color: #e6edf3;
   padding: 14px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow-x: auto;
   font-size: 9.6pt;
   line-height: 1.5;
+  text-align: left;
   page-break-inside: avoid;
-  margin: 12px 0 16px;
+  margin: 14px 0 16px;
   border: 1px solid #2b3543;
 }
 pre.code code {
@@ -343,31 +423,33 @@ pre.code .com { color: #7d8896; font-style: italic; }
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 12px 0 18px;
+  margin: 14px 0 20px;
   font-size: 10pt;
+  text-align: left;
   page-break-inside: avoid;
 }
 th, td {
   border: 1px solid var(--line);
-  padding: 7px 10px;
+  padding: 7px 11px;
   text-align: left;
   vertical-align: top;
 }
 th {
   background: var(--godot-blue);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
-tr:nth-child(even) td { background: #f7f9fb; }
+tr:nth-child(even) td { background: #f7f4ee; }
 
 /* ---------- CITAZIONI / SUGGERIMENTI ---------- */
 blockquote {
-  margin: 14px 0;
-  padding: 12px 16px;
+  margin: 16px 0;
+  padding: 12px 18px;
   background: var(--tip-bg);
-  border-left: 5px solid var(--tip-border);
-  border-radius: 0 8px 8px 0;
-  color: #234;
+  border-left: 4px solid var(--tip-border);
+  color: #3a342b;
+  font-style: italic;
+  text-align: left;
   page-break-inside: avoid;
 }
 blockquote p { margin: 0; }
@@ -375,7 +457,7 @@ blockquote p + p { margin-top: 8px; }
 
 /* ---------- IMMAGINI ---------- */
 figure.fig {
-  margin: 18px 0;
+  margin: 20px 0;
   text-align: center;
   page-break-inside: avoid;
 }
@@ -383,24 +465,24 @@ figure.fig img {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
 }
 figure.fig figcaption {
-  margin-top: 8px;
+  margin-top: 9px;
   font-size: 9.5pt;
   color: var(--muted);
   font-style: italic;
+  text-align: center;
 }
 
 hr {
   border: none;
   border-top: 1px solid var(--line);
-  margin: 22px 0;
+  margin: 24px 0;
 }
 
-ul, ol { margin: 0 0 12px; padding-left: 22px; }
-li { margin: 3px 0; }
+ul, ol { margin: 0 0 12px; padding-left: 24px; text-align: left; }
+li { margin: 4px 0; }
 """
 
 
@@ -431,6 +513,7 @@ def main():
   <section class="cover">
     <img class="logo" src="{logo_uri}" alt="Logo Godot"/>
     <div class="title">{html.escape(COVER_TITLE)}</div>
+    <div class="rule-cover"></div>
     <div class="subtitle">{html.escape(COVER_SUBTITLE)} <span class="emoji">🎮</span></div>
     <div class="meta">{html.escape(meta_line)}</div>
     <div class="author">{html.escape(COVER_AUTHOR)}</div>
@@ -443,6 +526,13 @@ def main():
 
     OUT_HTML.write_text(doc, encoding="utf-8")
     print(f"HTML scritto: {OUT_HTML}  ({len(doc)} byte)")
+
+    # Nome del PDF consegnabile: SEMPRE con il numero di versione, mai due uguali.
+    # Es. versione "0.1" -> manuale-v0.1.pdf   (regola nel CLAUDE.md).
+    slug = (version or "0.0").strip().replace(" ", "")
+    pdf_name = f"manuale-v{slug}.pdf"
+    (BUILD_DIR / ".pdfname").write_text(pdf_name, encoding="utf-8")
+    print(f"Nome PDF consegnabile: {pdf_name}")
 
 
 if __name__ == "__main__":

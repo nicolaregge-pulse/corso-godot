@@ -1,11 +1,18 @@
 // Converte manuale.html in PDF impaginato (A4) usando Chromium via Playwright.
 // Uso: node genera_pdf.js
 const path = require('path');
+const fs = require('fs');
 const { chromium } = require('playwright');
 
 const BUILD_DIR = __dirname;
 const HTML_PATH = path.join(BUILD_DIR, 'manuale.html');
-const PDF_PATH = path.join(BUILD_DIR, '..', 'manuale.pdf');
+
+// Il nome del PDF (con versione) lo decide genera_pdf.py e lo scrive in .pdfname.
+const nameFile = path.join(BUILD_DIR, '.pdfname');
+const pdfName = fs.existsSync(nameFile)
+  ? fs.readFileSync(nameFile, 'utf8').trim()
+  : 'manuale-v0.0.pdf';
+const PDF_PATH = path.join(BUILD_DIR, '..', pdfName);
 
 (async () => {
   const browser = await chromium.launch({

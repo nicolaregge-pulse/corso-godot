@@ -246,6 +246,16 @@ Il corso stesso è versionato su Git, su due livelli:
    **congelata**; se cambia il contenuto si **bumpa** il numero di versione e si
    aggiunge una voce al changelog in fondo al `manuale.md`. Mai riusare un
    numero già consegnato.
+   - **Il numero di versione sta SEMPRE nel NOME del file PDF.** Il consegnabile
+     si chiama `manuale-vX.Y.pdf` (es. `manuale-v0.1.pdf`), **mai** un generico
+     `manuale.pdf`. Così due versioni non si sovrascrivono e si vede a colpo
+     d'occhio quale versione si ha in mano. Il numero nel nome file deve
+     **coincidere** con la "Versione X.Y" scritta nell'intestazione del `.md`.
+   - **Mai due file con lo stesso numero di versione.** Se cambia anche solo un
+     contenuto, prima si bumpa la versione nel `.md`, poi si rigenera il PDF (che
+     prenderà automaticamente il nuovo nome).
+   - Il nome del PDF è **generato in automatico** dalla "Versione" del `.md`
+     (vedi `manuale/_build/genera_pdf.py`): non va scritto a mano.
 
 ## 🗺️ Prossimi passi (roadmap immediata)
 
