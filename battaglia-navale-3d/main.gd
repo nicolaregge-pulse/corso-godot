@@ -19,6 +19,10 @@ extends Node3D
 #    - MOUSE trascinato   = gira il cubo (in più, se vuoi)
 #    - SPAZIO         = lancia la bomba sulla cella del mirino
 #    - INVIO          = rigioca
+#
+#  SUL TELEFONO (touch): joypad a schermo per il mirino, tasti Prof−/Prof+
+#  per la profondità, 💣 per la bomba, ↻ per rigiocare, e il DITO trascinato
+#  gira il cubo.
 # ============================================================
 
 # ---- Parametri (cambiali per sperimentare!) ----------------
@@ -47,6 +51,7 @@ var _cursore: Vector3i        # la cella puntata dal mirino
 var _sub_coord: Vector3i
 var _sottomarino: Node3D
 var _etichetta: Label
+var _touch_layer: CanvasLayer
 var _messaggio: String = ""
 var _bombe: int = 0
 var _vinto: bool = false
@@ -57,6 +62,7 @@ func _ready() -> void:
 	_crea_ambiente()
 	_crea_griglia()
 	_crea_etichette_assi()
+	_crea_comandi_touch()
 	_nuova_partita()
 
 
@@ -170,6 +176,67 @@ func _stile_etichetta(l: Label3D, selezionata: bool, base: Color) -> void:
 		l.outline_size = 0
 
 
+# ---- Comandi a TOCCO (per telefono/tablet) ----
+# Un mini-joypad a schermo: così il gioco si può usare anche senza tastiera.
+func _crea_comandi_touch() -> void:
+	_touch_layer = CanvasLayer.new()
+	add_child(_touch_layer)
+	var s := Vector2(76, 76)
+	var passo := 82.0
+	# Joypad in basso a sinistra: colonna (← →) e fila (↑ ↓)
+	_btn("↑", s, "bl", Vector2(24 + passo, 24 + 2 * passo), _muovi_cursore.bind(Vector3i(0, 1, 0)))
+	_btn("←", s, "bl", Vector2(24, 24 + passo), _muovi_cursore.bind(Vector3i(-1, 0, 0)))
+	_btn("→", s, "bl", Vector2(24 + 2 * passo, 24 + passo), _muovi_cursore.bind(Vector3i(1, 0, 0)))
+	_btn("↓", s, "bl", Vector2(24 + passo, 24), _muovi_cursore.bind(Vector3i(0, -1, 0)))
+	# Profondità (il numero) ai due angoli bassi del joypad
+	_btn("Prof−", s, "bl", Vector2(24, 24), _muovi_cursore.bind(Vector3i(0, 0, -1)))
+	_btn("Prof+", s, "bl", Vector2(24 + 2 * passo, 24), _muovi_cursore.bind(Vector3i(0, 0, 1)))
+	# FUOCO (in basso a destra) e RIGIOCA (in alto a destra)
+	_btn("💣", Vector2(128, 128), "br", Vector2(28, 28), _spara_touch)
+	_btn("↻ Rigioca", Vector2(150, 54), "tr", Vector2(24, 20), _nuova_partita)
+
+
+func _btn(txt: String, dim: Vector2, corner: String, margine: Vector2, azione: Callable) -> void:
+	var b := Button.new()
+	b.text = txt
+	b.focus_mode = Control.FOCUS_NONE   # così le frecce restano per il gioco
+	b.add_theme_font_size_override("font_size", 26)
+	b.modulate = Color(1, 1, 1, 0.9)
+	_touch_layer.add_child(b)
+	_ancora(b, corner, margine, dim)
+	b.pressed.connect(azione)
+
+
+func _ancora(c: Control, corner: String, m: Vector2, dim: Vector2) -> void:
+	match corner:
+		"bl":   # basso-sinistra
+			c.anchor_left = 0; c.anchor_right = 0
+			c.anchor_top = 1;  c.anchor_bottom = 1
+			c.offset_left = m.x
+			c.offset_right = m.x + dim.x
+			c.offset_top = -m.y - dim.y
+			c.offset_bottom = -m.y
+		"br":   # basso-destra
+			c.anchor_left = 1; c.anchor_right = 1
+			c.anchor_top = 1;  c.anchor_bottom = 1
+			c.offset_left = -m.x - dim.x
+			c.offset_right = -m.x
+			c.offset_top = -m.y - dim.y
+			c.offset_bottom = -m.y
+		"tr":   # alto-destra
+			c.anchor_left = 1; c.anchor_right = 1
+			c.anchor_top = 0;  c.anchor_bottom = 0
+			c.offset_left = -m.x - dim.x
+			c.offset_right = -m.x
+			c.offset_top = m.y
+			c.offset_bottom = m.y + dim.y
+
+
+func _spara_touch() -> void:
+	if not _vinto:
+		_lancia_bomba(_cursore)
+
+
 # ---- Inizio (o ri-inizio) di una partita ----
 func _nuova_partita() -> void:
 	_bombe = 0
@@ -254,6 +321,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT):
 		_perno_camera.rotation.y -= event.relative.x * 0.008
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - event.relative.y * 0.008, -1.3, 1.3)
+		return
+
+	# Girare la telecamera trascinando il DITO (telefono/tablet)
+	if event is InputEventScreenDrag:
+		_perno_camera.rotation.y -= event.relative.x * 0.008
+		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - event.relative.y * 0.008, -1.4, 1.4)
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:

@@ -23,6 +23,21 @@ Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 - **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
 
+## Sul telefono/tablet (touch)
+Ci sono i **pulsanti a schermo**: il joypad in basso a sinistra (mirino), i tasti
+**Prof−/Prof+** per la profondità, il **💣** per la bomba, il **↻** per rigiocare.
+Per **girare il cubo** trascini il **dito** sullo schermo.
+
+## Come portarlo sul telefono (via Web, senza installare niente)
+1. `[APP — Godot]` menù **`Progetto` → `Esporta…`**.
+2. **`Aggiungi…` → `Web`**. Se chiede i *modelli di esportazione*, clicca per
+   **scaricarli** (una volta sola).
+3. **`Esporta progetto`** → scegli una cartella (es. `web/`) e come nome file
+   **`index.html`** → esporta.
+4. Quei file vanno messi **online**: la via più semplice e browser-only è
+   **GitHub Pages** (Impostazioni del repo → *Pages*). Poi apri il **link** sul
+   telefono. → Nessuna installazione, giochi dal browser e puoi condividerlo.
+
 Quando punti una cella, la sua **tripletta di coordinate** (attorno al cubo) diventa **grande e bianca**, così vedi subito cosa hai selezionato.
 
 ## Come si apre (per Nicola)
