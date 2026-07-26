@@ -217,7 +217,48 @@ def build_body_html(md_text: str) -> str:
     body_html = style_details(body_html)
     body_html = transform_chapter_openers(body_html)
 
+    # Toglie la lineetta orizzontale (---) subito prima di un'apertura di
+    # capitolo: da sola può scivolare su una pagina nuova e lasciarla vuota.
+    body_html = re.sub(r'<hr\s*/?>\s*(?=<div class="chapter")', "", body_html)
+
+    body_html = typographic_fixes(body_html)
     return body_html
+
+
+def typographic_fixes(html_str: str) -> str:
+    """Piccoli aggiustamenti tipografici (niente parole "orfane" a fine riga):
+
+    - le frasi tra virgolette (“ ”, « ») non si spezzano più a fine riga;
+    - l'ultima parola di un paragrafo/elenco resta attaccata alla precedente,
+      così non rimane una parola da sola su una riga.
+    I blocchi di codice <pre> restano intatti.
+    """
+    NB = " "  # spazio insecabile
+
+    # 1) protegge i blocchi di codice
+    blocks = []
+    def _stash(m):
+        blocks.append(m.group(0))
+        return f"\x00PRE{len(blocks) - 1}\x00"
+    html_str = re.sub(r"<pre.*?</pre>", _stash, html_str, flags=re.DOTALL)
+
+    # 2) niente spezzatura dentro le virgolette
+    def _nowrap(m):
+        return m.group(0).replace(" ", NB)
+    html_str = re.sub(r"“[^”]*”", _nowrap, html_str)
+    html_str = re.sub(r"«[^»]*»", _nowrap, html_str)
+
+    # 3) l'ultima parola non resta orfana (unita alla penultima)
+    html_str = re.sub(
+        r"(\S) (\S+)(\s*</(?:p|li)>)",
+        lambda m: f"{m.group(1)}{NB}{m.group(2)}{m.group(3)}",
+        html_str,
+    )
+
+    # 4) ripristina i blocchi di codice
+    def _restore(m):
+        return blocks[int(m.group(1))]
+    return re.sub(r"\x00PRE(\d+)\x00", _restore, html_str)
 
 
 def prepare_details(md_text: str) -> str:
@@ -475,7 +516,6 @@ pre.code {
   font-size: 9pt;
   line-height: 1.5;
   text-align: left;
-  page-break-inside: avoid;
   margin: 14px 0 16px;
   border: 1px solid var(--line);
 }
@@ -566,7 +606,6 @@ details.livello {
   padding: 0 16px 8px;
   background: #fcfaf5;
   text-align: left;
-  page-break-inside: avoid;
 }
 details.livello > summary {
   list-style: none;
@@ -577,6 +616,7 @@ details.livello > summary {
   margin: 0 -16px 10px;
   border-bottom: 1px solid var(--line);
   background: #f0ebe0;
+  page-break-after: avoid;
 }
 details.livello > summary::-webkit-details-marker { display: none; }
 details.livello > summary::marker { content: ""; }
@@ -626,7 +666,7 @@ def main():
     <img class="logo" src="{logo_uri}" alt="Logo Godot"/>
     <div class="title">{html.escape(cfg['title'])}</div>
     <div class="rule-cover"></div>
-    <div class="subtitle">{html.escape(COVER_SUBTITLE)} <span class="emoji">{cfg['emoji']}</span></div>
+    <div class="subtitle">{html.escape(COVER_SUBTITLE)}</div>
     <div class="meta">{html.escape(meta_line)}</div>
     <div class="author">{html.escape(COVER_AUTHOR)}</div>
   </section>
