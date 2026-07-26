@@ -230,13 +230,15 @@ func _crea_sottomarino() -> Node3D:
 # ---- Girare il cubo con i tasti A/D/W/S (in continuo) ----
 func _process(delta: float) -> void:
 	var v := 1.3 * delta
-	if Input.is_key_pressed(KEY_A):
+	# Gira il cubo con A/D/W/S, oppure tenendo SHIFT + le frecce.
+	var shift := Input.is_key_pressed(KEY_SHIFT)
+	if Input.is_key_pressed(KEY_A) or (shift and Input.is_key_pressed(KEY_LEFT)):
 		_perno_camera.rotation.y += v
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_key_pressed(KEY_D) or (shift and Input.is_key_pressed(KEY_RIGHT)):
 		_perno_camera.rotation.y -= v
-	if Input.is_key_pressed(KEY_W):
+	if Input.is_key_pressed(KEY_W) or (shift and Input.is_key_pressed(KEY_UP)):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.3, 1.3)
-	if Input.is_key_pressed(KEY_S):
+	if Input.is_key_pressed(KEY_S) or (shift and Input.is_key_pressed(KEY_DOWN)):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.3, 1.3)
 
 
@@ -249,6 +251,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
+		# con SHIFT premuto le frecce girano il cubo (gestito in _process),
+		# quindi qui NON muovono il mirino.
+		if event.shift_pressed and event.keycode in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]:
+			return
 		match event.keycode:
 			KEY_LEFT:  _muovi_cursore(Vector3i(-1, 0, 0))
 			KEY_RIGHT: _muovi_cursore(Vector3i(1, 0, 0))
