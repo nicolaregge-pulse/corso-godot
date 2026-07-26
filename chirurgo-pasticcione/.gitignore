@@ -1,0 +1,7 @@
+# Cache di import generata da Godot: NON va versionata (si ricrea da sola).
+.godot/
+
+# Esportazioni del gioco
+/export/
+*.exe
+*.pck

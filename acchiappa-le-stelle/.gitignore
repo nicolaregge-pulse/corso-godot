@@ -1,0 +1,8 @@
+# Cartella generata da Godot (cache di import): NON va versionata.
+# Godot la ricrea da sola quando apri il progetto.
+.godot/
+
+# Eventuali esportazioni del gioco (build .exe, .apk, ecc.)
+/export/
+*.exe
+*.pck

@@ -1,0 +1,227 @@
+# Eserciziario — Corso di Godot 🎯
+
+**Versione 0.1** — 26/07/2026
+*Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
+
+---
+
+## Come funziona ogni esercizio (leggere prima!)
+
+Ogni esercizio ha **4 livelli di aiuto**. Prova sempre da solo, e apri il
+livello successivo **solo se sei bloccato**:
+
+1. 🟢 **Descrizione** — cosa devi ottenere.
+2. 🟡 **Aiuto** — un indizio su come fare.
+3. 🟠 **La scena** — quali nodi creare (i "mattoncini").
+4. 🔴 **Codice completo** — la soluzione da copiare/incollare.
+
+> Regola: se copi il **Codice completo**, poi devi saper **spiegare a voce cosa
+> fa, riga per riga**. Se lo sai spiegare, hai imparato lo stesso. 😉
+
+*(Nel file `.md` i livelli 2–4 sono a scomparsa: clicca sul triangolino per
+aprirli. Nel PDF sono già aperti.)*
+
+---
+
+## Esercizio 1 — Il bottone che saluta 👋
+*(Ponte da Lazarus: è il tuo `Button1Click` che cambia una `Caption`!)*
+
+### 🟢 Descrizione
+Crea una schermata con **un bottone** e **una scritta**. Quando premi il
+bottone, la scritta deve cambiare (es. da "..." a "Ciao! Mi hai premuto").
+
+<details>
+<summary>🟡 Aiuto</summary>
+
+- In Godot il bottone è il nodo **Button**, la scritta è il nodo **Label**.
+- La proprietà `text` di Godot è come la **Caption** di Lazarus.
+- L'evento "click" in Godot si chiama **segnale** `pressed`. Lo colleghi a una
+  tua funzione con `bottone.pressed.connect(la_mia_funzione)`.
+</details>
+
+<details>
+<summary>🟠 La scena (i nodi da creare)</summary>
+
+1. Nodo radice: **Node2D** (rinominalo `Main`).
+2. Figlio: **Button** → rinominalo **`BottoneCiao`**.
+3. Figlio: **Label** → rinominalo **`Etichetta`**.
+4. Attacca uno **script** al nodo radice `Main`.
+</details>
+
+<details>
+<summary>🔴 Codice completo</summary>
+
+```gdscript
+extends Node2D
+
+# $NomeNodo prende un nodo figlio per nome (come riferirsi a Button1 in Lazarus)
+@onready var bottone: Button = $BottoneCiao
+@onready var etichetta: Label = $Etichetta
+
+func _ready() -> void:
+	# Posizioniamo i due elementi così non si sovrappongono
+	bottone.position = Vector2(100, 100)
+	bottone.text = "Salutami!"          # <- come Button.Caption in Lazarus
+	etichetta.position = Vector2(100, 180)
+	etichetta.text = "..."
+	# Colleghiamo il "click" (segnale pressed) alla nostra funzione
+	bottone.pressed.connect(_quando_premo)
+
+# Questa e' come il tuo Button1Click di Lazarus
+func _quando_premo() -> void:
+	etichetta.text = "Ciao! Mi hai premuto."
+```
+</details>
+
+---
+
+## Esercizio 2 — Muovi il quadrato 🟦
+*(Concetto nuovo: il **game loop**, cioe' `_process`.)*
+
+### 🟢 Descrizione
+Fai comparire un **quadrato** che puoi muovere in tutte le direzioni con le
+**frecce** della tastiera.
+
+<details>
+<summary>🟡 Aiuto</summary>
+
+- Un quadrato colorato semplice = nodo **ColorRect**.
+- Il movimento va scritto in **`_process(delta)`**: e' la funzione che gira ~60
+  volte al secondo (in Lazarus non c'era: il programma stava fermo).
+- Le frecce si leggono con `Input.is_action_pressed("ui_left")` (e `ui_right`,
+  `ui_up`, `ui_down`).
+- Moltiplica sempre la velocita' per `delta`, cosi' va uguale su ogni PC.
+</details>
+
+<details>
+<summary>🟠 La scena (i nodi da creare)</summary>
+
+1. Nodo radice: **Node2D** (rinominalo `Main`).
+2. Figlio: **ColorRect** → rinominalo **`Quadrato`**.
+3. Attacca uno **script** al nodo radice `Main`.
+</details>
+
+<details>
+<summary>🔴 Codice completo</summary>
+
+```gdscript
+extends Node2D
+
+@onready var quadrato: ColorRect = $Quadrato
+const VELOCITA: float = 300.0   # pixel al secondo
+
+func _ready() -> void:
+	quadrato.size = Vector2(60, 60)
+	quadrato.color = Color(0.3, 0.7, 1.0)   # azzurro
+	quadrato.position = Vector2(200, 200)
+
+# _process gira a OGNI fotogramma: qui muoviamo il quadrato
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_left"):
+		quadrato.position.x -= VELOCITA * delta
+	if Input.is_action_pressed("ui_right"):
+		quadrato.position.x += VELOCITA * delta
+	if Input.is_action_pressed("ui_up"):
+		quadrato.position.y -= VELOCITA * delta
+	if Input.is_action_pressed("ui_down"):
+		quadrato.position.y += VELOCITA * delta
+```
+</details>
+
+---
+
+## Esercizio 3 — Prendi la moneta 🪙
+*(Mette insieme: movimento + oggetto che cade + punteggio. Verso il gioco vero.)*
+
+### 🟢 Descrizione
+Un **cestino** in basso (che muovi con le frecce ← →) e una **moneta** che cade
+dall'alto. Se la prendi col cestino fai **+1 punto** e la moneta riparte
+dall'alto in una colonna a caso. Mostra il punteggio a schermo.
+
+<details>
+<summary>🟡 Aiuto</summary>
+
+- Cestino e moneta: due **ColorRect**. Il punteggio: un **Label**.
+- Muovi il cestino in `_process` (come nell'Esercizio 2, ma solo sinistra/destra).
+- Fai scendere la moneta ogni fotogramma: `moneta.position.y += velocita * delta`.
+- Per capire se il cestino "tocca" la moneta usa i rettangoli:
+  `Rect2(a.position, a.size).intersects(Rect2(b.position, b.size))`.
+- Quando la moneta esce sotto (o e' presa), rimettila in alto a una `x` a caso.
+</details>
+
+<details>
+<summary>🟠 La scena (i nodi da creare)</summary>
+
+1. Nodo radice: **Node2D** (rinominalo `Main`).
+2. Figlio **ColorRect** → **`Cestino`**.
+3. Figlio **ColorRect** → **`Moneta`**.
+4. Figlio **Label** → **`Punteggio`**.
+5. Attacca uno **script** al nodo radice `Main`.
+</details>
+
+<details>
+<summary>🔴 Codice completo</summary>
+
+```gdscript
+extends Node2D
+
+@onready var cestino: ColorRect = $Cestino
+@onready var moneta: ColorRect = $Moneta
+@onready var punteggio: Label = $Punteggio
+
+const VELOCITA_CESTINO: float = 500.0
+const VELOCITA_MONETA: float = 300.0
+
+var punti: int = 0
+var larghezza: float
+
+func _ready() -> void:
+	larghezza = get_viewport_rect().size.x
+	# Cestino in basso
+	cestino.size = Vector2(120, 24)
+	cestino.color = Color(0.6, 0.4, 0.2)
+	cestino.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
+	# Moneta
+	moneta.size = Vector2(30, 30)
+	moneta.color = Color(1.0, 0.85, 0.1)
+	_rimetti_in_alto()
+	# Punteggio
+	punteggio.position = Vector2(20, 20)
+	_aggiorna_punteggio()
+
+func _process(delta: float) -> void:
+	# Muovi il cestino
+	if Input.is_action_pressed("ui_left"):
+		cestino.position.x -= VELOCITA_CESTINO * delta
+	if Input.is_action_pressed("ui_right"):
+		cestino.position.x += VELOCITA_CESTINO * delta
+	cestino.position.x = clamp(cestino.position.x, 0, larghezza - cestino.size.x)
+
+	# Fai scendere la moneta
+	moneta.position.y += VELOCITA_MONETA * delta
+
+	# Presa?
+	if Rect2(cestino.position, cestino.size).intersects(Rect2(moneta.position, moneta.size)):
+		punti += 1
+		_aggiorna_punteggio()
+		_rimetti_in_alto()
+	# Persa (uscita sotto)?
+	elif moneta.position.y > get_viewport_rect().size.y:
+		_rimetti_in_alto()
+
+func _rimetti_in_alto() -> void:
+	var x := randf_range(0, larghezza - moneta.size.x)
+	moneta.position = Vector2(x, -moneta.size.y)
+
+func _aggiorna_punteggio() -> void:
+	punteggio.text = "Monete: %d" % punti
+```
+</details>
+
+---
+
+## Changelog dell'eserciziario
+
+| Versione | Data | Cosa e' cambiato |
+|---|---|---|
+| 0.1 | 26/07/2026 | Prima stesura: Es.1 (bottone/Caption, ponte da Lazarus), Es.2 (game loop, muovi il quadrato), Es.3 (prendi la moneta: movimento+caduta+punteggio). Formato a 4 livelli di aiuto. |
