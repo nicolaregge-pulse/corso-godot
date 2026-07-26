@@ -1,4 +1,4 @@
-# Battaglia Navale 3D 🌊💣 (prototipo)
+# Affonda la Bonomi 🌊💣 (battaglia navale 3D — prototipo)
 
 Una battaglia navale **in tre dimensioni**: invece della solita griglia a righe
 e colonne, c'è un **cubo** di celle d'acqua. Dentro è nascosto **un
