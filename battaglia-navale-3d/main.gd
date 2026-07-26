@@ -12,11 +12,12 @@ extends Node3D
 #    - Fila       = lettera minuscola  (a b c d e)
 #    - Profondità = NUMERO             (1 2 3 4 5)
 #
-#  COMANDI:
+#  COMANDI (solo 6 tasti di movimento + SHIFT):
 #    - FRECCE ← → ↑ ↓ = muovi il mirino (colonna e fila)
-#    - Q / E          = profondità (avanti / indietro)
+#    - Q / A          = muovi il mirino in profondità
+#    - SHIFT + quei tasti = girano il CUBO invece di muovere il mirino
+#    - MOUSE trascinato   = gira il cubo (in più, se vuoi)
 #    - SPAZIO         = lancia la bomba sulla cella del mirino
-#    - MOUSE trascinato = gira attorno al cubo (per vederlo in 3D)
 #    - INVIO          = rigioca
 # ============================================================
 
@@ -229,17 +230,22 @@ func _crea_sottomarino() -> Node3D:
 
 # ---- Girare il cubo con i tasti A/D/W/S (in continuo) ----
 func _process(delta: float) -> void:
+	# Con SHIFT premuto, gli STESSI 6 tasti girano il cubo (invece del mirino).
+	if not Input.is_key_pressed(KEY_SHIFT):
+		return
 	var v := 1.3 * delta
-	# Gira il cubo con A/D/W/S, oppure tenendo SHIFT + le frecce.
-	var shift := Input.is_key_pressed(KEY_SHIFT)
-	if Input.is_key_pressed(KEY_A) or (shift and Input.is_key_pressed(KEY_LEFT)):
+	if Input.is_key_pressed(KEY_LEFT):
 		_perno_camera.rotation.y += v
-	if Input.is_key_pressed(KEY_D) or (shift and Input.is_key_pressed(KEY_RIGHT)):
+	if Input.is_key_pressed(KEY_RIGHT):
 		_perno_camera.rotation.y -= v
-	if Input.is_key_pressed(KEY_W) or (shift and Input.is_key_pressed(KEY_UP)):
-		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.3, 1.3)
-	if Input.is_key_pressed(KEY_S) or (shift and Input.is_key_pressed(KEY_DOWN)):
-		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.3, 1.3)
+	if Input.is_key_pressed(KEY_UP):
+		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.4, 1.4)
+	if Input.is_key_pressed(KEY_DOWN):
+		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.4, 1.4)
+	if Input.is_key_pressed(KEY_Q):
+		_perno_camera.rotation.z += v
+	if Input.is_key_pressed(KEY_A):
+		_perno_camera.rotation.z -= v
 
 
 # ---- Input: tastiera (mirino + spara + rigioca), mouse (gira) ----
@@ -251,17 +257,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
-		# con SHIFT premuto le frecce girano il cubo (gestito in _process),
+		# Con SHIFT questi 6 tasti girano il cubo (gestito in _process):
 		# quindi qui NON muovono il mirino.
-		if event.shift_pressed and event.keycode in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN]:
+		if event.shift_pressed and event.keycode in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, KEY_Q, KEY_A]:
 			return
 		match event.keycode:
 			KEY_LEFT:  _muovi_cursore(Vector3i(-1, 0, 0))
 			KEY_RIGHT: _muovi_cursore(Vector3i(1, 0, 0))
 			KEY_UP:    _muovi_cursore(Vector3i(0, 1, 0))
 			KEY_DOWN:  _muovi_cursore(Vector3i(0, -1, 0))
-			KEY_Q:     _muovi_cursore(Vector3i(0, 0, -1))
-			KEY_E:     _muovi_cursore(Vector3i(0, 0, 1))
+			KEY_Q:     _muovi_cursore(Vector3i(0, 0, 1))
+			KEY_A:     _muovi_cursore(Vector3i(0, 0, -1))
 			KEY_SPACE:
 				if not _vinto:
 					_lancia_bomba(_cursore)

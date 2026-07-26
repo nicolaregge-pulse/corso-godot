@@ -15,11 +15,12 @@ una zona **3×3×3** attorno al punto. Se il sottomarino è in quella zona → C
 
 Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 
-## Come si gioca
+## Come si gioca (6 tasti + Shift)
 - **Frecce ← → ↑ ↓** = muovi il **mirino** (la cella che brilla di verde) su colonna e fila.
-- **Q / E** = profondità (avanti / indietro).
+- **Q / A** = muovi il mirino in profondità.
+- **SHIFT + gli stessi tasti** (frecce e Q/A) = **girano il cubo** invece di muovere il mirino.
+- **Mouse trascinato** = gira il cubo (in più, se vuoi).
 - **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
-- **A / D / W / S** · **Shift + frecce** · **mouse trascinato** = giri attorno al cubo (per vederlo bene in 3D).
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
 
 Quando punti una cella, la sua **tripletta di coordinate** (attorno al cubo) diventa **grande e bianca**, così vedi subito cosa hai selezionato.
