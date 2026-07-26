@@ -33,7 +33,7 @@ OUT_HTML = BUILD_DIR / "manuale.html"
 # ---------------------------------------------------------------------------
 COVER_TITLE = "Il Manuale"
 COVER_SUBTITLE = "Corso di Godot"
-COVER_AUTHOR = "Corso a cura del prof. Nicola"
+COVER_AUTHOR = "Corso a cura del prof. Nicola Regge"
 
 
 def data_uri(path: Path) -> str:
