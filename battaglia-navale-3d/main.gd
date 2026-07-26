@@ -7,7 +7,7 @@ extends Node3D
 #  esplode e colpisce una zona 3x3x3. Se il sottomarino è dentro
 #  quella zona -> COLPITO! 🎉
 #
-#  All'avvio scegli quanti cubi per lato (da 5 a 10).
+#  All'avvio (e a ogni "rigioca") scegli quanti cubi per lato (da 4 a 10).
 #
 #  COMANDI (3 colonne di tastiera QWERTY, su sopra / giù sotto):
 #    - Q / A = Colonna (+/−)    · lettere ROSSE
@@ -100,23 +100,23 @@ func _mostra_menu_inizio() -> void:
 	riga.alignment = BoxContainer.ALIGNMENT_CENTER
 	riga.add_theme_constant_override("separation", 12)
 	vbox.add_child(riga)
-	for n in range(5, 11):
+	for n in range(4, 11):
 		var b := Button.new()
 		b.text = str(n)
-		b.custom_minimum_size = Vector2(80, 80)
-		b.add_theme_font_size_override("font_size", 34)
+		b.custom_minimum_size = Vector2(78, 78)
+		b.add_theme_font_size_override("font_size", 32)
 		b.pressed.connect(_inizia.bind(n))
 		riga.add_child(b)
 
 	var nota := Label.new()
-	nota.text = "(più grande = più difficile)"
+	nota.text = "(4 = facilissimo per provare · più grande = più difficile)"
 	nota.add_theme_font_size_override("font_size", 18)
 	nota.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(nota)
 
 
 func _inizia(n: int) -> void:
-	LATO = clampi(n, 5, 10)
+	LATO = clampi(n, 4, 10)
 	if _menu != null and is_instance_valid(_menu):
 		_menu.queue_free()
 	_crea_materiali()
@@ -286,7 +286,7 @@ func _crea_comandi_touch() -> void:
 	_gruppo_asse("Prof.",   COL_ASSE_Z, "E", "D", Vector3i(0, 0, 1), Vector2(24 + 2 * col_w, 30), bw, gap)
 	var bomba := _btn("💣", Vector2(150, 150), "br", Vector2(28, 28), _spara_touch)
 	bomba.add_theme_font_size_override("font_size", 66)
-	_btn("↻", Vector2(74, 58), "tr", Vector2(24, 20), _nuova_partita)
+	_btn("↻", Vector2(74, 58), "tr", Vector2(24, 20), _rigioca)
 
 
 func _gruppo_asse(nome: String, colore: Color, lett_su: String, lett_giu: String, piu: Vector3i, base: Vector2, bw: Vector2, gap: float) -> void:
@@ -356,6 +356,11 @@ func _ancora(c: Control, corner: String, m: Vector2, dim: Vector2) -> void:
 func _spara_touch() -> void:
 	if _pronto and not _vinto:
 		_lancia_bomba(_cursore)
+
+
+# Rigioca = riparte da capo e RICHIEDE quanti cubi per lato (rimostra il menù).
+func _rigioca() -> void:
+	get_tree().reload_current_scene()
 
 
 # =========================== SERENA / ESPLOSIONE ===========================
@@ -533,7 +538,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if not _vinto:
 					_lancia_bomba(_cursore)
 			KEY_ENTER, KEY_KP_ENTER:
-				_nuova_partita()
+				_rigioca()
 
 
 func _gira_trascinando(rel: Vector2) -> void:
@@ -577,7 +582,7 @@ func _lancia_bomba(bersaglio: Vector3i) -> void:
 		_vinto = true
 		_esplosione(_coord_to_world(_sub_coord), 2.4)
 		_mostra_serena_esplode()
-		_messaggio = "COLPITO! 🎉 Affondato con %d bombe. INVIO per rigiocare." % _bombe
+		_messaggio = "COLPITO! 🎉 Affondato con %d bombe. INVIO o ↻ per rigiocare (e riscegliere la difficoltà)." % _bombe
 	else:
 		_messaggio = "Acqua… la zona 3x3x3 è esplosa. Continua! (bombe: %d)" % _bombe
 	_aggiorna_testo()

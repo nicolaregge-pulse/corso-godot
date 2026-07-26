@@ -9,9 +9,11 @@ una zona **3×3×3** attorno al punto. Se il sottomarino è in quella zona → C
 > (grafica, effetti, difficoltà). Non è ancora un esercizio per i ragazzi.
 
 ## All'avvio: scegli la difficoltà
-Appena parte, il gioco chiede **quanti cubi per lato** vuoi: da **5** (facile) a
-**10** (difficile). Più grande è il cubo, più celle e più nascondigli per il
-sottomarino. Clicca un numero e la partita comincia.
+Appena parte, il gioco chiede **quanti cubi per lato** vuoi: da **4**
+(facilissimo, comodo per provare) a **10** (difficile). Più grande è il cubo, più
+celle e più nascondigli per il sottomarino. Clicca un numero e la partita
+comincia. Ogni volta che **rigiochi** (INVIO o il tasto **↻**) la domanda
+ricompare, così puoi cambiare difficoltà a ogni partita.
 
 ## Coordinate di ogni cella
 - **Colonna** = LETTERA MAIUSCOLA (A B C D E …)
@@ -32,7 +34,7 @@ frecce accanto al cubo):
   (così bastano 6 tasti: lo Shift attiva/disattiva la rotazione).
 - **Mouse trascinato** = gira il cubo (in più, se vuoi).
 - **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
-- **INVIO** = nuova partita (nuovo sottomarino nascosto).
+- **INVIO** = rigioca: torna alla domanda "quanti cubi per lato?" e riparte.
 
 ## Quando colpisci 💥
 Se la bomba prende il sottomarino, esplode e a tutto schermo si **alternano
