@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot 🎯
 
-**Versione 0.2** — 26/07/2026
+**Versione 0.3** — 26/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -247,6 +247,8 @@ sottomarino**. Muovi un **mirino** e lanci una **bomba di profondità**: esplode
 colpisce una zona **3×3×3** attorno al punto. Se il sottomarino è lì → **COLPITO!**
 Questo gioco è **già fatto**: il tuo compito è **aprirlo, giocarci e farlo tuo**.
 
+![Affonda la Bonomi in azione: il cubo d'acqua con il mirino verde, le coordinate scritte attorno al cubo e, in basso a sinistra, i comandi colorati dei tre assi (Colonna Q/A, Fila W/S, Profondità E/D).](immagini/AffondaBonomi.png)
+
 <details>
 <summary>🟡 Aiuto — come aprirlo e giocarci</summary>
 
@@ -307,3 +309,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 |---|---|---|
 | 0.1 | 26/07/2026 | Prima stesura: Es.1 (bottone/Caption, ponte da Lazarus), Es.2 (game loop, muovi il quadrato), Es.3 (prendi la moneta: movimento+caduta+punteggio). Formato a 4 livelli di aiuto. |
 | 0.2 | 26/07/2026 | Introdotti i "Progetti BOSS" (giochi pronti da personalizzare). Aggiunto l'Esercizio BOSS "Affonda la Bonomi" (battaglia navale 3D): apri · gioca · fallo tuo · il codice nel repository. |
+| 0.3 | 26/07/2026 | Aggiunto lo screenshot del gioco "Affonda la Bonomi" nell'Esercizio BOSS. |
