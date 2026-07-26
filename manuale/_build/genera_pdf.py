@@ -216,8 +216,8 @@ def transform_chapter_openers(html_str: str) -> str:
     def repl(m):
         attrs = m.group("attrs") or ""
         inner = m.group("inner").strip()
-        # separa "Capitolo N" da " — resto del titolo" (trattino tra spazi)
-        mm = re.match(r"^(Capitolo\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
+        # separa "Capitolo N" / "Scheda N" / "Esercizio N" da " — resto del titolo"
+        mm = re.match(r"^((?:Capitolo|Scheda|Esercizio)\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
         if mm:
             kicker = mm.group(1)
             title = mm.group(2)
