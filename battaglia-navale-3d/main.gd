@@ -1,74 +1,143 @@
 extends Node3D
 # ============================================================
-#  BATTAGLIA NAVALE 3D — bombe di profondità 🌊💣
+#  AFFONDA LA BONOMI — battaglia navale 3D 🌊💣
 # ------------------------------------------------------------
 #  Un CUBO di celle (l'acqua). Da qualche parte è nascosto UN
-#  sottomarino. Sposti un MIRINO su una cella e lanci la BOMBA
-#  DI PROFONDITÀ: esplode e colpisce una zona 3x3x3 attorno al
-#  punto. Se il sottomarino è dentro quella zona -> COLPITO! 🎉
+#  sottomarino. Sposti un MIRINO e lanci la BOMBA DI PROFONDITÀ:
+#  esplode e colpisce una zona 3x3x3. Se il sottomarino è dentro
+#  quella zona -> COLPITO! 🎉
 #
-#  COORDINATE di ogni cella:
-#    - Colonna    = LETTERA MAIUSCOLA  (A B C D E)
-#    - Fila       = lettera minuscola  (a b c d e)
-#    - Profondità = NUMERO             (1 2 3 4 5)
+#  All'avvio scegli quanti cubi per lato (da 5 a 10).
 #
-#  COMANDI (solo 6 tasti di movimento + SHIFT):
-#    - FRECCE ← → ↑ ↓ = muovi il mirino (colonna e fila)
-#    - Q / A          = muovi il mirino in profondità
-#    - SHIFT + quei tasti = girano il CUBO invece di muovere il mirino
-#    - MOUSE trascinato   = gira il cubo (in più, se vuoi)
-#    - SPAZIO         = lancia la bomba sulla cella del mirino
-#    - INVIO          = rigioca
+#  COMANDI (6 lettere per il mirino):
+#    - A / D = Colonna (−/+)   · lettere ROSSE
+#    - W / S = Fila (+/−)       · lettere VERDI
+#    - Q / E = Profondità (−/+) · lettere GIALLE
+#    - SHIFT + quelle lettere   = gira il cubo (invece del mirino)
+#    - MOUSE/DITO trascinato    = gira il cubo
+#    - SPAZIO = lancia la bomba · INVIO = rigioca
 #
-#  SUL TELEFONO (touch): tre coppie +/- COLORATE (una per asse: Colonna=rosso,
-#  Fila=verde, Profondità=giallo) per muovere il mirino, 💣 grande per la bomba,
-#  ↻ per rigiocare, e il DITO trascinato gira il cubo. Le tre frecce colorate
-#  accanto al cubo mostrano le direzioni dei tre assi.
+#  SUL TELEFONO: le tre coppie +/- colorate (in basso a sinistra) muovono
+#  il mirino, il 💣 grande lancia, il dito trascinato gira il cubo.
 # ============================================================
 
 # ---- Parametri (cambiali per sperimentare!) ----------------
-const LATO: int = 5           # cubo LATO x LATO x LATO (più grande = più difficile)
+var LATO: int = 5             # scelto all'avvio (da 5 a 10)
 const SPAZIO: float = 1.4     # distanza tra i centri delle celle
-const DIM_CELLA: float = 1.0  # dimensione del cubetto d'acqua
-const RAGGIO_BOMBA: int = 1    # 1 = la bomba copre una zona 3x3x3
+const DIM_CELLA: float = 1.0
+const RAGGIO_BOMBA: int = 1    # 1 = zona 3x3x3
 
 # ---- Colori ------------------------------------------------
-const COL_ACQUA := Color(0.25, 0.55, 0.95, 0.14)     # celle d'acqua (trasparenti)
-const COL_BOMBATA := Color(0.45, 0.50, 0.55, 0.32)   # celle già colpite
-const COL_MIRINO := Color(0.25, 1.0, 0.70, 0.55)     # la cella puntata dal mirino
-const COL_SUB := Color(0.92, 0.80, 0.12)             # il sottomarino (giallo)
-const COL_ASSE_X := Color(1.0, 0.55, 0.55)           # colonne (lettere MAIUSCOLE)
-const COL_ASSE_Y := Color(0.55, 1.0, 0.65)           # file (lettere minuscole)
-const COL_ASSE_Z := Color(1.0, 0.92, 0.45)           # profondità (numeri)
+const COL_ACQUA := Color(0.25, 0.55, 0.95, 0.14)
+const COL_BOMBATA := Color(0.45, 0.50, 0.55, 0.32)
+const COL_MIRINO := Color(0.25, 1.0, 0.70, 0.55)
+const COL_SUB := Color(0.92, 0.80, 0.12)
+const COL_ASSE_X := Color(1.0, 0.55, 0.55)   # colonna (A/D)
+const COL_ASSE_Y := Color(0.55, 1.0, 0.65)   # fila (W/S)
+const COL_ASSE_Z := Color(1.0, 0.92, 0.45)   # profondità (Q/E)
 
 # ---- Nodi / stato ------------------------------------------
 var _perno_camera: Node3D
-var _celle := {}              # Vector3i -> StaticBody3D
+var _celle := {}              # Vector3i -> MeshInstance3D
 var _stato := {}              # Vector3i -> "acqua" | "bombata"
-var _lbl_x := []              # etichette colonne (A B C…)
-var _lbl_y := []              # etichette file (a b c…)
-var _lbl_z := []              # etichette profondità (1 2 3…)
-var _cursore: Vector3i        # la cella puntata dal mirino
+var _lbl_x := []
+var _lbl_y := []
+var _lbl_z := []
+var _cursore: Vector3i
 var _sub_coord: Vector3i
 var _sottomarino: Node3D
 var _etichetta: Label
 var _touch_layer: CanvasLayer
+var _menu: CanvasLayer
+var _overlay: CanvasLayer
+var _serena_root: Control
+var _mat_acqua: StandardMaterial3D
+var _mat_bombata: StandardMaterial3D
+var _mat_mirino: StandardMaterial3D
 var _messaggio: String = ""
 var _bombe: int = 0
 var _vinto: bool = false
+var _pronto: bool = false     # true dopo la scelta del lato
 
 
 func _ready() -> void:
 	randomize()
+	_mostra_menu_inizio()
+
+
+# =========================== MENU INIZIALE ===========================
+func _mostra_menu_inizio() -> void:
+	_menu = CanvasLayer.new()
+	_menu.layer = 20
+	add_child(_menu)
+	var sfondo := ColorRect.new()
+	sfondo.color = Color(0.05, 0.09, 0.16)
+	sfondo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_menu.add_child(sfondo)
+	var center := CenterContainer.new()
+	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_menu.add_child(center)
+	var vbox := VBoxContainer.new()
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	vbox.add_theme_constant_override("separation", 18)
+	center.add_child(vbox)
+
+	var titolo := Label.new()
+	titolo.text = "AFFONDA LA BONOMI 🌊💣"
+	titolo.add_theme_font_size_override("font_size", 40)
+	titolo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(titolo)
+
+	var dom := Label.new()
+	dom.text = "Quanti cubi per lato?"
+	dom.add_theme_font_size_override("font_size", 26)
+	dom.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(dom)
+
+	var riga := HBoxContainer.new()
+	riga.alignment = BoxContainer.ALIGNMENT_CENTER
+	riga.add_theme_constant_override("separation", 12)
+	vbox.add_child(riga)
+	for n in range(5, 11):
+		var b := Button.new()
+		b.text = str(n)
+		b.custom_minimum_size = Vector2(80, 80)
+		b.add_theme_font_size_override("font_size", 34)
+		b.pressed.connect(_inizia.bind(n))
+		riga.add_child(b)
+
+	var nota := Label.new()
+	nota.text = "(più grande = più difficile)"
+	nota.add_theme_font_size_override("font_size", 18)
+	nota.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(nota)
+
+
+func _inizia(n: int) -> void:
+	LATO = clampi(n, 5, 10)
+	if _menu != null and is_instance_valid(_menu):
+		_menu.queue_free()
+	_crea_materiali()
 	_crea_ambiente()
 	_crea_griglia()
 	_crea_etichette_assi()
 	_crea_gizmo_assi()
 	_crea_comandi_touch()
+	_crea_overlay_serena()
+	_pronto = true
 	_nuova_partita()
 
 
-# ---- Luci, camera, sfondo, testo ----
+# =========================== MONDO 3D ===========================
+func _crea_materiali() -> void:
+	_mat_acqua = _materiale(COL_ACQUA)
+	_mat_bombata = _materiale(COL_BOMBATA)
+	_mat_mirino = _materiale(COL_MIRINO)
+	_mat_mirino.emission_enabled = true
+	_mat_mirino.emission = Color(0.2, 1.0, 0.7)
+	_mat_mirino.emission_energy_multiplier = 1.3
+
+
 func _crea_ambiente() -> void:
 	var we := WorldEnvironment.new()
 	var env := Environment.new()
@@ -84,7 +153,6 @@ func _crea_ambiente() -> void:
 	luce.rotation_degrees = Vector3(-50, -35, 0)
 	add_child(luce)
 
-	# La telecamera sta su un PERNO: girando il perno, gira attorno al cubo
 	_perno_camera = Node3D.new()
 	add_child(_perno_camera)
 	var cam := Camera3D.new()
@@ -104,30 +172,19 @@ func _crea_ambiente() -> void:
 	layer.add_child(_etichetta)
 
 
-# ---- Il cubo di celle d'acqua ----
 func _crea_griglia() -> void:
 	for x in LATO:
 		for y in LATO:
 			for z in LATO:
 				var coord := Vector3i(x, y, z)
-				var corpo := StaticBody3D.new()
-				corpo.position = _coord_to_world(coord)
-
-				var col := CollisionShape3D.new()
-				var forma := BoxShape3D.new()
-				forma.size = Vector3.ONE * DIM_CELLA
-				col.shape = forma
-				corpo.add_child(col)
-
 				var mesh := MeshInstance3D.new()
 				var cubo := BoxMesh.new()
 				cubo.size = Vector3.ONE * DIM_CELLA
 				mesh.mesh = cubo
-				corpo.add_child(mesh)
-				corpo.set_meta("mesh", mesh)
-
-				add_child(corpo)
-				_celle[coord] = corpo
+				mesh.position = _coord_to_world(coord)
+				mesh.material_override = _mat_acqua
+				add_child(mesh)
+				_celle[coord] = mesh
 				_stato[coord] = "acqua"
 
 
@@ -136,11 +193,8 @@ func _crea_etichette_assi() -> void:
 	var bordo := (LATO - 1) / 2.0 * SPAZIO + SPAZIO
 	for i in LATO:
 		var p := (i - (LATO - 1) / 2.0) * SPAZIO
-		# Colonna: LETTERE MAIUSCOLE (rosso) sotto il cubo
 		_lbl_x.append(_fai_etichetta(char(65 + i), Vector3(p, -bordo, bordo)))
-		# Fila: lettere minuscole (verde) a sinistra
 		_lbl_y.append(_fai_etichetta(char(97 + i), Vector3(-bordo, p, bordo)))
-		# Profondità: NUMERI (giallo) in basso a sinistra, verso il fondo
 		_lbl_z.append(_fai_etichetta(str(i + 1), Vector3(-bordo, -bordo, p)))
 
 
@@ -154,38 +208,6 @@ func _fai_etichetta(txt: String, pos: Vector3) -> Label3D:
 	return l
 
 
-# Indicatore dei 3 assi (frecce colorate) accanto al cubo. Sta nel mondo 3D,
-# quindi GIRA insieme al cubo: aiuta a capire quali sono le tre direzioni.
-func _crea_gizmo_assi() -> void:
-	var half := (LATO - 1) / 2.0 * SPAZIO
-	var org := Vector3(half + 0.9, -half - 0.9, half + 0.9)
-	var lung := 1.6
-	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "A→E")   # colonna
-	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "a→e")   # fila
-	_freccia_asse(org, Vector3(0, 0, lung), COL_ASSE_Z, "1→5")   # profondità
-
-
-func _freccia_asse(org: Vector3, dir: Vector3, colore: Color, etich: String) -> void:
-	var spess := 0.07
-	var asta := MeshInstance3D.new()
-	var bm := BoxMesh.new()
-	bm.size = Vector3(max(abs(dir.x), spess), max(abs(dir.y), spess), max(abs(dir.z), spess))
-	asta.mesh = bm
-	asta.material_override = _materiale(colore)
-	asta.position = org + dir * 0.5
-	add_child(asta)
-	var l := Label3D.new()
-	l.text = etich
-	l.position = org + dir * 1.18
-	l.font_size = 72
-	l.pixel_size = 0.008
-	l.modulate = colore
-	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	l.no_depth_test = true
-	add_child(l)
-
-
-# Ingrandisce e illumina la tripletta di coordinate della cella puntata
 func _evidenzia_coordinate() -> void:
 	for i in _lbl_x.size():
 		_stile_etichetta(_lbl_x[i], i == _cursore.x, COL_ASSE_X)
@@ -209,26 +231,57 @@ func _stile_etichetta(l: Label3D, selezionata: bool, base: Color) -> void:
 		l.outline_size = 0
 
 
-# ---- Comandi a TOCCO (per telefono/tablet) ----
-# Un mini-joypad a schermo: così il gioco si può usare anche senza tastiera.
+# ---- Gizmo: 3 frecce colorate con le LETTERE dei tasti ----
+func _crea_gizmo_assi() -> void:
+	var half := (LATO - 1) / 2.0 * SPAZIO
+	var org := Vector3(half + 0.9, -half - 0.9, half + 0.9)
+	var lung := 1.7
+	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "D", "A")   # colonna
+	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "W", "S")   # fila
+	_freccia_asse(org, Vector3(0, 0, lung), COL_ASSE_Z, "E", "Q")   # profondità
+
+
+func _freccia_asse(org: Vector3, dir: Vector3, colore: Color, tasto_piu: String, tasto_meno: String) -> void:
+	var spess := 0.07
+	var asta := MeshInstance3D.new()
+	var bm := BoxMesh.new()
+	bm.size = Vector3(max(abs(dir.x), spess), max(abs(dir.y), spess), max(abs(dir.z), spess))
+	asta.mesh = bm
+	asta.material_override = _materiale(colore)
+	asta.position = org + dir * 0.5
+	add_child(asta)
+	_lettera_gizmo(tasto_piu, org + dir * 1.3, colore)               # tasto "+"
+	_lettera_gizmo(tasto_meno, org - dir.normalized() * 0.4, colore) # tasto "-"
+
+
+func _lettera_gizmo(txt: String, pos: Vector3, colore: Color) -> void:
+	var l := Label3D.new()
+	l.text = txt
+	l.position = pos
+	l.font_size = 100
+	l.pixel_size = 0.011
+	l.modulate = colore
+	l.outline_modulate = Color.BLACK
+	l.outline_size = 12
+	l.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	l.no_depth_test = true
+	add_child(l)
+
+
+# =========================== COMANDI A TOCCO ===========================
 func _crea_comandi_touch() -> void:
 	_touch_layer = CanvasLayer.new()
 	add_child(_touch_layer)
-	var bw := Vector2(80, 58)      # dimensione dei bottoni +/-
-	var passo := 92.0              # distanza verticale tra i tre gruppi
-	# Tre coppie +/- (una per asse), COLORATE come le coordinate e come le
-	# frecce del gizmo: Colonna=rosso, Fila=verde, Profondità=giallo.
-	_gruppo_asse("Colonna  A→E", COL_ASSE_X, Vector3i(1, 0, 0), Vector2(24, 24 + 2 * passo), bw)
-	_gruppo_asse("Fila  a→e", COL_ASSE_Y, Vector3i(0, 1, 0), Vector2(24, 24 + passo), bw)
-	_gruppo_asse("Prof.  1→5", COL_ASSE_Z, Vector3i(0, 0, 1), Vector2(24, 24), bw)
-	# BOMBA grande in basso a destra
+	var bw := Vector2(80, 58)
+	var passo := 92.0
+	_gruppo_asse("Colonna  (A/D)", COL_ASSE_X, Vector3i(1, 0, 0), Vector2(24, 24 + 2 * passo), bw)
+	_gruppo_asse("Fila  (W/S)", COL_ASSE_Y, Vector3i(0, 1, 0), Vector2(24, 24 + passo), bw)
+	_gruppo_asse("Prof.  (Q/E)", COL_ASSE_Z, Vector3i(0, 0, 1), Vector2(24, 24), bw)
 	var bomba := _btn("💣", Vector2(150, 150), "br", Vector2(28, 28), _spara_touch)
 	bomba.add_theme_font_size_override("font_size", 66)
-	# Rigioca in alto a destra
 	_btn("↻", Vector2(74, 58), "tr", Vector2(24, 20), _nuova_partita)
 
 
-# Un gruppo "asse": etichetta colorata + bottone (−) + bottone (+)
 func _gruppo_asse(nome: String, colore: Color, piu: Vector3i, base: Vector2, bw: Vector2) -> void:
 	var lab := Label.new()
 	lab.text = nome
@@ -237,7 +290,7 @@ func _gruppo_asse(nome: String, colore: Color, piu: Vector3i, base: Vector2, bw:
 	lab.add_theme_color_override("font_outline_color", Color.BLACK)
 	lab.add_theme_constant_override("outline_size", 5)
 	_touch_layer.add_child(lab)
-	_ancora(lab, "bl", base + Vector2(4, bw.y + 2), Vector2(200, 22))
+	_ancora(lab, "bl", base + Vector2(4, bw.y + 2), Vector2(210, 22))
 	_bottone_mov("–", bw, base, colore, -piu)
 	_bottone_mov("+", bw, base + Vector2(bw.x + 8, 0), colore, piu)
 
@@ -256,7 +309,7 @@ func _bottone_mov(txt: String, dim: Vector2, margine: Vector2, colore: Color, pa
 func _btn(txt: String, dim: Vector2, corner: String, margine: Vector2, azione: Callable) -> Button:
 	var b := Button.new()
 	b.text = txt
-	b.focus_mode = Control.FOCUS_NONE   # così le frecce restano per il gioco
+	b.focus_mode = Control.FOCUS_NONE
 	b.add_theme_font_size_override("font_size", 26)
 	b.modulate = Color(1, 1, 1, 0.92)
 	_touch_layer.add_child(b)
@@ -267,21 +320,21 @@ func _btn(txt: String, dim: Vector2, corner: String, margine: Vector2, azione: C
 
 func _ancora(c: Control, corner: String, m: Vector2, dim: Vector2) -> void:
 	match corner:
-		"bl":   # basso-sinistra
+		"bl":
 			c.anchor_left = 0; c.anchor_right = 0
 			c.anchor_top = 1;  c.anchor_bottom = 1
 			c.offset_left = m.x
 			c.offset_right = m.x + dim.x
 			c.offset_top = -m.y - dim.y
 			c.offset_bottom = -m.y
-		"br":   # basso-destra
+		"br":
 			c.anchor_left = 1; c.anchor_right = 1
 			c.anchor_top = 1;  c.anchor_bottom = 1
 			c.offset_left = -m.x - dim.x
 			c.offset_right = -m.x
 			c.offset_top = -m.y - dim.y
 			c.offset_bottom = -m.y
-		"tr":   # alto-destra
+		"tr":
 			c.anchor_left = 1; c.anchor_right = 1
 			c.anchor_top = 0;  c.anchor_bottom = 0
 			c.offset_left = -m.x - dim.x
@@ -291,17 +344,65 @@ func _ancora(c: Control, corner: String, m: Vector2, dim: Vector2) -> void:
 
 
 func _spara_touch() -> void:
-	if not _vinto:
+	if _pronto and not _vinto:
 		_lancia_bomba(_cursore)
 
 
-# ---- Inizio (o ri-inizio) di una partita ----
+# =========================== SERENA / ESPLOSIONE ===========================
+func _crea_overlay_serena() -> void:
+	_overlay = CanvasLayer.new()
+	_overlay.layer = 10
+	add_child(_overlay)
+	_serena_root = CenterContainer.new()
+	_serena_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_serena_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_overlay.add_child(_serena_root)
+	var vbox := VBoxContainer.new()
+	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+	_serena_root.add_child(vbox)
+	var emoji := Label.new()
+	emoji.text = "🔥 💀 🔥"
+	emoji.add_theme_font_size_override("font_size", 100)
+	emoji.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(emoji)
+	if ResourceLoader.exists("res://serena.jpg"):
+		var tex: Texture2D = load("res://serena.jpg")
+		var rect := TextureRect.new()
+		rect.texture = tex
+		rect.custom_minimum_size = Vector2(340, 340)
+		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		vbox.add_child(rect)
+	_overlay.visible = false
+
+
+func _mostra_serena_esplode() -> void:
+	_overlay.visible = true
+	_serena_root.modulate = Color(1, 1, 1, 1)
+	var tw := create_tween().set_loops(4)
+	tw.tween_property(_serena_root, "modulate:a", 0.2, 0.14)
+	tw.tween_property(_serena_root, "modulate:a", 1.0, 0.14)
+	get_tree().create_timer(1.6).timeout.connect(_fine_serena)
+
+
+func _fine_serena() -> void:
+	if _overlay != null and is_instance_valid(_overlay):
+		_overlay.visible = false
+	if _sottomarino != null and is_instance_valid(_sottomarino):
+		_sottomarino.visible = true
+		_sottomarino.rotation_degrees = Vector3(0, 0, 28)   # affondato/inclinato
+
+
+# =========================== PARTITA ===========================
 func _nuova_partita() -> void:
+	if not _pronto:
+		return
 	_bombe = 0
 	_vinto = false
+	if _overlay != null and is_instance_valid(_overlay):
+		_overlay.visible = false
 	for coord in _celle:
 		_stato[coord] = "acqua"
-	_cursore = Vector3i(LATO / 2, LATO / 2, LATO / 2)   # mirino al centro
+	_cursore = Vector3i(LATO / 2, LATO / 2, LATO / 2)
 	for coord in _celle:
 		_ridisegna_cella(coord)
 	_evidenzia_coordinate()
@@ -314,11 +415,10 @@ func _nuova_partita() -> void:
 	_sottomarino.visible = false
 	add_child(_sottomarino)
 
-	_messaggio = "Muovi il mirino (frecce, Q/E) e premi SPAZIO per bombardare!"
+	_messaggio = "Muovi il mirino (A/D · W/S · Q/E) e SPAZIO per bombardare!"
 	_aggiorna_testo()
 
 
-# ---- Il sottomarino, costruito con forme semplici ----
 func _crea_sottomarino() -> Node3D:
 	var sub := Node3D.new()
 	var mat := _materiale(COL_SUB)
@@ -350,74 +450,50 @@ func _crea_sottomarino() -> Node3D:
 	peri.position = Vector3(0, 0.50, 0)
 	sub.add_child(peri)
 
-	# Immagine "serena.jpg" sui due fianchi del sottomarino (se presente nel
-	# progetto). Va messa in battaglia-navale-3d/serena.jpg → res://serena.jpg
-	if ResourceLoader.exists("res://serena.jpg"):
-		var tex: Texture2D = load("res://serena.jpg")
-		if tex != null:
-			for z in [0.33, -0.33]:
-				var faccia := MeshInstance3D.new()
-				var q := QuadMesh.new()
-				q.size = Vector2(0.95, 0.62)
-				faccia.mesh = q
-				var mt := StandardMaterial3D.new()
-				mt.albedo_texture = tex
-				mt.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-				faccia.material_override = mt
-				faccia.position = Vector3(0, 0.02, z)
-				if z < 0:
-					faccia.rotation_degrees = Vector3(0, 180, 0)
-				sub.add_child(faccia)
-
 	return sub
 
 
-# ---- Girare il cubo con i tasti A/D/W/S (in continuo) ----
+# =========================== INPUT ===========================
 func _process(delta: float) -> void:
-	# Con SHIFT premuto, gli STESSI 6 tasti girano il cubo (invece del mirino).
-	if not Input.is_key_pressed(KEY_SHIFT):
+	if not _pronto or not Input.is_key_pressed(KEY_SHIFT):
 		return
 	var v := 1.3 * delta
-	if Input.is_key_pressed(KEY_LEFT):
+	if Input.is_key_pressed(KEY_A):
 		_perno_camera.rotation.y += v
-	if Input.is_key_pressed(KEY_RIGHT):
+	if Input.is_key_pressed(KEY_D):
 		_perno_camera.rotation.y -= v
-	if Input.is_key_pressed(KEY_UP):
+	if Input.is_key_pressed(KEY_W):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x + v, -1.4, 1.4)
-	if Input.is_key_pressed(KEY_DOWN):
+	if Input.is_key_pressed(KEY_S):
 		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - v, -1.4, 1.4)
 	if Input.is_key_pressed(KEY_Q):
 		_perno_camera.rotation.z += v
-	if Input.is_key_pressed(KEY_A):
+	if Input.is_key_pressed(KEY_E):
 		_perno_camera.rotation.z -= v
 
 
-# ---- Input: tastiera (mirino + spara + rigioca), mouse (gira) ----
 func _unhandled_input(event: InputEvent) -> void:
-	# Girare la telecamera trascinando il mouse
-	if event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT):
-		_perno_camera.rotation.y -= event.relative.x * 0.008
-		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - event.relative.y * 0.008, -1.3, 1.3)
+	if not _pronto:
 		return
-
-	# Girare la telecamera trascinando il DITO (telefono/tablet)
+	# Girare la telecamera trascinando (mouse o dito)
+	if event is InputEventMouseMotion and (event.button_mask & MOUSE_BUTTON_MASK_LEFT):
+		_gira_trascinando(event.relative)
+		return
 	if event is InputEventScreenDrag:
-		_perno_camera.rotation.y -= event.relative.x * 0.008
-		_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - event.relative.y * 0.008, -1.4, 1.4)
+		_gira_trascinando(event.relative)
 		return
 
 	if event is InputEventKey and event.pressed and not event.echo:
-		# Con SHIFT questi 6 tasti girano il cubo (gestito in _process):
-		# quindi qui NON muovono il mirino.
-		if event.shift_pressed and event.keycode in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, KEY_Q, KEY_A]:
+		# con SHIFT le lettere girano il cubo (in _process): niente mirino
+		if event.shift_pressed and event.keycode in [KEY_A, KEY_D, KEY_W, KEY_S, KEY_Q, KEY_E]:
 			return
 		match event.keycode:
-			KEY_LEFT:  _muovi_cursore(Vector3i(-1, 0, 0))
-			KEY_RIGHT: _muovi_cursore(Vector3i(1, 0, 0))
-			KEY_UP:    _muovi_cursore(Vector3i(0, 1, 0))
-			KEY_DOWN:  _muovi_cursore(Vector3i(0, -1, 0))
-			KEY_Q:     _muovi_cursore(Vector3i(0, 0, 1))
-			KEY_A:     _muovi_cursore(Vector3i(0, 0, -1))
+			KEY_A: _muovi_cursore(Vector3i(-1, 0, 0))   # colonna −
+			KEY_D: _muovi_cursore(Vector3i(1, 0, 0))    # colonna +
+			KEY_W: _muovi_cursore(Vector3i(0, 1, 0))    # fila +
+			KEY_S: _muovi_cursore(Vector3i(0, -1, 0))   # fila −
+			KEY_Q: _muovi_cursore(Vector3i(0, 0, -1))   # profondità −
+			KEY_E: _muovi_cursore(Vector3i(0, 0, 1))    # profondità +
 			KEY_SPACE:
 				if not _vinto:
 					_lancia_bomba(_cursore)
@@ -425,7 +501,14 @@ func _unhandled_input(event: InputEvent) -> void:
 				_nuova_partita()
 
 
+func _gira_trascinando(rel: Vector2) -> void:
+	_perno_camera.rotation.y -= rel.x * 0.008
+	_perno_camera.rotation.x = clamp(_perno_camera.rotation.x - rel.y * 0.008, -1.4, 1.4)
+
+
 func _muovi_cursore(delta: Vector3i) -> void:
+	if not _pronto or _vinto:
+		return
 	var nuovo := _cursore + delta
 	nuovo.x = clamp(nuovo.x, 0, LATO - 1)
 	nuovo.y = clamp(nuovo.y, 0, LATO - 1)
@@ -440,7 +523,6 @@ func _muovi_cursore(delta: Vector3i) -> void:
 	_aggiorna_testo()
 
 
-# ---- La bomba: esplode e copre una zona 3x3x3 ----
 func _lancia_bomba(bersaglio: Vector3i) -> void:
 	_bombe += 1
 	var colpito := false
@@ -458,15 +540,14 @@ func _lancia_bomba(bersaglio: Vector3i) -> void:
 
 	if colpito:
 		_vinto = true
-		_sottomarino.visible = true
 		_esplosione(_coord_to_world(_sub_coord), 2.4)
+		_mostra_serena_esplode()
 		_messaggio = "COLPITO! 🎉 Affondato con %d bombe. INVIO per rigiocare." % _bombe
 	else:
 		_messaggio = "Acqua… la zona 3x3x3 è esplosa. Continua! (bombe: %d)" % _bombe
 	_aggiorna_testo()
 
 
-# ---- L'effetto esplosione (particelle arancioni) ----
 func _esplosione(posizione: Vector3, scala: float) -> void:
 	var p := CPUParticles3D.new()
 	p.position = posizione
@@ -493,13 +574,13 @@ func _esplosione(posizione: Vector3, scala: float) -> void:
 
 # ---- Aiutini ----
 func _ridisegna_cella(coord: Vector3i) -> void:
-	var mesh := (_celle[coord] as StaticBody3D).get_meta("mesh") as MeshInstance3D
+	var mesh := _celle[coord] as MeshInstance3D
 	if coord == _cursore:
-		mesh.material_override = _materiale_mirino()
+		mesh.material_override = _mat_mirino
 	elif _stato[coord] == "bombata":
-		mesh.material_override = _materiale(COL_BOMBATA)
+		mesh.material_override = _mat_bombata
 	else:
-		mesh.material_override = _materiale(COL_ACQUA)
+		mesh.material_override = _mat_acqua
 
 
 func _aggiorna_testo() -> void:
@@ -520,12 +601,4 @@ func _materiale(c: Color) -> StandardMaterial3D:
 	m.albedo_color = c
 	if c.a < 1.0:
 		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-	return m
-
-
-func _materiale_mirino() -> StandardMaterial3D:
-	var m := _materiale(COL_MIRINO)
-	m.emission_enabled = true
-	m.emission = Color(0.2, 1.0, 0.7)
-	m.emission_energy_multiplier = 1.3
 	return m

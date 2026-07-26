@@ -8,27 +8,45 @@ una zona **3×3×3** attorno al punto. Se il sottomarino è in quella zona → C
 > ⚠️ È una **prima bozza** fatta per Nicola, da provare e migliorare insieme
 > (grafica, effetti, difficoltà). Non è ancora un esercizio per i ragazzi.
 
+## All'avvio: scegli la difficoltà
+Appena parte, il gioco chiede **quanti cubi per lato** vuoi: da **5** (facile) a
+**10** (difficile). Più grande è il cubo, più celle e più nascondigli per il
+sottomarino. Clicca un numero e la partita comincia.
+
 ## Coordinate di ogni cella
-- **Colonna** = LETTERA MAIUSCOLA (A B C D E)
-- **Fila** = lettera minuscola (a b c d e)
-- **Profondità** = NUMERO (1 2 3 4 5)
+- **Colonna** = LETTERA MAIUSCOLA (A B C D E …)
+- **Fila** = lettera minuscola (a b c d e …)
+- **Profondità** = NUMERO (1 2 3 4 5 …)
 
 Le lettere e i numeri sono scritti **attorno al cubo** per ritrovarti.
 
 ## Come si gioca (6 tasti + Shift)
-- **Frecce ← → ↑ ↓** = muovi il **mirino** (la cella che brilla di verde) su colonna e fila.
-- **Q / A** = muovi il mirino in profondità.
-- **SHIFT + gli stessi tasti** (frecce e Q/A) = **girano il cubo** invece di muovere il mirino.
+Il **mirino** è la cella che brilla di verde. Lo muovi con **sei lettere**, a
+coppie, ognuna del **colore del suo asse** (le vedi anche sulle frecce accanto al
+cubo):
+- **A / D** = **Colonna** (−/+) → lettere **rosse**
+- **W / S** = **Fila** (+/−) → lettere **verdi**
+- **Q / E** = **Profondità** (−/+) → lettere **gialle**
+- **SHIFT + le stesse lettere** = **girano il cubo** invece di muovere il mirino
+  (così bastano 6 tasti: lo Shift attiva/disattiva la rotazione).
 - **Mouse trascinato** = gira il cubo (in più, se vuoi).
 - **SPAZIO** = lancia la bomba di profondità sulla cella del mirino (zona 3×3×3).
 - **INVIO** = nuova partita (nuovo sottomarino nascosto).
+
+## Quando colpisci 💥
+Se la bomba prende il sottomarino, esplode e compare a tutto schermo la faccia
+di **Serena** con 🔥 💀 🔥 che **lampeggia**; poi l'overlay sparisce e si vede il
+**sottomarino affondato** (inclinato). Per far comparire la foto basta mettere un
+file **`serena.jpg`** nella cartella `battaglia-navale-3d/` (se non c'è, restano
+solo le emoji del fuoco e del teschio).
 
 ## Sul telefono/tablet (touch)
 In basso a sinistra ci sono **tre coppie +/- colorate**, una per asse (come le
 coordinate): **Colonna** (rosso), **Fila** (verde), **Profondità** (giallo) → così
 sai sempre quale asse muovi. Le **tre frecce colorate** accanto al cubo mostrano
-le direzioni degli assi e girano insieme al cubo. Il **💣** grande in basso a
-destra lancia la bomba, il **↻** rigioca. Per **girare il cubo** trascini il **dito**.
+le direzioni degli assi (con su scritte le lettere-tasto) e girano insieme al
+cubo. Il **💣** grande in basso a destra lancia la bomba, il **↻** rigioca. Per
+**girare il cubo** trascini il **dito**.
 
 ## Come portarlo sul telefono (via Web, senza installare niente)
 1. `[APP — Godot]` menù **`Progetto` → `Esporta…`**.
@@ -51,6 +69,6 @@ Quando punti una cella, la sua **tripletta di coordinate** (attorno al cubo) div
    — oppure il tasto **`F5`**.
 
 ## Cosa possiamo migliorare (idee)
-- Cubo più grande (parametro `LATO` in `main.gd`) per renderlo più difficile.
 - Sottomarino più "vero" (colori, luci), bolle d'acqua, suono dell'esplosione.
 - Più sottomarini quando questo funziona bene.
+- Un contatore dei tentativi migliori (record) e magari un timer.
