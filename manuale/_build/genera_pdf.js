@@ -5,14 +5,15 @@ const fs = require('fs');
 const { chromium } = require('playwright');
 
 const BUILD_DIR = __dirname;
-const HTML_PATH = path.join(BUILD_DIR, 'manuale.html');
 
-// Il nome del PDF (con versione) lo decide genera_pdf.py e lo scrive in .pdfname.
-const nameFile = path.join(BUILD_DIR, '.pdfname');
-const pdfName = fs.existsSync(nameFile)
-  ? fs.readFileSync(nameFile, 'utf8').trim()
-  : 'manuale-v0.0.pdf';
-const PDF_PATH = path.join(BUILD_DIR, '..', pdfName);
+// genera_pdf.py scrive in .build.json quale HTML rendere e con che nome salvare
+// il PDF (con la versione nel nome). Così vale sia per il manuale sia per
+// l'eserciziario.
+const info = JSON.parse(
+  fs.readFileSync(path.join(BUILD_DIR, '.build.json'), 'utf8')
+);
+const HTML_PATH = path.join(BUILD_DIR, info.html);
+const PDF_PATH = path.join(BUILD_DIR, '..', info.pdf);
 
 (async () => {
   const browser = await chromium.launch({
@@ -35,7 +36,7 @@ const PDF_PATH = path.join(BUILD_DIR, '..', pdfName);
       '<div style="width:100%; font-size:8px; color:#8a97a5; ' +
       'font-family: Segoe UI, Arial, sans-serif; padding:0 16mm; ' +
       'display:flex; justify-content:space-between;">' +
-      '<span>Il Manuale — Corso di Godot</span>' +
+      '<span>Corso di Godot</span>' +
       '<span>Pag. <span class="pageNumber"></span> / <span class="totalPages"></span></span>' +
       '</div>',
   });

@@ -30,6 +30,9 @@ aprirli. Nel PDF sono già aperti.)*
 Crea una schermata con **un bottone** e **una scritta**. Quando premi il
 bottone, la scritta deve cambiare (es. da "..." a "Ciao! Mi hai premuto").
 
+🎨 **Fallo tuo:** scegli **tu** la frase del saluto e il **colore** della scritta
+— così il gioco è già tuo. Nessuno lo farà uguale al tuo!
+
 <details>
 <summary>🟡 Aiuto</summary>
 
@@ -54,7 +57,7 @@ bottone, la scritta deve cambiare (es. da "..." a "Ciao! Mi hai premuto").
 ```gdscript
 extends Node2D
 
-# $NomeNodo prende un nodo figlio per nome (come riferirsi a Button1 in Lazarus)
+# $NomeNodo = prende un nodo figlio per nome (come Button1 in Lazarus)
 @onready var bottone: Button = $BottoneCiao
 @onready var etichetta: Label = $Etichetta
 
@@ -64,11 +67,14 @@ func _ready() -> void:
 	bottone.text = "Salutami!"          # <- come Button.Caption in Lazarus
 	etichetta.position = Vector2(100, 180)
 	etichetta.text = "..."
+	# 🎨 FALLO TUO: scegli il colore della scritta (i numeri sono rosso, verde, blu)
+	etichetta.add_theme_color_override("font_color", Color(1, 0, 0))   # rosso
 	# Colleghiamo il "click" (segnale pressed) alla nostra funzione
 	bottone.pressed.connect(_quando_premo)
 
 # Questa e' come il tuo Button1Click di Lazarus
 func _quando_premo() -> void:
+	# 🎨 FALLO TUO: scrivi qui il TUO saluto
 	etichetta.text = "Ciao! Mi hai premuto."
 ```
 </details>

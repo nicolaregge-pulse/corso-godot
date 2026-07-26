@@ -13,8 +13,10 @@ Produce: _build/manuale.html  (self-contained, immagini in base64)
 
 import base64
 import html
+import json
 import mimetypes
 import re
+import sys
 from pathlib import Path
 
 import markdown
@@ -24,16 +26,20 @@ import markdown
 # ---------------------------------------------------------------------------
 BUILD_DIR = Path(__file__).resolve().parent
 MANUALE_DIR = BUILD_DIR.parent
-SRC_MD = MANUALE_DIR / "manuale.md"
 IMG_DIR = MANUALE_DIR / "immagini"
-OUT_HTML = BUILD_DIR / "manuale.html"
 
 # ---------------------------------------------------------------------------
-# Metadati copertina (letti/derivati dal manuale)
+# Documenti che sappiamo impaginare. Si sceglie da riga di comando:
+#   python3 genera_pdf.py manuale      (default)
+#   python3 genera_pdf.py eserciziario
 # ---------------------------------------------------------------------------
-COVER_TITLE = "Il Manuale"
 COVER_SUBTITLE = "Corso di Godot"
 COVER_AUTHOR = "Corso a cura del prof. Nicola Regge"
+
+DOCS = {
+    "manuale": {"src": "manuale.md", "title": "Il Manuale", "emoji": "🎮"},
+    "eserciziario": {"src": "eserciziario.md", "title": "L'Eserciziario", "emoji": "🎯"},
+}
 
 
 def data_uri(path: Path) -> str:
@@ -148,11 +154,14 @@ def build_body_html(md_text: str) -> str:
             break
     body_md = "\n".join(lines[start:]).strip()
     body_md = normalize_lists(body_md)
+    body_md = prepare_details(body_md)
 
     # Niente 'sane_lists': nel sorgente alcuni elenchi seguono subito una riga
     # di testo (senza riga vuota); il parser tollerante li rende come vere liste.
+    # 'md_in_html' fa convertire il Markdown DENTRO i blocchi <details> (i livelli
+    # di aiuto dell'eserciziario).
     md = markdown.Markdown(
-        extensions=["extra", "smarty", "toc"],
+        extensions=["extra", "smarty", "toc", "md_in_html"],
     )
     body_html = md.convert(body_md)
 
@@ -201,9 +210,44 @@ def build_body_html(md_text: str) -> str:
         code_repl, body_html, flags=re.DOTALL,
     )
 
+    body_html = style_details(body_html)
     body_html = transform_chapter_openers(body_html)
 
     return body_html
+
+
+def prepare_details(md_text: str) -> str:
+    """Prepara i blocchi <details>/<summary> dell'eserciziario (i 4 livelli).
+
+    - li apre nel PDF (attributo `open`);
+    - aggiunge `markdown="1"` così il Markdown dentro (liste, codice) viene
+      convertito da 'md_in_html'.
+    """
+    md_text = re.sub(r"<details\s*>", '<details open markdown="1">', md_text)
+    md_text = re.sub(r"<summary\s*>", '<summary markdown="1">', md_text)
+    return md_text
+
+
+def style_details(html_str: str) -> str:
+    """Dà un colore a ogni livello di aiuto in base al pallino nel titolo.
+
+    🟡 Aiuto = giallo · 🟠 La scena = arancio · 🔴 Codice = rosso.
+    """
+    def repl(m):
+        summ = m.group("summ")
+        cls = "lv1"
+        if "🟡" in summ:
+            cls = "lv2"
+        elif "🟠" in summ:
+            cls = "lv3"
+        elif "🔴" in summ:
+            cls = "lv4"
+        return f'<details open class="livello {cls}"><summary>{summ}</summary>'
+
+    return re.sub(
+        r"<details[^>]*>\s*<summary[^>]*>(?P<summ>.*?)</summary>",
+        repl, html_str, flags=re.DOTALL,
+    )
 
 
 def transform_chapter_openers(html_str: str) -> str:
@@ -216,8 +260,8 @@ def transform_chapter_openers(html_str: str) -> str:
     def repl(m):
         attrs = m.group("attrs") or ""
         inner = m.group("inner").strip()
-        # separa "Capitolo N" da " — resto del titolo" (trattino tra spazi)
-        mm = re.match(r"^(Capitolo\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
+        # separa "Capitolo N" / "Esercizio N" / "Scheda N" da " — resto del titolo"
+        mm = re.match(r"^((?:Capitolo|Scheda|Esercizio)\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
         if mm:
             kicker = mm.group(1)
             title = mm.group(2)
@@ -399,8 +443,9 @@ pre.code {
   color: #e6edf3;
   padding: 14px 16px;
   border-radius: 6px;
-  overflow-x: auto;
-  font-size: 9.6pt;
+  white-space: pre-wrap;       /* manda a capo le righe lunghe: niente testo tagliato */
+  overflow-wrap: anywhere;
+  font-size: 9pt;
   line-height: 1.5;
   text-align: left;
   page-break-inside: avoid;
@@ -483,11 +528,51 @@ hr {
 
 ul, ol { margin: 0 0 12px; padding-left: 24px; text-align: left; }
 li { margin: 4px 0; }
+
+/* ---------- LIVELLI DI AIUTO (i 4 livelli dell'eserciziario) ---------- */
+/* Nel PDF sono mostrati APERTI; il colore del bordo segue il pallino. */
+details.livello {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--line);
+  border-radius: 5px;
+  margin: 14px 0;
+  padding: 0 16px 8px;
+  background: #fcfaf5;
+  text-align: left;
+  page-break-inside: avoid;
+}
+details.livello > summary {
+  list-style: none;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 12.5pt;
+  padding: 9px 16px;
+  margin: 0 -16px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #f0ebe0;
+}
+details.livello > summary::-webkit-details-marker { display: none; }
+details.livello > summary::marker { content: ""; }
+details.lv2 { border-left-color: #d9a400; }
+details.lv2 > summary { background: #fbf1cd; }
+details.lv3 { border-left-color: #de7a1a; }
+details.lv3 > summary { background: #fbe3cc; }
+details.lv4 { border-left-color: #d23b3b; }
+details.lv4 > summary { background: #f7dada; }
 """
 
 
 def main():
-    md_text = SRC_MD.read_text(encoding="utf-8")
+    key = sys.argv[1] if len(sys.argv) > 1 else "manuale"
+    if key not in DOCS:
+        raise SystemExit(
+            f"Documento sconosciuto: {key!r}. Scegli tra: {', '.join(DOCS)}"
+        )
+    cfg = DOCS[key]
+    src_md = MANUALE_DIR / cfg["src"]
+    out_html = BUILD_DIR / f"{key}.html"
+
+    md_text = src_md.read_text(encoding="utf-8")
     version, date = read_version_and_date(md_text)
     body_html = build_body_html(md_text)
 
@@ -506,15 +591,15 @@ def main():
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
-<title>{html.escape(COVER_TITLE)} — {html.escape(COVER_SUBTITLE)}</title>
+<title>{html.escape(cfg['title'])} — {html.escape(COVER_SUBTITLE)}</title>
 <style>{CSS}</style>
 </head>
 <body>
   <section class="cover">
     <img class="logo" src="{logo_uri}" alt="Logo Godot"/>
-    <div class="title">{html.escape(COVER_TITLE)}</div>
+    <div class="title">{html.escape(cfg['title'])}</div>
     <div class="rule-cover"></div>
-    <div class="subtitle">{html.escape(COVER_SUBTITLE)} <span class="emoji">🎮</span></div>
+    <div class="subtitle">{html.escape(COVER_SUBTITLE)} <span class="emoji">{cfg['emoji']}</span></div>
     <div class="meta">{html.escape(meta_line)}</div>
     <div class="author">{html.escape(COVER_AUTHOR)}</div>
   </section>
@@ -524,14 +609,16 @@ def main():
 </body>
 </html>"""
 
-    OUT_HTML.write_text(doc, encoding="utf-8")
-    print(f"HTML scritto: {OUT_HTML}  ({len(doc)} byte)")
+    out_html.write_text(doc, encoding="utf-8")
+    print(f"HTML scritto: {out_html}  ({len(doc)} byte)")
 
     # Nome del PDF consegnabile: SEMPRE con il numero di versione, mai due uguali.
-    # Es. versione "0.1" -> manuale-v0.1.pdf   (regola nel CLAUDE.md).
+    # Es. "manuale" v0.2 -> manuale-v0.2.pdf   (regola nel CLAUDE.md).
     slug = (version or "0.0").strip().replace(" ", "")
-    pdf_name = f"manuale-v{slug}.pdf"
-    (BUILD_DIR / ".pdfname").write_text(pdf_name, encoding="utf-8")
+    pdf_name = f"{key}-v{slug}.pdf"
+    (BUILD_DIR / ".build.json").write_text(
+        json.dumps({"html": out_html.name, "pdf": pdf_name}), encoding="utf-8"
+    )
     print(f"Nome PDF consegnabile: {pdf_name}")
 
 

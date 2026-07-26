@@ -1,9 +1,13 @@
 # Artefatti intermedi generati durante la creazione del PDF (non versionati)
 manuale.html
+eserciziario.html
 .pdfname
+.build.json
 cover_check.png
 anteprima_full.png
 pg_*.png
 real_*.png
+v2_*.png
 griglia.png
+anteprima_volume.png
 __pycache__/
