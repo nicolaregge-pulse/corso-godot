@@ -179,9 +179,13 @@ def build_body_html(md_text: str) -> str:
             p = (IMG_DIR / Path(src).name).resolve()
         if p.exists():
             uri = data_uri(p)
-            cap = html.escape(alt) if alt else ""
+            # 'alt' arriva già HTML-escapato da markdown (es. &quot;): prima lo
+            # decodifico, poi lo ri-escapo una volta sola, così nella didascalia
+            # le virgolette si vedono giuste (niente doppio-escape).
+            alt_txt = html.unescape(alt) if alt else ""
+            cap = html.escape(alt_txt)
             return (f'<figure class="fig">'
-                    f'<img src="{uri}" alt="{html.escape(alt)}"/>'
+                    f'<img src="{uri}" alt="{cap}"/>'
                     + (f'<figcaption>{cap}</figcaption>' if cap else "")
                     + '</figure>')
         return m.group(0)

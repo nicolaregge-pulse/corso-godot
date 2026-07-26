@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot 🎮
 
-**Versione 0.2** — 26/07/2026
+**Versione 0.3** — 26/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus**
@@ -219,6 +219,68 @@ Il codice completo e commentato è in `godot/chirurgo-pasticcione/main.gd`.
 
 ---
 
+## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss"
+
+Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
+**un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
+insieme quei pezzi. Ecco la scala che stiamo salendo.
+
+### I gradini piccoli (gli esercizi dell'eserciziario)
+
+| Esercizio | Cosa impari | Il concetto sotto |
+|---|---|---|
+| **1 · Il bottone che saluta** | Un clic fa succedere qualcosa | Il **segnale** (è il tuo `Button1Click` di Lazarus) |
+| **2 · Muovi il quadrato** | Far muovere le cose da sole | Il **game loop** `_process(delta)` + input |
+| **3 · Prendi la moneta** | Un mini-gioco vero | Movimento + **collisioni** + **punteggio** |
+
+Ognuno è **corto** e finisce con una **vittoria a schermo**: è fatto apposta così,
+per vincere subito e non mollare.
+
+### Cos'è un "progetto boss"
+
+È un gioco **già pronto**, più grosso, che **non si copia riga per riga**. Si
+**apre, si gioca e si rende proprio** (cambi i colori, il titolo, ci metti una tua
+foto). È il **premio**: la cosa figa da mostrare subito. Il primo è **"Affonda la
+Bonomi"** (lo trovi nell'eserciziario e nella cartella `battaglia-navale-3d/`).
+
+![Il "progetto boss" Affonda la Bonomi: una battaglia navale in 3D, dentro un cubo d'acqua.](immagini/AffondaBonomi.png)
+
+### Dal 2D al 3D (cosa cambia nel boss)
+
+Finora abbiamo lavorato in **2D**: due coordinate, **x** (orizzontale) e **y**
+(verticale) — un `Vector2`. Il boss è in **3D**: si aggiunge una terza coordinata,
+**z** (la **profondità**) — un `Vector3`. Il campo di gioco non è più una griglia
+piatta ma un **cubo** di celle.
+
+Due idee nuove, ma **niente panico**:
+- **Si costruisce tutto da codice** (le celle, le luci, la telecamera, i bottoni)
+  invece che a mano nell'editor: sono sempre gli stessi **nodi**, solo tanti,
+  creati con un ciclo `for`.
+- Sono gli **stessi concetti di prima, in grande**: il **game loop** gira il cubo,
+  l'**input** muove il mirino. Chi ha fatto gli esercizi 2 e 3 ha già visto tutto.
+
+### Come lo proponiamo ai ragazzi (la parte che riescono a fare)
+
+La regola d'oro: **ognuno deve poter salire almeno un gradino** e portarsi a casa
+una vittoria vera. Non si "finisce" il boss tutto in una volta: ci si torna più
+volte durante l'anno, un gradino per volta.
+
+1. 🟢 **Gioca** e scegli la difficoltà (4 = facilissimo). → *ci riescono tutti.*
+2. 🟢 **Cambia un colore** dell'acqua o del mirino (basta cambiare un numero nel
+   codice). → facile, effetto immediato.
+3. 🟡 **Metti la tua foto** (o un meme) al posto di quella di default.
+4. 🟡 **Cambia il titolo** del gioco.
+5. 🟠 **Leggi una funzione piccola** e spiega **a voce** cosa fa (es. come si muove
+   il mirino). → è la "prova del nove".
+6. 🔴 **Per i più veloci:** cambia la potenza della bomba o aggiungi un secondo
+   sottomarino.
+
+Così **nessuno resta fuori**: chi è più indietro gioca e cambia un colore (è già
+una vittoria mostrabile), chi corre di più mette le mani nel codice. Vale sempre:
+**Vinci subito · Fallo tuo · Mostralo.**
+
+---
+
 ## Come useremo l'AI (regola per i ragazzi)
 
 L'AI è come la **calcolatrice in matematica**: aiuta, ma se non capisci cosa
@@ -237,3 +299,4 @@ stai facendo non serve a niente.
 |---|---|---|
 | 0.1 | 26/07/2026 | Prima stesura: Cap. 0 (Godot vs Lazarus), Cap. 1 (i 4 concetti), Cap. 2 (GDScript, game loop), Cap. 3 (Chirurgo Pasticcione), regola uso AI. |
 | 0.2 | 26/07/2026 | Aggiunte due schede iniziali: Scheda 1 "Come si valutano i compiti" e Scheda 2 "Scrivere in Markdown" (con la tabella dei segnetti e come partire da un modello). |
+| 0.3 | 26/07/2026 | Aggiunto il Capitolo 4 "Il percorso: dagli esercizi al progetto boss": collega i 3 esercizi ai concetti, spiega cos'è un progetto boss e il passaggio 2D→3D, e come proporre "Affonda la Bonomi" ai ragazzi a gradini (con screenshot). |
