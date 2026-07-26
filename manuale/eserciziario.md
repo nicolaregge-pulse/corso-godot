@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.6** — 26/07/2026
+**Versione 0.7** — 26/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -25,12 +25,7 @@ aprirli. Nel PDF sono già aperti.*
 > pronti, più grossi, che non si copiano riga per riga — si **aprono, si
 > giocano e si rendono propri**: cambi colori, titolo, ci metti una tua foto.
 > Sono il premio: la cosa figa da mostrare subito agli amici. Il codice è già
-> nel repository, lo capiremo un pezzo alla volta.
-
-> **Nota per il docente:** per ora gli esercizi sono raccolti *così come
-> nascono*, non in ordine di difficoltà. Più avanti li riordineremo per
-> difficoltà o per quando si svolgono in classe. L'importante adesso è
-> raccoglierli.
+> nel repository, lo capirai un pezzo alla volta.
 
 ---
 
@@ -313,3 +308,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.4 | 26/07/2026 | Stile: sottotitoli degli esercizi senza parentesi, titolo più sottotitolo centrato; blocchi di codice nero-su-bianco su fondo chiaro per stampare senza sprecare toner. |
 | 0.5 | 26/07/2026 | Aspetto più sobrio: rimosse icone/emoji; parentesi tolte da titoli e grassetti; screenshot del BOSS spostato in cima all'esercizio; le frasi tra virgolette non si spezzano a fine riga. |
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
+| 0.7 | 26/07/2026 | Tolta la nota per il docente: il libro parla ai ragazzi. Changelog tolto dal PDF. |

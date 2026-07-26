@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.6** — 26/07/2026
+**Versione 0.7** — 26/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -176,7 +176,7 @@ default e scena ancora vuota.
 ![L'editor di Godot appena aperto, con la scena vuota](immagini/AmbienteGodot.png)
 
 > Per il nostro corso lavoreremo quasi sempre in **2D**: cliccheremo **"Scena
-> 2D"** per iniziare. Lo vediamo nel Capitolo 1.
+> 2D"** per iniziare. Lo vedrai nei capitoli in cui costruiamo gli esercizi.
 
 ---
 
@@ -220,26 +220,209 @@ func _process(delta):
 
 ---
 
-## Capitolo 3 — Il nostro primo gioco: "Chirurgo Pasticcione"
+## Capitolo 3 — Costruiamo l'Esercizio 1: il bottone che saluta
 
-**Idea:** un chirurgo maldestro fa cadere gli organi dal tavolo. Tu muovi il
-**vassoio** con le frecce ← → e li prendi al volo.
-- organo preso → **+1 punto**
-- organo per terra → **-1 vita**
-- zero vite → **Operazione Fallita**, INVIO per riprovare
+Il tuo primo gioco vero, in pochi passi. Alla fine avrai **un bottone** che,
+quando lo premi, **ti saluta**. È il ponte da Lazarus: il vecchio `Button1Click`
+qui diventa un **segnale**.
 
-**Cosa ci insegna:**
-- Creare nodi da codice: il vassoio, gli organi, le scritte.
-- Il **movimento** con le frecce, usando input e `delta`.
-- Le **collisioni**, quando il vassoio "tocca" un organo.
-- Tenere lo **stato del gioco**, punti e vite, e mostrarlo a schermo.
-- Un **Timer** che fa comparire gli organi a intervalli.
+### Passo 1 — Crea il progetto
+`[APP — Godot]` nella finestra iniziale, il Gestore progetti, in alto a destra
+clicca **`Crea`**. Dai un nome, per esempio `esercizio1`, scegli una cartella e
+premi **`Crea e modifica`**.
 
-Il codice completo e commentato è in `godot/chirurgo-pasticcione/main.gd`.
+### Passo 2 — Fai la scena
+`[APP — Godot]` pannello **Scena**, in alto a sinistra, clicca **`Scena 2D`**: nasce
+il nodo radice `Node2D`. Con un **doppio clic** sul suo nome, rinominalo **`Main`**.
+
+![La scena con il nodo Main](immagini/es1-scena.png)
+
+### Passo 3 — Aggiungi il bottone e la scritta
+1. Seleziona **`Main`**, poi in alto nel pannello Scena clicca il **`+`**, cioè
+   Aggiungi nodo figlio. Cerca **`Button`**, selezionalo, **`Crea`**. Rinominalo
+   **`BottoneCiao`**.
+2. Seleziona di nuovo **`Main`**, **`+`**, cerca **`Label`**, **`Crea`**. Rinominalo
+   **`Etichetta`**.
+
+### Passo 4 — Attacca lo script
+Seleziona **`Main`**. In alto a destra del pannello Scena clicca **`Attacca uno
+script`**, l'icona con la pergamena e il **`+`**. Lascia tutto com'è e premi
+**`Crea`**.
+
+### Passo 5 — Scrivi il codice
+Cancella quello che trovi e incolla:
+```gdscript
+extends Node2D
+
+@onready var bottone: Button = $BottoneCiao
+@onready var etichetta: Label = $Etichetta
+
+func _ready() -> void:
+	bottone.position = Vector2(100, 100)
+	bottone.text = "Salutami!"
+	etichetta.position = Vector2(100, 180)
+	etichetta.text = "..."
+	# Colleghiamo il clic, il segnale pressed, alla nostra funzione
+	bottone.pressed.connect(_quando_premo)
+
+# Questa è come il tuo Button1Click di Lazarus
+func _quando_premo() -> void:
+	etichetta.text = "Ciao! Mi hai premuto."
+```
+Pezzo per pezzo: `@onready var` prende i due nodi per nome; in `_ready()` diamo
+posizione e testo; `bottone.pressed.connect(...)` collega il **clic** alla
+funzione `_quando_premo`, che cambia la scritta.
+
+### Passo 6 — Vinci
+Premi **`F5`**. Si apre la finestra: **premi il bottone** e compare "Ciao! Mi hai
+premuto." **Ce l'hai fatta.**
+
+![Il gioco che saluta](immagini/es1-gioca.png)
+
+### Fallo tuo
+- Cambia la frase del saluto con **la tua**.
+- Dai un colore alla scritta: dentro `_ready()` aggiungi questa riga, dove i tre
+  numeri sono rosso, verde, blu da 0 a 1:
+  ```gdscript
+  etichetta.add_theme_color_override("font_color", Color(1, 0, 0))
+  ```
 
 ---
 
-## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss"
+## Capitolo 4 — Costruiamo l'Esercizio 2: muovi il quadrato
+
+Qui incontri il concetto più importante di Godot, il **game loop**. Alla fine
+avrai un **quadrato** che si muove con le frecce.
+
+### Passo 1 — Progetto e scena
+Come prima: crea un progetto `esercizio2`, poi nel pannello Scena clicca
+**`Scena 2D`** e rinomina il nodo radice **`Main`**.
+
+### Passo 2 — Aggiungi il quadrato
+Seleziona **`Main`**, clicca **`+`**, cerca **`ColorRect`**, cioè un rettangolo
+colorato, **`Crea`**, e rinominalo **`Quadrato`**.
+
+### Passo 3 — Script e codice
+Attacca lo script a **`Main`**, cancella e incolla:
+```gdscript
+extends Node2D
+
+@onready var quadrato: ColorRect = $Quadrato
+const VELOCITA: float = 300.0   # pixel al secondo
+
+func _ready() -> void:
+	quadrato.size = Vector2(60, 60)
+	quadrato.color = Color(0.3, 0.7, 1.0)   # azzurro
+	quadrato.position = Vector2(200, 200)
+
+# _process gira a OGNI fotogramma: qui muoviamo il quadrato
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_left"):
+		quadrato.position.x -= VELOCITA * delta
+	if Input.is_action_pressed("ui_right"):
+		quadrato.position.x += VELOCITA * delta
+	if Input.is_action_pressed("ui_up"):
+		quadrato.position.y -= VELOCITA * delta
+	if Input.is_action_pressed("ui_down"):
+		quadrato.position.y += VELOCITA * delta
+```
+La novità è `func _process(delta):`, che **gira da sola ~60 volte al secondo**.
+Dentro controlliamo le frecce con `Input.is_action_pressed(...)` e spostiamo il
+quadrato. `delta` serve a muoversi uguale su ogni computer.
+
+### Passo 4 — Vinci
+**`F5`**, e muovi il quadrato con le **frecce**. *Lazarus reagisce, Godot pulsa.*
+
+![Il quadrato che si muove](immagini/es2-gioca.png)
+
+### Fallo tuo
+- Cambia il **colore** in `quadrato.color = Color(...)`.
+- Cambia la **velocità**: il numero in `const VELOCITA`.
+
+---
+
+## Capitolo 5 — Costruiamo l'Esercizio 3: prendi la moneta
+
+Il primo **mini-gioco vero**: un **cestino** che prende le **monete** che cadono,
+con **punteggio**. Mette insieme movimento, collisioni e punteggio. È l'idea del
+vecchio "Chirurgo Pasticcione", ma più pulita.
+
+### Passo 1 — Scena
+Crea il progetto `esercizio3`, **`Scena 2D`**, nodo radice **`Main`**. Poi aggiungi
+tre figli a `Main` con il **`+`**:
+- **`ColorRect`** → rinominalo **`Cestino`**
+- **`ColorRect`** → rinominalo **`Moneta`**
+- **`Label`** → rinominalo **`Punteggio`**
+
+![La scena con Cestino, Moneta e Punteggio](immagini/es3-scena.png)
+
+### Passo 2 — Script e codice
+Attacca lo script a **`Main`**, cancella e incolla:
+```gdscript
+extends Node2D
+
+@onready var cestino: ColorRect = $Cestino
+@onready var moneta: ColorRect = $Moneta
+@onready var punteggio: Label = $Punteggio
+
+const VELOCITA_CESTINO: float = 500.0
+const VELOCITA_MONETA: float = 300.0
+
+var punti: int = 0
+var larghezza: float
+
+func _ready() -> void:
+	larghezza = get_viewport_rect().size.x
+	cestino.size = Vector2(120, 24)
+	cestino.color = Color(0.6, 0.4, 0.2)
+	cestino.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
+	moneta.size = Vector2(30, 30)
+	moneta.color = Color(1.0, 0.85, 0.1)
+	_rimetti_in_alto()
+	punteggio.position = Vector2(20, 20)
+	_aggiorna_punteggio()
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_left"):
+		cestino.position.x -= VELOCITA_CESTINO * delta
+	if Input.is_action_pressed("ui_right"):
+		cestino.position.x += VELOCITA_CESTINO * delta
+	cestino.position.x = clamp(cestino.position.x, 0, larghezza - cestino.size.x)
+	moneta.position.y += VELOCITA_MONETA * delta
+	# Il cestino tocca la moneta?
+	if Rect2(cestino.position, cestino.size).intersects(Rect2(moneta.position, moneta.size)):
+		punti += 1
+		_aggiorna_punteggio()
+		_rimetti_in_alto()
+	elif moneta.position.y > get_viewport_rect().size.y:
+		_rimetti_in_alto()
+
+func _rimetti_in_alto() -> void:
+	var x := randf_range(0, larghezza - moneta.size.x)
+	moneta.position = Vector2(x, -moneta.size.y)
+
+func _aggiorna_punteggio() -> void:
+	punteggio.text = "Monete: %d" % punti
+```
+Cosa succede: in `_ready()` prepariamo cestino, moneta e punteggio; in `_process()`
+muoviamo il cestino con le frecce, facciamo scendere la moneta e con
+`Rect2(...).intersects(...)` controlliamo se il cestino **tocca** la moneta. Se sì,
+**+1 punto** e la moneta riparte dall'alto in una colonna a caso.
+
+### Passo 3 — Vinci
+**`F5`**: muovi il cestino con **← →** e **prendi le monete**. Il punteggio sale.
+
+![Il gioco della moneta](immagini/es3-gioca.png)
+
+### Fallo tuo
+- Cambia i **colori** di cestino e moneta.
+- Rendilo più difficile: aumenta `VELOCITA_MONETA`.
+- Aggiungi le **vite** e un "Game Over" quando finiscono, come nel vecchio
+  "Chirurgo Pasticcione".
+
+---
+
+## Capitolo 6 — Il percorso: dagli esercizi al "progetto boss"
 
 Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
 **un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
@@ -279,25 +462,22 @@ Due idee nuove, ma **niente panico**:
 - Sono gli **stessi concetti di prima, in grande**: il **game loop** gira il cubo,
   l'**input** muove il mirino. Chi ha fatto gli esercizi 2 e 3 ha già visto tutto.
 
-### Come lo proponiamo ai ragazzi: la parte che riescono a fare
+### Come affrontarlo, un gradino alla volta
 
-La regola d'oro: **ognuno deve poter salire almeno un gradino** e portarsi a casa
-una vittoria vera. Non si "finisce" il boss tutto in una volta: ci si torna più
-volte durante l'anno, un gradino per volta.
+Non devi finire il boss tutto in una volta: **sali un gradino alla volta**, e a
+ogni gradino ti porti a casa una vittoria vera.
 
-1. **Gioca** e scegli la difficoltà, con 4 è facilissimo. → *ci riescono tutti.*
+1. **Gioca** e scegli la difficoltà: con 4 è facilissimo.
 2. **Cambia un colore** dell'acqua o del mirino: basta cambiare un numero nel
-   codice. → facile, effetto immediato.
-3. **Metti la tua foto**, o un meme, al posto di quella di default.
+   codice, e l'effetto è immediato.
+3. **Metti la tua foto**, o un meme, al posto di quella di partenza.
 4. **Cambia il titolo** del gioco.
-5. **Leggi una funzione piccola** e spiega **a voce** cosa fa, per esempio come si muove
-   il mirino. → è la "prova del nove".
-6. **Per i più veloci:** cambia la potenza della bomba o aggiungi un secondo
-   sottomarino.
+5. **Leggi una funzione piccola** e prova a spiegare **a voce** cosa fa, per
+   esempio come si muove il mirino.
+6. Se vai forte: cambia la potenza della bomba o aggiungi un secondo sottomarino.
 
-Così **nessuno resta fuori**: chi è più indietro gioca e cambia un colore, ed è già
-una vittoria mostrabile; chi corre di più mette le mani nel codice. Vale sempre:
-**Vinci subito · Fallo tuo · Mostralo.**
+Parti dal gradino che ti riesce: anche solo giocare e cambiare un colore è già una
+vittoria da mostrare. Vale sempre: **Vinci subito · Fallo tuo · Mostralo.**
 
 ---
 
@@ -323,3 +503,4 @@ stai facendo non serve a niente.
 | 0.4 | 26/07/2026 | Stile: sottotitoli delle schede/capitoli resi come sottotitolo centrato più piccolo; blocchi di codice nero-su-bianco su fondo chiaro per stampare senza sprecare toner. |
 | 0.5 | 26/07/2026 | Aspetto più sobrio e formale: rimosse tutte le icone/emoji; tolte le parentesi da titoli e scritte in grassetto; copertina senza emoji; istruzioni per principianti più complete (modello e screenshot); corretta una pagina vuota; le frasi tra virgolette non si spezzano più a fine riga. |
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
+| 0.7 | 26/07/2026 | Aggiunti i capitoli 3-4-5 che costruiscono passo-passo gli esercizi 1-2-3 (il vecchio Cap. 3 "Chirurgo Pasticcione" e' confluito nell'Esercizio 3); il capitolo sul progetto boss e' ora il 6, riscritto rivolgendosi ai ragazzi. Changelog tolto dal PDF; segnaposto puliti per gli screenshot da inserire. |
