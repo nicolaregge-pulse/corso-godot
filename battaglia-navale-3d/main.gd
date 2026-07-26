@@ -232,9 +232,12 @@ func _stile_etichetta(l: Label3D, selezionata: bool, base: Color) -> void:
 
 
 # ---- Gizmo: 3 frecce colorate con le LETTERE dei tasti ----
+# Messo nell'angolo POSTERIORE (−Z): lì lo spazio è vuoto e le sue lettere
+# (Q/A · W/S · E/D) non si accavallano con le lettere-coordinate del cubo,
+# che stanno tutte sul fronte (+Z) e sui bordi sinistro/basso.
 func _crea_gizmo_assi() -> void:
 	var half := (LATO - 1) / 2.0 * SPAZIO
-	var org := Vector3(half + 0.9, -half - 0.9, half + 0.9)
+	var org := Vector3(half + 0.9, -half - 0.9, -half - 0.9)
 	var lung := 1.7
 	_freccia_asse(org, Vector3(lung, 0, 0), COL_ASSE_X, "Q", "A")   # colonna: Q(+) A(−)
 	_freccia_asse(org, Vector3(0, lung, 0), COL_ASSE_Y, "W", "S")   # fila:    W(+) S(−)
