@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.7** — 26/07/2026
+**Versione 0.8** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -35,6 +35,8 @@ aprirli. Nel PDF sono già aperti.*
 ### 🟢 Descrizione
 Crea una schermata con **un bottone** e **una scritta**. Quando premi il
 bottone, la scritta deve cambiare, per esempio da "..." a "Ciao! Mi hai premuto".
+
+![Il bottone che saluta: quando lo premi, la scritta cambia.](immagini/es1-gioca.png)
 
 **Fallo tuo:** scegli **tu** la frase del saluto e il **colore** della scritta
 — così il gioco è già tuo. Nessuno lo farà uguale al tuo!
@@ -94,6 +96,8 @@ func _quando_premo() -> void:
 Fai comparire un **quadrato** che puoi muovere in tutte le direzioni con le
 **frecce** della tastiera.
 
+![Il quadrato azzurro che si muove con le frecce.](immagini/es2-gioca.png)
+
 <details>
 <summary>🟡 Aiuto</summary>
 
@@ -149,6 +153,8 @@ func _process(delta: float) -> void:
 Un **cestino** in basso, che muovi con le frecce ← →, e una **moneta** che cade
 dall'alto. Se la prendi col cestino fai **+1 punto** e la moneta riparte
 dall'alto in una colonna a caso. Mostra il punteggio a schermo.
+
+![Prendi le monete col cestino: il punteggio sale.](immagini/es3-gioca.png)
 
 <details>
 <summary>🟡 Aiuto</summary>
@@ -309,3 +315,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.5 | 26/07/2026 | Aspetto più sobrio: rimosse icone/emoji; parentesi tolte da titoli e grassetti; screenshot del BOSS spostato in cima all'esercizio; le frasi tra virgolette non si spezzano a fine riga. |
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
 | 0.7 | 26/07/2026 | Tolta la nota per il docente: il libro parla ai ragazzi. Changelog tolto dal PDF. |
+| 0.8 | 27/07/2026 | Aggiunta a ogni esercizio (1-3) la foto del risultato (il gioco che gira), cosi' si vede subito dove arrivare. |
