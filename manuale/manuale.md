@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.11** — 27/07/2026
+**Versione 0.12** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -47,8 +47,8 @@ abbiamo, e la prima impressione parla di **tutti e due**.
 
 Molti di voi partono da lontano, da porte che si sono chiuse. Questa è una porta
 che **si apre**, e te la apro io. Non sprecarla: prenditi ogni piccola vittoria.
-Il resto — il lavoro, il rispetto, le occasioni — nasce da lì. Ci credo, e ci
-credo **in te**.
+Il resto — il lavoro, il rispetto, le occasioni — nasce da lì. Ci credo. E credo
+**in te**.
 
 <div class="firma">Nicola</div>
 
@@ -559,3 +559,4 @@ stai facendo non serve a niente.
 | 0.9 | 27/07/2026 | Introduzione riscritta come lettera in prima persona del docente ai ragazzi, firmata a mano "Nicola": il patto (dalla tua parte sempre, anche coi voti bassi) e il rispetto dei ruoli (professionisti in laboratorio, educati con i terzi). |
 | 0.10 | 27/07/2026 | L'introduzione è ora scritta tutta "a mano": font di scrittura a mano leggibile (Caveat) per tutta la lettera, firma elegante (Sacramento). Una parte umana. |
 | 0.11 | 27/07/2026 | Titoli della lettera riportati al carattere serif del libro; corpo della lettera a mano ingrandito (+2pt). |
+| 0.12 | 27/07/2026 | Correzione nella lettera: "Ci credo. E credo in te" (tolto il "ci" di troppo). |
