@@ -68,7 +68,13 @@ sono bloccato"), il **codice**, le **immagini**.
   consegnato ha nome unico con versione; non re-inviare mai un file identico che
   Nicola ha già (causa "file già esistente" quando salva). Regola sacra.
 - Con Nicola e i ragazzi: **tutto visuale** (GitHub Desktop / browser), mai la
-  riga di comando. Coordinate complete a ogni passo.
+  riga di comando.
+- **COORDINATE COMPLETE, SEMPRE (regola vincolante).** Prima di ogni azione dico,
+  in quest'ordine: 1) **quale APPLICAZIONE** (es. `[APP — GitHub Desktop]`,
+  `[APP — Godot]`, `[BROWSER]`); 2) **quale FINESTRA / SCHEDA**; 3) **quale
+  MENU → voce → sotto-voce**; 4) **in quale AREA** (pannello a sinistra, barra in
+  alto, ecc.); 5) **l'AZIONE esatta**, una alla volta. Mai un comando "nudo"
+  senza dire DOVE va fatto. Testi/valori da copiare sempre in blocco di codice.
 - **Descrizione del commit sempre pronta da me:** ogni volta che so che Nicola
   dovrà fare un commit (file generati da Godot, modifiche nostre, PDF nuovi),
   gli fornisco IO il testo del campo Summary in un blocco da copiare, senza che
