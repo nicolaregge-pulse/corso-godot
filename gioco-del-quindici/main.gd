@@ -1,6 +1,6 @@
 extends Control
 # ============================================================
-#  GIOCO DEL QUINDICI CON LA FOTO 🧩
+#  GIOCO DEL QUINDICI CON LA FOTO
 # ------------------------------------------------------------
 #  Una foto viene tagliata in tante tessere (3x3 o 4x4). Una
 #  tessera manca: resta un buco. Clicchi una tessera vicino al
@@ -10,6 +10,12 @@ extends Control
 #  All'avvio scegli la TUA foto (dal computer) o quella di
 #  esempio, e la difficolta' (3x3 facile, 4x4 classico).
 #  Le tessere hanno una cornice in stile LEGNO.
+#
+#  Extra utili:
+#   - un'ANTEPRIMA in alto a destra (il "coperchio della scatola"):
+#     guardi il modello e sai dove va ogni pezzo.
+#   - un interruttore "Mostra i numeri": chi vuole aiuto lo accende,
+#     chi vuole la sfida lo tiene spento.
 # ============================================================
 
 # ---- Colori "legno" ----------------------------------------
@@ -27,9 +33,12 @@ var _origine := Vector2.ZERO
 var _board: Array = []          # posizione -> indice tessera (o -1 = buco)
 var _vuoto: int = 0
 var _tessere := {}              # indice tessera -> Panel
+var _numeri := {}               # indice tessera -> Label col numero
+var _mostra_numeri: bool = false
 var _mosse: int = 0
 var _vinto: bool = false
 var _tavola: Control
+var _cornice: Panel
 var _hud: Label
 var _menu: Control
 var _stato_foto: Label
@@ -69,6 +78,14 @@ func _mostra_menu() -> void:
 	s.add_theme_font_size_override("font_size", 20)
 	s.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(s)
+
+	# --- Il gancio "fallo tuo": mettici la TUA foto ---
+	var tuo := Label.new()
+	tuo.text = "Mettici la TUA foto: un tuo meme, un compagno, te stesso!"
+	tuo.add_theme_font_size_override("font_size", 22)
+	tuo.add_theme_color_override("font_color", Color(1.0, 0.82, 0.35))
+	tuo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	v.add_child(tuo)
 
 	var lf := Label.new()
 	lf.text = "1) Scegli la foto"
@@ -167,6 +184,7 @@ func _inizia(n: int) -> void:
 		_menu = null
 	_crea_hud()
 	_crea_tavola()
+	_crea_anteprima()
 	_nuova_partita()
 
 
@@ -186,6 +204,24 @@ func _crea_hud() -> void:
 	b2.position = Vector2(168, 50)
 	b2.pressed.connect(_torna_menu)
 	add_child(b2)
+	# Interruttore "Mostra i numeri": aiuto acceso/spento.
+	var cb := CheckButton.new()
+	cb.text = "Mostra i numeri"
+	cb.position = Vector2(250, 48)
+	cb.button_pressed = _mostra_numeri
+	cb.toggled.connect(_su_numeri)
+	add_child(cb)
+
+
+func _su_numeri(acceso: bool) -> void:
+	_mostra_numeri = acceso
+	_applica_numeri()
+
+
+func _applica_numeri() -> void:
+	for indice in _numeri:
+		if is_instance_valid(_numeri[indice]):
+			_numeri[indice].visible = _mostra_numeri
 
 
 func _crea_tavola() -> void:
@@ -195,21 +231,61 @@ func _crea_tavola() -> void:
 	_origine = Vector2((vp.x - lato) / 2.0, (vp.y - lato) / 2.0 + 24.0)
 
 	# Cornice in legno attorno al quadro
-	var cornice := Panel.new()
+	_cornice = Panel.new()
 	var sbc := StyleBoxFlat.new()
 	sbc.bg_color = COL_CORNICE
 	sbc.set_corner_radius_all(10)
-	cornice.add_theme_stylebox_override("panel", sbc)
+	_cornice.add_theme_stylebox_override("panel", sbc)
 	var m := _cella * 0.16
-	cornice.position = _origine - Vector2(m, m)
-	cornice.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
-	cornice.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(cornice)
+	_cornice.position = _origine - Vector2(m, m)
+	_cornice.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
+	_cornice.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_cornice)
 
 	_tavola = Control.new()
 	_tavola.position = _origine
 	_tavola.size = Vector2(lato, lato)
 	add_child(_tavola)
+
+
+func _crea_anteprima() -> void:
+	# Il "coperchio della scatola": la foto intera in piccolo, in alto a destra.
+	var vp := get_viewport_rect().size
+	var d := minf(vp.x, vp.y) * 0.18   # lato dell'anteprima
+
+	var box := Panel.new()
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = COL_CORNICE
+	sb.set_corner_radius_all(8)
+	box.add_theme_stylebox_override("panel", sb)
+	box.position = Vector2(vp.x - d - 26.0, 20.0)
+	box.size = Vector2(d, d)
+	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(box)
+
+	var b := d * 0.08
+	var foto := TextureRect.new()
+	# Mostra la stessa porzione quadrata che usiamo per le tessere.
+	var tw := _tex.get_width()
+	var th := _tex.get_height()
+	var side := mini(tw, th)
+	var at := AtlasTexture.new()
+	at.atlas = _tex
+	at.region = Rect2((tw - side) / 2.0, (th - side) / 2.0, side, side)
+	foto.texture = at
+	foto.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	foto.stretch_mode = TextureRect.STRETCH_SCALE
+	foto.position = Vector2(b, b)
+	foto.size = Vector2(d - 2.0 * b, d - 2.0 * b)
+	foto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	box.add_child(foto)
+
+	var etich := Label.new()
+	etich.text = "Modello"
+	etich.add_theme_font_size_override("font_size", 16)
+	etich.add_theme_color_override("font_color", Color(0.95, 0.92, 0.85))
+	etich.position = Vector2(vp.x - d - 26.0, 20.0 + d + 2.0)
+	add_child(etich)
 
 
 func _nuova_partita() -> void:
@@ -223,6 +299,7 @@ func _nuova_partita() -> void:
 	for c in _tavola.get_children():
 		c.queue_free()
 	_tessere.clear()
+	_numeri.clear()
 
 	var tot := _n * _n
 	_board = []
@@ -239,6 +316,7 @@ func _nuova_partita() -> void:
 	_mescola()
 	for indice in _tessere:
 		_tessere[indice].position = _pixel(_posizione_di(indice))
+	_applica_numeri()
 	_aggiorna_testo()
 
 
@@ -274,6 +352,21 @@ func _crea_tessera(indice: int) -> Panel:
 	tr.position = Vector2(b, b)
 	tr.size = Vector2(_cella - 2.0 * b, _cella - 2.0 * b)
 	pan.add_child(tr)
+
+	# Il numero della tessera (1, 2, 3...): nascosto se l'aiuto è spento.
+	var num := Label.new()
+	num.text = str(indice + 1)
+	num.add_theme_font_size_override("font_size", maxi(16, int(_cella * 0.34)))
+	num.add_theme_color_override("font_color", Color(1, 1, 1))
+	num.add_theme_color_override("font_outline_color", Color(0, 0, 0))
+	num.add_theme_constant_override("outline_size", 6)
+	num.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	num.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	num.size = Vector2(_cella, _cella)
+	num.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	num.visible = _mostra_numeri
+	pan.add_child(num)
+	_numeri[indice] = num
 
 	pan.mouse_filter = Control.MOUSE_FILTER_STOP
 	pan.gui_input.connect(_su_tessera.bind(indice))
@@ -364,6 +457,9 @@ func _vittoria() -> void:
 		_tessere[mancante] = t
 	_board[_n * _n - 1] = mancante
 	_tessere[mancante].position = _pixel(_n * _n - 1)
+	_applica_numeri()
+
+	_festa()
 
 	_vitt = Label.new()
 	_vitt.text = "COMPLIMENTI!\nFoto ricomposta in %d mosse." % _mosse
@@ -377,6 +473,21 @@ func _vittoria() -> void:
 	_vitt.position = Vector2(0, 12)
 	add_child(_vitt)
 	_aggiorna_testo()
+
+
+func _festa() -> void:
+	# Un'onda di luce che attraversa le tessere in diagonale: piccola festa.
+	var oro := Color(1.5, 1.3, 0.7)   # oltre 1 = più luminoso
+	for pos in range(_n * _n):
+		var indice: int = _board[pos]
+		if not _tessere.has(indice):
+			continue
+		var t: Panel = _tessere[indice]
+		var ritardo := (pos % _n + int(pos / _n)) * 0.06
+		var tw := create_tween()
+		tw.tween_interval(ritardo)
+		tw.tween_property(t, "modulate", oro, 0.15)
+		tw.tween_property(t, "modulate", Color.WHITE, 0.30)
 
 
 func _aggiorna_testo() -> void:
