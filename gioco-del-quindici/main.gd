@@ -333,6 +333,16 @@ func _strip(pos: Vector2, size: Vector2, col: Color) -> void:
 	add_child(r)
 
 
+func _bordo(parent: Control, pos: Vector2, size: Vector2, col: Color) -> void:
+	# Come _strip, ma la striscia è figlia di un nodo (es. una pedina).
+	var r := ColorRect.new()
+	r.color = col
+	r.position = pos
+	r.size = size
+	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	parent.add_child(r)
+
+
 func _crea_tavola() -> void:
 	var vp := get_viewport_rect().size
 	var cd := _colonna_destra()
@@ -518,6 +528,16 @@ func _crea_tessera(indice: int) -> Panel:
 	tr.position = Vector2(b, b)
 	tr.size = Vector2(visibile, visibile)
 	pan.add_child(tr)
+
+	# SPESSORE: bordo in rilievo (luce sopra/sx, ombra sotto/dx) così la pedina
+	# sembra un pezzo di legno con altezza, non una figurina piatta.
+	var sp := maxf(3.0, _cella * 0.04)
+	var luce := Color(1, 1, 1, 0.32)
+	var ombra := Color(0, 0, 0, 0.45)
+	_bordo(pan, Vector2(0, 0), Vector2(_cella, sp), luce)
+	_bordo(pan, Vector2(0, 0), Vector2(sp, _cella), luce)
+	_bordo(pan, Vector2(0, _cella - sp), Vector2(_cella, sp), ombra)
+	_bordo(pan, Vector2(_cella - sp, 0), Vector2(sp, _cella), ombra)
 
 	# Il numero della tessera (1, 2, 3...): nascosto se l'aiuto è spento.
 	var num := Label.new()
