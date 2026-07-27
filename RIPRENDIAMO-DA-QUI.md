@@ -23,6 +23,19 @@
 - Impaginare il **quaderno-studente** in PDF.
 - Aggiungere altri esercizi (poi si riordinano per difficoltà).
 
+### Nuovo gioco da fare — "Il quindici con la foto" (idea di Nicola)
+Il classico **gioco del quindici** (griglia 4×4: 15 tessere + 1 buco), ma le
+tessere mostrano i **pezzi di una foto**; obiettivo: ricomporre l'immagine.
+- La foto si taglia in 16 quadretti con `AtlasTexture` (ritaglia un pezzo).
+- Clic su una tessera vicina al buco → scivola nel buco.
+- Mescolare con tante **mosse casuali valide** (così è sempre risolvibile).
+- Vittoria = tutte le tessere a posto, foto intera.
+- **Aspetto legno**: cornice + tessere in legno (o texture `legno.jpg` fornita
+  da Nicola, oppure finto legno con marroni + smusso).
+- **Da decidere:** come carica la foto — file `foto.jpg` nella cartella (semplice,
+  come Serena) oppure finestra "Scegli file" all'avvio (più fedele, ottima su PC).
+- Ottimo per "Fallo tuo" (la tua foto) e "Mostralo". Possibile Esercizio 4.
+
 ## Preferenze da ricordare SEMPRE (decise da Nicola)
 - Aspetto **sobrio, serio, professionale**: **niente icone/emoji**. Unica
   eccezione: i **4 livelli d'aiuto** restano colorati (verde/giallo/arancione/rosso).
