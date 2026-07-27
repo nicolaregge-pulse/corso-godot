@@ -79,3 +79,15 @@ sono bloccato"), il **codice**, le **immagini**.
   dovrà fare un commit (file generati da Godot, modifiche nostre, PDF nuovi),
   gli fornisco IO il testo del campo Summary in un blocco da copiare, senza che
   lo debba chiedere. Anticipare, non aspettare.
+- **PRECISIONE MICIDIALE nelle guide passo-passo (regola vincolante).** Alcuni
+  ragazzi "non vanno oltre un centimetro": non colmano i vuoti, fanno ESATTAMENTE
+  ciò che c'è scritto. Ci sono anche ragazzi con disabilità: un termine ambiguo o
+  un passo saltato è un muro, non un fastidio. Quindi ogni guida operativa deve:
+  * usare i **nomi esatti come compaiono a schermo** (finestre e pulsanti: es.
+    finestra "Crea un nuovo Node", pulsante "Scena 2D");
+  * **una micro-azione per riga**, numerata; mai due cose nella stessa frase;
+  * **mai** "scegli/vai/sistema" senza dire DOVE e COSA cliccare;
+  * **sempre lo stesso termine** per la stessa cosa (niente sinonimi);
+  * **guidare lo sguardo** (dire dove guardare prima di cosa fare);
+  * meglio ridondanti che ambigui. Scrivere immaginando cosa vede LO STUDENTE,
+    non cosa so io.
