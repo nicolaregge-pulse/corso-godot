@@ -24,6 +24,9 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
 - **`programma.md`** — la mappa dell'anno: i sei moduli, la sequenza, il percorso
   pluriennale, valutazione e uso dell'AI. È il punto di partenza; da qui
   nasceranno, un modulo alla volta, il libro di testo e l'eserciziario.
+- **`bussola-mondo-del-lavoro.md`** — documento interno: cosa serve davvero al
+  mondo del lavoro da ragazzi di 15-17 anni (i tre cassetti). È la bussola per
+  decidere quali argomenti spingere, classe per classe.
 
 ## Come crescerà
 
