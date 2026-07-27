@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.14** — 27/07/2026
+**Versione 0.15** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -189,6 +189,39 @@ computer. Ecco tutti i passaggi:
 
 > **Prova del nove:** se guardi la tua pagina e vedi il titolo grande, il
 > grassetto e il tuo screenshot al posto giusto… **ce l'hai fatta!**
+
+---
+
+## Scheda 3 — La tua copia del corso, e come consegnare
+*Il fork: il tuo spazio, dove lavori in sicurezza.*
+
+Per lavorare **non tocchi** il corso del prof: te ne fai una **copia tutta tua**,
+dove nessuno può rovinare il tuo lavoro e tu non rovini quello degli altri. In
+GitHub questa copia si chiama **fork**.
+
+### Passo 1 — Fatti la tua copia, il fork
+1. `[BROWSER]` entra su GitHub con il **tuo account** e apri la pagina del corso
+   (l'indirizzo te lo do io).
+2. In alto a destra clicca il bottone **`Fork`**, poi **`Create fork`**.
+3. Fatto: in alto ora c'è il **tuo nome** — quella è la **tua copia** del corso.
+
+### Passo 2 — Prepara la consegna
+Ogni consegna è una **cartella** dentro `consegne/`, con tre cose: la **scheda**
+compilata, il tuo **codice** e i tuoi **screenshot**.
+1. Nella tua copia apri `consegne/_MODELLO/scheda.md` e clicca **`Copy raw file`**.
+2. Bottone **`Add file`** → **`Create new file`**. Come nome scrivi il percorso
+   con la cartella dell'esercizio, per esempio `consegne/es1-bottone/scheda.md`.
+   **Incolla** la scheda e **riempila**. In fondo, **`Commit`**.
+3. Bottone **`Add file`** → **`Upload files`**: trascina il tuo `main.gd` e gli
+   screenshot, poi **`Commit`**.
+
+### Passo 3 — Consegna
+Manda al prof il **link** della tua cartella. Lui la corregge, mette il voto e la
+aggiunge al **tuo** libro personale.
+
+> Se ti blocchi, dai a Gemini il file `ISTRUZIONI.md` che trovi nel kit: sa
+> guidarti passo passo. Ma la parte "cosa ho fatto con parole mie" scrivila **da
+> solo** — è quella che conta.
 
 ---
 
@@ -562,3 +595,4 @@ stai facendo non serve a niente.
 | 0.12 | 27/07/2026 | Correzione nella lettera: "Ci credo. E credo in te" (tolto il "ci" di troppo). |
 | 0.13 | 27/07/2026 | Inserite le foto dell'Esercizio 1 (editor + gioco). Convenzione nomi screenshot: es1-ambiente / es1-gioca (e cosi' per es2, es3). |
 | 0.14 | 27/07/2026 | Inserite tutte le foto degli esercizi (es2-gioca, es3-ambiente, es3-gioca): i tre capitoli di costruzione sono ora completi di immagini. |
+| 0.15 | 27/07/2026 | Aggiunta la Scheda 3 "La tua copia del corso, e come consegnare": come fare il fork e gestire il kit di consegna. |
