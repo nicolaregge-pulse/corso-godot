@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.12** — 27/07/2026
+**Versione 0.13** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -286,7 +286,7 @@ premi **`Crea e modifica`**.
 `[APP — Godot]` pannello **Scena**, in alto a sinistra, clicca **`Scena 2D`**: nasce
 il nodo radice `Node2D`. Con un **doppio clic** sul suo nome, rinominalo **`Main`**.
 
-![La scena con il nodo Main](immagini/es1-scena.png)
+![L'editor di Godot con la scena: i nodi Main, BottoneCiao ed Etichetta](immagini/es1-ambiente.png)
 
 ### Passo 3 — Aggiungi il bottone e la scritta
 1. Seleziona **`Main`**, poi in alto nel pannello Scena clicca il **`+`**, cioè
@@ -405,7 +405,7 @@ tre figli a `Main` con il **`+`**:
 - **`ColorRect`** → rinominalo **`Moneta`**
 - **`Label`** → rinominalo **`Punteggio`**
 
-![La scena con Cestino, Moneta e Punteggio](immagini/es3-scena.png)
+![L'editor di Godot con la scena: i nodi Cestino, Moneta e Punteggio](immagini/es3-ambiente.png)
 
 ### Passo 2 — Script e codice
 Attacca lo script a **`Main`**, cancella e incolla:
@@ -560,3 +560,4 @@ stai facendo non serve a niente.
 | 0.10 | 27/07/2026 | L'introduzione è ora scritta tutta "a mano": font di scrittura a mano leggibile (Caveat) per tutta la lettera, firma elegante (Sacramento). Una parte umana. |
 | 0.11 | 27/07/2026 | Titoli della lettera riportati al carattere serif del libro; corpo della lettera a mano ingrandito (+2pt). |
 | 0.12 | 27/07/2026 | Correzione nella lettera: "Ci credo. E credo in te" (tolto il "ci" di troppo). |
+| 0.13 | 27/07/2026 | Inserite le foto dell'Esercizio 1 (editor + gioco). Convenzione nomi screenshot: es1-ambiente / es1-gioca (e cosi' per es2, es3). |
