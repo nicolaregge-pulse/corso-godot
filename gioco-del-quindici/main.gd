@@ -324,33 +324,65 @@ func _applica_numeri() -> void:
 			_numeri[indice].visible = _mostra_numeri
 
 
+func _strip(pos: Vector2, size: Vector2, col: Color) -> void:
+	var r := ColorRect.new()
+	r.color = col
+	r.position = pos
+	r.size = size
+	r.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(r)
+
+
 func _crea_tavola() -> void:
 	var vp := get_viewport_rect().size
-	var lato := minf(vp.x, vp.y) * 0.80
+	var cd := _colonna_destra()
+	var margine := 30.0
+	# Il gioco sta a SINISTRA; a destra resta libera la colonna dei comandi.
+	var disponibile: float = cd["x"] - margine - 24.0
+	var lato := minf(disponibile, vp.y * 0.84)
 	_cella = lato / _n
-	_origine = Vector2((vp.x - lato) / 2.0, (vp.y - lato) / 2.0 + 24.0)
+	_origine = Vector2(margine + (disponibile - lato) / 2.0, (vp.y - lato) / 2.0 + 16.0)
 
-	# Il TABELLONE: una base tutta di legno (si vede anche nel buco), con un
-	# bordo di legno ben visibile tutt'attorno (circa un centimetro).
 	if _tex_legno == null:
 		_tex_legno = _texture_legno(512, 512, 202, _stile_legno, "frame")
-	var m := maxf(30.0, _cella * 0.20)
-	# Ombra morbida sotto: sembra un oggetto di legno appoggiato sul piano.
+
+	var m := maxf(26.0, _cella * 0.16)          # bordo/cornice ~1 cm
+	var op := _origine - Vector2(m, m)          # angolo esterno della cornice
+	var os := Vector2(lato, lato) + Vector2(m, m) * 2.0
+
+	# Ombra a terra: l'oggetto sembra appoggiato sul piano beige.
 	var ombra := ColorRect.new()
-	ombra.color = Color(0.0, 0.0, 0.0, 0.22)
-	ombra.position = _origine - Vector2(m, m) + Vector2(5, 7)
-	ombra.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
+	ombra.color = Color(0, 0, 0, 0.22)
+	ombra.position = op + Vector2(6, 9)
+	ombra.size = os
 	ombra.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(ombra)
 
+	# La CORNICE di legno, più scura delle tessere così si distingue.
 	_cornice = TextureRect.new()
 	_cornice.texture = _tex_legno
+	_cornice.modulate = Color(0.58, 0.58, 0.58)
 	_cornice.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_cornice.stretch_mode = TextureRect.STRETCH_SCALE
-	_cornice.position = _origine - Vector2(m, m)
-	_cornice.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
+	_cornice.position = op
+	_cornice.size = os
 	_cornice.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_cornice)
+
+	var chiaro := Color(1, 1, 1, 0.30)
+	var scuro := Color(0, 0, 0, 0.42)
+	# RILIEVO esterno: la cornice sporge (luce sopra/sx, ombra sotto/dx).
+	var so := 5.0
+	_strip(op, Vector2(os.x, so), chiaro)
+	_strip(op, Vector2(so, os.y), chiaro)
+	_strip(Vector2(op.x, op.y + os.y - so), Vector2(os.x, so), scuro)
+	_strip(Vector2(op.x + os.x - so, op.y), Vector2(so, os.y), scuro)
+	# INCAVO interno: le tessere sono in una vaschetta (ombra sopra/sx, luce sotto/dx).
+	var si := 8.0
+	_strip(_origine - Vector2(si, si), Vector2(lato + 2 * si, si), scuro)
+	_strip(_origine - Vector2(si, si), Vector2(si, lato + 2 * si), scuro)
+	_strip(Vector2(_origine.x - si, _origine.y + lato), Vector2(lato + 2 * si, si), chiaro)
+	_strip(Vector2(_origine.x + lato, _origine.y - si), Vector2(si, lato + 2 * si), chiaro)
 
 	_tavola = Control.new()
 	_tavola.position = _origine
