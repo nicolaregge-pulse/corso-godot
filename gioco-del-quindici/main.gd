@@ -7,22 +7,16 @@ extends Control
 #  buco e questa ci scivola dentro. Obiettivo: rimettere in
 #  ordine le tessere e RICOMPORRE la foto.
 #
-#  All'avvio scegli la TUA foto (dal computer) o quella di
-#  esempio, e la difficolta' (3x3 facile, 4x4 classico).
-#  Le tessere hanno una cornice in stile LEGNO.
+#  All'avvio scegli la TUA foto, il tipo di LEGNO (noce caldo o
+#  driftwood coloniale da spiaggia) e la difficolta'.
 #
-#  Extra utili:
-#   - un'ANTEPRIMA in alto a destra (il "coperchio della scatola"):
-#     guardi il modello e sai dove va ogni pezzo.
-#   - un interruttore "Mostra i numeri": chi vuole aiuto lo accende,
-#     chi vuole la sfida lo tiene spento.
+#  Il legno di cornice e fondo e' DISEGNATO dal codice (venature
+#  vere, niente foto da scaricare): il progetto resta portabile.
 # ============================================================
 
-# ---- Colori "legno" ----------------------------------------
-const COL_SFONDO := Color(0.12, 0.10, 0.08)
+# ---- Colori tessera (il legno vero e' generato a parte) ----
 const COL_LEGNO := Color(0.62, 0.40, 0.20)        # faccia della tessera
-const COL_LEGNO_SCURO := Color(0.34, 0.20, 0.09)  # bordo/venatura
-const COL_CORNICE := Color(0.28, 0.16, 0.07)      # cornice attorno al quadro
+const COL_LEGNO_SCURO := Color(0.34, 0.20, 0.09)  # bordo della tessera
 
 # ---- Stato -------------------------------------------------
 var _n: int = 4                 # tessere per lato
@@ -39,8 +33,10 @@ var _mosse: int = 0
 var _vinto: bool = false
 var _tavola: Control
 var _cornice: TextureRect
-var _tex_tavolo: Texture2D       # legno del fondo (tavolo)
-var _tex_radica: Texture2D       # legno pregiato/radica della cornice
+var _tex_tavolo: Texture2D      # legno del fondo (tavolo)
+var _tex_radica: Texture2D      # legno della cornice
+var _stile_legno: String = "driftwood"   # legno del gioco (driftwood da spiaggia)
+var _bg: TextureRect
 var _hud: Label
 var _menu: Control
 var _stato_foto: Label
@@ -51,18 +47,18 @@ var _vitt: Label
 func _ready() -> void:
 	randomize()
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	# Il FONDO: una tavola di legno vero (venature lunghe), generata dal codice.
-	_tex_tavolo = _texture_legno(480, 300, 101, false)
-	var bg := TextureRect.new()
-	bg.texture = _tex_tavolo
-	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
-	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	bg.stretch_mode = TextureRect.STRETCH_SCALE
-	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(bg)
-	# Un velo scuro leggero, così il quadro e le scritte risaltano sul legno.
+	# Il FONDO: una tavola di legno vero, generata dal codice.
+	_tex_tavolo = _texture_legno(420, 260, 101, _stile_legno, "tavolo")
+	_bg = TextureRect.new()
+	_bg.texture = _tex_tavolo
+	_bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_bg.stretch_mode = TextureRect.STRETCH_SCALE
+	_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_bg)
+	# Un velo scuro leggero, così il quadro e le scritte risaltano.
 	var velo := ColorRect.new()
-	velo.color = Color(0, 0, 0, 0.30)
+	velo.color = Color(0, 0, 0, 0.22)
 	velo.set_anchors_preset(Control.PRESET_FULL_RECT)
 	velo.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(velo)
@@ -76,7 +72,7 @@ func _mostra_menu() -> void:
 	add_child(_menu)
 	var v := VBoxContainer.new()
 	v.alignment = BoxContainer.ALIGNMENT_CENTER
-	v.add_theme_constant_override("separation", 14)
+	v.add_theme_constant_override("separation", 12)
 	_menu.add_child(v)
 
 	var t := Label.new()
@@ -111,12 +107,12 @@ func _mostra_menu() -> void:
 	v.add_child(rf)
 	var b1 := Button.new()
 	b1.text = "Scegli dal computer…"
-	b1.custom_minimum_size = Vector2(240, 56)
+	b1.custom_minimum_size = Vector2(240, 52)
 	b1.pressed.connect(_apri_file_dialog)
 	rf.add_child(b1)
 	var b2 := Button.new()
 	b2.text = "Foto di esempio"
-	b2.custom_minimum_size = Vector2(190, 56)
+	b2.custom_minimum_size = Vector2(190, 52)
 	b2.pressed.connect(_usa_esempio)
 	rf.add_child(b2)
 
@@ -137,12 +133,12 @@ func _mostra_menu() -> void:
 	v.add_child(rd)
 	var e3 := Button.new()
 	e3.text = "3 × 3 (facile)"
-	e3.custom_minimum_size = Vector2(180, 66)
+	e3.custom_minimum_size = Vector2(180, 62)
 	e3.pressed.connect(_inizia.bind(3))
 	rd.add_child(e3)
 	var e4 := Button.new()
 	e4.text = "4 × 4 (classico)"
-	e4.custom_minimum_size = Vector2(200, 66)
+	e4.custom_minimum_size = Vector2(200, 62)
 	e4.pressed.connect(_inizia.bind(4))
 	rd.add_child(e4)
 
@@ -185,54 +181,82 @@ func _foto_esempio() -> Texture2D:
 	return ImageTexture.create_from_image(img)
 
 
-func _texture_legno(w: int, h: int, semi: int, radica: bool) -> Texture2D:
-	# Disegna un legno pregiato dal nulla: niente foto da scaricare.
-	#  - radica = true  -> venature che vorticano, gli "occhi" della radica (cornice)
-	#  - radica = false -> venature lunghe, come una tavola (fondo/tavolo)
-	var fig := FastNoiseLite.new()
-	fig.seed = semi
-	fig.noise_type = FastNoiseLite.TYPE_SIMPLEX
-	fig.fractal_type = FastNoiseLite.FRACTAL_FBM
-	fig.fractal_octaves = 4
-	if radica:
-		fig.frequency = 0.012
-		fig.domain_warp_enabled = true
-		fig.domain_warp_amplitude = 55.0
-		fig.domain_warp_frequency = 0.012
+func _texture_legno(w: int, h: int, semi: int, stile: String, kind: String) -> Texture2D:
+	# Disegna una tavola di legno realistica: venature lunghe e sottili, righe
+	# scure nette e fibre fini. "kind" cambia la direzione della grana:
+	#  - "tavolo" -> assi orizzontali con le fughe (il fondo)
+	#  - "frame"  -> grana dritta verticale, come un profilo di cornice
+	# "stile" cambia i colori: "noce" (caldo) o "driftwood" (sbiancato + crepe).
+	var driftwood := stile == "driftwood"
+	var ven: Color
+	var chi: Color
+	var mie: Color
+	if driftwood:
+		ven = Color(0.204, 0.188, 0.173)
+		chi = Color(0.549, 0.518, 0.471)
+		mie = Color(0.737, 0.714, 0.667)
 	else:
-		fig.frequency = 0.010
-		fig.domain_warp_enabled = true
-		fig.domain_warp_amplitude = 12.0
-		fig.domain_warp_frequency = 0.05
+		ven = Color(0.090, 0.043, 0.020)
+		chi = Color(0.588, 0.376, 0.180)
+		mie = Color(0.769, 0.549, 0.290)
+	var contrasto := 0.35 if driftwood else 0.5
 
-	var grana := FastNoiseLite.new()
-	grana.seed = semi + 17
-	grana.noise_type = FastNoiseLite.TYPE_SIMPLEX
-	grana.frequency = 0.09
+	var turb := FastNoiseLite.new()
+	turb.seed = semi
+	turb.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	turb.fractal_type = FastNoiseLite.FRACTAL_FBM
+	turb.fractal_octaves = 5
+	turb.frequency = 1.0
+	var fine := FastNoiseLite.new()
+	fine.seed = semi + 31
+	fine.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	fine.fractal_type = FastNoiseLite.FRACTAL_FBM
+	fine.fractal_octaves = 4
+	fine.frequency = 1.0
 
-	# Colori del legno pregiato: dal cioccolato scuro all'ambra dorata.
-	var scuro := Color(0.18, 0.085, 0.04)
-	var medio := Color(0.43, 0.23, 0.10)
-	var chiaro := Color(0.72, 0.48, 0.24)
+	var tavolo := kind == "tavolo"
+	var ring_freq := 0.09 if tavolo else 0.14
+	var warp_amp := 2.2 if tavolo else 1.6
+	var n_assi := 3
+	var alt := float(h) / n_assi
 
 	var img := Image.create(w, h, false, Image.FORMAT_RGB8)
 	for y in h:
 		for x in w:
-			var a := fig.get_noise_2d(float(x), float(y))
-			var g := grana.get_noise_2d(float(x), float(y))
-			var v: float
-			if radica:
-				# tante venature che seguono i vortici: gli occhi della radica
-				v = sin(a * 7.0 + g * 1.5) * 0.5 + 0.5
+			var fx := float(x)
+			var fy := float(y)
+			var idx := 0
+			var along: float
+			var across: float
+			if tavolo:
+				idx = int(fy / alt)
+				var fase := float(idx) * 61.0
+				along = fx + fase
+				across = fy + fase
 			else:
-				# venature lunghe quasi orizzontali, come le assi di un tavolo
-				v = sin((float(y) + a * 60.0) * 0.14 + g) * 0.5 + 0.5
-			v = clamp(v + g * 0.08, 0.0, 1.0)
+				along = fy
+				across = fx
+			var warp := turb.get_noise_2d(along * 0.012, across * 0.05) * warp_amp
+			var ring: float = abs(sin(across * ring_freq + warp))
+			var linea: float = pow(ring, contrasto)
+			var fibra := fine.get_noise_2d(along * 0.010, across * 0.8) * 0.16
+			var t: float = clampf(linea * 0.80 + 0.14 + fibra, 0.0, 1.0)
 			var col: Color
-			if v < 0.5:
-				col = scuro.lerp(medio, v * 2.0)
+			if t < 0.5:
+				col = ven.lerp(chi, t * 2.0)
 			else:
-				col = medio.lerp(chiaro, (v - 0.5) * 2.0)
+				col = chi.lerp(mie, (t - 0.5) * 2.0)
+			if driftwood:
+				# crepe/spaccature scure sparse, tipiche del legno esposto
+				var c := fine.get_noise_2d(along * 0.02, across * 0.5)
+				if absf(c) <= 0.06:
+					col = col.darkened(0.45)
+			if tavolo:
+				if idx % 2 == 1:
+					col = col.darkened(0.07)
+				var d: float = minf(fy - idx * alt, (idx + 1) * alt - fy)
+				if d < 2.0:
+					col = ven
 			img.set_pixel(x, y, col)
 	return ImageTexture.create_from_image(img)
 
@@ -243,6 +267,11 @@ func _inizia(n: int) -> void:
 	if _tex_scelta == null:
 		_tex_scelta = _foto_esempio()
 	_tex = _tex_scelta
+	# Genera i due legni con lo stile scelto.
+	_tex_tavolo = _texture_legno(420, 260, 101, _stile_legno, "tavolo")
+	_tex_radica = _texture_legno(320, 320, 202, _stile_legno, "frame")
+	if _bg != null and is_instance_valid(_bg):
+		_bg.texture = _tex_tavolo
 	if _menu != null and is_instance_valid(_menu):
 		_menu.queue_free()
 		_menu = null
@@ -256,7 +285,9 @@ func _crea_hud() -> void:
 	_hud = Label.new()
 	_hud.position = Vector2(20, 14)
 	_hud.add_theme_font_size_override("font_size", 22)
-	_hud.add_theme_color_override("font_color", Color(0.95, 0.92, 0.85))
+	_hud.add_theme_color_override("font_color", Color(0.98, 0.96, 0.90))
+	_hud.add_theme_color_override("font_outline_color", Color.BLACK)
+	_hud.add_theme_constant_override("outline_size", 5)
 	add_child(_hud)
 	var b := Button.new()
 	b.text = "↻ Rimescola"
@@ -294,9 +325,9 @@ func _crea_tavola() -> void:
 	_cella = lato / _n
 	_origine = Vector2((vp.x - lato) / 2.0, (vp.y - lato) / 2.0 + 24.0)
 
-	# Cornice in RADICA (legno pregiato) attorno al quadro.
+	# Cornice di legno attorno al quadro.
 	if _tex_radica == null:
-		_tex_radica = _texture_legno(360, 360, 202, true)
+		_tex_radica = _texture_legno(320, 320, 202, _stile_legno, "frame")
 	var m := _cella * 0.18
 	# Un sottile bordo scuro sotto, per dare profondità alla cornice.
 	var ombra := ColorRect.new()
@@ -328,7 +359,7 @@ func _crea_anteprima() -> void:
 
 	var box := Panel.new()
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = COL_CORNICE
+	sb.bg_color = Color(0.10, 0.07, 0.04)
 	sb.set_corner_radius_all(8)
 	box.add_theme_stylebox_override("panel", sb)
 	box.position = Vector2(vp.x - d - 26.0, 20.0)
@@ -356,7 +387,9 @@ func _crea_anteprima() -> void:
 	var etich := Label.new()
 	etich.text = "Modello"
 	etich.add_theme_font_size_override("font_size", 16)
-	etich.add_theme_color_override("font_color", Color(0.95, 0.92, 0.85))
+	etich.add_theme_color_override("font_color", Color(0.98, 0.96, 0.90))
+	etich.add_theme_color_override("font_outline_color", Color.BLACK)
+	etich.add_theme_constant_override("outline_size", 4)
 	etich.position = Vector2(vp.x - d - 26.0, 20.0 + d + 2.0)
 	add_child(etich)
 
