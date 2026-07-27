@@ -5,7 +5,10 @@
 ## Dove siamo (tutto su `main`)
 - **Manuale v0.17** — teoria, lettera a mano firmata "Nicola", schede, i 3
   capitoli di costruzione degli esercizi 1-2-3 (con foto), progetto boss.
-- **Eserciziario v0.9** — esercizi 1-3 (4 livelli + foto del risultato) + BOSS.
+- **Eserciziario v0.14** — esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
+  ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del
+  codice riga per riga. **Ogni passo della guida e' stato verificato sulle
+  schermate reali di Godot 4.7.1 in italiano** (vedi nota qui sotto).
 - **Esercizi funzionanti** in `esercizi/` (01 bottone, 02 quadrato, 03 moneta).
   Convenzione nomi: variabile finisce in "Var", nodo in "Scena".
 - **Giochi:** `battaglia-navale-3d/` (Affonda la Bonomi) e `gioco-del-quindici/`
@@ -15,6 +18,31 @@
 - **Release `v1.0`** pubblicata (versione congelata per i ragazzi).
 - Tutte le foto degli esercizi sono in `manuale/immagini/`
   (es1-ambiente, es1-gioca, es2-gioca, es3-ambiente, es3-gioca).
+
+## Verifica delle guide sull'interfaccia REALE di Godot (metodo, da ricordare)
+Le coordinate e i nomi dei pulsanti nelle guide passo-passo **non si scrivono a
+memoria**: si verificano guardando l'interfaccia vera. In questo ambiente Claude
+**puo' far girare Godot 4.7.1 con interfaccia grafica** e fotografarla:
+- schermo virtuale **Xvfb** (`:99`), Godot con `--display-driver x11
+  --rendering-driver opengl3`, screenshot con **Pillow ImageGrab**;
+- lingua editor in italiano: in `~/.config/godot/editor_settings-4.7.tres`,
+  `interface/editor/localization/editor_language = "it"`;
+- i **clic sui pulsanti** (Button) funzionano via XTEST; i clic sugli elementi
+  ad **albero** (Scene tree, file browser) e la **tastiera** NON registrano
+  bene senza window manager → per quei passi si aprono progetti gia' pronti o si
+  usano schermate note. Le finestre/menu a comparsa vanno bene se sono dialoghi.
+- Regola: se non riesco a vedere un passo con i miei occhi, **non lo affermo**:
+  lo scrivo in modo prudente o chiedo a Nicola una schermata. Mai indovinare.
+
+Cose confermate sulle schermate reali (Godot 4.7.1 IT): `Crea`/`Importa` in alto
+a SINISTRA nel Gestore progetti; finestra nuovo progetto con "Nome del progetto"
+in cima, "Percorso del progetto" sotto, Renderer con "Compatibilita'", pulsante
+"Crea" + casella "Modifica ora" (non "Crea e modifica"); pannello Scena vuoto con
+i pulsanti radice "Scena 2D / Scena 3D / Interfaccia utente / Altro nodo";
+finestra "Crea un nuovo Node" con Cerca/Corrispondenze/Preferiti/Recenti;
+lo script si attacca con l'icona "Allega uno script" (foglio con + verde) nella
+barra del pannello Scena; l'import apre una finestra file (scegli project.godot →
+"Apri").
 
 ## Pubblicazione web dei giochi (GitHub Pages) — COME FUNZIONA
 Regola operativa importante (era fonte di confusione, ora è chiara e va ricordata):
