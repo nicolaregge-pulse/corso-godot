@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.9** — 27/07/2026
+**Versione 0.10** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -238,7 +238,124 @@ func _aggiorna_punteggio() -> void:
 
 ---
 
-## Esercizio BOSS — Affonda la Bonomi
+## Esercizio 4 — Acchiappa le stelle
+*Concetto nuovo: le vite e il Game Over. Il gioco ora si può perdere e finire.*
+
+### 🟢 Descrizione
+Una **navetta** in basso, che muovi con le frecce ← →, e una **stella** che cade
+dall'alto. Se la prendi con la navetta fai **+1**. Se una stella tocca terra
+**perdi una vita**. Parti con **3 vite**: quando arrivi a zero è **GAME OVER** e
+premi **INVIO** per ricominciare. È l'Esercizio 3 che cresce.
+
+![La navetta prende le stelle: se ne perdi tre è Game Over.](immagini/es4-gioca.png)
+
+<details>
+<summary>🟡 Aiuto</summary>
+
+- È l'Esercizio 3 con altri vestiti: la **navetta** è il cestino, la **stella** è
+  la moneta. Il movimento e la "presa" funzionano allo stesso modo.
+- La novità sono due variabili: `vite` (parte da 3) e `in_gioco` (vero/falso).
+- Quando una stella esce sotto: `vite -= 1`. Se `vite <= 0`, chiama il Game Over.
+- Nel Game Over metti `in_gioco = false` e mostra la Label "GAME OVER".
+- In `_process`, se **non** sei più in gioco, aspetta solo il tasto INVIO
+  (`ui_accept`) per far ripartire tutto da capo.
+</details>
+
+<details>
+<summary>🟠 La scena — i nodi da creare</summary>
+
+1. Nodo radice: **Node2D**, rinominalo `Main`.
+2. Figlio **ColorRect** → **`navettaScena`**.
+3. Figlio **ColorRect** → **`stellaScena`**.
+4. Figlio **Label** → **`hudScena`** (punteggio e vite).
+5. Figlio **Label** → **`gameoverScena`** (la scritta di fine partita).
+6. Attacca uno **script** al nodo radice `Main`.
+</details>
+
+<details>
+<summary>🔴 Codice completo</summary>
+
+```gdscript
+extends Node2D
+
+@onready var navettaVar: ColorRect = $navettaScena
+@onready var stellaVar: ColorRect = $stellaScena
+@onready var hudVar: Label = $hudScena
+@onready var gameoverVar: Label = $gameoverScena
+
+const VELOCITA_NAVETTA: float = 500.0
+const VELOCITA_STELLA: float = 300.0
+const VITE_INIZIALI: int = 3
+
+var punti: int = 0
+var vite: int = VITE_INIZIALI
+var in_gioco: bool = true
+var larghezza: float
+
+func _ready() -> void:
+	larghezza = get_viewport_rect().size.x
+	navettaVar.size = Vector2(90, 20)
+	navettaVar.color = Color(0.3, 0.7, 1.0)
+	navettaVar.position = Vector2(larghezza / 2.0 - 45, get_viewport_rect().size.y - 50)
+	stellaVar.size = Vector2(28, 28)
+	stellaVar.color = Color(1.0, 0.85, 0.2)
+	hudVar.position = Vector2(20, 20)
+	gameoverVar.position = Vector2(larghezza / 2.0 - 140, get_viewport_rect().size.y / 2.0 - 20)
+	gameoverVar.text = "GAME OVER\nPremi INVIO per ricominciare"
+	gameoverVar.visible = false
+	_rimetti_in_alto()
+	_aggiorna_hud()
+
+func _process(delta: float) -> void:
+	if not in_gioco:
+		if Input.is_action_just_pressed("ui_accept"):
+			_ricomincia()
+		return
+	if Input.is_action_pressed("ui_left"):
+		navettaVar.position.x -= VELOCITA_NAVETTA * delta
+	if Input.is_action_pressed("ui_right"):
+		navettaVar.position.x += VELOCITA_NAVETTA * delta
+	navettaVar.position.x = clamp(navettaVar.position.x, 0, larghezza - navettaVar.size.x)
+
+	stellaVar.position.y += VELOCITA_STELLA * delta
+
+	if Rect2(navettaVar.position, navettaVar.size).intersects(Rect2(stellaVar.position, stellaVar.size)):
+		punti += 1
+		_aggiorna_hud()
+		_rimetti_in_alto()
+	elif stellaVar.position.y > get_viewport_rect().size.y:
+		vite -= 1
+		_aggiorna_hud()
+		_rimetti_in_alto()
+		if vite <= 0:
+			_game_over()
+
+func _rimetti_in_alto() -> void:
+	var x := randf_range(0, larghezza - stellaVar.size.x)
+	stellaVar.position = Vector2(x, -stellaVar.size.y)
+
+func _game_over() -> void:
+	in_gioco = false
+	gameoverVar.visible = true
+
+func _ricomincia() -> void:
+	punti = 0
+	vite = VITE_INIZIALI
+	in_gioco = true
+	gameoverVar.visible = false
+	_rimetti_in_alto()
+	_aggiorna_hud()
+
+func _aggiorna_hud() -> void:
+	hudVar.text = "Stelle: %d    Vite: %d" % [punti, vite]
+```
+</details>
+
+> Fallo tuo: cambia il colore e la dimensione della navetta e delle stelle, la
+> velocità, o le vite di partenza. Stesso gioco, tema diverso: se al posto delle
+> stelle metti gli organi che cadono dal tavolo, hai il **Chirurgo pasticcione**
+> (nella cartella `chirurgo-pasticcione/`). Nella cartella `acchiappa-le-stelle/`
+> trovi anche una versione più ricca, con tante stelle insieme, da studiare.
 *Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.*
 
 ![Affonda la Bonomi in azione: il cubo d'acqua con il mirino verde, le coordinate scritte attorno al cubo e, in basso a sinistra, i comandi colorati dei tre assi (Colonna Q/A, Fila W/S, Profondità E/D).](immagini/AffondaBonomi.png)
@@ -317,3 +434,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.7 | 26/07/2026 | Tolta la nota per il docente: il libro parla ai ragazzi. Changelog tolto dal PDF. |
 | 0.8 | 27/07/2026 | Aggiunta a ogni esercizio (1-3) la foto del risultato (il gioco che gira), cosi' si vede subito dove arrivare. |
 | 0.9 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Aggiornati i codici completi e le liste dei nodi di tutti gli esercizi. |
+| 0.10 | 27/07/2026 | Aggiunto l'Esercizio 4 "Acchiappa le stelle": l'Esercizio 3 che cresce con il concetto nuovo delle vite e del Game Over (il gioco si può perdere e finire), a 4 livelli. Chirurgo pasticcione citato come variante a tema. |
