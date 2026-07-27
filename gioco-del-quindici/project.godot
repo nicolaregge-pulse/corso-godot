@@ -1,0 +1,23 @@
+; Motore: Godot 4.7.x
+; "Gioco del Quindici con la foto": ricomponi una foto spostando le tessere.
+; Progetto autonomo: si apre questa cartella in Godot e si preme Play (F5).
+
+config_version=5
+
+[application]
+
+config/name="Gioco del Quindici"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
