@@ -6,6 +6,28 @@ lavora dentro `godot/`.
 
 ---
 
+## ⛔ REGOLE OPERATIVE DA NON DIMENTICARE (Nicola ci tiene — leggere per PRIME)
+
+**1. Nome del ramo di lavoro: sempre PULITO.** Il ramo deve avere un nome
+leggibile (es. `claude/corso-godot`). MAI lasciare o mostrare rami con suffissi
+casuali tipo `...-mubah1`. Se il sistema che avvia la sessione ne assegna uno
+così, spostare **subito** il lavoro su un ramo dal nome pulito. Non promettere
+mai "non lo vedrai più" se non dipende da me: dire la verità sui limiti.
+
+**2. Con che programma si apre ogni tipo di file** (scuola = zero installazioni,
+niente admin: usare SOLO ciò che è già presente):
+- **Codice `.gd`** → si scrive/apre **dentro Godot** (portabile, è già lì). Per
+  solo **leggerlo** come testo: click **destro** sul file → `Apri con` →
+  `Blocco note`. Mai doppio clic (apre Godot e fa partire il gioco).
+- **File `.md`** (manuale, eserciziario, quaderno) → si leggono **impaginati** su
+  `github.com` (browser); per modificarli, la matita di GitHub o `github.dev`
+  (tasto `.`). Per solo testo offline: `Blocco note`.
+- **Manuale da leggere impaginato** → il **PDF** (con SumatraPDF, portabile).
+- Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
+  Godot portabile, SumatraPDF portabile.
+
+---
+
 ## Contesto didattico
 
 - **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
