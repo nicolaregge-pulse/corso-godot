@@ -3,14 +3,35 @@
 *Aggiornato: 27/07/2026.*
 
 ## Dove siamo (tutto su `main`)
-- **Manuale v0.14** — teoria, lettera a mano firmata "Nicola", schede, i 3
+- **Manuale v0.17** — teoria, lettera a mano firmata "Nicola", schede, i 3
   capitoli di costruzione degli esercizi 1-2-3 (con foto), progetto boss.
-- **Eserciziario v0.8** — esercizi 1-3 (4 livelli + foto del risultato) + BOSS.
+- **Eserciziario v0.9** — esercizi 1-3 (4 livelli + foto del risultato) + BOSS.
 - **Esercizi funzionanti** in `esercizi/` (01 bottone, 02 quadrato, 03 moneta).
-- **Giochi:** `battaglia-navale-3d/` (Affonda la Bonomi, + Web in `docs/`) e
-  `gioco-del-quindici/` (15-puzzle con la foto, prima bozza da testare).
+  Convenzione nomi: variabile finisce in "Var", nodo in "Scena".
+- **Giochi:** `battaglia-navale-3d/` (Affonda la Bonomi) e `gioco-del-quindici/`
+  (15-puzzle con la foto di Serena incorporata, tessere di legno driftwood in
+  rilievo nella vaschetta, sfondo beige; menu solo 3x3/4x4). Entrambi pubblicati
+  sul web (vedi sotto).
+- **Release `v1.0`** pubblicata (versione congelata per i ragazzi).
 - Tutte le foto degli esercizi sono in `manuale/immagini/`
   (es1-ambiente, es1-gioca, es2-gioca, es3-ambiente, es3-gioca).
+
+## Pubblicazione web dei giochi (GitHub Pages) — COME FUNZIONA
+Regola operativa importante (era fonte di confusione, ora è chiara e va ricordata):
+- **Sorgente di Pages = "GitHub Actions"** (Settings → Pages → Source). NON
+  "Deploy from a branch". (Prima puntava al ramo vecchio `gioco-battaglia-3d`,
+  perciò i giochi nuovi davano 404: risolto.)
+- Un workflow, `.github/workflows/deploy-pages.yml`, pubblica la cartella
+  **`docs/`** del ramo **`main`** a ogni push su main (e su avvio manuale).
+- **Claude può pubblicare/aggiornare da solo** (avvia e segue il workflow da qui):
+  Nicola non deve toccare impostazioni.
+- I giochi web stanno in `docs/<gioco>/`. Link attuali:
+  * Gioco del quindici: `https://nicolaregge-pulse.github.io/corso-godot/quindici/`
+  * Affonda la Bonomi: `https://nicolaregge-pulse.github.io/corso-godot/`
+- Per mettere un gioco sul web: esportarlo da Godot in `docs/<gioco>/` (preset
+  Web, **senza thread**, così va anche su iPhone), poi push su main → si pubblica
+  da solo. In questa sessione l'export l'ha fatto Claude scaricando Godot 4.7.1 +
+  i modelli di esportazione nell'ambiente (i modelli non restano tra le sessioni).
 
 ## Cosa manca (prossimi passi)
 1. **Release `v1.0`** da pubblicare dal browser (tag v1.0 su GitHub) — è la
@@ -47,7 +68,13 @@ sono bloccato"), il **codice**, le **immagini**.
   consegnato ha nome unico con versione; non re-inviare mai un file identico che
   Nicola ha già (causa "file già esistente" quando salva). Regola sacra.
 - Con Nicola e i ragazzi: **tutto visuale** (GitHub Desktop / browser), mai la
-  riga di comando. Coordinate complete a ogni passo.
+  riga di comando.
+- **COORDINATE COMPLETE, SEMPRE (regola vincolante).** Prima di ogni azione dico,
+  in quest'ordine: 1) **quale APPLICAZIONE** (es. `[APP — GitHub Desktop]`,
+  `[APP — Godot]`, `[BROWSER]`); 2) **quale FINESTRA / SCHEDA**; 3) **quale
+  MENU → voce → sotto-voce**; 4) **in quale AREA** (pannello a sinistra, barra in
+  alto, ecc.); 5) **l'AZIONE esatta**, una alla volta. Mai un comando "nudo"
+  senza dire DOVE va fatto. Testi/valori da copiare sempre in blocco di codice.
 - **Descrizione del commit sempre pronta da me:** ogni volta che so che Nicola
   dovrà fare un commit (file generati da Godot, modifiche nostre, PDF nuovi),
   gli fornisco IO il testo del campo Summary in un blocco da copiare, senza che
