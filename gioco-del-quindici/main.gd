@@ -453,18 +453,22 @@ func _crea_tessera(indice: int) -> Panel:
 	var ox := (tw - side) / 2.0
 	var oy := (th - side) / 2.0
 	var cs := side / float(_n)
+	var b := _cella * 0.05
+	var visibile := _cella - 2.0 * b
+	var scala := cs / _cella          # px di foto per px a schermo
+	# Ritaglio la foto sulla ZONA VISIBILE della pedina (non l'intera fetta):
+	# così i pezzi combaciano e la foto non risulta stirata/sfasata.
 	var at := AtlasTexture.new()
 	at.atlas = _tex
-	at.region = Rect2(ox + col * cs, oy + row * cs, cs, cs)
+	at.region = Rect2(ox + col * cs + b * scala, oy + row * cs + b * scala, visibile * scala, visibile * scala)
 
 	var tr := TextureRect.new()
 	tr.texture = at
 	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	tr.stretch_mode = TextureRect.STRETCH_SCALE
 	tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var b := _cella * 0.05
 	tr.position = Vector2(b, b)
-	tr.size = Vector2(_cella - 2.0 * b, _cella - 2.0 * b)
+	tr.size = Vector2(visibile, visibile)
 	pan.add_child(tr)
 
 	# Il numero della tessera (1, 2, 3...): nascosto se l'aiuto è spento.
