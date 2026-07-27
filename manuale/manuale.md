@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.16** — 27/07/2026
+**Versione 0.17** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -597,3 +597,4 @@ stai facendo non serve a niente.
 | 0.14 | 27/07/2026 | Inserite tutte le foto degli esercizi (es2-gioca, es3-ambiente, es3-gioca): i tre capitoli di costruzione sono ora completi di immagini. |
 | 0.15 | 27/07/2026 | Aggiunta la Scheda 3 "La tua copia del corso, e come consegnare": come fare il fork e gestire il kit di consegna. |
 | 0.16 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Cosi' a colpo d'occhio si capisce chi e' la variabile e chi e' il nodo. Aggiornati i capitoli 3-4-5 e i nomi dei nodi nelle scene. |
+| 0.17 | 27/07/2026 | Rifatte le due foto dell'editor (es1-ambiente, es3-ambiente): ora mostrano i nomi nuovi dei nodi (bottoneScena/etichettaScena e cestinoScena/monetaScena/punteggioScena), coerenti con la convenzione. |
