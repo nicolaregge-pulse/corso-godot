@@ -17,7 +17,7 @@ extends Control
 # ---- Colori ------------------------------------------------
 const COL_BEIGE := Color(0.847, 0.788, 0.671)     # piano d'appoggio attorno
 const COL_SOLCO := Color(0.11, 0.09, 0.07)        # solco scuro tra le pedine
-const FOTO_GIOCO := "res://foto-gioco.png"        # foto incorporata del gioco
+const FOTO_GIOCO := "res://serena.jpg"            # foto incorporata del gioco
 
 # ---- Stato -------------------------------------------------
 var _n: int = 4                 # tessere per lato
