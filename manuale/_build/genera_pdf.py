@@ -228,6 +228,13 @@ def build_body_html(md_text: str) -> str:
     body_html = style_details(body_html)
     body_html = transform_chapter_openers(body_html)
 
+    # La lettera di apertura (la si riconosce dalla firma) va resa "a mano":
+    # avvolgiamo tutto ciò che sta prima del primo <hr> in un blocco .lettera.
+    mhr = re.search(r"<hr\s*/?>", body_html)
+    if mhr and 'class="firma"' in body_html[: mhr.start()]:
+        body_html = ('<div class="lettera">' + body_html[: mhr.start()]
+                     + "</div>" + body_html[mhr.start():])
+
     # Toglie la lineetta orizzontale (---) subito prima di un'apertura di
     # capitolo: da sola può scivolare su una pagina nuova e lasciarla vuota.
     body_html = re.sub(r'<hr\s*/?>\s*(?=<div class="chapter")', "", body_html)
@@ -483,14 +490,40 @@ h2.ctitle {
   margin: 16px auto 0;
 }
 
+/* Lettera scritta "a mano" (l'introduzione personale del docente) */
+.lettera .chapter { padding-top: 2mm; margin-bottom: 18px; }
+.lettera .ctitle {
+  font-family: "Mano", cursive;
+  font-weight: 700;
+  font-size: 29pt;
+  color: #1c3350;
+}
+.lettera .csub {
+  font-family: "Mano", cursive;
+  font-style: normal;
+  font-size: 15pt;
+  color: #52627a;
+}
+.lettera p {
+  font-family: "Mano", cursive;
+  font-size: 13pt;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  color: #1c3350;
+}
+.lettera strong { font-weight: 700; color: #10202f; }
+
 /* Firma "a penna" in calce a una lettera/pagina personale */
 .firma {
   text-align: right;
   font-family: "Firma", cursive;
-  font-size: 40pt;
+  font-size: 34pt;
   line-height: 1;
   color: #1b3a63;
-  margin: 10px 14px 0 0;
+  margin: 4px 14px 0 0;
 }
 
 /* sottotitoli di sezione dentro il capitolo */
@@ -682,13 +715,20 @@ def main():
 
     logo_uri = data_uri(IMG_DIR / "logo_vertical_monochrome_light.png")
 
-    # Font "a mano" per la firma, incorporato nel PDF (base64), così vale offline.
-    firma_font = BUILD_DIR / "fonts" / "Sacramento-Regular.ttf"
+    # Font di scrittura a mano, incorporati nel PDF (base64), così valgono offline:
+    #  - "Firma" (Sacramento): elegante, per la firma.
+    #  - "Mano" (Caveat): leggibile, per una lettera scritta a mano.
     font_face = ""
+    firma_font = BUILD_DIR / "fonts" / "Sacramento-Regular.ttf"
     if firma_font.exists():
-        font_face = ('@font-face { font-family: "Firma"; font-style: normal; '
-                     'font-weight: 400; src: url("' + data_uri(firma_font)
-                     + '") format("truetype"); }')
+        font_face += ('@font-face { font-family: "Firma"; font-style: normal; '
+                      'font-weight: 400; src: url("' + data_uri(firma_font)
+                      + '") format("truetype"); }\n')
+    mano_font = BUILD_DIR / "fonts" / "Caveat.ttf"
+    if mano_font.exists():
+        font_face += ('@font-face { font-family: "Mano"; font-style: normal; '
+                      'font-weight: 400 700; src: url("' + data_uri(mano_font)
+                      + '") format("truetype"); }\n')
 
     meta_line = ""
     if version or date:
