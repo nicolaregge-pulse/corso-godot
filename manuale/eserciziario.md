@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.14** — 27/07/2026
+**Versione 0.15** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -139,13 +139,15 @@ diremo "quando ti premono, chiama la nostra funzione".
 **Passo 5 — Aggiungi la scritta `etichettaScena`.**
 *A cosa serve:* è la **scritta** dove apparirà il saluto; è il pezzo che il giocatore
 vedrà **cambiare** — l'effetto del gioco.
-1. **Attenzione:** prima clicca di nuovo **una volta** su **`Main`**. Se ora è
-   selezionato `bottoneScena`, la scritta finirebbe *dentro* il bottone: sbagliato.
-   Deve stare *accanto* al bottone.
+1. Nel pannello `Scena`, clicca **una volta** su **`Main`** (deve restare evidenziato lui).
 2. In alto a sinistra del pannello, clicca l'icona **`+`**.
 3. Nella finestra, nel campo **`Cerca:`**, scrivi **`Label`**: si mette in cima.
 4. In basso clicca **`Crea`**.
 5. Doppio clic sul nuovo nodo `Label`, scrivi **`etichettaScena`**, premi **`Invio`**.
+
+> Attento alla selezione al punto 1: clicca **`Main`**, non `bottoneScena` (che hai
+> appena creato nel Passo 4 ed è ancora selezionato). Così la scritta si mette
+> *accanto* al bottone; se parti da `bottoneScena`, finisce *dentro*.
 
 A questo punto, nel pannello `Scena`, l'albero deve essere così:
 - `Main`
@@ -666,3 +668,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.12 | 27/07/2026 | Controllo completo di tutti gli esercizi con Godot: i codici 1-4 girano puliti e i blocchi dell'eserciziario sono coerenti con i file soluzione (corretta l'incoerenza dell'Es 1, la riga del colore). Aggiunta la guida passo passo (ambiente 2D per primo, nomi esatti dei pulsanti, tasto destro per lo script, codice da copiare dal file e non dal PDF, a cosa serve ogni pezzo) agli Esercizi 2, 3 e 4. Corretto un bug: mancava lo stacco e il titolo dell'Esercizio BOSS dopo l'Esercizio 4. |
 | 0.13 | 27/07/2026 | Correzione delle coordinate scritte a memoria: il pulsante Crea nel Gestore progetti e Importa nel BOSS sono in alto a SINISTRA, non a destra. Verificate sulle schermate reali di Nicola. In verifica l'ordine dei campi della finestra nuovo progetto (cartella/nome). |
 | 0.14 | 27/07/2026 | Verifica di TUTTA la guida passo passo sull'interfaccia reale di Godot 4.7.1 in italiano (schermate catturate una per una). Correzioni: la finestra del nuovo progetto ha in cima "Nome del progetto" e il pulsante in basso e' "Crea" con la casella "Modifica ora" gia' spuntata (non "Crea e modifica"); aggiunto il passo del Renderer "Compatibilita'" (serve per web e PC della scuola); lo script si attacca con l'icona "Allega uno script" (foglio con il + verde) nella barra del pannello Scena, non con il tasto destro; l'importazione del BOSS apre una finestra file, si sceglie project.godot e si clicca "Apri". Confermati: "Crea"/"Importa" in alto a sinistra, i pulsanti radice "Scena 2D/3D/Interfaccia utente/Altro nodo", la finestra "Crea un nuovo Node" con Cerca/Corrispondenze. |
+| 0.15 | 27/07/2026 | Revisione dello stile delle guide su indicazione di Nicola: ogni passo apre con l'AZIONE (cosa fare, numerata), e l'eventuale avviso va DOPO, in una riga a parte. Riscritto in questo modo il Passo 5 dell'Esercizio 1 (aggiungere la scritta), che prima apriva con "Attenzione". Revisione in corso. |
