@@ -491,22 +491,11 @@ h2.ctitle {
 }
 
 /* Lettera scritta "a mano" (l'introduzione personale del docente) */
-.lettera .chapter { padding-top: 2mm; margin-bottom: 18px; }
-.lettera .ctitle {
-  font-family: "Mano", cursive;
-  font-weight: 700;
-  font-size: 29pt;
-  color: #1c3350;
-}
-.lettera .csub {
-  font-family: "Mano", cursive;
-  font-style: normal;
-  font-size: 15pt;
-  color: #52627a;
-}
+/* I titoli restano nel carattere "vecchio" (serif, come gli altri capitoli);
+   solo il CORPO della lettera è scritto a mano. */
 .lettera p {
   font-family: "Mano", cursive;
-  font-size: 13pt;
+  font-size: 15pt;
   line-height: 1.4;
   margin: 0 0 8px;
   text-align: left;
