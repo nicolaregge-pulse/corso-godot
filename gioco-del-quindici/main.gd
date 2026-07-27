@@ -269,31 +269,45 @@ func _inizia(n: int) -> void:
 	_nuova_partita()
 
 
+func _colonna_destra() -> Dictionary:
+	# Geometria della colonna a destra, condivisa da comandi e anteprima.
+	var vp := get_viewport_rect().size
+	var larghezza := clampf(minf(vp.x, vp.y) * 0.24, 180.0, 240.0)
+	var x := vp.x - larghezza - 24.0
+	return {"x": x, "w": larghezza}
+
+
 func _crea_hud() -> void:
+	# Riga di stato in alto a sinistra, corta.
 	_hud = Label.new()
 	_hud.position = Vector2(20, 14)
 	_hud.add_theme_font_size_override("font_size", 22)
-	_hud.add_theme_color_override("font_color", Color(0.98, 0.96, 0.90))
-	_hud.add_theme_color_override("font_outline_color", Color.BLACK)
-	_hud.add_theme_constant_override("outline_size", 5)
+	_hud.add_theme_color_override("font_color", Color(0.20, 0.16, 0.10))
 	add_child(_hud)
-	# Comandi impilati uno sotto l'altro, sulla sinistra: leggibili e non accavallati.
+
+	# Tutti i comandi in COLONNA a destra, sotto l'anteprima "Modello".
+	var cd := _colonna_destra()
+	var x: float = cd["x"]
+	var w: float = cd["w"]
+	var by := 40.0 + w + 34.0     # sotto l'anteprima (che è alta ~w) e la sua etichetta
+
 	var b := Button.new()
 	b.text = "↻ Rimescola"
-	b.custom_minimum_size = Vector2(170, 36)
-	b.position = Vector2(20, 50)
+	b.custom_minimum_size = Vector2(w, 40)
+	b.position = Vector2(x, by)
 	b.pressed.connect(_nuova_partita)
 	add_child(b)
 	var b2 := Button.new()
 	b2.text = "Menu"
-	b2.custom_minimum_size = Vector2(170, 36)
-	b2.position = Vector2(20, 92)
+	b2.custom_minimum_size = Vector2(w, 40)
+	b2.position = Vector2(x, by + 50)
 	b2.pressed.connect(_torna_menu)
 	add_child(b2)
 	# Interruttore "Mostra i numeri": aiuto acceso/spento.
 	var cb := CheckButton.new()
 	cb.text = "Mostra i numeri"
-	cb.position = Vector2(20, 134)
+	cb.custom_minimum_size = Vector2(w, 40)
+	cb.position = Vector2(x, by + 100)
 	cb.button_pressed = _mostra_numeri
 	cb.toggled.connect(_su_numeri)
 	add_child(cb)
@@ -345,21 +359,23 @@ func _crea_tavola() -> void:
 
 
 func _crea_anteprima() -> void:
-	# Il "coperchio della scatola": la foto intera in piccolo, in alto a destra.
-	var vp := get_viewport_rect().size
-	var d := minf(vp.x, vp.y) * 0.18   # lato dell'anteprima
+	# Il "coperchio della scatola": la foto intera in piccolo, in cima alla
+	# colonna dei comandi a destra.
+	var cd := _colonna_destra()
+	var x: float = cd["x"]
+	var d: float = cd["w"]
 
 	var box := Panel.new()
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = Color(0.10, 0.07, 0.04)
 	sb.set_corner_radius_all(8)
 	box.add_theme_stylebox_override("panel", sb)
-	box.position = Vector2(vp.x - d - 26.0, 20.0)
+	box.position = Vector2(x, 40.0)
 	box.size = Vector2(d, d)
 	box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(box)
 
-	var b := d * 0.08
+	var b := d * 0.07
 	var foto := TextureRect.new()
 	# Mostra la stessa porzione quadrata che usiamo per le tessere.
 	var tw := _tex.get_width()
@@ -379,10 +395,8 @@ func _crea_anteprima() -> void:
 	var etich := Label.new()
 	etich.text = "Modello"
 	etich.add_theme_font_size_override("font_size", 16)
-	etich.add_theme_color_override("font_color", Color(0.98, 0.96, 0.90))
-	etich.add_theme_color_override("font_outline_color", Color.BLACK)
-	etich.add_theme_constant_override("outline_size", 4)
-	etich.position = Vector2(vp.x - d - 26.0, 20.0 + d + 2.0)
+	etich.add_theme_color_override("font_color", Color(0.20, 0.16, 0.10))
+	etich.position = Vector2(x + 4.0, 40.0 + d + 2.0)
 	add_child(etich)
 
 
