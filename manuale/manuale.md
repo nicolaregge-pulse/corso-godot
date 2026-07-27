@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.8** — 27/07/2026
+**Versione 0.9** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -10,31 +10,47 @@
 ---
 
 ## Perché quello che impari qui può cambiarti le cose
-*Leggila una volta, con calma.*
+*Due parole mie, prima di cominciare.*
 
-Partiamo da una verità, detta dritta. Alla tua età **nessuno si aspetta che tu
-sia già un esperto**. Chi ti darà il primo tirocinio, il primo lavoro, non guarda
-per prima cosa quanto codice sai scrivere: quello te lo insegnano. Sceglie **te**,
-e non un altro, soprattutto per **due cose**.
+Voglio dirti una cosa, dritta, prima di tutto il resto. Alla tua età **nessuno si
+aspetta che tu sia già un esperto**. Chi ti darà il primo tirocinio, il primo
+lavoro, non guarderà per prima cosa quanto codice sai scrivere: quello te lo
+insegnano. Sceglierà **te**, e non un altro, soprattutto per **due cose**.
 
 **La prima: come ti poni.** Se **ci sei** ogni mattina, in orario. Se **rispondi**
 quando qualcuno ti scrive. Se, quando sbagli, hai il coraggio di dire "ho
 sbagliato, lo aggiusto" invece di nasconderti. Se **non molli** al primo "no". Se
 sai stare in squadra. Non sono cose "da grandi": sono cose che **puoi decidere di
-fare da domani**, e pesano più di mille nozioni.
+fare da domani**, e per me pesano più di mille nozioni.
 
 **La seconda: cosa sai fare e mostrare.** Non parole — roba fatta **con le tue
 mani**. Un gioco che gira. Una cosa che apri sul telefono e dici, guardando negli
 occhi chi hai davanti: **"Questo l'ho fatto io."**
 
-Queste due cose **insieme** sono ciò che fa scegliere te. Ecco perché qui non
-facciamo esercizi da scuola e basta: ogni cosa che costruisci, anche piccola, va
-nel **tuo** quaderno, nella **tua** raccolta. Pezzo dopo pezzo ti stai costruendo
-una prova: la prova che **sai fare** e che su di te si può contare.
+Queste due cose **insieme** fanno scegliere te. Per questo non ti faccio fare
+esercizi da scuola e basta: ogni cosa che costruisci, anche piccola, va nel
+**tuo** quaderno. Pezzo dopo pezzo ti costruisci una prova — che **sai fare**, e
+che su di te si può contare.
+
+E adesso la cosa che mi sta più a cuore. Quest'anno lo passiamo **insieme**: ci
+scherzeremo, giocheremo, cresceremo. Certi giorni ci abbracceremo, altri
+litigheremo — ci mostreremo pure i denti. Ti spingerò forte, ti farò arrabbiare,
+ti darò voti che non ti piacciono, e sì, potrei perfino doverti bocciare. Ma
+**qualunque cosa succeda, sono dalla tua parte**: se sono duro non è contro di te,
+è perché **credo in te** e voglio il meglio che puoi diventare.
+
+C'è un patto, però. **In laboratorio siamo professionisti**, con rispetto dei
+ruoli: io il tuo **formatore**, tu il mio **allievo**. Fuori, al bar, è un'altra
+musica: ci scappa la battuta, ci prendiamo pure in giro — ma sempre con rispetto.
+E **davanti agli altri** siamo sempre educati: chi ci vede non sa che rapporto
+abbiamo, e la prima impressione parla di **tutti e due**.
 
 Molti di voi partono da lontano, da porte che si sono chiuse. Questa è una porta
-che **si apre**. Non sprecarla: prendi ogni piccola vittoria e portala a casa. Il
-resto — il lavoro, il rispetto, le occasioni — nasce da lì.
+che **si apre**, e te la apro io. Non sprecarla: prenditi ogni piccola vittoria.
+Il resto — il lavoro, il rispetto, le occasioni — nasce da lì. Ci credo, e ci
+credo **in te**.
+
+<div class="firma">Nicola</div>
 
 ---
 
@@ -540,3 +556,4 @@ stai facendo non serve a niente.
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
 | 0.7 | 26/07/2026 | Aggiunti i capitoli 3-4-5 che costruiscono passo-passo gli esercizi 1-2-3 (il vecchio Cap. 3 "Chirurgo Pasticcione" e' confluito nell'Esercizio 3); il capitolo sul progetto boss e' ora il 6, riscritto rivolgendosi ai ragazzi. Changelog tolto dal PDF; segnaposto puliti per gli screenshot da inserire. |
 | 0.8 | 27/07/2026 | Aggiunta la pagina di apertura "Perché quello che impari qui può cambiarti le cose": versione breve ed emotiva della bussola sul lavoro, con i due pilastri (come ti poni + cosa sai mostrare) che insieme fanno scegliere. Nella Scheda 1 la predisposizione diventa il primo criterio di valutazione. |
+| 0.9 | 27/07/2026 | Introduzione riscritta come lettera in prima persona del docente ai ragazzi, firmata a mano "Nicola": il patto (dalla tua parte sempre, anche coi voti bassi) e il rispetto dei ruoli (professionisti in laboratorio, educati con i terzi). |
