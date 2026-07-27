@@ -483,6 +483,16 @@ h2.ctitle {
   margin: 16px auto 0;
 }
 
+/* Firma "a penna" in calce a una lettera/pagina personale */
+.firma {
+  text-align: right;
+  font-family: "Firma", cursive;
+  font-size: 40pt;
+  line-height: 1;
+  color: #1b3a63;
+  margin: 10px 14px 0 0;
+}
+
 /* sottotitoli di sezione dentro il capitolo */
 h3 {
   font-family: var(--serif);
@@ -672,6 +682,14 @@ def main():
 
     logo_uri = data_uri(IMG_DIR / "logo_vertical_monochrome_light.png")
 
+    # Font "a mano" per la firma, incorporato nel PDF (base64), così vale offline.
+    firma_font = BUILD_DIR / "fonts" / "Sacramento-Regular.ttf"
+    font_face = ""
+    if firma_font.exists():
+        font_face = ('@font-face { font-family: "Firma"; font-style: normal; '
+                     'font-weight: 400; src: url("' + data_uri(firma_font)
+                     + '") format("truetype"); }')
+
     meta_line = ""
     if version or date:
         parts = []
@@ -686,7 +704,8 @@ def main():
 <head>
 <meta charset="utf-8"/>
 <title>{html.escape(cfg['title'])} — {html.escape(COVER_SUBTITLE)}</title>
-<style>{CSS}</style>
+<style>{font_face}
+{CSS}</style>
 </head>
 <body>
   <section class="cover">
