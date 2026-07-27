@@ -14,6 +14,10 @@ una cornice in stile **legno**.
    ci scivola dentro.
 3. Quando tutte le tessere sono al posto giusto, la **foto è ricomposta**: hai vinto.
 - **↻ Rimescola** = nuova partita · **Menu** = torna alla scelta di foto e difficoltà.
+- In alto a destra c'è l'**anteprima** ("Modello"): la foto intera in piccolo, per
+  sapere dove va ogni pezzo.
+- L'interruttore **Mostra i numeri** accende/spegne i numeri sulle tessere: aiuto
+  per chi è in difficoltà, sfida in più per chi lo tiene spento.
 
 ## Come si apre (per Nicola)
 1. `[APP — Godot]` finestra iniziale, in alto a destra **`Importa`**.
@@ -21,11 +25,12 @@ una cornice in stile **legno**.
    poi **`Importa e modifica`**.
 3. Premi **`F5`** per giocare.
 
-## Cosa possiamo migliorare
+## Cosa possiamo ancora migliorare
 - Vera **texture di legno** (una foto di legno) al posto del marrone finto.
-- Suono quando una tessera scivola; animazione della vittoria.
-- Mostrare in piccolo la **foto intera** come aiuto ("anteprima").
+- Suono quando una tessera scivola.
 - Un **timer** e il record delle mosse.
+
+Già fatti: anteprima "Modello", interruttore mostra-numeri, festa alla vittoria.
 
 ## Nota tecnica
 La foto viene tagliata con `AtlasTexture` (ritaglia un pezzo di immagine). Il
