@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.17** — 27/07/2026
+**Versione 0.18** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -304,7 +304,171 @@ func _process(delta):
 
 ---
 
-## Capitolo 3 — Costruiamo l'Esercizio 1: il bottone che saluta
+## Capitolo 3 — I mattoncini, uno alla volta
+
+Prima di costruire un gioco intero, impariamo i pezzi **uno per uno**. Ogni passo
+funziona così: **impari una cosa sola**, la **provi subito** a schermo, e vai
+avanti. Regola: non passare al passo dopo finché quello di prima non funziona.
+Aprilo così, una volta per tutte: `[APP — Godot]` finestra iniziale, il *Gestore
+progetti*, in alto a destra **`Crea`**, dai un nome tipo `prove`, scegli una
+cartella e **`Crea e modifica`**. Da qui in poi lavoriamo dentro questo progetto.
+
+### Passo 1 — La scena e il primo nodo
+Cosa impari: una **scena** è un albero di **nodi**, i mattoncini. Mettiamone uno.
+
+Provalo tu: `[APP — Godot]` → pannello **Scena** in alto a sinistra → premi il
+**`+`** (Aggiungi nodo figlio) → scrivi e scegli **`Label`** → nel pannello
+**Ispettore** a destra, alla proprietà **`Text`**, scrivi `Ciao`. Premi **`F5`**
+(la prima volta ti chiede di salvare la scena: dai **`Salva`**).
+
+Fatto: se sullo schermo compare **Ciao**, hai messo il tuo primo nodo.
+
+### Passo 2 — Una proprietà
+Cosa impari: ogni nodo ha delle **proprietà** e le cambi nell'Ispettore. È come
+la **Caption** di Lazarus, ma ce ne sono tante.
+
+Provalo tu: seleziona il **Label** nel pannello Scena → nell'**Ispettore** cerca
+**`Theme Overrides` → `Font Sizes` → `Font Size`** e mettilo a `48`. Cambia anche
+il **`Text`** con il tuo nome. Premi **`F5`**.
+
+Fatto: hai cambiato una proprietà e l'hai vista cambiare.
+
+### Passo 3 — Lo script e `_ready()`
+Cosa impari: uno **script** è un file `.gd` attaccato a un nodo, che gli dà
+comportamento. La funzione **`_ready()`** gira **una volta**, all'avvio.
+
+Provalo tu: seleziona il **nodo radice** (in cima all'albero) → nel pannello
+Scena, in alto, premi l'icona **Aggiungi script** → **`Crea`**. Nel codice, dentro
+`func _ready():`, scrivi una riga:
+
+```gdscript
+	print("Parto!")
+```
+
+Premi **`F5`**: guarda in basso il pannello **`Output`**, deve comparire *Parto!*.
+
+Fatto: hai attaccato uno script e visto partire `_ready()`.
+
+### Passo 4 — Una variabile
+Cosa impari: una **variabile** è una scatola con un nome, che tiene un valore.
+
+Provalo tu: in **cima** allo script scrivi una riga, poi stampala:
+
+```gdscript
+var punti = 0
+
+func _ready():
+	print(punti)
+```
+
+Premi **`F5`**: nell'Output compare `0`.
+
+Fatto: hai creato una variabile e mostrato quello che contiene.
+
+### Passo 5 — Dare un soprannome a un nodo con `@onready`
+Cosa impari: per comandare un nodo dal codice ti serve un **soprannome** per
+prenderlo. Si scrive in cima allo script:
+
+```gdscript
+@onready var etichettaVar: Label = $etichettaScena
+```
+
+Da sinistra: `etichettaVar` è il **soprannome** che usi nel codice; `$etichettaScena`
+è il **nodo vero** nella scena; `@onready` vuol dire "prendilo appena la scena è
+pronta".
+
+Provalo tu: nel pannello Scena, doppio clic sul **Label** e rinominalo
+`etichettaScena`. Poi metti la riga qui sopra in cima allo script, e in `_ready()`:
+
+```gdscript
+	etichettaVar.text = "Funziona!"
+```
+
+Premi **`F5`**: se compare *Funziona!*, hai finito.
+
+Fatto: sai prendere un nodo e comandarlo dal codice.
+
+### Passo 6 — Un segnale e la sua funzione
+Cosa impari: un **segnale** è un annuncio del nodo ("mi hanno premuto"). Lo
+**colleghi** a una tua **funzione**. È il vecchio `Button1Click` di Lazarus.
+
+Provalo tu: aggiungi un nodo **`Button`** (pannello Scena → `+` → `Button`),
+rinominalo `bottoneScena`, dagli **`Text`** = `Premimi`. Nello script:
+
+```gdscript
+@onready var bottoneVar: Button = $bottoneScena
+
+func _ready():
+	bottoneVar.pressed.connect(_quando_premo)
+
+func _quando_premo():
+	etichettaVar.text = "Premuto!"
+```
+
+Premi **`F5`** e clicca il bottone.
+
+Fatto: hai collegato un **evento** a una funzione tua.
+
+### Passo 7 — Il game loop `_process(delta)`
+Cosa impari: **`_process(delta)`** gira **da solo**, circa 60 volte al secondo.
+È la grande novità rispetto a Lazarus: *Lazarus reagisce, Godot pulsa*. `delta` è
+il tempo passato dall'ultimo fotogramma: serve a muoversi fluidi su qualsiasi PC.
+
+Provalo tu: aggiungi questa funzione allo script:
+
+```gdscript
+func _process(delta):
+	etichettaVar.position.x += 100 * delta
+```
+
+Premi **`F5`**: la scritta **scivola da sola** verso destra.
+
+Fatto: hai visto il game loop muovere qualcosa senza che tu prema niente.
+
+### Passo 8 — Leggere i tasti con `Input`
+Cosa impari: **`Input.is_action_pressed("ui_right")`** è vero **mentre** tieni
+premuta la freccia destra. Così comandi tu.
+
+Provalo tu: cambia il `_process` così:
+
+```gdscript
+func _process(delta):
+	if Input.is_action_pressed("ui_right"):
+		etichettaVar.position.x += 200 * delta
+	if Input.is_action_pressed("ui_left"):
+		etichettaVar.position.x -= 200 * delta
+```
+
+Premi **`F5`** e tieni premute le frecce ← →.
+
+Fatto: muovi un nodo con la tastiera.
+
+### Passo 9 — Decidere con `if`
+Cosa impari: **`if`** fa una cosa **solo se** una condizione è vera. Serve a
+mettere delle regole.
+
+Provalo tu: in fondo al `_process`, aggiungi una regola che ferma la scritta al
+bordo:
+
+```gdscript
+	if etichettaVar.position.x > 400:
+		etichettaVar.position.x = 400
+```
+
+Premi **`F5`**: la scritta si muove ma **non supera** il bordo.
+
+Fatto: il tuo programma prende una **decisione** da solo.
+
+---
+
+Ora hai tutti i mattoncini in mano: **nodo, proprietà, script, `_ready`,
+variabile, soprannome `@onready`, segnale, game loop, `Input`, `if`**. Con questi,
+il prossimo capitolo, dove costruiamo l'Esercizio 1, non è più un salto nel buio:
+sono le stesse cose, messe insieme.
+
+---
+
+## Capitolo 4 — Costruiamo l'Esercizio 1: il bottone che saluta
 
 Il tuo primo gioco vero, in pochi passi. Alla fine avrai **un bottone** che,
 quando lo premi, **ti saluta**. È il ponte da Lazarus: il vecchio `Button1Click`
@@ -373,7 +537,7 @@ premuto." **Ce l'hai fatta.**
 
 ---
 
-## Capitolo 4 — Costruiamo l'Esercizio 2: muovi il quadrato
+## Capitolo 5 — Costruiamo l'Esercizio 2: muovi il quadrato
 
 Qui incontri il concetto più importante di Godot, il **game loop**. Alla fine
 avrai un **quadrato** che si muove con le frecce.
@@ -425,7 +589,7 @@ quadrato. `delta` serve a muoversi uguale su ogni computer.
 
 ---
 
-## Capitolo 5 — Costruiamo l'Esercizio 3: prendi la moneta
+## Capitolo 6 — Costruiamo l'Esercizio 3: prendi la moneta
 
 Il primo **mini-gioco vero**: un **cestino** che prende le **monete** che cadono,
 con **punteggio**. Mette insieme movimento, collisioni e punteggio. È l'idea del
@@ -506,7 +670,7 @@ muoviamo il cestino con le frecce, facciamo scendere la moneta e con
 
 ---
 
-## Capitolo 6 — Il percorso: dagli esercizi al "progetto boss"
+## Capitolo 7 — Il percorso: dagli esercizi al "progetto boss"
 
 Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
 **un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
@@ -598,3 +762,4 @@ stai facendo non serve a niente.
 | 0.15 | 27/07/2026 | Aggiunta la Scheda 3 "La tua copia del corso, e come consegnare": come fare il fork e gestire il kit di consegna. |
 | 0.16 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Cosi' a colpo d'occhio si capisce chi e' la variabile e chi e' il nodo. Aggiornati i capitoli 3-4-5 e i nomi dei nodi nelle scene. |
 | 0.17 | 27/07/2026 | Rifatte le due foto dell'editor (es1-ambiente, es3-ambiente): ora mostrano i nomi nuovi dei nodi (bottoneScena/etichettaScena e cestinoScena/monetaScena/punteggioScena), coerenti con la convenzione. |
+| 0.18 | 27/07/2026 | Aggiunto il Capitolo 3 "I mattoncini, uno alla volta": 9 micro-lezioni a scoperta graduale (impari una cosa, la provi subito, avanti) che portano da zero fino a essere pronti per l'Esercizio 1. I capitoli di costruzione degli esercizi diventano 4-5-6 e il progetto boss il 7. |
