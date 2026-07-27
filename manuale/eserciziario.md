@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.10** — 27/07/2026
+**Versione 0.11** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -85,6 +85,51 @@ func _quando_premo() -> void:
 	# FALLO TUO: scrivi qui il TUO saluto
 	etichettaVar.text = "Ciao! Mi hai premuto."
 ```
+</details>
+
+<details>
+<summary>Guida passo passo — costruiamolo insieme</summary>
+
+Segui i passi in ordine: dopo ognuno hai qualcosa che funziona. Non saltare avanti
+finché il passo di prima non è a posto.
+
+**Passo 1 — Crea il progetto.** `[APP — Godot]` finestra iniziale, il *Gestore
+progetti* → in alto a destra **`Crea`** → dai il nome `esercizio1`, scegli una
+cartella → **`Crea e modifica`**.
+
+**Passo 2 — Fai il nodo radice.** `[APP — Godot]` → pannello **Scena** in alto a
+sinistra → clicca **`Altro nodo`** → scrivi `Node2D`, scegli, **`Crea`** → doppio
+clic sul nodo e rinominalo **`Main`**.
+
+**Passo 3 — Aggiungi il bottone.** Seleziona **`Main`** → premi il **`+`** (Aggiungi
+nodo figlio) → scrivi `Button`, scegli, **`Crea`** → doppio clic e rinominalo
+**`bottoneScena`**.
+
+**Passo 4 — Aggiungi la scritta.** Seleziona di nuovo **`Main`** → **`+`** →
+`Label` → **`Crea`** → rinominalo **`etichettaScena`**.
+
+**Passo 5 — Attacca lo script.** Seleziona **`Main`** → in alto nel pannello Scena,
+l'icona **`Allega uno script`** → **`Crea`**. Si apre l'editor del codice.
+
+**Passo 6 — Scrivi il codice.** Cancella quello che c'è e copia il **Codice
+completo** qui sopra. Attento ai **rientri con TAB**: in GDScript contano.
+
+**Passo 7 — Prova.** Premi **`F5`** (la prima volta ti chiede la scena principale:
+conferma). Clicca il bottone: la scritta cambia. **Fatto.**
+
+### Come funziona, riga per riga
+- `extends Node2D` — dice "questo script comanda un nodo Node2D", cioè il nostro `Main`.
+- `@onready var bottoneVar: Button = $bottoneScena` — prende il nodo `bottoneScena`
+  dalla scena e gli dà il soprannome `bottoneVar` (appena la scena è pronta).
+- `@onready var etichettaVar: Label = $etichettaScena` — stessa cosa per la scritta.
+- `func _ready():` — questa funzione gira **una volta**, all'avvio.
+- `bottoneVar.position = Vector2(100, 100)` — mette il bottone a 100 pixel da
+  sinistra e 100 dall'alto.
+- `bottoneVar.text = "Salutami!"` — la scritta sopra il bottone (come la Caption).
+- `bottoneVar.pressed.connect(_quando_premo)` — collega il **click** del bottone
+  alla nostra funzione: "quando ti premono, chiama `_quando_premo`".
+- `func _quando_premo():` — la nostra funzione, è il tuo `Button1Click` di Lazarus.
+- `etichettaVar.text = "Ciao! Mi hai premuto."` — cambia la scritta. Ecco il saluto.
 </details>
 
 ---
@@ -347,7 +392,7 @@ func _ricomincia() -> void:
 	_aggiorna_hud()
 
 func _aggiorna_hud() -> void:
-	hudVar.text = "Stelle: %d    Vite: %d" % [punti, vite]
+	hudVar.text = "Punti: %d    Vite: %d" % [punti, vite]
 ```
 </details>
 
@@ -435,3 +480,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.8 | 27/07/2026 | Aggiunta a ogni esercizio (1-3) la foto del risultato (il gioco che gira), cosi' si vede subito dove arrivare. |
 | 0.9 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Aggiornati i codici completi e le liste dei nodi di tutti gli esercizi. |
 | 0.10 | 27/07/2026 | Aggiunto l'Esercizio 4 "Acchiappa le stelle": l'Esercizio 3 che cresce con il concetto nuovo delle vite e del Game Over (il gioco si può perdere e finire), a 4 livelli. Chirurgo pasticcione citato come variante a tema. |
+| 0.11 | 27/07/2026 | Inserita la foto del risultato dell'Esercizio 4 (es4-gioca) e allineato l'HUD a "Punti". Aggiunta all'Esercizio 1 la "Guida passo passo — costruiamolo insieme": costruzione a prova di stupido con coordinate complete, più la spiegazione del codice riga per riga. Primo campione del nuovo formato. |
