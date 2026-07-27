@@ -17,11 +17,11 @@ extends Control
 # ---- Colori ------------------------------------------------
 const COL_BEIGE := Color(0.847, 0.788, 0.671)     # piano d'appoggio attorno
 const COL_SOLCO := Color(0.11, 0.09, 0.07)        # solco scuro tra le pedine
+const FOTO_GIOCO := "res://foto-gioco.png"        # foto incorporata del gioco
 
 # ---- Stato -------------------------------------------------
 var _n: int = 4                 # tessere per lato
 var _tex: Texture2D             # la foto in gioco
-var _tex_scelta: Texture2D      # la foto scelta nel menu (o null)
 var _cella: float = 100.0
 var _origine := Vector2.ZERO
 var _board: Array = []          # posizione -> indice tessera (o -1 = buco)
@@ -38,8 +38,6 @@ var _stile_legno: String = "driftwood"   # legno del gioco (driftwood da spiaggi
 var _bg: ColorRect
 var _hud: Label
 var _menu: Control
-var _stato_foto: Label
-var _fd: FileDialog
 var _vitt: Label
 
 
@@ -77,42 +75,8 @@ func _mostra_menu() -> void:
 	s.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(s)
 
-	# --- Il gancio "fallo tuo": mettici la TUA foto ---
-	var tuo := Label.new()
-	tuo.text = "Mettici la TUA foto: un tuo meme, un compagno, te stesso!"
-	tuo.add_theme_font_size_override("font_size", 22)
-	tuo.add_theme_color_override("font_color", Color(1.0, 0.82, 0.35))
-	tuo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	v.add_child(tuo)
-
-	var lf := Label.new()
-	lf.text = "1) Scegli la foto"
-	lf.add_theme_font_size_override("font_size", 24)
-	lf.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	v.add_child(lf)
-
-	var rf := HBoxContainer.new()
-	rf.alignment = BoxContainer.ALIGNMENT_CENTER
-	rf.add_theme_constant_override("separation", 12)
-	v.add_child(rf)
-	var b1 := Button.new()
-	b1.text = "Scegli dal computer…"
-	b1.custom_minimum_size = Vector2(240, 52)
-	b1.pressed.connect(_apri_file_dialog)
-	rf.add_child(b1)
-	var b2 := Button.new()
-	b2.text = "Foto di esempio"
-	b2.custom_minimum_size = Vector2(190, 52)
-	b2.pressed.connect(_usa_esempio)
-	rf.add_child(b2)
-
-	_stato_foto = Label.new()
-	_stato_foto.text = "Foto: nessuna (userò l'esempio)"
-	_stato_foto.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	v.add_child(_stato_foto)
-
 	var ld := Label.new()
-	ld.text = "2) Scegli la difficoltà"
+	ld.text = "Scegli la difficoltà"
 	ld.add_theme_font_size_override("font_size", 24)
 	ld.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	v.add_child(ld)
@@ -133,30 +97,13 @@ func _mostra_menu() -> void:
 	rd.add_child(e4)
 
 
-func _apri_file_dialog() -> void:
-	if _fd == null:
-		_fd = FileDialog.new()
-		_fd.file_mode = FileDialog.FILE_MODE_OPEN_FILE
-		_fd.access = FileDialog.ACCESS_FILESYSTEM
-		_fd.use_native_dialog = true
-		_fd.filters = PackedStringArray(["*.png, *.jpg, *.jpeg ; Immagini"])
-		_fd.file_selected.connect(_on_file_scelto)
-		add_child(_fd)
-	_fd.popup_centered(Vector2i(820, 560))
-
-
-func _on_file_scelto(path: String) -> void:
-	var img := Image.new()
-	if img.load(path) == OK:
-		_tex_scelta = ImageTexture.create_from_image(img)
-		_stato_foto.text = "Foto scelta ✓"
-	else:
-		_stato_foto.text = "Non riesco ad aprire quella foto, riprova."
-
-
-func _usa_esempio() -> void:
-	_tex_scelta = _foto_esempio()
-	_stato_foto.text = "Foto: esempio ✓"
+func _carica_foto() -> Texture2D:
+	# La foto del gioco è incorporata: sempre quella. Se manca, uso l'esempio.
+	if ResourceLoader.exists(FOTO_GIOCO):
+		var t = load(FOTO_GIOCO)
+		if t is Texture2D:
+			return t
+	return _foto_esempio()
 
 
 func _foto_esempio() -> Texture2D:
@@ -254,9 +201,7 @@ func _texture_legno(w: int, h: int, semi: int, stile: String, kind: String) -> T
 # =========================== PARTITA ===========================
 func _inizia(n: int) -> void:
 	_n = n
-	if _tex_scelta == null:
-		_tex_scelta = _foto_esempio()
-	_tex = _tex_scelta
+	_tex = _carica_foto()
 	# Un unico legno ad alta risoluzione: da qui ricaviamo il tabellone e ogni
 	# pedina (fette diverse dello stesso legno -> grana continua da risolti).
 	_tex_legno = _texture_legno(512, 512, 202, _stile_legno, "frame")
