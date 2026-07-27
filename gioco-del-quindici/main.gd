@@ -38,7 +38,9 @@ var _mostra_numeri: bool = false
 var _mosse: int = 0
 var _vinto: bool = false
 var _tavola: Control
-var _cornice: Panel
+var _cornice: TextureRect
+var _tex_tavolo: Texture2D       # legno del fondo (tavolo)
+var _tex_radica: Texture2D       # legno pregiato/radica della cornice
 var _hud: Label
 var _menu: Control
 var _stato_foto: Label
@@ -49,11 +51,21 @@ var _vitt: Label
 func _ready() -> void:
 	randomize()
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	var bg := ColorRect.new()
-	bg.color = COL_SFONDO
+	# Il FONDO: una tavola di legno vero (venature lunghe), generata dal codice.
+	_tex_tavolo = _texture_legno(480, 300, 101, false)
+	var bg := TextureRect.new()
+	bg.texture = _tex_tavolo
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	bg.stretch_mode = TextureRect.STRETCH_SCALE
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(bg)
+	# Un velo scuro leggero, così il quadro e le scritte risaltano sul legno.
+	var velo := ColorRect.new()
+	velo.color = Color(0, 0, 0, 0.30)
+	velo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	velo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(velo)
 	_mostra_menu()
 
 
@@ -173,6 +185,58 @@ func _foto_esempio() -> Texture2D:
 	return ImageTexture.create_from_image(img)
 
 
+func _texture_legno(w: int, h: int, semi: int, radica: bool) -> Texture2D:
+	# Disegna un legno pregiato dal nulla: niente foto da scaricare.
+	#  - radica = true  -> venature che vorticano, gli "occhi" della radica (cornice)
+	#  - radica = false -> venature lunghe, come una tavola (fondo/tavolo)
+	var fig := FastNoiseLite.new()
+	fig.seed = semi
+	fig.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	fig.fractal_type = FastNoiseLite.FRACTAL_FBM
+	fig.fractal_octaves = 4
+	if radica:
+		fig.frequency = 0.012
+		fig.domain_warp_enabled = true
+		fig.domain_warp_amplitude = 55.0
+		fig.domain_warp_frequency = 0.012
+	else:
+		fig.frequency = 0.010
+		fig.domain_warp_enabled = true
+		fig.domain_warp_amplitude = 12.0
+		fig.domain_warp_frequency = 0.05
+
+	var grana := FastNoiseLite.new()
+	grana.seed = semi + 17
+	grana.noise_type = FastNoiseLite.TYPE_SIMPLEX
+	grana.frequency = 0.09
+
+	# Colori del legno pregiato: dal cioccolato scuro all'ambra dorata.
+	var scuro := Color(0.18, 0.085, 0.04)
+	var medio := Color(0.43, 0.23, 0.10)
+	var chiaro := Color(0.72, 0.48, 0.24)
+
+	var img := Image.create(w, h, false, Image.FORMAT_RGB8)
+	for y in h:
+		for x in w:
+			var a := fig.get_noise_2d(float(x), float(y))
+			var g := grana.get_noise_2d(float(x), float(y))
+			var v: float
+			if radica:
+				# tante venature che seguono i vortici: gli occhi della radica
+				v = sin(a * 7.0 + g * 1.5) * 0.5 + 0.5
+			else:
+				# venature lunghe quasi orizzontali, come le assi di un tavolo
+				v = sin((float(y) + a * 60.0) * 0.14 + g) * 0.5 + 0.5
+			v = clamp(v + g * 0.08, 0.0, 1.0)
+			var col: Color
+			if v < 0.5:
+				col = scuro.lerp(medio, v * 2.0)
+			else:
+				col = medio.lerp(chiaro, (v - 0.5) * 2.0)
+			img.set_pixel(x, y, col)
+	return ImageTexture.create_from_image(img)
+
+
 # =========================== PARTITA ===========================
 func _inizia(n: int) -> void:
 	_n = n
@@ -230,13 +294,22 @@ func _crea_tavola() -> void:
 	_cella = lato / _n
 	_origine = Vector2((vp.x - lato) / 2.0, (vp.y - lato) / 2.0 + 24.0)
 
-	# Cornice in legno attorno al quadro
-	_cornice = Panel.new()
-	var sbc := StyleBoxFlat.new()
-	sbc.bg_color = COL_CORNICE
-	sbc.set_corner_radius_all(10)
-	_cornice.add_theme_stylebox_override("panel", sbc)
-	var m := _cella * 0.16
+	# Cornice in RADICA (legno pregiato) attorno al quadro.
+	if _tex_radica == null:
+		_tex_radica = _texture_legno(360, 360, 202, true)
+	var m := _cella * 0.18
+	# Un sottile bordo scuro sotto, per dare profondità alla cornice.
+	var ombra := ColorRect.new()
+	ombra.color = Color(0.05, 0.03, 0.02)
+	ombra.position = _origine - Vector2(m, m) - Vector2(3, 3)
+	ombra.size = Vector2(lato, lato) + Vector2(m, m) * 2.0 + Vector2(6, 6)
+	ombra.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(ombra)
+
+	_cornice = TextureRect.new()
+	_cornice.texture = _tex_radica
+	_cornice.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_cornice.stretch_mode = TextureRect.STRETCH_SCALE
 	_cornice.position = _origine - Vector2(m, m)
 	_cornice.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
 	_cornice.mouse_filter = Control.MOUSE_FILTER_IGNORE
