@@ -14,9 +14,9 @@ extends Control
 #  vere, niente foto da scaricare): il progetto resta portabile.
 # ============================================================
 
-# ---- Colori tessera (il legno vero e' generato a parte) ----
-const COL_LEGNO := Color(0.62, 0.40, 0.20)        # faccia della tessera
-const COL_LEGNO_SCURO := Color(0.34, 0.20, 0.09)  # bordo della tessera
+# ---- Colori ------------------------------------------------
+const COL_BEIGE := Color(0.847, 0.788, 0.671)     # piano d'appoggio attorno
+const COL_SOLCO := Color(0.11, 0.09, 0.07)        # solco scuro tra le pedine
 
 # ---- Stato -------------------------------------------------
 var _n: int = 4                 # tessere per lato
@@ -33,10 +33,9 @@ var _mosse: int = 0
 var _vinto: bool = false
 var _tavola: Control
 var _cornice: TextureRect
-var _tex_tavolo: Texture2D      # legno del fondo (tavolo)
-var _tex_radica: Texture2D      # legno della cornice
+var _tex_legno: Texture2D       # legno del tabellone e delle pedine
 var _stile_legno: String = "driftwood"   # legno del gioco (driftwood da spiaggia)
-var _bg: TextureRect
+var _bg: ColorRect
 var _hud: Label
 var _menu: Control
 var _stato_foto: Label
@@ -47,21 +46,12 @@ var _vitt: Label
 func _ready() -> void:
 	randomize()
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	# Il FONDO: una tavola di legno vero, generata dal codice.
-	_tex_tavolo = _texture_legno(420, 260, 101, _stile_legno, "tavolo")
-	_bg = TextureRect.new()
-	_bg.texture = _tex_tavolo
+	# Il FONDO attorno al gioco: un beige omogeneo, come un piano d'appoggio.
+	_bg = ColorRect.new()
+	_bg.color = COL_BEIGE
 	_bg.set_anchors_preset(Control.PRESET_FULL_RECT)
-	_bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_bg.stretch_mode = TextureRect.STRETCH_SCALE
 	_bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_bg)
-	# Un velo scuro leggero, così il quadro e le scritte risaltano.
-	var velo := ColorRect.new()
-	velo.color = Color(0, 0, 0, 0.22)
-	velo.set_anchors_preset(Control.PRESET_FULL_RECT)
-	velo.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(velo)
 	_mostra_menu()
 
 
@@ -267,11 +257,9 @@ func _inizia(n: int) -> void:
 	if _tex_scelta == null:
 		_tex_scelta = _foto_esempio()
 	_tex = _tex_scelta
-	# Genera i due legni con lo stile scelto.
-	_tex_tavolo = _texture_legno(420, 260, 101, _stile_legno, "tavolo")
-	_tex_radica = _texture_legno(320, 320, 202, _stile_legno, "frame")
-	if _bg != null and is_instance_valid(_bg):
-		_bg.texture = _tex_tavolo
+	# Un unico legno ad alta risoluzione: da qui ricaviamo il tabellone e ogni
+	# pedina (fette diverse dello stesso legno -> grana continua da risolti).
+	_tex_legno = _texture_legno(512, 512, 202, _stile_legno, "frame")
 	if _menu != null and is_instance_valid(_menu):
 		_menu.queue_free()
 		_menu = null
@@ -325,20 +313,21 @@ func _crea_tavola() -> void:
 	_cella = lato / _n
 	_origine = Vector2((vp.x - lato) / 2.0, (vp.y - lato) / 2.0 + 24.0)
 
-	# Cornice di legno attorno al quadro.
-	if _tex_radica == null:
-		_tex_radica = _texture_legno(320, 320, 202, _stile_legno, "frame")
-	var m := _cella * 0.18
-	# Un sottile bordo scuro sotto, per dare profondità alla cornice.
+	# Il TABELLONE: una base tutta di legno (si vede anche nel buco), con un
+	# bordo di legno ben visibile tutt'attorno (circa un centimetro).
+	if _tex_legno == null:
+		_tex_legno = _texture_legno(512, 512, 202, _stile_legno, "frame")
+	var m := maxf(30.0, _cella * 0.20)
+	# Ombra morbida sotto: sembra un oggetto di legno appoggiato sul piano.
 	var ombra := ColorRect.new()
-	ombra.color = Color(0.05, 0.03, 0.02)
-	ombra.position = _origine - Vector2(m, m) - Vector2(3, 3)
-	ombra.size = Vector2(lato, lato) + Vector2(m, m) * 2.0 + Vector2(6, 6)
+	ombra.color = Color(0.0, 0.0, 0.0, 0.22)
+	ombra.position = _origine - Vector2(m, m) + Vector2(5, 7)
+	ombra.size = Vector2(lato, lato) + Vector2(m, m) * 2.0
 	ombra.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(ombra)
 
 	_cornice = TextureRect.new()
-	_cornice.texture = _tex_radica
+	_cornice.texture = _tex_legno
 	_cornice.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_cornice.stretch_mode = TextureRect.STRETCH_SCALE
 	_cornice.position = _origine - Vector2(m, m)
@@ -429,22 +418,38 @@ func _nuova_partita() -> void:
 func _crea_tessera(indice: int) -> Panel:
 	var pan := Panel.new()
 	pan.size = Vector2(_cella, _cella)
+	# Solco scuro sottile: stacca la pedina dalle vicine.
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = COL_LEGNO
-	sb.set_border_width_all(maxi(2, int(_cella * 0.06)))
-	sb.border_color = COL_LEGNO_SCURO
-	sb.set_corner_radius_all(6)
+	sb.bg_color = COL_SOLCO
+	sb.set_border_width_all(maxi(1, int(_cella * 0.02)))
+	sb.border_color = COL_SOLCO
+	sb.set_corner_radius_all(5)
 	pan.add_theme_stylebox_override("panel", sb)
 
-	# Il pezzo di foto di questa tessera (ritaglio quadrato centrato).
+	var col := indice % _n
+	var row := int(indice / _n)
+
+	# La pedina E' di legno: una fetta del legno del tabellone, così quando il
+	# gioco è risolto la grana prosegue da una pedina all'altra.
+	var legno := TextureRect.new()
+	var wcs := _tex_legno.get_width() / float(_n)
+	var wat := AtlasTexture.new()
+	wat.atlas = _tex_legno
+	wat.region = Rect2(col * wcs, row * wcs, wcs, wcs)
+	legno.texture = wat
+	legno.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	legno.stretch_mode = TextureRect.STRETCH_SCALE
+	legno.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	legno.set_anchors_preset(Control.PRESET_FULL_RECT)
+	pan.add_child(legno)
+
+	# La foto: grande quanto possibile, solo un filo di legno attorno.
 	var tw := _tex.get_width()
 	var th := _tex.get_height()
 	var side := mini(tw, th)
 	var ox := (tw - side) / 2.0
 	var oy := (th - side) / 2.0
 	var cs := side / float(_n)
-	var col := indice % _n
-	var row := int(indice / _n)
 	var at := AtlasTexture.new()
 	at.atlas = _tex
 	at.region = Rect2(ox + col * cs, oy + row * cs, cs, cs)
@@ -454,7 +459,7 @@ func _crea_tessera(indice: int) -> Panel:
 	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	tr.stretch_mode = TextureRect.STRETCH_SCALE
 	tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var b := _cella * 0.09
+	var b := _cella * 0.05
 	tr.position = Vector2(b, b)
 	tr.size = Vector2(_cella - 2.0 * b, _cella - 2.0 * b)
 	pan.add_child(tr)
