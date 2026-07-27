@@ -85,4 +85,4 @@ func _ricomincia() -> void:
 	_aggiorna_hud()
 
 func _aggiorna_hud() -> void:
-	hudVar.text = "Stelle: %d    Vite: %d" % [punti, vite]
+	hudVar.text = "Punti: %d    Vite: %d" % [punti, vite]
