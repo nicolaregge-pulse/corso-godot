@@ -339,16 +339,18 @@ func _crea_tavola() -> void:
 	var margine := 30.0
 	# Il gioco sta a SINISTRA; a destra resta libera la colonna dei comandi.
 	var disponibile: float = cd["x"] - margine - 24.0
-	var lato := minf(disponibile, vp.y * 0.84)
+	# "totale" = ingombro esterno (cornice compresa): così la cornice, anche se
+	# spessa, non sfora mai nella colonna dei comandi.
+	var totale := minf(disponibile, vp.y * 0.92)
+	var m := totale * 0.10                       # cornice spessa (2-3 volte quella di prima)
+	var lato := totale - 2.0 * m
 	_cella = lato / _n
-	_origine = Vector2(margine + (disponibile - lato) / 2.0, (vp.y - lato) / 2.0 + 16.0)
+	var op := Vector2(margine + (disponibile - totale) / 2.0, (vp.y - totale) / 2.0 + 12.0)
+	_origine = op + Vector2(m, m)               # angolo interno (dove iniziano le tessere)
+	var os := Vector2(totale, totale)
 
 	if _tex_legno == null:
 		_tex_legno = _texture_legno(512, 512, 202, _stile_legno, "frame")
-
-	var m := maxf(26.0, _cella * 0.16)          # bordo/cornice ~1 cm
-	var op := _origine - Vector2(m, m)          # angolo esterno della cornice
-	var os := Vector2(lato, lato) + Vector2(m, m) * 2.0
 
 	# Ombra a terra: l'oggetto sembra appoggiato sul piano beige.
 	var ombra := ColorRect.new()
