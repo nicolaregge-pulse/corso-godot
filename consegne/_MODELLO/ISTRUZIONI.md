@@ -3,6 +3,13 @@
 Leggi queste istruzioni. Se ti blocchi, puoi anche **incollarle a Gemini** e
 chiedergli aiuto: sa cosa deve contenere la consegna e ti guida.
 
+## Prima di tutto: fatti la tua copia del corso (il fork)
+Non lavori sul corso del prof: te ne fai una **copia tua** (in GitHub si chiama
+**fork**), così nessuno tocca il tuo lavoro.
+1. Entra su GitHub con il **tuo account** e apri la pagina del corso.
+2. In alto a destra clicca **`Fork`**, poi **`Create fork`**.
+3. Ora in alto c'è il tuo nome: quella è la **tua copia**. Lavora sempre lì.
+
 ## Cosa deve contenere la tua cartella di consegna
 1. **`scheda.md`** — il modulo compilato (chi sei e cosa hai fatto).
 2. **`main.gd`** — il codice che hai scritto.
