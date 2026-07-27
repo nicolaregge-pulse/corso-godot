@@ -48,3 +48,7 @@ sono bloccato"), il **codice**, le **immagini**.
   Nicola ha già (causa "file già esistente" quando salva). Regola sacra.
 - Con Nicola e i ragazzi: **tutto visuale** (GitHub Desktop / browser), mai la
   riga di comando. Coordinate complete a ogni passo.
+- **Descrizione del commit sempre pronta da me:** ogni volta che so che Nicola
+  dovrà fare un commit (file generati da Godot, modifiche nostre, PDF nuovi),
+  gli fornisco IO il testo del campo Summary in un blocco da copiare, senza che
+  lo debba chiedere. Anticipare, non aspettare.
