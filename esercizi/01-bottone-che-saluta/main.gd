@@ -3,20 +3,23 @@ extends Node2D
 # Ponte da Lazarus: è il tuo Button1Click che cambia una Caption.
 #
 # Convenzione dei nomi: la VARIABILE finisce in "Var", il NODO nella scena
-# finisce in "Scena". Cosi' si capisce a colpo d'occhio chi e' chi.
+# finisce in "Scena".
 
 @onready var bottoneVar: Button = $bottoneScena
 @onready var etichettaVar: Label = $etichettaScena
 
 func _ready() -> void:
-	# Posizioniamo i due elementi così non si sovrappongono
+	# Mettiamo il bottone e la scritta in due punti diversi
 	bottoneVar.position = Vector2(100, 100)
-	bottoneVar.text = "Salutami!"          # <- come Button.Caption in Lazarus
+	bottoneVar.text = "Salutami!"
 	etichettaVar.position = Vector2(100, 180)
 	etichettaVar.text = "..."
-	# Colleghiamo il "click" (segnale pressed) alla nostra funzione
+	# FALLO TUO: cambia il colore della scritta (rosso, verde, blu da 0 a 1)
+	etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))
+	# Colleghiamo il click del bottone (il segnale "pressed") alla nostra funzione
 	bottoneVar.pressed.connect(_quando_premo)
 
-# Questa e' come il tuo Button1Click di Lazarus
+# Questa è come il tuo Button1Click di Lazarus
 func _quando_premo() -> void:
+	# FALLO TUO: scrivi qui il TUO saluto
 	etichettaVar.text = "Ciao! Mi hai premuto."

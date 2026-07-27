@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.11** — 27/07/2026
+**Versione 0.12** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -65,22 +65,21 @@ bottone, la scritta deve cambiare, per esempio da "..." a "Ciao! Mi hai premuto"
 ```gdscript
 extends Node2D
 
-# $NomeNodo = prende un nodo figlio per nome (come Button1 in Lazarus)
 @onready var bottoneVar: Button = $bottoneScena
 @onready var etichettaVar: Label = $etichettaScena
 
 func _ready() -> void:
-	# Posizioniamo i due elementi così non si sovrappongono
+	# Mettiamo il bottone e la scritta in due punti diversi
 	bottoneVar.position = Vector2(100, 100)
-	bottoneVar.text = "Salutami!"          # <- come Button.Caption in Lazarus
+	bottoneVar.text = "Salutami!"
 	etichettaVar.position = Vector2(100, 180)
 	etichettaVar.text = "..."
-	# FALLO TUO: scegli il colore della scritta, rosso verde blu da 0 a 1
-	etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))   # rosso
-	# Colleghiamo il "click" (segnale pressed) alla nostra funzione
+	# FALLO TUO: cambia il colore della scritta (rosso, verde, blu da 0 a 1)
+	etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))
+	# Colleghiamo il click del bottone (il segnale "pressed") alla nostra funzione
 	bottoneVar.pressed.connect(_quando_premo)
 
-# Questa e' come il tuo Button1Click di Lazarus
+# Questa è come il tuo Button1Click di Lazarus
 func _quando_premo() -> void:
 	# FALLO TUO: scrivi qui il TUO saluto
 	etichettaVar.text = "Ciao! Mi hai premuto."
@@ -90,44 +89,98 @@ func _quando_premo() -> void:
 <details>
 <summary>Guida passo passo — costruiamolo insieme</summary>
 
-Segui i passi in ordine: dopo ognuno hai qualcosa che funziona. Non saltare avanti
-finché il passo di prima non è a posto.
+**Cosa costruiamo, e con quali pezzi.** Facciamo un bottone che saluta. Servono
+due pezzi: un **bottone** (quello che l'utente preme) e una **scritta** (dove
+compare il saluto). L'idea: quando premi il bottone, la scritta cambia. Prima
+mettiamo i due pezzi; il "quando premi, cambia" lo diremo dopo, nel codice.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]` finestra iniziale, il *Gestore
-progetti* → in alto a destra **`Crea`** → dai il nome `esercizio1`, scegli una
-cartella → **`Crea e modifica`**.
+Fai i passi in ordine. Non passare al successivo finché il precedente non è a posto.
 
-**Passo 2 — Fai il nodo radice.** `[APP — Godot]` → pannello **Scena** in alto a
-sinistra → clicca **`Altro nodo`** → scrivi `Node2D`, scegli, **`Crea`** → doppio
-clic sul nodo e rinominalo **`Main`**.
+**Passo 1 — Crea il progetto.**
+1. `[APP — Godot]`, finestra iniziale (il *Gestore progetti*).
+2. In alto a destra, clicca **`Crea`**.
+3. Nel nome scrivi **`esercizio1`**, scegli una cartella, poi clicca **`Crea e modifica`**.
 
-**Passo 3 — Aggiungi il bottone.** Seleziona **`Main`** → premi il **`+`** (Aggiungi
-nodo figlio) → scrivi `Button`, scegli, **`Crea`** → doppio clic e rinominalo
-**`bottoneScena`**.
+**Passo 2 — Entra nel mondo 2D.**
+*Perché:* il nostro gioco è in 2D, quindi lavoriamo nell'ambiente 2D. Se restassi in
+3D vedresti una griglia in prospettiva che a noi non serve.
+1. In alto al centro, nella fila **`2D` `3D` `Script` `Gioco`**, clicca **`2D`**.
+2. Ora vedi una tela piatta con dei righelli: è il posto giusto.
 
-**Passo 4 — Aggiungi la scritta.** Seleziona di nuovo **`Main`** → **`+`** →
-`Label` → **`Crea`** → rinominalo **`etichettaScena`**.
+**Passo 3 — Crea il nodo radice `Main`.**
+*A cosa serve:* è il contenitore principale, il tronco dell'albero; tutti gli altri
+pezzi staranno dentro di lui.
+1. Nel pannello **`Scena`** (in alto a sinistra), sotto **`Crea un nodo radice:`**, clicca **`Altro nodo`**.
+2. Si apre la finestra **`Crea un nuovo Node`**. Nel campo **`Cerca:`** scrivi **`Node2D`**: si mette in cima ed è già selezionato.
+3. In basso clicca **`Crea`**.
+4. Nel pannello `Scena` compare il nodo **`Node2D`**. Doppio clic sul nome, scrivi **`Main`**, premi **`Invio`**.
 
-**Passo 5 — Attacca lo script.** Seleziona **`Main`** → in alto nel pannello Scena,
-l'icona **`Allega uno script`** → **`Crea`**. Si apre l'editor del codice.
+> **Perché due strade?** Sotto `Crea un nodo radice:` ci sono anche le scorciatoie
+> `Scena 2D`, `Scena 3D`, `Interfaccia utente`, per i nodi più usati. `Altro nodo`
+> invece apre la finestra con **tutti** i tipi di nodo. Noi useremo sempre
+> `Altro nodo`: così impari l'unica strada che va bene per qualsiasi nodo.
 
-**Passo 6 — Scrivi il codice.** Cancella quello che c'è e copia il **Codice
-completo** qui sopra. Attento ai **rientri con TAB**: in GDScript contano.
+**Passo 4 — Aggiungi il bottone `bottoneScena`.**
+*A cosa serve:* è il **bottone** che l'utente cliccherà. Più avanti, nel codice, gli
+diremo "quando ti premono, chiama la nostra funzione".
+1. Nel pannello `Scena`, clicca **una volta** su **`Main`** (deve restare evidenziato).
+2. In alto a sinistra del pannello, clicca l'icona **`+`** (*Aggiungi nodo figlio*).
+3. Nella finestra, nel campo **`Cerca:`**, scrivi **`Button`**: si mette in cima ed è già selezionato.
+4. In basso clicca **`Crea`**.
+5. Sotto `Main` compare **`Button`**. Doppio clic sul nome, scrivi **`bottoneScena`**, premi **`Invio`**.
 
-**Passo 7 — Prova.** Premi **`F5`** (la prima volta ti chiede la scena principale:
-conferma). Clicca il bottone: la scritta cambia. **Fatto.**
+**Passo 5 — Aggiungi la scritta `etichettaScena`.**
+*A cosa serve:* è la **scritta** dove apparirà il saluto; è il pezzo che il giocatore
+vedrà **cambiare** — l'effetto del gioco.
+1. **Attenzione:** prima clicca di nuovo **una volta** su **`Main`**. Se ora è
+   selezionato `bottoneScena`, la scritta finirebbe *dentro* il bottone: sbagliato.
+   Deve stare *accanto* al bottone.
+2. In alto a sinistra del pannello, clicca l'icona **`+`**.
+3. Nella finestra, nel campo **`Cerca:`**, scrivi **`Label`**: si mette in cima.
+4. In basso clicca **`Crea`**.
+5. Doppio clic sul nuovo nodo `Label`, scrivi **`etichettaScena`**, premi **`Invio`**.
+
+A questo punto, nel pannello `Scena`, l'albero deve essere così:
+- `Main`
+  - `bottoneScena`
+  - `etichettaScena`
+
+**Passo 6 — Attacca lo script a `Main`.**
+*A cosa serve:* lo script è il file di codice che dà comportamento a `Main`: è lì che
+scriveremo cosa succede quando premi il bottone.
+1. Nel pannello `Scena`, clicca con il **tasto DESTRO** del mouse sul nodo **`Main`**.
+2. Nel menu che si apre, clicca **`Allega script`**.
+3. Si apre una finestra (**`Allega nodo script`**). Non cambiare niente: clicca **`Crea`** in basso.
+4. Si apre l'editor del codice: in cima trovi già scritto `extends Node2D`.
+
+**Passo 7 — Metti il codice.**
+Il codice completo è nel riquadro **Codice completo** (livello rosso) qui sopra.
+1. **Importante: NON copiarlo dal PDF** — si rovina, i primi caratteri si perdono.
+   Prendilo dal file su GitHub **`esercizi/01-bottone-che-saluta/main.gd`** (ha il
+   **tasto Copia**), oppure scrivilo a mano: è corto, e così lo capisci meglio.
+2. Nell'editor del codice, seleziona tutto con **`Ctrl+A`** e cancella con **`Canc`**.
+3. Incolla con **`Ctrl+V`** (o scrivi). Attento ai **rientri con TAB**: in GDScript contano.
+4. Salva con **`Ctrl+S`**.
+
+**Passo 8 — Prova.**
+1. Premi **`F5`**. La prima volta: se chiede di salvare la scena, dai un nome (per
+   esempio `main`) e clicca **`Salva`**; se poi chiede la scena principale, clicca
+   **`Seleziona corrente`**.
+2. Si apre la finestra del gioco. Clicca il bottone: la scritta cambia. **Fatto!**
 
 ### Come funziona, riga per riga
-- `extends Node2D` — dice "questo script comanda un nodo Node2D", cioè il nostro `Main`.
+- `extends Node2D` — dice "questo script comanda un nodo Node2D", il nostro `Main`.
 - `@onready var bottoneVar: Button = $bottoneScena` — prende il nodo `bottoneScena`
   dalla scena e gli dà il soprannome `bottoneVar` (appena la scena è pronta).
 - `@onready var etichettaVar: Label = $etichettaScena` — stessa cosa per la scritta.
-- `func _ready():` — questa funzione gira **una volta**, all'avvio.
-- `bottoneVar.position = Vector2(100, 100)` — mette il bottone a 100 pixel da
-  sinistra e 100 dall'alto.
+- `func _ready():` — gira **una volta**, all'avvio.
+- `bottoneVar.position = Vector2(100, 100)` — mette il bottone a 100 pixel da sinistra e 100 dall'alto.
 - `bottoneVar.text = "Salutami!"` — la scritta sopra il bottone (come la Caption).
-- `bottoneVar.pressed.connect(_quando_premo)` — collega il **click** del bottone
-  alla nostra funzione: "quando ti premono, chiama `_quando_premo`".
+- `etichettaVar.position` e `etichettaVar.text = "..."` — mettono la scritta più in basso, con "..." per iniziare.
+- `etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))` — colora la
+  scritta di rosso; i tre numeri sono rosso, verde, blu da 0 a 1: cambiali e cambia il colore.
+- `bottoneVar.pressed.connect(_quando_premo)` — collega il **click** del bottone alla
+  nostra funzione: "quando ti premono, chiama `_quando_premo`".
 - `func _quando_premo():` — la nostra funzione, è il tuo `Button1Click` di Lazarus.
 - `etichettaVar.text = "Ciao! Mi hai premuto."` — cambia la scritta. Ecco il saluto.
 </details>
@@ -187,6 +240,43 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_down"):
 		quadratoVar.position.y += VELOCITA * delta
 ```
+</details>
+
+<details>
+<summary>Guida passo passo — costruiamolo insieme</summary>
+
+**Cosa costruiamo.** Un quadrato che si muove con le frecce. Serve un solo pezzo:
+un **quadrato**. La novità è nel codice: il **game loop** `_process`, che gira da
+solo circa 60 volte al secondo e sposta il quadrato mentre tieni premuta una freccia.
+
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a destra **`Crea`**, nome **`esercizio2`**, scegli una cartella, **`Crea e modifica`**.
+
+**Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`** (il gioco è in 2D).
+
+**Passo 3 — Crea il nodo radice `Main`.** Nel pannello **`Scena`**, sotto **`Crea un nodo radice:`**, clicca **`Altro nodo`** → nella finestra, campo **`Cerca:`**, scrivi **`Node2D`** → **`Crea`** → doppio clic sul nodo, scrivi **`Main`**, **`Invio`**.
+
+**Passo 4 — Aggiungi il quadrato `quadratoScena`.**
+*A cosa serve:* è il **quadrato** che muoverai, l'oggetto del gioco.
+1. Clicca **una volta** su **`Main`**.
+2. In alto a sinistra del pannello, clicca l'icona **`+`**.
+3. Nella finestra, campo **`Cerca:`**, scrivi **`ColorRect`** → **`Crea`**.
+4. Doppio clic sul nodo `ColorRect`, scrivi **`quadratoScena`**, **`Invio`**.
+
+**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+
+**Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/02-muovi-il-quadrato/main.gd`** (ha il tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, poi **`Ctrl+S`**.
+
+**Passo 7 — Prova.** Premi **`F5`** (se chiede, salva la scena e clicca **`Seleziona corrente`**). Tieni premute le frecce: il quadrato si muove. **Fatto!**
+
+### Come funziona, riga per riga
+- `@onready var quadratoVar: ColorRect = $quadratoScena` — soprannome del quadrato.
+- `const VELOCITA: float = 300.0` — quanto veloce si muove (pixel al secondo).
+- `func _ready():` — all'avvio dà al quadrato dimensione, colore e posizione.
+- `func _process(delta):` — **il game loop**: gira a ogni fotogramma, da solo.
+- `if Input.is_action_pressed("ui_left"): quadratoVar.position.x -= VELOCITA * delta`
+  — mentre tieni premuta la freccia sinistra, spostalo a sinistra; le altre tre
+  righe fanno lo stesso per destra, su, giù.
+- `* delta` — moltiplicare per `delta` fa andare il movimento uguale su ogni PC.
 </details>
 
 ---
@@ -279,6 +369,41 @@ func _rimetti_in_alto() -> void:
 func _aggiorna_punteggio() -> void:
 	punteggioVar.text = "Monete: %d" % punti
 ```
+</details>
+
+<details>
+<summary>Guida passo passo — costruiamolo insieme</summary>
+
+**Cosa costruiamo.** Un cestino che muovi con le frecce ← → e una moneta che cade;
+se la prendi fai +1 e la moneta riparte dall'alto. Servono tre pezzi: il **cestino**,
+la **moneta** e il **punteggio** scritto a schermo.
+
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a destra **`Crea`**, nome **`esercizio3`**, scegli una cartella, **`Crea e modifica`**.
+
+**Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`**.
+
+**Passo 3 — Crea il nodo radice `Main`.** Pannello **`Scena`** → **`Altro nodo`** → **`Cerca:`** **`Node2D`** → **`Crea`** → doppio clic, scrivi **`Main`**, **`Invio`**.
+
+**Passo 4 — Aggiungi i tre pezzi.** Ricorda: **prima di ogni pezzo clicca su `Main`**, così i pezzi restano tutti figli di `Main` (accanto, non uno dentro l'altro).
+1. Clicca **`Main`** → **`+`** → **`Cerca:`** **`ColorRect`** → **`Crea`** → rinomina in **`cestinoScena`** (*il cestino che muovi*).
+2. Clicca **`Main`** → **`+`** → **`Cerca:`** **`ColorRect`** → **`Crea`** → rinomina in **`monetaScena`** (*la moneta che cade*).
+3. Clicca **`Main`** → **`+`** → **`Cerca:`** **`Label`** → **`Crea`** → rinomina in **`punteggioScena`** (*la scritta del punteggio*).
+
+L'albero deve essere: `Main` con sotto `cestinoScena`, `monetaScena`, `punteggioScena`.
+
+**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+
+**Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/03-prendi-la-moneta/main.gd`** (tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, **`Ctrl+S`**.
+
+**Passo 7 — Prova.** Premi **`F5`** (salva e **`Seleziona corrente`** se te lo chiede). Muovi il cestino con ← → e prendi la moneta: il punteggio sale. **Fatto!**
+
+### Come funziona, riga per riga
+- I tre `@onready var ...Var = $...Scena` — i soprannomi di cestino, moneta e punteggio.
+- `func _ready():` — dà dimensioni, colori e posizioni; mette la moneta in alto con `_rimetti_in_alto()`.
+- `func _process(delta):` — a ogni fotogramma: muove il cestino con le frecce, fa scendere la moneta, e controlla se è **presa** o **persa**.
+- `Rect2(...).intersects(Rect2(...))` — è vero se il cestino e la moneta **si toccano** (presa): +1 punto e moneta di nuovo in alto.
+- `elif monetaVar.position.y > ...` — se la moneta esce sotto (persa), la rimette in alto.
+- `_aggiorna_punteggio()` — scrive a schermo "Monete: N".
 </details>
 
 ---
@@ -396,11 +521,53 @@ func _aggiorna_hud() -> void:
 ```
 </details>
 
+<details>
+<summary>Guida passo passo — costruiamolo insieme</summary>
+
+**Cosa costruiamo.** Una navetta che muovi con le frecce ← → e le stelle che cadono:
+se le prendi fai +1, se ne perdi tre è **Game Over**. La novità è nel codice: le
+**vite** e il **Game Over** — il gioco ora si può perdere e finire. Servono quattro
+pezzi: la **navetta**, la **stella**, la scritta di **punti e vite**, e la scritta
+**GAME OVER**.
+
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, **`Crea`**, nome **`esercizio4`**, scegli una cartella, **`Crea e modifica`**.
+
+**Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`**.
+
+**Passo 3 — Crea il nodo radice `Main`.** Pannello **`Scena`** → **`Altro nodo`** → **`Cerca:`** **`Node2D`** → **`Crea`** → doppio clic, scrivi **`Main`**, **`Invio`**.
+
+**Passo 4 — Aggiungi i quattro pezzi.** Ricorda: **prima di ogni pezzo clicca su `Main`**, così restano tutti figli di `Main`.
+1. Clicca **`Main`** → **`+`** → **`Cerca:`** **`ColorRect`** → **`Crea`** → rinomina in **`navettaScena`** (*la navetta che muovi*).
+2. Clicca **`Main`** → **`+`** → **`Cerca:`** **`ColorRect`** → **`Crea`** → rinomina in **`stellaScena`** (*la stella che cade*).
+3. Clicca **`Main`** → **`+`** → **`Cerca:`** **`Label`** → **`Crea`** → rinomina in **`hudScena`** (*punti e vite*).
+4. Clicca **`Main`** → **`+`** → **`Cerca:`** **`Label`** → **`Crea`** → rinomina in **`gameoverScena`** (*la scritta di fine partita*).
+
+Albero: `Main` con sotto `navettaScena`, `stellaScena`, `hudScena`, `gameoverScena`.
+
+**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+
+**Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/04-acchiappa-le-stelle/main.gd`** (tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, **`Ctrl+S`**.
+
+**Passo 7 — Prova.** Premi **`F5`** (salva e **`Seleziona corrente`** se te lo chiede). Muovi la navetta con ← → e prendi le stelle; falne cadere tre per vedere il **GAME OVER**, poi **`Invio`** per ricominciare. **Fatto!**
+
+### Come funziona, riga per riga
+- `var vite := 3` e `var in_gioco := true` — le due novità: quante vite hai, e se la partita è in corso.
+- `func _process(delta):` — se **non** sei più in gioco, aspetta solo **`Invio`** (`ui_accept`) per ricominciare; altrimenti muove la navetta e fa scendere la stella.
+- Presa (`intersects`): +1 punto e stella di nuovo in alto.
+- Persa (la stella esce sotto): `vite -= 1`; se `vite <= 0` chiama `_game_over()`.
+- `_game_over()` — ferma il gioco e mostra la scritta GAME OVER.
+- `_ricomincia()` — rimette punti e vite a posto e riparte.
+</details>
+
 > Fallo tuo: cambia il colore e la dimensione della navetta e delle stelle, la
 > velocità, o le vite di partenza. Stesso gioco, tema diverso: se al posto delle
 > stelle metti gli organi che cadono dal tavolo, hai il **Chirurgo pasticcione**
 > (nella cartella `chirurgo-pasticcione/`). Nella cartella `acchiappa-le-stelle/`
 > trovi anche una versione più ricca, con tante stelle insieme, da studiare.
+
+---
+
+## Esercizio BOSS — Affonda la Bonomi
 *Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.*
 
 ![Affonda la Bonomi in azione: il cubo d'acqua con il mirino verde, le coordinate scritte attorno al cubo e, in basso a sinistra, i comandi colorati dei tre assi (Colonna Q/A, Fila W/S, Profondità E/D).](immagini/AffondaBonomi.png)
@@ -481,3 +648,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.9 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Aggiornati i codici completi e le liste dei nodi di tutti gli esercizi. |
 | 0.10 | 27/07/2026 | Aggiunto l'Esercizio 4 "Acchiappa le stelle": l'Esercizio 3 che cresce con il concetto nuovo delle vite e del Game Over (il gioco si può perdere e finire), a 4 livelli. Chirurgo pasticcione citato come variante a tema. |
 | 0.11 | 27/07/2026 | Inserita la foto del risultato dell'Esercizio 4 (es4-gioca) e allineato l'HUD a "Punti". Aggiunta all'Esercizio 1 la "Guida passo passo — costruiamolo insieme": costruzione a prova di stupido con coordinate complete, più la spiegazione del codice riga per riga. Primo campione del nuovo formato. |
+| 0.12 | 27/07/2026 | Controllo completo di tutti gli esercizi con Godot: i codici 1-4 girano puliti e i blocchi dell'eserciziario sono coerenti con i file soluzione (corretta l'incoerenza dell'Es 1, la riga del colore). Aggiunta la guida passo passo (ambiente 2D per primo, nomi esatti dei pulsanti, tasto destro per lo script, codice da copiare dal file e non dal PDF, a cosa serve ogni pezzo) agli Esercizi 2, 3 e 4. Corretto un bug: mancava lo stacco e il titolo dell'Esercizio BOSS dopo l'Esercizio 4. |
