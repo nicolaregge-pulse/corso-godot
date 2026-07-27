@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.15** — 27/07/2026
+**Versione 0.16** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -319,14 +319,14 @@ premi **`Crea e modifica`**.
 `[APP — Godot]` pannello **Scena**, in alto a sinistra, clicca **`Scena 2D`**: nasce
 il nodo radice `Node2D`. Con un **doppio clic** sul suo nome, rinominalo **`Main`**.
 
-![L'editor di Godot con la scena: i nodi Main, BottoneCiao ed Etichetta](immagini/es1-ambiente.png)
+![L'editor di Godot con la scena: i nodi Main, bottoneScena ed etichettaScena](immagini/es1-ambiente.png)
 
 ### Passo 3 — Aggiungi il bottone e la scritta
 1. Seleziona **`Main`**, poi in alto nel pannello Scena clicca il **`+`**, cioè
    Aggiungi nodo figlio. Cerca **`Button`**, selezionalo, **`Crea`**. Rinominalo
-   **`BottoneCiao`**.
+   **`bottoneScena`**.
 2. Seleziona di nuovo **`Main`**, **`+`**, cerca **`Label`**, **`Crea`**. Rinominalo
-   **`Etichetta`**.
+   **`etichettaScena`**.
 
 ### Passo 4 — Attacca lo script
 Seleziona **`Main`**. In alto a destra del pannello Scena clicca **`Attacca uno
@@ -338,20 +338,20 @@ Cancella quello che trovi e incolla:
 ```gdscript
 extends Node2D
 
-@onready var bottone: Button = $BottoneCiao
-@onready var etichetta: Label = $Etichetta
+@onready var bottoneVar: Button = $bottoneScena
+@onready var etichettaVar: Label = $etichettaScena
 
 func _ready() -> void:
-	bottone.position = Vector2(100, 100)
-	bottone.text = "Salutami!"
-	etichetta.position = Vector2(100, 180)
-	etichetta.text = "..."
+	bottoneVar.position = Vector2(100, 100)
+	bottoneVar.text = "Salutami!"
+	etichettaVar.position = Vector2(100, 180)
+	etichettaVar.text = "..."
 	# Colleghiamo il clic, il segnale pressed, alla nostra funzione
-	bottone.pressed.connect(_quando_premo)
+	bottoneVar.pressed.connect(_quando_premo)
 
 # Questa è come il tuo Button1Click di Lazarus
 func _quando_premo() -> void:
-	etichetta.text = "Ciao! Mi hai premuto."
+	etichettaVar.text = "Ciao! Mi hai premuto."
 ```
 Pezzo per pezzo: `@onready var` prende i due nodi per nome; in `_ready()` diamo
 posizione e testo; `bottone.pressed.connect(...)` collega il **clic** alla
@@ -368,7 +368,7 @@ premuto." **Ce l'hai fatta.**
 - Dai un colore alla scritta: dentro `_ready()` aggiungi questa riga, dove i tre
   numeri sono rosso, verde, blu da 0 a 1:
   ```gdscript
-  etichetta.add_theme_color_override("font_color", Color(1, 0, 0))
+  etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))
   ```
 
 ---
@@ -384,31 +384,31 @@ Come prima: crea un progetto `esercizio2`, poi nel pannello Scena clicca
 
 ### Passo 2 — Aggiungi il quadrato
 Seleziona **`Main`**, clicca **`+`**, cerca **`ColorRect`**, cioè un rettangolo
-colorato, **`Crea`**, e rinominalo **`Quadrato`**.
+colorato, **`Crea`**, e rinominalo **`quadratoScena`**.
 
 ### Passo 3 — Script e codice
 Attacca lo script a **`Main`**, cancella e incolla:
 ```gdscript
 extends Node2D
 
-@onready var quadrato: ColorRect = $Quadrato
+@onready var quadratoVar: ColorRect = $quadratoScena
 const VELOCITA: float = 300.0   # pixel al secondo
 
 func _ready() -> void:
-	quadrato.size = Vector2(60, 60)
-	quadrato.color = Color(0.3, 0.7, 1.0)   # azzurro
-	quadrato.position = Vector2(200, 200)
+	quadratoVar.size = Vector2(60, 60)
+	quadratoVar.color = Color(0.3, 0.7, 1.0)   # azzurro
+	quadratoVar.position = Vector2(200, 200)
 
 # _process gira a OGNI fotogramma: qui muoviamo il quadrato
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
-		quadrato.position.x -= VELOCITA * delta
+		quadratoVar.position.x -= VELOCITA * delta
 	if Input.is_action_pressed("ui_right"):
-		quadrato.position.x += VELOCITA * delta
+		quadratoVar.position.x += VELOCITA * delta
 	if Input.is_action_pressed("ui_up"):
-		quadrato.position.y -= VELOCITA * delta
+		quadratoVar.position.y -= VELOCITA * delta
 	if Input.is_action_pressed("ui_down"):
-		quadrato.position.y += VELOCITA * delta
+		quadratoVar.position.y += VELOCITA * delta
 ```
 La novità è `func _process(delta):`, che **gira da sola ~60 volte al secondo**.
 Dentro controlliamo le frecce con `Input.is_action_pressed(...)` e spostiamo il
@@ -434,20 +434,20 @@ vecchio "Chirurgo Pasticcione", ma più pulita.
 ### Passo 1 — Scena
 Crea il progetto `esercizio3`, **`Scena 2D`**, nodo radice **`Main`**. Poi aggiungi
 tre figli a `Main` con il **`+`**:
-- **`ColorRect`** → rinominalo **`Cestino`**
-- **`ColorRect`** → rinominalo **`Moneta`**
-- **`Label`** → rinominalo **`Punteggio`**
+- **`ColorRect`** → rinominalo **`cestinoScena`**
+- **`ColorRect`** → rinominalo **`monetaScena`**
+- **`Label`** → rinominalo **`punteggioScena`**
 
-![L'editor di Godot con la scena: i nodi Cestino, Moneta e Punteggio](immagini/es3-ambiente.png)
+![L'editor di Godot con la scena: i nodi cestinoScena, monetaScena e punteggioScena](immagini/es3-ambiente.png)
 
 ### Passo 2 — Script e codice
 Attacca lo script a **`Main`**, cancella e incolla:
 ```gdscript
 extends Node2D
 
-@onready var cestino: ColorRect = $Cestino
-@onready var moneta: ColorRect = $Moneta
-@onready var punteggio: Label = $Punteggio
+@onready var cestinoVar: ColorRect = $cestinoScena
+@onready var monetaVar: ColorRect = $monetaScena
+@onready var punteggioVar: Label = $punteggioScena
 
 const VELOCITA_CESTINO: float = 500.0
 const VELOCITA_MONETA: float = 300.0
@@ -457,36 +457,36 @@ var larghezza: float
 
 func _ready() -> void:
 	larghezza = get_viewport_rect().size.x
-	cestino.size = Vector2(120, 24)
-	cestino.color = Color(0.6, 0.4, 0.2)
-	cestino.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
-	moneta.size = Vector2(30, 30)
-	moneta.color = Color(1.0, 0.85, 0.1)
+	cestinoVar.size = Vector2(120, 24)
+	cestinoVar.color = Color(0.6, 0.4, 0.2)
+	cestinoVar.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
+	monetaVar.size = Vector2(30, 30)
+	monetaVar.color = Color(1.0, 0.85, 0.1)
 	_rimetti_in_alto()
-	punteggio.position = Vector2(20, 20)
+	punteggioVar.position = Vector2(20, 20)
 	_aggiorna_punteggio()
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
-		cestino.position.x -= VELOCITA_CESTINO * delta
+		cestinoVar.position.x -= VELOCITA_CESTINO * delta
 	if Input.is_action_pressed("ui_right"):
-		cestino.position.x += VELOCITA_CESTINO * delta
-	cestino.position.x = clamp(cestino.position.x, 0, larghezza - cestino.size.x)
-	moneta.position.y += VELOCITA_MONETA * delta
+		cestinoVar.position.x += VELOCITA_CESTINO * delta
+	cestinoVar.position.x = clamp(cestinoVar.position.x, 0, larghezza - cestinoVar.size.x)
+	monetaVar.position.y += VELOCITA_MONETA * delta
 	# Il cestino tocca la moneta?
-	if Rect2(cestino.position, cestino.size).intersects(Rect2(moneta.position, moneta.size)):
+	if Rect2(cestinoVar.position, cestinoVar.size).intersects(Rect2(monetaVar.position, monetaVar.size)):
 		punti += 1
 		_aggiorna_punteggio()
 		_rimetti_in_alto()
-	elif moneta.position.y > get_viewport_rect().size.y:
+	elif monetaVar.position.y > get_viewport_rect().size.y:
 		_rimetti_in_alto()
 
 func _rimetti_in_alto() -> void:
-	var x := randf_range(0, larghezza - moneta.size.x)
-	moneta.position = Vector2(x, -moneta.size.y)
+	var x := randf_range(0, larghezza - monetaVar.size.x)
+	monetaVar.position = Vector2(x, -monetaVar.size.y)
 
 func _aggiorna_punteggio() -> void:
-	punteggio.text = "Monete: %d" % punti
+	punteggioVar.text = "Monete: %d" % punti
 ```
 Cosa succede: in `_ready()` prepariamo cestino, moneta e punteggio; in `_process()`
 muoviamo il cestino con le frecce, facciamo scendere la moneta e con
@@ -596,3 +596,4 @@ stai facendo non serve a niente.
 | 0.13 | 27/07/2026 | Inserite le foto dell'Esercizio 1 (editor + gioco). Convenzione nomi screenshot: es1-ambiente / es1-gioca (e cosi' per es2, es3). |
 | 0.14 | 27/07/2026 | Inserite tutte le foto degli esercizi (es2-gioca, es3-ambiente, es3-gioca): i tre capitoli di costruzione sono ora completi di immagini. |
 | 0.15 | 27/07/2026 | Aggiunta la Scheda 3 "La tua copia del corso, e come consegnare": come fare il fork e gestire il kit di consegna. |
+| 0.16 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Cosi' a colpo d'occhio si capisce chi e' la variabile e chi e' il nodo. Aggiornati i capitoli 3-4-5 e i nomi dei nodi nelle scene. |

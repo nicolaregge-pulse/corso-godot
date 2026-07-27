@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.8** — 27/07/2026
+**Versione 0.9** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -54,8 +54,8 @@ bottone, la scritta deve cambiare, per esempio da "..." a "Ciao! Mi hai premuto"
 <summary>🟠 La scena — i nodi da creare</summary>
 
 1. Nodo radice: **Node2D**, rinominalo `Main`.
-2. Figlio: **Button** → rinominalo **`BottoneCiao`**.
-3. Figlio: **Label** → rinominalo **`Etichetta`**.
+2. Figlio: **Button** → rinominalo **`bottoneScena`**.
+3. Figlio: **Label** → rinominalo **`etichettaScena`**.
 4. Attacca uno **script** al nodo radice `Main`.
 </details>
 
@@ -66,24 +66,24 @@ bottone, la scritta deve cambiare, per esempio da "..." a "Ciao! Mi hai premuto"
 extends Node2D
 
 # $NomeNodo = prende un nodo figlio per nome (come Button1 in Lazarus)
-@onready var bottone: Button = $BottoneCiao
-@onready var etichetta: Label = $Etichetta
+@onready var bottoneVar: Button = $bottoneScena
+@onready var etichettaVar: Label = $etichettaScena
 
 func _ready() -> void:
 	# Posizioniamo i due elementi così non si sovrappongono
-	bottone.position = Vector2(100, 100)
-	bottone.text = "Salutami!"          # <- come Button.Caption in Lazarus
-	etichetta.position = Vector2(100, 180)
-	etichetta.text = "..."
+	bottoneVar.position = Vector2(100, 100)
+	bottoneVar.text = "Salutami!"          # <- come Button.Caption in Lazarus
+	etichettaVar.position = Vector2(100, 180)
+	etichettaVar.text = "..."
 	# FALLO TUO: scegli il colore della scritta, rosso verde blu da 0 a 1
-	etichetta.add_theme_color_override("font_color", Color(1, 0, 0))   # rosso
+	etichettaVar.add_theme_color_override("font_color", Color(1, 0, 0))   # rosso
 	# Colleghiamo il "click" (segnale pressed) alla nostra funzione
-	bottone.pressed.connect(_quando_premo)
+	bottoneVar.pressed.connect(_quando_premo)
 
 # Questa e' come il tuo Button1Click di Lazarus
 func _quando_premo() -> void:
 	# FALLO TUO: scrivi qui il TUO saluto
-	etichetta.text = "Ciao! Mi hai premuto."
+	etichettaVar.text = "Ciao! Mi hai premuto."
 ```
 </details>
 
@@ -113,7 +113,7 @@ Fai comparire un **quadrato** che puoi muovere in tutte le direzioni con le
 <summary>🟠 La scena — i nodi da creare</summary>
 
 1. Nodo radice: **Node2D**, rinominalo `Main`.
-2. Figlio: **ColorRect** → rinominalo **`Quadrato`**.
+2. Figlio: **ColorRect** → rinominalo **`quadratoScena`**.
 3. Attacca uno **script** al nodo radice `Main`.
 </details>
 
@@ -123,24 +123,24 @@ Fai comparire un **quadrato** che puoi muovere in tutte le direzioni con le
 ```gdscript
 extends Node2D
 
-@onready var quadrato: ColorRect = $Quadrato
+@onready var quadratoVar: ColorRect = $quadratoScena
 const VELOCITA: float = 300.0   # pixel al secondo
 
 func _ready() -> void:
-	quadrato.size = Vector2(60, 60)
-	quadrato.color = Color(0.3, 0.7, 1.0)   # azzurro
-	quadrato.position = Vector2(200, 200)
+	quadratoVar.size = Vector2(60, 60)
+	quadratoVar.color = Color(0.3, 0.7, 1.0)   # azzurro
+	quadratoVar.position = Vector2(200, 200)
 
 # _process gira a OGNI fotogramma: qui muoviamo il quadrato
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_left"):
-		quadrato.position.x -= VELOCITA * delta
+		quadratoVar.position.x -= VELOCITA * delta
 	if Input.is_action_pressed("ui_right"):
-		quadrato.position.x += VELOCITA * delta
+		quadratoVar.position.x += VELOCITA * delta
 	if Input.is_action_pressed("ui_up"):
-		quadrato.position.y -= VELOCITA * delta
+		quadratoVar.position.y -= VELOCITA * delta
 	if Input.is_action_pressed("ui_down"):
-		quadrato.position.y += VELOCITA * delta
+		quadratoVar.position.y += VELOCITA * delta
 ```
 </details>
 
@@ -171,9 +171,9 @@ dall'alto in una colonna a caso. Mostra il punteggio a schermo.
 <summary>🟠 La scena — i nodi da creare</summary>
 
 1. Nodo radice: **Node2D**, rinominalo `Main`.
-2. Figlio **ColorRect** → **`Cestino`**.
-3. Figlio **ColorRect** → **`Moneta`**.
-4. Figlio **Label** → **`Punteggio`**.
+2. Figlio **ColorRect** → **`cestinoScena`**.
+3. Figlio **ColorRect** → **`monetaScena`**.
+4. Figlio **Label** → **`punteggioScena`**.
 5. Attacca uno **script** al nodo radice `Main`.
 </details>
 
@@ -183,9 +183,9 @@ dall'alto in una colonna a caso. Mostra il punteggio a schermo.
 ```gdscript
 extends Node2D
 
-@onready var cestino: ColorRect = $Cestino
-@onready var moneta: ColorRect = $Moneta
-@onready var punteggio: Label = $Punteggio
+@onready var cestinoVar: ColorRect = $cestinoScena
+@onready var monetaVar: ColorRect = $monetaScena
+@onready var punteggioVar: Label = $punteggioScena
 
 const VELOCITA_CESTINO: float = 500.0
 const VELOCITA_MONETA: float = 300.0
@@ -196,43 +196,43 @@ var larghezza: float
 func _ready() -> void:
 	larghezza = get_viewport_rect().size.x
 	# Cestino in basso
-	cestino.size = Vector2(120, 24)
-	cestino.color = Color(0.6, 0.4, 0.2)
-	cestino.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
+	cestinoVar.size = Vector2(120, 24)
+	cestinoVar.color = Color(0.6, 0.4, 0.2)
+	cestinoVar.position = Vector2(larghezza / 2.0 - 60, get_viewport_rect().size.y - 60)
 	# Moneta
-	moneta.size = Vector2(30, 30)
-	moneta.color = Color(1.0, 0.85, 0.1)
+	monetaVar.size = Vector2(30, 30)
+	monetaVar.color = Color(1.0, 0.85, 0.1)
 	_rimetti_in_alto()
 	# Punteggio
-	punteggio.position = Vector2(20, 20)
+	punteggioVar.position = Vector2(20, 20)
 	_aggiorna_punteggio()
 
 func _process(delta: float) -> void:
 	# Muovi il cestino
 	if Input.is_action_pressed("ui_left"):
-		cestino.position.x -= VELOCITA_CESTINO * delta
+		cestinoVar.position.x -= VELOCITA_CESTINO * delta
 	if Input.is_action_pressed("ui_right"):
-		cestino.position.x += VELOCITA_CESTINO * delta
-	cestino.position.x = clamp(cestino.position.x, 0, larghezza - cestino.size.x)
+		cestinoVar.position.x += VELOCITA_CESTINO * delta
+	cestinoVar.position.x = clamp(cestinoVar.position.x, 0, larghezza - cestinoVar.size.x)
 
 	# Fai scendere la moneta
-	moneta.position.y += VELOCITA_MONETA * delta
+	monetaVar.position.y += VELOCITA_MONETA * delta
 
 	# Presa?
-	if Rect2(cestino.position, cestino.size).intersects(Rect2(moneta.position, moneta.size)):
+	if Rect2(cestinoVar.position, cestinoVar.size).intersects(Rect2(monetaVar.position, monetaVar.size)):
 		punti += 1
 		_aggiorna_punteggio()
 		_rimetti_in_alto()
 	# Persa (uscita sotto)?
-	elif moneta.position.y > get_viewport_rect().size.y:
+	elif monetaVar.position.y > get_viewport_rect().size.y:
 		_rimetti_in_alto()
 
 func _rimetti_in_alto() -> void:
-	var x := randf_range(0, larghezza - moneta.size.x)
-	moneta.position = Vector2(x, -moneta.size.y)
+	var x := randf_range(0, larghezza - monetaVar.size.x)
+	monetaVar.position = Vector2(x, -monetaVar.size.y)
 
 func _aggiorna_punteggio() -> void:
-	punteggio.text = "Monete: %d" % punti
+	punteggioVar.text = "Monete: %d" % punti
 ```
 </details>
 
@@ -316,3 +316,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
 | 0.7 | 26/07/2026 | Tolta la nota per il docente: il libro parla ai ragazzi. Changelog tolto dal PDF. |
 | 0.8 | 27/07/2026 | Aggiunta a ogni esercizio (1-3) la foto del risultato (il gioco che gira), cosi' si vede subito dove arrivare. |
+| 0.9 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Aggiornati i codici completi e le liste dei nodi di tutti gli esercizi. |
