@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.12** — 27/07/2026
+**Versione 0.13** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -98,7 +98,7 @@ Fai i passi in ordine. Non passare al successivo finché il precedente non è a 
 
 **Passo 1 — Crea il progetto.**
 1. `[APP — Godot]`, finestra iniziale (il *Gestore progetti*).
-2. In alto a destra, clicca **`Crea`**.
+2. In alto a sinistra, clicca **`Crea`**.
 3. Nel nome scrivi **`esercizio1`**, scegli una cartella, poi clicca **`Crea e modifica`**.
 
 **Passo 2 — Entra nel mondo 2D.**
@@ -249,7 +249,7 @@ func _process(delta: float) -> void:
 un **quadrato**. La novità è nel codice: il **game loop** `_process`, che gira da
 solo circa 60 volte al secondo e sposta il quadrato mentre tieni premuta una freccia.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a destra **`Crea`**, nome **`esercizio2`**, scegli una cartella, **`Crea e modifica`**.
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a sinistra **`Crea`**, nome **`esercizio2`**, scegli una cartella, **`Crea e modifica`**.
 
 **Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`** (il gioco è in 2D).
 
@@ -378,7 +378,7 @@ func _aggiorna_punteggio() -> void:
 se la prendi fai +1 e la moneta riparte dall'alto. Servono tre pezzi: il **cestino**,
 la **moneta** e il **punteggio** scritto a schermo.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a destra **`Crea`**, nome **`esercizio3`**, scegli una cartella, **`Crea e modifica`**.
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a sinistra **`Crea`**, nome **`esercizio3`**, scegli una cartella, **`Crea e modifica`**.
 
 **Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`**.
 
@@ -583,7 +583,7 @@ Questo gioco è **già fatto**: il tuo compito è **aprirlo, giocarci e farlo tu
 <summary>🟡 Aiuto — come aprirlo e giocarci</summary>
 
 1. `[APP — Godot]` finestra iniziale, il *Gestore progetti*, in alto a destra
-   **`Importa`** → scegli la cartella **`battaglia-navale-3d`** e il file
+   **`Importa`** (in alto a sinistra) → scegli la cartella **`battaglia-navale-3d`** e il file
    **`project.godot`** → **`Importa e modifica`**.
 2. Premi **`F5`** per eseguire. All'avvio scegli **quanti cubi per lato**, da **4**
    facilissimo, fino a **10** difficile.
@@ -649,3 +649,4 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.10 | 27/07/2026 | Aggiunto l'Esercizio 4 "Acchiappa le stelle": l'Esercizio 3 che cresce con il concetto nuovo delle vite e del Game Over (il gioco si può perdere e finire), a 4 livelli. Chirurgo pasticcione citato come variante a tema. |
 | 0.11 | 27/07/2026 | Inserita la foto del risultato dell'Esercizio 4 (es4-gioca) e allineato l'HUD a "Punti". Aggiunta all'Esercizio 1 la "Guida passo passo — costruiamolo insieme": costruzione a prova di stupido con coordinate complete, più la spiegazione del codice riga per riga. Primo campione del nuovo formato. |
 | 0.12 | 27/07/2026 | Controllo completo di tutti gli esercizi con Godot: i codici 1-4 girano puliti e i blocchi dell'eserciziario sono coerenti con i file soluzione (corretta l'incoerenza dell'Es 1, la riga del colore). Aggiunta la guida passo passo (ambiente 2D per primo, nomi esatti dei pulsanti, tasto destro per lo script, codice da copiare dal file e non dal PDF, a cosa serve ogni pezzo) agli Esercizi 2, 3 e 4. Corretto un bug: mancava lo stacco e il titolo dell'Esercizio BOSS dopo l'Esercizio 4. |
+| 0.13 | 27/07/2026 | Correzione delle coordinate scritte a memoria: il pulsante Crea nel Gestore progetti e Importa nel BOSS sono in alto a SINISTRA, non a destra. Verificate sulle schermate reali di Nicola. In verifica l'ordine dei campi della finestra nuovo progetto (cartella/nome). |
