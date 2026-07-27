@@ -1,11 +1,40 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.7** — 26/07/2026
+**Versione 0.8** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
 > bottoni, caselle di testo e la proprietà Caption. Ogni concetto nuovo lo
 > agganciamo a qualcosa che già conosci.
+
+---
+
+## Perché quello che impari qui può cambiarti le cose
+*Leggila una volta, con calma.*
+
+Partiamo da una verità, detta dritta. Alla tua età **nessuno si aspetta che tu
+sia già un esperto**. Chi ti darà il primo tirocinio, il primo lavoro, non guarda
+per prima cosa quanto codice sai scrivere: quello te lo insegnano. Sceglie **te**,
+e non un altro, soprattutto per **due cose**.
+
+**La prima: come ti poni.** Se **ci sei** ogni mattina, in orario. Se **rispondi**
+quando qualcuno ti scrive. Se, quando sbagli, hai il coraggio di dire "ho
+sbagliato, lo aggiusto" invece di nasconderti. Se **non molli** al primo "no". Se
+sai stare in squadra. Non sono cose "da grandi": sono cose che **puoi decidere di
+fare da domani**, e pesano più di mille nozioni.
+
+**La seconda: cosa sai fare e mostrare.** Non parole — roba fatta **con le tue
+mani**. Un gioco che gira. Una cosa che apri sul telefono e dici, guardando negli
+occhi chi hai davanti: **"Questo l'ho fatto io."**
+
+Queste due cose **insieme** sono ciò che fa scegliere te. Ecco perché qui non
+facciamo esercizi da scuola e basta: ogni cosa che costruisci, anche piccola, va
+nel **tuo** quaderno, nella **tua** raccolta. Pezzo dopo pezzo ti stai costruendo
+una prova: la prova che **sai fare** e che su di te si può contare.
+
+Molti di voi partono da lontano, da porte che si sono chiuse. Questa è una porta
+che **si apre**. Non sprecarla: prendi ogni piccola vittoria e portala a casa. Il
+resto — il lavoro, il rispetto, le occasioni — nasce da lì.
 
 ---
 
@@ -15,12 +44,18 @@
 Qui non ti freghiamo: sai **in anticipo** come funziona la valutazione. Leggila
 una volta, poi lavora tranquillo.
 
-**1. Il codice che funziona è il biglietto d'ingresso, non il voto.**
+**1. Conta prima di tutto come ti poni.**
+L'atteggiamento pesa quanto e più della tecnica: esserci in orario, non mollare al
+primo errore, dire "ho sbagliato" invece di nasconderti, dare una mano ai
+compagni. È la prima cosa che guardo — ed è la stessa che guarderà, un domani, chi
+ti darà un lavoro.
+
+**2. Il codice che funziona è il biglietto d'ingresso, non il voto.**
 Consegnare il gioco che gira ti fa "entrare alla prova". Ma il codice **da solo**
 non fa il voto: puoi copiarlo o fartelo scrivere… e allora non direbbe niente
 su di te.
 
-**2. Il voto nasce dalla prova dal vivo, da solo.**
+**3. Il voto nasce dalla prova dal vivo, da solo.**
 Uno di questi due, o tutti e due:
 - **Me lo spieghi:** racconti **a parole tue** cosa fa il tuo codice.
 - **Il gioco rotto:** ti do il tuo gioco con **2-3 errori nascosti** dentro, e tu
@@ -30,12 +65,12 @@ Uno di questi due, o tutti e due:
 Se hai capito, li fai in pochi minuti. Se hai solo incollato, ti blocchi. Ecco
 perché **capire conviene**.
 
-**3. Il patto con l'AI e con i compagni.**
+**4. Il patto con l'AI e con i compagni.**
 Puoi usarli per **imparare**: capire un errore, farti spiegare, avere uno spunto.
 Non per **consegnare senza capire**. La prova del nove è sempre la stessa:
 **lo sai spiegare e riparare da solo?**
 
-**4. Zero vergogna.**
+**5. Zero vergogna.**
 Usare gli aiuti, come i 4 livelli, l'AI o un compagno, è **permesso e normale** — non è
 imbrogliare. Anche sbagliare è normale: **capita a tutti i programmatori**, pure
 ai più bravi. L'unica cosa che conta è che, alla fine, **tu abbia capito.**
@@ -504,3 +539,4 @@ stai facendo non serve a niente.
 | 0.5 | 26/07/2026 | Aspetto più sobrio e formale: rimosse tutte le icone/emoji; tolte le parentesi da titoli e scritte in grassetto; copertina senza emoji; istruzioni per principianti più complete (modello e screenshot); corretta una pagina vuota; le frasi tra virgolette non si spezzano più a fine riga. |
 | 0.6 | 26/07/2026 | Versione della copertina senza riquadro, spostata in basso. |
 | 0.7 | 26/07/2026 | Aggiunti i capitoli 3-4-5 che costruiscono passo-passo gli esercizi 1-2-3 (il vecchio Cap. 3 "Chirurgo Pasticcione" e' confluito nell'Esercizio 3); il capitolo sul progetto boss e' ora il 6, riscritto rivolgendosi ai ragazzi. Changelog tolto dal PDF; segnaposto puliti per gli screenshot da inserire. |
+| 0.8 | 27/07/2026 | Aggiunta la pagina di apertura "Perché quello che impari qui può cambiarti le cose": versione breve ed emotiva della bussola sul lavoro, con i due pilastri (come ti poni + cosa sai mostrare) che insieme fanno scegliere. Nella Scheda 1 la predisposizione diventa il primo criterio di valutazione. |
