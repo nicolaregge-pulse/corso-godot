@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.10** — 27/07/2026
+**Versione 0.11** — 27/07/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -558,3 +558,4 @@ stai facendo non serve a niente.
 | 0.8 | 27/07/2026 | Aggiunta la pagina di apertura "Perché quello che impari qui può cambiarti le cose": versione breve ed emotiva della bussola sul lavoro, con i due pilastri (come ti poni + cosa sai mostrare) che insieme fanno scegliere. Nella Scheda 1 la predisposizione diventa il primo criterio di valutazione. |
 | 0.9 | 27/07/2026 | Introduzione riscritta come lettera in prima persona del docente ai ragazzi, firmata a mano "Nicola": il patto (dalla tua parte sempre, anche coi voti bassi) e il rispetto dei ruoli (professionisti in laboratorio, educati con i terzi). |
 | 0.10 | 27/07/2026 | L'introduzione è ora scritta tutta "a mano": font di scrittura a mano leggibile (Caveat) per tutta la lettera, firma elegante (Sacramento). Una parte umana. |
+| 0.11 | 27/07/2026 | Titoli della lettera riportati al carattere serif del libro; corpo della lettera a mano ingrandito (+2pt). |
