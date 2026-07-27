@@ -277,20 +277,23 @@ func _crea_hud() -> void:
 	_hud.add_theme_color_override("font_outline_color", Color.BLACK)
 	_hud.add_theme_constant_override("outline_size", 5)
 	add_child(_hud)
+	# Comandi impilati uno sotto l'altro, sulla sinistra: leggibili e non accavallati.
 	var b := Button.new()
 	b.text = "↻ Rimescola"
+	b.custom_minimum_size = Vector2(170, 36)
 	b.position = Vector2(20, 50)
 	b.pressed.connect(_nuova_partita)
 	add_child(b)
 	var b2 := Button.new()
 	b2.text = "Menu"
-	b2.position = Vector2(168, 50)
+	b2.custom_minimum_size = Vector2(170, 36)
+	b2.position = Vector2(20, 92)
 	b2.pressed.connect(_torna_menu)
 	add_child(b2)
 	# Interruttore "Mostra i numeri": aiuto acceso/spento.
 	var cb := CheckButton.new()
 	cb.text = "Mostra i numeri"
-	cb.position = Vector2(250, 48)
+	cb.position = Vector2(20, 134)
 	cb.button_pressed = _mostra_numeri
 	cb.toggled.connect(_su_numeri)
 	add_child(cb)
