@@ -84,7 +84,7 @@
   .w-spin{transform-box:fill-box; transform-origin:center}
   @keyframes spin{to{transform:rotate(360deg)}}
   @keyframes spinR{to{transform:rotate(-360deg)}}
-  .busy .w-spin{animation:spin 1.5s cubic-bezier(.45,.02,.55,.98) infinite}
+  .s-wheel .w-spin{animation:spin 1.25s cubic-bezier(.4,.05,.6,.95) infinite}
   .cog-deco{position:absolute; z-index:1; filter:drop-shadow(0 2px 3px rgba(0,0,0,.55)); transform-origin:center}
   .cog-deco.a{width:50px; height:50px; left:24px; top:40px}
   .cog-deco.b{width:36px; height:36px; right:30px; bottom:36px}
@@ -96,8 +96,8 @@
   .lever .rod{position:absolute; left:50%; bottom:6px; width:9px; height:84px; margin-left:-4.5px; border-radius:5px; background:linear-gradient(90deg,#7c5a10,#f2d98a 45%,#7c5a10)}
   .lever .knob{position:absolute; left:50%; top:-3px; width:25px; height:25px; margin-left:-12.5px; border-radius:50%; background:var(--brass); box-shadow:inset 0 1px 2px rgba(255,255,255,.6), inset 0 -3px 6px rgba(90,60,0,.5), 0 2px 3px rgba(0,0,0,.5)}
   .lever .base{position:absolute; left:50%; bottom:-5px; width:28px; height:15px; margin-left:-14px; border-radius:5px; background:var(--brass); box-shadow:inset 0 1px 1px rgba(255,255,255,.5), inset 0 -3px 6px rgba(90,60,0,.5), 0 2px 3px rgba(0,0,0,.5)}
-  @keyframes pull{0%,100%{transform:rotate(-15deg)} 42%,60%{transform:rotate(34deg)}}
-  .busy .lever{animation:pull 1.5s ease-in-out infinite}
+  @keyframes pullonce{0%{transform:rotate(-15deg)} 48%{transform:rotate(35deg)} 100%{transform:rotate(-15deg)}}
+  .s-lever .lever{animation:pullonce .6s ease-in-out}
   /* steam puff on done */
   .steam{position:absolute; top:2px; left:50%; z-index:5; pointer-events:none; width:0; height:0}
   .steam span{position:absolute; bottom:0; width:30px; height:30px; margin-left:-15px; border-radius:50%;
@@ -314,7 +314,15 @@
     }catch(e){}
   }
   function refresh(){ var ok=!!chosen&&pw.value.length>0; if(mode==="lock") ok=ok&&pw2.value.length>0; go.disabled=!ok; }
-  function resetStage(){ stage.classList.remove("busy","done"); }
+  function resetStage(){ stage.classList.remove("busy","done","s-wheel","s-lever"); }
+  function playClunk(){
+    if(!actx) return;
+    try{ var ctx=actx, t=ctx.currentTime;
+      var o=ctx.createOscillator(); o.type="sine"; o.frequency.setValueAtTime(165,t); o.frequency.exponentialRampToValueAtTime(58,t+0.12);
+      var g=ctx.createGain(); g.gain.setValueAtTime(0.55,t); g.gain.exponentialRampToValueAtTime(0.0001,t+0.2);
+      o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t+0.22);
+    }catch(e){}
+  }
 
   function setMode(m){
     mode=m; chosen=null; showFile(); pw.value=""; pw2.value=""; clearMsg(); resetStage();
@@ -379,19 +387,26 @@
   go.onclick=function(){
     if(go.disabled) return; clearMsg();
     if(mode==="lock" && pw.value!==pw2.value){ say("bad","Le due password non sono uguali. Riscrivile identiche."); return; }
-    go.disabled=true; resetStage(); stage.classList.add("busy"); ensureAudio();
+    go.disabled=true; resetStage(); ensureAudio();
     var job=mode==="lock"? protect(chosen,pw.value) : openFile(chosen,pw.value);
-    Promise.all([job, delay(1500)]).then(function(res){
-      var r=res[0]; stage.classList.remove("busy");
-      tokenName.textContent = mode==="lock" ? chosen.name : r.name;
-      token.querySelectorAll("span").forEach(function(b){ if(b.className!=="nm") b.style.display = mode==="lock" ? "" : "none"; });
-      stage.classList.add("done"); playHiss();
-      var url=download(r.blob,r.name);
-      if(mode==="lock"){ say("ok","<strong>Chiuso nel tresor.</strong> File protetto: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica</a>"); }
-      else{ say("ok","<strong>Aperto.</strong> Ecco il file: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica "+escapeHtml(r.name)+"</a>"); }
-      refresh();
+    stage.classList.add("busy");                                              // 1) rotellina piccola
+    var t1=setTimeout(function(){ stage.classList.add("s-wheel"); }, 430);    // 2) maniglione grande
+    Promise.all([job, delay(1950)]).then(function(res){
+      var r=res[0];
+      stage.classList.remove("busy","s-wheel");                              // 3) si fermano
+      playClunk();                                                            //    "tac"
+      stage.classList.add("s-lever");                                         // 4) si muove la leva
+      setTimeout(function(){
+        tokenName.textContent = mode==="lock" ? chosen.name : r.name;
+        token.querySelectorAll("span").forEach(function(b){ if(b.className!=="nm") b.style.display = mode==="lock" ? "" : "none"; });
+        stage.classList.add("done"); playHiss();                             // 5) sbuffo + sfiato
+        var url=download(r.blob,r.name);
+        if(mode==="lock"){ say("ok","<strong>Chiuso nel tresor.</strong> File protetto: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica</a>"); }
+        else{ say("ok","<strong>Aperto.</strong> Ecco il file: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica "+escapeHtml(r.name)+"</a>"); }
+        refresh();
+      }, 520);
     }).catch(function(err){
-      stage.classList.remove("busy"); resetStage();
+      clearTimeout(t1); resetStage();
       if(err&&err.message==="BADPW") say("bad","<strong>Password sbagliata</strong>, oppure il file è danneggiato. Ricontrolla e riprova.");
       else if(err&&err.message==="NOTCSF") say("bad","Questo non è un file protetto qui. Scegli quello col nome <b>tra parentesi quadre</b>.");
       else say("bad","Qualcosa è andato storto. Riprova, magari con un file più piccolo.");
