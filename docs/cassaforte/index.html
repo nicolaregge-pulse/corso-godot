@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <title>Frau Doktor Bonomi — Tresor</title>
 <style>
@@ -374,8 +374,13 @@
     +'var dec=new TextDecoder();function b2u(b){var s=atob(b),u=new Uint8Array(s.length);for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u;}'
     +'go.onclick=function(){m.className="";m.textContent="Apro\\u2026";var buf=b2u(D),salt=buf.slice(4,20),iv=buf.slice(20,32),ct=buf.slice(32);'
     +'crypto.subtle.importKey("raw",new TextEncoder().encode(pw.value),"PBKDF2",false,["deriveKey"]).then(function(bk){return crypto.subtle.deriveKey({name:"PBKDF2",salt:salt,iterations:250000,hash:"SHA-256"},bk,{name:"AES-GCM",length:256},false,["decrypt"]);}).then(function(k){return crypto.subtle.decrypt({name:"AES-GCM",iv:iv},k,ct);}).then(function(ptb){'
-    +'var p=new Uint8Array(ptb),nl=(p[0]<<8)|p[1],nm=dec.decode(p.slice(2,2+nl)),data=p.slice(2+nl);var url=URL.createObjectURL(new Blob([data])),a=document.createElement("a");a.href=url;a.download=nm;document.body.appendChild(a);a.click();'
-    +'var safe=nm.replace(/[&<>"]/g,"");m.className="ok";m.innerHTML="Fatto! <b>"+safe+"</b> scaricato.<br><a class=\\"dl\\" href=\\""+url+"\\" download=\\""+safe+"\\">Scarica di nuovo</a>";'
+    +'var p=new Uint8Array(ptb),nl=(p[0]<<8)|p[1],nm=dec.decode(p.slice(2,2+nl)),data=p.slice(2+nl);'
+    +'var ext=(nm.split(".").pop()||"").toLowerCase(),mm={png:"image/png",jpg:"image/jpeg",jpeg:"image/jpeg",gif:"image/gif",webp:"image/webp",bmp:"image/bmp",pdf:"application/pdf"};'
+    +'var url=URL.createObjectURL(new Blob([data],mm[ext]?{type:mm[ext]}:undefined)),safe=nm.replace(/[<>&]/g,"");'
+    +'var h="<div>Fatto! Ecco <b>"+safe+"</b></div>";'
+    +'if(/^(png|jpg|jpeg|gif|webp|bmp)$/.test(ext)){h+="<img src=\\""+url+"\\" style=\\"max-width:100%;border-radius:10px;margin-top:12px;display:block\\"><div class=\\"n\\">Tieni premuto sulla foto per salvarla.</div>";}'
+    +'h+="<a class=\\"dl\\" href=\\""+url+"\\" download=\\""+safe+"\\" target=\\"_blank\\" rel=\\"noopener\\">Apri / Salva il file</a>";'
+    +'m.className="ok";m.innerHTML=h;'
     +'}).catch(function(){m.className="bad";m.textContent="Password sbagliata, oppure file danneggiato.";});};'
     +'pw.addEventListener("keydown",function(e){if(e.key==="Enter")go.click();});})();<\/script></body></html>';
   }
