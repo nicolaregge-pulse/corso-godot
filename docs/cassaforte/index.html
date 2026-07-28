@@ -331,8 +331,8 @@
     tabOpen.setAttribute("aria-selected",lock?"false":"true");
     confirmField.style.display=lock?"block":"none";
     go.textContent=lock?"Proteggi e scarica":"Apri e scarica";
-    fileLabel.textContent=lock?"Il file da proteggere":"Il file protetto — quello tra [ ]";
-    dropSmall.textContent=lock?"foto, documento, qualunque cosa":"il file col nome tra parentesi quadre";
+    fileLabel.textContent=lock?"Il file da proteggere":"Il file protetto (.html)";
+    dropSmall.textContent=lock?"foto, documento, qualunque cosa":"di solito basta toccarlo; se no, scegli qui il file [nome].html";
     fileInput.value=""; refresh();
   }
   function showFile(){
@@ -359,6 +359,26 @@
       return crypto.subtle.deriveKey({name:"PBKDF2",salt:salt,iterations:250000,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
     });
   }
+  function b64enc(u8){ var s="",C=0x8000; for(var i=0;i<u8.length;i+=C){ s+=String.fromCharCode.apply(null,u8.subarray(i,i+C)); } return btoa(s); }
+  function buildOpener(b64,name){
+    var esc=name.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});
+    var css='*{box-sizing:border-box}body{margin:0;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:radial-gradient(120% 80% at 50% -10%,#26251f,transparent 60%),#17181b;color:#efe7d4}.c{width:100%;max-width:360px;background:linear-gradient(180deg,#1f1a10,#120d06);border:1px solid #7c5a10;border-radius:16px;padding:24px 20px;text-align:center;box-shadow:0 0 0 3px #100a02,0 20px 50px rgba(0,0,0,.6)}.lk{width:44px;height:44px;margin:0 auto 12px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(145deg,#f7e7ab,#b8860b);box-shadow:inset 0 1px 1px rgba(255,255,255,.6)}.lk svg{width:22px;height:22px;stroke:#3a2c08;fill:none;stroke-width:1.9}h1{margin:0;font-size:1.3rem;letter-spacing:.02em;color:#e9cd77}.f{margin:8px 0 16px;font-size:.9rem;color:#b9ad92;font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all}.f b{color:#efe7d4}input{width:100%;font:1rem ui-monospace,Menlo,Consolas,monospace;color:#efe7d4;background:#0b0906;border:1px solid #4a3a12;border-radius:10px;padding:13px;text-align:center;letter-spacing:.05em}input:focus{outline:none;border-color:#b8860b}button{width:100%;margin-top:14px;border:1px solid #6e5210;cursor:pointer;font:700 1rem ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;text-transform:uppercase;color:#3a2c08;background:linear-gradient(180deg,#f7e7ab,#b8860b);padding:14px;border-radius:11px;box-shadow:inset 0 1px 1px rgba(255,255,255,.6)}button:disabled{opacity:.5}#m{margin-top:14px;font-size:.9rem;font-family:ui-monospace,Menlo,Consolas,monospace;min-height:1.2em}#m.ok{color:#7fdca0}#m.bad{color:#ff9b8f}.n{margin-top:16px;font-size:.72rem;color:#7c7361;font-family:ui-monospace,Menlo,Consolas,monospace}.dl{display:inline-block;margin-top:10px;color:#3a2c08;background:#e9cd77;text-decoration:none;font-weight:700;border-radius:9px;padding:9px 14px;font-family:ui-monospace,Menlo,Consolas,monospace}';
+    return '<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Cassaforte — '+esc+'</title><style>'+css+'</style></head><body>'
+    +'<div class="c"><div class="lk"><svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3"/></svg></div>'
+    +'<h1>Cassaforte</h1><div class="f">File protetto:<br><b>'+esc+'</b></div>'
+    +'<input id="pw" type="password" placeholder="scrivi la password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false">'
+    +'<button id="go">Apri il file</button><div id="m"></div>'
+    +'<div class="n">Tutto avviene qui sul tuo dispositivo. Niente in rete.</div></div>'
+    +'<script>var D="'+b64+'";(function(){var m=document.getElementById("m"),pw=document.getElementById("pw"),go=document.getElementById("go");'
+    +'if(!(window.crypto&&crypto.subtle)){m.className="bad";m.textContent="Apri questo file con Chrome o Safari per sbloccarlo.";go.disabled=true;return;}'
+    +'var dec=new TextDecoder();function b2u(b){var s=atob(b),u=new Uint8Array(s.length);for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u;}'
+    +'go.onclick=function(){m.className="";m.textContent="Apro\\u2026";var buf=b2u(D),salt=buf.slice(4,20),iv=buf.slice(20,32),ct=buf.slice(32);'
+    +'crypto.subtle.importKey("raw",new TextEncoder().encode(pw.value),"PBKDF2",false,["deriveKey"]).then(function(bk){return crypto.subtle.deriveKey({name:"PBKDF2",salt:salt,iterations:250000,hash:"SHA-256"},bk,{name:"AES-GCM",length:256},false,["decrypt"]);}).then(function(k){return crypto.subtle.decrypt({name:"AES-GCM",iv:iv},k,ct);}).then(function(ptb){'
+    +'var p=new Uint8Array(ptb),nl=(p[0]<<8)|p[1],nm=dec.decode(p.slice(2,2+nl)),data=p.slice(2+nl);var url=URL.createObjectURL(new Blob([data])),a=document.createElement("a");a.href=url;a.download=nm;document.body.appendChild(a);a.click();'
+    +'var safe=nm.replace(/[&<>"]/g,"");m.className="ok";m.innerHTML="Fatto! <b>"+safe+"</b> scaricato.<br><a class=\\"dl\\" href=\\""+url+"\\" download=\\""+safe+"\\">Scarica di nuovo</a>";'
+    +'}).catch(function(){m.className="bad";m.textContent="Password sbagliata, oppure file danneggiato.";});};'
+    +'pw.addEventListener("keydown",function(e){if(e.key==="Enter")go.click();});})();<\/script></body></html>';
+  }
   function protect(file,password){
     var salt=crypto.getRandomValues(new Uint8Array(16)), iv=crypto.getRandomValues(new Uint8Array(12));
     return file.arrayBuffer().then(function(fb){ return deriveKey(password,salt).then(function(key){
@@ -366,13 +386,19 @@
       var plain=new Uint8Array(2+nl+body.length); plain[0]=(nl>>8)&255; plain[1]=nl&255; plain.set(nameB,2); plain.set(body,2+nl);
       return crypto.subtle.encrypt({name:"AES-GCM",iv:iv},key,plain).then(function(ct){
         var c=new Uint8Array(ct), out=new Uint8Array(32+c.length); out.set(MAGIC,0); out.set(salt,4); out.set(iv,20); out.set(c,32);
-        return {blob:new Blob([out],{type:"application/octet-stream"}), name:"["+file.name+"]"};
+        return {blob:new Blob([buildOpener(b64enc(out), file.name)],{type:"text/html"}), name:"["+file.name+"].html"};
       });
     }); });
   }
   function openFile(file,password){
     return file.arrayBuffer().then(function(fb){
-      var buf=new Uint8Array(fb); if(buf.length<33) throw new Error("NOTCSF");
+      var buf=new Uint8Array(fb);
+      // se è il file .html che si apre da solo, estrai i dati incorporati
+      if(buf.length>20 && buf[0]===0x3C){
+        var m=dec.decode(buf).match(/var D="([A-Za-z0-9+/=]+)"/);
+        if(m){ var bs=atob(m[1]); buf=new Uint8Array(bs.length); for(var q=0;q<bs.length;q++) buf[q]=bs.charCodeAt(q); }
+      }
+      if(buf.length<33) throw new Error("NOTCSF");
       for(var i=0;i<4;i++) if(buf[i]!==MAGIC[i]) throw new Error("NOTCSF");
       var salt=buf.slice(4,20), iv=buf.slice(20,32), ct=buf.slice(32);
       return deriveKey(password,salt).then(function(key){
@@ -401,7 +427,7 @@
         token.querySelectorAll("span").forEach(function(b){ if(b.className!=="nm") b.style.display = mode==="lock" ? "" : "none"; });
         stage.classList.add("done"); playHiss();                             // 5) sbuffo + sfiato
         var url=download(r.blob,r.name);
-        if(mode==="lock"){ say("ok","<strong>Chiuso nel tresor.</strong> File protetto: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica</a>"); }
+        if(mode==="lock"){ say("ok","<strong>Chiuso nel tresor.</strong> Hai <code>"+escapeHtml(r.name)+"</code>. Mandalo a chi vuoi (WhatsApp, mail…): a chi lo riceve basta <b>toccarlo</b> e si apre da solo, chiedendo la password. Se non si scarica da solo:<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica</a>"); }
         else{ say("ok","<strong>Aperto.</strong> Ecco il file: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica "+escapeHtml(r.name)+"</a>"); }
         refresh();
       }, 520);
