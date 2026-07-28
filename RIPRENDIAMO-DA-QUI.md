@@ -61,6 +61,31 @@ Regola operativa importante (era fonte di confusione, ora è chiara e va ricorda
   da solo. In questa sessione l'export l'ha fatto Claude scaricando Godot 4.7.1 +
   i modelli di esportazione nell'ambiente (i modelli non restano tra le sessioni).
 
+## Cassaforte "Frau Doktor Bonomi" (app personale di Nicola) — STATO
+App web che cifra un file con password (AES-256, tutto sul dispositivo, niente
+in rete). Stile steampunk/ottone. Sorgente di verità: `docs/cassaforte/index.html`
+(la lavorazione sta nello scratchpad di sessione, che è effimero). Online:
+`https://nicolaregge-pulse.github.io/corso-godot/cassaforte/`.
+
+**Il vincolo iPhone (confermato, da NON dimenticare):** quando iPhone apre un file
+"al volo" (anteprima Quick Look di WhatsApp/Mail) **NON esegue il JavaScript**.
+Perciò il file `[nome].html` che "si apre da solo" funziona su **Android/PC/Mac**
+ma **NON** in anteprima su iPhone (compare la cassaforte ma il tasto non fa
+niente: manca proprio l'esecuzione del codice). Il codice gira solo in una **vera
+pagina web aperta in Safari**.
+
+**Strada che su iPhone funziona senza limiti di dimensione** (foto comprese):
+1. Salvare il file: in WhatsApp/Mail toccare il file → icona **Condividi** in alto
+   a destra → **Salva su File** → **Salva**.
+2. Aprire in Safari la pagina Cassaforte → linguetta **Apri** → **Scegli file** →
+   prendere il `[nome].html` salvato → password → **Apri e scarica**.
+Il "link con i dati dentro" (un tocco) è stato scartato: ha un limite di
+dimensione (~40 KB), Nicola vuole **senza limiti**.
+
+Migliorie già pubblicate (PR #56): l'anteprima del file su iPhone ora mostra le
+istruzioni chiare (Salva su File + link) invece della cassaforte "morta"; aggiunta
+la rotella con la percentuale mentre prepara il file.
+
 ## Cosa manca (prossimi passi)
 1. **Release `v1.0`** da pubblicare dal browser (tag v1.0 su GitHub) — è la
    versione congelata per i ragazzi. (Claude non ha lo strumento per crearla.)
