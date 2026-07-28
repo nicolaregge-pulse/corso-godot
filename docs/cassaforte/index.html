@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Cassaforte — proteggi i tuoi file con una password</title>
+<style>
+  :root{
+    --bg:#eef1f4; --bg2:#e4e9ef; --card:#ffffff; --ink:#1a2230; --ink-soft:#54637a;
+    --line:#d9e0e8; --line-strong:#c3cdd8;
+    --brass:#a9761c; --brass-ink:#8a5f12; --brass-soft:#f3ead6;
+    --ok:#2f8a58; --ok-soft:#e4f2e9; --bad:#bb4438; --bad-soft:#f8e7e4;
+    --focus:#a9761c;
+    --shadow:0 1px 2px rgba(20,30,45,.05), 0 10px 30px rgba(20,30,45,.08);
+    --radius:14px;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#10151c; --bg2:#141b24; --card:#1a222d; --ink:#e8edf3; --ink-soft:#9aa8ba;
+      --line:#28323f; --line-strong:#354251;
+      --brass:#d6a244; --brass-ink:#e7b968; --brass-soft:#2a2418;
+      --ok:#54b784; --ok-soft:#18271f; --bad:#e0685c; --bad-soft:#2a1a17;
+      --focus:#d6a244;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 40px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#eef1f4; --bg2:#e4e9ef; --card:#ffffff; --ink:#1a2230; --ink-soft:#54637a;
+    --line:#d9e0e8; --line-strong:#c3cdd8;
+    --brass:#a9761c; --brass-ink:#8a5f12; --brass-soft:#f3ead6;
+    --ok:#2f8a58; --ok-soft:#e4f2e9; --bad:#bb4438; --bad-soft:#f8e7e4;
+    --focus:#a9761c; --shadow:0 1px 2px rgba(20,30,45,.05), 0 10px 30px rgba(20,30,45,.08);
+  }
+  :root[data-theme="dark"]{
+    --bg:#10151c; --bg2:#141b24; --card:#1a222d; --ink:#e8edf3; --ink-soft:#9aa8ba;
+    --line:#28323f; --line-strong:#354251;
+    --brass:#d6a244; --brass-ink:#e7b968; --brass-soft:#2a2418;
+    --ok:#54b784; --ok-soft:#18271f; --bad:#e0685c; --bad-soft:#2a1a17;
+    --focus:#d6a244; --shadow:0 1px 2px rgba(0,0,0,.3), 0 14px 40px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:var(--sans); color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 50% -10%, var(--bg2), transparent 60%),
+      var(--bg);
+    min-height:100dvh; line-height:1.55;
+    -webkit-text-size-adjust:100%;
+    padding:max(16px,env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom));
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .wrap{width:100%; max-width:480px; margin:0 auto}
+
+  header{text-align:center; margin:14px 0 20px}
+  .lock{
+    width:46px; height:46px; margin:0 auto 12px; display:grid; place-items:center;
+    border-radius:12px; background:var(--brass-soft);
+    border:1px solid color-mix(in srgb, var(--brass) 30%, var(--line));
+  }
+  .lock svg{width:24px; height:24px; stroke:var(--brass); fill:none; stroke-width:1.8}
+  h1{font-size:1.55rem; margin:0; letter-spacing:-.02em; text-wrap:balance; font-weight:700}
+  .sub{color:var(--ink-soft); font-size:.95rem; margin:6px auto 0; max-width:36ch; text-wrap:balance}
+
+  .seg{
+    display:grid; grid-template-columns:1fr 1fr; gap:4px; padding:4px;
+    background:var(--bg2); border:1px solid var(--line); border-radius:12px; margin-bottom:16px;
+  }
+  .seg button{
+    appearance:none; border:0; background:transparent; color:var(--ink-soft);
+    font:inherit; font-weight:600; font-size:.92rem; padding:9px 8px; border-radius:9px;
+    cursor:pointer; transition:background .18s, color .18s, box-shadow .18s;
+  }
+  .seg button[aria-selected="true"]{background:var(--card); color:var(--ink); box-shadow:var(--shadow)}
+  .seg button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+
+  label.field{display:block; margin-top:16px}
+  .lbl{display:block; font-size:.72rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-soft); font-weight:700; margin-bottom:7px}
+
+  .drop{
+    border:1.5px dashed var(--line-strong); border-radius:12px; background:var(--bg2);
+    padding:22px 16px; text-align:center; cursor:pointer; transition:border-color .18s, background .18s;
+  }
+  .drop:hover,.drop.drag{border-color:var(--brass); background:var(--brass-soft)}
+  .drop:focus-within{outline:2px solid var(--focus); outline-offset:2px}
+  .drop .big{font-weight:600; font-size:.98rem}
+  .drop .small{color:var(--ink-soft); font-size:.85rem; margin-top:3px}
+  .drop input[type=file]{position:absolute; width:1px; height:1px; opacity:0; pointer-events:none}
+  .filepill{
+    display:flex; align-items:center; gap:10px; text-align:left;
+    background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 12px;
+  }
+  .filepill .nm{font-family:var(--mono); font-size:.86rem; word-break:break-all; flex:1; min-width:0}
+  .filepill .sz{font-family:var(--mono); font-size:.8rem; color:var(--ink-soft); white-space:nowrap; font-variant-numeric:tabular-nums}
+  .filepill .x{appearance:none; border:0; background:transparent; color:var(--ink-soft); cursor:pointer; font-size:1.1rem; line-height:1; padding:2px 4px}
+  .filepill .x:hover{color:var(--bad)}
+
+  .pw{position:relative}
+  input[type=password],input[type=text].pwtext{
+    width:100%; font-family:var(--mono); font-size:1rem; color:var(--ink);
+    background:var(--bg2); border:1px solid var(--line); border-radius:10px;
+    padding:12px 44px 12px 12px; letter-spacing:.02em;
+  }
+  input:focus-visible{outline:2px solid var(--focus); outline-offset:1px; border-color:var(--brass)}
+  .eye{
+    position:absolute; right:6px; top:50%; transform:translateY(-50%);
+    appearance:none; border:0; background:transparent; cursor:pointer; color:var(--ink-soft);
+    padding:8px; border-radius:8px; display:grid; place-items:center;
+  }
+  .eye:hover{color:var(--ink)} .eye svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
+  .eye:focus-visible{outline:2px solid var(--focus)}
+
+  .go{
+    width:100%; margin-top:18px; appearance:none; border:0; cursor:pointer;
+    font:inherit; font-weight:700; font-size:1rem; color:#fff;
+    background:linear-gradient(180deg, color-mix(in srgb,var(--brass) 88%,#fff), var(--brass));
+    padding:13px 16px; border-radius:11px; box-shadow:0 1px 0 rgba(255,255,255,.25) inset, var(--shadow);
+    transition:filter .15s, transform .05s;
+  }
+  .go:hover{filter:brightness(1.05)} .go:active{transform:translateY(1px)}
+  .go:disabled{opacity:.5; cursor:not-allowed; filter:none}
+  .go:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+  .msg{margin-top:14px; border-radius:11px; padding:13px 14px; font-size:.92rem; display:none}
+  .msg.show{display:block}
+  .msg.ok{background:var(--ok-soft); border:1px solid color-mix(in srgb,var(--ok) 35%,var(--line)); color:var(--ink)}
+  .msg.bad{background:var(--bad-soft); border:1px solid color-mix(in srgb,var(--bad) 40%,var(--line)); color:var(--ink)}
+  .msg.work{background:var(--bg2); border:1px solid var(--line); color:var(--ink-soft)}
+  .msg strong{color:var(--ink)}
+  .dl{
+    display:inline-flex; align-items:center; gap:8px; margin-top:10px;
+    font-weight:700; color:var(--ok); text-decoration:none; font-size:.95rem;
+    border:1px solid color-mix(in srgb,var(--ok) 45%,var(--line)); border-radius:9px; padding:8px 12px;
+    background:var(--card);
+  }
+  .dl:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+
+  .foot{margin:20px auto 0; max-width:44ch; text-align:center; color:var(--ink-soft); font-size:.82rem}
+  .foot .shield{display:inline-flex; align-items:center; gap:7px; font-weight:600; color:var(--ink)}
+  .foot .shield svg{width:15px;height:15px;stroke:var(--ok);fill:none;stroke-width:1.9}
+  .foot p{margin:8px 0 0}
+  .tip{margin-top:14px; border-top:1px dashed var(--line); padding-top:12px}
+  .tip b{color:var(--ink)}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="lock" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/></svg>
+    </div>
+    <h1>Cassaforte</h1>
+    <p class="sub">Chiudi un file con una password, o riaprilo. Tutto sul tuo dispositivo.</p>
+  </header>
+
+  <div class="seg" role="tablist" aria-label="Cosa vuoi fare">
+    <button role="tab" id="tab-lock" aria-selected="true" aria-controls="panel">Proteggi un file</button>
+    <button role="tab" id="tab-open" aria-selected="false" aria-controls="panel">Apri un protetto</button>
+  </div>
+
+  <div class="card" id="panel" role="tabpanel">
+    <label class="field" style="margin-top:0">
+      <span class="lbl" id="fileLabel">Il file da proteggere</span>
+      <div class="drop" id="drop" tabindex="0" role="button" aria-labelledby="fileLabel">
+        <div id="dropEmpty">
+          <div class="big" id="dropBig">Tocca per scegliere un file</div>
+          <div class="small" id="dropSmall">foto, documento, qualunque cosa</div>
+        </div>
+        <div class="filepill" id="filePill" hidden>
+          <span class="nm" id="fileName"></span>
+          <span class="sz" id="fileSize"></span>
+          <button type="button" class="x" id="fileClear" aria-label="Togli il file">&times;</button>
+        </div>
+        <input type="file" id="file">
+      </div>
+    </label>
+
+    <label class="field">
+      <span class="lbl">Password</span>
+      <div class="pw">
+        <input type="password" id="pw" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="scegli una password">
+        <button type="button" class="eye" id="eye" aria-label="Mostra la password" aria-pressed="false">
+          <svg viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+        </button>
+      </div>
+    </label>
+
+    <label class="field" id="confirmField">
+      <span class="lbl">Ripeti la password</span>
+      <div class="pw">
+        <input type="password" id="pw2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="la stessa, per sicurezza">
+      </div>
+    </label>
+
+    <button class="go" id="go" disabled>Proteggi e scarica</button>
+
+    <div class="msg" id="msg" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="foot">
+    <span class="shield"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8-7 10-4-2-7-5.4-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg> Non esce mai dal tuo telefono</span>
+    <p>La cifratura avviene qui nel browser. Nessun file viene caricato in rete, nessuno lo vede.</p>
+    <div class="tip"><b>Nota:</b> per riaprire un file protetto, torna su questa stessa pagina e usa <b>Apri un protetto</b>. La password non si può recuperare: se la dimentichi, il file resta chiuso per sempre.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var enc=new TextEncoder(), dec=new TextDecoder();
+  var MAGIC=[0x43,0x53,0x46,0x31]; // "CSF1"
+  var EXT=".cassaforte";
+
+  var mode="lock"; // "lock" | "open"
+  var chosen=null;
+
+  var $=function(id){return document.getElementById(id);};
+  var fileInput=$("file"), drop=$("drop"), pill=$("filePill"), dropEmpty=$("dropEmpty"),
+      fileName=$("fileName"), fileSize=$("fileSize"), fileClear=$("fileClear"),
+      pw=$("pw"), pw2=$("pw2"), confirmField=$("confirmField"), go=$("go"), msg=$("msg"),
+      tabLock=$("tab-lock"), tabOpen=$("tab-open"), eye=$("eye"),
+      fileLabel=$("fileLabel"), dropBig=$("dropBig"), dropSmall=$("dropSmall");
+
+  function fmtSize(n){
+    if(n<1024) return n+" B";
+    if(n<1048576) return (n/1024).toFixed(1)+" KB";
+    if(n<1073741824) return (n/1048576).toFixed(1)+" MB";
+    return (n/1073741824).toFixed(2)+" GB";
+  }
+  function say(kind,html){ msg.className="msg show "+kind; msg.innerHTML=html; }
+  function clearMsg(){ msg.className="msg"; msg.innerHTML=""; }
+
+  function refresh(){
+    var hasFile=!!chosen, hasPw=pw.value.length>0;
+    var ok=hasFile&&hasPw;
+    if(mode==="lock") ok=ok&&pw2.value.length>0;
+    go.disabled=!ok;
+  }
+
+  function setMode(m){
+    mode=m; chosen=null; showFile(); pw.value=""; pw2.value=""; clearMsg();
+    var lock=m==="lock";
+    tabLock.setAttribute("aria-selected",lock?"true":"false");
+    tabOpen.setAttribute("aria-selected",lock?"false":"true");
+    confirmField.style.display=lock?"block":"none";
+    go.textContent=lock?"Proteggi e scarica":"Apri e scarica";
+    fileLabel.textContent=lock?"Il file da proteggere":"Il file protetto (.cassaforte)";
+    dropBig.textContent="Tocca per scegliere un file";
+    dropSmall.textContent=lock?"foto, documento, qualunque cosa":"il file che finisce in .cassaforte";
+    fileInput.value="";
+    refresh();
+  }
+
+  function showFile(){
+    if(chosen){
+      dropEmpty.hidden=true; pill.hidden=false;
+      fileName.textContent=chosen.name; fileSize.textContent=fmtSize(chosen.size);
+    }else{
+      dropEmpty.hidden=false; pill.hidden=true;
+    }
+  }
+
+  function pick(f){ chosen=f; showFile(); clearMsg(); refresh(); }
+
+  // events
+  tabLock.onclick=function(){setMode("lock");};
+  tabOpen.onclick=function(){setMode("open");};
+  drop.onclick=function(e){ if(e.target===fileClear) return; fileInput.click(); };
+  drop.onkeydown=function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();fileInput.click();} };
+  fileInput.onchange=function(){ if(fileInput.files[0]) pick(fileInput.files[0]); };
+  fileClear.onclick=function(e){ e.stopPropagation(); chosen=null; fileInput.value=""; showFile(); refresh(); };
+  ["dragover","dragenter"].forEach(function(ev){ drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.add("drag");}); });
+  ["dragleave","drop"].forEach(function(ev){ drop.addEventListener(ev,function(e){e.preventDefault();drop.classList.remove("drag");}); });
+  drop.addEventListener("drop",function(e){ if(e.dataTransfer.files[0]) pick(e.dataTransfer.files[0]); });
+  pw.oninput=refresh; pw2.oninput=refresh;
+  eye.onclick=function(){
+    var showing=pw.type==="text";
+    pw.type=showing?"password":"text"; pw2.type=pw.type;
+    eye.setAttribute("aria-pressed",showing?"false":"true");
+    eye.setAttribute("aria-label",showing?"Mostra la password":"Nascondi la password");
+  };
+
+  function download(blob,name){
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement("a");
+    a.href=url; a.download=name; a.rel="noopener";
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },1500);
+    return url;
+  }
+
+  function deriveKey(password,salt){
+    return crypto.subtle.importKey("raw",enc.encode(password),"PBKDF2",false,["deriveKey"])
+      .then(function(base){
+        return crypto.subtle.deriveKey(
+          {name:"PBKDF2",salt:salt,iterations:250000,hash:"SHA-256"},
+          base,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+      });
+  }
+
+  function protect(file,password){
+    var salt=crypto.getRandomValues(new Uint8Array(16));
+    var iv=crypto.getRandomValues(new Uint8Array(12));
+    return file.arrayBuffer().then(function(fb){
+      return deriveKey(password,salt).then(function(key){
+        var body=new Uint8Array(fb), nameB=enc.encode(file.name), nl=nameB.length;
+        var plain=new Uint8Array(2+nl+body.length);
+        plain[0]=(nl>>8)&255; plain[1]=nl&255; plain.set(nameB,2); plain.set(body,2+nl);
+        return crypto.subtle.encrypt({name:"AES-GCM",iv:iv},key,plain).then(function(ct){
+          var c=new Uint8Array(ct), out=new Uint8Array(4+16+12+c.length);
+          out.set(MAGIC,0); out.set(salt,4); out.set(iv,20); out.set(c,32);
+          return {blob:new Blob([out],{type:"application/octet-stream"}), name:file.name+EXT};
+        });
+      });
+    });
+  }
+
+  function openFile(file,password){
+    return file.arrayBuffer().then(function(fb){
+      var buf=new Uint8Array(fb);
+      if(buf.length<33) throw new Error("NOTCSF");
+      for(var i=0;i<4;i++) if(buf[i]!==MAGIC[i]) throw new Error("NOTCSF");
+      var salt=buf.slice(4,20), iv=buf.slice(20,32), ct=buf.slice(32);
+      return deriveKey(password,salt).then(function(key){
+        return crypto.subtle.decrypt({name:"AES-GCM",iv:iv},key,ct).then(function(pt){
+          var p=new Uint8Array(pt), nl=(p[0]<<8)|p[1];
+          var name=dec.decode(p.slice(2,2+nl)); var data=p.slice(2+nl);
+          return {blob:new Blob([data]), name:name};
+        }).catch(function(){ throw new Error("BADPW"); });
+      });
+    });
+  }
+
+  go.onclick=function(){
+    if(go.disabled) return;
+    clearMsg();
+    if(mode==="lock" && pw.value!==pw2.value){ say("bad","Le due password non sono uguali. Riscrivile identiche."); return; }
+    go.disabled=true; say("work","Un attimo, ci sto lavorando…");
+    var job=mode==="lock"? protect(chosen,pw.value) : openFile(chosen,pw.value);
+    job.then(function(r){
+      var url=download(r.blob,r.name);
+      if(mode==="lock"){
+        say("ok","<strong>Fatto.</strong> Il file protetto è pronto: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui sotto.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica il file protetto</a>");
+      }else{
+        say("ok","<strong>Aperto.</strong> Ecco il tuo file: <code>"+escapeHtml(r.name)+"</code>. Se non parte da solo, tocca qui sotto.<br><a class=\"dl\" href=\""+url+"\" download=\""+escapeAttr(r.name)+"\">Scarica "+escapeHtml(r.name)+"</a>");
+      }
+      refresh();
+    }).catch(function(err){
+      if(err&&err.message==="BADPW") say("bad","<strong>Password sbagliata</strong>, oppure il file è danneggiato. Ricontrolla la password e riprova.");
+      else if(err&&err.message==="NOTCSF") say("bad","Questo non sembra un file protetto da Cassaforte. Scegli un file che finisce in <code>.cassaforte</code>.");
+      else say("bad","Qualcosa è andato storto. Riprova, magari con un file un po' più piccolo.");
+      refresh();
+    });
+  };
+
+  function escapeHtml(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function escapeAttr(s){return escapeHtml(s).replace(/'/g,"&#39;");}
+
+  if(!(window.crypto&&crypto.subtle)){
+    say("bad","Questo browser non è aggiornato abbastanza per cifrare in sicurezza. Prova con Safari o Chrome recenti.");
+    go.disabled=true;
+  }
+  setMode("lock");
+})();
+</script>
+
+</body>
+</html>
