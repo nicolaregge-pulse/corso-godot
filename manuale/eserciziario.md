@@ -1,6 +1,6 @@
 # Eserciziario — Corso di Godot
 
-**Versione 0.13** — 27/07/2026
+**Versione 0.15** — 27/07/2026
 *Fonte versionata. Da questo file si genera il PDF degli esercizi da consegnare.*
 
 ---
@@ -98,8 +98,15 @@ Fai i passi in ordine. Non passare al successivo finché il precedente non è a 
 
 **Passo 1 — Crea il progetto.**
 1. `[APP — Godot]`, finestra iniziale (il *Gestore progetti*).
-2. In alto a sinistra, clicca **`Crea`**.
-3. Nel nome scrivi **`esercizio1`**, scegli una cartella, poi clicca **`Crea e modifica`**.
+2. In alto a **sinistra**, clicca **`Crea`**.
+3. Si apre la finestra per il nuovo progetto. In cima, alla voce **`Nome del
+   progetto:`**, c'è già scritto **`Nuovo progetto di gioco`**, tutto evidenziato:
+   scrivi **`esercizio1`** (sostituisce quello che c'era).
+4. Guarda più in basso, alla voce **`Renderer:`**: clicca il pallino
+   **`Compatibilità`** (il terzo). Serve per far girare i giochi anche sul web e
+   sui computer della scuola.
+5. In basso a destra clicca il bottone **`Crea`**. (La casella **`Modifica ora`**,
+   lì vicino, è già spuntata: così l'editor si apre da solo.)
 
 **Passo 2 — Entra nel mondo 2D.**
 *Perché:* il nostro gioco è in 2D, quindi lavoriamo nell'ambiente 2D. Se restassi in
@@ -132,13 +139,15 @@ diremo "quando ti premono, chiama la nostra funzione".
 **Passo 5 — Aggiungi la scritta `etichettaScena`.**
 *A cosa serve:* è la **scritta** dove apparirà il saluto; è il pezzo che il giocatore
 vedrà **cambiare** — l'effetto del gioco.
-1. **Attenzione:** prima clicca di nuovo **una volta** su **`Main`**. Se ora è
-   selezionato `bottoneScena`, la scritta finirebbe *dentro* il bottone: sbagliato.
-   Deve stare *accanto* al bottone.
+1. Nel pannello `Scena`, clicca **una volta** su **`Main`** (deve restare evidenziato lui).
 2. In alto a sinistra del pannello, clicca l'icona **`+`**.
 3. Nella finestra, nel campo **`Cerca:`**, scrivi **`Label`**: si mette in cima.
 4. In basso clicca **`Crea`**.
 5. Doppio clic sul nuovo nodo `Label`, scrivi **`etichettaScena`**, premi **`Invio`**.
+
+> Attento alla selezione al punto 1: clicca **`Main`**, non `bottoneScena` (che hai
+> appena creato nel Passo 4 ed è ancora selezionato). Così la scritta si mette
+> *accanto* al bottone; se parti da `bottoneScena`, finisce *dentro*.
 
 A questo punto, nel pannello `Scena`, l'albero deve essere così:
 - `Main`
@@ -148,9 +157,13 @@ A questo punto, nel pannello `Scena`, l'albero deve essere così:
 **Passo 6 — Attacca lo script a `Main`.**
 *A cosa serve:* lo script è il file di codice che dà comportamento a `Main`: è lì che
 scriveremo cosa succede quando premi il bottone.
-1. Nel pannello `Scena`, clicca con il **tasto DESTRO** del mouse sul nodo **`Main`**.
-2. Nel menu che si apre, clicca **`Allega script`**.
-3. Si apre una finestra (**`Allega nodo script`**). Non cambiare niente: clicca **`Crea`** in basso.
+1. Nel pannello `Scena`, clicca **una volta** su **`Main`** (deve restare evidenziato).
+2. Sempre nel pannello `Scena`, guarda la **barra dei bottoni in alto** (quella con
+   l'icona **`+`** e la casella **`Filtra i nodi`**). Subito a destra della casella
+   c'è una piccola icona a forma di **foglio con un `+` verde**: è il bottone
+   **`Allega uno script`**. Cliccala.
+3. Si apre una finestra per il nuovo script. Non cambiare niente: in basso clicca
+   **`Crea`**.
 4. Si apre l'editor del codice: in cima trovi già scritto `extends Node2D`.
 
 **Passo 7 — Metti il codice.**
@@ -249,7 +262,7 @@ func _process(delta: float) -> void:
 un **quadrato**. La novità è nel codice: il **game loop** `_process`, che gira da
 solo circa 60 volte al secondo e sposta il quadrato mentre tieni premuta una freccia.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a sinistra **`Crea`**, nome **`esercizio2`**, scegli una cartella, **`Crea e modifica`**.
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a **sinistra** clicca **`Crea`**. Alla voce **`Nome del progetto:`** scrivi **`esercizio2`** (sostituisce quello già scritto). Alla voce **`Renderer:`** clicca **`Compatibilità`**. In basso clicca **`Crea`** (la casella **`Modifica ora`** è già spuntata).
 
 **Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`** (il gioco è in 2D).
 
@@ -262,7 +275,7 @@ solo circa 60 volte al secondo e sposta il quadrato mentre tieni premuta una fre
 3. Nella finestra, campo **`Cerca:`**, scrivi **`ColorRect`** → **`Crea`**.
 4. Doppio clic sul nodo `ColorRect`, scrivi **`quadratoScena`**, **`Invio`**.
 
-**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+**Passo 5 — Attacca lo script a `Main`.** Clicca **una volta** su **`Main`**. Nella barra dei bottoni in alto del pannello `Scena`, a destra della casella **`Filtra i nodi`**, clicca l'icona a forma di **foglio con un `+` verde** (**`Allega uno script`**) → nella finestra non cambiare niente, clicca **`Crea`**.
 
 **Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/02-muovi-il-quadrato/main.gd`** (ha il tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, poi **`Ctrl+S`**.
 
@@ -378,7 +391,7 @@ func _aggiorna_punteggio() -> void:
 se la prendi fai +1 e la moneta riparte dall'alto. Servono tre pezzi: il **cestino**,
 la **moneta** e il **punteggio** scritto a schermo.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a sinistra **`Crea`**, nome **`esercizio3`**, scegli una cartella, **`Crea e modifica`**.
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a **sinistra** clicca **`Crea`**. Alla voce **`Nome del progetto:`** scrivi **`esercizio3`**. Alla voce **`Renderer:`** clicca **`Compatibilità`**. In basso clicca **`Crea`** (la casella **`Modifica ora`** è già spuntata).
 
 **Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`**.
 
@@ -391,7 +404,7 @@ la **moneta** e il **punteggio** scritto a schermo.
 
 L'albero deve essere: `Main` con sotto `cestinoScena`, `monetaScena`, `punteggioScena`.
 
-**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+**Passo 5 — Attacca lo script a `Main`.** Clicca **una volta** su **`Main`**. Nella barra dei bottoni in alto del pannello `Scena`, a destra della casella **`Filtra i nodi`**, clicca l'icona a forma di **foglio con un `+` verde** (**`Allega uno script`**) → nella finestra clicca **`Crea`**.
 
 **Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/03-prendi-la-moneta/main.gd`** (tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, **`Ctrl+S`**.
 
@@ -530,7 +543,7 @@ se le prendi fai +1, se ne perdi tre è **Game Over**. La novità è nel codice:
 pezzi: la **navetta**, la **stella**, la scritta di **punti e vite**, e la scritta
 **GAME OVER**.
 
-**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, **`Crea`**, nome **`esercizio4`**, scegli una cartella, **`Crea e modifica`**.
+**Passo 1 — Crea il progetto.** `[APP — Godot]`, *Gestore progetti*, in alto a **sinistra** clicca **`Crea`**. Alla voce **`Nome del progetto:`** scrivi **`esercizio4`**. Alla voce **`Renderer:`** clicca **`Compatibilità`**. In basso clicca **`Crea`** (la casella **`Modifica ora`** è già spuntata).
 
 **Passo 2 — Entra nel mondo 2D.** In alto al centro clicca **`2D`**.
 
@@ -544,7 +557,7 @@ pezzi: la **navetta**, la **stella**, la scritta di **punti e vite**, e la scrit
 
 Albero: `Main` con sotto `navettaScena`, `stellaScena`, `hudScena`, `gameoverScena`.
 
-**Passo 5 — Attacca lo script a `Main`.** Clic con il **tasto DESTRO** su **`Main`** → **`Allega script`** → **`Crea`**.
+**Passo 5 — Attacca lo script a `Main`.** Clicca **una volta** su **`Main`**. Nella barra dei bottoni in alto del pannello `Scena`, a destra della casella **`Filtra i nodi`**, clicca l'icona a forma di **foglio con un `+` verde** (**`Allega uno script`**) → nella finestra clicca **`Crea`**.
 
 **Passo 6 — Metti il codice.** Prendi il codice dal file su GitHub **`esercizi/04-acchiappa-le-stelle/main.gd`** (tasto **Copia**), **non dal PDF**. Nell'editor: **`Ctrl+A`**, **`Canc`**, **`Ctrl+V`**, **`Ctrl+S`**.
 
@@ -582,12 +595,16 @@ Questo gioco è **già fatto**: il tuo compito è **aprirlo, giocarci e farlo tu
 <details>
 <summary>🟡 Aiuto — come aprirlo e giocarci</summary>
 
-1. `[APP — Godot]` finestra iniziale, il *Gestore progetti*, in alto a destra
-   **`Importa`** (in alto a sinistra) → scegli la cartella **`battaglia-navale-3d`** e il file
-   **`project.godot`** → **`Importa e modifica`**.
-2. Premi **`F5`** per eseguire. All'avvio scegli **quanti cubi per lato**, da **4**
+1. `[APP — Godot]` finestra iniziale, il *Gestore progetti*. In alto a **sinistra**
+   clicca **`Importa`** (o, al centro, **`Importa progetto esistente`**).
+2. Si apre una finestra per cercare i file. Entra nella cartella
+   **`battaglia-navale-3d`**, clicca sul file **`project.godot`** per selezionarlo,
+   poi in basso clicca **`Apri`**.
+3. Il progetto viene importato e compare nell'elenco. Fai **doppio clic** sul suo
+   nome per aprirlo (oppure selezionalo e, a destra, clicca **`Modifica`**).
+4. Premi **`F5`** per eseguire. All'avvio scegli **quanti cubi per lato**, da **4**
    facilissimo, fino a **10** difficile.
-3. Comandi, con le lettere disposte come **tre colonne della tastiera**:
+5. Comandi, con le lettere disposte come **tre colonne della tastiera**:
    - **Q / A** = Colonna, in rosso · **W / S** = Fila, in verde · **E / D** = Profondità, in giallo
    - **SHIFT + le stesse lettere** = gira il cubo · **dito/mouse trascinato** = gira il cubo
    - **SPAZIO** = lancia la bomba · **↻ / INVIO** = rigioca e richiede di nuovo la difficoltà
@@ -650,3 +667,5 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.11 | 27/07/2026 | Inserita la foto del risultato dell'Esercizio 4 (es4-gioca) e allineato l'HUD a "Punti". Aggiunta all'Esercizio 1 la "Guida passo passo — costruiamolo insieme": costruzione a prova di stupido con coordinate complete, più la spiegazione del codice riga per riga. Primo campione del nuovo formato. |
 | 0.12 | 27/07/2026 | Controllo completo di tutti gli esercizi con Godot: i codici 1-4 girano puliti e i blocchi dell'eserciziario sono coerenti con i file soluzione (corretta l'incoerenza dell'Es 1, la riga del colore). Aggiunta la guida passo passo (ambiente 2D per primo, nomi esatti dei pulsanti, tasto destro per lo script, codice da copiare dal file e non dal PDF, a cosa serve ogni pezzo) agli Esercizi 2, 3 e 4. Corretto un bug: mancava lo stacco e il titolo dell'Esercizio BOSS dopo l'Esercizio 4. |
 | 0.13 | 27/07/2026 | Correzione delle coordinate scritte a memoria: il pulsante Crea nel Gestore progetti e Importa nel BOSS sono in alto a SINISTRA, non a destra. Verificate sulle schermate reali di Nicola. In verifica l'ordine dei campi della finestra nuovo progetto (cartella/nome). |
+| 0.14 | 27/07/2026 | Verifica di TUTTA la guida passo passo sull'interfaccia reale di Godot 4.7.1 in italiano (schermate catturate una per una). Correzioni: la finestra del nuovo progetto ha in cima "Nome del progetto" e il pulsante in basso e' "Crea" con la casella "Modifica ora" gia' spuntata (non "Crea e modifica"); aggiunto il passo del Renderer "Compatibilita'" (serve per web e PC della scuola); lo script si attacca con l'icona "Allega uno script" (foglio con il + verde) nella barra del pannello Scena, non con il tasto destro; l'importazione del BOSS apre una finestra file, si sceglie project.godot e si clicca "Apri". Confermati: "Crea"/"Importa" in alto a sinistra, i pulsanti radice "Scena 2D/3D/Interfaccia utente/Altro nodo", la finestra "Crea un nuovo Node" con Cerca/Corrispondenze. |
+| 0.15 | 27/07/2026 | Revisione dello stile delle guide su indicazione di Nicola: ogni passo apre con l'AZIONE (cosa fare, numerata), e l'eventuale avviso va DOPO, in una riga a parte. Riscritto in questo modo il Passo 5 dell'Esercizio 1 (aggiungere la scritta), che prima apriva con "Attenzione". Revisione in corso. |
