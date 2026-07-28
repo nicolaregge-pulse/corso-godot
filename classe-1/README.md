@@ -27,6 +27,9 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
 - **`bussola-mondo-del-lavoro.md`** — documento interno: cosa serve davvero al
   mondo del lavoro da ragazzi di 15-17 anni (i tre cassetti). È la bussola per
   decidere quali argomenti spingere, classe per classe.
+- **`da-far-fare-assolutamente.md`** — documento interno: l'elenco (che cresce)
+  delle cose che i ragazzi devono **assolutamente fare con le mani**, per non
+  dimenticarle. Oggi: toccare un database vero + SQL, e costruire uno shop.
 
 ## Come crescerà
 
