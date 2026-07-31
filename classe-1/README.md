@@ -30,6 +30,11 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
 - **`da-far-fare-assolutamente.md`** — documento interno: l'elenco (che cresce)
   delle cose che i ragazzi devono **assolutamente fare con le mani**, per non
   dimenticarle. Oggi: toccare un database vero + SQL, e costruire uno shop.
+- **`negozio-esempio/`** — prototipo Livello 1: la vetrina statica in un solo
+  file (HTML+CSS+JavaScript), funziona con doppio clic. I prodotti sono nel file.
+- **`negozio-online/`** — la versione **tutto online**: vetrina (GitHub Pages) +
+  database dei prodotti in cloud (Supabase). Funziona da casa. Dentro: la vetrina
+  pronta, l'SQL del database e la guida passo-passo.
 
 ## Come crescerà
 

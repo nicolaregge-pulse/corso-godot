@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il mio negozio online</title>
+
+  <!--
+    ================================================================
+    NEGOZIO ONLINE — vetrina (GitHub Pages) + database (Supabase)
+    ----------------------------------------------------------------
+    Tutto ONLINE: funziona da casa, sul telefono, anche coi PC di
+    scuola spenti. La vetrina si pubblica su GitHub Pages; i prodotti
+    arrivano da un database vero in cloud (Supabase).
+
+    FUNZIONA SUBITO in "modalità demo" (prodotti finti). Per farlo
+    diventare vero: segui il README.md di questa cartella e incolla i
+    tuoi due valori di Supabase qui sotto, dove c'è  <-- CAMBIA QUI
+    ================================================================
+  -->
+
+  <style>
+    :root { --colore: #2e7d32; }          /* <-- CAMBIA QUI il colore del negozio */
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; color: #222; background: #f5f5f5; }
+    header { background: var(--colore); color: #fff; padding: 18px 20px;
+             display: flex; align-items: center; justify-content: space-between; }
+    header h1 { margin: 0; font-size: 22px; }
+    .carrello-info { font-size: 16px; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    #avviso { background: #fff3cd; border: 1px solid #e0c200; color: #665500;
+              padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; display: none; }
+    .prodotti { display: grid; gap: 16px;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .prodotto { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+                padding: 16px; text-align: center; }
+    .prodotto .foto { font-size: 54px; }
+    .prodotto .nome { font-weight: 700; margin: 8px 0 4px; }
+    .prodotto .prezzo { color: var(--colore); font-weight: 700; }
+    .prodotto button { margin-top: 10px; width: 100%; padding: 9px; background: var(--colore);
+                       color: #fff; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; }
+    .prodotto button:hover { opacity: .9; }
+    .cassa { margin-top: 24px; background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px; }
+    .cassa h2 { margin-top: 0; }
+    .cassa button { background: var(--colore); color: #fff; border: none; padding: 10px 16px;
+                    border-radius: 8px; font-size: 15px; cursor: pointer; }
+    #lista-carrello { list-style: none; padding: 0; }
+    #lista-carrello li { padding: 4px 0; border-bottom: 1px solid #eee; }
+    .totale { font-size: 18px; font-weight: 700; margin: 10px 0; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🛒 Il mio negozio</h1>            <!-- <-- CAMBIA QUI il nome -->
+    <div class="carrello-info">
+      Carrello: <span id="conteggio">0</span> · Totale: € <span id="totale-testa">0.00</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="avviso"></div>
+    <div id="prodotti" class="prodotti"></div>
+
+    <div class="cassa">
+      <h2>La tua cassa</h2>
+      <ul id="lista-carrello"></ul>
+      <div class="totale">Totale: € <span id="totale-cassa">0.00</span></div>
+      <button onclick="ordina()">Concludi l'ordine</button>
+    </div>
+  </main>
+
+  <script>
+    // ============================================================
+    // 1) I TUOI DUE VALORI DI SUPABASE (vedi README.md)
+    //    Finché sono vuoti, il negozio va in "modalità demo".
+    // ============================================================
+    const SUPABASE_URL = "";   // <-- CAMBIA QUI (Project URL)
+    const SUPABASE_KEY = "";   // <-- CAMBIA QUI (chiave "anon public")
+
+    // Prodotti finti usati SOLO in modalità demo (quando Supabase non è ancora collegato)
+    const PRODOTTI_DEMO = [
+      { nome: "Maglietta",  prezzo: 12.90, foto: "👕" },
+      { nome: "Scarpe",     prezzo: 39.90, foto: "👟" },
+      { nome: "Cappellino", prezzo:  9.90, foto: "🧢" },
+      { nome: "Zaino",      prezzo: 24.90, foto: "🎒" },
+    ];
+
+    let prodotti = [];
+    const carrello = [];
+
+    // ============================================================
+    // 2) CARICA I PRODOTTI: dal database vero se collegato, se no demo
+    // ============================================================
+    async function caricaProdotti() {
+      if (SUPABASE_URL && SUPABASE_KEY) {
+        try {
+          const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
+          const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+          const { data, error } = await sb.from("prodotti").select("*").order("id");
+          if (error) throw error;
+          prodotti = data;
+        } catch (e) {
+          prodotti = PRODOTTI_DEMO;
+          avviso("Non riesco a leggere il database (" + e.message + "). Intanto mostro i prodotti demo.");
+        }
+      } else {
+        prodotti = PRODOTTI_DEMO;
+        avviso("Modalità DEMO: questi prodotti sono finti. Collega Supabase (vedi README) per i prodotti veri.");
+      }
+      mostraProdotti();
+    }
+
+    // ============================================================
+    // 3) LA VETRINA E IL CARRELLO
+    // ============================================================
+    function mostraProdotti() {
+      const c = document.getElementById("prodotti");
+      c.innerHTML = "";
+      prodotti.forEach(function (p, i) {
+        c.innerHTML +=
+          '<div class="prodotto">' +
+            '<div class="foto">' + (p.foto || "📦") + '</div>' +
+            '<div class="nome">' + p.nome + '</div>' +
+            '<div class="prezzo">€ ' + Number(p.prezzo).toFixed(2) + '</div>' +
+            '<button onclick="aggiungi(' + i + ')">Aggiungi al carrello</button>' +
+          '</div>';
+      });
+    }
+
+    function aggiungi(i) { carrello.push(prodotti[i]); aggiornaCarrello(); }
+
+    function aggiornaCarrello() {
+      let totale = 0;
+      const lista = document.getElementById("lista-carrello");
+      lista.innerHTML = "";
+      carrello.forEach(function (p) {
+        totale += Number(p.prezzo);
+        lista.innerHTML += "<li>" + p.nome + " — € " + Number(p.prezzo).toFixed(2) + "</li>";
+      });
+      document.getElementById("conteggio").textContent = carrello.length;
+      document.getElementById("totale-testa").textContent = totale.toFixed(2);
+      document.getElementById("totale-cassa").textContent = totale.toFixed(2);
+    }
+
+    function ordina() {
+      if (carrello.length === 0) { alert("Il carrello è vuoto! Aggiungi qualche prodotto."); return; }
+      let totale = 0;
+      carrello.forEach(function (p) { totale += Number(p.prezzo); });
+      alert("Grazie per l'ordine!\nHai comprato " + carrello.length +
+            " prodotti per € " + totale.toFixed(2) + ".\n(Negozio demo: nessun pagamento reale.)");
+    }
+
+    function avviso(testo) {
+      const a = document.getElementById("avviso");
+      a.textContent = testo;
+      a.style.display = "block";
+    }
+
+    caricaProdotti();   // fa partire tutto
+  </script>
+</body>
+</html>
