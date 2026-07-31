@@ -13,9 +13,9 @@
     scuola spenti. La vetrina si pubblica su GitHub Pages; i prodotti
     arrivano da un database vero in cloud (Supabase).
 
-    FUNZIONA SUBITO in "modalità demo" (prodotti finti). Per farlo
-    diventare vero: segui il README.md di questa cartella e incolla i
-    tuoi due valori di Supabase qui sotto, dove c'è  <-- CAMBIA QUI
+    Mostra subito dei prodotti di esempio; per i prodotti VERI segui il
+    README.md e incolla i tuoi due valori di Supabase qui sotto, dove
+    c'è  <-- CAMBIA QUI
     ================================================================
   -->
 
@@ -28,8 +28,6 @@
     header h1 { margin: 0; font-size: 22px; }
     .carrello-info { font-size: 16px; }
     main { max-width: 900px; margin: 0 auto; padding: 20px; }
-    #avviso { background: #fff3cd; border: 1px solid #e0c200; color: #665500;
-              padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; display: none; }
     .prodotti { display: grid; gap: 16px;
                 grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
     .prodotto { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
@@ -59,7 +57,6 @@
   </header>
 
   <main>
-    <div id="avviso"></div>
     <div id="prodotti" class="prodotti"></div>
 
     <div class="cassa">
@@ -102,11 +99,10 @@
           prodotti = data;
         } catch (e) {
           prodotti = PRODOTTI_DEMO;
-          avviso("Non riesco a leggere il database (" + e.message + "). Intanto mostro i prodotti demo.");
+          console.warn("Supabase non raggiungibile, mostro i prodotti di esempio:", e.message);
         }
       } else {
-        prodotti = PRODOTTI_DEMO;
-        avviso("Modalità DEMO: questi prodotti sono finti. Collega Supabase (vedi README) per i prodotti veri.");
+        prodotti = PRODOTTI_DEMO;   // finché Supabase non è collegato, prodotti di esempio
       }
       mostraProdotti();
     }
@@ -149,12 +145,6 @@
       carrello.forEach(function (p) { totale += Number(p.prezzo); });
       alert("Grazie per l'ordine!\nHai comprato " + carrello.length +
             " prodotti per € " + totale.toFixed(2) + ".\n(Negozio demo: nessun pagamento reale.)");
-    }
-
-    function avviso(testo) {
-      const a = document.getElementById("avviso");
-      a.textContent = testo;
-      a.style.display = "block";
     }
 
     caricaProdotti();   // fa partire tutto
