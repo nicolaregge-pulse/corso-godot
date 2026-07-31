@@ -75,6 +75,9 @@
     const SUPABASE_URL = "https://dvphtapdixfovvwdqnck.supabase.co";   // <-- Project URL
     const SUPABASE_KEY = "sb_publishable_UeAOoWTjizAoQkBElxXx9Q_e6Vznsvd";   // <-- chiave pubblica (publishable)
 
+    // Email dove ricevi gli ordini (ci pensa il servizio gratuito FormSubmit)
+    const EMAIL_ORDINI = "nicola.regge@piamarta.it";   // <-- CAMBIA QUI (la tua email)
+
     // Prodotti finti usati SOLO in modalità demo (quando Supabase non è ancora collegato)
     const PRODOTTI_DEMO = [
       { nome: "Maglietta",  prezzo: 12.90, foto: "👕" },
@@ -139,12 +142,44 @@
       document.getElementById("totale-cassa").textContent = totale.toFixed(2);
     }
 
-    function ordina() {
+    // Concludi l'ordine: manda l'email col riepilogo (via FormSubmit) e svuota il carrello
+    async function ordina() {
       if (carrello.length === 0) { alert("Il carrello è vuoto! Aggiungi qualche prodotto."); return; }
+
+      const nome = prompt("Come ti chiami? (per l'ordine)") || "Cliente";
+
       let totale = 0;
-      carrello.forEach(function (p) { totale += Number(p.prezzo); });
-      alert("Grazie per l'ordine!\nHai comprato " + carrello.length +
-            " prodotti per € " + totale.toFixed(2) + ".\n(Negozio demo: nessun pagamento reale.)");
+      const righe = [];
+      carrello.forEach(function (p) {
+        totale += Number(p.prezzo);
+        righe.push("• " + p.nome + " — € " + Number(p.prezzo).toFixed(2));
+      });
+
+      // I dati che finiscono nell'email
+      const dati = {
+        _subject: "🛒 Nuovo ordine da " + nome,
+        _template: "table",     // email ordinata a tabella
+        _captcha: "false",
+        Cliente: nome,
+        Prodotti: righe.join("\n"),
+        Numero_prodotti: carrello.length,
+        Totale: "€ " + totale.toFixed(2),
+      };
+
+      try {
+        const r = await fetch("https://formsubmit.co/ajax/" + EMAIL_ORDINI, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(dati),
+        });
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        alert("Grazie " + nome + "! 🎉\nOrdine di " + carrello.length +
+              " prodotti per € " + totale.toFixed(2) + " inviato.\n(Negozio demo: nessun pagamento reale.)");
+        carrello.length = 0;   // svuota il carrello
+        aggiornaCarrello();
+      } catch (e) {
+        alert("Ops, non sono riuscito a inviare l'email (" + e.message + "). Riprova tra poco.");
+      }
     }
 
     caricaProdotti();   // fa partire tutto
