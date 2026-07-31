@@ -185,6 +185,17 @@ da copiare vanno **sempre in un blocco di codice** (col bottone "copia"), mai ne
 blockquote `>`. Un passo alla volta; se è terreno nuovo per lui, massima
 precisione.
 
+**Rinforzo (chiesto da Nicola, vale SEMPRE — è più importante di andare veloci):**
+- **Una sola azione per riga numerata.** Mai due clic nella stessa riga.
+- **Ogni riga dice DOVE prima di dire COSA:** applicazione → scheda/finestra →
+  area della pagina (es. "in alto a destra", "nel menu a sinistra") → il nome
+  **esatto** del bottone/voce (tra apici) → l'azione.
+- **Se Nicola manda uno screenshot, indico il punto ESATTO** su *quella*
+  schermata (dove si trova, com'è scritto), non un'istruzione generica.
+- **Non dare mai per scontato** che sappia dov'è un bottone o cosa fa un termine.
+  Nel dubbio, essere più precisi, non meno.
+- Meglio **lento e chiaro** che veloce e confuso: la fretta qui è un errore.
+
 ## ⭐ Struttura del corso e flusso Git
 
 ### Due ambienti: "autore" (Nicola) vs "ragazzi"
