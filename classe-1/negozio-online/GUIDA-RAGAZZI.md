@@ -1,4 +1,9 @@
 # Progetto: Il Mio Negozio Online 🛒
+
+**Versione 1.0** — 31/07/2026
+
+---
+
 ### Un negozio vero, con database ed email — costruito da te
 
 Alla fine di questo progetto avrai un **negozio online** con un **link tuo** da
@@ -7,6 +12,7 @@ aprire sul telefono e mostrare a casa. Un negozio vero: i prodotti stanno in un
 l'ordine**. Tutto **gratis** e **senza installare niente**.
 
 > **Come è fatto** (tre pezzi che lavorano insieme):
+>
 > - **La vetrina** = la pagina che si vede (i prodotti, il carrello).
 > - **Il database** = il magazzino dove sono scritti i prodotti.
 > - **L'email** = l'avviso che ti arriva quando qualcuno ordina.
