@@ -33,8 +33,15 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
 - **`negozio-esempio/`** — prototipo Livello 1: la vetrina statica in un solo
   file (HTML+CSS+JavaScript), funziona con doppio clic. I prodotti sono nel file.
 - **`negozio-online/`** — la versione **tutto online**: vetrina (GitHub Pages) +
-  database dei prodotti in cloud (Supabase). Funziona da casa. Dentro: la vetrina
-  pronta, l'SQL del database e la guida passo-passo.
+  database in cloud (Supabase) + email dell'ordine (FormSubmit). Funziona da casa.
+  Dentro:
+  - `GUIDA-RAGAZZI.md` — la **guida-progetto per i ragazzi**, a tappe (crea il
+    negozio online, il database, collega, email, personalizza).
+  - `modello-negozio.html` — il **file di partenza** che ogni ragazzo copia e
+    riempie (i 3 valori da mettere sono segnati `CAMBIA QUI`).
+  - `index.html` — l'esempio già completo e funzionante (quello di Nicola).
+  - `prodotti.sql` — il database dei prodotti da incollare in Supabase.
+  - `README.md` — note tecniche per il docente.
 
 ## Come crescerà
 
