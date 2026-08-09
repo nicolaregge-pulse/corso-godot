@@ -1,16 +1,28 @@
-# Negozio online — vetrina (GitHub Pages) + database (Supabase)
+# Negozio online — note per il DOCENTE
 
 Il negozio **tutto online**: la vetrina sta su **GitHub Pages**, i prodotti in un
-**database vero** su **Supabase**. Funziona da casa, sul telefono, anche con i PC
-di scuola spenti.
+**database vero** su **Supabase**, gli ordini arrivano via **email** (FormSubmit).
+Funziona da casa, sul telefono, anche con i PC di scuola spenti.
 
-**Funziona subito in "modalità demo"** (prodotti finti): apri `index.html` e lo
-vedi girare. Per farlo diventare **vero**, segui i tre pezzi qui sotto.
+> **Come si fa in classe (database CONDIVISO):** il **database lo prepara una
+> volta il docente** (i "Pezzi" qui sotto), poi dà a **tutti i ragazzi gli stessi
+> due valori** — l'indirizzo del progetto e la **chiave pubblica** (`publishable`).
+> Quella chiave è **di sola lettura** (grazie alla policy in `prodotti.sql`):
+> i ragazzi **vedono** i prodotti ma **non** possono modificarli → nessuno rompe
+> il lavoro degli altri. I ragazzi seguono la **`GUIDA-RAGAZZI.md`** e saltano
+> del tutto la creazione del database.
 
 > File in questa cartella:
-> - `index.html` — la vetrina (già pronta).
+> - `GUIDA-RAGAZZI.md` — la guida a tappe **per i ragazzi** (+ PDF).
+> - `modello-negozio.html` — il file di partenza che ogni ragazzo copia.
+> - `index.html` — l'esempio completo già funzionante (quello del prof).
 > - `prodotti.sql` — il database dei prodotti, da incollare in Supabase.
-> - `README.md` — questa guida.
+> - `README.md` — queste note per il docente.
+
+**I due valori da dare ai ragazzi** (dopo aver fatto i Pezzi 1-2):
+- `SUPABASE_URL` = l'indirizzo del progetto (`https://....supabase.co`).
+- `SUPABASE_KEY` = la **chiave pubblica** (`sb_publishable_...`, di sola lettura).
+Ogni ragazzo li incolla nel proprio `index.html` (vedi `GUIDA-RAGAZZI.md`, Tappa 2).
 
 ---
 
