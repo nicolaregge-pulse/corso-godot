@@ -1,0 +1,75 @@
+# Indice del materiale del corso
+
+Mappa di tutto quello che c'è nel corso, sempre aggiornata. Se aggiungiamo o
+cambiamo qualcosa, si aggiorna qui.
+
+Ultimo aggiornamento: 10/08/2026.
+
+## Manuale, in `manuale/`
+
+- **Libro di testo** — `manuale/manuale.md`, versione **0.18**. PDF pronto:
+  `manuale/manuale-v0.18.pdf`. La teoria di Godot, spiegata ai ragazzi, con le
+  foto dell'ambiente e i capitoli di costruzione degli esercizi.
+- **Eserciziario** — `manuale/eserciziario.md`, versione **0.15**. Ultimo PDF:
+  `manuale/eserciziario-v0.14.pdf` (il PDF della 0.15 è ancora da generare). Gli
+  esercizi coi quattro livelli di aiuto, la guida passo passo e la spiegazione
+  del codice riga per riga.
+- **Quaderno dello studente** — `manuale/quaderno-studente-TEMPLATE.md`. Il
+  modello del manuale personale che ogni ragazzo fa crescere lezione dopo lezione.
+- **Immagini** — `manuale/immagini/`. Gli screenshot richiamati nel libro.
+
+## Esercizi funzionanti, in `esercizi/`
+
+Progetti Godot già pronti, uno per cartella. Convenzione dei nomi: la variabile
+finisce in Var, il nodo nella scena finisce in Scena.
+
+- `esercizi/01-bottone-che-saluta/`
+- `esercizi/02-muovi-il-quadrato/`
+- `esercizi/03-prendi-la-moneta/`
+- `esercizi/04-acchiappa-le-stelle/`
+
+## Giochi
+
+Giocabili subito dal telefono o dal browser, anche a computer spento:
+
+- **Affonda la Bonomi**, battaglia navale 3D:
+  https://nicolaregge-pulse.github.io/corso-godot/
+- **Gioco del Quindici**, con la foto incorporata e le tessere di legno:
+  https://nicolaregge-pulse.github.io/corso-godot/quindici/
+
+Sorgenti Godot dei giochi, in radice:
+
+- `battaglia-navale-3d/` — Affonda la Bonomi.
+- `gioco-del-quindici/` — il 15 puzzle.
+- `chirurgo-pasticcione/` — primo gioco, il vassoio che prende gli organi.
+- `acchiappa-le-stelle/` — mini gioco di esempio, la navetta che prende le stelle.
+
+## Cassaforte, app personale
+
+App che chiude un file con una password, tutto sul dispositivo. Online:
+
+- https://nicolaregge-pulse.github.io/corso-godot/cassaforte/
+- Sorgente pubblicata: `docs/cassaforte/index.html`.
+
+## Kit di consegna dei ragazzi, in `consegne/`
+
+Tutto per raccogliere e correggere i lavori dei ragazzi.
+
+- `consegne/INVITO-ALLA-CLASSE.md` — la guida del primo giro, dal fork alla prima
+  consegna, tutta da browser.
+- `consegne/_MODELLO/` — il kit vuoto che i ragazzi copiano: `scheda.md` e
+  `ISTRUZIONI.md`, che spiega anche come vengono valutati.
+- `consegne/_PROF/` — solo prof: `COME-CORREGGO.md` con i quattro segnali e la
+  scala del voto, e `valutazione-MODELLO.md`.
+- `consegne/2026-2027-1informatica/rossi-mario/es1-bottone/` — un esempio già
+  compilato, da far vedere alla classe.
+
+## Versione consegnata ai ragazzi
+
+- **Release v1.0** — la versione congelata e stabile pubblicata per i ragazzi.
+
+## Materiale di servizio
+
+- `CLAUDE.md` — preferenze e contesto del corso.
+- `RIPRENDIAMO-DA-QUI.md` — dove siamo e cosa manca, tra una sessione e l'altra.
+- `docs/` — la cartella che viene pubblicata sul web da GitHub Pages.

@@ -1,7 +1,10 @@
-# Godot — la mia palestra di giochi 🎮
+# Corso Godot
 
-Cartella personale per imparare **Godot** e **GDScript**. Non c'entra con
-Quidoo Pulse: è uno spazio separato per fare pratica.
+Il corso di **Godot** e **GDScript** per i ragazzi.
+
+Per l'elenco completo e aggiornato di tutto il materiale, vedi
+**[INDICE-DEL-MATERIALE.md](INDICE-DEL-MATERIALE.md)**: manuale, esercizi, giochi,
+kit di consegna e altro.
 
 ---
 
@@ -36,7 +39,7 @@ plugin.
 
 ## Progetti in questa cartella
 
-### `chirurgo-pasticcione/` ⭐ (il mio primo gioco)
+### `chirurgo-pasticcione/` — il primo gioco
 Primo gioco costruito da zero il 23/07/2026. Il chirurgo maldestro fa cadere
 gli organi dal tavolo: muovi il **vassoio** con le frecce ← → e prendili al
 volo. Presa = +1 punto; organo a terra = -1 vita; a zero vite "Operazione
