@@ -3,9 +3,12 @@
 *Aggiornato: 27/07/2026.*
 
 ## Dove siamo (tutto su `main`)
-- **Manuale v0.17** — teoria, lettera a mano firmata "Nicola", schede, i 3
+- **Indice di tutto il materiale**: `INDICE-DEL-MATERIALE.md` in radice — va
+  tenuto aggiornato a ogni aggiunta o cambio.
+- **Manuale v0.18** — teoria, lettera a mano firmata "Nicola", schede, i 3
   capitoli di costruzione degli esercizi 1-2-3 (con foto), progetto boss.
-- **Eserciziario v0.14** — esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
+- **Eserciziario v0.15** (ultimo PDF: v0.14, il PDF della 0.15 è da generare) —
+  esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
   ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del
   codice riga per riga. **Ogni passo della guida e' stato verificato sulle
   schermate reali di Godot 4.7.1 in italiano** (vedi nota qui sotto).
