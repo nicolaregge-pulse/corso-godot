@@ -40,6 +40,7 @@ COVER_AUTHOR = "Corso a cura del prof. Nicola Regge"
 # Il PDF viene salvato ACCANTO al suo file .md, con la versione nel nome.
 DOCS = {
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
+    "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "programma":     {"src": "programma.md",                    "title": "Programma del Corso"},
     "bussola":       {"src": "bussola-mondo-del-lavoro.md",     "title": "La Bussola del Lavoro"},
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},

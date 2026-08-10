@@ -14,6 +14,7 @@ Funziona da casa, sul telefono, anche con i PC di scuola spenti.
 
 > File in questa cartella:
 > - `GUIDA-RAGAZZI.md` — la guida a tappe **per i ragazzi** (+ PDF).
+> - `PIANO-LEZIONE.md` — il **piano-lezione per te** (tempi, canovaccio database) (+ PDF).
 > - `modello-negozio.html` — il file di partenza che ogni ragazzo copia.
 > - `index.html` — l'esempio completo già funzionante (quello del prof).
 > - `prodotti.sql` — il database dei prodotti, da incollare in Supabase.

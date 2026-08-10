@@ -36,7 +36,9 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
   database in cloud (Supabase) + email dell'ordine (FormSubmit). Funziona da casa.
   Dentro:
   - `GUIDA-RAGAZZI.md` — la **guida-progetto per i ragazzi**, a tappe (crea il
-    negozio online, il database, collega, email, personalizza).
+    negozio online, collega il database della classe, email, personalizza).
+  - `PIANO-LEZIONE.md` — il **piano-lezione per il docente**: tempi, scaletta a
+    3 lezioni, canovaccio per spiegare il database dal vivo, gestione ritmi.
   - `modello-negozio.html` — il **file di partenza** che ogni ragazzo copia e
     riempie (i 3 valori da mettere sono segnati `CAMBIA QUI`).
   - `index.html` — l'esempio già completo e funzionante (quello di Nicola).
