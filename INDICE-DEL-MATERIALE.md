@@ -10,10 +10,9 @@ Ultimo aggiornamento: 10/08/2026.
 - **Libro di testo** — `manuale/manuale.md`, versione **0.18**. PDF pronto:
   `manuale/manuale-v0.18.pdf`. La teoria di Godot, spiegata ai ragazzi, con le
   foto dell'ambiente e i capitoli di costruzione degli esercizi.
-- **Eserciziario** — `manuale/eserciziario.md`, versione **0.15**. Ultimo PDF:
-  `manuale/eserciziario-v0.14.pdf` (il PDF della 0.15 è ancora da generare). Gli
-  esercizi coi quattro livelli di aiuto, la guida passo passo e la spiegazione
-  del codice riga per riga.
+- **Eserciziario** — `manuale/eserciziario.md`, versione **0.15**. PDF pronto:
+  `manuale/eserciziario-v0.15.pdf`. Gli esercizi coi quattro livelli di aiuto, la
+  guida passo passo e la spiegazione del codice riga per riga.
 - **Quaderno dello studente** — `manuale/quaderno-studente-TEMPLATE.md`. Il
   modello del manuale personale che ogni ragazzo fa crescere lezione dopo lezione.
 - **Immagini** — `manuale/immagini/`. Gli screenshot richiamati nel libro.
@@ -70,6 +69,10 @@ Tutto per raccogliere e correggere i lavori dei ragazzi.
 
 ## Materiale di servizio
 
+- `README.md` — la porta d'ingresso del repository, rimanda a questo indice.
 - `CLAUDE.md` — preferenze e contesto del corso.
 - `RIPRENDIAMO-DA-QUI.md` — dove siamo e cosa manca, tra una sessione e l'altra.
 - `docs/` — la cartella che viene pubblicata sul web da GitHub Pages.
+- `manuale/_build/` — gli strumenti che generano i PDF a partire dai sorgenti
+  `.md`. Li usa Claude, il lavoro di Nicola resta tutto visuale.
+- `.github/workflows/deploy-pages.yml` — pubblica `docs/` sul web a ogni modifica.

@@ -7,7 +7,7 @@
   tenuto aggiornato a ogni aggiunta o cambio.
 - **Manuale v0.18** — teoria, lettera a mano firmata "Nicola", schede, i 3
   capitoli di costruzione degli esercizi 1-2-3 (con foto), progetto boss.
-- **Eserciziario v0.15** (ultimo PDF: v0.14, il PDF della 0.15 è da generare) —
+- **Eserciziario v0.15** (PDF `eserciziario-v0.15.pdf` generato) —
   esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
   ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del
   codice riga per riga. **Ogni passo della guida e' stato verificato sulle
