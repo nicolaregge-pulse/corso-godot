@@ -28,6 +28,21 @@ Non lavori sul corso del prof: te ne fai una **copia tua** (in GitHub si chiama
    file, poi scrivi un messaggio breve e fai **Commit**.
 5. Avvisa il prof che hai consegnato. Fine!
 
+## Come viene valutata la tua consegna
+
+Niente sorprese: sai già cosa guardiamo. Sono quattro cose, in questo ordine.
+
+1. **Consegna completa** — c'è la scheda, il codice e almeno uno screenshot.
+2. **Funziona** — il gioco parte e fa quello che deve.
+3. **Il tuo tocco** — hai cambiato qualcosa di tuo, anche piccolo.
+4. **Lo sai spiegare con parole tue** — è la cosa più importante. Se sai
+   raccontare cosa fa il tuo programma, vuol dire che l'hai capito davvero.
+
+Il voto arriva sempre con due righe di **giudizio**: prima una cosa che hai fatto
+bene, poi il prossimo passo. Se qualcosa non va, non è una bocciatura: ti diciamo
+esattamente cosa sistemare e puoi **ri-consegnare**. Sbagliare è normale, succede
+a tutti i programmatori, anche ai professionisti.
+
 ## Il patto con l'AI (Gemini)
 Gemini può aiutarti a **capire** un errore, a spiegarti un pezzo, a sistemare la
 scheda. **Non** deve scrivere al posto tuo la parte "cosa ho fatto con parole

@@ -92,16 +92,25 @@ la rotella con la percentuale mentre prepara il file.
 2. **Kit di consegna dei ragazzi** — vedi sotto: preparare il modello e la
    struttura delle cartelle.
 
-## Kit di consegna dei ragazzi (in progettazione)
+## Kit di consegna dei ragazzi — FATTO (in `consegne/`)
 Ogni consegna = una cartella con: **`scheda.md`** (modulo: cognome, nome, classe,
 esercizio/titolo, data, "cosa ho fatto con parole mie", "il mio tocco", "dove mi
 sono bloccato"), il **codice**, le **immagini**.
-- Struttura nel repository per gestire più classi e più anni (idea di Nicola):
+- Struttura per gestire più classi e più anni:
   `consegne/<anno-classe>/<cognome-nome>/<esercizio>/…`
-  es. `consegne/2026-2027-1informatica/rossi-mario/es1/`.
+- **`consegne/_MODELLO/`** = kit vuoto che i ragazzi copiano (scheda, ISTRUZIONI
+  con anche "come viene valutata la tua consegna", cartella immagini).
+- **`consegne/_PROF/`** = solo prof: `COME-CORREGGO.md` (giro completo, i 4
+  segnali, la scala del voto APPROVATA) e `valutazione-MODELLO.md`.
+- **Esempio già compilato**: `consegne/2026-2027-1informatica/rossi-mario/es1-bottone/`
+  (scheda + main.gd + screenshot + valutazione) come modello per i ragazzi.
+- I **4 segnali** valutati: consegna completa · funziona · il tuo tocco · lo sai
+  spiegare con parole tue. Scala voto CONFERMATA: 9-10 tutto ok e lo sa spiegare;
+  7-8 funziona e tocco, spiegazione incerta; 6 tocco minimo o spiegazione debole;
+  5 incompleta o non funziona ma tentativo vero → si può RI-CONSEGNARE. Si parte
+  dall'alto, giudizio sempre incoraggiante, ultima parola al prof.
 - Giro: ragazzo consegna → Claude corregge → **voto = numero + breve giudizio**
-  (deciso insieme, ultima parola a Nicola) → Claude aggiunge una pagina al
-  **manuale personale** dello studente → si restituisce il suo manuale aggiornato.
+  → Claude aggiunge una pagina al **manuale personale** dello studente.
 - I ragazzi lavorano con **Gemini**; Claude corregge e compila i loro manuali.
 
 ## Idee più avanti
