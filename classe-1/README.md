@@ -21,6 +21,8 @@ assemblaggio); 4° anno Cisco Packet Tracer avanzato (rete di una scuola reale).
 
 ## File in questa cartella
 
+- **`MATERIALE-PRONTO.md`** — l'**indice di tutto il materiale** pronto e degli
+  esercizi fatti, con lo stato di ciascuno. Parti da qui per il quadro d'insieme.
 - **`programma.md`** — la mappa dell'anno: i sei moduli, la sequenza, il percorso
   pluriennale, valutazione e uso dell'AI. È il punto di partenza; da qui
   nasceranno, un modulo alla volta, il libro di testo e l'eserciziario.
