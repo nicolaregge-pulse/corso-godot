@@ -24,10 +24,10 @@ nostro motore Vinci subito, Fallo tuo, Mostralo:
 4. **Lo sa spiegare con parole sue** — è la prova del nove. Se sa raccontare cosa
    fa il suo programma, la competenza c'è davvero, anche se un pezzo è copiato.
 
-## La scala del voto — bozza da rivedere insieme
+## La scala del voto — approvata
 
-Partiamo dall'alto, non dallo zero: chi ci prova davvero parte già da un buon
-posto. Questa è una proposta, i numeri li sistemi tu.
+Questa è la scala concordata. Partiamo dall'alto, non dallo zero: chi ci prova
+davvero parte già da un buon posto. Sul singolo caso l'ultima parola resta al prof.
 
 - **9 - 10** — Completa, funziona, ha un suo tocco e sa spiegarla bene.
 - **7 - 8** — Completa e funziona, tocco presente, spiegazione un po' incerta ma
