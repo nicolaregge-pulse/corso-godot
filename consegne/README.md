@@ -53,3 +53,21 @@ corrette e tiene i **manuali personali** degli studenti.
 
 > I branch e le Pull Request li introdurremo in **Fase 2** (progetto di gruppo),
 > quando i ragazzi avranno preso confidenza: un passo alla volta.
+
+## Un esempio già compilato, da far vedere ai ragazzi
+
+Dentro `2026-2027-1informatica/rossi-mario/es1-bottone/` c'è una consegna finta ma
+completa. Serve come modello: i ragazzi la guardano e capiscono com'è fatta una
+buona consegna. Contiene la `scheda.md` compilata, il `main.gd` con il suo tocco,
+uno screenshot in `immagini/` e la `valutazione.md` del prof, così si vede tutto
+il giro, dalla consegna al voto.
+
+## La cartella `_PROF/` — solo per il prof
+
+`_PROF/` non la copiano i ragazzi. Dentro c'è come si corregge, la scala del voto
+e il template della valutazione:
+
+- `_PROF/COME-CORREGGO.md` — il giro completo, i quattro segnali che guardiamo e
+  la scala del voto da rivedere insieme.
+- `_PROF/valutazione-MODELLO.md` — il modulo vuoto della valutazione, da copiare
+  nella cartella della consegna col nome `valutazione.md`.
