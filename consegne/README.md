@@ -39,6 +39,12 @@ Questa cartella `consegne/ANNO-CLASSE/cognome-nome/` qui nel repo del corso è
 invece l'**archivio del prof**: qui il prof (con Claude) raccoglie le consegne
 corrette e tiene i **manuali personali** degli studenti.
 
+## Per il primo giro con la classe
+
+La guida da dare ai ragazzi la prima volta è **`INVITO-ALLA-CLASSE.md`**: li porta
+passo passo dal niente alla prima consegna, tutto da browser. Dalla seconda volta
+usano `_MODELLO/ISTRUZIONI.md`.
+
 ## Il flusso (semplice, per iniziare — Fase 1)
 
 1. Una volta sola: il ragazzo si fa la **sua copia** del corso (bottone **Fork**
