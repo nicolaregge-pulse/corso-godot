@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.18** — 27/07/2026
+**Versione 0.19** — 11/08/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -459,12 +459,54 @@ Premi **`F5`**: la scritta si muove ma **non supera** il bordo.
 
 Fatto: il tuo programma prende una **decisione** da solo.
 
+### Passo 10 — Un interruttore acceso o spento: il booleano
+Cosa impari: un **booleano** è una variabile che vale solo **`true`** (vero) o
+**`false`** (falso), come un interruttore. Serve a ricordare uno **stato**, per
+esempio se il gioco è in corso oppure è finito.
+
+Provalo tu: in cima allo script metti una variabile interruttore, e usala nel
+`_process` per far muovere la scritta e poi fermarla da sola:
+
+```gdscript
+var in_gioco: bool = true
+
+func _process(delta):
+	if in_gioco:
+		etichettaVar.position.x += 100 * delta
+	if etichettaVar.position.x > 400:
+		in_gioco = false
+```
+
+Premi **`F5`**: la scritta scivola e poi **si ferma** quando `in_gioco` diventa
+`false`.
+
+Fatto: hai usato un interruttore per accendere e spegnere un comportamento. È così
+che un gioco sa se **sta giocando** o è **finito**.
+
+### Passo 11 — Far comparire e sparire un nodo con `visible`
+Cosa impari: ogni nodo ha la proprietà **`visible`**. Se è **`false`** il nodo
+**sparisce**, se è **`true`** **ricompare**. È il trucco per la scritta GAME OVER:
+sta nascosta e appare solo alla fine.
+
+Provalo tu: nascondi la scritta all'avvio.
+
+```gdscript
+func _ready():
+	etichettaVar.text = "FINE"
+	etichettaVar.visible = false
+```
+
+Premi **`F5`**: la scritta **non si vede**. Se più avanti metti
+`etichettaVar.visible = true`, ricompare.
+
+Fatto: sai nascondere e mostrare un nodo a comando.
+
 ---
 
 Ora hai tutti i mattoncini in mano: **nodo, proprietà, script, `_ready`,
-variabile, soprannome `@onready`, segnale, game loop, `Input`, `if`**. Con questi,
-il prossimo capitolo, dove costruiamo l'Esercizio 1, non è più un salto nel buio:
-sono le stesse cose, messe insieme.
+variabile, soprannome `@onready`, segnale, game loop, `Input`, `if`, booleano,
+`visible`**. Con questi, il prossimo capitolo, dove costruiamo l'Esercizio 1, non è
+più un salto nel buio: sono le stesse cose, messe insieme.
 
 ---
 
@@ -666,11 +708,128 @@ muoviamo il cestino con le frecce, facciamo scendere la moneta e con
 - Cambia i **colori** di cestino e moneta.
 - Rendilo più difficile: aumenta `VELOCITA_MONETA`.
 - Aggiungi le **vite** e un "Game Over" quando finiscono, come nel vecchio
-  "Chirurgo Pasticcione".
+  "Chirurgo Pasticcione". Lo costruiamo insieme nel prossimo capitolo.
 
 ---
 
-## Capitolo 7 — Il percorso: dagli esercizi al "progetto boss"
+## Capitolo 7 — Costruiamo l'Esercizio 4: acchiappa le stelle
+
+È l'Esercizio 3 che **cresce**. Stessa idea, una navetta che prende le stelle che
+cadono, ma ora il gioco si può **perdere**: hai tre **vite**, e se lasci cadere
+troppe stelle è **game over**. Poi premi INVIO e ricominci. I concetti nuovi li
+hai già provati nel Capitolo 3: il **booleano** per lo stato e `visible` per far
+comparire la scritta di fine partita.
+
+### Passo 1 — Scena
+Crea il progetto `esercizio4`, **`Scena 2D`**, nodo radice **`Main`**. Aggiungi a
+`Main` quattro figli con il **`+`**:
+- **`ColorRect`** → rinominalo **`navettaScena`**
+- **`ColorRect`** → rinominalo **`stellaScena`**
+- **`Label`** → rinominalo **`hudScena`**
+- **`Label`** → rinominalo **`gameoverScena`**
+
+### Passo 2 — Script e codice
+Attacca lo script a **`Main`**, cancella tutto e incolla:
+```gdscript
+extends Node2D
+
+@onready var navettaVar: ColorRect = $navettaScena
+@onready var stellaVar: ColorRect = $stellaScena
+@onready var hudVar: Label = $hudScena
+@onready var gameoverVar: Label = $gameoverScena
+
+const VELOCITA_NAVETTA: float = 500.0
+const VELOCITA_STELLA: float = 300.0
+const VITE_INIZIALI: int = 3
+
+var punti: int = 0
+var vite: int = VITE_INIZIALI
+var in_gioco: bool = true
+var larghezza: float
+
+func _ready() -> void:
+	larghezza = get_viewport_rect().size.x
+	navettaVar.size = Vector2(90, 20)
+	navettaVar.color = Color(0.3, 0.7, 1.0)
+	navettaVar.position = Vector2(larghezza / 2.0 - 45, get_viewport_rect().size.y - 50)
+	stellaVar.size = Vector2(28, 28)
+	stellaVar.color = Color(1.0, 0.85, 0.2)
+	hudVar.position = Vector2(20, 20)
+	gameoverVar.position = Vector2(larghezza / 2.0 - 140, get_viewport_rect().size.y / 2.0 - 20)
+	gameoverVar.text = "GAME OVER\nPremi INVIO per ricominciare"
+	gameoverVar.visible = false
+	_rimetti_in_alto()
+	_aggiorna_hud()
+
+func _process(delta: float) -> void:
+	# Se la partita è finita: aspetta INVIO per ricominciare, e basta.
+	if not in_gioco:
+		if Input.is_action_just_pressed("ui_accept"):
+			_ricomincia()
+		return
+	if Input.is_action_pressed("ui_left"):
+		navettaVar.position.x -= VELOCITA_NAVETTA * delta
+	if Input.is_action_pressed("ui_right"):
+		navettaVar.position.x += VELOCITA_NAVETTA * delta
+	navettaVar.position.x = clamp(navettaVar.position.x, 0, larghezza - navettaVar.size.x)
+	stellaVar.position.y += VELOCITA_STELLA * delta
+	# Presa?
+	if Rect2(navettaVar.position, navettaVar.size).intersects(Rect2(stellaVar.position, stellaVar.size)):
+		punti += 1
+		_aggiorna_hud()
+		_rimetti_in_alto()
+	# Persa: togli una vita
+	elif stellaVar.position.y > get_viewport_rect().size.y:
+		vite -= 1
+		_aggiorna_hud()
+		_rimetti_in_alto()
+		if vite <= 0:
+			_game_over()
+
+func _rimetti_in_alto() -> void:
+	var x := randf_range(0, larghezza - stellaVar.size.x)
+	stellaVar.position = Vector2(x, -stellaVar.size.y)
+
+func _game_over() -> void:
+	in_gioco = false
+	gameoverVar.visible = true
+
+func _ricomincia() -> void:
+	punti = 0
+	vite = VITE_INIZIALI
+	in_gioco = true
+	gameoverVar.visible = false
+	_rimetti_in_alto()
+	_aggiorna_hud()
+
+func _aggiorna_hud() -> void:
+	hudVar.text = "Punti: %d    Vite: %d" % [punti, vite]
+```
+Cosa succede: teniamo lo **stato** del gioco in un interruttore, `in_gioco`. Finché
+è `true` giochi: muovi la navetta, la stella scende, se la prendi fai punto, se la
+perdi togli una **vita**. Quando le vite arrivano a zero chiamiamo `_game_over()`,
+che spegne `in_gioco` e **fa comparire** la scritta con `visible = true`. Da fermo,
+`Input.is_action_just_pressed("ui_accept")` aspetta un colpo di **INVIO** per
+ricominciare.
+
+Due parole nuove da notare:
+- `is_action_just_pressed` scatta **una volta sola** nell'istante in cui premi, non
+  di continuo come `is_action_pressed`. Perfetto per "premi INVIO per ripartire".
+- `visible` è l'interruttore che fa **comparire o sparire** un nodo.
+
+### Passo 3 — Vinci
+**`F5`**: muovi la navetta con **← →**, prendi le stelle, tieni le vite. Quando
+finiscono arriva il **GAME OVER**; premi **INVIO** e riparti.
+
+### Fallo tuo
+- Cambia quante **vite** hai: il numero in `const VITE_INIZIALI`.
+- Cambia i **colori** di navetta e stella, e la scritta di fine partita.
+- Rendilo più difficile a poco a poco: aumenta un pochino `VELOCITA_STELLA` ogni
+  volta che fai punto.
+
+---
+
+## Capitolo 8 — Il percorso: dagli esercizi al "progetto boss"
 
 Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
 **un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
@@ -683,6 +842,7 @@ insieme quei pezzi. Ecco la scala che stiamo salendo.
 | **1 · Il bottone che saluta** | Un clic fa succedere qualcosa | Il **segnale**, il tuo `Button1Click` di Lazarus |
 | **2 · Muovi il quadrato** | Far muovere le cose da sole | Il **game loop** `_process(delta)` + input |
 | **3 · Prendi la moneta** | Un mini-gioco vero | Movimento + **collisioni** + **punteggio** |
+| **4 · Acchiappa le stelle** | Un gioco che si può perdere | **Vite**, **stato** del gioco e **game over** |
 
 Ognuno è **corto** e finisce con una **vittoria a schermo**: è fatto apposta così,
 per vincere subito e non mollare.
@@ -763,3 +923,4 @@ stai facendo non serve a niente.
 | 0.16 | 27/07/2026 | Convenzione dei nomi "parlanti" applicata a tutto il codice: la variabile finisce in "Var" (es. quadratoVar) e il nodo nella scena finisce in "Scena" (es. quadratoScena). Cosi' a colpo d'occhio si capisce chi e' la variabile e chi e' il nodo. Aggiornati i capitoli 3-4-5 e i nomi dei nodi nelle scene. |
 | 0.17 | 27/07/2026 | Rifatte le due foto dell'editor (es1-ambiente, es3-ambiente): ora mostrano i nomi nuovi dei nodi (bottoneScena/etichettaScena e cestinoScena/monetaScena/punteggioScena), coerenti con la convenzione. |
 | 0.18 | 27/07/2026 | Aggiunto il Capitolo 3 "I mattoncini, uno alla volta": 9 micro-lezioni a scoperta graduale (impari una cosa, la provi subito, avanti) che portano da zero fino a essere pronti per l'Esercizio 1. I capitoli di costruzione degli esercizi diventano 4-5-6 e il progetto boss il 7. |
+| 0.19 | 11/08/2026 | Coperto anche l'Esercizio 4. Nel Capitolo 3 due mattoncini nuovi: Passo 10 il booleano e lo stato del gioco, Passo 11 mostrare e nascondere con visible. Nuovo Capitolo 7 "Costruiamo l'Esercizio 4: acchiappa le stelle" (vite e game over); il capitolo sul progetto boss diventa l'8. |
