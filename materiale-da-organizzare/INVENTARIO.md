@@ -10,6 +10,24 @@ modificabili** (esportate da Google Docs).*
 
 ---
 
+## ⭐ UFFICIALE — la prova di diploma (validità Regione Lombardia)
+
+Questi due sono i documenti **veri e ufficiali**, dati ai ragazzi. Tutto il resto
+del materiale qui sotto è **preparazione / varianti** di questa prova.
+
+- `Esame di diploma 4 INFO - giugno 2026 - prova A (UFFICIALE Regione).pdf`
+  — Prova Professionale per la qualifica **Tecnico Informatico (Sistemi, reti e
+  data management)**, AFGP Centro Padre Piamarta (Milano), giugno 2026. Titolo:
+  *"Architettura e configurazione di rete simulata"*. 5 ore, 3 fasi: **1)** progettare
+  la rete in **Cisco Packet Tracer** (allegato 1) · **2)** collaudo PC (allegato 2)
+  · **3)** preventivo materiale con prezzi (allegato 3).
+- `Rubrica Regione Lombardia v2 (UFFICIALE).pdf`
+  — La **rubrica ufficiale** di valutazione (voto /30) per Operatore Informatico:
+  configurazione rete Cisco, DHCP, collaudo con ping, ecc. (Id 55415-142714,
+  corrisponde alla prova qui sopra).
+
+---
+
 ## A. Reti — Cisco Packet Tracer (rete di una scuola)
 Esame completo: mappa indirizzi → router → server statico → config PC → DHCP →
 collegamento portatili → ping di collaudo. Due **varianti anti-copia** (scuole
