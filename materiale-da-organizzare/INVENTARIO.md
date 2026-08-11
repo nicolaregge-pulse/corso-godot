@@ -63,7 +63,11 @@ preventivo economico di un'infrastruttura scolastica.
 - `Prova d_Esame Ufficiale_ Hardware, Windows 10, Triage e Preventivo Aula 11.docx`
 - `Compito d_Esame_ Preventivo Economico Infrastruttura IT Scolastica (Prezzi in Bianco).docx`
 - `Relazione Tecnica e Preventivo Economico Infrastruttura IT Scolastica.docx`
-- `Troubleshooting della CPU.docx` (scheda: diagnosi CPU/RAM, corretta)
+- **Diagnosi guasti PC — prova di 3ª:** si descrive un problema del computer e lo
+  studente deve **individuare il tipo di guasto**.
+  - `Troubleshooting della CPU.docx` (versione corretta: diagnosi CPU/RAM)
+  - `Documento senza titolo.docx` (bozza/variante della stessa prova, con alcune
+    descrizioni errate)
 
 ## D. Valutazione — griglie, rubriche, schede qualifica
 - `Scheda Valutazione Qualifica Terza Informatica.docx` + `... V2.docx`
@@ -71,21 +75,14 @@ preventivo economico di un'infrastruttura scolastica.
 - `Rubrica di Valutazione Operatore Informatico - Competenze e Abilità.docx`
 - `Rubrica di Valutazione Operatore Informatico - Griglia di Punteggio.docx`
 
-## E. Da chiarire (forse fuori tema)
-- `Documento senza titolo.docx` — è un testo "Troubleshooting della CPU" ma con
-  **informazioni volutamente SBAGLIATE** (es. "coprire le prese d'aria per
-  accumulare calore"): forse un esercizio **"trova gli errori"**, o una bozza. Da confermare.
-- `Scheda Tecnica SYM Symphony 125 Standard.docx` / `.pdf` — scheda tecnica di uno
-  **scooter** (prezzi, patente): fuori tema per informatica. Personale, o esempio
-  per un esercizio di "lettura scheda tecnica / preventivo"? Da confermare.
-
 ---
 
-## Tolto dal repository (privacy)
-Nello zip era finito **per sbaglio** un documento **personale** — un piano di
-benessere/salute per una persona cara: **non è materiale del corso** e conteneva
-dati personali, quindi **non è stato inserito** nel repository. Se ti serve, lo
-recuperi tu dal Drive originale.
+## Tolto dal repository (finiti nello zip per sbaglio)
+- Un documento **personale** — un piano di benessere/salute per una persona cara:
+  dati personali, non materiale del corso → **non inserito** nel repository.
+- La **Scheda Tecnica SYM Symphony 125** (uno scooter): fuori tema, **rimossa**.
+
+Se ti servono, li recuperi dal Drive originale.
 
 ---
 
