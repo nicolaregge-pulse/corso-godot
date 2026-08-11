@@ -67,6 +67,12 @@ Tutto per raccogliere e correggere i lavori dei ragazzi.
 
 - **Release v1.0** — la versione congelata e stabile pubblicata per i ragazzi.
 
+## Per il docente
+
+- `SCALETTA-LEZIONI.md` — il piano delle prime lezioni della Fase 1: cosa
+  spiegare, in che ordine, con quale esercizio, con la piccola vittoria da
+  mostrare a ogni lezione.
+
 ## Materiale di servizio
 
 - `README.md` — la porta d'ingresso del repository, rimanda a questo indice.
