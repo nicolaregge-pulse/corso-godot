@@ -7,9 +7,9 @@ Ultimo aggiornamento: 10/08/2026.
 
 ## Manuale, in `manuale/`
 
-- **Libro di testo** — `manuale/manuale.md`, versione **0.18**. PDF pronto:
-  `manuale/manuale-v0.18.pdf`. La teoria di Godot, spiegata ai ragazzi, con le
-  foto dell'ambiente e i capitoli di costruzione degli esercizi.
+- **Libro di testo** — `manuale/manuale.md`, versione **0.19**. PDF pronto:
+  `manuale/manuale-v0.19.pdf`. La teoria di Godot, spiegata ai ragazzi, con le
+  foto dell'ambiente e i capitoli di costruzione degli esercizi 1-4.
 - **Eserciziario** — `manuale/eserciziario.md`, versione **0.15**. PDF pronto:
   `manuale/eserciziario-v0.15.pdf`. Gli esercizi coi quattro livelli di aiuto, la
   guida passo passo e la spiegazione del codice riga per riga.

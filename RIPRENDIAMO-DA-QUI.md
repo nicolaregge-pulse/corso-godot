@@ -5,8 +5,9 @@
 ## Dove siamo (tutto su `main`)
 - **Indice di tutto il materiale**: `INDICE-DEL-MATERIALE.md` in radice — va
   tenuto aggiornato a ogni aggiunta o cambio.
-- **Manuale v0.18** — teoria, lettera a mano firmata "Nicola", schede, i 3
-  capitoli di costruzione degli esercizi 1-2-3 (con foto), progetto boss.
+- **Manuale v0.19** — teoria, lettera a mano firmata "Nicola", schede, i 4
+  capitoli di costruzione degli esercizi 1-2-3-4 (Es4 = vite e game over),
+  progetto boss. Nel Cap. 3 aggiunti i mattoncini booleano/stato e visible.
 - **Eserciziario v0.15** (PDF `eserciziario-v0.15.pdf` generato) —
   esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
   ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del
