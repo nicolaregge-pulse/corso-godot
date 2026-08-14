@@ -10,7 +10,7 @@ extends Node2D
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
 const VELOCITA_TORTA: float = 1500.0
-const DONDOLIO: float = 70.0            # quanto si muove la faccia (0 = ferma)
+const DONDOLIO: float = 0.0             # quanto si muove il bersaglio (0 = fermo)
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -47,27 +47,26 @@ func _ready() -> void:
 	campo = Node2D.new()
 	add_child(campo)
 	move_child(campo, 0)
-	var faccia_tex: Texture2D = load("res://faccia.png")
+	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
-	var lato_target: float = min(vp.x * 0.9, 470.0)
-	half = lato_target / 2.0
-	centro = Vector2(vp.x / 2.0, 100.0 + half)
+	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
 	centro_ora = centro
+	half = 290.0
 	r100 = 0.258 * half
 	r50 = 0.50 * half
 	r25 = 0.742 * half
 	r10 = 0.96 * half
+	# la foto a tutto schermo, coi bordi gia' sfumati
 	faccia = Sprite2D.new()
-	faccia.texture = faccia_tex
-	faccia.position = centro
-	# adatta senza deformare: la foto sta dentro il cerchio mantenendo le proporzioni
-	var sc: float = lato_target / float(max(faccia_tex.get_width(), faccia_tex.get_height()))
-	faccia.scale = Vector2(sc, sc)
+	faccia.texture = sfondo_tex
+	faccia.position = Vector2(vp.x * 0.5, vp.y * 0.5)
 	campo.add_child(faccia)
+	# il bersaglio a cerchi, sopra la faccia
 	bersaglio = Sprite2D.new()
 	bersaglio.texture = bersaglio_tex
 	bersaglio.position = centro
-	bersaglio.scale = Vector2(lato_target / float(bersaglio_tex.get_width()), lato_target / float(bersaglio_tex.get_height()))
+	var bsc: float = (2.0 * half) / float(bersaglio_tex.get_width())
+	bersaglio.scale = Vector2(bsc, bsc)
 	campo.add_child(bersaglio)
 	linea = Line2D.new()
 	linea.width = 7.0
@@ -98,7 +97,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	tempo += delta
 	centro_ora = centro + Vector2(sin(tempo * 1.2) * DONDOLIO, 0.0)
-	faccia.position = centro_ora
 	bersaglio.position = centro_ora
 	# a partita finita: INVIO per rigiocare
 	if tiri >= TIRI_TOTALI and not in_volo:
