@@ -12,8 +12,7 @@ const COLONNE: int = 3
 const DURATA_PARTITA: float = 30.0      # quanti secondi dura una partita
 const TEMPO_TALPA: float = 0.9          # quanti secondi resta su una talpa
 const COLORE_BUCO: Color = Color(0.20, 0.14, 0.10)
-const COLORE_TALPA: Color = Color(0.85, 0.55, 0.25)
-const TESTO_TALPA: String = "TALPA"     # mettici una faccina, un nome, o lascia ""
+# Vuoi un'altra talpa? Sostituisci il file talpa.png con una tua immagine o foto.
 # =============================================================================
 
 @onready var punteggioVar: Label = $punteggioScena
@@ -27,8 +26,10 @@ var punti: int = 0
 var tempo_rimasto: float = DURATA_PARTITA
 var tempo_prossima: float = 0.0
 var in_gioco: bool = true
+var talpa_tex: Texture2D
 
 func _ready() -> void:
+	talpa_tex = load("res://talpa.png")
 	_crea_buchi()
 	punteggioVar.position = Vector2(24, 24)
 	punteggioVar.add_theme_font_size_override("font_size", 30)
@@ -61,9 +62,14 @@ func _crea_buchi() -> void:
 			b.size = Vector2(lato, lato)
 			b.position = Vector2(margine + c * passo_x + (passo_x - lato) / 2.0, top + r * passo_y + (passo_y - lato) / 2.0)
 			b.focus_mode = Control.FOCUS_NONE
-			b.add_theme_font_size_override("font_size", 26)
-			b.modulate = COLORE_BUCO
-			b.text = ""
+			b.expand_icon = true
+			var stile: StyleBoxFlat = StyleBoxFlat.new()
+			stile.bg_color = COLORE_BUCO
+			stile.set_corner_radius_all(int(lato * 0.5))
+			b.add_theme_stylebox_override("normal", stile)
+			b.add_theme_stylebox_override("hover", stile)
+			b.add_theme_stylebox_override("pressed", stile)
+			b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 			var idx: int = i
 			b.pressed.connect(func() -> void: _colpita(idx))
 			add_child(b)
@@ -93,13 +99,11 @@ func _nuova_talpa() -> void:
 		while nuovo == talpa_attiva:
 			nuovo = randi() % buchi.size()
 	talpa_attiva = nuovo
-	buchi[talpa_attiva].modulate = COLORE_TALPA
-	buchi[talpa_attiva].text = TESTO_TALPA
+	buchi[talpa_attiva].icon = talpa_tex
 	tempo_prossima = TEMPO_TALPA
 
 func _spegni(i: int) -> void:
-	buchi[i].modulate = COLORE_BUCO
-	buchi[i].text = ""
+	buchi[i].icon = null
 
 func _colpita(idx: int) -> void:
 	if not in_gioco:
