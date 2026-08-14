@@ -1,19 +1,16 @@
 extends Node2D
 # GIOCO — Torta in faccia.
-# Trascina il dito verso la faccia: PIU' LONTANO trascini, PIU' FORTE tiri.
-# Una linea ti mostra l'arco dove cadra' la torta, cosi' regoli la potenza.
-# Il bersaglio oscilla, quindi serve anche tempismo. Punti secondo quanto sei
-# vicino al centro.
+# Lancia con una STRISCIATA del dito: conta la VELOCITA' e la DIREZIONE del
+# gesto, come tirare davvero. Strisciata veloce = tiro forte. Niente mira
+# assistita: tiri a sentimento. Punti secondo quanto sei vicino al centro.
 #
 # LA FACCIA: e' il file sfondo.png (la foto a tutto schermo).
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const FORZA: float = 2.7             # quanto conta la lunghezza del trascinamento
-const FORZA_MAX: float = 1550.0      # potenza massima
+const FORZA_TIRO: float = 1.0        # moltiplica la velocita' della strisciata
+const TIRO_MAX: float = 2300.0       # velocita' massima del tiro
 const GRAVITA: float = 1500.0
-const OSCILLA: float = 90.0          # quanto oscilla il bersaglio (0 = fermo)
-const VELOCITA_OSCILLA: float = 1.6
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -24,10 +21,8 @@ var campo: Node2D
 var faccia: Sprite2D
 var bersaglio: Sprite2D
 var torta: Sprite2D
-var linea: Line2D
 var splats: Array = []
 var centro: Vector2
-var centro_ora: Vector2
 var half: float
 var r100: float
 var r50: float
@@ -38,14 +33,13 @@ var torta_v: Vector2 = Vector2.ZERO
 var pronto: bool = true
 var in_volo: bool = false
 var puntando: bool = false
-var dito: Vector2 = Vector2.ZERO
+var storia: Array = []               # posizioni recenti del dito, per la velocita'
 var vicino: float = 999999.0
 var vicino_pos: Vector2 = Vector2.ZERO
 var entrato: bool = false
 var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
-var tempo: float = 0.0
 var vp: Vector2
 
 func _ready() -> void:
@@ -56,7 +50,6 @@ func _ready() -> void:
 	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
-	centro_ora = centro
 	half = 290.0
 	r100 = 0.258 * half
 	r50 = 0.50 * half
@@ -72,10 +65,6 @@ func _ready() -> void:
 	var bsc: float = (2.0 * half) / float(bersaglio_tex.get_width())
 	bersaglio.scale = Vector2(bsc, bsc)
 	campo.add_child(bersaglio)
-	linea = Line2D.new()
-	linea.width = 6.0
-	linea.default_color = Color(1, 1, 1, 0.85)
-	campo.add_child(linea)
 	torta = Sprite2D.new()
 	var torta_tex: Texture2D = load("res://torta.png")
 	torta.texture = torta_tex
@@ -104,19 +93,45 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
 		if event.pressed:
 			puntando = true
-			dito = event.position
+			storia = [[event.position, Time.get_ticks_msec()]]
 		else:
 			if puntando:
 				puntando = false
-				linea.points = PackedVector2Array()
 				_lancia()
 	elif (event is InputEventScreenDrag or event is InputEventMouseMotion) and puntando:
-		dito = event.position
+		storia.append([event.position, Time.get_ticks_msec()])
+		if storia.size() > 8:
+			storia.pop_front()
+
+func _velocita_strisciata() -> Vector2:
+	if storia.size() < 2:
+		return Vector2.ZERO
+	var ultimo: Array = storia[storia.size() - 1]
+	var primo: Array = storia[0]
+	# prendi il tratto negli ultimi ~130 ms per catturare il "colpo" finale
+	for e in storia:
+		if ultimo[1] - e[1] <= 130:
+			primo = e
+			break
+	var dt: float = float(ultimo[1] - primo[1]) / 1000.0
+	if dt < 0.001:
+		return Vector2.ZERO
+	return (ultimo[0] - primo[0]) / dt
+
+func _lancia() -> void:
+	var v: Vector2 = _velocita_strisciata() * FORZA_TIRO
+	if v.length() < 200.0:            # strisciata troppo lenta: non lancia
+		return
+	if v.length() > TIRO_MAX:
+		v = v.normalized() * TIRO_MAX
+	torta.position = ancora
+	torta_v = v
+	in_volo = true
+	pronto = false
+	vicino = 999999.0
+	entrato = false
 
 func _process(delta: float) -> void:
-	tempo += delta
-	centro_ora = centro + Vector2(sin(tempo * VELOCITA_OSCILLA) * OSCILLA, 0.0)
-	bersaglio.position = centro_ora
 	if tiri >= TIRI_TOTALI and not in_volo:
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
@@ -127,47 +142,12 @@ func _process(delta: float) -> void:
 			_rimetti()
 	if in_volo:
 		_vola(delta)
-	elif puntando and pronto:
-		linea.points = _arco()
-
-func _v0() -> Vector2:
-	var tira: Vector2 = dito - ancora     # trascini verso dove vuoi tirare
-	var v: Vector2 = tira * FORZA
-	if v.length() > FORZA_MAX:
-		v = v.normalized() * FORZA_MAX
-	v.y = -abs(v.y)                        # sempre verso l'alto
-	return v
-
-func _arco() -> PackedVector2Array:
-	var pts: PackedVector2Array = PackedVector2Array()
-	var v: Vector2 = _v0()
-	if v.length() < 80.0:
-		return pts
-	var p: Vector2 = ancora
-	for i in range(34):
-		pts.append(p)
-		v.y += GRAVITA * 0.035
-		p += v * 0.035
-		if p.y > vp.y + 30.0 or p.x < -30.0 or p.x > vp.x + 30.0:
-			break
-	return pts
-
-func _lancia() -> void:
-	var v: Vector2 = _v0()
-	if v.length() < 80.0:
-		return
-	torta.position = ancora
-	torta_v = v
-	in_volo = true
-	pronto = false
-	vicino = 999999.0
-	entrato = false
 
 func _vola(delta: float) -> void:
 	torta_v.y += GRAVITA * delta
 	torta.position += torta_v * delta
 	torta.rotation += delta * 10.0
-	var d: float = torta.position.distance_to(centro_ora)
+	var d: float = torta.position.distance_to(centro)
 	if d < vicino:
 		vicino = d
 		vicino_pos = torta.position
@@ -195,7 +175,7 @@ func _colpito(pos: Vector2, d: float) -> void:
 	_fine_tiro()
 
 func _mancato() -> void:
-	_mostra_scritta(centro_ora + Vector2(-90, 0), "MANCATO")
+	_mostra_scritta(centro + Vector2(-90, 0), "MANCATO")
 	_fine_tiro()
 
 func _fine_tiro() -> void:
@@ -252,7 +232,7 @@ func _ricomincia() -> void:
 	pronto = true
 	puntando = false
 	pausa = 0.0
-	linea.points = PackedVector2Array()
+	storia = []
 	torta.position = ancora
 	torta.rotation = 0.0
 	torta.visible = true
