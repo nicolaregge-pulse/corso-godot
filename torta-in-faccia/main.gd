@@ -1,17 +1,19 @@
 extends Node2D
 # GIOCO — Torta in faccia.
-# Fionda: tocca e TIRA INDIETRO col dito. Compare una linea che ti mostra dove
-# andra' la torta. Lasci e la torta parte in arco verso la faccia. Piu' centri
-# il bersaglio, piu' punti. Hai un numero di tiri.
+# Trascina il dito verso la faccia: PIU' LONTANO trascini, PIU' FORTE tiri.
+# Una linea ti mostra l'arco dove cadra' la torta, cosi' regoli la potenza.
+# Il bersaglio oscilla, quindi serve anche tempismo. Punti secondo quanto sei
+# vicino al centro.
 #
-# LA FACCIA: e' il file sfondo.png (la foto a tutto schermo). Per cambiarla si
-# rigenera lo sfondo da una nuova foto.
+# LA FACCIA: e' il file sfondo.png (la foto a tutto schermo).
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const FORZA: float = 3.2
-const FORZA_MAX: float = 1500.0
+const FORZA: float = 2.7             # quanto conta la lunghezza del trascinamento
+const FORZA_MAX: float = 1550.0      # potenza massima
 const GRAVITA: float = 1500.0
+const OSCILLA: float = 90.0          # quanto oscilla il bersaglio (0 = fermo)
+const VELOCITA_OSCILLA: float = 1.6
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -25,6 +27,7 @@ var torta: Sprite2D
 var linea: Line2D
 var splats: Array = []
 var centro: Vector2
+var centro_ora: Vector2
 var half: float
 var r100: float
 var r50: float
@@ -36,9 +39,13 @@ var pronto: bool = true
 var in_volo: bool = false
 var puntando: bool = false
 var dito: Vector2 = Vector2.ZERO
+var vicino: float = 999999.0
+var vicino_pos: Vector2 = Vector2.ZERO
+var entrato: bool = false
 var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
+var tempo: float = 0.0
 var vp: Vector2
 
 func _ready() -> void:
@@ -49,6 +56,7 @@ func _ready() -> void:
 	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
+	centro_ora = centro
 	half = 290.0
 	r100 = 0.258 * half
 	r50 = 0.50 * half
@@ -66,13 +74,13 @@ func _ready() -> void:
 	campo.add_child(bersaglio)
 	linea = Line2D.new()
 	linea.width = 6.0
-	linea.default_color = Color(1, 1, 1, 0.8)
+	linea.default_color = Color(1, 1, 1, 0.85)
 	campo.add_child(linea)
 	torta = Sprite2D.new()
 	var torta_tex: Texture2D = load("res://torta.png")
 	torta.texture = torta_tex
 	torta.scale = Vector2(100.0 / float(torta_tex.get_width()), 100.0 / float(torta_tex.get_height()))
-	ancora = Vector2(vp.x * 0.5, vp.y - 140.0)
+	ancora = Vector2(vp.x * 0.5, vp.y - 120.0)
 	torta.position = ancora
 	campo.add_child(torta)
 	hudVar.position = Vector2(24, 24)
@@ -80,12 +88,12 @@ func _ready() -> void:
 	gameoverVar.add_theme_font_size_override("font_size", 40)
 	gameoverVar.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	gameoverVar.size = Vector2(400, 90)
-	gameoverVar.position = Vector2(vp.x / 2.0 - 200.0, vp.y * 0.72)
+	gameoverVar.position = Vector2(vp.x / 2.0 - 200.0, vp.y * 0.80)
 	gameoverVar.visible = false
 	rigiocaVar.focus_mode = Control.FOCUS_NONE
 	rigiocaVar.add_theme_font_size_override("font_size", 30)
 	rigiocaVar.size = Vector2(200, 60)
-	rigiocaVar.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.72 + 110.0)
+	rigiocaVar.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.80 + 100.0)
 	rigiocaVar.pressed.connect(_ricomincia)
 	rigiocaVar.visible = false
 	_aggiorna_hud()
@@ -106,6 +114,9 @@ func _input(event: InputEvent) -> void:
 		dito = event.position
 
 func _process(delta: float) -> void:
+	tempo += delta
+	centro_ora = centro + Vector2(sin(tempo * VELOCITA_OSCILLA) * OSCILLA, 0.0)
+	bersaglio.position = centro_ora
 	if tiri >= TIRI_TOTALI and not in_volo:
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
@@ -117,48 +128,58 @@ func _process(delta: float) -> void:
 	if in_volo:
 		_vola(delta)
 	elif puntando and pronto:
-		linea.points = _traiettoria()
+		linea.points = _arco()
 
 func _v0() -> Vector2:
-	var tira: Vector2 = ancora - dito         # tiri indietro: la torta va all'opposto
+	var tira: Vector2 = dito - ancora     # trascini verso dove vuoi tirare
 	var v: Vector2 = tira * FORZA
 	if v.length() > FORZA_MAX:
 		v = v.normalized() * FORZA_MAX
-	v.y = -abs(v.y)                            # sempre verso l'alto: mai in basso
+	v.y = -abs(v.y)                        # sempre verso l'alto
 	return v
 
-func _traiettoria() -> PackedVector2Array:
+func _arco() -> PackedVector2Array:
 	var pts: PackedVector2Array = PackedVector2Array()
 	var v: Vector2 = _v0()
-	if v.length() < 60.0:
+	if v.length() < 80.0:
 		return pts
 	var p: Vector2 = ancora
-	for i in range(28):
+	for i in range(34):
 		pts.append(p)
-		v.y += GRAVITA * 0.03
-		p += v * 0.03
-		if p.y > vp.y + 40.0 or p.x < -40.0 or p.x > vp.x + 40.0:
+		v.y += GRAVITA * 0.035
+		p += v * 0.035
+		if p.y > vp.y + 30.0 or p.x < -30.0 or p.x > vp.x + 30.0:
 			break
 	return pts
 
 func _lancia() -> void:
 	var v: Vector2 = _v0()
-	if v.length() < 60.0:
+	if v.length() < 80.0:
 		return
 	torta.position = ancora
 	torta_v = v
 	in_volo = true
 	pronto = false
+	vicino = 999999.0
+	entrato = false
 
 func _vola(delta: float) -> void:
 	torta_v.y += GRAVITA * delta
 	torta.position += torta_v * delta
-	torta.rotation += delta * 8.0
-	var d: float = torta.position.distance_to(centro)
+	torta.rotation += delta * 10.0
+	var d: float = torta.position.distance_to(centro_ora)
+	if d < vicino:
+		vicino = d
+		vicino_pos = torta.position
 	if d <= r10:
-		_colpito(torta.position, d)
-	elif torta.position.y > vp.y + 120.0 or torta.position.x < -120.0 or torta.position.x > vp.x + 120.0:
-		_mancato()
+		entrato = true
+	if entrato and d > r10:
+		_colpito(vicino_pos, vicino)
+	elif torta.position.y > vp.y + 150.0 or torta.position.x < -150.0 or torta.position.x > vp.x + 150.0:
+		if entrato:
+			_colpito(vicino_pos, vicino)
+		else:
+			_mancato()
 
 func _colpito(pos: Vector2, d: float) -> void:
 	var p: int = 10
@@ -174,7 +195,7 @@ func _colpito(pos: Vector2, d: float) -> void:
 	_fine_tiro()
 
 func _mancato() -> void:
-	_mostra_scritta(Vector2(vp.x / 2.0 - 90.0, vp.y * 0.5), "MANCATO")
+	_mostra_scritta(centro_ora + Vector2(-90, 0), "MANCATO")
 	_fine_tiro()
 
 func _fine_tiro() -> void:
