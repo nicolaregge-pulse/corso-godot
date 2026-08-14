@@ -41,6 +41,8 @@ Giocabili subito dal telefono o dal browser, anche a computer spento:
   https://nicolaregge-pulse.github.io/corso-godot/asteroidi/
 - **Rompi i mattoni**, racchetta e pallina che spaccano il muro di mattoni:
   https://nicolaregge-pulse.github.io/corso-godot/mattoni/
+- **Torta in faccia**, tiri col dito e centri il bersaglio sulla faccia:
+  https://nicolaregge-pulse.github.io/corso-godot/torta/
 
 Sorgenti Godot dei giochi, in radice:
 
@@ -49,6 +51,7 @@ Sorgenti Godot dei giochi, in radice:
 - `acchiappa-la-talpa/` — le talpe da toccare a tempo.
 - `schiva-gli-asteroidi/` — la navetta che schiva i sassi che cadono.
 - `rompi-i-mattoni/` — racchetta, pallina e muro di mattoni da spaccare.
+- `torta-in-faccia/` — tiro alla torta su un bersaglio a cerchi sulla faccia.
 - `chirurgo-pasticcione/` — primo gioco, il vassoio che prende gli organi.
 - `acchiappa-le-stelle/` — mini gioco di esempio, la navetta che prende le stelle.
 
