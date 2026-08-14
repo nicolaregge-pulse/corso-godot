@@ -35,11 +35,17 @@ Giocabili subito dal telefono o dal browser, anche a computer spento:
   https://nicolaregge-pulse.github.io/corso-godot/
 - **Gioco del Quindici**, con la foto incorporata e le tessere di legno:
   https://nicolaregge-pulse.github.io/corso-godot/quindici/
+- **Acchiappa la talpa**, le talpe spuntano dai buchi e le tocchi a tempo:
+  https://nicolaregge-pulse.github.io/corso-godot/talpa/
+- **Schiva gli asteroidi**, muovi la navetta e sopravvivi il più a lungo:
+  https://nicolaregge-pulse.github.io/corso-godot/asteroidi/
 
 Sorgenti Godot dei giochi, in radice:
 
 - `battaglia-navale-3d/` — Affonda la Bonomi.
 - `gioco-del-quindici/` — il 15 puzzle.
+- `acchiappa-la-talpa/` — le talpe da toccare a tempo.
+- `schiva-gli-asteroidi/` — la navetta che schiva i sassi che cadono.
 - `chirurgo-pasticcione/` — primo gioco, il vassoio che prende gli organi.
 - `acchiappa-le-stelle/` — mini gioco di esempio, la navetta che prende le stelle.
 

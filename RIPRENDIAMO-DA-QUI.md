@@ -18,7 +18,9 @@
 - **Giochi:** `battaglia-navale-3d/` (Affonda la Bonomi) e `gioco-del-quindici/`
   (15-puzzle con la foto di Serena incorporata, tessere di legno driftwood in
   rilievo nella vaschetta, sfondo beige; menu solo 3x3/4x4). Entrambi pubblicati
-  sul web (vedi sotto).
+  sul web (vedi sotto). Aggiunti due giochi nuovi: `acchiappa-la-talpa/` (talpe da
+  toccare a tempo) e `schiva-gli-asteroidi/` (navetta che schiva i sassi),
+  pubblicati su `/talpa/` e `/asteroidi/`.
 - **Release `v1.0`** pubblicata (versione congelata per i ragazzi).
 - Tutte le foto degli esercizi sono in `manuale/immagini/`
   (es1-ambiente, es1-gioca, es2-gioca, es3-ambiente, es3-gioca).
