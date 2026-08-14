@@ -33,11 +33,13 @@ var talpe: Array = []
 var tw_talpe: Array = []
 var mole_su: float = 0.0
 var mole_giu: float = 0.0
+var bagliore_tex: Texture2D
 
 func _ready() -> void:
 	talpa_tex = load("res://talpa.png")
 	buco_tex = load("res://buco.png")
 	lembo_tex = load("res://lembo.png")
+	bagliore_tex = load("res://bagliore.png")
 	_crea_buchi()
 	punteggioVar.position = Vector2(24, 24)
 	punteggioVar.add_theme_font_size_override("font_size", 30)
@@ -63,8 +65,8 @@ func _crea_buchi() -> void:
 	var passo_x: float = area_l / float(COLONNE)
 	var passo_y: float = area_h / float(RIGHE)
 	var lato: float = min(passo_x, passo_y) * 0.80
-	mole_su = lato * 0.10
-	mole_giu = lato * 0.62
+	mole_su = lato * -0.02
+	mole_giu = lato * 0.70
 	var i: int = 0
 	for r in RIGHE:
 		for c in COLONNE:
@@ -88,7 +90,7 @@ func _crea_buchi() -> void:
 			var mole: TextureRect = TextureRect.new()
 			mole.texture = talpa_tex
 			mole.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			var mw: float = lato * 0.64
+			var mw: float = lato * 0.80
 			mole.size = Vector2(mw, mw)
 			mole.position = Vector2((lato - mw) / 2.0, mole_giu)
 			mole.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -153,12 +155,30 @@ func _abbassa_talpa(i: int) -> void:
 	tw.tween_property(m, "position:y", mole_giu, 0.13)
 	tw_talpe[i] = tw
 
+func _bagliore(i: int) -> void:
+	var b: Button = buchi[i]
+	var g: TextureRect = TextureRect.new()
+	g.texture = bagliore_tex
+	g.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	var s: float = b.size.x * 1.1
+	g.size = Vector2(s, s)
+	g.position = b.position + Vector2((b.size.x - s) / 2.0, (b.size.y - s) / 2.0 - b.size.y * 0.08)
+	g.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	g.pivot_offset = Vector2(s / 2.0, s / 2.0)
+	add_child(g)
+	g.scale = Vector2(0.5, 0.5)
+	var tw: Tween = create_tween().set_parallel(true)
+	tw.tween_property(g, "scale", Vector2(1.25, 1.25), 0.30)
+	tw.tween_property(g, "modulate:a", 0.0, 0.30).from(1.0)
+	tw.chain().tween_callback(g.queue_free)
+
 func _colpita(idx: int) -> void:
 	if not in_gioco:
 		return
 	if idx == talpa_attiva:
 		punti += 1
 		_aggiorna_hud()
+		_bagliore(idx)
 		_nuova_talpa()
 
 func _fine() -> void:
