@@ -1,17 +1,14 @@
 extends Node2D
 # GIOCO — Torta in faccia.
-# Fionda: tocca e TIRA INDIETRO col dito. Compare una linea che ti mostra dove
-# andra' la torta. Lasci e la torta parte in arco verso la faccia. Piu' centri
-# il bersaglio, piu' punti. Hai un numero di tiri.
+# Punta verso la faccia: tocca o trascina il dito nel punto dove vuoi colpire.
+# Compare una linea che mostra la traiettoria. Lasci e la torta parte dritta
+# verso quel punto. Il punteggio dipende da quanto passi vicino al centro.
 #
-# LA FACCIA: e' il file sfondo.png (la foto a tutto schermo). Per cambiarla si
-# rigenera lo sfondo da una nuova foto.
+# LA FACCIA: e' il file sfondo.png (la foto a tutto schermo).
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const FORZA: float = 3.2
-const FORZA_MAX: float = 1500.0
-const GRAVITA: float = 1500.0
+const VELOCITA: float = 1700.0
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -36,6 +33,9 @@ var pronto: bool = true
 var in_volo: bool = false
 var puntando: bool = false
 var dito: Vector2 = Vector2.ZERO
+var vicino: float = 999999.0
+var vicino_pos: Vector2 = Vector2.ZERO
+var entrato: bool = false
 var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
@@ -66,13 +66,13 @@ func _ready() -> void:
 	campo.add_child(bersaglio)
 	linea = Line2D.new()
 	linea.width = 6.0
-	linea.default_color = Color(1, 1, 1, 0.8)
+	linea.default_color = Color(1, 1, 1, 0.85)
 	campo.add_child(linea)
 	torta = Sprite2D.new()
 	var torta_tex: Texture2D = load("res://torta.png")
 	torta.texture = torta_tex
 	torta.scale = Vector2(100.0 / float(torta_tex.get_width()), 100.0 / float(torta_tex.get_height()))
-	ancora = Vector2(vp.x * 0.5, vp.y - 140.0)
+	ancora = Vector2(vp.x * 0.5, vp.y - 130.0)
 	torta.position = ancora
 	campo.add_child(torta)
 	hudVar.position = Vector2(24, 24)
@@ -80,12 +80,12 @@ func _ready() -> void:
 	gameoverVar.add_theme_font_size_override("font_size", 40)
 	gameoverVar.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	gameoverVar.size = Vector2(400, 90)
-	gameoverVar.position = Vector2(vp.x / 2.0 - 200.0, vp.y * 0.72)
+	gameoverVar.position = Vector2(vp.x / 2.0 - 200.0, vp.y * 0.80)
 	gameoverVar.visible = false
 	rigiocaVar.focus_mode = Control.FOCUS_NONE
 	rigiocaVar.add_theme_font_size_override("font_size", 30)
 	rigiocaVar.size = Vector2(200, 60)
-	rigiocaVar.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.72 + 110.0)
+	rigiocaVar.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.80 + 100.0)
 	rigiocaVar.pressed.connect(_ricomincia)
 	rigiocaVar.visible = false
 	_aggiorna_hud()
@@ -119,46 +119,47 @@ func _process(delta: float) -> void:
 	elif puntando and pronto:
 		linea.points = _traiettoria()
 
-func _v0() -> Vector2:
-	var tira: Vector2 = ancora - dito         # tiri indietro: la torta va all'opposto
-	var v: Vector2 = tira * FORZA
-	if v.length() > FORZA_MAX:
-		v = v.normalized() * FORZA_MAX
-	v.y = -abs(v.y)                            # sempre verso l'alto: mai in basso
-	return v
+func _direzione() -> Vector2:
+	var d: Vector2 = dito - ancora
+	if d.length() < 20.0:
+		return Vector2.ZERO
+	d = d.normalized()
+	d.y = min(d.y, -0.25)      # sempre un po' verso l'alto, mai in basso
+	return d.normalized()
 
 func _traiettoria() -> PackedVector2Array:
-	var pts: PackedVector2Array = PackedVector2Array()
-	var v: Vector2 = _v0()
-	if v.length() < 60.0:
-		return pts
-	var p: Vector2 = ancora
-	for i in range(28):
-		pts.append(p)
-		v.y += GRAVITA * 0.03
-		p += v * 0.03
-		if p.y > vp.y + 40.0 or p.x < -40.0 or p.x > vp.x + 40.0:
-			break
-	return pts
+	var dir: Vector2 = _direzione()
+	if dir == Vector2.ZERO:
+		return PackedVector2Array()
+	return PackedVector2Array([ancora, ancora + dir * 1600.0])
 
 func _lancia() -> void:
-	var v: Vector2 = _v0()
-	if v.length() < 60.0:
+	var dir: Vector2 = _direzione()
+	if dir == Vector2.ZERO:
 		return
 	torta.position = ancora
-	torta_v = v
+	torta_v = dir * VELOCITA
 	in_volo = true
 	pronto = false
+	vicino = 999999.0
+	entrato = false
 
 func _vola(delta: float) -> void:
-	torta_v.y += GRAVITA * delta
 	torta.position += torta_v * delta
-	torta.rotation += delta * 8.0
+	torta.rotation += delta * 12.0
 	var d: float = torta.position.distance_to(centro)
+	if d < vicino:
+		vicino = d
+		vicino_pos = torta.position
 	if d <= r10:
-		_colpito(torta.position, d)
-	elif torta.position.y > vp.y + 120.0 or torta.position.x < -120.0 or torta.position.x > vp.x + 120.0:
-		_mancato()
+		entrato = true
+	if entrato and d > r10:
+		_colpito(vicino_pos, vicino)
+	elif torta.position.y < -120.0 or torta.position.x < -120.0 or torta.position.x > vp.x + 120.0 or torta.position.y > vp.y + 120.0:
+		if entrato:
+			_colpito(vicino_pos, vicino)
+		else:
+			_mancato()
 
 func _colpito(pos: Vector2, d: float) -> void:
 	var p: int = 10
@@ -174,7 +175,7 @@ func _colpito(pos: Vector2, d: float) -> void:
 	_fine_tiro()
 
 func _mancato() -> void:
-	_mostra_scritta(Vector2(vp.x / 2.0 - 90.0, vp.y * 0.5), "MANCATO")
+	_mostra_scritta(centro + Vector2(-90, 0), "MANCATO")
 	_fine_tiro()
 
 func _fine_tiro() -> void:
