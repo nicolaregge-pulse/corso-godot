@@ -1,14 +1,19 @@
 extends Node2D
 # GIOCO — Torta in faccia.
-# Punta verso la faccia: tocca o trascina il dito nel punto dove vuoi colpire.
-# Compare una linea che mostra la traiettoria. Lasci e la torta parte dritta
-# verso quel punto. Il punteggio dipende da quanto passi vicino al centro.
+# Trascina il dito verso la faccia: PIU' LONTANO trascini, PIU' FORTE tiri.
+# Una linea ti mostra l'arco dove cadra' la torta, cosi' regoli la potenza.
+# Il bersaglio oscilla, quindi serve anche tempismo. Punti secondo quanto sei
+# vicino al centro.
 #
 # LA FACCIA: e' il file sfondo.png (la foto a tutto schermo).
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const VELOCITA: float = 1700.0
+const FORZA: float = 2.7             # quanto conta la lunghezza del trascinamento
+const FORZA_MAX: float = 1550.0      # potenza massima
+const GRAVITA: float = 1500.0
+const OSCILLA: float = 90.0          # quanto oscilla il bersaglio (0 = fermo)
+const VELOCITA_OSCILLA: float = 1.6
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -22,6 +27,7 @@ var torta: Sprite2D
 var linea: Line2D
 var splats: Array = []
 var centro: Vector2
+var centro_ora: Vector2
 var half: float
 var r100: float
 var r50: float
@@ -39,6 +45,7 @@ var entrato: bool = false
 var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
+var tempo: float = 0.0
 var vp: Vector2
 
 func _ready() -> void:
@@ -49,6 +56,7 @@ func _ready() -> void:
 	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
+	centro_ora = centro
 	half = 290.0
 	r100 = 0.258 * half
 	r50 = 0.50 * half
@@ -72,7 +80,7 @@ func _ready() -> void:
 	var torta_tex: Texture2D = load("res://torta.png")
 	torta.texture = torta_tex
 	torta.scale = Vector2(100.0 / float(torta_tex.get_width()), 100.0 / float(torta_tex.get_height()))
-	ancora = Vector2(vp.x * 0.5, vp.y - 130.0)
+	ancora = Vector2(vp.x * 0.5, vp.y - 120.0)
 	torta.position = ancora
 	campo.add_child(torta)
 	hudVar.position = Vector2(24, 24)
@@ -106,6 +114,9 @@ func _input(event: InputEvent) -> void:
 		dito = event.position
 
 func _process(delta: float) -> void:
+	tempo += delta
+	centro_ora = centro + Vector2(sin(tempo * VELOCITA_OSCILLA) * OSCILLA, 0.0)
+	bersaglio.position = centro_ora
 	if tiri >= TIRI_TOTALI and not in_volo:
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
@@ -117,37 +128,46 @@ func _process(delta: float) -> void:
 	if in_volo:
 		_vola(delta)
 	elif puntando and pronto:
-		linea.points = _traiettoria()
+		linea.points = _arco()
 
-func _direzione() -> Vector2:
-	var d: Vector2 = dito - ancora
-	if d.length() < 20.0:
-		return Vector2.ZERO
-	d = d.normalized()
-	d.y = min(d.y, -0.25)      # sempre un po' verso l'alto, mai in basso
-	return d.normalized()
+func _v0() -> Vector2:
+	var tira: Vector2 = dito - ancora     # trascini verso dove vuoi tirare
+	var v: Vector2 = tira * FORZA
+	if v.length() > FORZA_MAX:
+		v = v.normalized() * FORZA_MAX
+	v.y = -abs(v.y)                        # sempre verso l'alto
+	return v
 
-func _traiettoria() -> PackedVector2Array:
-	var dir: Vector2 = _direzione()
-	if dir == Vector2.ZERO:
-		return PackedVector2Array()
-	return PackedVector2Array([ancora, ancora + dir * 1600.0])
+func _arco() -> PackedVector2Array:
+	var pts: PackedVector2Array = PackedVector2Array()
+	var v: Vector2 = _v0()
+	if v.length() < 80.0:
+		return pts
+	var p: Vector2 = ancora
+	for i in range(34):
+		pts.append(p)
+		v.y += GRAVITA * 0.035
+		p += v * 0.035
+		if p.y > vp.y + 30.0 or p.x < -30.0 or p.x > vp.x + 30.0:
+			break
+	return pts
 
 func _lancia() -> void:
-	var dir: Vector2 = _direzione()
-	if dir == Vector2.ZERO:
+	var v: Vector2 = _v0()
+	if v.length() < 80.0:
 		return
 	torta.position = ancora
-	torta_v = dir * VELOCITA
+	torta_v = v
 	in_volo = true
 	pronto = false
 	vicino = 999999.0
 	entrato = false
 
 func _vola(delta: float) -> void:
+	torta_v.y += GRAVITA * delta
 	torta.position += torta_v * delta
-	torta.rotation += delta * 12.0
-	var d: float = torta.position.distance_to(centro)
+	torta.rotation += delta * 10.0
+	var d: float = torta.position.distance_to(centro_ora)
 	if d < vicino:
 		vicino = d
 		vicino_pos = torta.position
@@ -155,7 +175,7 @@ func _vola(delta: float) -> void:
 		entrato = true
 	if entrato and d > r10:
 		_colpito(vicino_pos, vicino)
-	elif torta.position.y < -120.0 or torta.position.x < -120.0 or torta.position.x > vp.x + 120.0 or torta.position.y > vp.y + 120.0:
+	elif torta.position.y > vp.y + 150.0 or torta.position.x < -150.0 or torta.position.x > vp.x + 150.0:
 		if entrato:
 			_colpito(vicino_pos, vicino)
 		else:
@@ -175,7 +195,7 @@ func _colpito(pos: Vector2, d: float) -> void:
 	_fine_tiro()
 
 func _mancato() -> void:
-	_mostra_scritta(centro + Vector2(-90, 0), "MANCATO")
+	_mostra_scritta(centro_ora + Vector2(-90, 0), "MANCATO")
 	_fine_tiro()
 
 func _fine_tiro() -> void:
