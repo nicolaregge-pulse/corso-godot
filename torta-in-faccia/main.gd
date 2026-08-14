@@ -8,7 +8,7 @@ extends Node2D
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const FORZA_TIRO: float = 0.85       # sensibilita': quanto conta la velocita' della strisciata
+const FORZA_TIRO: float = 0.5        # sensibilita': quanto conta la velocita' della strisciata
 const TIRO_MAX: float = 1650.0       # velocita' massima del tiro
 const GRAVITA: float = 1600.0
 # =====================
@@ -47,7 +47,7 @@ func _ready() -> void:
 	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
-	half = 290.0
+	half = 350.0
 	r100 = 0.258 * half
 	r50 = 0.50 * half
 	r25 = 0.742 * half
@@ -83,7 +83,7 @@ func _ready() -> void:
 	rigiocaVar.pressed.connect(_ricomincia)
 	rigiocaVar.visible = false
 	var ver: Label = Label.new()
-	ver.text = "v7"
+	ver.text = "v8"
 	ver.add_theme_font_size_override("font_size", 26)
 	ver.modulate = Color(1, 1, 1, 0.55)
 	ver.position = Vector2(vp.x - 66.0, vp.y - 44.0)
