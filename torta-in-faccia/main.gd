@@ -88,12 +88,6 @@ func _ready() -> void:
 	rigiocaVar.position = Vector2(vp.x / 2.0 - 100.0, vp.y * 0.80 + 100.0)
 	rigiocaVar.pressed.connect(_ricomincia)
 	rigiocaVar.visible = false
-	var ver: Label = Label.new()
-	ver.text = "v9"
-	ver.add_theme_font_size_override("font_size", 26)
-	ver.modulate = Color(1, 1, 1, 0.55)
-	ver.position = Vector2(vp.x - 66.0, vp.y - 44.0)
-	add_child(ver)
 	_aggiorna_hud()
 
 func _input(event: InputEvent) -> void:
