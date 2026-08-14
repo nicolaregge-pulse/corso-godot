@@ -39,6 +39,8 @@ Giocabili subito dal telefono o dal browser, anche a computer spento:
   https://nicolaregge-pulse.github.io/corso-godot/talpa/
 - **Schiva gli asteroidi**, muovi la navetta e sopravvivi il più a lungo:
   https://nicolaregge-pulse.github.io/corso-godot/asteroidi/
+- **Rompi i mattoni**, racchetta e pallina che spaccano il muro di mattoni:
+  https://nicolaregge-pulse.github.io/corso-godot/mattoni/
 
 Sorgenti Godot dei giochi, in radice:
 
@@ -46,6 +48,7 @@ Sorgenti Godot dei giochi, in radice:
 - `gioco-del-quindici/` — il 15 puzzle.
 - `acchiappa-la-talpa/` — le talpe da toccare a tempo.
 - `schiva-gli-asteroidi/` — la navetta che schiva i sassi che cadono.
+- `rompi-i-mattoni/` — racchetta, pallina e muro di mattoni da spaccare.
 - `chirurgo-pasticcione/` — primo gioco, il vassoio che prende gli organi.
 - `acchiappa-le-stelle/` — mini gioco di esempio, la navetta che prende le stelle.
 
