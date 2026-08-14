@@ -8,9 +8,9 @@ extends Node2D
 
 # ===== FALLO TUO =====
 const TIRI_TOTALI: int = 5
-const FORZA_TIRO: float = 1.0        # moltiplica la velocita' della strisciata
-const TIRO_MAX: float = 2300.0       # velocita' massima del tiro
-const GRAVITA: float = 1500.0
+const FORZA_TIRO: float = 0.5        # sensibilita': quanto conta la velocita' della strisciata
+const TIRO_MAX: float = 1650.0       # velocita' massima del tiro
+const GRAVITA: float = 1600.0
 # =====================
 
 @onready var hudVar: Label = $hudScena
@@ -34,9 +34,6 @@ var pronto: bool = true
 var in_volo: bool = false
 var puntando: bool = false
 var storia: Array = []               # posizioni recenti del dito, per la velocita'
-var vicino: float = 999999.0
-var vicino_pos: Vector2 = Vector2.ZERO
-var entrato: bool = false
 var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
@@ -119,17 +116,16 @@ func _velocita_strisciata() -> Vector2:
 	return (ultimo[0] - primo[0]) / dt
 
 func _lancia() -> void:
-	var v: Vector2 = _velocita_strisciata() * FORZA_TIRO
-	if v.length() < 200.0:            # strisciata troppo lenta: non lancia
+	var raw: Vector2 = _velocita_strisciata()
+	if raw.length() < 250.0:          # strisciata troppo lenta: non lancia
 		return
+	var v: Vector2 = raw * FORZA_TIRO
 	if v.length() > TIRO_MAX:
 		v = v.normalized() * TIRO_MAX
 	torta.position = ancora
 	torta_v = v
 	in_volo = true
 	pronto = false
-	vicino = 999999.0
-	entrato = false
 
 func _process(delta: float) -> void:
 	if tiri >= TIRI_TOTALI and not in_volo:
@@ -144,22 +140,25 @@ func _process(delta: float) -> void:
 		_vola(delta)
 
 func _vola(delta: float) -> void:
+	var vy_prima: float = torta_v.y
 	torta_v.y += GRAVITA * delta
 	torta.position += torta_v * delta
 	torta.rotation += delta * 10.0
-	var d: float = torta.position.distance_to(centro)
-	if d < vicino:
-		vicino = d
-		vicino_pos = torta.position
-	if d <= r10:
-		entrato = true
-	if entrato and d > r10:
-		_colpito(vicino_pos, vicino)
-	elif torta.position.y > vp.y + 150.0 or torta.position.x < -150.0 or torta.position.x > vp.x + 150.0:
-		if entrato:
-			_colpito(vicino_pos, vicino)
+	# volata sopra la testa: tiro troppo forte, mancato
+	if torta.position.y < -40.0:
+		_mancato()
+		return
+	# apice dell'arco: era in salita, ora scende -> e' arrivata dove poteva
+	if vy_prima < 0.0 and torta_v.y >= 0.0:
+		var d: float = torta.position.distance_to(centro)
+		if d <= r10:
+			_colpito(torta.position, d)
 		else:
 			_mancato()
+		return
+	# esce di lato o cade sotto senza arrivare
+	if torta.position.y > vp.y + 150.0 or torta.position.x < -150.0 or torta.position.x > vp.x + 150.0:
+		_mancato()
 
 func _colpito(pos: Vector2, d: float) -> void:
 	var p: int = 10
