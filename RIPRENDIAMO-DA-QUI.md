@@ -109,6 +109,15 @@ Opzionali quando Nicola vuole (non urgenti, si possono fare anche prima):
 - Ritocchi ai giochi: suono (splat torta, presa talpa) e schermata iniziale.
 - Prova Cassaforte su iPhone con Serena (sospesa: da remoto e' scomoda).
 
+## Documenti consegnabili anche in PDF (regola di Nicola)
+Le **guide/documenti consegnabili** vanno prodotti **anche in PDF**, non solo in
+MD. Strumento: `manuale/_build/guida_pdf.py` (MD → HTML pulito) + `guida_pdf.js`
+(HTML → PDF con Chromium). Uso:
+`python3 manuale/_build/guida_pdf.py <guida.md>` poi
+`node manuale/_build/guida_pdf.js <guida.guida.html> <guida.pdf>`.
+Gia' fatti: `consegne/CREA-ACCOUNT-GITHUB.pdf`, `consegne/INVITO-ALLA-CLASSE.pdf`.
+Il manuale e l'eserciziario hanno il loro build dedicato (`genera_pdf.py`).
+
 ## Kit di consegna dei ragazzi — FATTO (in `consegne/`)
 Ogni consegna = una cartella con: **`scheda.md`** (modulo: cognome, nome, classe,
 esercizio/titolo, data, "cosa ho fatto con parole mie", "il mio tocco", "dove mi
