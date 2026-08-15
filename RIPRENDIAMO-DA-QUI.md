@@ -92,11 +92,22 @@ Migliorie già pubblicate (PR #56): l'anteprima del file su iPhone ora mostra le
 istruzioni chiare (Salva su File + link) invece della cassaforte "morta"; aggiunta
 la rotella con la percentuale mentre prepara il file.
 
+## ⛔ REGOLA (decisa da Nicola): le cose "coi ragazzi" si fanno IN CLASSE
+Tutto ciò che riguarda gli studenti — creare gli **account GitHub**, il **primo
+giro di consegna**, l'**invito alla classe** — si fa **con i ragazzi davanti, a
+scuola (da settembre), NON prima**. Non prepararle né sollecitarle in anticipo:
+il materiale è già pronto (`consegne/`), basta usarlo quando la classe c'è.
+
 ## Cosa manca (prossimi passi)
-1. **Release `v1.0`** da pubblicare dal browser (tag v1.0 su GitHub) — è la
-   versione congelata per i ragazzi. (Claude non ha lo strumento per crearla.)
-2. **Kit di consegna dei ragazzi** — vedi sotto: preparare il modello e la
-   struttura delle cartelle.
+Con la classe (a settembre, vedi regola sopra): account ragazzi · primo giro di
+consegna · invito alla classe.
+
+Opzionali quando Nicola vuole (non urgenti, si possono fare anche prima):
+- **Release** stabile aggiornata per i ragazzi (tag dal browser) quando si vuole
+  congelare il materiale nuovo (giochi, kit consegne, manuale 0.19).
+- Foto `es4-gioca.png` da inserire nel capitolo Esercizio 4 del manuale.
+- Ritocchi ai giochi: suono (splat torta, presa talpa) e schermata iniziale.
+- Prova Cassaforte su iPhone con Serena (sospesa: da remoto e' scomoda).
 
 ## Kit di consegna dei ragazzi — FATTO (in `consegne/`)
 Ogni consegna = una cartella con: **`scheda.md`** (modulo: cognome, nome, classe,

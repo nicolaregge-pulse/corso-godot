@@ -66,6 +66,8 @@ App che chiude un file con una password, tutto sul dispositivo. Online:
 
 Tutto per raccogliere e correggere i lavori dei ragazzi.
 
+- `consegne/CREA-ACCOUNT-GITHUB.md` — come i ragazzi si fanno l'account GitHub
+  (si fa in classe il primo giorno).
 - `consegne/INVITO-ALLA-CLASSE.md` — la guida del primo giro, dal fork alla prima
   consegna, tutta da browser.
 - `consegne/_MODELLO/` — il kit vuoto che i ragazzi copiano: `scheda.md` e
