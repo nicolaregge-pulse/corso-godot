@@ -28,6 +28,9 @@
     header h1 { margin: 0; font-size: 22px; }
     .carrello-info { font-size: 16px; }
     main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    #stato { display: none; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 15px; }
+    #stato.info   { background: #eef4ff; border: 1px solid #b6ccf5; color: #274690; }
+    #stato.errore { background: #fdecea; border: 1px solid #f5b5ae; color: #8a231b; }
     .prodotti { display: grid; gap: 16px;
                 grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
     .prodotto { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
@@ -57,6 +60,7 @@
   </header>
 
   <main>
+    <div id="stato"></div>
     <div id="prodotti" class="prodotti"></div>
 
     <div class="cassa">
@@ -94,15 +98,25 @@
           const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
           const { data, error } = await sb.from("prodotti").select("*").order("id");
           if (error) throw error;
-          prodotti = data;
+          prodotti = data;   // tutto ok: nessun messaggio
         } catch (e) {
           prodotti = PRODOTTI_DEMO;
-          console.warn("Database non raggiungibile, uso i prodotti di esempio:", e.message);
+          mostraStato("⚠️ Non riesco a leggere il database. Controlla di aver incollato bene i due valori (indirizzo e chiave). Intanto vedi dei prodotti di esempio.", "errore");
+          console.warn("Database non raggiungibile:", e.message);
         }
       } else {
         prodotti = PRODOTTI_DEMO;
+        mostraStato("ℹ️ Database non ancora collegato: stai vedendo prodotti di esempio. Metti i due valori (indirizzo e chiave) per i prodotti veri.", "info");
       }
       mostraProdotti();
+    }
+
+    // Mostra un avviso sopra i prodotti: tipo "info" (azzurro) o "errore" (rosso)
+    function mostraStato(testo, tipo) {
+      const s = document.getElementById("stato");
+      s.textContent = testo;
+      s.className = tipo;
+      s.style.display = "block";
     }
 
     function mostraProdotti() {
