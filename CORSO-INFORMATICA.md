@@ -1,6 +1,6 @@
 # Corso Informatica
 
-**Versione 1.2** — 16/08/2026
+**Versione 1.3** — 16/08/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che
@@ -57,7 +57,7 @@ Cartella `classe-1/negozio-online/`:
 
 | File | Per chi | Cos'è | Versione |
 |---|---|---|---|
-| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i punti dove mettere gli screenshot. | 1.2 |
+| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali** (crea repo, Pages, prodotti, ordine inviato). | 1.3 |
 | `modello-negozio.html` | ragazzi | Il **file di partenza** che ogni ragazzo copia e riempie (3 valori `CAMBIA QUI`). | — |
 | `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, valutazione. | 1.0 |
 | `prodotti.sql` | docente | Il **database dei prodotti** pronto da incollare in Supabase (con la sola-lettura). | — |
