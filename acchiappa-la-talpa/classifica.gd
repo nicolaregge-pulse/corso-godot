@@ -40,6 +40,7 @@ var _stato: Label
 var _riga_nome: HBoxContainer
 var _nome_edit: LineEdit
 var _ok_btn: Button
+var _nome_btn: Button
 var _righe: VBoxContainer
 var _rigioca_btn: Button
 
@@ -65,10 +66,15 @@ func apri(punti: int) -> void:
 	_titolo.text = "CLASSIFICA"
 	_stato.text = "Carico la classifica..."
 	_riga_nome.visible = false
+	_nome_btn.visible = false
 	_rigioca_btn.visible = false
 	_svuota_righe()
 	_fase = "leggi1"
 	_leggi()
+
+
+func _web() -> bool:
+	return OS.has_feature("web")
 
 
 # ---------------------------------------------------------------------------
@@ -135,10 +141,17 @@ func _entra_in_classifica() -> bool:
 func _dopo_lettura_iniziale() -> void:
 	if _entra_in_classifica():
 		_titolo.text = "SEI TRA I PRIMI 10!"
-		_stato.text = "Hai fatto %d %s. Scrivi il tuo nome:" % [_punti, etichetta]
-		_riga_nome.visible = true
-		_nome_edit.text = ""
-		_nome_edit.grab_focus()
+		_stato.text = "Hai fatto %d %s. Salva il tuo nome:" % [_punti, etichetta]
+		# Sul telefono/web usiamo la finestrella di scrittura del browser (la
+		# tastiera dentro Godot spesso non compare su Android). Su computer,
+		# la casella di testo classica.
+		if _web():
+			_nome_btn.visible = true
+			_riga_nome.visible = false
+		else:
+			_riga_nome.visible = true
+			_nome_edit.text = ""
+			_nome_edit.grab_focus()
 		_disegna_righe(-1)
 		_rigioca_btn.visible = false
 	else:
@@ -150,7 +163,24 @@ func _dopo_lettura_iniziale() -> void:
 
 
 func _on_ok() -> void:
-	var nome := _nome_edit.text.strip_edges()
+	_salva_nome(_nome_edit.text)
+
+
+func _on_nome_btn() -> void:
+	# Apre la finestrella di scrittura nativa del browser (tastiera vera del
+	# telefono). Ritorna il testo, oppure null se l'utente annulla.
+	var r = JavaScriptBridge.eval('window.prompt("Sei tra i primi 10! Scrivi il tuo nome (max 12):", "")', true)
+	if r == null:
+		_nome_btn.visible = false
+		_stato.text = "Va bene, non salvato. Ecco i primi 10:"
+		_disegna_righe(-1)
+		_rigioca_btn.visible = true
+		return
+	_salva_nome(str(r))
+
+
+func _salva_nome(testo: String) -> void:
+	var nome := testo.strip_edges()
 	if nome == "":
 		nome = "Anonimo"
 	if nome.length() > NOME_MAX:
@@ -158,6 +188,7 @@ func _on_ok() -> void:
 	_nome_salvato = nome
 	_punti_salvati = _punti
 	_riga_nome.visible = false
+	_nome_btn.visible = false
 	_stato.text = "Salvo il tuo punteggio..."
 	_fase = "scrivi"
 	_scrivi(nome, _punti)
@@ -252,6 +283,15 @@ func _costruisci_ui() -> void:
 	_ok_btn.pressed.connect(_on_ok)
 	_riga_nome.add_child(_ok_btn)
 	v.add_child(_riga_nome)
+
+	_nome_btn = Button.new()
+	_nome_btn.text = "✍  Scrivi il tuo nome"
+	_nome_btn.focus_mode = Control.FOCUS_NONE
+	_nome_btn.add_theme_font_size_override("font_size", 28)
+	_nome_btn.custom_minimum_size = Vector2(0, 54)
+	_nome_btn.pressed.connect(_on_nome_btn)
+	_nome_btn.visible = false
+	v.add_child(_nome_btn)
 
 	_righe = VBoxContainer.new()
 	_righe.add_theme_constant_override("separation", 4)
