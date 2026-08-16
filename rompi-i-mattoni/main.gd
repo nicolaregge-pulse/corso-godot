@@ -33,6 +33,7 @@ var vp: Vector2
 var lato_palla: float = 22.0
 var suonoRimbalzoVar: AudioStreamPlayer
 var suonoMattoneVar: AudioStreamPlayer
+var clas: CanvasLayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
@@ -46,6 +47,11 @@ func _ready() -> void:
 	suonoMattoneVar = AudioStreamPlayer.new()
 	suonoMattoneVar.stream = load("res://mattone.wav")
 	add_child(suonoMattoneVar)
+	clas = preload("res://classifica.gd").new()
+	clas.gioco = "mattoni"
+	clas.etichetta = "punti"
+	clas.al_rigioco = _ricomincia
+	add_child(clas)
 	_crea_racchetta()
 	_crea_palla()
 	_crea_mattoni()
@@ -99,6 +105,8 @@ func _rimetti_palla() -> void:
 
 func _process(delta: float) -> void:
 	if not in_gioco:
+		if clas.aperta:
+			return
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
 		return
@@ -173,19 +181,11 @@ func _muovi_palla(delta: float) -> void:
 
 func _game_over() -> void:
 	in_gioco = false
-	gameoverVar.text = "GAME OVER\nPunti: %d" % punti
-	gameoverVar.visible = true
-	gameoverVar.move_to_front()
-	rigiocaVar.visible = true
-	rigiocaVar.move_to_front()
+	clas.apri(punti)
 
 func _vittoria() -> void:
 	in_gioco = false
-	gameoverVar.text = "HAI VINTO!\nPunti: %d" % punti
-	gameoverVar.visible = true
-	gameoverVar.move_to_front()
-	rigiocaVar.visible = true
-	rigiocaVar.move_to_front()
+	clas.apri(punti)
 
 func _ricomincia() -> void:
 	for m in mattoni:

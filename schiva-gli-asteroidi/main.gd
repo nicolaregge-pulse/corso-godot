@@ -27,6 +27,7 @@ var in_gioco: bool = true
 var vp: Vector2
 var angolo: float = -PI / 2.0
 var suonoBoomVar: AudioStreamPlayer
+var clas: CanvasLayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
@@ -39,6 +40,11 @@ func _ready() -> void:
 	suonoBoomVar = AudioStreamPlayer.new()
 	suonoBoomVar.stream = load("res://boom.wav")
 	add_child(suonoBoomVar)
+	clas = preload("res://classifica.gd").new()
+	clas.gioco = "asteroidi"
+	clas.etichetta = "secondi"
+	clas.al_rigioco = _ricomincia
+	add_child(clas)
 	hudVar.position = Vector2(24, 24)
 	hudVar.add_theme_font_size_override("font_size", 30)
 	gameoverVar.add_theme_font_size_override("font_size", 40)
@@ -66,6 +72,8 @@ func _crea_nave() -> void:
 
 func _process(delta: float) -> void:
 	if not in_gioco:
+		if clas.aperta:
+			return
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
 		return
@@ -145,11 +153,7 @@ func _muovi_asteroidi(delta: float) -> void:
 func _game_over() -> void:
 	in_gioco = false
 	suonoBoomVar.play()
-	gameoverVar.text = "COLPITO!\nSei durato %d secondi" % int(tempo)
-	gameoverVar.visible = true
-	gameoverVar.move_to_front()
-	rigiocaVar.visible = true
-	rigiocaVar.move_to_front()
+	clas.apri(int(tempo))
 
 func _ricomincia() -> void:
 	for it in asteroidi:
