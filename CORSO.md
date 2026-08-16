@@ -61,7 +61,10 @@ Convenzione dei nomi: la variabile finisce in Var, il nodo nella scena in Scena.
 
 ## I giochi — giocabili dal browser, anche da telefono
 
-Aprili e giochi, senza installare niente.
+Aprili e giochi, senza installare niente. I quattro giochi arcade (talpa,
+asteroidi, mattoni, torta) hanno i **suoni** e una **classifica online condivisa**
+dei primi 10: a fine partita scrivi il nome con una tastiera a bottoni e sfidi
+tutti gli altri giocatori.
 
 - Affonda la Bonomi, battaglia navale 3D
   https://nicolaregge-pulse.github.io/corso-godot/

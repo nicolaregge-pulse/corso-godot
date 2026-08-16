@@ -30,7 +30,11 @@ finisce in Var, il nodo nella scena finisce in Scena.
 
 ## Giochi
 
-Giocabili subito dal telefono o dal browser, anche a computer spento:
+Giocabili subito dal telefono o dal browser, anche a computer spento. I quattro
+giochi arcade (talpa, asteroidi, mattoni, torta) hanno i **suoni** e la
+**classifica online condivisa** dei primi 10 giocatori: a fine partita si scrive
+il nome con una tastiera a bottoni e il punteggio va in una classifica unica per
+tutti (database Firebase).
 
 - **Affonda la Bonomi**, battaglia navale 3D:
   https://nicolaregge-pulse.github.io/corso-godot/

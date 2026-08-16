@@ -30,6 +30,23 @@
   `torta-in-faccia/` (tiro alla torta sul bersaglio-faccia, `/torta/`).
   **Tutti e quattro ora hanno i suoni** (presa, splat, rimbalzo/mattone, boom):
   file WAV in ogni cartella, agganciati via AudioStreamPlayer nel codice.
+- **Classifica online condivisa** sui quattro giochi arcade (`classifica.gd`,
+  identico in ogni cartella): a fine partita legge/scrive i primi 10 su un
+  **Firebase Realtime Database** via REST. A fine partita appare un overlay con
+  la classifica; se entri nei primi 10 scrivi il nome con una **tastiera a
+  bottoni disegnata nel gioco** (la tastiera di Android nella LineEdit di Godot e
+  `window.prompt` NON erano affidabili → risolto così). Ogni gioco usa una sua
+  chiave (`gioco = "talpa"/"asteroidi"/"mattoni"/"torta"`).
+  - **Database:** progetto Firebase `esempio1` (id `nicolaregge2`, creato da
+    Nicola nel suo account Google, piano gratuito Spark). URL nel codice:
+    `https://nicolaregge2-default-rtdb.europe-west1.firebasedatabase.app`.
+    Regole pubbliche permanenti (`.read`/`.write: true`) → chiunque gioca può
+    scrivere. Claude da qui NON raggiunge il database (proxy lo blocca): il
+    collaudo va fatto sul telefono.
+  - **Anti-cache:** `/tmp/bust.py` inietta in ogni `docs/*/index.html` una patch
+    che ricarica `index.pck` sempre fresco (`Date.now()` a ogni apertura), così i
+    **link puliti** (senza `?v=`) mostrano da soli l'ultima versione. Da rilanciare
+    dopo ogni export che sovrascrive l'index.html.
 - **Release `v1.0`** pubblicata (versione congelata per i ragazzi). La v1.1 è da
   pubblicare quando Nicola vuole (il tag lo crea lui dal browser, Claude non può).
 - Tutte le foto degli esercizi sono in `manuale/immagini/`
