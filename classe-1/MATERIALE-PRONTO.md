@@ -1,6 +1,6 @@
 # Materiale del Corso — Classe 1 (Informatica)
 
-**Versione 1.1** — 16/08/2026
+**Versione 1.2** — 16/08/2026
 *Documento per il docente. L'elenco di tutto il materiale pronto e degli esercizi
 già fatti, con lo stato di ciascuno. Si aggiorna man mano che il corso cresce.*
 
@@ -39,7 +39,7 @@ Materiale pronto (cartella `negozio-online/`):
 
 | File | Per chi | Cos'è | Versione |
 |---|---|---|---|
-| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i punti dove mettere gli screenshot. | 1.2 |
+| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali**. | 1.3 |
 | `modello-negozio.html` | ragazzi | Il **file di partenza** che ogni ragazzo copia e riempie (3 valori `CAMBIA QUI`). | — |
 | `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, gestione dei ritmi, valutazione. | 1.0 |
 | `prodotti.sql` | docente | Il **database dei prodotti** pronto da incollare in Supabase (con la sola-lettura). | — |

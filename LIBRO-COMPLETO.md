@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.1** — 16/08/2026
+**Versione 1.2** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -542,7 +542,7 @@ tranne l'incasso vero.
 
 
 # Il Mio Negozio Online — Guida per i ragazzi {#doc4}
-*Versione 1.2 · 16/08/2026 · Parte: Classe 1 — Informatica*
+*Versione 1.3 · 16/08/2026 · Parte: Classe 1 — Informatica*
 
 ### Un negozio vero, con database ed email — costruito da te
 
@@ -690,6 +690,9 @@ const EMAIL_ORDINI  = "iltuonome@esempio.it";
 5. Aspetta un minuto, apri il negozio e **ricarica**.
 6. Aggiungi qualche prodotto al carrello e premi **`Concludi l'ordine`**.
 7. Scrivi il tuo **nome** quando te lo chiede e conferma.
+
+![Il messaggio "Grazie, ordine inviato" che compare subito dopo aver concluso l'ordine.](classe-1/negozio-online/immagini/negozio-10-ordine-inviato.png)
+
 8. **La prima volta** ti arriva un'email da **FormSubmit** con un bottone tipo **`Activate`**: aprila (controlla anche lo **spam**) e cliccalo.
 
 ![L'email di FormSubmit con il bottone "Activate" da cliccare la prima volta.](classe-1/negozio-online/immagini/negozio-07-attiva-email.png)

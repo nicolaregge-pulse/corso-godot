@@ -1,6 +1,6 @@
 # Progetto: Il Mio Negozio Online 🛒
 
-**Versione 1.2** — 16/08/2026
+**Versione 1.3** — 16/08/2026
 
 ---
 
@@ -150,6 +150,9 @@ const EMAIL_ORDINI  = "iltuonome@esempio.it";
 5. Aspetta un minuto, apri il negozio e **ricarica**.
 6. Aggiungi qualche prodotto al carrello e premi **`Concludi l'ordine`**.
 7. Scrivi il tuo **nome** quando te lo chiede e conferma.
+
+![Il messaggio "Grazie, ordine inviato" che compare subito dopo aver concluso l'ordine.](immagini/negozio-10-ordine-inviato.png)
+
 8. **La prima volta** ti arriva un'email da **FormSubmit** con un bottone tipo **`Activate`**: aprila (controlla anche lo **spam**) e cliccalo.
 
 ![L'email di FormSubmit con il bottone "Activate" da cliccare la prima volta.](immagini/negozio-07-attiva-email.png)
