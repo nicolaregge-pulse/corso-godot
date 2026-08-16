@@ -35,6 +35,7 @@ var mole_su: float = 0.0
 var mole_giu: float = 0.0
 var bagliore_tex: Texture2D
 var suonoPresaVar: AudioStreamPlayer
+var clas: CanvasLayer
 
 func _ready() -> void:
 	talpa_tex = load("res://talpa.png")
@@ -45,6 +46,12 @@ func _ready() -> void:
 	suonoPresaVar = AudioStreamPlayer.new()
 	suonoPresaVar.stream = load("res://presa.wav")
 	add_child(suonoPresaVar)
+	# classifica online condivisa (i primi 10 di tutti i giocatori)
+	clas = preload("res://classifica.gd").new()
+	clas.gioco = "talpa"
+	clas.etichetta = "talpe"
+	clas.al_rigioco = _ricomincia
+	add_child(clas)
 	_crea_buchi()
 	punteggioVar.position = Vector2(24, 24)
 	punteggioVar.add_theme_font_size_override("font_size", 30)
@@ -116,6 +123,8 @@ func _crea_buchi() -> void:
 
 func _process(delta: float) -> void:
 	if not in_gioco:
+		if clas.aperta:
+			return
 		if Input.is_action_just_pressed("ui_accept"):
 			_ricomincia()
 		return
@@ -192,11 +201,8 @@ func _fine() -> void:
 	if talpa_attiva >= 0:
 		_spegni(talpa_attiva)
 		talpa_attiva = -1
-	gameoverVar.text = "TEMPO!\nHai preso %d talpe" % punti
-	gameoverVar.visible = true
-	gameoverVar.move_to_front()
-	rigiocaVar.visible = true
-	rigiocaVar.move_to_front()
+	# a fine partita apre la classifica online dei migliori 10
+	clas.apri(punti)
 
 func _ricomincia() -> void:
 	punti = 0
