@@ -180,10 +180,23 @@ esattamente dove agire. Prima dell'azione indico, in quest'ordine:
    alto a destra, riquadro in basso, ecc.
 5. **L'AZIONE esatta**, **una alla volta**.
 
-**Mai** dare un comando "nudo" senza dire **dove** va messo. Testi/comandi/valori
-da copiare vanno **sempre in un blocco di codice** (col bottone "copia"), mai nel
-blockquote `>`. Un passo alla volta; se è terreno nuovo per lui, massima
-precisione.
+**Mai** dare un comando "nudo" senza dire **dove** va messo. Un passo alla volta;
+se è terreno nuovo per lui, massima precisione.
+
+**⭐ REGOLA COPIA (VINCOLANTE, chiesta da Nicola — non violarla mai):** qualunque
+cosa Nicola debba **copiare** (un nome file, un valore, un comando, un pezzo di
+testo) va **SEMPRE** in un **blocco di codice recintato** — cioè su una riga a
+parte, tra ` ``` ` e ` ``` ` — così compare il **bottone "copia"** e lui NON deve
+selezionare col mouse. Regole precise:
+- **NON basta** il codice "in linea" con un solo apice (`` `così` ``): NON ha il
+  bottone copia → vietato per le cose da copiare.
+- **NON** metterlo come testo normale nella frase, né nel blockquote `>`.
+- **Un valore per blocco:** un solo riquadro = una sola cosa da copiare, così un
+  clic copia esattamente quella e nient'altro.
+- Vale anche per **nomi di file**: es. il nome da dare a uno screenshot va nel suo
+  riquadro, da solo.
+- Il testo dentro il riquadro dev'essere **esattamente** ciò che serve, pronto da
+  incollare (nessuna barra `/` nei nomi file di Windows, ecc.).
 
 **Rinforzo (chiesto da Nicola, vale SEMPRE — è più importante di andare veloci):**
 - **Una sola azione per riga numerata.** Mai due clic nella stessa riga.
