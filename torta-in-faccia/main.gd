@@ -41,6 +41,7 @@ var punti: int = 0
 var pausa: float = 0.0
 var vp: Vector2
 var suonoSplatVar: AudioStreamPlayer
+var clas: CanvasLayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
@@ -53,6 +54,11 @@ func _ready() -> void:
 	suonoSplatVar = AudioStreamPlayer.new()
 	suonoSplatVar.stream = load("res://splat.wav")
 	add_child(suonoSplatVar)
+	clas = preload("res://classifica.gd").new()
+	clas.gioco = "torta"
+	clas.etichetta = "punti"
+	clas.al_rigioco = _ricomincia
+	add_child(clas)
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
 	half = 300.0
 	r100 = 0.258 * half
@@ -96,6 +102,8 @@ func _ready() -> void:
 	_aggiorna_hud()
 
 func _input(event: InputEvent) -> void:
+	if clas.aperta:
+		return
 	if not pronto or in_volo:
 		return
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
@@ -111,9 +119,9 @@ func _input(event: InputEvent) -> void:
 		dito = event.position
 
 func _process(delta: float) -> void:
+	if clas.aperta:
+		return
 	if tiri >= TIRI_TOTALI and not in_volo:
-		if Input.is_action_just_pressed("ui_accept"):
-			_ricomincia()
 		return
 	if not pronto and not in_volo and pausa > 0.0:
 		pausa -= delta
@@ -231,11 +239,7 @@ func _mostra_scritta(pos: Vector2, txt: String) -> void:
 	tw.chain().tween_callback(l.queue_free)
 
 func _fine() -> void:
-	gameoverVar.text = "FINITO!\nPunti: %d" % punti
-	gameoverVar.visible = true
-	gameoverVar.move_to_front()
-	rigiocaVar.visible = true
-	rigiocaVar.move_to_front()
+	clas.apri(punti)
 
 func _ricomincia() -> void:
 	for s in splats:
