@@ -1,13 +1,19 @@
 # Riprendiamo da qui — nota per la prossima sessione
 
-*Aggiornato: 27/07/2026.*
+*Aggiornato: 16/08/2026.*
 
 ## Dove siamo (tutto su `main`)
 - **Indice di tutto il materiale**: `INDICE-DEL-MATERIALE.md` in radice — va
   tenuto aggiornato a ogni aggiunta o cambio.
-- **Manuale v0.19** — teoria, lettera a mano firmata "Nicola", schede, i 4
+- **Manuale v0.20** — teoria, lettera a mano firmata "Nicola", schede, i 4
   capitoli di costruzione degli esercizi 1-2-3-4 (Es4 = vite e game over),
-  progetto boss. Nel Cap. 3 aggiunti i mattoncini booleano/stato e visible.
+  progetto boss. Nel Cap. 3 i mattoncini booleano/stato e visible. Ora ha un
+  **Sommario cliccabile** dopo la copertina (+ segnalibri laterali nel PDF) e
+  **tutte** le foto: ogni esercizio ha sia la foto dell'ambiente sia quella del
+  gioco.
+- **Volume unico** `CORSO-COMPLETO-v1.1.pdf` — tutti i documenti in un solo PDF,
+  con indice cliccabile e segnalibri (si genera con `manuale/_build/volume_pdf.py`).
+  C'è anche `CORSO.md`/`CORSO.pdf`, il quadro completo stampabile.
 - **Eserciziario v0.15** (PDF `eserciziario-v0.15.pdf` generato) —
   esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
   ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del
@@ -18,12 +24,17 @@
 - **Giochi:** `battaglia-navale-3d/` (Affonda la Bonomi) e `gioco-del-quindici/`
   (15-puzzle con la foto di Serena incorporata, tessere di legno driftwood in
   rilievo nella vaschetta, sfondo beige; menu solo 3x3/4x4). Entrambi pubblicati
-  sul web (vedi sotto). Aggiunti due giochi nuovi: `acchiappa-la-talpa/` (talpe da
-  toccare a tempo) e `schiva-gli-asteroidi/` (navetta che schiva i sassi),
-  pubblicati su `/talpa/` e `/asteroidi/`.
-- **Release `v1.0`** pubblicata (versione congelata per i ragazzi).
+  sul web (vedi sotto). Aggiunti quattro giochi nuovi: `acchiappa-la-talpa/`
+  (talpe da toccare a tempo, `/talpa/`), `schiva-gli-asteroidi/` (navetta che
+  schiva i sassi, `/asteroidi/`), `rompi-i-mattoni/` (breakout, `/mattoni/`) e
+  `torta-in-faccia/` (tiro alla torta sul bersaglio-faccia, `/torta/`).
+  **Tutti e quattro ora hanno i suoni** (presa, splat, rimbalzo/mattone, boom):
+  file WAV in ogni cartella, agganciati via AudioStreamPlayer nel codice.
+- **Release `v1.0`** pubblicata (versione congelata per i ragazzi). La v1.1 è da
+  pubblicare quando Nicola vuole (il tag lo crea lui dal browser, Claude non può).
 - Tutte le foto degli esercizi sono in `manuale/immagini/`
-  (es1-ambiente, es1-gioca, es2-gioca, es3-ambiente, es3-gioca).
+  (es1-ambiente, es1-gioca, es2-ambiente, es2-gioca, es3-ambiente, es3-gioca,
+  es4-ambiente, es4-gioca).
 
 ## Verifica delle guide sull'interfaccia REALE di Godot (metodo, da ricordare)
 Le coordinate e i nomi dei pulsanti nelle guide passo-passo **non si scrivono a
