@@ -237,7 +237,7 @@ func _costruisci_ui() -> void:
 	var center := CenterContainer.new()
 	pannello.add_child(center)
 	var v := VBoxContainer.new()
-	v.custom_minimum_size = Vector2(460, 0)
+	v.custom_minimum_size = Vector2(640, 0)
 	v.add_theme_constant_override("separation", 10)
 	center.add_child(v)
 
@@ -313,8 +313,9 @@ func _tasto(testo: String, azione: Callable) -> Button:
 	var b := Button.new()
 	b.text = testo
 	b.focus_mode = Control.FOCUS_NONE
-	b.custom_minimum_size = Vector2(44, 46)
-	b.add_theme_font_size_override("font_size", 24)
+	b.custom_minimum_size = Vector2(0, 64)
+	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	b.add_theme_font_size_override("font_size", 34)
 	b.pressed.connect(azione)
 	return b
 
@@ -323,9 +324,9 @@ func _tasto_largo(testo: String, azione: Callable, colore: Color) -> Button:
 	var b := Button.new()
 	b.text = testo
 	b.focus_mode = Control.FOCUS_NONE
-	b.custom_minimum_size = Vector2(0, 50)
+	b.custom_minimum_size = Vector2(0, 62)
 	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	b.add_theme_font_size_override("font_size", 22)
+	b.add_theme_font_size_override("font_size", 26)
 	var st := StyleBoxFlat.new()
 	st.bg_color = colore
 	st.set_corner_radius_all(8)
