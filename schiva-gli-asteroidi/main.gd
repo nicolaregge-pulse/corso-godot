@@ -26,6 +26,7 @@ var spawn_timer: float = 0.0
 var in_gioco: bool = true
 var vp: Vector2
 var angolo: float = -PI / 2.0
+var suonoBoomVar: AudioStreamPlayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
@@ -34,6 +35,10 @@ func _ready() -> void:
 	add_child(campo)
 	move_child(campo, 0)
 	_crea_nave()
+	# il boom quando vieni colpito
+	suonoBoomVar = AudioStreamPlayer.new()
+	suonoBoomVar.stream = load("res://boom.wav")
+	add_child(suonoBoomVar)
 	hudVar.position = Vector2(24, 24)
 	hudVar.add_theme_font_size_override("font_size", 30)
 	gameoverVar.add_theme_font_size_override("font_size", 40)
@@ -139,6 +144,7 @@ func _muovi_asteroidi(delta: float) -> void:
 
 func _game_over() -> void:
 	in_gioco = false
+	suonoBoomVar.play()
 	gameoverVar.text = "COLPITO!\nSei durato %d secondi" % int(tempo)
 	gameoverVar.visible = true
 	gameoverVar.move_to_front()

@@ -40,6 +40,7 @@ var tiri: int = 0
 var punti: int = 0
 var pausa: float = 0.0
 var vp: Vector2
+var suonoSplatVar: AudioStreamPlayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
@@ -48,6 +49,10 @@ func _ready() -> void:
 	move_child(campo, 0)
 	var sfondo_tex: Texture2D = load("res://sfondo.png")
 	var bersaglio_tex: Texture2D = load("res://bersaglio.png")
+	# il suono "splat" quando la torta centra la faccia
+	suonoSplatVar = AudioStreamPlayer.new()
+	suonoSplatVar.stream = load("res://splat.wav")
+	add_child(suonoSplatVar)
 	centro = Vector2(vp.x * 0.5, vp.y * 0.505)
 	half = 300.0
 	r100 = 0.258 * half
@@ -205,6 +210,7 @@ func _rimetti() -> void:
 	pronto = true
 
 func _splat(pos: Vector2) -> void:
+	suonoSplatVar.play()
 	var s: Sprite2D = Sprite2D.new()
 	var tex: Texture2D = load("res://splat.png")
 	s.texture = tex
