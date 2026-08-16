@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.3"
+LIBRO_VERSION = "1.4"
 LIBRO_DATE = "16/08/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -228,8 +228,8 @@ EXTRA_CSS = r"""
 .docdiv {
   page-break-before: always;
   text-align: center;
-  padding-top: 30mm;
-  margin-bottom: 26px;
+  padding-top: 12mm;
+  margin-bottom: 22px;
   border-bottom: 3px double var(--godot-blue);
   padding-bottom: 18px;
 }
@@ -285,6 +285,24 @@ h1.dtitle {
 }
 .toc-sec a { color: var(--godot-blue-dark); }
 .toc a:hover { text-decoration: underline; }
+
+/* ---------- MENO SPAZI VUOTI ----------
+   Nel libro le sezioni (##) NON iniziano una pagina nuova ciascuna: scorrono
+   una dietro l'altra. Va a capo solo tra un DOCUMENTO e l'altro (.docdiv). */
+.chapter {
+  page-break-before: auto;
+  page-break-after: auto;
+  padding-top: 0;
+  margin: 22px 0 10px;
+  text-align: left;
+}
+h2.ctitle {
+  font-size: 19pt;
+  max-width: 100%;
+}
+.chapter .kicker { margin-bottom: 6px; }
+.chapter::after { margin: 10px 0 0; }
+.chapter .csub { margin-left: 0; max-width: 100%; }
 """
 
 
