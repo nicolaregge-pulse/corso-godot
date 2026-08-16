@@ -1,6 +1,6 @@
 # Progetto: Il Mio Negozio Online 🛒
 
-**Versione 1.3** — 16/08/2026
+**Versione 1.4** — 16/08/2026
 
 ---
 

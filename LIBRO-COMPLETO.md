@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.2** — 16/08/2026
+**Versione 1.3** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -542,7 +542,7 @@ tranne l'incasso vero.
 
 
 # Il Mio Negozio Online — Guida per i ragazzi {#doc4}
-*Versione 1.3 · 16/08/2026 · Parte: Classe 1 — Informatica*
+*Versione 1.4 · 16/08/2026 · Parte: Classe 1 — Informatica*
 
 ### Un negozio vero, con database ed email — costruito da te
 
