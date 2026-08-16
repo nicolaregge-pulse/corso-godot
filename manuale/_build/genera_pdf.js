@@ -30,6 +30,9 @@ const PDF_PATH = path.join(BUILD_DIR, '..', info.pdf);
     path: PDF_PATH,
     format: 'A4',
     printBackground: true,
+    // Segnalibri laterali (outline) generati dai titoli: servono 'tagged'.
+    tagged: true,
+    outline: true,
     displayHeaderFooter: true,
     margin: { top: '18mm', bottom: '18mm', left: '16mm', right: '16mm' },
     headerTemplate: '<div></div>',

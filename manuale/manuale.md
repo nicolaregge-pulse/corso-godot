@@ -1,6 +1,6 @@
 # Il Manuale — Corso di Godot
 
-**Versione 0.19** — 11/08/2026
+**Versione 0.20** — 16/08/2026
 *Fonte versionata del manuale. Da questo file si genera il PDF da consegnare.*
 
 > Come si legge questo manuale: è pensato per chi conosce già un po' **Lazarus** a livello base:
@@ -592,6 +592,8 @@ Come prima: crea un progetto `esercizio2`, poi nel pannello Scena clicca
 Seleziona **`Main`**, clicca **`+`**, cerca **`ColorRect`**, cioè un rettangolo
 colorato, **`Crea`**, e rinominalo **`quadratoScena`**.
 
+![L'editor di Godot con la scena: i nodi Main e quadratoScena](immagini/es2-ambiente.png)
+
 ### Passo 3 — Script e codice
 Attacca lo script a **`Main`**, cancella e incolla:
 ```gdscript
@@ -728,6 +730,8 @@ Crea il progetto `esercizio4`, **`Scena 2D`**, nodo radice **`Main`**. Aggiungi 
 - **`Label`** → rinominalo **`hudScena`**
 - **`Label`** → rinominalo **`gameoverScena`**
 
+![L'editor di Godot con la scena: i nodi navettaScena, stellaScena, hudScena e gameoverScena](immagini/es4-ambiente.png)
+
 ### Passo 2 — Script e codice
 Attacca lo script a **`Main`**, cancella tutto e incolla:
 ```gdscript
@@ -820,6 +824,8 @@ Due parole nuove da notare:
 ### Passo 3 — Vinci
 **`F5`**: muovi la navetta con **← →**, prendi le stelle, tieni le vite. Quando
 finiscono arriva il **GAME OVER**; premi **INVIO** e riparti.
+
+![Acchiappa le stelle: la navetta prende le stelle mentre scendono, con Punti e Vite in alto](immagini/es4-gioca.png)
 
 ### Fallo tuo
 - Cambia quante **vite** hai: il numero in `const VITE_INIZIALI`.
@@ -924,3 +930,4 @@ stai facendo non serve a niente.
 | 0.17 | 27/07/2026 | Rifatte le due foto dell'editor (es1-ambiente, es3-ambiente): ora mostrano i nomi nuovi dei nodi (bottoneScena/etichettaScena e cestinoScena/monetaScena/punteggioScena), coerenti con la convenzione. |
 | 0.18 | 27/07/2026 | Aggiunto il Capitolo 3 "I mattoncini, uno alla volta": 9 micro-lezioni a scoperta graduale (impari una cosa, la provi subito, avanti) che portano da zero fino a essere pronti per l'Esercizio 1. I capitoli di costruzione degli esercizi diventano 4-5-6 e il progetto boss il 7. |
 | 0.19 | 11/08/2026 | Coperto anche l'Esercizio 4. Nel Capitolo 3 due mattoncini nuovi: Passo 10 il booleano e lo stato del gioco, Passo 11 mostrare e nascondere con visible. Nuovo Capitolo 7 "Costruiamo l'Esercizio 4: acchiappa le stelle" (vite e game over); il capitolo sul progetto boss diventa l'8. |
+| 0.20 | 16/08/2026 | Aggiunta una pagina "Sommario" cliccabile all'inizio (indice navigabile: ogni voce salta al capitolo) e i segnalibri laterali nel PDF. Inserite le foto della scena mancanti: es2-ambiente (Cap. 5) ed es4-ambiente (Cap. 7); aggiunta anche la foto del gioco es4-gioca. Ora ogni esercizio ha sia la foto dell'ambiente sia quella del gioco. |

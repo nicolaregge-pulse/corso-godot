@@ -243,6 +243,46 @@ def build_body_html(md_text: str) -> str:
     return body_html
 
 
+def build_sommario(body_html: str, title: str) -> str:
+    """Costruisce la pagina 'Sommario' cliccabile dai capitoli del corpo.
+
+    Legge le aperture di capitolo (già trasformate da transform_chapter_openers):
+    ogni voce diventa un link interno all'ancora del capitolo (#id). Nel PDF
+    generato da Chromium questi link sono cliccabili e saltano alla pagina.
+    """
+    pat = re.compile(
+        r'<div class="chapter">\s*'
+        r'(?:<div class="kicker">(?P<kick>.*?)</div>\s*)?'
+        r'<h2 id="(?P<id>[^"]+)"[^>]*class="ctitle">(?P<title>.*?)</h2>',
+        flags=re.DOTALL,
+    )
+    voci = []
+    for m in pat.finditer(body_html):
+        # Il testo arriva già come HTML (con entità tipo &rsquo; &ldquo; prodotte
+        # da 'smarty'): tolgo i tag e DECODIFICO le entità, così poi le riescapo
+        # una volta sola senza doppio-escape.
+        kick = html.unescape(re.sub(r"<[^>]+>", "", m.group("kick") or "")).strip()
+        ttl = html.unescape(re.sub(r"<[^>]+>", "", m.group("title"))).strip()
+        anchor = m.group("id")
+        voci.append((kick, ttl, anchor))
+    if not voci:
+        return ""
+
+    righe = []
+    for kick, ttl, anchor in voci:
+        kick_html = f'<span class="s-kick">{html.escape(kick)}</span>' if kick else ""
+        righe.append(
+            f'<a class="s-voce" href="#{html.escape(anchor)}">'
+            f'{kick_html}<span class="s-tit">{html.escape(ttl)}</span></a>'
+        )
+    return (
+        '<section class="sommario">'
+        '<div class="s-testa">Sommario</div>'
+        '<div class="s-lista">' + "".join(righe) + "</div>"
+        "</section>"
+    )
+
+
 def typographic_fixes(html_str: str) -> str:
     """Piccoli aggiustamenti tipografici (niente parole "orfane" a fine riga):
 
@@ -685,6 +725,54 @@ details.lv3 { border-left-color: #de7a1a; }
 details.lv3 > summary { background: #fbe3cc; }
 details.lv4 { border-left-color: #d23b3b; }
 details.lv4 > summary { background: #f7dada; }
+
+/* ---------- SOMMARIO (indice cliccabile) ---------- */
+.sommario {
+  page-break-after: always;
+  padding-top: 8mm;
+}
+.sommario .s-testa {
+  font-family: var(--serif);
+  font-size: 27pt;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  margin: 0 0 6px;
+}
+.sommario .s-testa::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--godot-blue);
+  margin: 14px auto 26px;
+}
+.sommario .s-lista { max-width: 92%; margin: 0 auto; }
+.sommario a.s-voce {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 9px 4px;
+  border-bottom: 1px solid var(--line);
+  page-break-inside: avoid;
+}
+.sommario a.s-voce:last-child { border-bottom: none; }
+.sommario .s-kick {
+  flex: 0 0 92px;
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--godot-blue);
+}
+.sommario .s-tit {
+  font-family: var(--serif);
+  font-size: 13pt;
+  color: var(--ink);
+}
 """
 
 
@@ -701,6 +789,9 @@ def main():
     md_text = src_md.read_text(encoding="utf-8")
     version, date = read_version_and_date(md_text)
     body_html = build_body_html(md_text)
+    # Sommario cliccabile solo per il manuale (l'eserciziario ha già i suoi
+    # livelli e una struttura diversa).
+    sommario_html = build_sommario(body_html, cfg["title"]) if key == "manuale" else ""
 
     logo_uri = data_uri(IMG_DIR / "logo_vertical_monochrome_light.png")
 
@@ -744,6 +835,7 @@ def main():
     <div class="subtitle">{html.escape(COVER_SUBTITLE)}</div>
     <div class="author">{html.escape(COVER_AUTHOR)}</div>
   </section>
+  {sommario_html}
   <main>
     {body_html}
   </main>

@@ -3,13 +3,14 @@
 Mappa di tutto quello che c'è nel corso, sempre aggiornata. Se aggiungiamo o
 cambiamo qualcosa, si aggiorna qui.
 
-Ultimo aggiornamento: 10/08/2026.
+Ultimo aggiornamento: 16/08/2026.
 
 ## Manuale, in `manuale/`
 
-- **Libro di testo** — `manuale/manuale.md`, versione **0.19**. PDF pronto:
-  `manuale/manuale-v0.19.pdf`. La teoria di Godot, spiegata ai ragazzi, con le
-  foto dell'ambiente e i capitoli di costruzione degli esercizi 1-4.
+- **Libro di testo** — `manuale/manuale.md`, versione **0.20**. PDF pronto:
+  `manuale/manuale-v0.20.pdf`. La teoria di Godot, spiegata ai ragazzi, con il
+  **sommario cliccabile**, le foto dell'ambiente e del gioco di ogni esercizio
+  (1-4) e i capitoli di costruzione.
 - **Eserciziario** — `manuale/eserciziario.md`, versione **0.15**. PDF pronto:
   `manuale/eserciziario-v0.15.pdf`. Gli esercizi coi quattro livelli di aiuto, la
   guida passo passo e la spiegazione del codice riga per riga.
@@ -91,7 +92,7 @@ Tutto per raccogliere e correggere i lavori dei ragazzi.
 
 - `CORSO.md` e `CORSO.pdf` — quadro completo di tutto quello che abbiamo creato
   (manuale, esercizi, giochi, documenti), in un unico riepilogo stampabile.
-- `CORSO-COMPLETO-v1.0.pdf` — il VOLUME UNICO: tutti i documenti (con le immagini)
+- `CORSO-COMPLETO-v1.1.pdf` — il VOLUME UNICO: tutti i documenti (con le immagini)
   in un solo PDF, con indice cliccabile e segnalibri. Si genera con
   `manuale/_build/volume_pdf.py`.
 - `README.md` — la porta d'ingresso del repository, rimanda a questo indice.
