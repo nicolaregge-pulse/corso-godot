@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.0"
+LIBRO_VERSION = "1.1"
 LIBRO_DATE = "16/08/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -157,6 +157,7 @@ def main():
     #    repo come base (così le immagini 'manuale/immagini/...' si trovano).
     G.MANUALE_DIR = REPO_ROOT
     G.IMG_DIR = REPO_ROOT
+    G.DOC_DIR = REPO_ROOT  # nel libro i percorsi immagine sono già dalla radice
     body_html = G.build_body_html(libro_md)
 
     # 3b) i titoli di documento sono <h1>: li trasformo in "divisori di documento"

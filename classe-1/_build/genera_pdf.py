@@ -27,6 +27,10 @@ import markdown
 BUILD_DIR = Path(__file__).resolve().parent
 MANUALE_DIR = BUILD_DIR.parent
 IMG_DIR = MANUALE_DIR / "immagini"
+# Cartella del documento in lavorazione: le immagini 'immagini/...' si cercano
+# PRIMA qui (accanto al .md), così ogni documento tiene le sue immagini nella
+# propria sottocartella. main() la imposta al genitore del sorgente.
+DOC_DIR = MANUALE_DIR
 
 # ---------------------------------------------------------------------------
 # Documenti che sappiamo impaginare. Si sceglie da riga di comando:
@@ -187,12 +191,15 @@ def build_body_html(md_text: str) -> str:
         if src.startswith("data:"):
             # già incorporata (evita ri-elaborazione al secondo passaggio)
             return m.group(0)
-        # normalizza percorso relativo a manuale/
-        p = (MANUALE_DIR / src).resolve()
-        if not p.exists():
-            # prova nella cartella immagini
-            p = (IMG_DIR / Path(src).name).resolve()
-        if p.exists():
+        # cerca l'immagine, in ordine: accanto al documento, poi sotto manuale/,
+        # infine nella cartella immagini per nome.
+        p = None
+        for cand in ((DOC_DIR / src), (MANUALE_DIR / src), (IMG_DIR / Path(src).name)):
+            cand = cand.resolve()
+            if cand.exists():
+                p = cand
+                break
+        if p is not None and p.exists():
             uri = data_uri(p)
             # 'alt' arriva già HTML-escapato da markdown (es. &quot;): prima lo
             # decodifico, poi lo ri-escapo una volta sola, così nella didascalia
@@ -203,7 +210,17 @@ def build_body_html(md_text: str) -> str:
                     f'<img src="{uri}" alt="{cap}"/>'
                     + (f'<figcaption>{cap}</figcaption>' if cap else "")
                     + '</figure>')
-        return m.group(0)
+        # Immagine non ancora presente: mostro un riquadro-segnaposto con la
+        # descrizione e il NOME FILE da usare (così si vede dove va lo screenshot
+        # e come chiamarlo). Appena il file arriva, il riquadro diventa la foto.
+        fname = html.escape(Path(src).name)
+        alt_txt = html.unescape(alt) if alt else ""
+        cap = html.escape(alt_txt)
+        return (f'<figure class="fig"><div class="ph">'
+                f'<div class="ph-tag">📷 Qui va uno screenshot</div>'
+                + (f'<div class="ph-desc">{cap}</div>' if cap else "")
+                + f'<div class="ph-file">salva la foto come: <code>{fname}</code></div>'
+                + '</div></figure>')
 
     body_html = re.sub(
         r'<img\s+alt="(?P<alt>[^"]*)"\s+src="(?P<src>[^"]+)"\s*/?>',
@@ -602,6 +619,31 @@ figure.fig figcaption {
   text-align: center;
 }
 
+/* Segnaposto per uno screenshot non ancora inserito */
+figure.fig .ph {
+  border: 2px dashed #b9a97f;
+  background: #fbf7ee;
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+}
+figure.fig .ph-tag {
+  font-weight: 700;
+  color: #8a6d1f;
+  font-size: 11pt;
+}
+figure.fig .ph-desc {
+  color: #5a5147;
+  font-size: 10pt;
+  font-style: italic;
+  margin-top: 6px;
+}
+figure.fig .ph-file {
+  margin-top: 8px;
+  font-size: 9.5pt;
+  color: #6a6259;
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--line);
@@ -660,6 +702,9 @@ def main():
     cfg = DOCS[key]
     src_md = (MANUALE_DIR / cfg["src"]).resolve()
     out_html = BUILD_DIR / f"{key}.html"
+
+    global DOC_DIR
+    DOC_DIR = src_md.parent  # le immagini si cercano accanto al documento
 
     md_text = src_md.read_text(encoding="utf-8")
     version, date = read_version_and_date(md_text)

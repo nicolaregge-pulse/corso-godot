@@ -1,6 +1,6 @@
 # Progetto: Il Mio Negozio Online 🛒
 
-**Versione 1.1** — 09/08/2026
+**Versione 1.2** — 16/08/2026
 
 ---
 
@@ -16,6 +16,8 @@ arriva un'**email con l'ordine**. Tutto **gratis** e **senza installare niente**
 > - **La vetrina** = la pagina che si vede (i prodotti, il carrello).
 > - **Il database** = il magazzino dove sono scritti i prodotti.
 > - **L'email** = l'avviso che ti arriva quando qualcuno ordina.
+
+![Schema del negozio: il cliente apre la vetrina (il sito), il database le manda i prodotti e la vetrina invia l'ordine per email.](immagini/schema-negozio.svg)
 
 Facciamo tutto a **piccole tappe**: a ogni tappa qualcosa **funziona** e lo puoi
 **mostrare**. Se ti blocchi, nessun problema: sbagliare è normale, si torna
@@ -46,6 +48,8 @@ mio-negozio
 4. Poco sotto, lascia selezionato **`Public`** (serve per avere il link gratis).
 5. In fondo, clicca il bottone verde **`Create repository`**.
 
+![La pagina "New repository" con il nome del negozio scritto e l'opzione "Public" selezionata.](immagini/negozio-01-nuovo-repository.png)
+
 ### 1B · Carica il file del negozio
 6. Nella pagina appena aperta, nel riquadro azzurro in basso, clicca il link blu **`uploading an existing file`**.
 7. **Trascina** dentro l'area grande il file **`modello-negozio.html`**.
@@ -55,6 +59,8 @@ index.html
 ```
 9. Scendi in fondo e clicca il bottone verde **`Commit changes`**.
 
+![La casella con il nome del file cambiato in "index.html", prima di fare Commit.](immagini/negozio-02-rinomina-index.png)
+
 ### 1C · Accendi il link (GitHub Pages)
 10. In alto nella pagina del repository, clicca **`Settings`** (l'ingranaggio).
 11. Nel menu a **sinistra**, clicca **`Pages`**.
@@ -62,10 +68,14 @@ index.html
 13. Sotto, alla voce **`Branch`**, apri il menu e scegli **`main`**.
 14. Lascia la cartella su **`/ (root)`** e clicca **`Save`**.
 
+![La pagina "Pages" con Source "Deploy from a branch", il ramo "main" e la cartella "/ (root)".](immagini/negozio-03-pages-attiva.png)
+
 ### 1D · Apri il tuo negozio
 15. Aspetta **un minuto**, poi **ricarica** la pagina (tasto `F5`).
 16. In alto compare un riquadro con *"Your site is live at…"* e un indirizzo tipo `https://iltuonome.github.io/mio-negozio/`.
 17. **Clicca quell'indirizzo**: si apre il tuo negozio.
+
+![Il negozio aperto nel browser, con i prodotti di esempio e il carrello.](immagini/negozio-04-sito-live.png)
 
 > ✅ **FATTO!** Il tuo negozio è **online**. Aprilo sul telefono e fallo vedere a
 > un compagno. Prova ad aggiungere prodotti al carrello: il totale si aggiorna.
@@ -104,6 +114,8 @@ const SUPABASE_KEY  = "sb_publishable_xxxxx";
 ```
 6. In alto a destra, clicca il bottone verde **`Commit changes…`** → poi di nuovo **`Commit changes`**.
 
+![Le due righe SUPABASE_URL e SUPABASE_KEY con i valori del prof incollati tra le virgolette.](immagini/negozio-05-incolla-valori.png)
+
 ### 2C · Guarda il risultato
 7. Aspetta un minuto, apri il tuo negozio e **ricarica** (`Ctrl + F5`).
 
@@ -111,12 +123,16 @@ const SUPABASE_KEY  = "sb_publishable_xxxxx";
 > **Prova "wow":** quando il prof cambia un prodotto nel database, ricaricate i
 > vostri negozi… e cambia in **tutti** insieme! Ecco cos'è un database condiviso.
 
+![Il negozio con i prodotti VERI arrivati dal database della classe.](immagini/negozio-06-prodotti-veri.png)
+
 ---
 
 ## TAPPA 3 — Ricevi gli ordini via email 📧
 
 Obiettivo: quando qualcuno preme *"Concludi l'ordine"*, ti arriva un'**email**.
 Usiamo un aiutante gratuito che si chiama **FormSubmit**.
+
+![Come viaggia un ordine: premi "Concludi l'ordine", passa da FormSubmit e arriva come email a te con nome, prodotti e totale.](immagini/schema-ordine.svg)
 
 ### 3A · Metti la tua email nel file
 1. `[BROWSER — GitHub]` nel tuo repository, apri **`index.html`** e clicca la **matita** ✏️.
@@ -135,7 +151,12 @@ const EMAIL_ORDINI  = "iltuonome@esempio.it";
 6. Aggiungi qualche prodotto al carrello e premi **`Concludi l'ordine`**.
 7. Scrivi il tuo **nome** quando te lo chiede e conferma.
 8. **La prima volta** ti arriva un'email da **FormSubmit** con un bottone tipo **`Activate`**: aprila (controlla anche lo **spam**) e cliccalo.
+
+![L'email di FormSubmit con il bottone "Activate" da cliccare la prima volta.](immagini/negozio-07-attiva-email.png)
+
 9. Fai un **secondo** ordine di prova: adesso ti arriva l'**email con il riepilogo** (nome, prodotti, totale). 🎉
+
+![L'email con il riepilogo dell'ordine: nome del cliente, prodotti e totale.](immagini/negozio-08-email-ordine.png)
 
 > ✅ **FATTO!** Il tuo negozio è **completo**: prodotti dal database + ordini via
 > email. Roba da tecnico vero.
@@ -154,6 +175,8 @@ Adesso rendilo **tuo davvero**:
 
 > ✅ **Mostralo!** Fai uno screenshot del tuo negozio e mettilo nel tuo
 > **quaderno**. Scrivi due righe: *cos'è*, *come funziona*, *cosa hai cambiato tu*.
+
+![Il negozio personalizzato: nome e colore scelti dal ragazzo.](immagini/negozio-09-fatto-tuo.png)
 
 ---
 
