@@ -91,6 +91,9 @@ Tutto per raccogliere e correggere i lavori dei ragazzi.
 
 - `CORSO.md` e `CORSO.pdf` — quadro completo di tutto quello che abbiamo creato
   (manuale, esercizi, giochi, documenti), in un unico riepilogo stampabile.
+- `CORSO-COMPLETO-v1.0.pdf` — il VOLUME UNICO: tutti i documenti (con le immagini)
+  in un solo PDF, con indice cliccabile e segnalibri. Si genera con
+  `manuale/_build/volume_pdf.py`.
 - `README.md` — la porta d'ingresso del repository, rimanda a questo indice.
 - `CLAUDE.md` — preferenze e contesto del corso.
 - `RIPRENDIAMO-DA-QUI.md` — dove siamo e cosa manca, tra una sessione e l'altra.
