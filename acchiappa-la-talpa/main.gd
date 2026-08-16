@@ -34,12 +34,17 @@ var tw_talpe: Array = []
 var mole_su: float = 0.0
 var mole_giu: float = 0.0
 var bagliore_tex: Texture2D
+var suonoPresaVar: AudioStreamPlayer
 
 func _ready() -> void:
 	talpa_tex = load("res://talpa.png")
 	buco_tex = load("res://buco.png")
 	lembo_tex = load("res://lembo.png")
 	bagliore_tex = load("res://bagliore.png")
+	# il suono che parte quando prendi una talpa
+	suonoPresaVar = AudioStreamPlayer.new()
+	suonoPresaVar.stream = load("res://presa.wav")
+	add_child(suonoPresaVar)
 	_crea_buchi()
 	punteggioVar.position = Vector2(24, 24)
 	punteggioVar.add_theme_font_size_override("font_size", 30)
@@ -177,6 +182,7 @@ func _colpita(idx: int) -> void:
 		return
 	if idx == talpa_attiva:
 		punti += 1
+		suonoPresaVar.play()
 		_aggiorna_hud()
 		_bagliore(idx)
 		_nuova_talpa()

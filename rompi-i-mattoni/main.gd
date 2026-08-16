@@ -31,12 +31,21 @@ var vite: int = VITE_INIZIALI
 var in_gioco: bool = true
 var vp: Vector2
 var lato_palla: float = 22.0
+var suonoRimbalzoVar: AudioStreamPlayer
+var suonoMattoneVar: AudioStreamPlayer
 
 func _ready() -> void:
 	vp = get_viewport_rect().size
 	campo = Node2D.new()
 	add_child(campo)
 	move_child(campo, 0)
+	# suoni: rimbalzo della pallina e rottura del mattone
+	suonoRimbalzoVar = AudioStreamPlayer.new()
+	suonoRimbalzoVar.stream = load("res://rimbalzo.wav")
+	add_child(suonoRimbalzoVar)
+	suonoMattoneVar = AudioStreamPlayer.new()
+	suonoMattoneVar.stream = load("res://mattone.wav")
+	add_child(suonoMattoneVar)
 	_crea_racchetta()
 	_crea_palla()
 	_crea_mattoni()
@@ -114,13 +123,16 @@ func _muovi_palla(delta: float) -> void:
 	if palla.position.x <= 0.0:
 		palla.position.x = 0.0
 		palla_v.x = abs(palla_v.x)
+		suonoRimbalzoVar.play()
 	elif palla.position.x + lato_palla >= vp.x:
 		palla.position.x = vp.x - lato_palla
 		palla_v.x = -abs(palla_v.x)
+		suonoRimbalzoVar.play()
 	# soffitto
 	if palla.position.y <= 0.0:
 		palla.position.y = 0.0
 		palla_v.y = abs(palla_v.y)
+		suonoRimbalzoVar.play()
 	# caduta sotto: perdi una vita
 	if palla.position.y > vp.y:
 		vite -= 1
@@ -138,6 +150,7 @@ func _muovi_palla(delta: float) -> void:
 		offset = clamp(offset, -1.0, 1.0)
 		palla_v = Vector2(offset, -1.0).normalized() * VELOCITA_PALLA
 		palla.position.y = racchetta.position.y - lato_palla - 1.0
+		suonoRimbalzoVar.play()
 		return
 	# mattoni
 	for m in mattoni:
@@ -151,6 +164,7 @@ func _muovi_palla(delta: float) -> void:
 				palla_v.y = -palla_v.y
 			mattoni.erase(m)
 			m.queue_free()
+			suonoMattoneVar.play()
 			punti += 1
 			_aggiorna_hud()
 			if mattoni.is_empty():
