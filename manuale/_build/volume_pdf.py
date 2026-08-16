@@ -10,19 +10,19 @@ per manuale/eserciziario e guida_pdf.py per le guide).
 
 Uso (dalla radice del repo):
     python3 manuale/_build/volume_pdf.py
-Produce: CORSO-COMPLETO-v1.0.pdf
+Produce: CORSO-COMPLETO-v1.1.pdf
 """
 import fitz  # PyMuPDF
 from pathlib import Path
 
-VERSIONE = "1.0"
+VERSIONE = "1.1"
 DATA = "16/08/2026"
 OUT = f"CORSO-COMPLETO-v{VERSIONE}.pdf"
 
 # ordine e titoli delle voci dell'indice (percorso PDF -> titolo)
 TITOLI = {
     "CORSO.pdf": "Corso Godot — panoramica generale",
-    "manuale/manuale-v0.19.pdf": "Manuale — libro di testo — v0.19",
+    "manuale/manuale-v0.20.pdf": "Manuale — libro di testo — v0.20",
     "manuale/eserciziario-v0.15.pdf": "Eserciziario — v0.15",
     "manuale/quaderno-studente-TEMPLATE.pdf": "Quaderno dello studente — modello",
     "SCALETTA-LEZIONI.pdf": "Scaletta delle lezioni",

@@ -1,15 +1,16 @@
 # Corso Godot — tutto quello che abbiamo creato
 
-*Quadro completo del corso, aggiornato al 15/08/2026. Tiene traccia di tutto:
+*Quadro completo del corso, aggiornato al 16/08/2026. Tiene traccia di tutto:
 manuale, esercizi, giochi, documenti e strumenti. Per l'elenco sempre vivo dei
 percorsi vedi anche INDICE-DEL-MATERIALE.*
 
 ---
 
-## Il manuale — libro di testo, versione 0.19
+## Il manuale — libro di testo, versione 0.20
 
-Teoria di Godot spiegata ai ragazzi, con il ponte da Lazarus e le foto
-dell'ambiente. File sorgente `manuale/manuale.md`, PDF `manuale-v0.19.pdf`.
+Teoria di Godot spiegata ai ragazzi, con il ponte da Lazarus, il sommario
+cliccabile e le foto dell'ambiente e del gioco di ogni esercizio. File sorgente
+`manuale/manuale.md`, PDF `manuale-v0.20.pdf`.
 
 Schede iniziali:
 - Scheda 1 — Come si valutano i compiti
