@@ -4,8 +4,8 @@ extends CanvasLayer
 # ----------------------------------------------------------------------------
 # Riutilizzabile in tutti i giochi. A fine partita mostra i primi 10 punteggi
 # di TUTTI i giocatori (letti dal database online). Se il tuo punteggio entra
-# in classifica, ti chiede il nome e lo salva; altrimenti ti dice che non sei
-# tra i primi 10. Un pulsante "Rigioca" chiude e fa ripartire il gioco.
+# in classifica, ti chiede il nome (con una tastiera a bottoni disegnata nel
+# gioco, così funziona con il dito su qualsiasi telefono) e lo salva.
 #
 # Come si usa (dal gioco):
 #   var clas := preload("res://classifica.gd").new()
@@ -32,15 +32,14 @@ var _punti: int = 0
 var _nome_salvato: String = ""
 var _punti_salvati: int = -1
 var _lista: Array = []
+var _nome_corrente: String = ""
 
 # --- UI ---
 var _sfondo: ColorRect
 var _titolo: Label
 var _stato: Label
-var _riga_nome: HBoxContainer
-var _nome_edit: LineEdit
-var _ok_btn: Button
-var _nome_btn: Button
+var _nome_display: Label
+var _tastiera: VBoxContainer
 var _righe: VBoxContainer
 var _rigioca_btn: Button
 
@@ -61,27 +60,24 @@ func apri(punti: int) -> void:
 	_punti = punti
 	_nome_salvato = ""
 	_punti_salvati = -1
+	_nome_corrente = ""
 	aperta = true
 	visible = true
 	_titolo.text = "CLASSIFICA"
 	_stato.text = "Carico la classifica..."
-	_riga_nome.visible = false
-	_nome_btn.visible = false
+	_nome_display.visible = false
+	_tastiera.visible = false
 	_rigioca_btn.visible = false
 	_svuota_righe()
 	_fase = "leggi1"
 	_leggi()
 
 
-func _web() -> bool:
-	return OS.has_feature("web")
-
-
 # ---------------------------------------------------------------------------
 # Rete
 # ---------------------------------------------------------------------------
 func _leggi() -> void:
-	var url := "%s/classifica/%s.json?print=pretty" % [URL_DB, gioco]
+	var url := "%s/classifica/%s.json" % [URL_DB, gioco]
 	_http.request(url)
 
 
@@ -141,54 +137,42 @@ func _entra_in_classifica() -> bool:
 func _dopo_lettura_iniziale() -> void:
 	if _entra_in_classifica():
 		_titolo.text = "SEI TRA I PRIMI 10!"
-		_stato.text = "Hai fatto %d %s. Salva il tuo nome:" % [_punti, etichetta]
-		# Sul telefono/web usiamo la finestrella di scrittura del browser (la
-		# tastiera dentro Godot spesso non compare su Android). Su computer,
-		# la casella di testo classica.
-		if _web():
-			_nome_btn.visible = true
-			_riga_nome.visible = false
-		else:
-			_riga_nome.visible = true
-			_nome_edit.text = ""
-			_nome_edit.grab_focus()
-		_disegna_righe(-1)
+		_stato.text = "Hai fatto %d %s. Scrivi il tuo nome:" % [_punti, etichetta]
+		_nome_corrente = ""
+		_aggiorna_nome_display()
+		_nome_display.visible = true
+		_tastiera.visible = true
+		_svuota_righe()          # durante la scrittura la lista sta nascosta
 		_rigioca_btn.visible = false
 	else:
 		_titolo.text = "CLASSIFICA"
 		_stato.text = "Hai fatto %d %s. Non sei tra i primi 10... riprova!" % [_punti, etichetta]
-		_riga_nome.visible = false
+		_nome_display.visible = false
+		_tastiera.visible = false
 		_disegna_righe(-1)
 		_rigioca_btn.visible = true
 
 
-func _on_ok() -> void:
-	_salva_nome(_nome_edit.text)
+func _on_lettera(ch: String) -> void:
+	if _nome_corrente.length() < NOME_MAX:
+		_nome_corrente += ch
+		_aggiorna_nome_display()
 
 
-func _on_nome_btn() -> void:
-	# Apre la finestrella di scrittura nativa del browser (tastiera vera del
-	# telefono). Ritorna il testo, oppure null se l'utente annulla.
-	var r = JavaScriptBridge.eval('window.prompt("Sei tra i primi 10! Scrivi il tuo nome (max 12):", "")', true)
-	if r == null:
-		_nome_btn.visible = false
-		_stato.text = "Va bene, non salvato. Ecco i primi 10:"
-		_disegna_righe(-1)
-		_rigioca_btn.visible = true
-		return
-	_salva_nome(str(r))
+func _on_canc() -> void:
+	if _nome_corrente.length() > 0:
+		_nome_corrente = _nome_corrente.substr(0, _nome_corrente.length() - 1)
+		_aggiorna_nome_display()
 
 
-func _salva_nome(testo: String) -> void:
-	var nome := testo.strip_edges()
+func _on_conferma() -> void:
+	var nome := _nome_corrente.strip_edges()
 	if nome == "":
 		nome = "Anonimo"
-	if nome.length() > NOME_MAX:
-		nome = nome.substr(0, NOME_MAX)
 	_nome_salvato = nome
 	_punti_salvati = _punti
-	_riga_nome.visible = false
-	_nome_btn.visible = false
+	_nome_display.visible = false
+	_tastiera.visible = false
 	_stato.text = "Salvo il tuo punteggio..."
 	_fase = "scrivi"
 	_scrivi(nome, _punti)
@@ -197,15 +181,12 @@ func _salva_nome(testo: String) -> void:
 func _mostra_finale() -> void:
 	_titolo.text = "CLASSIFICA"
 	_stato.text = "Ecco i migliori 10!"
-	# trova la posizione della riga appena salvata, per evidenziarla
 	var mia := -1
-	var contati := 0
-	for i in range(_lista.size()):
-		if contati >= MAX:
-			break
-		if mia == -1 and str(_lista[i]["nome"]) == _nome_salvato and int(_lista[i]["punti"]) == _punti_salvati:
+	var n: int = min(_lista.size(), MAX)
+	for i in range(n):
+		if str(_lista[i]["nome"]) == _nome_salvato and int(_lista[i]["punti"]) == _punti_salvati:
 			mia = i
-		contati += 1
+			break
 	_disegna_righe(mia)
 	_rigioca_btn.visible = true
 
@@ -213,8 +194,9 @@ func _mostra_finale() -> void:
 func _mostra_offline() -> void:
 	_titolo.text = "CLASSIFICA"
 	_stato.text = "Classifica non disponibile (manca la connessione). Riprova più tardi."
+	_nome_display.visible = false
+	_tastiera.visible = false
 	_svuota_righe()
-	_riga_nome.visible = false
 	_rigioca_btn.visible = true
 
 
@@ -230,33 +212,38 @@ func _on_rigioca() -> void:
 # ---------------------------------------------------------------------------
 func _costruisci_ui() -> void:
 	_sfondo = ColorRect.new()
-	_sfondo.color = Color(0, 0, 0, 0.74)
+	_sfondo.color = Color(0, 0, 0, 0.78)
 	_sfondo.set_anchors_preset(Control.PRESET_FULL_RECT)
 	_sfondo.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(_sfondo)
 
 	var pannello := PanelContainer.new()
 	pannello.set_anchors_preset(Control.PRESET_FULL_RECT)
-	pannello.offset_left = 22
-	pannello.offset_top = 44
-	pannello.offset_right = -22
-	pannello.offset_bottom = -44
+	pannello.offset_left = 16
+	pannello.offset_top = 28
+	pannello.offset_right = -16
+	pannello.offset_bottom = -28
 	var stile := StyleBoxFlat.new()
 	stile.bg_color = Color(0.12, 0.12, 0.16, 0.98)
 	stile.border_color = Color(1.0, 0.82, 0.25)
 	stile.set_border_width_all(3)
 	stile.set_corner_radius_all(14)
-	stile.set_content_margin_all(18)
+	stile.set_content_margin_all(14)
 	pannello.add_theme_stylebox_override("panel", stile)
 	_sfondo.add_child(pannello)
 
+	# centra il contenuto e ne limita la larghezza, così su schermo largo
+	# (PC) non si sparpaglia e su telefono resta comodo.
+	var center := CenterContainer.new()
+	pannello.add_child(center)
 	var v := VBoxContainer.new()
-	v.add_theme_constant_override("separation", 12)
-	pannello.add_child(v)
+	v.custom_minimum_size = Vector2(460, 0)
+	v.add_theme_constant_override("separation", 10)
+	center.add_child(v)
 
 	_titolo = Label.new()
 	_titolo.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_titolo.add_theme_font_size_override("font_size", 40)
+	_titolo.add_theme_font_size_override("font_size", 36)
 	_titolo.add_theme_color_override("font_color", Color(1.0, 0.82, 0.25))
 	_titolo.text = "CLASSIFICA"
 	v.add_child(_titolo)
@@ -264,34 +251,26 @@ func _costruisci_ui() -> void:
 	_stato = Label.new()
 	_stato.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_stato.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_stato.add_theme_font_size_override("font_size", 22)
+	_stato.add_theme_font_size_override("font_size", 20)
 	v.add_child(_stato)
 
-	_riga_nome = HBoxContainer.new()
-	_riga_nome.add_theme_constant_override("separation", 10)
-	_nome_edit = LineEdit.new()
-	_nome_edit.placeholder_text = "Il tuo nome"
-	_nome_edit.max_length = NOME_MAX
-	_nome_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_nome_edit.add_theme_font_size_override("font_size", 26)
-	_nome_edit.text_submitted.connect(func(_t): _on_ok())
-	_riga_nome.add_child(_nome_edit)
-	_ok_btn = Button.new()
-	_ok_btn.text = "OK"
-	_ok_btn.focus_mode = Control.FOCUS_NONE
-	_ok_btn.add_theme_font_size_override("font_size", 26)
-	_ok_btn.pressed.connect(_on_ok)
-	_riga_nome.add_child(_ok_btn)
-	v.add_child(_riga_nome)
+	# riquadro che mostra il nome mentre lo scrivi
+	_nome_display = Label.new()
+	_nome_display.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_nome_display.add_theme_font_size_override("font_size", 30)
+	_nome_display.add_theme_color_override("font_color", Color(1, 1, 1))
+	var box := StyleBoxFlat.new()
+	box.bg_color = Color(0.06, 0.06, 0.09)
+	box.border_color = Color(0.5, 0.5, 0.6)
+	box.set_border_width_all(2)
+	box.set_corner_radius_all(8)
+	box.set_content_margin_all(8)
+	_nome_display.add_theme_stylebox_override("normal", box)
+	v.add_child(_nome_display)
 
-	_nome_btn = Button.new()
-	_nome_btn.text = "✍  Scrivi il tuo nome"
-	_nome_btn.focus_mode = Control.FOCUS_NONE
-	_nome_btn.add_theme_font_size_override("font_size", 28)
-	_nome_btn.custom_minimum_size = Vector2(0, 54)
-	_nome_btn.pressed.connect(_on_nome_btn)
-	_nome_btn.visible = false
-	v.add_child(_nome_btn)
+	# tastiera a bottoni (lettere + cancella + ok)
+	_tastiera = _costruisci_tastiera()
+	v.add_child(_tastiera)
 
 	_righe = VBoxContainer.new()
 	_righe.add_theme_constant_override("separation", 4)
@@ -305,6 +284,59 @@ func _costruisci_ui() -> void:
 	_rigioca_btn.custom_minimum_size = Vector2(0, 56)
 	_rigioca_btn.pressed.connect(_on_rigioca)
 	v.add_child(_rigioca_btn)
+
+
+func _costruisci_tastiera() -> VBoxContainer:
+	var cont := VBoxContainer.new()
+	cont.add_theme_constant_override("separation", 6)
+	var righe := ["ABCDEFG", "HIJKLMN", "OPQRSTU", "VWXYZ"]
+	for r in righe:
+		var h := HBoxContainer.new()
+		h.alignment = BoxContainer.ALIGNMENT_CENTER
+		h.add_theme_constant_override("separation", 6)
+		for i in range(r.length()):
+			var ch: String = r[i]
+			h.add_child(_tasto(ch, func(): _on_lettera(ch)))
+		cont.add_child(h)
+	# ultima riga: SPAZIO, CANCELLA, OK
+	var h2 := HBoxContainer.new()
+	h2.alignment = BoxContainer.ALIGNMENT_CENTER
+	h2.add_theme_constant_override("separation", 6)
+	h2.add_child(_tasto_largo("spazio", func(): _on_lettera(" "), Color(0.30, 0.32, 0.40)))
+	h2.add_child(_tasto_largo("⌫  cancella", _on_canc, Color(0.55, 0.30, 0.30)))
+	h2.add_child(_tasto_largo("OK", _on_conferma, Color(0.25, 0.55, 0.30)))
+	cont.add_child(h2)
+	return cont
+
+
+func _tasto(testo: String, azione: Callable) -> Button:
+	var b := Button.new()
+	b.text = testo
+	b.focus_mode = Control.FOCUS_NONE
+	b.custom_minimum_size = Vector2(44, 46)
+	b.add_theme_font_size_override("font_size", 24)
+	b.pressed.connect(azione)
+	return b
+
+
+func _tasto_largo(testo: String, azione: Callable, colore: Color) -> Button:
+	var b := Button.new()
+	b.text = testo
+	b.focus_mode = Control.FOCUS_NONE
+	b.custom_minimum_size = Vector2(0, 50)
+	b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	b.add_theme_font_size_override("font_size", 22)
+	var st := StyleBoxFlat.new()
+	st.bg_color = colore
+	st.set_corner_radius_all(8)
+	st.set_content_margin_all(8)
+	b.add_theme_stylebox_override("normal", st)
+	b.pressed.connect(azione)
+	return b
+
+
+func _aggiorna_nome_display() -> void:
+	_nome_display.text = _nome_corrente if _nome_corrente != "" else "(tocca le lettere)"
 
 
 func _svuota_righe() -> void:
@@ -337,7 +369,7 @@ func _disegna_righe(evidenzia: int) -> void:
 		nom.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		nom.add_theme_font_size_override("font_size", 24)
 		nom.add_theme_color_override("font_color", col)
-		nom.text = (str(_lista[i]["nome"]) + "  ◄ TU") if e else str(_lista[i]["nome"])
+		nom.text = (str(_lista[i]["nome"]) + "  (TU)") if e else str(_lista[i]["nome"])
 		riga.add_child(nom)
 		var pun := Label.new()
 		pun.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
