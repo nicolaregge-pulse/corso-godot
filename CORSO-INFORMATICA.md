@@ -1,10 +1,16 @@
 # Corso Informatica
 
-**Versione 1.0** — 15/08/2026
+**Versione 1.1** — 16/08/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che
 il corso cresce.*
+
+> **C'è anche il "libro unico".** Oltre a questo indice, esiste
+> `LIBRO-COMPLETO.md` (+ PDF): un **unico libro** che contiene **dentro** tutti i
+> documenti del corso nella loro ultima versione, con **indice cliccabile e
+> segnalibri navigabili**. Si rigenera con un comando ogni volta che un documento
+> cambia (vedi Parte 4).
 
 ---
 
@@ -126,10 +132,17 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 | Cosa | A cosa serve |
 |---|---|
+| `LIBRO-COMPLETO.md` (+ PDF) | Il **libro unico**: tutti i documenti del corso in un solo file, ultima versione, con indice cliccabile e segnalibri. **Da rigenerare quando un documento cambia.** |
 | `classe-1/_build/` | Il **generatore PDF** di Classe 1: da ogni `.md` produce il `.pdf` impaginato, con la versione nel nome. |
+| `classe-1/_build/assembla_libro.py` | Lo strumento che **ricostruisce il libro unico** dai singoli documenti (poi il PDF con `genera_pdf.js` e `PDF_OUTLINE=1`). |
 | `manuale/_build/` | Il **generatore PDF** del manuale Godot. |
 | `CLAUDE.md` | Le **preferenze e il metodo** del corso (contesto, regole, tono, coordinate complete). |
 | `README.md` | Panoramica del repository e concetti base. |
+
+> **Come si aggiorna il libro unico** (quando cambia un documento): dalla cartella
+> `classe-1/_build/` si lancia `python3 assembla_libro.py` e poi
+> `PDF_OUTLINE=1 node genera_pdf.js`. Se il contenuto è cambiato, si alza la
+> `LIBRO_VERSION` in cima ad `assembla_libro.py`.
 
 ---
 

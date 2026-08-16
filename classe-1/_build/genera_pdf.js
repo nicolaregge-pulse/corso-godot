@@ -26,7 +26,7 @@ const PDF_PATH = info.pdf;
   // Piè di pagina con numero di pagina (non sulla copertina: la prima pagina
   // resta pulita perché usiamo margini e Chromium mostra il footer ovunque,
   // ma il numero parte da 1 = copertina; accettabile per un libro di corso).
-  await page.pdf({
+  const opts = {
     path: PDF_PATH,
     format: 'A4',
     printBackground: true,
@@ -40,7 +40,21 @@ const PDF_PATH = info.pdf;
       '<span>Corso di Informatica — Classe 1</span>' +
       '<span>Pag. <span class="pageNumber"></span> / <span class="totalPages"></span></span>' +
       '</div>',
-  });
+  };
+
+  // Per il libro completo (PDF_OUTLINE=1) aggiungo i SEGNALIBRI navigabili
+  // ricavati dai titoli. Se la versione di Playwright non li supporta, riprovo
+  // senza — così il PDF esce comunque.
+  if (process.env.PDF_OUTLINE) {
+    try {
+      await page.pdf({ ...opts, tagged: true, outline: true });
+    } catch (e) {
+      console.warn('Segnalibri non supportati, genero senza:', e.message);
+      await page.pdf(opts);
+    }
+  } else {
+    await page.pdf(opts);
+  }
 
   await browser.close();
   console.log('PDF scritto: ' + PDF_PATH);
