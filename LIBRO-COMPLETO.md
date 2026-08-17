@@ -1,12 +1,12 @@
 # Il Libro del Corso
 
-**Versione 1.4** — 16/08/2026
+**Versione 1.5** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
 
 # Programma del Corso {#doc1}
-*Versione 0.3 · 26/07/2026 · Parte: Classe 1 — Informatica*
+*Versione 0.4 · 26/07/2026 · Parte: Classe 1 — Informatica*
 
 ## Che corso è (e che corso NON è) {#doc1-sec1}
 
@@ -364,7 +364,7 @@ alla tabella delle modifiche in fondo.
 
 
 # La Bussola del Lavoro {#doc2}
-*Versione 0.1 · 27/07/2026 · Parte: Classe 1 — Informatica*
+*Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
 ## La verità di partenza (chi assume a 15-17 anni) {#doc2-sec1}
 
@@ -485,7 +485,7 @@ il programma": **spendere bene** il tempo che abbiamo con loro.
 
 
 # Da Far Fare Assolutamente {#doc3}
-*Versione 0.1 · 27/07/2026 · Parte: Classe 1 — Informatica*
+*Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
 ## 1. Toccare un database vero e scrivere un po' di SQL {#doc3-sec1}
 
@@ -542,7 +542,7 @@ tranne l'incasso vero.
 
 
 # Il Mio Negozio Online — Guida per i ragazzi {#doc4}
-*Versione 1.4 · 16/08/2026 · Parte: Classe 1 — Informatica*
+*Versione 1.5 · 16/08/2026 · Parte: Classe 1 — Informatica*
 
 ### Un negozio vero, con database ed email — costruito da te
 
@@ -744,7 +744,7 @@ Se sai raccontarlo, **hai capito davvero** — ed è quello che conta.
 
 
 # Il Mio Negozio Online — Piano-lezione {#doc5}
-*Versione 1.0 · 09/08/2026 · Parte: Classe 1 — Informatica*
+*Versione 1.1 · 09/08/2026 · Parte: Classe 1 — Informatica*
 
 ## In breve {#doc5-sec1}
 

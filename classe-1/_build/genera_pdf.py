@@ -250,8 +250,10 @@ def build_body_html(md_text: str) -> str:
     body_html = style_details(body_html)
     body_html = transform_chapter_openers(body_html)
 
-    # Standard di formattazione (doc 00): box colorati semantici + niente emoji.
+    # Standard di formattazione (doc 00): box colorati semantici + niente emoji
+    # + liste sempre numerate e gerarchiche (niente elenchi puntati).
     body_html = transform_boxes(body_html)
+    body_html = lists_to_numbered(body_html)
     body_html = strip_emoji(body_html)
 
     # Toglie la lineetta orizzontale (---) subito prima di un'apertura di
@@ -274,6 +276,24 @@ _BOX_TAGS = {
     "BLU":    ("box-blu",    "Da confermare"),
     "GIALLO": ("box-giallo", "Nota"),
 }
+
+
+def lists_to_numbered(html_str: str) -> str:
+    """Converte gli elenchi puntati (<ul>) in numerati (<ol>): lo standard
+    (doc 00) vieta i puntati. La numerazione gerarchica (1, 1.1, 1.1.2) la fa
+    il CSS con i counter. I blocchi di codice <pre> restano intatti."""
+    blocks = []
+    def _stash(m):
+        blocks.append(m.group(0))
+        return f"\x00PRE{len(blocks) - 1}\x00"
+    html_str = re.sub(r"<pre.*?</pre>", _stash, html_str, flags=re.DOTALL)
+
+    html_str = re.sub(r"<ul\b[^>]*>", "<ol>", html_str)
+    html_str = html_str.replace("</ul>", "</ol>")
+
+    def _restore(m):
+        return blocks[int(m.group(1))]
+    return re.sub(r"\x00PRE(\d+)\x00", _restore, html_str)
 
 
 def transform_boxes(html_str: str) -> str:
@@ -431,6 +451,7 @@ def transform_chapter_openers(html_str: str) -> str:
         # separa "Capitolo N" / "Esercizio N" / "Scheda N" da " — resto del titolo"
         mm = re.match(r"^((?:Capitolo|Scheda|Esercizio)\s+[^\s—–-]+)\s+[—–-]\s+(.+)$", inner)
         if mm:
+            # Vero capitolo (manuale/eserciziario): apertura centrata, pagina nuova.
             kicker = mm.group(1)
             title = mm.group(2)
             return (
@@ -440,12 +461,10 @@ def transform_chapter_openers(html_str: str) -> str:
                 f'{sub_html}'
                 "</div>"
             )
-        return (
-            '<div class="chapter">'
-            f'<h2{attrs} class="ctitle">{inner}</h2>'
-            f'{sub_html}'
-            "</div>"
-        )
+        # Sezione normale (standard doc 00): titolo a sinistra, scorre nel testo
+        # senza iniziare una pagina nuova (meno spazi bianchi).
+        sub_out = sub if sub else ""
+        return f'<h2{attrs} class="sec">{inner}</h2>{sub_out}'
 
     return re.sub(
         r"<h2(?P<attrs>[^>]*)>(?P<inner>.*?)</h2>(?P<sub>\s*<p><em>.*?</em></p>)?",
@@ -583,6 +602,19 @@ h2.ctitle {
   height: 3px;
   background: var(--godot-blue);
   margin: 16px auto 0;
+}
+
+/* Sezione normale (##) nello standard doc 00: a sinistra, scorre nel testo */
+h2.sec {
+  font-family: var(--serif);
+  font-size: 16.5pt;
+  font-weight: 700;
+  color: var(--godot-blue-dark);
+  text-align: left;
+  margin: 24px 0 8px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--godot-blue);
+  page-break-after: avoid;
 }
 
 /* sottotitoli di sezione dentro il capitolo */
@@ -758,8 +790,25 @@ hr {
   margin: 24px 0;
 }
 
-ul, ol { margin: 0 0 12px; padding-left: 24px; text-align: left; }
-li { margin: 4px 0; }
+/* Liste: numerate e gerarchiche (1, 1.1, 1.1.2) via counter — standard doc 00 */
+ol {
+  list-style: none;
+  counter-reset: item;
+  margin: 0 0 12px;
+  padding-left: 2.2em;
+  text-align: left;
+}
+ol > li {
+  counter-increment: item;
+  margin: 4px 0;
+}
+ol > li::before {
+  content: counters(item, ".") ". ";
+  font-weight: 700;
+  color: var(--godot-blue-dark);
+}
+ul { list-style: disc; margin: 0 0 12px; padding-left: 24px; text-align: left; }
+ul li { margin: 4px 0; }
 
 /* ---------- LIVELLI DI AIUTO (i 4 livelli dell'eserciziario) ---------- */
 /* Nel PDF sono mostrati APERTI; il colore del bordo segue il pallino. */

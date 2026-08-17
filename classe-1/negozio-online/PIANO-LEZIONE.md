@@ -1,6 +1,6 @@
 # Piano-lezione — Il Mio Negozio Online
 
-**Versione 1.0** — 09/08/2026
+**Versione 1.1** — 09/08/2026
 *Documento per il docente. Come portare in classe il progetto del negozio online:
 tempi, scaletta, come spiegare il database dal vivo, gestione dei ritmi diversi.*
 

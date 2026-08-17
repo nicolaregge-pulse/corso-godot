@@ -1,6 +1,6 @@
 # Programma — Informatica, Classe 1
 
-**Versione 0.3** — 26/07/2026
+**Versione 0.4** — 26/07/2026
 *Fonte versionata del programma. È la mappa del primo anno: da qui nasceranno,
 un modulo alla volta, il libro di testo e l'eserciziario della Classe 1.*
 

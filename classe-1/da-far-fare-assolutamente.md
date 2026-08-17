@@ -1,6 +1,6 @@
 # Da far fare ai ragazzi — le cose irrinunciabili
 
-**Versione 0.1** — 27/07/2026
+**Versione 0.2** — 27/07/2026
 *Documento interno (per il docente). Elenco delle cose che i ragazzi devono
 **assolutamente fare con le mani** durante il percorso — non solo sentirne
 parlare. Cresce man mano che decidiamo: quando qualcosa diventa "irrinunciabile",

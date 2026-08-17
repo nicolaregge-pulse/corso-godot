@@ -1,6 +1,6 @@
 # Corso Informatica
 
-**Versione 1.4** — 16/08/2026
+**Versione 1.5** — 16/08/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che

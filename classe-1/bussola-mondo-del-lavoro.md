@@ -1,6 +1,6 @@
 # La bussola — cosa serve al mondo del lavoro
 
-**Versione 0.1** — 27/07/2026
+**Versione 0.2** — 27/07/2026
 *Documento interno (per il docente). È autoportante: contiene tutto il
 ragionamento, così vale da solo anche fuori da questa chat.*
 

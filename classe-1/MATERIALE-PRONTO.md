@@ -1,6 +1,6 @@
 # Materiale del Corso — Classe 1 (Informatica)
 
-**Versione 1.3** — 16/08/2026
+**Versione 1.4** — 16/08/2026
 *Documento per il docente. L'elenco di tutto il materiale pronto e degli esercizi
 già fatti, con lo stato di ciascuno. Si aggiorna man mano che il corso cresce.*
 
