@@ -1,6 +1,6 @@
 # 00 Regole di Formattazione dei Documenti
 
-**Versione 1.0** — 16/08/2026
+**Versione 1.1** — 16/08/2026
 *Standard unico di formattazione. Vale per TUTTI i documenti del corso, presenti e
 futuri. Adattato al corso: la fonte di verita e decisa da Nicola (nessun ruolo di
 soggetti esterni).*
@@ -46,6 +46,17 @@ soggetti esterni).*
 1. Rosso, DISALLINEAMENTO: qualcosa che stride con la realta o con la fonte di verita (errore noto da correggere).
 2. Blu, DA CONFERMARE o IN ATTESA: direzione verso cui si converge ma non ancora ufficiale (di norma una decisione di Nicola non ancora confermata); quando arriva la conferma, sparisce.
 3. Giallo, NOTA: semplice nota esplicativa, non segnala problemi.
+
+Esempi (come appaiono nel PDF):
+
+> [ROSSO] Questo documento dice X, ma il documento 00 dice Y: va corretto.
+
+> [BLU] Direzione probabile in attesa di conferma di Nicola.
+
+> [GIALLO] Promemoria utile, senza alcun problema da risolvere.
+
+Nel sorgente si scrivono come una citazione che inizia con l'etichetta tra
+parentesi quadre: `> [ROSSO] ...`, `> [BLU] ...`, `> [GIALLO] ...`.
 
 ## 9. Versioning
 1. Una versione stampata e congelata: da li non si tocca piu.

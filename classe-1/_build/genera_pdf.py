@@ -250,12 +250,93 @@ def build_body_html(md_text: str) -> str:
     body_html = style_details(body_html)
     body_html = transform_chapter_openers(body_html)
 
+    # Standard di formattazione (doc 00): box colorati semantici + niente emoji.
+    body_html = transform_boxes(body_html)
+    body_html = strip_emoji(body_html)
+
     # Toglie la lineetta orizzontale (---) subito prima di un'apertura di
     # capitolo: da sola può scivolare su una pagina nuova e lasciarla vuota.
     body_html = re.sub(r'<hr\s*/?>\s*(?=<div class="chapter")', "", body_html)
 
     body_html = typographic_fixes(body_html)
     return body_html
+
+
+# ---------------------------------------------------------------------------
+# Standard di formattazione (doc 00)
+# ---------------------------------------------------------------------------
+# Box colorati semantici: un blockquote che inizia con [ROSSO]/[BLU]/[GIALLO]
+# diventa il box della legenda (rosso=disallineamento, blu=da confermare,
+# giallo=nota). Sintassi nel sorgente:
+#     > [ROSSO] testo del box...
+_BOX_TAGS = {
+    "ROSSO":  ("box-rosso",  "Disallineamento"),
+    "BLU":    ("box-blu",    "Da confermare"),
+    "GIALLO": ("box-giallo", "Nota"),
+}
+
+
+def transform_boxes(html_str: str) -> str:
+    def render(cur):
+        cls, label, paras = cur
+        return (f'<div class="box {cls}"><span class="box-tag">{label}</span>'
+                + "".join(paras) + "</div>")
+
+    def repl(m):
+        inner = m.group("inner")
+        paras = re.findall(r"<p>.*?</p>", inner, re.DOTALL) or [inner]
+        out, cur, any_tag = [], None, False
+        for p in paras:
+            bm = re.match(r'\s*<p>\s*\[(ROSSO|BLU|GIALLO)\]\s*', p, re.IGNORECASE)
+            if bm:
+                any_tag = True
+                if cur:
+                    out.append(render(cur))
+                cls, label = _BOX_TAGS[bm.group(1).upper()]
+                cur = (cls, label, ["<p>" + p[bm.end():]])
+            elif cur:
+                cur[2].append(p)
+            else:
+                out.append(p)
+        if cur:
+            out.append(render(cur))
+        return "".join(out) if any_tag else m.group(0)
+
+    return re.sub(r"<blockquote>(?P<inner>.*?)</blockquote>", repl, html_str, flags=re.DOTALL)
+
+
+# Emoji: quelle "semantiche" diventano un'etichetta testuale; tutte le altre
+# (decorative) si tolgono. I blocchi di codice <pre> restano intatti.
+_EMOJI_SEMANTIC = {
+    "✅": "[OK]", "☑️": "[OK]", "✔️": "[OK]", "✔": "[OK]",
+    "⚠️": "[ATTENZIONE]", "⚠": "[ATTENZIONE]", "❗": "[ATTENZIONE]", "❕": "[ATTENZIONE]",
+    "❌": "[CRITICO]", "⛔": "[CRITICO]", "🔴": "[CRITICO]", "🚫": "[CRITICO]",
+    "ℹ️": "[NOTA]", "ℹ": "[NOTA]",
+}
+_EMOJI_RE = re.compile(
+    "[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF"
+    "\U00002190-\U000021FF\U00002B00-\U00002BFF\U00002300-\U000023FF"
+    "\U0000FE00-\U0000FE0F\U0000200D\U000020E3\U00002B50\U00002139]+",
+    flags=re.UNICODE,
+)
+
+
+def strip_emoji(html_str: str) -> str:
+    blocks = []
+    def _stash(m):
+        blocks.append(m.group(0))
+        return f"\x00PRE{len(blocks) - 1}\x00"
+    html_str = re.sub(r"<pre.*?</pre>", _stash, html_str, flags=re.DOTALL)
+
+    for em, tag in _EMOJI_SEMANTIC.items():
+        html_str = html_str.replace(em, tag)
+    html_str = _EMOJI_RE.sub("", html_str)
+    # ripulisce eventuali doppi spazi lasciati dalla rimozione
+    html_str = re.sub(r"[ \t]{2,}", " ", html_str)
+
+    def _restore(m):
+        return blocks[int(m.group(1))]
+    return re.sub(r"\x00PRE(\d+)\x00", _restore, html_str)
 
 
 def typographic_fixes(html_str: str) -> str:
@@ -382,7 +463,7 @@ CSS = r"""
   --code-bg: #f5f2ec;
   --tip-bg: #f6f1e6;
   --tip-border: #b8933f;
-  --serif: Georgia, "Times New Roman", "Liberation Serif", "DejaVu Serif", serif;
+  --serif: "DejaVu Serif", Georgia, "Liberation Serif", serif;   /* standard doc 00: font unico DejaVu */
 }
 
 * { box-sizing: border-box; }
@@ -599,6 +680,32 @@ blockquote {
 }
 blockquote p { margin: 0; }
 blockquote p + p { margin-top: 8px; }
+
+/* ---------- BOX COLORATI SEMANTICI (standard doc 00, punto 8) ---------- */
+.box {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-left: 5px solid;
+  border-radius: 4px;
+  text-align: left;
+  page-break-inside: avoid;
+}
+.box p { margin: 0; }
+.box p + p { margin-top: 8px; }
+.box .box-tag {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  margin-bottom: 5px;
+}
+.box-rosso  { background: #fdecea; border-color: #c0392b; }
+.box-rosso  .box-tag { color: #a4271b; }
+.box-blu    { background: #eaf1f8; border-color: #3a6ea5; }
+.box-blu    .box-tag { color: #274b73; }
+.box-giallo { background: #fbf3e2; border-color: #b8933f; }
+.box-giallo .box-tag { color: #8a6d1f; }
 
 /* ---------- IMMAGINI ---------- */
 figure.fig {
