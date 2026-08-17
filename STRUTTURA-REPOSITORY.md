@@ -1,6 +1,6 @@
 # Struttura del Repository
 
-**Versione 1.0** — 17/08/2026
+**Versione 1.1** — 17/08/2026
 *Mappa del repository su GitHub: cosa c'e ora e come sara l'albero completo.
 Serve per orientarsi e per sapere in anticipo dove andranno le cose.*
 
@@ -62,19 +62,19 @@ materiale del triennio.
 corso-godot/
 ├── (documenti di riferimento: 00, 01, regole, struttura, indice, libro)
 │
-├── classe-1/                           2a: FATTO (corso completo)
+├── classe-1/                           FATTO (corso completo)
 │
-├── classe-2/    (previsto)             Godot + GDScript, Lazarus, intro reti
-│   ├── programma.md  (previsto)
+├── classe-2/                           Godot + GDScript, Lazarus, intro reti
+│   ├── programma.md  (avviato v0.1)
 │   ├── esercizi/     (previsto)
 │   └── progetti/     (previsto)
 │
-├── classe-3/    (previsto)             rafforzare un filone + prove di 3a
-│   ├── programma.md  (previsto)
+├── classe-3/                           reti e hardware + prove di 3a
+│   ├── programma.md  (avviato v0.1)
 │   └── prove/        (previsto)        reti / hardware
 │
-├── classe-4/    (previsto)             Cisco Packet Tracer avanzato
-│   ├── programma.md  (previsto)
+├── classe-4/                           Cisco Packet Tracer avanzato
+│   ├── programma.md  (avviato v0.1)
 │   └── rete-scolastica/  (previsto)    dorsale a due piani, tre backbone
 │
 ├── manuale/                            corso Godot (condiviso 2a/3a)

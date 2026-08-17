@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.8** — 16/08/2026
+**Versione 1.10** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -142,7 +142,7 @@ parentesi quadre: `> [ROSSO] ...`, `> [BLU] ...`, `> [GIALLO] ...`.
 
 
 # Struttura del Repository {#doc4}
-*Versione 1.0 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.1 · 17/08/2026 · Parte: Riferimento*
 
 ## 1. A cosa serve {#doc4-sec1}
 1. Mostra come sono organizzati i file del corso su GitHub.
@@ -200,19 +200,19 @@ materiale del triennio.
 corso-godot/
 ├── (documenti di riferimento: 00, 01, regole, struttura, indice, libro)
 │
-├── classe-1/                           2a: FATTO (corso completo)
+├── classe-1/                           FATTO (corso completo)
 │
-├── classe-2/    (previsto)             Godot + GDScript, Lazarus, intro reti
-│   ├── programma.md  (previsto)
+├── classe-2/                           Godot + GDScript, Lazarus, intro reti
+│   ├── programma.md  (avviato v0.1)
 │   ├── esercizi/     (previsto)
 │   └── progetti/     (previsto)
 │
-├── classe-3/    (previsto)             rafforzare un filone + prove di 3a
-│   ├── programma.md  (previsto)
+├── classe-3/                           reti e hardware + prove di 3a
+│   ├── programma.md  (avviato v0.1)
 │   └── prove/        (previsto)        reti / hardware
 │
-├── classe-4/    (previsto)             Cisco Packet Tracer avanzato
-│   ├── programma.md  (previsto)
+├── classe-4/                           Cisco Packet Tracer avanzato
+│   ├── programma.md  (avviato v0.1)
 │   └── rete-scolastica/  (previsto)    dorsale a due piani, tre backbone
 │
 ├── manuale/                            corso Godot (condiviso 2a/3a)
@@ -1789,10 +1789,128 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 > file, e richiamale come nell'esempio: `![descrizione](immagini/nome.png)`.
 
 
-# Corso Informatica — indice generale {#doc13}
+# Programma del Corso — Classe 2 {#doc13}
+*Versione 0.1 · 17/08/2026 · Parte: Classe 2 — Informatica*
+
+## 1. A colpo d'occhio {#doc13-sec1}
+1. La Classe 2 e l'anno della programmazione che diverte: si creano videogiochi con Godot e piccole applicazioni con Lazarus.
+2. Si mette il primo piede nel mondo delle reti, partendo dalla rete di casa.
+3. Si impara a lavorare in squadra con Git, come in un vero team.
+
+## 2. Modulo A — Programmare con Godot {#doc13-sec2}
+1. Ripasso e avvio: scene, nodi, segnali, il game loop.
+2. Dai giochi semplici a un gioco un po' piu strutturato, personalizzato da ognuno.
+3. Il quaderno dello studente: documentare e saper spiegare cio che si fa.
+
+## 3. Modulo B — Lazarus (Free Pascal) {#doc13-sec3}
+1. Riprendere interfacce ed eventi (bottoni, caselle di testo, proprieta).
+2. Piccole applicazioni utili (per esempio una calcolatrice piu completa).
+3. Il ponte tra Lazarus e Godot: stessi concetti, strumenti diversi.
+
+## 4. Modulo C — Introduzione alle reti {#doc13-sec4}
+1. Cos'e una rete e a cosa serve.
+2. La rete di casa: modem, router, Wi-Fi, i dispositivi collegati.
+3. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo) e l'idea di "pacchetto".
+
+## 5. Modulo D — Lavorare in squadra con Git {#doc13-sec5}
+1. Progetti a gruppi con ruoli divisi (scena, nodi, interfaccia, movimenti).
+2. Introduzione a ramo e Pull Request, tutto in modo visuale.
+
+## 6. Verso la Classe 3 {#doc13-sec6}
+1. L'anno dopo si passa alle reti sul serio e all'hardware: cavi, indirizzi, montaggio, diagnosi.
+
+## 7. Valutazione {#doc13-sec7}
+1. Progetti mostrabili (giochi e piccole app) e capacita di spiegarli a voce.
+2. Lavoro di gruppo: collaborazione e integrazione dei contributi.
+
+
+# Programma del Corso — Classe 3 {#doc14}
+*Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
+
+## 1. A colpo d'occhio {#doc14-sec1}
+1. La Classe 3 e l'anno in cui si mettono le mani su reti e hardware davvero: cavi, indirizzi, montaggio, diagnosi.
+2. Si consolida anche la programmazione degli anni prima (Godot e Lazarus), con progetti a gruppi.
+3. L'anno prepara la Classe 4, dove si progetta la rete di una scuola in Cisco Packet Tracer.
+4. La valutazione usa prove pratiche vere (cablaggio, piccole reti, buste di hardware e diagnosi).
+
+## 2. Modulo A — Reti, livello operativo {#doc14-sec2}
+1. Concetti di base:
+   1. LAN (Local Area Network: rete locale), cosa collega e a cosa serve.
+   2. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo in rete), maschera di sottorete e gateway.
+   3. DHCP (Dynamic Host Configuration Protocol: assegna gli indirizzi in automatico).
+2. Cablaggio fisico:
+   1. Il cavo di rete RJ45 e lo standard T568B.
+   2. Crimpare un cavo, costruire una piccola LAN a due PC con uno switch.
+   3. Test del cavo e verifica della connettivita con il comando ping.
+3. Prima rete in Cisco Packet Tracer:
+   1. Cos'e Cisco Packet Tracer (simulatore di reti) e perche si usa a scuola.
+   2. Costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping.
+
+## 3. Modulo B — Hardware e sistema operativo {#doc14-sec3}
+1. I componenti del computer: processore, memoria RAM, disco (storage), alimentatore, scheda madre.
+2. Montaggio e smontaggio di una postazione, in sicurezza.
+3. Installazione del sistema operativo (Windows 10) e prime configurazioni.
+4. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
+
+## 4. Modulo C — Preventivo e relazione tecnica {#doc14-sec4}
+1. Configurare e preventivare una postazione o un'aula, con prezzi reali.
+2. Scrivere una breve relazione tecnica: cosa serve, quanto costa, perche.
+
+## 5. Modulo D — Consolidare la programmazione {#doc14-sec5}
+1. Riprendere Godot e Lazarus con piccoli progetti a gruppi.
+2. Lavorare in team con Git: ognuno sul suo pezzo, poi si uniscono i contributi (ramo e Pull Request).
+
+## 6. Verso la Classe 4 {#doc14-sec6}
+1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati.
+2. Si prepara il terreno per il progetto e la prova di qualifica dell'anno dopo.
+
+## 7. Valutazione {#doc14-sec7}
+1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, montaggio, diagnosi guasti.
+2. Le prove di riferimento del triennio sono raccolte (per ora) nella cartella del materiale da organizzare; verranno trascritte nel formato del corso.
+
+## 8. Materiale collegato (gia esistente, da trascrivere) {#doc14-sec8}
+1. Prove di rete in Cisco Packet Tracer (due varianti anti-copia).
+2. Prove di cablaggio RJ45 e connettivita LAN.
+3. Buste di esame su hardware, sistema operativo, diagnosi e preventivo.
+4. Prova di diagnosi guasti (troubleshooting) per la Classe 3.
+
+
+# Programma del Corso — Classe 4 {#doc15}
+*Versione 0.1 · 17/08/2026 · Parte: Classe 4 — Informatica*
+
+## 1. A colpo d'occhio {#doc15-sec1}
+1. La Classe 4 porta a un progetto completo: la rete di una scuola, simulata in Cisco Packet Tracer.
+2. Si arriva alla prova di qualifica con validita regionale (Regione Lombardia).
+3. Si consolida tutto il triennio: reti, hardware, documentazione tecnica.
+
+## 2. Modulo A — Cisco Packet Tracer avanzato {#doc15-sec2}
+1. Progettare la rete di una scuola su piu piani, con una dorsale (backbone) che collega i piani.
+2. Apparati e servizi: router, switch, server, DHCP (assegnazione automatica degli indirizzi).
+3. Suddividere la rete in sottoreti (VLAN: Virtual LAN, reti locali logiche separate).
+
+## 3. Modulo B — Collaudo e documentazione {#doc15-sec3}
+1. Collaudare la rete con il comando ping e verificare che tutto comunichi.
+2. Documentare la rete: mappa degli indirizzi, schema, scelte fatte.
+
+## 4. Modulo C — Preventivo dell'infrastruttura {#doc15-sec4}
+1. Preventivo economico dei materiali della rete, con prezzi reali.
+2. Relazione tecnica dell'infrastruttura.
+
+## 5. La prova di qualifica (diploma) {#doc15-sec5}
+1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
+2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
+3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
+
+## 6. Materiale collegato (gia esistente, da trascrivere) {#doc15-sec6}
+1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
+2. Rubrica di valutazione ufficiale della Regione Lombardia.
+3. Prove di rete in Cisco Packet Tracer del triennio.
+
+
+# Corso Informatica — indice generale {#doc16}
 *Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc13-sec1}
+## In breve {#doc16-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -1808,7 +1926,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc13-sec2}
+## Parte 1 — Classe 1 (Informatica) {#doc16-sec2}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -1853,7 +1971,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc13-sec3}
+## Parte 2 — Corso Godot / GDScript {#doc16-sec3}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -1882,7 +2000,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc13-sec4}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc16-sec4}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -1906,7 +2024,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc13-sec5}
+## Parte 4 — Strumenti e configurazione {#doc16-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -1924,7 +2042,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc13-sec6}
+## Dove sta tutto {#doc16-sec6}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -1934,10 +2052,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc14}
+# Materiale del Corso — Classe 1 {#doc17}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc14-sec1}
+## In breve {#doc17-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -1945,7 +2063,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc14-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc17-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -1955,7 +2073,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc14-sec3}
+## 2. Esercizi / progetti FATTI {#doc17-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -1982,7 +2100,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc14-sec4}
+## 3. Strumenti {#doc17-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -1990,7 +2108,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc14-sec5}
+## 4. In preparazione (prossimi passi) {#doc17-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -2000,7 +2118,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc14-sec6}
+## Dove sta tutto {#doc17-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
