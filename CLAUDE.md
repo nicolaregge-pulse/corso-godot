@@ -237,6 +237,15 @@ Il corso stesso è versionato su Git, su due livelli:
 
 ## ⭐ Regole operative permanenti (richieste da Nicola)
 
+0. **Formattazione dei documenti: vedi `REGOLE-DOCUMENTI.md`** (vincolante). Vale
+   per i documenti tecnici e di servizio (INDICE, CORSO, SCALETTA, RIPRENDIAMO,
+   guide del kit consegne, README): numerazione `00/01/02` senza trattino, solo
+   liste numerate gerarchiche, niente emoji decorativi (convertiti in testo tipo
+   `[NOTA]`), box colorati rosso/blu/giallo, glossario, sigle esplicitate,
+   versione nel nome file, super-guida con Sommario + segnalibri. I **materiali
+   didattici per i ragazzi** (manuale, eserciziario, quaderno) tengono invece il
+   loro stile amichevole (elenchi puntati ed emoji funzionali ammessi). REGOLA 0
+   assoluta: tutto ciò che l'utente deve copiare va in un blocco di codice.
 1. **Tutto versionato.** Ogni file (progetti Godot, script, documenti) va nel
    repository, sul branch del corso. Niente lavoro che vive solo sul PC.
 2. **Manuale in doppio formato.** Ogni volta che si produce un **PDF** (il
