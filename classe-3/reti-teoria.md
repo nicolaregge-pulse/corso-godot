@@ -1,6 +1,6 @@
 # Le Reti di Computer — Teoria
 
-**Versione 0.1** — 17/08/2026
+**Versione 0.2** — 17/08/2026
 *Teoria delle reti per la Classe 3, spiegata semplice e con esempi di tutti i
 giorni. Prepara al laboratorio: cablaggio, piccole reti e Cisco Packet Tracer.
 Documento di lavoro, cresce insieme al corso.*
@@ -22,6 +22,8 @@ Documento di lavoro, cresce insieme al corso.*
 8. Hub (concentratore): come lo switch ma "senza cervello": ripete a tutti. Oggi quasi non si usa piu.
 
 > [GIALLO] Differenza chiave: il ROUTER collega reti diverse (casa verso Internet); lo SWITCH collega dispositivi dentro la stessa rete.
+
+![Schema della rete di casa: da Internet al modem, al router Wi-Fi, poi ai dispositivi via cavo (con lo switch) e senza fili (Wi-Fi).](immagini/rete-di-casa.svg)
 
 ## 3. I cavi di rete
 1. Il cavo Ethernet ha un connettore RJ45 e dentro 8 fili raggruppati in 4 coppie intrecciate.
@@ -54,6 +56,8 @@ Documento di lavoro, cresce insieme al corso.*
    7. Applicazione: i programmi che usiamo (pagine web, posta).
 3. A cosa serve: se qualcosa non funziona, aiuta a capire "a che piano" cercare il guasto.
 
+![Il modello ISO/OSI a 7 livelli, dall'alto (i programmi) al basso (i segnali sul cavo), con il ruolo di ciascun livello.](immagini/modello-osi.svg)
+
 ## 7. Il modello TCP/IP (i 4 livelli)
 1. E il modello pratico con cui funziona Internet davvero.
 2. Ha 4 livelli: Accesso alla rete, Internet (IP), Trasporto (TCP o UDP), Applicazione.
@@ -66,6 +70,8 @@ Documento di lavoro, cresce insieme al corso.*
 4. All'arrivo i pacchetti vengono rimessi in ordine per ricostruire il dato di partenza.
 
 > [GIALLO] Immagine utile: spedire un libro pagina per pagina, in tante buste separate; arrivano e poi si rimonta il libro nell'ordine giusto.
+
+![Il viaggio di un pacchetto: il dato viene spezzato in pacchetti con l'indirizzo di arrivo, i router scelgono la strada, il destinatario li rimette in ordine.](immagini/viaggio-pacchetto.svg)
 
 ## 9. Due modi di spedire i dati: TCP e UDP
 1. TCP (Transmission Control Protocol): la spedizione "con ricevuta di ritorno".
