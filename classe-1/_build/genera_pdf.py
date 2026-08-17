@@ -47,6 +47,7 @@ DOCS = {
     "stato-corso":  {"src": "../00-STATO-DEL-CORSO.md",         "title": "Stato del Corso"},
     "glossario":    {"src": "../01-GLOSSARIO.md",                "title": "Glossario"},
     "regole-formattazione": {"src": "../REGOLE-FORMATTAZIONE.md", "title": "Regole di Formattazione"},
+    "struttura":    {"src": "../STRUTTURA-REPOSITORY.md",         "title": "Struttura del Repository"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},

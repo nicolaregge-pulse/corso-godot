@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.7** — 16/08/2026
+**Versione 1.8** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -141,10 +141,97 @@ parentesi quadre: `> [ROSSO] ...`, `> [BLU] ...`, `> [GIALLO] ...`.
 3. Le parti che nello standard originale citavano soggetti esterni sono adattate: per questo progetto la fonte di verita e Nicola.
 
 
-# Programma del Corso {#doc4}
+# Struttura del Repository {#doc4}
+*Versione 1.0 · 17/08/2026 · Parte: Riferimento*
+
+## 1. A cosa serve {#doc4-sec1}
+1. Mostra come sono organizzati i file del corso su GitHub.
+2. Distingue cio che esiste gia da cio che e previsto, cosi si conosce in anticipo l'albero finale.
+3. Convenzione: le voci con "(previsto)" non esistono ancora; sono la meta verso cui si va.
+
+## 2. Albero attuale {#doc4-sec2}
+
+```
+corso-godot/
+├── 00-STATO-DEL-CORSO.md  (+ .pdf)     documento 00: fonte di verita
+├── 01-GLOSSARIO.md  (+ .pdf)           documento 01: glossario
+├── REGOLE-FORMATTAZIONE.md  (+ .pdf)   standard di formattazione
+├── STRUTTURA-REPOSITORY.md  (+ .pdf)   questa mappa
+├── CORSO-INFORMATICA.md  (+ .pdf)      indice generale
+├── LIBRO-COMPLETO.md  (+ .pdf)         il libro unico (generato)
+├── CLAUDE.md                           istruzioni interne (assistente)
+├── README.md                           panoramica del repository
+│
+├── classe-1/                           CORSO CLASSE 1 (completo)
+│   ├── programma.md  (+ .pdf)          mappa dell'anno
+│   ├── bussola-mondo-del-lavoro.md     mondo del lavoro (tre cassetti)
+│   ├── da-far-fare-assolutamente.md    gli irrinunciabili
+│   ├── MATERIALE-PRONTO.md  (+ .pdf)   indice del materiale di Classe 1
+│   ├── negozio-online/                 progetto "Il Mio Negozio Online"
+│   │   ├── GUIDA-RAGAZZI.md  (+ .pdf)  guida a 4 tappe (ragazzi)
+│   │   ├── PIANO-LEZIONE.md  (+ .pdf)  regia delle lezioni (docente)
+│   │   ├── modello-negozio.html        file di partenza dei ragazzi
+│   │   ├── index.html · prodotti.sql   esempio completo + database
+│   │   └── immagini/                   schemi + screenshot della guida
+│   ├── negozio-esempio/index.html      seconda versione di esempio
+│   └── _build/                         generatore dei PDF del corso
+│
+├── manuale/                            CORSO GODOT (2a/3a)
+│   ├── manuale.md  (+ .pdf)            libro di testo di Godot
+│   ├── eserciziario.md  (+ .pdf)       esercizi a 4 livelli
+│   ├── quaderno-studente-TEMPLATE.md   quaderno personale dei ragazzi
+│   ├── immagini/                       screenshot del manuale
+│   └── _build/                         generatore PDF del manuale
+│
+├── esercizi/                           esercizi Godot (in crescita)
+├── acchiappa-le-stelle/                gioco di esempio
+├── chirurgo-pasticcione/               gioco di esempio
+├── battaglia-navale-3d/                gioco di esempio (3D)
+├── docs/                               versione giocabile nel browser (export web)
+└── materiale-da-organizzare/           esami del triennio (grezzi, da trascrivere)
+```
+
+## 3. Albero obiettivo (dove vogliamo arrivare) {#doc4-sec3}
+
+Rispetto ad oggi si aggiungono le cartelle per anno e la sistemazione del
+materiale del triennio.
+
+```
+corso-godot/
+├── (documenti di riferimento: 00, 01, regole, struttura, indice, libro)
+│
+├── classe-1/                           2a: FATTO (corso completo)
+│
+├── classe-2/    (previsto)             Godot + GDScript, Lazarus, intro reti
+│   ├── programma.md  (previsto)
+│   ├── esercizi/     (previsto)
+│   └── progetti/     (previsto)
+│
+├── classe-3/    (previsto)             rafforzare un filone + prove di 3a
+│   ├── programma.md  (previsto)
+│   └── prove/        (previsto)        reti / hardware
+│
+├── classe-4/    (previsto)             Cisco Packet Tracer avanzato
+│   ├── programma.md  (previsto)
+│   └── rete-scolastica/  (previsto)    dorsale a due piani, tre backbone
+│
+├── manuale/                            corso Godot (condiviso 2a/3a)
+├── giochi-esempio/  (previsto)         i giochi raccolti in un'unica cartella
+└── materiale-da-organizzare/           si svuota man mano: le prove trascritte
+                                        vanno in classe-3/ e classe-4/
+```
+
+## 4. Note {#doc4-sec4}
+
+> [BLU] La parte "(previsto)" e la direzione concordata: puo cambiare mentre il corso cresce. Questo documento si aggiorna quando l'albero cambia.
+
+> [GIALLO] Le cartelle `_build/` contengono gli strumenti che generano i PDF: non sono materiale per i ragazzi.
+
+
+# Programma del Corso {#doc5}
 *Versione 0.4 · 26/07/2026 · Parte: Classe 1 — Informatica*
 
-## Che corso è (e che corso NON è) {#doc4-sec1}
+## Che corso è (e che corso NON è) {#doc5-sec1}
 
 Questo **non** è un corso di "informatica di base" fatto di clic semplici: quelle
 cose i ragazzi le vedono altrove. Qui facciamo **tutta l'informatica**, con un
@@ -160,7 +247,7 @@ solo quella che serve al fare. "Avanzato" qui vuol dire **profondo e vero**, non
 
 ---
 
-## Una scatola flessibile, cucita sui ragazzi {#doc4-sec2}
+## Una scatola flessibile, cucita sui ragazzi {#doc5-sec2}
 
 I sei moduli **non** sono un percorso rigido da percorrere tutto uguale per
 tutti. Sono **contenitori** — delle **manopole** che il docente apre o chiude a
@@ -188,7 +275,7 @@ Non "finire il programma": **spendere bene** il tempo che abbiamo con loro.
 
 ---
 
-## A chi è rivolto e con che spirito {#doc4-sec3}
+## A chi è rivolto e con che spirito {#doc5-sec3}
 
 Siamo in una **prima** di **istituto professionale**. Molti ragazzi arrivano da
 percorsi difficili, alcuni con un background migratorio, alcuni già "scartati"
@@ -209,7 +296,7 @@ dignità, pensato per **aprire porte** e portare a **sbocchi lavorativi migliori
 
 ---
 
-## Il vincolo pratico della scuola: niente installazioni (dove si può) {#doc4-sec4}
+## Il vincolo pratico della scuola: niente installazioni (dove si può) {#doc5-sec4}
 
 A scuola installare software richiede l'amministratore di sistema (lento). Quindi
 prediligiamo tutto ciò che gira **da browser** o è **portabile** — con
@@ -228,7 +315,7 @@ laboratorio/di recupero**, non sui PC "buoni" della scuola.
 
 ---
 
-## I moduli dell'anno {#doc4-sec5}
+## I moduli dell'anno {#doc5-sec5}
 
 Sei moduli. I primi cinque costruiscono il "tecnico"; **Lazarus parte a metà
 anno (o prima)** e corre fino a fine anno, in parallelo agli ultimi moduli, come
@@ -393,7 +480,7 @@ avevano solo sentito nominare lo usano premendo "Esegui".
 
 ---
 
-## Il filo dell'anno (sequenza e periodi indicativi) {#doc4-sec6}
+## Il filo dell'anno (sequenza e periodi indicativi) {#doc5-sec6}
 
 | Periodo | In primo piano | In parallelo |
 |---|---|---|
@@ -410,7 +497,7 @@ spiegare.
 
 ---
 
-## Dove porta: il percorso pluriennale {#doc4-sec7}
+## Dove porta: il percorso pluriennale {#doc5-sec7}
 
 Questo primo anno getta **fondamenta larghe**. Ecco dove conducono, così ogni
 modulo ha un "perché" grande dietro:
@@ -428,7 +515,7 @@ modulo ha un "perché" grande dietro:
 
 ---
 
-## Serbatoio di idee extra (competenze spendibili nel lavoro) {#doc4-sec8}
+## Serbatoio di idee extra (competenze spendibili nel lavoro) {#doc5-sec8}
 
 Cose **alla loro portata** che nel mondo del lavoro pesano, da pescare quando la
 classe lo permette (in prima, seconda, terza — e in quarta quando la facciamo).
@@ -450,7 +537,7 @@ Non sono moduli obbligatori: sono **carte in più** da mettere nel loro bagaglio
 
 ---
 
-## Come si valuta {#doc4-sec9}
+## Come si valuta {#doc5-sec9}
 
 Come nel corso di Godot, le **regole sono chiare fin da subito** e non si basano
 sul "copiare bene":
@@ -464,7 +551,7 @@ sul "copiare bene":
 
 ---
 
-## Uso dell'AI {#doc4-sec10}
+## Uso dell'AI {#doc5-sec10}
 
 L'AI è come la **calcolatrice in matematica**: aiuta, ma se non capisci cosa stai
 facendo non serve a niente. Sì per: capire un errore, farsi spiegare, avere uno
@@ -473,7 +560,7 @@ se sai spiegare a voce cosa hai fatto, la competenza c'è.
 
 ---
 
-## Prossimi passi (roadmap del programma) {#doc4-sec11}
+## Prossimi passi (roadmap del programma) {#doc5-sec11}
 
 Questo file è la **mappa**. Da qui, un modulo alla volta, produrremo i contenuti
 veri (in `classe-1/manuale.md` e `classe-1/eserciziario.md`, con lo stesso stile
@@ -490,7 +577,7 @@ alla tabella delle modifiche in fondo.
 
 ---
 
-## Storia delle versioni (le modifiche fatte) {#doc4-sec12}
+## Storia delle versioni (le modifiche fatte) {#doc5-sec12}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
@@ -499,10 +586,10 @@ alla tabella delle modifiche in fondo.
 | 0.3 | 26/07/2026 | Aggiunta la sezione "Una **scatola flessibile**": i moduli sono manopole che si aprono/chiudono in base alla classe, tutto al servizio delle chance di lavoro (la "nuova spiaggia"). Aggiunto il "**serbatoio di idee extra**" con competenze spendibili alla loro portata (crimpare cavi, riparazione PC, digitazione, curriculum/colloquio, pagina web, Linux, sicurezza, certificazioni). Tolte parole inglesi non spiegate ("bump" → "alzare il numero di versione"; "changelog" → "storia delle versioni"). |
 
 
-# La Bussola del Lavoro {#doc5}
+# La Bussola del Lavoro {#doc6}
 *Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
-## La verità di partenza (chi assume a 15-17 anni) {#doc5-sec1}
+## La verità di partenza (chi assume a 15-17 anni) {#doc6-sec1}
 
 A questa età, nei tirocini e nel primo lavoro, **quasi nessuno assume per le
 competenze tecniche**: quelle il datore di lavoro le insegna. Assume per
@@ -516,7 +603,7 @@ Le cose che servono stanno in **tre cassetti**.
 
 ---
 
-## Cassetto 1 — La testa e il cuore (quello che pesa di più) {#doc5-sec2}
+## Cassetto 1 — La testa e il cuore (quello che pesa di più) {#doc6-sec2}
 
 Sono le prime cose che un datore di lavoro guarda in un ragazzo giovane. Per i
 nostri studenti, che spesso partono da lontano, questo cassetto è il vero
@@ -543,7 +630,7 @@ riscatto.
 
 ---
 
-## Cassetto 2 — Le mani (le competenze tecniche che si "vendono" subito) {#doc5-sec3}
+## Cassetto 2 — Le mani (le competenze tecniche che si "vendono" subito) {#doc6-sec3}
 
 In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
@@ -565,7 +652,7 @@ In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
 ---
 
-## Cassetto 3 — Le carte (i documenti che fanno la differenza) {#doc5-sec4}
+## Cassetto 3 — Le carte (i documenti che fanno la differenza) {#doc6-sec4}
 
 - **Sicurezza sul lavoro:** in Italia, per fare un tirocinio scuola-lavoro (il
   cosiddetto **PCTO**, cioè i percorsi per le competenze trasversali e
@@ -583,7 +670,7 @@ In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
 ---
 
-## La sintesi {#doc5-sec5}
+## La sintesi {#doc6-sec5}
 
 Per i nostri ragazzi il moltiplicatore **non** è la tecnica avanzata: è
 **tecnica di base solida + affidabilità + saper comunicare + qualcosa da
@@ -593,7 +680,7 @@ assumibile**. È lì che punta il corso.
 
 ---
 
-## Ingredienti da dosare (come si usa questa bussola) {#doc5-sec6}
+## Ingredienti da dosare (come si usa questa bussola) {#doc6-sec6}
 
 Gli argomenti del corso **non** hanno una divisione fissa decisa a tavolino.
 Sono **ingredienti** che il docente dosa **in base alla classe che trova**:
@@ -613,17 +700,17 @@ il programma": **spendere bene** il tempo che abbiamo con loro.
 
 ---
 
-## Storia delle versioni (per noi) {#doc5-sec7}
+## Storia delle versioni (per noi) {#doc6-sec7}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
 | 0.1 | 27/07/2026 | Prima stesura della bussola: la verità su chi assume a 15-17 anni, i tre cassetti (testa e cuore · le mani · le carte), la sintesi e il principio degli "ingredienti da dosare" in base alla classe. |
 
 
-# Da Far Fare Assolutamente {#doc6}
+# Da Far Fare Assolutamente {#doc7}
 *Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
-## 1. Toccare un database vero e scrivere un po' di SQL {#doc6-sec1}
+## 1. Toccare un database vero e scrivere un po' di SQL {#doc7-sec1}
 
 **Cosa devono fare:** creare qualche tabella, metterci dei dati e scrivere le
 prime **query SQL** (le "domande" al database, tipo *"dammi tutti i prodotti
@@ -648,7 +735,7 @@ prepara il progetto dello shop (l'elenco dei prodotti **è** un database).
 
 ---
 
-## 2. Costruire uno shop e-commerce funzionante (demo) {#doc6-sec2}
+## 2. Costruire uno shop e-commerce funzionante (demo) {#doc7-sec2}
 
 **Cosa devono fare:** realizzare un piccolo **negozio online funzionante** con
 prodotti e foto scelti da loro, e ottenerne un **link da mostrare**.
@@ -670,14 +757,14 @@ tranne l'incasso vero.
 
 ---
 
-## Storia delle versioni (per noi) {#doc6-sec3}
+## Storia delle versioni (per noi) {#doc7-sec3}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
 | 0.1 | 27/07/2026 | Nasce l'elenco delle cose irrinunciabili. Primi due punti: (1) toccare un database vero e scrivere SQL (sqliteonline → phpMyAdmin/MariaDB via XAMPP portable → Neon/Supabase come piano B), legato allo shop; (2) costruire uno shop e-commerce funzionante (demo). |
 
 
-# Il Mio Negozio Online — Guida per i ragazzi {#doc7}
+# Il Mio Negozio Online — Guida per i ragazzi {#doc8}
 *Versione 1.5 · 16/08/2026 · Parte: Classe 1 — Informatica*
 
 ### Un negozio vero, con database ed email — costruito da te
@@ -709,7 +796,7 @@ prof. Scaricalo sul computer prima di cominciare.
 
 ---
 
-## TAPPA 1 — Metti il negozio ONLINE (la prima vittoria) 🌍 {#doc7-sec1}
+## TAPPA 1 — Metti il negozio ONLINE (la prima vittoria) 🌍 {#doc8-sec1}
 
 Obiettivo: avere un **link** con il tuo negozio che funziona (con dei prodotti di
 esempio). Ci arriviamo in pochi minuti.
@@ -759,7 +846,7 @@ index.html
 
 ---
 
-## TAPPA 2 — Collega il database della classe 🗄️ {#doc7-sec2}
+## TAPPA 2 — Collega il database della classe 🗄️ {#doc8-sec2}
 
 Obiettivo: far arrivare nel tuo negozio i **prodotti veri**, presi dal database.
 
@@ -803,7 +890,7 @@ const SUPABASE_KEY  = "sb_publishable_xxxxx";
 
 ---
 
-## TAPPA 3 — Ricevi gli ordini via email 📧 {#doc7-sec3}
+## TAPPA 3 — Ricevi gli ordini via email 📧 {#doc8-sec3}
 
 Obiettivo: quando qualcuno preme *"Concludi l'ordine"*, ti arriva un'**email**.
 Usiamo un aiutante gratuito che si chiama **FormSubmit**.
@@ -845,7 +932,7 @@ const EMAIL_ORDINI  = "iltuonome@esempio.it";
 
 ---
 
-## TAPPA 4 — Fallo tuo 🎨 {#doc7-sec4}
+## TAPPA 4 — Fallo tuo 🎨 {#doc8-sec4}
 
 Adesso rendilo **tuo davvero**:
 - **Il nome:** nel file `index.html`, cambia la scritta dentro `<h1>🛒 Il mio negozio</h1>` (matita ✏️ → cambia → commit).
@@ -859,7 +946,7 @@ Adesso rendilo **tuo davvero**:
 
 ---
 
-## La prova del nove 🧠 {#doc7-sec5}
+## La prova del nove 🧠 {#doc8-sec5}
 
 Sai **spiegare a voce**, con parole tue:
 - dove stanno i **prodotti** (nel database della classe) e come fanno ad arrivare in vetrina?
@@ -869,7 +956,7 @@ Se sai raccontarlo, **hai capito davvero** — ed è quello che conta.
 
 ---
 
-## Se qualcosa non va 🔧 (succede a tutti) {#doc7-sec6}
+## Se qualcosa non va 🔧 (succede a tutti) {#doc8-sec6}
 
 - **Il link non si apre / pagina bianca:** aspetta un altro minuto, poi ricarica con `Ctrl + F5`. Controlla che il file si chiami **esattamente** `index.html`.
 - **I prodotti sono ancora quelli di esempio:** controlla di aver incollato i due valori del prof **tra le virgolette** e di aver fatto **Commit**. Aspetta un minuto e ricarica.
@@ -879,10 +966,10 @@ Se sai raccontarlo, **hai capito davvero** — ed è quello che conta.
 > normale — **capita a tutti i programmatori, anche ai più bravi.**
 
 
-# Il Mio Negozio Online — Piano-lezione {#doc8}
+# Il Mio Negozio Online — Piano-lezione {#doc9}
 *Versione 1.1 · 09/08/2026 · Parte: Classe 1 — Informatica*
 
-## In breve {#doc8-sec1}
+## In breve {#doc9-sec1}
 
 I ragazzi costruiscono un **negozio online vero** (con un link da mostrare a
 casa), collegato a un **database della classe** e con gli **ordini via email**.
@@ -895,7 +982,7 @@ Il filo è sempre lo stesso: **Vinci subito · Fallo tuo · Mostralo.**
 
 ---
 
-## Prima di iniziare — cosa prepara il prof (una volta sola) {#doc8-sec2}
+## Prima di iniziare — cosa prepara il prof (una volta sola) {#doc9-sec2}
 
 1. **Il database condiviso su Supabase** (già fatto): tabella `prodotti` con la
    policy di **sola lettura**. Consiglio: mettici prodotti simpatici, magari a
@@ -913,7 +1000,7 @@ Il filo è sempre lo stesso: **Vinci subito · Fallo tuo · Mostralo.**
 
 ---
 
-## La scaletta (3 lezioni) {#doc8-sec3}
+## La scaletta (3 lezioni) {#doc9-sec3}
 
 ### Lezione 1 — "Il mio negozio è ONLINE" (Tappa 1)
 Obiettivo: ognuno ha un **link** che funziona (con prodotti di esempio).
@@ -948,7 +1035,7 @@ Obiettivo: gli ordini arrivano per **email**, e ognuno **personalizza** il suo.
 
 ---
 
-## Canovaccio — spiegare il database dal vivo (10-15 min) {#doc8-sec4}
+## Canovaccio — spiegare il database dal vivo (10-15 min) {#doc9-sec4}
 
 Al proiettore, sul **tuo** Supabase. Poche cose, concrete:
 
@@ -976,7 +1063,7 @@ Al proiettore, sul **tuo** Supabase. Poche cose, concrete:
 
 ---
 
-## Se lavori a gruppi (opzionale, 2-4 ragazzi) {#doc8-sec5}
+## Se lavori a gruppi (opzionale, 2-4 ragazzi) {#doc9-sec5}
 
 Ruoli **a rotazione**, così tutti provano tutto:
 - **Vetrina:** crea il repository e pubblica su GitHub Pages.
@@ -989,7 +1076,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Gestire i ritmi diversi (importante per questa classe) {#doc8-sec6}
+## Gestire i ritmi diversi (importante per questa classe) {#doc9-sec6}
 
 - **Chi va piano:** basta arrivare alla **Tappa 1** (negozio online con prodotti
   di esempio). È già una vittoria vera e mostrabile. **Nessuno resta fuori.**
@@ -1000,7 +1087,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Valutazione (coerente col corso) {#doc8-sec7}
+## Valutazione (coerente col corso) {#doc9-sec7}
 
 1. **Il negozio che funziona è il biglietto d'ingresso, non il voto.**
 2. **Il voto nasce dalla prova dal vivo:** lo **spiega a voce** (cosa fa, dove
@@ -1010,7 +1097,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Checklist da tenere in aula {#doc8-sec8}
+## Checklist da tenere in aula {#doc9-sec8}
 
 - [ ] PC con browser + proiettore
 - [ ] I **due valori** del database (indirizzo + chiave pubblica)
@@ -1019,10 +1106,10 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 - [ ] Il tuo **negozio-esempio** già online da mostrare
 
 
-# Il Manuale di Godot {#doc9}
+# Il Manuale di Godot {#doc10}
 *Versione 0.5 · 26/07/2026 · Parte: Corso Godot / GDScript*
 
-## Scheda 1 — Come si valutano i compiti {#doc9-sec1}
+## Scheda 1 — Come si valutano i compiti {#doc10-sec1}
 *Le regole del gioco, chiare fin da subito.*
 
 Qui non ti freghiamo: sai **in anticipo** come funziona la valutazione. Leggila
@@ -1055,7 +1142,7 @@ ai più bravi. L'unica cosa che conta è che, alla fine, **tu abbia capito.**
 
 ---
 
-## Scheda 2 — Scrivere in Markdown {#doc9-sec2}
+## Scheda 2 — Scrivere in Markdown {#doc10-sec2}
 *La tua dispensa, fatta con due segnetti.*
 
 **Markdown**, si dice *"marc-daun"*, è un modo per scrivere **testo normale** e
@@ -1154,7 +1241,7 @@ computer. Ecco tutti i passaggi:
 
 ---
 
-## Capitolo 0 — Cos'è Godot, il parente di Lazarus {#doc9-sec3}
+## Capitolo 0 — Cos'è Godot, il parente di Lazarus {#doc10-sec3}
 
 **Godot** è un programma gratuito per creare **giochi** e app interattive.
 È molto simile, come spirito, a **Lazarus**: entrambi sono ambienti gratuiti
@@ -1193,7 +1280,7 @@ default e scena ancora vuota.
 
 ---
 
-## Capitolo 1 — I 4 concetti base di Godot {#doc9-sec4}
+## Capitolo 1 — I 4 concetti base di Godot {#doc10-sec4}
 
 Se capisci questi quattro, capisci Godot:
 
@@ -1209,7 +1296,7 @@ insieme; gli script danno vita ai nodi.
 
 ---
 
-## Capitolo 2 — GDScript: il linguaggio {#doc9-sec5}
+## Capitolo 2 — GDScript: il linguaggio {#doc10-sec5}
 
 GDScript è la lingua che si parla **dentro** Godot. È stato fatto apposta per
 somigliare a **Python**: si legge facile, si usa il **rientro con TAB** per
@@ -1233,7 +1320,7 @@ func _process(delta):
 
 ---
 
-## Capitolo 3 — Il nostro primo gioco: "Chirurgo Pasticcione" {#doc9-sec6}
+## Capitolo 3 — Il nostro primo gioco: "Chirurgo Pasticcione" {#doc10-sec6}
 
 **Idea:** un chirurgo maldestro fa cadere gli organi dal tavolo. Tu muovi il
 **vassoio** con le frecce ← → e li prendi al volo.
@@ -1252,7 +1339,7 @@ Il codice completo e commentato è in `godot/chirurgo-pasticcione/main.gd`.
 
 ---
 
-## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss" {#doc9-sec7}
+## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss" {#doc10-sec7}
 
 Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
 **un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
@@ -1314,7 +1401,7 @@ una vittoria mostrabile; chi corre di più mette le mani nel codice. Vale sempre
 
 ---
 
-## Come useremo l'AI {#doc9-sec8}
+## Come useremo l'AI {#doc10-sec8}
 
 L'AI è come la **calcolatrice in matematica**: aiuta, ma se non capisci cosa
 stai facendo non serve a niente.
@@ -1326,7 +1413,7 @@ stai facendo non serve a niente.
 
 ---
 
-## Changelog del manuale {#doc9-sec9}
+## Changelog del manuale {#doc10-sec9}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
@@ -1337,10 +1424,10 @@ stai facendo non serve a niente.
 | 0.5 | 26/07/2026 | Aspetto più sobrio e formale: rimosse tutte le icone/emoji; tolte le parentesi da titoli e scritte in grassetto; copertina senza emoji; istruzioni per principianti più complete (modello e screenshot); corretta una pagina vuota; le frasi tra virgolette non si spezzano più a fine riga. |
 
 
-# Eserciziario di Godot {#doc10}
+# Eserciziario di Godot {#doc11}
 *Versione 0.5 · 26/07/2026 · Parte: Corso Godot / GDScript*
 
-## Come funziona ogni esercizio {#doc10-sec1}
+## Come funziona ogni esercizio {#doc11-sec1}
 
 Ogni esercizio ha **4 livelli di aiuto**. Prova sempre da solo, e apri il
 livello successivo **solo se sei bloccato**:
@@ -1369,7 +1456,7 @@ aprirli. Nel PDF sono già aperti.*
 
 ---
 
-## Esercizio 1 — Il bottone che saluta {#doc10-sec2}
+## Esercizio 1 — Il bottone che saluta {#doc11-sec2}
 *Ponte da Lazarus: è il tuo `Button1Click` che cambia una `Caption`!*
 
 ### 🟢 Descrizione
@@ -1427,7 +1514,7 @@ func _quando_premo() -> void:
 
 ---
 
-## Esercizio 2 — Muovi il quadrato {#doc10-sec3}
+## Esercizio 2 — Muovi il quadrato {#doc11-sec3}
 *Concetto nuovo: il **game loop**, cioe' `_process`.*
 
 ### 🟢 Descrizione
@@ -1482,7 +1569,7 @@ func _process(delta: float) -> void:
 
 ---
 
-## Esercizio 3 — Prendi la moneta {#doc10-sec4}
+## Esercizio 3 — Prendi la moneta {#doc11-sec4}
 *Mette insieme: movimento + oggetto che cade + punteggio. Verso il gioco vero.*
 
 ### 🟢 Descrizione
@@ -1572,7 +1659,7 @@ func _aggiorna_punteggio() -> void:
 
 ---
 
-## Esercizio BOSS — Affonda la Bonomi {#doc10-sec5}
+## Esercizio BOSS — Affonda la Bonomi {#doc11-sec5}
 *Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.*
 
 ![Affonda la Bonomi in azione: il cubo d'acqua con il mirino verde, le coordinate scritte attorno al cubo e, in basso a sinistra, i comandi colorati dei tre assi (Colonna Q/A, Fila W/S, Profondità E/D).](manuale/immagini/AffondaBonomi.png)
@@ -1638,7 +1725,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## Changelog dell'eserciziario {#doc10-sec6}
+## Changelog dell'eserciziario {#doc11-sec6}
 
 | Versione | Data | Cosa e' cambiato |
 |---|---|---|
@@ -1649,10 +1736,10 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.5 | 26/07/2026 | Aspetto più sobrio: rimosse icone/emoji; parentesi tolte da titoli e grassetti; screenshot del BOSS spostato in cima all'esercizio; le frasi tra virgolette non si spezzano a fine riga. |
 
 
-# Quaderno dello Studente (modello) {#doc11}
+# Quaderno dello Studente (modello) {#doc12}
 *Parte: Corso Godot / GDScript*
 
-## Come si usa (semplice) {#doc11-sec1}
+## Come si usa (semplice) {#doc12-sec1}
 - Dopo **ogni lezione** aggiungi una pagina "Lezione".
 - Dopo **ogni esercizio/gioco** aggiungi una pagina "Il mio gioco".
 - Metti sempre uno **screenshot** del tuo lavoro: è la parte più bella. 📸
@@ -1661,7 +1748,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## PAGINA — Lezione (copia questo blocco ogni volta) {#doc11-sec2}
+## PAGINA — Lezione (copia questo blocco ogni volta) {#doc12-sec2}
 
 ### Lezione del ____/____/______  — titolo: ________________________
 
@@ -1677,7 +1764,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## PAGINA — Il mio gioco (copia questo blocco per ogni esercizio) {#doc11-sec3}
+## PAGINA — Il mio gioco (copia questo blocco per ogni esercizio) {#doc12-sec3}
 
 ### Gioco: _________________________   (esercizio n° ____)
 
@@ -1702,10 +1789,10 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 > file, e richiamale come nell'esempio: `![descrizione](immagini/nome.png)`.
 
 
-# Corso Informatica — indice generale {#doc12}
+# Corso Informatica — indice generale {#doc13}
 *Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc12-sec1}
+## In breve {#doc13-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -1721,7 +1808,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc12-sec2}
+## Parte 1 — Classe 1 (Informatica) {#doc13-sec2}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -1766,7 +1853,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc12-sec3}
+## Parte 2 — Corso Godot / GDScript {#doc13-sec3}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -1795,7 +1882,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc12-sec4}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc13-sec4}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -1819,7 +1906,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc12-sec5}
+## Parte 4 — Strumenti e configurazione {#doc13-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -1837,7 +1924,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc12-sec6}
+## Dove sta tutto {#doc13-sec6}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -1847,10 +1934,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc13}
+# Materiale del Corso — Classe 1 {#doc14}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc13-sec1}
+## In breve {#doc14-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -1858,7 +1945,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc13-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc14-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -1868,7 +1955,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc13-sec3}
+## 2. Esercizi / progetti FATTI {#doc14-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -1895,7 +1982,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc13-sec4}
+## 3. Strumenti {#doc14-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -1903,7 +1990,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc13-sec5}
+## 4. In preparazione (prossimi passi) {#doc14-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -1913,7 +2000,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc13-sec6}
+## Dove sta tutto {#doc14-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
