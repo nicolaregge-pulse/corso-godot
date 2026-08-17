@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.6"
+LIBRO_VERSION = "1.7"
 LIBRO_DATE = "16/08/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -61,6 +61,8 @@ LIBRO = [
     ("Corso Godot / GDScript", "manuale/manuale.md",                          "Il Manuale di Godot"),
     ("Corso Godot / GDScript", "manuale/eserciziario.md",                     "Eserciziario di Godot"),
     ("Corso Godot / GDScript", "manuale/quaderno-studente-TEMPLATE.md",       "Quaderno dello Studente (modello)"),
+    ("Indici e cataloghi",     "CORSO-INFORMATICA.md",                         "Corso Informatica — indice generale"),
+    ("Indici e cataloghi",     "classe-1/MATERIALE-PRONTO.md",                 "Materiale del Corso — Classe 1"),
 ]
 
 
@@ -186,7 +188,7 @@ def main():
         for titolo, sid in d["sezioni"]:
             toc.append(f'<div class="toc-sec"><a href="#{sid}">{html.escape(titolo)}</a></div>')
     toc.append("</section>")
-    toc_html = "\n".join(toc)
+    toc_html = G.strip_emoji("\n".join(toc))   # niente emoji anche nell'indice
 
     # 5) copertina + indice + corpo -> HTML unico
     logo_uri = G.find_logo()

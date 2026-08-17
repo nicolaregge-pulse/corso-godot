@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.6** — 16/08/2026
+**Versione 1.7** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1700,3 +1700,221 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 > Suggerimento: le immagini mettile in una cartella `immagini/` accanto a questo
 > file, e richiamale come nell'esempio: `![descrizione](immagini/nome.png)`.
+
+
+# Corso Informatica — indice generale {#doc12}
+*Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
+
+## In breve {#doc12-sec1}
+
+Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
+`claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
+**doppio formato**: una fonte `.md` (versionata) e un `.pdf` consegnabile, con il
+numero di versione nel nome del file.
+
+Il lavoro è organizzato in **quattro parti**:
+
+1. **Classe 1 — Informatica** → il corso nuovo (programma + progetto negozio online).
+2. **Corso Godot / GDScript** → il manuale, l'eserciziario e i giochi di esempio.
+3. **Materiale del triennio** → gli esami, le griglie e le rubriche (in raccolta).
+4. **Strumenti** → il generatore dei PDF e i file di configurazione.
+
+---
+
+## Parte 1 — Classe 1 (Informatica) {#doc12-sec2}
+
+Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
+online e gratuito, con un primo progetto completo e testato.
+
+### 1.1 Documenti di programmazione (per il docente)
+
+| Documento | Cos'è | Versione | Stato |
+|---|---|---|---|
+| `classe-1/programma.md` | La **mappa dell'anno**: i 6 moduli (software/editor/compilatore · reti e apparati di casa · configurazione PC su Amazon con budget · montaggio + sistema operativo · G Suite tecnica · Lazarus) e il percorso pluriennale fino a Cisco Packet Tracer. | 0.3 | ✅ pronto |
+| `classe-1/bussola-mondo-del-lavoro.md` | Cosa serve davvero al **mondo del lavoro** a ragazzi di 15-17 anni: i tre cassetti (atteggiamento · le mani · le carte). Documento autonomo, da portare anche in altre chat. | 0.1 | ✅ pronto |
+| `classe-1/da-far-fare-assolutamente.md` | L'elenco delle cose che i ragazzi devono **assolutamente fare con le mani** (database + SQL, il negozio). | 0.1 | ✅ pronto |
+| `classe-1/MATERIALE-PRONTO.md` | L'indice del solo materiale di Classe 1 (più dettagliato di questo per la parte 1). | 1.0 | ✅ pronto |
+
+### 1.2 Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
+
+Un **negozio e-commerce demo**, tutto online e gratis: **vetrina** (GitHub Pages)
++ **database** condiviso della classe (Supabase) + **ordini via email**
+(FormSubmit). Esempio dal vivo online: `nicolaregge-pulse.github.io/mio-negozio/`.
+
+**Competenze che tocca:** pagina web (HTML/CSS/JavaScript) · **database + SQL** ·
+email/automazione · **Git** e pubblicazione online.
+
+Cartella `classe-1/negozio-online/`:
+
+| File | Per chi | Cos'è | Versione |
+|---|---|---|---|
+| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali** (crea repo, Pages, prodotti, ordine inviato). | 1.3 |
+| `modello-negozio.html` | ragazzi | Il **file di partenza** che ogni ragazzo copia e riempie (3 valori `CAMBIA QUI`). | — |
+| `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, valutazione. | 1.0 |
+| `prodotti.sql` | docente | Il **database dei prodotti** pronto da incollare in Supabase (con la sola-lettura). | — |
+| `index.html` | esempio | Il negozio **già completo** del prof (quello pubblicato online). | — |
+| `README.md` | docente | Note tecniche: come preparare il database condiviso e quali due valori dare ai ragazzi. | — |
+
+Cartella `classe-1/negozio-esempio/`:
+
+| File | Cos'è |
+|---|---|
+| `index.html` | Una **seconda versione di esempio** del negozio, di riferimento. |
+
+**Stato del progetto:** pronto per l'aula. Restano, se vuoi, gli **screenshot**
+nella guida e una **prova a freddo** prima della classe.
+
+---
+
+## Parte 2 — Corso Godot / GDScript {#doc12-sec3}
+
+Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
+di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
+di esempio** già funzionanti.
+
+### 2.1 Il manuale (cartella `manuale/`)
+
+| Documento | Cos'è | Versione | Stato |
+|---|---|---|---|
+| `manuale/manuale.md` | Il **libro di testo**: teoria di Godot spiegata partendo da Lazarus, un passo alla volta. | 0.5 | ✅ in crescita |
+| `manuale/eserciziario.md` | Gli **esercizi** per i ragazzi, ognuno con i **4 livelli di aiuto** (descrizione → indizio → scena/nodi → codice completo). | 0.5 | ✅ in crescita |
+| `manuale/quaderno-studente-TEMPLATE.md` | Il **quaderno personale** di ogni ragazzo (portfolio che cresce a ogni lezione). | — | ✅ pronto |
+| `manuale/immagini/` | Gli **screenshot** richiamati dal manuale (ambiente Godot, giochi). | — | — |
+
+I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
+`v0.5` (le versioni vecchie restano come storico).
+
+### 2.2 Giochi di esempio (progetti Godot funzionanti)
+
+| Cartella | Gioco | Cos'è |
+|---|---|---|
+| `chirurgo-pasticcione/` | **Il Chirurgo Pasticcione** | Il primo gioco completo (backup del progetto vivo). |
+| `acchiappa-le-stelle/` | **Acchiappa le Stelle** | Mini-esempio di riferimento (movimento + raccolta). |
+| `battaglia-navale-3d/` | **Affonda la Bonomi** | Prototipo di battaglia navale **in 3D** (cubo di celle, sottomarino nascosto). |
+| `docs/` | (export web) | La **versione giocabile nel browser** esportata da Godot (per mostrare i giochi online). |
+
+---
+
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc12-sec4}
+
+Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
+al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
+rubriche). La sistemazione definitiva (cartelle per anno/materia, trascrizione in
+MD + PDF) la faremo con calma.
+
+Indice di navigazione completo: **`materiale-da-organizzare/INVENTARIO.md`**.
+
+In sintesi, cosa contiene:
+
+| Gruppo | Contenuto |
+|---|---|
+| ⭐ **Ufficiale (Regione Lombardia)** | La **prova di diploma** vera (Tecnico Informatico, giugno 2026) + la **rubrica ufficiale** di valutazione. |
+| **A. Reti — Cisco Packet Tracer** | Esame "rete di una scuola" in due varianti anti-copia + griglie di valutazione. |
+| **B. Reti — Cablaggio RJ45** | Prove pratiche di crimpatura cavi e connettività LAN fisica. |
+| **C. Hardware · Windows · Triage · Preventivo** | Esami "a busta" su assemblaggio, sistema operativo, diagnosi guasti e preventivo economico. |
+| **D. Valutazione** | Schede qualifica (3ª e 4ª) e rubriche Operatore Informatico. |
+
+**Stato:** materiale al sicuro, ancora **da organizzare e trascrivere**. Il primo
+passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + PDF.
+
+---
+
+## Parte 4 — Strumenti e configurazione {#doc12-sec5}
+
+| Cosa | A cosa serve |
+|---|---|
+| `LIBRO-COMPLETO.md` (+ PDF) | Il **libro unico**: tutti i documenti del corso in un solo file, ultima versione, con indice cliccabile e segnalibri. **Da rigenerare quando un documento cambia.** |
+| `classe-1/_build/` | Il **generatore PDF** di Classe 1: da ogni `.md` produce il `.pdf` impaginato, con la versione nel nome. |
+| `classe-1/_build/assembla_libro.py` | Lo strumento che **ricostruisce il libro unico** dai singoli documenti (poi il PDF con `genera_pdf.js` e `PDF_OUTLINE=1`). |
+| `manuale/_build/` | Il **generatore PDF** del manuale Godot. |
+| `CLAUDE.md` | Le **preferenze e il metodo** del corso (contesto, regole, tono, coordinate complete). |
+| `README.md` | Panoramica del repository e concetti base. |
+
+> **Come si aggiorna il libro unico** (quando cambia un documento): dalla cartella
+> `classe-1/_build/` si lancia `python3 assembla_libro.py` e poi
+> `PDF_OUTLINE=1 node genera_pdf.js`. Se il contenuto è cambiato, si alza la
+> `LIBRO_VERSION` in cima ad `assembla_libro.py`.
+
+---
+
+## Dove sta tutto {#doc12-sec6}
+
+Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
+Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
+con il numero di versione nel nome del file.
+
+Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui per
+avere sott'occhio tutto ciò che esiste.
+
+
+# Materiale del Corso — Classe 1 {#doc13}
+*Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
+
+## In breve {#doc13-sec1}
+
+Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
+**primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
+(ogni documento in `.md` con il suo `.pdf`) e salvato nel repository del corso.
+
+---
+
+## 1. Documenti di programmazione (per il docente) {#doc13-sec2}
+
+| Documento | Cos'è | Versione |
+|---|---|---|
+| `programma.md` | La **mappa dell'anno**: i 6 moduli (software/editor/compilatore · reti · config PC su Amazon · montaggio + sistema operativo · G Suite tecnica · Lazarus) e il percorso pluriennale fino a Cisco Packet Tracer. | 0.3 |
+| `bussola-mondo-del-lavoro.md` | Cosa serve davvero al **mondo del lavoro** da ragazzi di 15-17 anni: i tre cassetti (atteggiamento · le mani · le carte). | 0.1 |
+| `da-far-fare-assolutamente.md` | L'elenco delle cose che i ragazzi devono **assolutamente fare con le mani**. | 0.1 |
+
+---
+
+## 2. Esercizi / progetti FATTI {#doc13-sec3}
+
+### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
+
+Un **negozio e-commerce demo**, tutto online e gratis: **vetrina** (GitHub Pages)
++ **database** condiviso della classe (Supabase) + **ordini via email**
+(FormSubmit). Esempio dal vivo: `nicolaregge-pulse.github.io/mio-negozio/`.
+
+**Competenze che tocca:** pagina web (HTML/CSS/JavaScript) · **database + SQL** ·
+email/automazione · **Git** e pubblicazione online. Tutte spendibili nel lavoro.
+
+Materiale pronto (cartella `negozio-online/`):
+
+| File | Per chi | Cos'è | Versione |
+|---|---|---|---|
+| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali**. | 1.3 |
+| `modello-negozio.html` | ragazzi | Il **file di partenza** che ogni ragazzo copia e riempie (3 valori `CAMBIA QUI`). | — |
+| `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, gestione dei ritmi, valutazione. | 1.0 |
+| `prodotti.sql` | docente | Il **database dei prodotti** pronto da incollare in Supabase (con la sola-lettura). | — |
+| `index.html` | esempio | Il negozio **già completo** del prof (quello online). | — |
+| `README.md` | docente | Note tecniche: come preparare il database condiviso e quali due valori dare ai ragazzi. | — |
+
+**Stato:** pronto per l'aula. Manca solo, se vuoi, aggiungere gli **screenshot**
+nella guida e fare una **prova a freddo**.
+
+---
+
+## 3. Strumenti {#doc13-sec4}
+
+| Cosa | A cosa serve |
+|---|---|
+| `_build/` | Il **generatore PDF** del corso: da ogni `.md` produce il `.pdf` impaginato, con la versione nel nome (istruzioni in `_build/README.md`). |
+
+---
+
+## 4. In preparazione (prossimi passi) {#doc13-sec5}
+
+- **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
+- Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
+  esercizi: software/editor/compilatore · reti e apparati di casa · configurazione
+  PC su Amazon con budget · montaggio + sistema operativo · G Suite tecnica ·
+  Lazarus.
+
+---
+
+## Dove sta tutto {#doc13-sec6}
+
+Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
+cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
+consegnabile accanto.
