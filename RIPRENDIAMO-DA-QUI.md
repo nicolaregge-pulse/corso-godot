@@ -12,7 +12,7 @@
   **Sommario cliccabile** dopo la copertina (+ segnalibri laterali nel PDF) e
   **tutte** le foto: ogni esercizio ha sia la foto dell'ambiente sia quella del
   gioco.
-- **Super-guida** `CORSO-COMPLETO-v1.2.pdf` — tutti i documenti in un solo PDF,
+- **Super-guida** `CORSO-COMPLETO-v1.3.pdf` — tutti i documenti in un solo PDF,
   con indice cliccabile e segnalibri (si genera con `manuale/_build/volume_pdf.py`).
   C'è anche `00 CORSO.md`/`00 CORSO.pdf`, il quadro completo stampabile.
 - **Eserciziario v0.15** (PDF `eserciziario-v0.15.pdf` generato) —
