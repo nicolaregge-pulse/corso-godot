@@ -9,9 +9,10 @@ Pulse, come STATO_PRODOTTO, Guido e VPS, non si applicano e sono segnalate).
 
 ## 1. Ambito: due categorie di documenti
 
-1. Documenti tecnici e di servizio: INDICE, CORSO, SCALETTA, RIPRENDIAMO, le
-   guide del kit consegne, i README, questo documento. Seguono lo standard
-   pieno qui sotto.
+1. Documenti tecnici e di servizio: 00 Corso, 01 Glossario, 02 Indice,
+   03 Scaletta, le guide del kit consegne, i README, questo documento. Seguono
+   lo standard pieno qui sotto. (RIPRENDIAMO-DA-QUI resta una nota di servizio
+   interna, non numerata.)
 2. Materiali didattici per i ragazzi: manuale, eserciziario, quaderno dello
    studente. Tengono il loro stile pedagogico (semplice, accogliente, con
    incoraggiamento), come imposto dal CLAUDE.md del corso. Di questo standard
@@ -106,7 +107,7 @@ Pulse, come STATO_PRODOTTO, Guido e VPS, non si applicano e sono segnalate).
 ## 11. Fonte di verità
 
 1. Nel corso Godot la fonte di verità dei contenuti è il manuale, e la mappa di
-   tutto il materiale è INDICE.
+   tutto il materiale è il documento 02 Indice.
 2. La regola del progetto Quidoo Pulse, per cui il documento 00 STATO_PRODOTTO
    di Guido è la stella polare e non si riscrive ma si recepisce, riguarda quel
    progetto e non il corso Godot.
