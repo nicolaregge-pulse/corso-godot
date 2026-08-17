@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.12** — 16/08/2026
+**Versione 1.13** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1961,42 +1961,112 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 3. La modalita "simulazione" di Packet Tracer mostra il pacchetto che viaggia da un apparato all'altro: cosi la teoria di questo documento si vede in movimento.
 
 
-# Programma del Corso — Classe 4 {#doc16}
+# Cablaggio RJ45 — Scheda pratica {#doc16}
+*Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
+
+## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc16-sec1}
+
+Obiettivo: costruire con le tue mani un cavo di rete Ethernet, montando i
+connettori RJ45 con lo standard T568B, e verificare che funzioni collegando due
+computer.
+
+Alla fine avrai un cavo tuo, che funziona davvero: potrai usarlo per collegare i
+PC del laboratorio.
+
+<details>
+<summary>🟡 Aiuto (un indizio)</summary>
+
+1. I fili dentro il cavo sono 8, in 4 coppie intrecciate.
+2. Conta che l'ordine dei colori deve essere lo stesso ai due capi (cavo "diritto").
+3. Prima di inserire i fili nel connettore, vanno messi in fila e tagliati dritti tutti alla stessa lunghezza.
+4. Non serve spellare i singoli fili: si infilano interi nel connettore, e' la crimpatrice a fare il contatto.
+
+</details>
+
+<details>
+<summary>🟠 Materiale e passi</summary>
+
+Materiale:
+1. Un pezzo di cavo di rete (UTP).
+2. Due connettori RJ45.
+3. Una crimpatrice (lo strumento che "chiude" il connettore).
+4. Una tronchesina/forbice e, se c'e', un tester per cavi.
+
+Passi:
+1. Togli circa 2-3 cm di guaina esterna, senza rovinare i fili interni.
+2. Separa le 4 coppie e distendi gli 8 fili.
+3. Mettili nell'ordine dello standard T568B (vedi lo schema).
+4. Taglia le punte dritte, tutte alla stessa lunghezza.
+5. Infila gli 8 fili nel connettore RJ45, con la linguetta rivolta in basso, controllando che ogni filo arrivi in fondo e resti nel suo ordine.
+6. Inserisci il connettore nella crimpatrice e stringi bene.
+7. Ripeti allo stesso modo sull'altro capo, con lo stesso ordine di colori.
+
+![Ordine dei colori dello standard T568B, dal pin 1 al pin 8.](classe-3/esercizi/immagini/t568b.svg)
+
+</details>
+
+<details>
+<summary>🔴 Soluzione completa</summary>
+
+Ordine T568B (uguale ai due capi), dal pin 1 al pin 8:
+1. bianco-arancio
+2. arancio
+3. bianco-verde
+4. blu
+5. bianco-blu
+6. verde
+7. bianco-marrone
+8. marrone
+
+Come verificare che funziona:
+1. Se hai un tester per cavi, collega i due capi: devono accendersi in ordine i led da 1 a 8.
+2. In alternativa, collega due computer con il cavo, dai a ciascuno un indirizzo IP della stessa rete (per esempio 192.168.1.10 e 192.168.1.11) e prova il comando ping da uno verso l'altro.
+3. Se il ping risponde, il cavo e la connessione funzionano.
+
+Se qualcosa non va:
+1. Controlla che l'ordine dei colori sia identico ai due capi.
+2. Controlla che ogni filo arrivi fino in fondo al connettore.
+3. Ricrimpa se un contatto non tiene: e' normale sbagliare il primo cavo, capita a tutti.
+
+</details>
+
+
+# Programma del Corso — Classe 4 {#doc17}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc16-sec1}
+## 1. A colpo d'occhio {#doc17-sec1}
 1. La Classe 4 porta a un progetto completo: la rete di una scuola, simulata in Cisco Packet Tracer.
 2. Si arriva alla prova di qualifica con validita regionale (Regione Lombardia).
 3. Si consolida tutto il triennio: reti, hardware, documentazione tecnica.
 
-## 2. Modulo A — Cisco Packet Tracer avanzato {#doc16-sec2}
+## 2. Modulo A — Cisco Packet Tracer avanzato {#doc17-sec2}
 1. Progettare la rete di una scuola su piu piani, con una dorsale (backbone) che collega i piani.
 2. Apparati e servizi: router, switch, server, DHCP (assegnazione automatica degli indirizzi).
 3. Suddividere la rete in sottoreti (VLAN: Virtual LAN, reti locali logiche separate).
 
-## 3. Modulo B — Collaudo e documentazione {#doc16-sec3}
+## 3. Modulo B — Collaudo e documentazione {#doc17-sec3}
 1. Collaudare la rete con il comando ping e verificare che tutto comunichi.
 2. Documentare la rete: mappa degli indirizzi, schema, scelte fatte.
 
-## 4. Modulo C — Preventivo dell'infrastruttura {#doc16-sec4}
+## 4. Modulo C — Preventivo dell'infrastruttura {#doc17-sec4}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 5. La prova di qualifica (diploma) {#doc16-sec5}
+## 5. La prova di qualifica (diploma) {#doc17-sec5}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 6. Materiale collegato (gia esistente, da trascrivere) {#doc16-sec6}
+## 6. Materiale collegato (gia esistente, da trascrivere) {#doc17-sec6}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc17}
+# Corso Informatica — indice generale {#doc18}
 *Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc17-sec1}
+## In breve {#doc18-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -2012,7 +2082,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc17-sec2}
+## Parte 1 — Classe 1 (Informatica) {#doc18-sec2}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -2057,7 +2127,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc17-sec3}
+## Parte 2 — Corso Godot / GDScript {#doc18-sec3}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -2086,7 +2156,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc17-sec4}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc18-sec4}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -2110,7 +2180,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc17-sec5}
+## Parte 4 — Strumenti e configurazione {#doc18-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2128,7 +2198,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc17-sec6}
+## Dove sta tutto {#doc18-sec6}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -2138,10 +2208,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc18}
+# Materiale del Corso — Classe 1 {#doc19}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc18-sec1}
+## In breve {#doc19-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -2149,7 +2219,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc18-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc19-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -2159,7 +2229,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc18-sec3}
+## 2. Esercizi / progetti FATTI {#doc19-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -2186,7 +2256,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc18-sec4}
+## 3. Strumenti {#doc19-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2194,7 +2264,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc18-sec5}
+## 4. In preparazione (prossimi passi) {#doc19-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -2204,7 +2274,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc18-sec6}
+## Dove sta tutto {#doc19-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`

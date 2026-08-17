@@ -55,6 +55,7 @@ DOCS = {
     "programma-2":   {"src": "../classe-2/programma.md",        "title": "Programma del Corso — Classe 2"},
     "programma-3":   {"src": "../classe-3/programma.md",        "title": "Programma del Corso — Classe 3"},
     "reti-teoria":   {"src": "../classe-3/reti-teoria.md",      "title": "Le Reti di Computer — Teoria"},
+    "cablaggio-rj45": {"src": "../classe-3/esercizi/01-cablaggio-rj45.md", "title": "Cablaggio RJ45 — Scheda pratica"},
     "programma-4":   {"src": "../classe-4/programma.md",        "title": "Programma del Corso — Classe 4"},
     "bussola":       {"src": "bussola-mondo-del-lavoro.md",     "title": "La Bussola del Lavoro"},
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},
