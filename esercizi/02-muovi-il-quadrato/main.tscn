@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kxexxkv6l7y3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_main"]
+
+[node name="Main" type="Node2D" unique_id=1416559724]
+script = ExtResource("1_main")
+
+[node name="quadratoScena" type="ColorRect" parent="." unique_id=460695805]
+offset_right = 40.0
+offset_bottom = 40.0
