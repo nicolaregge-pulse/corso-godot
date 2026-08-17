@@ -113,14 +113,16 @@ voce. Si aggiorna a ogni aggiunta o cambiamento.
 3. Documento 03 Scaletta lezioni, il piano delle prime lezioni della Fase 1:
    cosa spiegare, in che ordine, con quale esercizio, con la piccola vittoria da
    mostrare a ogni lezione.
-4. `REGOLE-DOCUMENTI.md`, le regole di formattazione dei documenti del corso.
-5. `CORSO-COMPLETO-v1.2.pdf`, la super-guida: tutti i documenti, con le immagini,
+4. Documento 04 Struttura del repository, l'albero del repository: com'è
+   organizzato adesso e dove si arriverà con la Fase 2.
+5. `REGOLE-DOCUMENTI.md`, le regole di formattazione dei documenti del corso.
+6. `CORSO-COMPLETO-v1.3.pdf`, la super-guida: tutti i documenti, con le immagini,
    in un solo PDF, con Sommario e segnalibri cliccabili. Si genera con
    `manuale/_build/volume_pdf.py`.
-6. `README.md`, la porta d'ingresso del repository, rimanda a questo indice.
-7. `CLAUDE.md`, preferenze e contesto del corso.
-8. Nota di servizio interna RIPRENDIAMO-DA-QUI, dove siamo e cosa manca tra una
+7. `README.md`, la porta d'ingresso del repository, rimanda a questo indice.
+8. `CLAUDE.md`, preferenze e contesto del corso.
+9. Nota di servizio interna RIPRENDIAMO-DA-QUI, dove siamo e cosa manca tra una
    sessione e l'altra.
-9. `docs/`, la cartella che viene pubblicata sul web da GitHub Pages.
-10. `.github/workflows/deploy-pages.yml`, pubblica `docs/` sul web a ogni
+10. `docs/`, la cartella che viene pubblicata sul web da GitHub Pages.
+11. `.github/workflows/deploy-pages.yml`, pubblica `docs/` sul web a ogni
     modifica.

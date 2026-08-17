@@ -14,12 +14,12 @@ automatico, cosi' un documento nuovo entra da solo nella super-guida.
 
 Uso (dalla radice del repo):
     python3 manuale/_build/volume_pdf.py
-Produce: CORSO-COMPLETO-v1.2.pdf
+Produce: CORSO-COMPLETO-v1.3.pdf
 """
 import fitz  # PyMuPDF
 from pathlib import Path
 
-VERSIONE = "1.2"
+VERSIONE = "1.3"
 DATA = "16/08/2026"
 OUT = f"CORSO-COMPLETO-v{VERSIONE}.pdf"
 
@@ -31,6 +31,7 @@ TITOLI = {
     "manuale/eserciziario-v0.15.pdf": "Eserciziario — v0.15",
     "manuale/quaderno-studente-TEMPLATE.pdf": "Quaderno dello studente — modello",
     "03 SCALETTA-LEZIONI.pdf": "Scaletta delle lezioni (doc 03)",
+    "04 STRUTTURA-REPOSITORY.pdf": "Struttura del repository (doc 04)",
     "consegne/README.pdf": "Consegne — come sono organizzate",
     "consegne/CREA-ACCOUNT-GITHUB.pdf": "Guida — crearsi l'account GitHub",
     "consegne/INVITO-ALLA-CLASSE.pdf": "Guida — invito alla classe, primo giro",
@@ -44,6 +45,8 @@ TITOLI = {
     "battaglia-navale-3d/README.pdf": "Gioco — Affonda la Bonomi",
     "gioco-del-quindici/README.pdf": "Gioco — Gioco del Quindici",
     "REGOLE-DOCUMENTI.pdf": "Regole di formattazione dei documenti",
+    "README.pdf": "README — porta d'ingresso del repository",
+    "RIPRENDIAMO-DA-QUI.pdf": "Riprendiamo da qui — nota di lavoro tra sessioni",
 }
 
 
