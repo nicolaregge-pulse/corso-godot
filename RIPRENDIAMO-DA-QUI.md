@@ -3,17 +3,18 @@
 *Aggiornato: 16/08/2026.*
 
 ## Dove siamo (tutto su `main`)
-- **Indice di tutto il materiale**: `INDICE-DEL-MATERIALE.md` in radice — va
-  tenuto aggiornato a ogni aggiunta o cambio.
+- **Indice di tutto il materiale**: `02 INDICE.md` in radice — va tenuto
+  aggiornato a ogni aggiunta o cambio. (Documenti tecnici rinumerati `00/01/02`
+  secondo `REGOLE-DOCUMENTI.md`.)
 - **Manuale v0.20** — teoria, lettera a mano firmata "Nicola", schede, i 4
   capitoli di costruzione degli esercizi 1-2-3-4 (Es4 = vite e game over),
   progetto boss. Nel Cap. 3 i mattoncini booleano/stato e visible. Ora ha un
   **Sommario cliccabile** dopo la copertina (+ segnalibri laterali nel PDF) e
   **tutte** le foto: ogni esercizio ha sia la foto dell'ambiente sia quella del
   gioco.
-- **Volume unico** `CORSO-COMPLETO-v1.1.pdf` — tutti i documenti in un solo PDF,
+- **Super-guida** `CORSO-COMPLETO-v1.2.pdf` — tutti i documenti in un solo PDF,
   con indice cliccabile e segnalibri (si genera con `manuale/_build/volume_pdf.py`).
-  C'è anche `CORSO.md`/`CORSO.pdf`, il quadro completo stampabile.
+  C'è anche `00 CORSO.md`/`00 CORSO.pdf`, il quadro completo stampabile.
 - **Eserciziario v0.15** (PDF `eserciziario-v0.15.pdf` generato) —
   esercizi 1-4 (4 livelli + foto del risultato) + BOSS,
   ognuno con la "Guida passo passo — costruiamolo insieme" e la spiegazione del

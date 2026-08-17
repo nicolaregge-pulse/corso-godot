@@ -3,8 +3,8 @@
 Il corso di **Godot** e **GDScript** per i ragazzi.
 
 Per l'elenco completo e aggiornato di tutto il materiale, vedi
-**[INDICE-DEL-MATERIALE.md](INDICE-DEL-MATERIALE.md)**: manuale, esercizi, giochi,
-kit di consegna e altro.
+**[02 INDICE.md](02%20INDICE.md)**: manuale, esercizi, giochi, kit di consegna e
+altro.
 
 ---
 
