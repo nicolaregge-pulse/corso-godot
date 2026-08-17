@@ -209,6 +209,35 @@ selezionare col mouse. Regole precise:
   Nel dubbio, essere più precisi, non meno.
 - Meglio **lento e chiaro** che veloce e confuso: la fretta qui è un errore.
 
+## ⭐ Standard di formattazione dei documenti (VINCOLANTE)
+
+Tutti i documenti del corso — **presenti e futuri** — seguono lo standard scritto
+in **`REGOLE-FORMATTAZIONE.md`** (documento 00). È la regola, non un consiglio.
+Per questo progetto la **fonte di verità è Nicola** (nessun ruolo di soggetti
+esterni). Punti chiave da ricordare sempre:
+
+- **MD + PDF** per ogni documento; una **super-guida combinata** + zip dei singoli.
+- **Liste solo numerate e gerarchiche** (1, 1.1, 1.1.2): **niente elenchi puntati**.
+- **Niente emoji decorative** nei documenti; per evidenziare si usano i **box
+  colorati semantici** (rosso = disallineamento, blu = da confermare, giallo = nota).
+- **Titoli numerati** (00, 01, 02, 02b), **senza trattino** ("02 Panoramica"), mai
+  orfani a fine pagina.
+- **Sigle** esplicitate alla prima occorrenza; termini ricorrenti nel **GLOSSARIO**.
+- **Versione congelata** una volta stampata; correzioni nella successiva
+  (CHANGELOG_Vn + ERRATA_Vn in coda al combinato).
+- **REGOLA 0 (assoluta):** tutto ciò che l'utente deve **copiare** va in un
+  **blocco di codice** (col bottone "copia"), mai in linea né in citazione.
+
+**Come si concilia col metodo del corso:** cambia la **forma** (formattazione
+sobria, niente emoji/puntati), **non** la **sostanza pedagogica**. Restano intatti:
+tono di rispetto e incoraggiamento, passi piccolissimi, "Vinci subito · Fallo tuo ·
+Mostralo", celebrare ogni vittoria, coordinate sempre complete. Si può essere caldi
+e incoraggianti anche in prosa sobria e con liste numerate.
+
+> Nota di migrazione: i documenti già esistenti (guide, manuale, indici) si
+> adeguano **gradualmente** allo standard, non tutti in una volta, per non
+> introdurre errori. Ogni nuovo documento nasce già conforme.
+
 ## ⭐ Struttura del corso e flusso Git
 
 ### Due ambienti: "autore" (Nicola) vs "ragazzi"
