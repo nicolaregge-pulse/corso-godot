@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.10"
+LIBRO_VERSION = "1.11"
 LIBRO_DATE = "16/08/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -64,6 +64,7 @@ LIBRO = [
     ("Corso Godot / GDScript", "manuale/quaderno-studente-TEMPLATE.md",       "Quaderno dello Studente (modello)"),
     ("Classe 2 — Informatica", "classe-2/programma.md",                       "Programma del Corso — Classe 2"),
     ("Classe 3 — Informatica", "classe-3/programma.md",                       "Programma del Corso — Classe 3"),
+    ("Classe 3 — Informatica", "classe-3/reti-teoria.md",                     "Le Reti di Computer — Teoria"),
     ("Classe 4 — Informatica", "classe-4/programma.md",                       "Programma del Corso — Classe 4"),
     ("Indici e cataloghi",     "CORSO-INFORMATICA.md",                         "Corso Informatica — indice generale"),
     ("Indici e cataloghi",     "classe-1/MATERIALE-PRONTO.md",                 "Materiale del Corso — Classe 1"),

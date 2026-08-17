@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.10** — 16/08/2026
+**Versione 1.11** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1875,42 +1875,122 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 4. Prova di diagnosi guasti (troubleshooting) per la Classe 3.
 
 
-# Programma del Corso — Classe 4 {#doc15}
+# Le Reti di Computer — Teoria {#doc15}
+*Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
+
+## 1. Cos'e una rete {#doc15-sec1}
+1. Una rete collega piu dispositivi e li fa comunicare e condividere cose (Internet, file, stampanti).
+2. Immagine utile: e come una rete stradale che collega tante case; i dati sono le auto che viaggiano da una casa all'altra.
+
+## 2. Gli apparecchi di rete in casa {#doc15-sec2}
+1. Modem (Modulator-Demodulator: modulatore-demodulatore): collega casa a Internet e traduce il segnale della linea (telefonica o fibra) in dati che il computer capisce.
+2. Router (instradatore): smista i dati tra la rete di casa e Internet e decide dove mandare ogni pacchetto. Di solito assegna anche gli indirizzi e fa da Wi-Fi.
+3. Modem-router: i due apparecchi in un'unica scatola, quella che di solito da l'operatore.
+4. Access Point (punto di accesso): crea la rete senza fili (Wi-Fi). Nel router di casa e gia integrato.
+5. Repeater o Range Extender (ripetitore): ripete e allunga il segnale Wi-Fi dove arriva debole. Ripete cio che riceve.
+6. Powerline: usa l'impianto elettrico di casa per portare la rete da una stanza all'altra, con due scatoline infilate nelle prese.
+7. Switch (commutatore): collega piu dispositivi via cavo dentro la stessa rete, mandando i dati solo a chi servono.
+8. Hub (concentratore): come lo switch ma "senza cervello": ripete a tutti. Oggi quasi non si usa piu.
+
+> [GIALLO] Differenza chiave: il ROUTER collega reti diverse (casa verso Internet); lo SWITCH collega dispositivi dentro la stessa rete.
+
+## 3. I cavi di rete {#doc15-sec3}
+1. Il cavo Ethernet ha un connettore RJ45 e dentro 8 fili raggruppati in 4 coppie intrecciate.
+2. Le coppie sono intrecciate apposta: cosi si disturbano di meno e il segnale e piu pulito.
+3. Le categorie (per esempio Cat 5e, Cat 6): piu alta e la categoria, piu veloce puo andare il cavo.
+4. Lo standard T568B stabilisce l'ordine dei colori quando si monta il connettore: lo useremo in laboratorio.
+5. Cenno: la fibra ottica porta i dati con la luce; e velocissima e adatta alle lunghe distanze.
+
+## 4. Hub, switch e routing {#doc15-sec4}
+1. Hub: ripete il segnale a tutte le porte; risultato, traffico inutile e "collisioni".
+2. Switch: impara quale dispositivo e attaccato a ogni porta e manda i dati solo alla porta giusta.
+3. Routing (instradamento): il router sceglie la strada per far arrivare un pacchetto a una rete diversa. Instradare vuol dire proprio "scegliere il percorso".
+
+## 5. Gli indirizzi in rete {#doc15-sec5}
+1. Indirizzo IP (Internet Protocol): l'indirizzo di un dispositivo, come il numero civico di una casa.
+2. Maschera di sottorete: dice quale parte dell'indirizzo indica la "via" (la rete) e quale il "civico" (il singolo dispositivo).
+3. Gateway (passaggio): la porta verso l'esterno, di solito il router.
+4. DHCP (Dynamic Host Configuration Protocol): assegna gli indirizzi IP in automatico, senza scriverli a mano.
+5. Cenno: il MAC address e l'indirizzo "di fabbrica" della scheda di rete, unico per ogni scheda.
+
+## 6. Il modello ISO/OSI (i 7 livelli) {#doc15-sec6}
+1. ISO e l'organizzazione che ha definito il modello; OSI (Open Systems Interconnection: interconnessione di sistemi aperti) e il nome del modello. Per questo si dice "modello ISO/OSI".
+2. E un modo per dividere la comunicazione in 7 piani, ognuno con un compito. Dal basso verso l'alto:
+   1. Fisico: i segnali che viaggiano sul cavo o nell'aria.
+   2. Collegamento dati: lo scambio tra due apparati vicini (qui lavorano MAC e switch).
+   3. Rete: l'indirizzamento e la scelta del percorso (qui lavorano IP e router).
+   4. Trasporto: la consegna, affidabile o veloce (qui lavorano TCP e UDP).
+   5. Sessione: apre e chiude le "conversazioni" tra due programmi.
+   6. Presentazione: il formato e la codifica dei dati.
+   7. Applicazione: i programmi che usiamo (pagine web, posta).
+3. A cosa serve: se qualcosa non funziona, aiuta a capire "a che piano" cercare il guasto.
+
+## 7. Il modello TCP/IP (i 4 livelli) {#doc15-sec7}
+1. E il modello pratico con cui funziona Internet davvero.
+2. Ha 4 livelli: Accesso alla rete, Internet (IP), Trasporto (TCP o UDP), Applicazione.
+3. E una versione piu snella del modello ISO/OSI: fa le stesse cose, con meno piani.
+
+## 8. Come viaggiano i pacchetti {#doc15-sec8}
+1. Un dato grande viene spezzato in tanti pacchetti piccoli.
+2. Ogni pacchetto porta un'intestazione con mittente e destinatario (gli indirizzi IP), come una busta con l'indirizzo scritto sopra.
+3. I router leggono l'indirizzo e instradano ogni pacchetto verso la destinazione, anche per strade diverse.
+4. All'arrivo i pacchetti vengono rimessi in ordine per ricostruire il dato di partenza.
+
+> [GIALLO] Immagine utile: spedire un libro pagina per pagina, in tante buste separate; arrivano e poi si rimonta il libro nell'ordine giusto.
+
+## 9. Due modi di spedire i dati: TCP e UDP {#doc15-sec9}
+1. TCP (Transmission Control Protocol): la spedizione "con ricevuta di ritorno".
+   1. Prima si stabilisce la connessione tra i due dispositivi.
+   2. Ogni pacchetto viene confermato; se uno si perde, viene rispedito.
+   3. E affidabile, ma con un po' piu di lavoro. Si usa per pagine web, posta, invio di file.
+2. UDP (User Datagram Protocol): la spedizione "veloce, senza ricevuta".
+   1. Non conferma niente: se un pacchetto si perde, pazienza.
+   2. E velocissimo. Si usa per video in diretta, giochi online, chiamate vocali.
+
+> [GIALLO] La scelta dipende dal bisogno: meglio sicuro (TCP) oppure meglio veloce (UDP).
+
+## 10. Dalla teoria alla pratica {#doc15-sec10}
+1. In laboratorio costruiremo cavi veri e piccole reti reali.
+2. In Cisco Packet Tracer (simulatore di reti) progetteremo una rete e proveremo l'invio dei pacchetti.
+3. La modalita "simulazione" di Packet Tracer mostra il pacchetto che viaggia da un apparato all'altro: cosi la teoria di questo documento si vede in movimento.
+
+
+# Programma del Corso — Classe 4 {#doc16}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc15-sec1}
+## 1. A colpo d'occhio {#doc16-sec1}
 1. La Classe 4 porta a un progetto completo: la rete di una scuola, simulata in Cisco Packet Tracer.
 2. Si arriva alla prova di qualifica con validita regionale (Regione Lombardia).
 3. Si consolida tutto il triennio: reti, hardware, documentazione tecnica.
 
-## 2. Modulo A — Cisco Packet Tracer avanzato {#doc15-sec2}
+## 2. Modulo A — Cisco Packet Tracer avanzato {#doc16-sec2}
 1. Progettare la rete di una scuola su piu piani, con una dorsale (backbone) che collega i piani.
 2. Apparati e servizi: router, switch, server, DHCP (assegnazione automatica degli indirizzi).
 3. Suddividere la rete in sottoreti (VLAN: Virtual LAN, reti locali logiche separate).
 
-## 3. Modulo B — Collaudo e documentazione {#doc15-sec3}
+## 3. Modulo B — Collaudo e documentazione {#doc16-sec3}
 1. Collaudare la rete con il comando ping e verificare che tutto comunichi.
 2. Documentare la rete: mappa degli indirizzi, schema, scelte fatte.
 
-## 4. Modulo C — Preventivo dell'infrastruttura {#doc15-sec4}
+## 4. Modulo C — Preventivo dell'infrastruttura {#doc16-sec4}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 5. La prova di qualifica (diploma) {#doc15-sec5}
+## 5. La prova di qualifica (diploma) {#doc16-sec5}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 6. Materiale collegato (gia esistente, da trascrivere) {#doc15-sec6}
+## 6. Materiale collegato (gia esistente, da trascrivere) {#doc16-sec6}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc16}
+# Corso Informatica — indice generale {#doc17}
 *Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc16-sec1}
+## In breve {#doc17-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -1926,7 +2006,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc16-sec2}
+## Parte 1 — Classe 1 (Informatica) {#doc17-sec2}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -1971,7 +2051,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc16-sec3}
+## Parte 2 — Corso Godot / GDScript {#doc17-sec3}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -2000,7 +2080,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc16-sec4}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc17-sec4}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -2024,7 +2104,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc16-sec5}
+## Parte 4 — Strumenti e configurazione {#doc17-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2042,7 +2122,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc16-sec6}
+## Dove sta tutto {#doc17-sec6}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -2052,10 +2132,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc17}
+# Materiale del Corso — Classe 1 {#doc18}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc17-sec1}
+## In breve {#doc18-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -2063,7 +2143,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc17-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc18-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -2073,7 +2153,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc17-sec3}
+## 2. Esercizi / progetti FATTI {#doc18-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -2100,7 +2180,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc17-sec4}
+## 3. Strumenti {#doc18-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2108,7 +2188,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc17-sec5}
+## 4. In preparazione (prossimi passi) {#doc18-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -2118,7 +2198,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc17-sec6}
+## Dove sta tutto {#doc18-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
