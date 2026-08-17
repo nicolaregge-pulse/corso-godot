@@ -1,6 +1,6 @@
-# 00 Regole di Formattazione dei Documenti
+# Regole di Formattazione dei Documenti
 
-**Versione 1.2** — 16/08/2026
+**Versione 1.3** — 16/08/2026
 *Standard unico di formattazione. Vale per TUTTI i documenti del corso, presenti e
 futuri. Adattato al corso: la fonte di verita e decisa da Nicola (nessun ruolo di
 soggetti esterni).*

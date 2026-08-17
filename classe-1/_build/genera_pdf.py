@@ -44,6 +44,8 @@ COVER_AUTHOR = "Corso a cura del prof. Nicola Regge"
 # Il PDF viene salvato ACCANTO al suo file .md, con la versione nel nome.
 DOCS = {
     "corso-informatica": {"src": "../CORSO-INFORMATICA.md",      "title": "Corso Informatica"},
+    "stato-corso":  {"src": "../00-STATO-DEL-CORSO.md",         "title": "Stato del Corso"},
+    "glossario":    {"src": "../01-GLOSSARIO.md",                "title": "Glossario"},
     "regole-formattazione": {"src": "../REGOLE-FORMATTAZIONE.md", "title": "Regole di Formattazione"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
