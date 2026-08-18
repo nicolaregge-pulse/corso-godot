@@ -1,6 +1,6 @@
 # Corso Informatica
 
-**Versione 1.5** — 16/08/2026
+**Versione 1.6** — 18/08/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che
@@ -27,6 +27,26 @@ Il lavoro è organizzato in **quattro parti**:
 2. **Corso Godot / GDScript** → il manuale, l'eserciziario e i giochi di esempio.
 3. **Materiale del triennio** → gli esami, le griglie e le rubriche (in raccolta).
 4. **Strumenti** → il generatore dei PDF e i file di configurazione.
+
+---
+
+## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni)
+
+Nella **radice del repository** stanno i documenti che governano tutto il corso,
+non un anno solo. Si leggono dal generale al dettaglio: dalla mappa delle
+macro-aree, alla scelta di quale anno, fino all'ora di lezione.
+
+| Documento | Cos'è | Versione |
+|---|---|---|
+| `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 1.0 |
+| `01-GLOSSARIO.md` | Il **glossario** dei termini del corso. | 1.0 |
+| `MAPPA-ARGOMENTI.md` | Le **macro-aree** del corso, unendo i programmi ufficiali col materiale nostro; indica anche di chi è ciascuna area. | 1.2 |
+| `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª). Completa su tutti i 12 capitoli. | 1.11 |
+| `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.1 |
+| `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.1 |
+| `REGOLE-FORMATTAZIONE.md` | Lo **standard** di formattazione di tutti i documenti. | 1.3 |
+
+Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 4).
 
 ---
 
