@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.4** — 18/08/2026
+**Versione 1.5** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -95,14 +95,20 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Logica e problem solving; algoritmi e strutture di controllo |  |  |  |  |
-| Coding a blocchi e porte logiche booseane (AND, OR, NOT) |  |  |  |  |
-| Lazarus base: ambiente, Hello World, variabili, funzioni, tipi di file |  |  |  |  |
-| Lazarus, interfaccia: RadioButton, ComboBox, PageControl, ecc. |  |  |  |  |
-| Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  |  |  |  |
-| Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  |  |  |
-| Interpretato e compilato; Lazarus e Delphi |  |  |  |  |
-| Godot e GDScript: scene, nodi, segnali, game loop, giochi |  |  |  |  |
+| Logica e problem solving; algoritmi e strutture di controllo | X |  |  |  |
+| Coding a blocchi e porte logiche booleane (AND, OR, NOT) | X |  |  |  |
+| Lazarus, primi passi: ambiente, componenti semplici (Button, Edit, Label), Hello World | X | X |  |  |
+| Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni |  | X | X | X |
+| Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X |
+| Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X |
+| Interpretato e compilato; Lazarus e Delphi |  | X | X |  |
+| Godot e GDScript: scene, nodi, segnali, game loop, giochi |  | X? | X? | X? |
+
+> [GIALLO] Logica di base (le prime due righe): la mettiamo in 1a, e il fondamento del ragionamento informatico.
+
+> [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
+
+> [GIALLO] Godot e GDScript (X? = da decidere insieme): quest'anno lo introduciamo per la prima volta e dobbiamo ancora capire dove collocarlo. Probabile 3a e 4a; la 2a e da valutare. La X con il punto interrogativo segna proprio che e un argomento aperto, non ancora fissato.
 
 ## 9. Database e gestione dei dati
 
