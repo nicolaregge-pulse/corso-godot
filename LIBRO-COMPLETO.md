@@ -1,35 +1,58 @@
 # Il Libro del Corso
 
-**Versione 1.39** — 18/08/2026
+**Versione 1.40** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
 
 # Stato del Corso {#doc1}
-*Versione 1.0 · 16/08/2026 · Parte: Riferimento*
+*Versione 2.0 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Missione {#doc1-sec1}
-1. Corso di informatica per la Classe 1 di istituto professionale, taglio pratico e tecnico.
-2. Studenti spesso in situazione di svantaggio: si lavora con dignita e qualita, per aprire sbocchi lavorativi migliori.
-3. Motore del coinvolgimento: "Vinci subito, Fallo tuo, Mostralo".
+1. Corso di informatica pluriennale (classi 1-4) di istituto professionale, indirizzo Operatore Informatico; taglio pratico e tecnico.
+2. Studenti spesso in situazione di svantaggio: si lavora con dignita e qualita, per aprire sbocchi lavorativi migliori. Qui non sono scarti: si da loro una cosa fatta bene.
+3. Motore del coinvolgimento: "Vinci subito, Fallo tuo, Mostralo". L'errore non fa vergogna; si celebra ogni piccola vittoria.
+4. La prova del nove: se lo sanno spiegare a voce con parole loro, la competenza c'e davvero.
 
 ## 2. Decisioni confermate (vincolanti) {#doc1-sec2}
-1. Ogni documento esiste in due forme: MD (sorgente) e PDF (consegnabile), con il numero di versione nel nome del file.
-2. Tutti i documenti seguono lo standard unico di formattazione (vedi il documento delle Regole di Formattazione).
-3. Git a due fasi: prima esercizi separati con un commit ciascuno; poi un progetto che evolve con ramo, Pull Request e release.
-4. Con gli studenti tutto e visuale (browser e GitHub Desktop): mai la riga di comando.
-5. Progetto pilota completato: "Il Mio Negozio Online" (vetrina su GitHub Pages, database su Supabase, ordini via FormSubmit).
-6. Per questo progetto la fonte di verita e Nicola: nessun ruolo di soggetti esterni.
+1. Ogni documento esiste in due forme: MD (sorgente versionata) e PDF (consegnabile), con il numero di versione nel nome del file.
+2. Tutti i documenti seguono lo standard unico di formattazione (vedi Regole di Formattazione): liste numerate, niente emoji, box colorati, tutto cio da copiare in blocchi di codice.
+3. Con gli studenti tutto e visuale (browser e GitHub Desktop): mai la riga di comando. A scuola niente installazioni: si predilige browser e software portable.
+4. Carta e penna in OGNI lezione (tassativo): appunti e schemi a mano, sempre; se un allievo non li ha, il docente glieli fornisce e segna una nota. Confluiscono nel quaderno personale.
+5. Git a due fasi: Fase 1 (in 1a) esercizi separati con un commit ciascuno nel proprio repository; Fase 2 (3a-4a) progetto di gruppo che evolve con ramo, Pull Request e release.
+6. Repository degli allievi: un'organizzazione GitHub della classe con un repository PRIVATO per ogni allievo, creati con GitHub Classroom (ognuno vede solo il suo; il docente vede tutti).
+7. Ogni studente costruisce il PROPRIO libro di testo/quaderno, che cresce a ogni lezione, con l'aiuto dell'AI (aiuta a capire, non a saltare il pensiero).
+8. Per questo progetto la fonte di verita e Nicola: nessun ruolo di soggetti esterni (Guido non c'entra: riguarda un'altra cosa, non il corso).
 
-## 3. Stato attuale {#doc1-sec3}
-1. Classe 1: programma impostato; progetto del negozio completo e testato.
-2. Guida del negozio: con schemi disegnati e primi screenshot reali.
-3. Libro unico del corso: raccoglie tutti i documenti, con indice e segnalibri.
-4. Migrazione allo standard di formattazione: in corso (motore pronto, documenti in adeguamento).
+## 3. Impianto pluriennale (Mappa, Griglia, Piano ore, Programmi) {#doc1-sec3}
+1. Mappa degli Argomenti: le macro-aree del corso, con indicazione di "di chi e" ciascuna area (alcune sono di altri docenti).
+2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
+3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
+4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
+5. Corso Godot dedicato (manuale + eserciziario) a parte: il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8).
 
-## 4. Ruolo di questo documento {#doc1-sec4}
+## 4. Allegato A e consegna alla Regione (workflow) {#doc1-sec4}
+1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.
+2. Ogni Allegato A e identificato da CLASSE e ANNO scolastico. I programmi svolti che generiamo stanno in `programma-svolto/<anno>/<classe>/` con nome `allegato-a_<classe>_<anno>`.
+3. Fonte del "cosa e stato svolto": l'esportazione del registro (Excel) per classe. Claude legge le voci e le colloca nella competenza e annualita giuste (la colonna "Comp." della Griglia fa da ponte).
+4. A fine anno si genera il programma svolto per area di competenza e per annualita, pronto da consegnare alla Regione.
+
+## 5. Progetti pratici {#doc1-sec5}
+1. "Il Mio Negozio Online" (e-commerce): vetrina su GitHub Pages, database su Supabase, ordini via FormSubmit. Progetto pilota completato e testato; cresce dalla 2a alla 4a.
+2. Giochi con Godot: dai semplici al "progetto boss" (anno da decidere).
+3. Cablaggio RJ45 e reti; in 4a il progetto forte: la rete di una scuola in Cisco Packet Tracer (VLAN, simulazione).
+
+## 6. Punti aperti (da decidere/confermare con Nicola) {#doc1-sec6}
+1. Godot: in quali anni collocarlo (probabile 3a-4a, la 2a da valutare) e come integrarlo col corso dedicato.
+2. Strumento SQL senza installazione: proposta SQLite (browser sqliteonline.com + DB Browser portable), da confermare.
+3. Strumento AI: verificare che tutto si faccia con Gemini gratuito (gli studenti non hanno Claude sull'account scolastico).
+4. Cablaggio in 4a: da valutare.
+5. Affinare la colonna competenze della Griglia dove serve.
+
+## 7. Ruolo di questo documento {#doc1-sec7}
 1. E la stella polare: in caso di contraddizione, vince questo, e nel documento in errore si apre un box rosso di disallineamento.
 2. Si aggiorna quando cambiano le decisioni; le versioni gia stampate restano congelate.
+3. Ogni volta che si produce o aggiorna un documento, si rigenera il libro complessivo e si alza la sua versione: tutto resta versionato e "tutto dentro".
 
 
 # Glossario {#doc2}
@@ -142,7 +165,7 @@ parentesi quadre: `> [ROSSO] ...`, `> [BLU] ...`, `> [GIALLO] ...`.
 
 
 # Struttura del Repository {#doc4}
-*Versione 1.1 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.2 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. A cosa serve {#doc4-sec1}
 1. Mostra come sono organizzati i file del corso su GitHub.
@@ -157,10 +180,18 @@ corso-godot/
 ├── 01-GLOSSARIO.md  (+ .pdf)           documento 01: glossario
 ├── REGOLE-FORMATTAZIONE.md  (+ .pdf)   standard di formattazione
 ├── STRUTTURA-REPOSITORY.md  (+ .pdf)   questa mappa
+├── MAPPA-ARGOMENTI.md  (+ .pdf)        macro-aree (di chi e ciascuna)
+├── GRIGLIA-ARGOMENTI.md  (+ .pdf)      argomenti x anno + colonna competenze
+├── PIANO-ORE-LEZIONE.md  (+ .pdf)      guida ora per ora (4 anni)
+├── ORGANIZZAZIONE-GIT-ALLIEVI.md (+pdf) repository per allievo (Classroom)
+├── REGOLE-LABORATORIO.md  (+ .pdf)     regole del laboratorio
 ├── CORSO-INFORMATICA.md  (+ .pdf)      indice generale
 ├── LIBRO-COMPLETO.md  (+ .pdf)         il libro unico (generato)
 ├── CLAUDE.md                           istruzioni interne (assistente)
 ├── README.md                           panoramica del repository
+│
+├── programmi-ufficiali/                Allegato A ufficiale (4 PDF) + nota
+├── programma-svolto/                   programmi svolti per <anno>/<classe> (Regione)
 │
 ├── classe-1/                           CORSO CLASSE 1 (completo)
 │   ├── programma.md  (+ .pdf)          mappa dell'anno
@@ -175,6 +206,13 @@ corso-godot/
 │   │   └── immagini/                   schemi + screenshot della guida
 │   ├── negozio-esempio/index.html      seconda versione di esempio
 │   └── _build/                         generatore dei PDF del corso
+│
+├── classe-2/programma.md  (+ .pdf)     programma Classe 2 (v0.2)
+├── classe-3/                           programma + reti-teoria + esercizi
+│   ├── programma.md  (+ .pdf)          programma Classe 3 (v0.2)
+│   ├── reti-teoria.md  (+ .pdf)        teoria delle reti (con schemi SVG)
+│   └── esercizi/01-cablaggio-rj45.md   scheda cablaggio a 4 livelli
+├── classe-4/programma.md  (+ .pdf)     programma Classe 4 (v0.2)
 │
 ├── manuale/                            CORSO GODOT (2a/3a)
 │   ├── manuale.md  (+ .pdf)            libro di testo di Godot
@@ -229,7 +267,9 @@ corso-godot/
 
 
 # Mappa degli Argomenti — Macro-aree {#doc5}
-*Versione 1.2 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.3 · 18/08/2026 · Parte: Riferimento*
+
+> [BLU] Collegamento: la scelta per anno di ciascun argomento e nella Griglia degli Argomenti, che ha anche la colonna "Competenza (Allegato A)". I programmi ufficiali sono in realta l'ALLEGATO A, organizzato per competenze (1-17): per questo un argomento di informatica puo comparire in piu competenze. Vedi la nota in `programmi-ufficiali/`.
 
 ## 1. Come si legge questa mappa {#doc5-sec1}
 1. Ogni sezione e una macro-area (un contenitore di argomenti affini).
@@ -2990,7 +3030,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 
 # Quaderno dello Studente (modello) {#doc19}
-*Parte: Corso Godot / GDScript*
+*Versione 1.0 · 18/08/2026 · Parte: Corso Godot / GDScript*
 
 ## Come si usa (semplice) {#doc19-sec1}
 - Dopo **ogni lezione** aggiungi una pagina "Lezione".
@@ -3399,7 +3439,7 @@ Se qualcosa non va:
 
 
 # Corso Informatica — indice generale {#doc25}
-*Versione 1.8 · 18/08/2026 · Parte: Indici e cataloghi*
+*Versione 1.9 · 18/08/2026 · Parte: Indici e cataloghi*
 
 ## In breve {#doc25-sec1}
 
@@ -3428,11 +3468,13 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 | `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 1.0 |
 | `01-GLOSSARIO.md` | Il **glossario** dei termini del corso. | 1.0 |
 | `MAPPA-ARGOMENTI.md` | Le **macro-aree** del corso, unendo i programmi ufficiali col materiale nostro; indica anche di chi è ciascuna area. | 1.2 |
-| `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª). Completa su tutti i 12 capitoli. | 1.11 |
-| `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.1 |
+| `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª) e la colonna **Competenza (Allegato A)**. Completa su tutti i 12 capitoli. | 1.13 |
+| `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.3 |
 | `ORGANIZZAZIONE-GIT-ALLIEVI.md` | Come organizziamo **Git per la classe**: un'organizzazione comune con un **repository privato per ogni allievo** (GitHub Classroom). | 0.1 |
 | `REGOLE-LABORATORIO.md` | Le **regole del laboratorio** di informatica: rispetto, cura delle postazioni, carta e penna, uso di internet/AI, con una versione breve da appendere. | 0.1 |
-| `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.1 |
+| `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.2 |
+| `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
+| `programma-svolto/` (cartella) | I **programmi svolti** per anno e classe (Allegato A vivo), da consegnare alla Regione. Organizzati in `<anno>/<classe>/`. | — |
 | `REGOLE-FORMATTAZIONE.md` | Lo **standard** di formattazione di tutti i documenti. | 1.3 |
 
 Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 4).
@@ -3448,10 +3490,10 @@ online e gratuito, con un primo progetto completo e testato.
 
 | Documento | Cos'è | Versione | Stato |
 |---|---|---|---|
-| `classe-1/programma.md` | La **mappa dell'anno**: i 6 moduli (software/editor/compilatore · reti e apparati di casa · configurazione PC su Amazon con budget · montaggio + sistema operativo · G Suite tecnica · Lazarus) e il percorso pluriennale fino a Cisco Packet Tracer. | 0.3 | ✅ pronto |
-| `classe-1/bussola-mondo-del-lavoro.md` | Cosa serve davvero al **mondo del lavoro** a ragazzi di 15-17 anni: i tre cassetti (atteggiamento · le mani · le carte). Documento autonomo, da portare anche in altre chat. | 0.1 | ✅ pronto |
-| `classe-1/da-far-fare-assolutamente.md` | L'elenco delle cose che i ragazzi devono **assolutamente fare con le mani** (database + SQL, il negozio). | 0.1 | ✅ pronto |
-| `classe-1/MATERIALE-PRONTO.md` | L'indice del solo materiale di Classe 1 (più dettagliato di questo per la parte 1). | 1.0 | ✅ pronto |
+| `classe-1/programma.md` | La **mappa dell'anno**: i 6 moduli (software/editor/compilatore · reti e apparati di casa · configurazione PC su Amazon con budget · montaggio + sistema operativo · G Suite tecnica · Lazarus) e il percorso pluriennale fino a Cisco Packet Tracer. | 0.4 | ✅ pronto |
+| `classe-1/bussola-mondo-del-lavoro.md` | Cosa serve davvero al **mondo del lavoro** a ragazzi di 15-17 anni: i tre cassetti (atteggiamento · le mani · le carte). Documento autonomo, da portare anche in altre chat. | 0.2 | ✅ pronto |
+| `classe-1/da-far-fare-assolutamente.md` | L'elenco delle cose che i ragazzi devono **assolutamente fare con le mani** (database + SQL, il negozio). | 0.2 | ✅ pronto |
+| `classe-1/MATERIALE-PRONTO.md` | L'indice del solo materiale di Classe 1 (più dettagliato di questo per la parte 1). | 1.4 | ✅ pronto |
 
 ### 1.2 Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -3466,9 +3508,9 @@ Cartella `classe-1/negozio-online/`:
 
 | File | Per chi | Cos'è | Versione |
 |---|---|---|---|
-| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali** (crea repo, Pages, prodotti, ordine inviato). | 1.3 |
+| `GUIDA-RAGAZZI.md` (+ PDF) | ragazzi | Guida a **4 tappe**: negozio online → collega il database della classe → email → fallo tuo. Con **schemi illustrati** e i **primi screenshot reali** (crea repo, Pages, prodotti, ordine inviato). | 1.5 |
 | `modello-negozio.html` | ragazzi | Il **file di partenza** che ogni ragazzo copia e riempie (3 valori `CAMBIA QUI`). | — |
-| `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, valutazione. | 1.0 |
+| `PIANO-LEZIONE.md` (+ PDF) | docente | La **regia**: 3 lezioni con tempi, canovaccio per spiegare il database dal vivo, ruoli a gruppi, valutazione. | 1.1 |
 | `prodotti.sql` | docente | Il **database dei prodotti** pronto da incollare in Supabase (con la sola-lettura). | — |
 | `index.html` | esempio | Il negozio **già completo** del prof (quello pubblicato online). | — |
 | `README.md` | docente | Note tecniche: come preparare il database condiviso e quali due valori dare ai ragazzi. | — |
