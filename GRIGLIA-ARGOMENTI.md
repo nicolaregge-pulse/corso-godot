@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.13** — 18/08/2026
+**Versione 1.14** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne 1a/2a/3a/4a (l'anno in cui l'argomento
 puo stare) e una colonna "Comp." che indica l'area di competenza dell'Allegato A
@@ -146,7 +146,28 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 
 > [GIALLO] Database e gestione dati: in 3a e 4a. Argomento nuovo, non ancora svolto: quest'anno lo avviamo per la prima volta.
 
-> [BLU] Strumento da confermare (SQL senza installazione). Proposta: usare SQLite (il database e un solo file, quindi si versiona in Git come tutto il resto). Due modi d'accesso, entrambi senza installazione: (1) a scuola, dal browser, sqliteonline.com per creare tabelle e scrivere SQL; (2) sui PC nostri, DB Browser for SQLite in versione portable (cartella singola, tutto a bottoni). Per i primissimi passi va bene anche l'editor "Tryit SQL" di W3Schools, con un database gia pronto in cui provare le prime SELECT.
+### Strumenti e portali per l'SQL (importante)
+Il "motore" e sempre SQLite: il database e un solo file, gratis, senza installazione, e si versiona in Git come tutto il resto. Cambia solo il portale con cui lo si usa.
+
+1. Primo assaggio "vinci subito": W3Schools "Tryit SQL", con un database gia pronto in cui scrivere subito le prime SELECT (niente registrazione). Indirizzo:
+
+```
+https://www.w3schools.com/sql/trysql.asp
+```
+
+2. Portale del corso, per creare il PROPRIO database (tabelle, dati, query), tutto nel browser e senza login obbligatorio: SQLite Online. Indirizzo:
+
+```
+https://sqliteonline.com
+```
+
+3. Sui PC nostri, quando li avremo (offline): DB Browser for SQLite in versione portable, tutto a bottoni, senza installazione dell'amministratore. Nome da cercare per scaricarlo:
+
+```
+DB Browser for SQLite portable
+```
+
+> [BLU] Strumento SQL: proposta sopra, ancora da confermare da Nicola. In sintesi: motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
 
 ## 10. Web e realizzazione di siti
 

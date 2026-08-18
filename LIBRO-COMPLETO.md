@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.41** — 18/08/2026
+**Versione 1.42** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -453,7 +453,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.13 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.14 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare con una X.
@@ -592,7 +592,28 @@ corso-godot/
 
 > [GIALLO] Database e gestione dati: in 3a e 4a. Argomento nuovo, non ancora svolto: quest'anno lo avviamo per la prima volta.
 
-> [BLU] Strumento da confermare (SQL senza installazione). Proposta: usare SQLite (il database e un solo file, quindi si versiona in Git come tutto il resto). Due modi d'accesso, entrambi senza installazione: (1) a scuola, dal browser, sqliteonline.com per creare tabelle e scrivere SQL; (2) sui PC nostri, DB Browser for SQLite in versione portable (cartella singola, tutto a bottoni). Per i primissimi passi va bene anche l'editor "Tryit SQL" di W3Schools, con un database gia pronto in cui provare le prime SELECT.
+### Strumenti e portali per l'SQL (importante)
+Il "motore" e sempre SQLite: il database e un solo file, gratis, senza installazione, e si versiona in Git come tutto il resto. Cambia solo il portale con cui lo si usa.
+
+1. Primo assaggio "vinci subito": W3Schools "Tryit SQL", con un database gia pronto in cui scrivere subito le prime SELECT (niente registrazione). Indirizzo:
+
+```
+https://www.w3schools.com/sql/trysql.asp
+```
+
+2. Portale del corso, per creare il PROPRIO database (tabelle, dati, query), tutto nel browser e senza login obbligatorio: SQLite Online. Indirizzo:
+
+```
+https://sqliteonline.com
+```
+
+3. Sui PC nostri, quando li avremo (offline): DB Browser for SQLite in versione portable, tutto a bottoni, senza installazione dell'amministratore. Nome da cercare per scaricarlo:
+
+```
+DB Browser for SQLite portable
+```
+
+> [BLU] Strumento SQL: proposta sopra, ancora da confermare da Nicola. In sintesi: motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
 
 ## 10. Web e realizzazione di siti {#doc6-sec10}
 
