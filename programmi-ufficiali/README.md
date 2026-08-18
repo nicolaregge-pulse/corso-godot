@@ -8,10 +8,11 @@ Argomenti nascono anche da qui).
 ## I file
 1. `programma-ufficiale-prima.pdf` — programma della classe prima.
 2. `programma-ufficiale-seconda.pdf` — programma della classe seconda. ATTENZIONE: questo documento contiene anche il programma della prima (prima + seconda insieme).
-3. `programma-ufficiale-terza.pdf` — programma della classe terza.
-4. `programma-ufficiale-quarta.pdf` — programma della classe quarta.
+3. `programma-ufficiale-terza.pdf` — programma della classe terza. ATTENZIONE: probabilmente contiene anche prima e seconda (documento cumulativo).
+4. `programma-ufficiale-quarta.pdf` — programma della classe quarta. Contiene solo la quarta (nessun anno precedente).
 
 ## Note
 1. Sono documenti di sola consultazione: non si modificano. Servono come riferimento per allineare i nostri materiali.
 2. Il confronto argomento per argomento con il nostro corso e nella Mappa degli Argomenti e nella Griglia degli Argomenti (radice del repository).
 3. Non tutto cio che c'e in questi programmi e informatica pura o materia di Regge: alcune parti sono di altri docenti o di altre aree (vedi la colonna "di chi e" nella Mappa).
+4. Documenti cumulativi (seconda e terza): dato che riportano anche gli anni precedenti, il contenuto SPECIFICO di un anno e cio che si aggiunge rispetto agli anni prima. Nel confronto con la nostra griglia si tiene conto di questo.
