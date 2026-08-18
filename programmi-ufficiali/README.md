@@ -6,9 +6,13 @@ degli Argomenti nascono anche da qui).
 
 ## Cosa sono davvero (verificato leggendo i PDF)
 1. I file "prima", "seconda" e "terza" sono tutti lo **stesso tipo di documento**: l'"ALLEGATO A al Piano Formativo Personalizzato per Operatore Informatico".
-2. Ognuno copre l'**intero triennio (I, II, III anno)**, non un solo anno: il nome nel file indica soltanto l'anno in cui quella classe (coorte) si trova adesso.
-3. Il documento e organizzato **per competenze** (competenze alfabetiche/comunicazione, linguistica, tecnico-professionali, ecc.), e dentro ogni competenza gli argomenti sono divisi in "I Anno / II Anno / III Anno". E per questo che gli argomenti di informatica risultano sparsi su piu aree.
+2. Il modello ha sempre gli slot per tutto il triennio (I / II / III Anno), ma ogni coorte li **riempie man mano che avanza**. Quindi quanto e "pieno" un file dipende dall'anno in cui si trova quella classe (verificato leggendo i documenti):
+   1. `prima` -> compilato SOLO il I anno (II e III vuoti).
+   2. `seconda` -> compilati I e II anno (III vuoto).
+   3. `terza` -> compilati I, II e III anno.
+3. Il documento e organizzato **per competenze** (competenze alfabetiche/comunicazione, linguistica, tecnico-professionali, cittadinanza, IRC, scienze motorie, ecc.), e dentro ogni competenza gli argomenti sono divisi in "I Anno / II Anno / III Anno". E per questo che gli argomenti di informatica risultano sparsi su piu aree.
 4. La **quarta** e un documento a parte: contiene solo la quarta, non gli anni precedenti.
+5. Dentro gli argomenti sono spesso indicati i docenti: per l'informatica compaiono "Prof. Panaccione" (informatica di base: Google Workstation, foglio di calcolo, e in III anno sito/HTML) e "Regge" (in III anno: social, comunicazione sul web, netiquette, progetto finale, tesina, introduzione a Cisco Packet Tracer). Altre aree sono di altri docenti ("Erba", "Meles", robotica/arduino/stampa 3D, cittadinanza, diritto, IRC, scienze motorie, tirocinio).
 
 ## I file e le coorti
 | File | I.D. Corso | Sezione | Annualita coperte |
