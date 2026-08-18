@@ -36,7 +36,8 @@ per la classe che avanza.
 ## Cosa si produce a fine anno (documento per la Regione) — DELIVERABLE
 1. A fine anno, Claude genera il testo del "programma svolto" ORGANIZZATO PER AREA DI COMPETENZA e PER ANNUALITA, nello stesso ordine dell'Allegato A, pronto da COPIARE E INCOLLARE nel documento che la scuola invia alla Regione.
 2. Per far cadere ogni argomento nella competenza giusta serve una corrispondenza tra le nostre materie/macro-aree (Mappa e Griglia) e le competenze dell'Allegato A: e il ponte tra il nostro corso e il formato ufficiale.
-3. Il "cosa e stato svolto" si ricava dai materiali del corso (Piano delle Ore, programmi) o direttamente da cio che e stato de-evidenziato nell'Allegato A.
+3. Fonte del "cosa e stato svolto": l'ESPORTAZIONE DEL REGISTRO (registro elettronico), che il docente fornisce per ogni classe. Claude legge i divisori/voci del registro e colloca ciascuno nella competenza e nell'annualita giuste dell'Allegato A. I materiali del corso (Piano delle Ore, programmi) e i gialli de-evidenziati restano un riscontro di supporto.
+4. Prerequisito per collocare in automatico: la corrispondenza materia/macro-area nostra <-> competenza Allegato A (il "ponte"), da costruire una volta.
 
 ## Note d'uso
 1. Sono documenti di sola consultazione: non si modificano. Servono come riferimento.
