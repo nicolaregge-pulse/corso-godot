@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.10** — 18/08/2026
+**Versione 1.11** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -159,11 +159,13 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  |  |  |  |
-| Lavoro in team e presentazione del lavoro finito; tesine |  |  |  |  |
-| Documentazione tecnica: manuale utente, relazione, deployment |  |  |  |  |
-| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  |  |
-| Figure professionali dell'informatica |  |  |  |  |
+| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  | X | X |  |
+| Lavoro in team e presentazione del lavoro finito; tesine |  | X | X | X |
+| Documentazione tecnica: manuale utente, relazione, deployment |  |  | X | X |
+| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  | X |
+| Figure professionali dell'informatica |  | X | X |  |
+
+> [GIALLO] Mondo del lavoro: si parte in 2a spiegando i ruoli del project management, cioe chi sono le persone di un progetto (le figure professionali). Verso fine 2a / inizio 3a si assegnano ruoli concreti (uno fa il project manager, un altro il manager, ecc.) e si simula la creazione di un software secondo i ruoli, come in un vero team di sviluppo. In 3a-4a si aggiungono la documentazione tecnica e, verso la 4a, la ricerca del lavoro (CV Europass) e la presentazione del lavoro finito (tesine).
 
 ## 13. Progetti pratici del corso (nostri)
 

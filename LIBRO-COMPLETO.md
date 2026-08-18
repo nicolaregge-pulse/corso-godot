@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.27** — 18/08/2026
+**Versione 1.28** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.10 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.11 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -565,11 +565,13 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  |  |  |  |
-| Lavoro in team e presentazione del lavoro finito; tesine |  |  |  |  |
-| Documentazione tecnica: manuale utente, relazione, deployment |  |  |  |  |
-| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  |  |
-| Figure professionali dell'informatica |  |  |  |  |
+| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  | X | X |  |
+| Lavoro in team e presentazione del lavoro finito; tesine |  | X | X | X |
+| Documentazione tecnica: manuale utente, relazione, deployment |  |  | X | X |
+| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  | X |
+| Figure professionali dell'informatica |  | X | X |  |
+
+> [GIALLO] Mondo del lavoro: si parte in 2a spiegando i ruoli del project management, cioe chi sono le persone di un progetto (le figure professionali). Verso fine 2a / inizio 3a si assegnano ruoli concreti (uno fa il project manager, un altro il manager, ecc.) e si simula la creazione di un software secondo i ruoli, come in un vero team di sviluppo. In 3a-4a si aggiungono la documentazione tecnica e, verso la 4a, la ricerca del lavoro (CV Europass) e la presentazione del lavoro finito (tesine).
 
 ## 13. Progetti pratici del corso (nostri) {#doc6-sec13}
 
