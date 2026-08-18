@@ -1,6 +1,6 @@
 # Mappa degli Argomenti — Macro-aree
 
-**Versione 1.1** — 17/08/2026
+**Versione 1.2** — 17/08/2026
 *Contenitori di macro-argomenti dell'area informatica. Nasce unendo i quattro
 programmi ufficiali (prima, seconda, terza, quarta) con il materiale che abbiamo
 gia prodotto. Serve come "menu": gli argomenti sono raccolti per area, cosi si
@@ -21,15 +21,15 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 |---|---|
 | Fondamenti e cultura informatica | Regge |
 | Hardware: architettura, assemblaggio, manutenzione e diagnosi | Regge (diagnosi in parte Panaccione) |
-| Sistema operativo | Regge |
-| Produttivita digitale (Google e Office) | Regge (parti avanzate anche Meles) |
+| Sistema operativo | Regge (finora svolto poco) |
+| Produttivita digitale (Google e Office) | Regge: integra tutta la suite (documenti, fogli, presentazioni) |
 | Reti | Regge |
 | Programmazione, logica e algoritmi | Regge (coding a blocchi e porte logiche in prima: Meles) |
-| Database e gestione dei dati | Regge |
-| Web e realizzazione di siti | Mista: Google Sites Regge, HTML e sito professionale Panaccione |
-| Grafica e multimedia | Mista: Canva e computer graphic Regge |
+| Database e gestione dei dati | Regge (in quarta SQL non ancora realizzato) |
+| Web e realizzazione di siti | Anche Regge: vuole fare HTML5, CSS, Google Sites (sito professionale in terza: Panaccione) |
+| Grafica e multimedia | Regge: Canva per le rappresentazioni |
 | Robotica, elettronica e making | Collega (Meles): NON di Regge |
-| Sicurezza informatica e cittadinanza digitale | Regge |
+| Sicurezza informatica e cittadinanza digitale | Cittadinanza digitale: NON di Regge; sicurezza informatica: da valutare |
 | Intelligenza artificiale | Regge (spunti) |
 | Mondo del lavoro, project management e documentazione | Regge |
 | Sicurezza sul lavoro | Trasversale (non informatica) |
@@ -62,7 +62,7 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 2. Installazione e configurazione del sistema operativo.
 3. Concetti di configurazione: componenti, protocolli e servizi di rete, risorse condivise.
 
-> [GIALLO] Presente in: Prima, Seconda, Quarta.
+> [GIALLO] Presente in: Prima, Seconda, Quarta. Di chi: Regge, ma finora svolto poco (area da rinforzare).
 
 ## 5. Produttivita digitale (Google Workspace e Office)
 1. Google Drive: cartelle, sottocartelle, condivisione di file.
@@ -76,7 +76,7 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 9. Ricerca in rete: motori di ricerca, ricerca avanzata, operatori booleani.
 10. Diagrammi di flusso (flowchart).
 
-> [GIALLO] Presente in: Prima (base), Seconda (avanzato), Quarta. Nostro: usata come strumento in tutti i progetti.
+> [GIALLO] Presente in: Prima (base), Seconda (avanzato), Quarta. Di chi: Regge la integra tutta (scrivere documenti, fogli di calcolo, presentazioni), piu Canva per le rappresentazioni. Nostro: usata come strumento in tutti i progetti.
 
 ## 6. Reti
 1. Concetti: reti LAN e WAN, cos'e una rete, la rete di casa.
@@ -111,7 +111,7 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 4. Migrazione dei dati e strumenti di database.
 5. Raccolta, strutturazione e analisi statistica dei dati; rappresentazione grafica.
 
-> [GIALLO] Presente in: Terza, Quarta. Nostro: database e SQL nel progetto del negozio (Classe 1).
+> [GIALLO] Presente in: Terza, Quarta (in quarta SQL previsto ma non ancora realizzato). Di chi: Regge. Nostro: database e SQL nel progetto del negozio (Classe 1) — buon punto di partenza per portare SQL anche in quarta.
 
 ## 9. Web e realizzazione di siti
 1. La comunicazione sul Web; come funziona il web.
@@ -120,7 +120,7 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 4. Google Sites (sito personale o scolastico).
 5. Creazione di dati e contenuti sui siti web.
 
-> [GIALLO] Presente in: Prima (Sites), Seconda (Sites), Terza (HTML, sito), Quarta (Sites). Nostro: HTML, CSS e JavaScript nel negozio online (Classe 1).
+> [GIALLO] Presente in: Prima (Sites), Seconda (Sites), Terza (HTML, sito), Quarta (Sites). Di chi: anche Regge, che vuole farla in prima persona (un po' di HTML5 e CSS, oltre a Google Sites); il sito professionale in terza e del prof. Panaccione. Nostro: HTML, CSS e JavaScript gia usati nel negozio online (Classe 1) — base pronta per l'HTML5/CSS.
 
 ## 10. Grafica e multimedia
 1. Canva: immagini, locandine, loghi, ritaglio, rimozione sfondo, modelli.
@@ -147,6 +147,8 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 2. Minacce: malware (virus, worm, trojan, ransomware, spyware, rootkit), phishing, backdoor.
 3. Norme e cultura: GDPR (regolamento europeo sui dati), Garante privacy, Creative Commons (licenze), digital divide, diritto d'autore.
 4. Livello avanzato (professionale): firewall e proxy, crittografia e tunneling, vulnerabilita e test, controllo degli accessi (DAC, MAC, RBAC), autenticazione unica (SSO), report di sicurezza, criminalita informatica ed etica hacker.
+
+> [ROSSO] Di chi: la CITTADINANZA DIGITALE (netiquette, social, bullismo, privacy come comportamento, digital divide) NON e una parte che fa Regge. La sicurezza informatica tecnica (malware, firewall, controllo accessi) e da valutare se e quanto tenerla come sua.
 
 > [GIALLO] Presente in: Prima (base), Terza, Quarta (avanzato). Nostro: chiave di sola lettura e prudenza nei dati del progetto negozio.
 
