@@ -1,6 +1,6 @@
 # Piano delle Ore di Lezione
 
-**Versione 0.1** — 18/08/2026
+**Versione 0.2** — 18/08/2026
 *Guida operativa "giorno per giorno". Traduce la Griglia degli Argomenti in un
 albero: Macro-area, poi Sotto-argomento, poi la singola Ora di lezione con una
 breve descrizione di cosa fare. E il documento da guardare prima di ogni lezione
@@ -67,6 +67,11 @@ fili rossi accompagnano tutto l'anno: il Glossario personale e il Quaderno.*
 ### Organizzazione digitale: cartelle ad albero, gestione del tempo (2 ore)
 1. Le cartelle come un albero: si crea una struttura di cartelle ordinata per la scuola; regole per dare nomi ai file.
 2. Gestire il proprio tempo e i propri file: dove salvo cosa, come ritrovo le cose; piccolo ordine del proprio spazio digitale.
+
+### Git di base: il proprio repository e il commit (Fase 1, tutto visuale) (3 ore)
+1. Cos'e Git e a cosa serve: salvare le versioni del proprio lavoro; ognuno si crea l'account GitHub (dal browser, passo-passo).
+2. Il proprio repository personale (via GitHub Classroom): entrare nel proprio spazio, capire che e solo suo; primo giro dell'interfaccia.
+3. Salvare con un commit: si modifica un file (per esempio una pagina del quaderno) e si salva la versione; il primo "l'ho salvato io". (Branch e Pull Request arrivano negli anni superiori, Fase 2.)
 
 ## Macro-area: Produttivita digitale (Google Workspace)
 
@@ -406,6 +411,11 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Si riprende il piano di progetto con ruoli piu definiti; si usa un piccolo diagramma dei tempi.
 2. Il gruppo porta avanti un progetto vero del corso (sito, database o gioco) dividendosi i ruoli.
 
+### Git in team: branch e Pull Request (Fase 2) (3 ore)
+1. Perche in un team non si lavora tutti sullo stesso file: il concetto di branch (un ramo tuo); si crea il proprio branch.
+2. La Pull Request: proporre le proprie modifiche e unirle al progetto comune; si prova su un progetto di gruppo.
+3. Unire i contributi (merge) e gestire un piccolo conflitto con calma: come collaborano i team veri. (Tutto da browser/visuale.)
+
 ### Documentazione tecnica: manuale utente, relazione (2 ore)
 1. Scrivere un piccolo manuale utente del proprio progetto: chiaro, con immagini.
 2. Scrivere una relazione tecnica: cosa ho fatto, come, cosa ho imparato.
@@ -497,6 +507,9 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 1. Il gruppo porta a termine un progetto vero con ruoli chiari (come in azienda).
 2. Si prepara la tesina/presentazione del lavoro finito: struttura e prove.
 3. Presentazione del lavoro finito alla classe: raccontare bene ciò che si è fatto.
+
+### Git: le release del progetto (Fase 2) (1 ora)
+1. Cos'e una release: congelare una versione stabile del progetto (v1.0, v1.1...); si pubblica la release del progetto di gruppo, pronta da mostrare e da consegnare.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO]
 1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [DA CONFERMARE strumento: Gemini]

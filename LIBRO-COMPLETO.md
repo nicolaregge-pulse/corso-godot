@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.31** — 18/08/2026
+**Versione 1.32** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.11 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.12 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -431,6 +431,9 @@ corso-godot/
 | Storia ed evoluzione dei calcolatori | X |  |  |  |
 | Glossario informatico (costruito dagli studenti) | X | X | X | X |
 | Organizzazione digitale: cartelle ad albero, gestione del tempo | X |  |  |  |
+| Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale) | X | X |  |  |
+
+> [GIALLO] Git di base: si spiega in 1a perche ogni allievo avra il proprio repository personale (vedi documento "Organizzazione Git per gli Allievi"). In 1a si fa solo la Fase 1: il proprio repo e il commit, tutto da browser/visuale. La Fase 2 (branch, Pull Request, release) e piu avanti, nel capitolo 12, quando arrivano i progetti di gruppo. Git poi si usa concretamente tutti gli anni.
 
 > [GIALLO] Glossario: e in tutti e quattro gli anni. Ogni anno lo studente aggiunge almeno 50 termini a sua scelta, cumulativi: in quarta avra un glossario personale di almeno 200 termini.
 
@@ -570,6 +573,9 @@ corso-godot/
 | Documentazione tecnica: manuale utente, relazione, deployment |  |  | X | X |
 | Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  | X |
 | Figure professionali dell'informatica |  | X | X |  |
+| Git in team: branch, Pull Request, merge, release (Fase 2) |  |  | X | X |
+
+> [GIALLO] Git in team (Fase 2): e la parte avanzata di Git, quella da vero team di sviluppo. Arriva in 3a-4a con i progetti di gruppo: ognuno lavora sul suo branch, poi si uniscono i contributi con le Pull Request e si pubblicano le release. La Fase 1 (il proprio repository e il commit) e gia in 1a, nel capitolo 2.
 
 > [GIALLO] Mondo del lavoro: si parte in 2a spiegando i ruoli del project management, cioe chi sono le persone di un progetto (le figure professionali). Verso fine 2a / inizio 3a si assegnano ruoli concreti (uno fa il project manager, un altro il manager, ecc.) e si simula la creazione di un software secondo i ruoli, come in un vero team di sviluppo. In 3a-4a si aggiungono la documentazione tecnica e, verso la 4a, la ricerca del lavoro (CV Europass) e la presentazione del lavoro finito (tesine).
 
@@ -591,7 +597,7 @@ corso-godot/
 
 
 # Piano delle Ore di Lezione — guida giorno per giorno {#doc7}
-*Versione 0.1 · 18/08/2026 · Parte: Riferimento*
+*Versione 0.2 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa questo documento {#doc7-sec1}
 1. L'albero ha tre livelli: la Macro-area (il grande tema), il Sotto-argomento (il pezzo di tema), l'Ora di lezione (cosa si fa in quell'ora).
@@ -651,6 +657,11 @@ fili rossi accompagnano tutto l'anno: il Glossario personale e il Quaderno.*
 ### Organizzazione digitale: cartelle ad albero, gestione del tempo (2 ore)
 1. Le cartelle come un albero: si crea una struttura di cartelle ordinata per la scuola; regole per dare nomi ai file.
 2. Gestire il proprio tempo e i propri file: dove salvo cosa, come ritrovo le cose; piccolo ordine del proprio spazio digitale.
+
+### Git di base: il proprio repository e il commit (Fase 1, tutto visuale) (3 ore)
+1. Cos'e Git e a cosa serve: salvare le versioni del proprio lavoro; ognuno si crea l'account GitHub (dal browser, passo-passo).
+2. Il proprio repository personale (via GitHub Classroom): entrare nel proprio spazio, capire che e solo suo; primo giro dell'interfaccia.
+3. Salvare con un commit: si modifica un file (per esempio una pagina del quaderno) e si salva la versione; il primo "l'ho salvato io". (Branch e Pull Request arrivano negli anni superiori, Fase 2.)
 
 ## Macro-area: Produttivita digitale (Google Workspace) {#doc7-sec5}
 
@@ -990,6 +1001,11 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Si riprende il piano di progetto con ruoli piu definiti; si usa un piccolo diagramma dei tempi.
 2. Il gruppo porta avanti un progetto vero del corso (sito, database o gioco) dividendosi i ruoli.
 
+### Git in team: branch e Pull Request (Fase 2) (3 ore)
+1. Perche in un team non si lavora tutti sullo stesso file: il concetto di branch (un ramo tuo); si crea il proprio branch.
+2. La Pull Request: proporre le proprie modifiche e unirle al progetto comune; si prova su un progetto di gruppo.
+3. Unire i contributi (merge) e gestire un piccolo conflitto con calma: come collaborano i team veri. (Tutto da browser/visuale.)
+
 ### Documentazione tecnica: manuale utente, relazione (2 ore)
 1. Scrivere un piccolo manuale utente del proprio progetto: chiaro, con immagini.
 2. Scrivere una relazione tecnica: cosa ho fatto, come, cosa ho imparato.
@@ -1081,6 +1097,9 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 1. Il gruppo porta a termine un progetto vero con ruoli chiari (come in azienda).
 2. Si prepara la tesina/presentazione del lavoro finito: struttura e prove.
 3. Presentazione del lavoro finito alla classe: raccontare bene ciò che si è fatto.
+
+### Git: le release del progetto (Fase 2) (1 ora)
+1. Cos'e una release: congelare una versione stabile del progetto (v1.0, v1.1...); si pubblica la release del progetto di gruppo, pronta da mostrare e da consegnare.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec33}
 1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [DA CONFERMARE strumento: Gemini]

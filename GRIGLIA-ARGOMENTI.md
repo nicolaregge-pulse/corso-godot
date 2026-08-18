@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.11** — 18/08/2026
+**Versione 1.12** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -25,6 +25,9 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 | Storia ed evoluzione dei calcolatori | X |  |  |  |
 | Glossario informatico (costruito dagli studenti) | X | X | X | X |
 | Organizzazione digitale: cartelle ad albero, gestione del tempo | X |  |  |  |
+| Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale) | X | X |  |  |
+
+> [GIALLO] Git di base: si spiega in 1a perche ogni allievo avra il proprio repository personale (vedi documento "Organizzazione Git per gli Allievi"). In 1a si fa solo la Fase 1: il proprio repo e il commit, tutto da browser/visuale. La Fase 2 (branch, Pull Request, release) e piu avanti, nel capitolo 12, quando arrivano i progetti di gruppo. Git poi si usa concretamente tutti gli anni.
 
 > [GIALLO] Glossario: e in tutti e quattro gli anni. Ogni anno lo studente aggiunge almeno 50 termini a sua scelta, cumulativi: in quarta avra un glossario personale di almeno 200 termini.
 
@@ -164,6 +167,9 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 | Documentazione tecnica: manuale utente, relazione, deployment |  |  | X | X |
 | Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  | X |
 | Figure professionali dell'informatica |  | X | X |  |
+| Git in team: branch, Pull Request, merge, release (Fase 2) |  |  | X | X |
+
+> [GIALLO] Git in team (Fase 2): e la parte avanzata di Git, quella da vero team di sviluppo. Arriva in 3a-4a con i progetti di gruppo: ognuno lavora sul suo branch, poi si uniscono i contributi con le Pull Request e si pubblicano le release. La Fase 1 (il proprio repository e il commit) e gia in 1a, nel capitolo 2.
 
 > [GIALLO] Mondo del lavoro: si parte in 2a spiegando i ruoli del project management, cioe chi sono le persone di un progetto (le figure professionali). Verso fine 2a / inizio 3a si assegnano ruoli concreti (uno fa il project manager, un altro il manager, ecc.) e si simula la creazione di un software secondo i ruoli, come in un vero team di sviluppo. In 3a-4a si aggiungono la documentazione tecnica e, verso la 4a, la ricerca del lavoro (CV Europass) e la presentazione del lavoro finito (tesine).
 
