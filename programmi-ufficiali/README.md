@@ -1,6 +1,6 @@
 # Programmi ufficiali di informatica (Allegato A — riferimento)
 
-**Versione 0.4** — 18/08/2026
+**Versione 0.5** — 18/08/2026
 *Nota di riferimento sugli allegati ufficiali (Allegato A) e sul flusso di fine
 anno per la Regione. Accompagna i quattro PDF ufficiali nella cartella
 `programmi-ufficiali/`.*
@@ -8,8 +8,12 @@ anno per la Regione. Accompagna i quattro PDF ufficiali nella cartella
 ---
 
 Questa cartella contiene i documenti ufficiali forniti dal docente (Nicola).
-Sono la **fonte ufficiale** con cui confrontare il nostro corso (Mappa e Griglia
-degli Argomenti nascono anche da qui).
+
+## Natura dell'Allegato A (importante): documento vivo, per classe
+1. L'Allegato A NON e una "Bibbia" fissa ne uno standard a cui conformarsi: e il programma EFFETTIVAMENTE SVOLTO per una classe specifica, cioe la storia reale degli argomenti trattati in quella coorte.
+2. Cambia ogni anno: quello di una classe e diverso da quello dell'anno precedente e sara diverso da quello dell'anno successivo.
+3. Si puo e si deve modificare: quando si fanno cose nuove, o si spostano argomenti in anni diversi, l'Allegato A di quella classe si aggiorna di conseguenza.
+4. E quindi un documento DESCRITTIVO (cosa e stato fatto), non prescrittivo. I quattro file qui sono la fotografia dell'ultimo anno per quelle classi; servono come base di partenza e come riferimento, ma si evolvono.
 
 ## Cosa sono davvero (verificato leggendo i PDF)
 1. I file "prima", "seconda" e "terza" sono tutti lo **stesso tipo di documento**: l'"ALLEGATO A al Piano Formativo Personalizzato per Operatore Informatico".
@@ -47,7 +51,7 @@ per la classe che avanza.
 4. Prerequisito per collocare in automatico: la corrispondenza materia/macro-area nostra <-> competenza Allegato A (il "ponte"), da costruire una volta.
 
 ## Note d'uso
-1. Sono documenti di sola consultazione: non si modificano. Servono come riferimento.
+1. Questi PDF sono la fotografia dell'ultimo anno per quelle classi. Non sono immutabili: l'Allegato A di ciascuna classe si modifica e si aggiorna quando si fanno cose nuove o le si sposta di anno. Ogni anno il documento e diverso.
 2. Il confronto argomento per argomento con il nostro corso e nella Mappa e nella Griglia degli Argomenti (radice del repository).
 3. Non tutto cio che c'e in questi programmi e informatica pura o materia di Regge: alcune parti sono di altri docenti o di altre aree (nell'Allegato A compaiono per esempio riferimenti a "Meles"). Vedi la colonna "di chi e" nella Mappa.
 4. Dato che ogni Allegato A copre I-II-III insieme, per capire cosa e specifico di un anno si guarda la sezione "N Anno" dentro ciascuna competenza.
