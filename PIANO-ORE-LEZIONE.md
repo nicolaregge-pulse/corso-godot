@@ -1,6 +1,6 @@
 # Piano delle Ore di Lezione
 
-**Versione 0.2** — 18/08/2026
+**Versione 0.3** — 18/08/2026
 *Guida operativa "giorno per giorno". Traduce la Griglia degli Argomenti in un
 albero: Macro-area, poi Sotto-argomento, poi la singola Ora di lezione con una
 breve descrizione di cosa fare. E il documento da guardare prima di ogni lezione
@@ -8,6 +8,14 @@ per decidere l'attivita dell'ora. Le ore sono una stima e un ordine consigliato:
 si adattano al ritmo della classe.*
 
 ---
+
+## 0. Regola fissa di OGNI lezione: carta e penna (tassativo)
+1. In ogni lezione, di ogni anno, ogni allievo deve avere carta e penna sul banco: si prendono appunti e si fanno schemi a mano, sempre, anche quando si lavora al computer.
+2. Scrivere e disegnare a mano aiuta a capire e a fissare: fa parte del metodo, non e un extra.
+3. Se un allievo non ha carta e penna, il docente gliele fornisce e segna una nota (annotazione), lezione per lezione.
+4. Gli appunti e gli schemi a mano confluiscono poi nel quaderno personale (anche fotografati): alimentano il "Mostralo" e la prova del nove ("so spiegarlo").
+
+> [GIALLO] Questa regola vale per TUTTE le ore elencate piu sotto, senza doverla ripetere ogni volta: carta e penna sono sempre sul banco.
 
 ## 1. Come si usa questo documento
 1. L'albero ha tre livelli: la Macro-area (il grande tema), il Sotto-argomento (il pezzo di tema), l'Ora di lezione (cosa si fa in quell'ora).

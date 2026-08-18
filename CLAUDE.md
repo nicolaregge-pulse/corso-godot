@@ -266,6 +266,22 @@ Il corso stesso è versionato su Git, su due livelli:
   Prima farglielo **desiderare** (semplice), poi introdurlo quando il gioco di
   gruppo lo rende naturale.
 
+## ⭐ Carta e penna in OGNI lezione (TASSATIVO — richiesto da Nicola)
+
+Regola **vincolante e senza eccezioni**, da rispettare e da ricordare in **ogni
+singola lezione** di **tutti** gli anni:
+
+- **Ogni allievo deve avere carta e penna sul banco**, per prendere **appunti** e
+  fare **schemi a mano** — sempre, anche (e soprattutto) quando si lavora al
+  computer. Scrivere e disegnare a mano aiuta a capire e a fissare i concetti.
+- **Se un allievo non li ha, il docente glieli fornisce e segna una nota**
+  (annotazione), lezione per lezione. Non è un capriccio: è parte del metodo.
+- Gli appunti e gli schemi a mano **confluiscono nel quaderno personale** (anche
+  fotografati e incollati): alimentano il "Mostralo" e la prova del nove.
+- **Conseguenza per il materiale:** ogni piano-lezione, guida ed esercizio deve
+  dare per scontato carta e penna e, dove utile, **prevedere esplicitamente** il
+  momento "prendi appunti / fai lo schema a mano".
+
 ## ⭐ Regole operative permanenti (richieste da Nicola)
 
 1. **Tutto versionato.** Ogni file (progetti Godot, script, documenti) va nel

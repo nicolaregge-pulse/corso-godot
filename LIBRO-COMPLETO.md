@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.32** — 18/08/2026
+**Versione 1.33** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -597,16 +597,24 @@ corso-godot/
 
 
 # Piano delle Ore di Lezione — guida giorno per giorno {#doc7}
-*Versione 0.2 · 18/08/2026 · Parte: Riferimento*
+*Versione 0.3 · 18/08/2026 · Parte: Riferimento*
 
-## 1. Come si usa questo documento {#doc7-sec1}
+## 0. Regola fissa di OGNI lezione: carta e penna (tassativo) {#doc7-sec1}
+1. In ogni lezione, di ogni anno, ogni allievo deve avere carta e penna sul banco: si prendono appunti e si fanno schemi a mano, sempre, anche quando si lavora al computer.
+2. Scrivere e disegnare a mano aiuta a capire e a fissare: fa parte del metodo, non e un extra.
+3. Se un allievo non ha carta e penna, il docente gliele fornisce e segna una nota (annotazione), lezione per lezione.
+4. Gli appunti e gli schemi a mano confluiscono poi nel quaderno personale (anche fotografati): alimentano il "Mostralo" e la prova del nove ("so spiegarlo").
+
+> [GIALLO] Questa regola vale per TUTTE le ore elencate piu sotto, senza doverla ripetere ogni volta: carta e penna sono sempre sul banco.
+
+## 1. Come si usa questo documento {#doc7-sec2}
 1. L'albero ha tre livelli: la Macro-area (il grande tema), il Sotto-argomento (il pezzo di tema), l'Ora di lezione (cosa si fa in quell'ora).
 2. Ogni Sotto-argomento indica tra parentesi le ore previste; l'elenco numerato sotto e proprio la sequenza delle ore, una riga per ora.
 3. L'ordine dall'alto in basso e gia l'ordine consigliato in cui procedere: leggere in sequenza equivale al calendario dell'anno.
 4. Ogni ora e pensata col metodo del corso: un piccolo obiettivo concreto, un risultato visibile, spazio per personalizzare ("Vinci subito, Fallo tuo, Mostralo").
 5. Le voci con la nota "da decidere" o "da confermare" seguono la Griglia: sono punti ancora aperti.
 
-## 2. Legenda dei simboli {#doc7-sec2}
+## 2. Legenda dei simboli {#doc7-sec3}
 1. (N ore): quante ore indicative servono per quel sotto-argomento.
 2. [FILO ROSSO]: attivita che torna in piu lezioni durante tutto l'anno (per esempio il Glossario e il Quaderno personale).
 3. [DA DECIDERE]: collocazione o strumento ancora da fissare insieme (vedi Griglia).
@@ -620,7 +628,7 @@ fondamenti e dalla produttivita digitale (utili subito in tutte le materie), poi
 hardware, reti in teoria, grafica di base, prime logiche di programmazione. Due
 fili rossi accompagnano tutto l'anno: il Glossario personale e il Quaderno.*
 
-## Fili rossi dell'anno (tornano in molte lezioni) {#doc7-sec3}
+## Fili rossi dell'anno (tornano in molte lezioni) {#doc7-sec4}
 
 ### Glossario personale [FILO ROSSO] (circa 1 ora al mese)
 1. Prima ora: si spiega cos'e il Glossario personale e si aprono le prime schede (almeno 50 termini all'anno, a scelta dello studente).
@@ -632,7 +640,7 @@ fili rossi accompagnano tutto l'anno: il Glossario personale e il Quaderno.*
 2. Ore successive: dopo ogni attivita importante si aggiunge una pagina ("cosa ho fatto, cosa ho imparato, uno screenshot").
 3. La regola d'oro: si scrive con parole proprie e si sa spiegare a voce cosa si e fatto (la "prova del nove").
 
-## Macro-area: Fondamenti e cultura informatica {#doc7-sec4}
+## Macro-area: Fondamenti e cultura informatica {#doc7-sec5}
 
 ### Cos'e l'informatica e uso consapevole della tecnologia (2 ore)
 1. Cosa vuol dire "informatica": far fare le cose a un computer; giro di esempi dalla vita di tutti i giorni; si accende il PC e ci si guarda intorno.
@@ -663,7 +671,7 @@ fili rossi accompagnano tutto l'anno: il Glossario personale e il Quaderno.*
 2. Il proprio repository personale (via GitHub Classroom): entrare nel proprio spazio, capire che e solo suo; primo giro dell'interfaccia.
 3. Salvare con un commit: si modifica un file (per esempio una pagina del quaderno) e si salva la versione; il primo "l'ho salvato io". (Branch e Pull Request arrivano negli anni superiori, Fase 2.)
 
-## Macro-area: Produttivita digitale (Google Workspace) {#doc7-sec5}
+## Macro-area: Produttivita digitale (Google Workspace) {#doc7-sec6}
 
 *Nota: puo essere svolta anche dal prof. Panaccione (informatica di base); Regge
 la integra comunque nei progetti. Qui e messa presto perche serve subito nelle
@@ -709,7 +717,7 @@ altre materie.*
 1. Cos'e un diagramma di flusso: i simboli base; si disegna il "diagramma" di una mattina tipo.
 2. Un flowchart con una decisione (se... allora...): si prepara il terreno per la programmazione.
 
-## Macro-area: Hardware (architettura, assemblaggio, diagnosi) {#doc7-sec6}
+## Macro-area: Hardware (architettura, assemblaggio, diagnosi) {#doc7-sec7}
 
 ### Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre) (3 ore)
 1. Le parti di un computer e cosa fa ciascuna: CPU, memoria, dischi; si guarda dentro un PC aperto (o foto/video).
@@ -742,7 +750,7 @@ altre materie.*
 ### Riparazione: PC con piu guasti; scheda intervento (1 ora)
 1. Simulazione: un PC con piu problemi; si compila una "scheda intervento" come farebbe un tecnico.
 
-## Macro-area: Reti (parte teorica) {#doc7-sec7}
+## Macro-area: Reti (parte teorica) {#doc7-sec8}
 
 ### Concetti: reti LAN e WAN, la rete di casa (1 ora)
 1. Cos'e una rete, LAN e WAN, com'e fatta la rete di casa: si disegna insieme la propria rete di casa.
@@ -761,14 +769,14 @@ altre materie.*
 1. Il modello ISO/OSI in parole semplici: i 7 livelli come una catena; a cosa serve ragionare a livelli.
 2. Il modello TCP/IP (4 livelli) e il confronto con ISO/OSI: la versione "pratica" di internet.
 
-## Macro-area: Grafica e multimedia {#doc7-sec8}
+## Macro-area: Grafica e multimedia {#doc7-sec9}
 
 ### Canva base: immagini semplici, locandine, loghi, modelli (3 ore)
 1. Primo giro di Canva: partire da un modello e cambiarlo; ognuno fa una locandina su un tema suo.
 2. Creare un logo semplice e giocare con colori e caratteri; l'importanza dell'ordine visivo.
 3. Mini-progetto: la locandina di un evento di classe (o del proprio gioco); si esporta e si mostra.
 
-## Macro-area: Programmazione, logica e algoritmi {#doc7-sec9}
+## Macro-area: Programmazione, logica e algoritmi {#doc7-sec10}
 
 ### Logica e problem solving; algoritmi e strutture di controllo (3 ore)
 1. Cos'e un algoritmo: una ricetta di passi; si scrive l'algoritmo di un gesto quotidiano.
@@ -786,7 +794,7 @@ altre materie.*
 3. La casella di testo (Edit) e l'etichetta (Label): leggere cosa scrive l'utente e rispondere.
 4. Mini-progetto: una mini-calcolatrice o un "saluta col tuo nome"; ognuno personalizza testo e colori.
 
-## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec10}
+## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec11}
 
 ### Intelligenza umana e artificiale: concetti e limiti (2 ore)
 1. Cos'e l'intelligenza artificiale, cosa sa fare e cosa no: esempi concreti; una discussione onesta sui limiti.
@@ -812,11 +820,11 @@ piu ricchi), si comincia a lavorare come in un team (i ruoli del progetto) e si
 aprono le prime reti con Packet Tracer verso fine anno. Continuano i fili rossi
 Glossario e Quaderno (altri 50 termini, nuove pagine).*
 
-## Fili rossi dell'anno {#doc7-sec11}
+## Fili rossi dell'anno {#doc7-sec12}
 1. Glossario personale [FILO ROSSO]: si aggiungono almeno altri 50 termini durante l'anno (arrivo a circa 100 totali).
 2. Quaderno dello studente [FILO ROSSO]: una pagina nuova dopo ogni attivita importante, con parole proprie e screenshot.
 
-## Macro-area: Sistema operativo {#doc7-sec12}
+## Macro-area: Sistema operativo {#doc7-sec13}
 
 *Nota (Griglia): quest'anno lo colloquiamo bene qui; con i PC nostri da
 assemblare gli studenti potranno installare il sistema e fare gli amministratori.*
@@ -835,7 +843,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 1. Componenti e servizi del sistema: cosa gira "dietro le quinte"; attivare/disattivare con criterio.
 2. Risorse condivise in rete: condividere una cartella tra due PC; primo assaggio pratico di rete locale.
 
-## Macro-area: Grafica e multimedia {#doc7-sec13}
+## Macro-area: Grafica e multimedia {#doc7-sec14}
 
 ### Canva avanzato: rimozione sfondo, ritocco immagini (2 ore)
 1. Rimuovere lo sfondo da una foto e comporre un'immagine nuova; ognuno crea un piccolo collage suo.
@@ -849,7 +857,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 1. Montare un video breve: tagliare, unire, aggiungere testo e musica; ognuno racconta qualcosa di suo.
 2. Una presentazione multimediale che unisce immagini, video e voce; si presenta alla classe.
 
-## Macro-area: Programmazione (Lazarus) {#doc7-sec14}
+## Macro-area: Programmazione (Lazarus) {#doc7-sec15}
 
 ### Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni (4 ore)
 1. Oggetti di scelta: RadioButton e CheckBox; far reagire il programma alle scelte dell'utente.
@@ -872,7 +880,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 2. Il primo "funziona!": un bottone che saluta (il ponte con l'evento click gia noto in Lazarus).
 3. Un movimento semplice col game loop: qualcosa che si muove sullo schermo; ognuno cambia colore/velocita. (Approfondimenti nel corso dedicato a Godot.)
 
-## Macro-area: Reti {#doc7-sec15}
+## Macro-area: Reti {#doc7-sec16}
 
 ### Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte (3 ore)
 1. Cos'e un indirizzo IP e un indirizzo MAC: il "nome e cognome" dei dispositivi; si guardano i propri.
@@ -883,7 +891,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 1. Primo contatto con Packet Tracer: collegare due PC e farli "parlare"; il primo ping che risponde.
 2. Una piccola LAN con uno switch: piu PC collegati; si osserva il traffico. (Si prosegue in 3a e 4a.)
 
-## Macro-area: Mondo del lavoro {#doc7-sec16}
+## Macro-area: Mondo del lavoro {#doc7-sec17}
 
 ### Figure professionali dell'informatica (1 ora)
 1. Chi lavora nell'informatica: sviluppatore, tecnico, sistemista, project manager; quali sbocchi esistono.
@@ -897,14 +905,14 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 2. Il gruppo pianifica un piccolo software e si divide i compiti; ognuno sa qual e il suo pezzo.
 3. Si mette insieme il lavoro dei diversi ruoli e si presenta: come in un vero team di sviluppo. (Prosegue in 3a.)
 
-## Macro-area: Progetti pratici {#doc7-sec17}
+## Macro-area: Progetti pratici {#doc7-sec18}
 
 ### Il Mio Negozio Online (avvio) (3 ore)
 1. Si presenta il progetto Negozio Online: cosa faremo crescere negli anni; si sceglie il proprio negozio (nome, tema).
 2. Prima pagina del negozio con i prodotti: si personalizza con roba propria (foto, prezzi).
 3. Un primo ordine via email: si prova il flusso semplice; ognuno mostra il suo negozio funzionante.
 
-## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec18}
+## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec19}
 1. Uso dell'AI per studiare e per il quaderno: farsi spiegare e farsi interrogare (auto-verifica). [DA CONFERMARE strumento: Gemini]
 2. Un'ora di riflessione: come cambia il lavoro con l'automazione e l'AI; esempi vicini ai loro interessi.
 
@@ -918,11 +926,11 @@ vero (RJ45) e si prosegue con Packet Tracer. Lazarus si fa piu ricco (anche
 grafica e coordinate). Il lavoro a gruppi diventa piu strutturato. Fili rossi
 Glossario e Quaderno come sempre.*
 
-## Fili rossi dell'anno {#doc7-sec19}
+## Fili rossi dell'anno {#doc7-sec20}
 1. Glossario personale [FILO ROSSO]: altri 50 termini circa (verso 150 totali), sui temi nuovi (database, web, reti).
 2. Quaderno dello studente [FILO ROSSO]: pagine su database, sito e rete; sempre con la prova del nove "so spiegarlo".
 
-## Macro-area: Database e gestione dei dati {#doc7-sec20}
+## Macro-area: Database e gestione dei dati {#doc7-sec21}
 
 *Strumento (Griglia, da confermare): SQLite. A scuola dal browser
 (sqliteonline.com); sui PC nostri DB Browser for SQLite in versione portable;
@@ -945,7 +953,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Raccogliere dati (per esempio con un modulo) e strutturarli in tabella.
 2. Prime analisi: medie, conteggi, un grafico; leggere cosa dicono i numeri.
 
-## Macro-area: Web e realizzazione di siti {#doc7-sec21}
+## Macro-area: Web e realizzazione di siti {#doc7-sec22}
 
 ### La comunicazione sul web; come funziona il web (1 ora)
 1. Cosa succede quando apro un sito: client e server in parole semplici; il viaggio di una pagina.
@@ -964,7 +972,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Creare un sito con Google Sites senza codice: pagine, menu, immagini.
 2. Pubblicare il sito e condividerlo: ognuno mette online una sua paginetta (portfolio o progetto).
 
-## Macro-area: Reti {#doc7-sec22}
+## Macro-area: Reti {#doc7-sec23}
 
 ### Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping (3 ore)
 1. Il cavo di rete: com'e fatto, lo standard T568B; a cosa serve rispettare l'ordine dei fili.
@@ -978,7 +986,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Si amplia la rete: piu switch, indirizzi assegnati con criterio; si osserva il traffico.
 2. Primo assaggio di segmentazione (piu reti che si parlano tramite un router). (Culmina in 4a.)
 
-## Macro-area: Programmazione (Lazarus e oltre) {#doc7-sec23}
+## Macro-area: Programmazione (Lazarus e oltre) {#doc7-sec24}
 
 ### Lazarus, interfaccia ed esercizi (livello 3) (3 ore)
 1. Progetto con piu finestre e piu oggetti: un'app piccola ma completa.
@@ -995,7 +1003,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 2. Un primo gioco 2D completo (tipo "Chirurgo Pasticcione"): dalla scena al gioco giocabile.
 3. Si personalizza e si mostra il gioco. (Il grosso e nel corso dedicato a Godot.)
 
-## Macro-area: Mondo del lavoro {#doc7-sec24}
+## Macro-area: Mondo del lavoro {#doc7-sec25}
 
 ### Project management e lavoro in team (livello 3) (2 ore)
 1. Si riprende il piano di progetto con ruoli piu definiti; si usa un piccolo diagramma dei tempi.
@@ -1010,7 +1018,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Scrivere un piccolo manuale utente del proprio progetto: chiaro, con immagini.
 2. Scrivere una relazione tecnica: cosa ho fatto, come, cosa ho imparato.
 
-## Macro-area: Progetti pratici {#doc7-sec25}
+## Macro-area: Progetti pratici {#doc7-sec26}
 
 ### Il Mio Negozio Online (crescita) (2 ore)
 1. Si aggiunge un piccolo database dei prodotti al negozio: i dati non piu "scritti a mano".
@@ -1019,7 +1027,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 ### Cablaggio RJ45 e prime reti (progetto) (1 ora)
 1. Si tira insieme il lavoro sulle reti (cavi + piccola LAN + ping) come progetto documentato.
 
-## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec26}
+## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec27}
 1. Usare l'AI per farsi aiutare a capire SQL, HTML o un errore, senza copiare: si prova su un caso reale. [DA CONFERMARE strumento: Gemini]
 2. Algoritmi e dati: come i servizi usano i nostri dati; un'ora di consapevolezza e privacy.
 
@@ -1033,11 +1041,11 @@ tipo quella di una scuola, con tutti i componenti. I database si approfondiscono
 si cura la documentazione, si preparano CV e tesine. Fili rossi Glossario (verso
 i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 
-## Fili rossi dell'anno {#doc7-sec27}
+## Fili rossi dell'anno {#doc7-sec28}
 1. Glossario personale [FILO ROSSO]: ultimi 50 termini circa; si arriva a un glossario personale di almeno 200 termini.
 2. Quaderno dello studente [FILO ROSSO]: si completa e si rifinisce; diventa il libro personale di cui essere fieri.
 
-## Macro-area: Reti (il cuore pulsante dell'anno) {#doc7-sec28}
+## Macro-area: Reti (il cuore pulsante dell'anno) {#doc7-sec29}
 
 ### Cisco Packet Tracer: la rete di una scuola (VLAN) (5 ore)
 1. Si progetta su carta la rete di una scuola: aule, segreteria, laboratori; cosa serve dove.
@@ -1053,7 +1061,7 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 ### Indirizzamento avanzato (ripresa applicata) (1 ora)
 1. Si riprendono IP, sottoreti e porte applicandoli al progetto della rete-scuola.
 
-## Macro-area: Database e gestione dei dati (approfondimento) {#doc7-sec29}
+## Macro-area: Database e gestione dei dati (approfondimento) {#doc7-sec30}
 
 ### SQL avanzato: interrogazioni piu ricche (3 ore) [strumento: SQLite]
 1. Query su piu condizioni e su piu tabelle (join in versione semplice): unire i dati.
@@ -1064,14 +1072,14 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 1. Spostare e ripulire i dati (migrazione) con metodo; controllare che nulla si perda.
 2. Analisi statistica dei dati raccolti: medie, distribuzioni, un grafico che racconta una storia.
 
-## Macro-area: Web (siti piu completi) {#doc7-sec30}
+## Macro-area: Web (siti piu completi) {#doc7-sec31}
 
 ### Sito completo con HTML, CSS e Google Sites (3 ore)
 1. Si costruisce un sito piu ricco (piu pagine, menu, stile curato) su un tema scelto.
 2. Si cura l'aspetto e la resa su telefono; dettagli che fanno la differenza.
 3. Si pubblica e si presenta il sito: parte del portfolio personale.
 
-## Macro-area: Programmazione (livello massimo) {#doc7-sec31}
+## Macro-area: Programmazione (livello massimo) {#doc7-sec32}
 
 ### Lazarus, progetto avanzato (3 ore)
 1. Un progetto Lazarus piu strutturato scelto dagli studenti: si progetta con cura.
@@ -1083,7 +1091,7 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 2. Si sviluppa il progetto boss (movimento, obiettivi, punteggio) passo dopo passo.
 3. Si rifinisce e si mostra il gioco. (Percorso completo nel corso dedicato a Godot.)
 
-## Macro-area: Mondo del lavoro {#doc7-sec32}
+## Macro-area: Mondo del lavoro {#doc7-sec33}
 
 ### Ricerca del lavoro: CV Europass, ricerca attiva (2 ore)
 1. Si prepara il proprio CV in formato Europass: cosa scrivere e come.
@@ -1101,13 +1109,13 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 ### Git: le release del progetto (Fase 2) (1 ora)
 1. Cos'e una release: congelare una versione stabile del progetto (v1.0, v1.1...); si pubblica la release del progetto di gruppo, pronta da mostrare e da consegnare.
 
-## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec33}
+## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec34}
 1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [DA CONFERMARE strumento: Gemini]
 2. Intelligenza umana e artificiale, limiti ed etica: una riflessione conclusiva, collegata al mondo del lavoro che li aspetta.
 
 ---
 
-## Nota finale: punti ancora aperti (dalla Griglia) {#doc7-sec34}
+## Nota finale: punti ancora aperti (dalla Griglia) {#doc7-sec35}
 1. Godot: l'anno preciso e ancora da decidere insieme (probabile 3a e 4a, la 2a da valutare). Nel piano e messo come assaggio in 2a e piu strutturato in 3a-4a, ma resta [DA DECIDERE].
 2. Strumento SQL: proposta SQLite (browser + portable), [DA CONFERMARE].
 3. Strumento AI: da verificare che tutto si faccia con Gemini gratuito, [DA CONFERMARE].
