@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.15** — 16/08/2026
+**Versione 1.16** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -412,10 +412,148 @@ corso-godot/
 3. Man mano che un argomento diventa una lezione o una scheda, lo si sposta nel programma dell'anno e nel materiale.
 
 
-# Programma del Corso {#doc6}
+# Griglia degli Argomenti — scelta per anno {#doc6}
+*Versione 1.0 · 17/08/2026 · Parte: Riferimento*
+
+## 1. Come si usa {#doc6-sec1}
+1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
+2. Un argomento puo avere piu spunte (va bene in piu anni) oppure una sola.
+3. Quando mi dici le spunte, io le riporto nei programmi dei singoli anni.
+
+## 2. Fondamenti e cultura informatica {#doc6-sec2}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Cos'e l'informatica, uso consapevole della tecnologia |  |  |  |  |
+| Rappresentazione dei dati: binario, decimale, esadecimale |  |  |  |  |
+| Codifica del testo (ASCII, Unicode), bit e byte |  |  |  |  |
+| Digitalizzazione di immagini e suoni |  |  |  |  |
+| Storia ed evoluzione dei calcolatori |  |  |  |  |
+| Glossario informatico (costruito dagli studenti) |  |  |  |  |
+| Organizzazione digitale: cartelle ad albero, gestione del tempo |  |  |  |  |
+
+## 3. Hardware: architettura, assemblaggio, manutenzione e diagnosi {#doc6-sec3}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre) |  |  |  |  |
+| Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD) |  |  |  |  |
+| Assemblaggio e smontaggio di un PC |  |  |  |  |
+| Configuratore PC a budget e documentazione della configurazione |  |  |  |  |
+| RAID e partizioni dei dischi |  |  |  |  |
+| Manutenzione ordinaria e preventiva; tuning del PC |  |  |  |  |
+| Diagnosi guasti (troubleshooting): metodo e fasi |  |  |  |  |
+| Riparazione: PC funzionante da piu guasti; scheda intervento |  |  |  |  |
+
+## 4. Sistema operativo {#doc6-sec4}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Windows: desktop, finestre, gestione di file e cartelle |  |  |  |  |
+| Installazione del sistema operativo |  |  |  |  |
+| Configurazione OS: componenti, servizi di rete, risorse condivise |  |  |  |  |
+
+## 5. Produttivita digitale (Google Workspace e Office) {#doc6-sec5}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Google Drive: cartelle, sottocartelle, condivisione |  |  |  |  |
+| Google Documenti: formattazione, stili, impostazione pagina, sommario |  |  |  |  |
+| Google Fogli: formule, formattazione condizionale, grafici, preventivo |  |  |  |  |
+| Google Presentazioni: modelli, immagini, video |  |  |  |  |
+| Google Moduli: form e sondaggi |  |  |  |  |
+| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali |  |  |  |  |
+| Google Calendar, Classroom, Chat |  |  |  |  |
+| Microsoft Excel: scadenze e calendari |  |  |  |  |
+| Ricerca in rete: ricerca avanzata e operatori booleani |  |  |  |  |
+| Diagrammi di flusso (flowchart) |  |  |  |  |
+
+## 6. Grafica e multimedia {#doc6-sec6}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Canva: immagini, locandine, loghi, rimozione sfondo, modelli |  |  |  |  |
+| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  |  |  |  |
+| Editing video e presentazioni multimediali |  |  |  |  |
+
+## 7. Reti {#doc6-sec7}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Concetti: reti LAN e WAN, la rete di casa |  |  |  |  |
+| Apparecchi: modem, router, switch, hub, access point, repeater, powerline |  |  |  |  |
+| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  |  |  |
+| Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test |  |  |  |  |
+| Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  |  |  |  |
+| Come viaggiano i dati: pacchetti, rete a pacchetti |  |  |  |  |
+| Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli) |  |  |  |  |
+| Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN) |  |  |  |  |
+| Sicurezza di rete: firewall, segmentazione, rischi in rete |  |  |  |  |
+
+## 8. Programmazione, logica e algoritmi {#doc6-sec8}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Logica e problem solving; algoritmi e strutture di controllo |  |  |  |  |
+| Coding a blocchi e porte logiche booseane (AND, OR, NOT) |  |  |  |  |
+| Lazarus base: ambiente, Hello World, variabili, funzioni, tipi di file |  |  |  |  |
+| Lazarus, interfaccia: RadioButton, ComboBox, PageControl, ecc. |  |  |  |  |
+| Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  |  |  |  |
+| Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  |  |  |
+| Interpretato e compilato; Lazarus e Delphi |  |  |  |  |
+| Godot e GDScript: scene, nodi, segnali, game loop, giochi |  |  |  |  |
+
+## 9. Database e gestione dei dati {#doc6-sec9}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Concetto di database (archivio ordinato di dati) |  |  |  |  |
+| Linguaggio SQL: interrogare e gestire i dati |  |  |  |  |
+| Archivi digitali; migrazione dei dati |  |  |  |  |
+| Raccolta, strutturazione e analisi statistica dei dati |  |  |  |  |
+
+## 10. Web e realizzazione di siti {#doc6-sec10}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| HTML5: la struttura di una pagina web |  |  |  |  |
+| CSS: l'aspetto grafico di una pagina web |  |  |  |  |
+| Google Sites: sito personale o scolastico |  |  |  |  |
+| La comunicazione sul web; come funziona il web |  |  |  |  |
+
+## 11. Intelligenza artificiale {#doc6-sec11}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Intelligenza umana e artificiale: concetti e limiti |  |  |  |  |
+| Algoritmi dei social e impatto mediatico |  |  |  |  |
+| Industria 4.0 e automazione |  |  |  |  |
+
+## 12. Mondo del lavoro, project management e documentazione {#doc6-sec12}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  |  |  |  |
+| Lavoro in team e presentazione del lavoro finito; tesine |  |  |  |  |
+| Documentazione tecnica: manuale utente, relazione, deployment |  |  |  |  |
+| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  |  |
+| Figure professionali dell'informatica |  |  |  |  |
+
+## 13. Progetti pratici del corso (nostri) {#doc6-sec13}
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Il Mio Negozio Online: web, database, ordini via email |  |  |  |  |
+| Giochi con Godot: dai semplici ai piu strutturati |  |  |  |  |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  |  |  |
+
+> [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. Non lo pianifichiamo in questa griglia.
+
+
+# Programma del Corso {#doc7}
 *Versione 0.4 · 26/07/2026 · Parte: Classe 1 — Informatica*
 
-## Che corso è (e che corso NON è) {#doc6-sec1}
+## Che corso è (e che corso NON è) {#doc7-sec1}
 
 Questo **non** è un corso di "informatica di base" fatto di clic semplici: quelle
 cose i ragazzi le vedono altrove. Qui facciamo **tutta l'informatica**, con un
@@ -431,7 +569,7 @@ solo quella che serve al fare. "Avanzato" qui vuol dire **profondo e vero**, non
 
 ---
 
-## Una scatola flessibile, cucita sui ragazzi {#doc6-sec2}
+## Una scatola flessibile, cucita sui ragazzi {#doc7-sec2}
 
 I sei moduli **non** sono un percorso rigido da percorrere tutto uguale per
 tutti. Sono **contenitori** — delle **manopole** che il docente apre o chiude a
@@ -459,7 +597,7 @@ Non "finire il programma": **spendere bene** il tempo che abbiamo con loro.
 
 ---
 
-## A chi è rivolto e con che spirito {#doc6-sec3}
+## A chi è rivolto e con che spirito {#doc7-sec3}
 
 Siamo in una **prima** di **istituto professionale**. Molti ragazzi arrivano da
 percorsi difficili, alcuni con un background migratorio, alcuni già "scartati"
@@ -480,7 +618,7 @@ dignità, pensato per **aprire porte** e portare a **sbocchi lavorativi migliori
 
 ---
 
-## Il vincolo pratico della scuola: niente installazioni (dove si può) {#doc6-sec4}
+## Il vincolo pratico della scuola: niente installazioni (dove si può) {#doc7-sec4}
 
 A scuola installare software richiede l'amministratore di sistema (lento). Quindi
 prediligiamo tutto ciò che gira **da browser** o è **portabile** — con
@@ -499,7 +637,7 @@ laboratorio/di recupero**, non sui PC "buoni" della scuola.
 
 ---
 
-## I moduli dell'anno {#doc6-sec5}
+## I moduli dell'anno {#doc7-sec5}
 
 Sei moduli. I primi cinque costruiscono il "tecnico"; **Lazarus parte a metà
 anno (o prima)** e corre fino a fine anno, in parallelo agli ultimi moduli, come
@@ -664,7 +802,7 @@ avevano solo sentito nominare lo usano premendo "Esegui".
 
 ---
 
-## Il filo dell'anno (sequenza e periodi indicativi) {#doc6-sec6}
+## Il filo dell'anno (sequenza e periodi indicativi) {#doc7-sec6}
 
 | Periodo | In primo piano | In parallelo |
 |---|---|---|
@@ -681,7 +819,7 @@ spiegare.
 
 ---
 
-## Dove porta: il percorso pluriennale {#doc6-sec7}
+## Dove porta: il percorso pluriennale {#doc7-sec7}
 
 Questo primo anno getta **fondamenta larghe**. Ecco dove conducono, così ogni
 modulo ha un "perché" grande dietro:
@@ -699,7 +837,7 @@ modulo ha un "perché" grande dietro:
 
 ---
 
-## Serbatoio di idee extra (competenze spendibili nel lavoro) {#doc6-sec8}
+## Serbatoio di idee extra (competenze spendibili nel lavoro) {#doc7-sec8}
 
 Cose **alla loro portata** che nel mondo del lavoro pesano, da pescare quando la
 classe lo permette (in prima, seconda, terza — e in quarta quando la facciamo).
@@ -721,7 +859,7 @@ Non sono moduli obbligatori: sono **carte in più** da mettere nel loro bagaglio
 
 ---
 
-## Come si valuta {#doc6-sec9}
+## Come si valuta {#doc7-sec9}
 
 Come nel corso di Godot, le **regole sono chiare fin da subito** e non si basano
 sul "copiare bene":
@@ -735,7 +873,7 @@ sul "copiare bene":
 
 ---
 
-## Uso dell'AI {#doc6-sec10}
+## Uso dell'AI {#doc7-sec10}
 
 L'AI è come la **calcolatrice in matematica**: aiuta, ma se non capisci cosa stai
 facendo non serve a niente. Sì per: capire un errore, farsi spiegare, avere uno
@@ -744,7 +882,7 @@ se sai spiegare a voce cosa hai fatto, la competenza c'è.
 
 ---
 
-## Prossimi passi (roadmap del programma) {#doc6-sec11}
+## Prossimi passi (roadmap del programma) {#doc7-sec11}
 
 Questo file è la **mappa**. Da qui, un modulo alla volta, produrremo i contenuti
 veri (in `classe-1/manuale.md` e `classe-1/eserciziario.md`, con lo stesso stile
@@ -761,7 +899,7 @@ alla tabella delle modifiche in fondo.
 
 ---
 
-## Storia delle versioni (le modifiche fatte) {#doc6-sec12}
+## Storia delle versioni (le modifiche fatte) {#doc7-sec12}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
@@ -770,10 +908,10 @@ alla tabella delle modifiche in fondo.
 | 0.3 | 26/07/2026 | Aggiunta la sezione "Una **scatola flessibile**": i moduli sono manopole che si aprono/chiudono in base alla classe, tutto al servizio delle chance di lavoro (la "nuova spiaggia"). Aggiunto il "**serbatoio di idee extra**" con competenze spendibili alla loro portata (crimpare cavi, riparazione PC, digitazione, curriculum/colloquio, pagina web, Linux, sicurezza, certificazioni). Tolte parole inglesi non spiegate ("bump" → "alzare il numero di versione"; "changelog" → "storia delle versioni"). |
 
 
-# La Bussola del Lavoro {#doc7}
+# La Bussola del Lavoro {#doc8}
 *Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
-## La verità di partenza (chi assume a 15-17 anni) {#doc7-sec1}
+## La verità di partenza (chi assume a 15-17 anni) {#doc8-sec1}
 
 A questa età, nei tirocini e nel primo lavoro, **quasi nessuno assume per le
 competenze tecniche**: quelle il datore di lavoro le insegna. Assume per
@@ -787,7 +925,7 @@ Le cose che servono stanno in **tre cassetti**.
 
 ---
 
-## Cassetto 1 — La testa e il cuore (quello che pesa di più) {#doc7-sec2}
+## Cassetto 1 — La testa e il cuore (quello che pesa di più) {#doc8-sec2}
 
 Sono le prime cose che un datore di lavoro guarda in un ragazzo giovane. Per i
 nostri studenti, che spesso partono da lontano, questo cassetto è il vero
@@ -814,7 +952,7 @@ riscatto.
 
 ---
 
-## Cassetto 2 — Le mani (le competenze tecniche che si "vendono" subito) {#doc7-sec3}
+## Cassetto 2 — Le mani (le competenze tecniche che si "vendono" subito) {#doc8-sec3}
 
 In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
@@ -836,7 +974,7 @@ In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
 ---
 
-## Cassetto 3 — Le carte (i documenti che fanno la differenza) {#doc7-sec4}
+## Cassetto 3 — Le carte (i documenti che fanno la differenza) {#doc8-sec4}
 
 - **Sicurezza sul lavoro:** in Italia, per fare un tirocinio scuola-lavoro (il
   cosiddetto **PCTO**, cioè i percorsi per le competenze trasversali e
@@ -854,7 +992,7 @@ In ordine di **quanto è facile trasformarle in un lavoro** a quell'età:
 
 ---
 
-## La sintesi {#doc7-sec5}
+## La sintesi {#doc8-sec5}
 
 Per i nostri ragazzi il moltiplicatore **non** è la tecnica avanzata: è
 **tecnica di base solida + affidabilità + saper comunicare + qualcosa da
@@ -864,7 +1002,7 @@ assumibile**. È lì che punta il corso.
 
 ---
 
-## Ingredienti da dosare (come si usa questa bussola) {#doc7-sec6}
+## Ingredienti da dosare (come si usa questa bussola) {#doc8-sec6}
 
 Gli argomenti del corso **non** hanno una divisione fissa decisa a tavolino.
 Sono **ingredienti** che il docente dosa **in base alla classe che trova**:
@@ -884,17 +1022,17 @@ il programma": **spendere bene** il tempo che abbiamo con loro.
 
 ---
 
-## Storia delle versioni (per noi) {#doc7-sec7}
+## Storia delle versioni (per noi) {#doc8-sec7}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
 | 0.1 | 27/07/2026 | Prima stesura della bussola: la verità su chi assume a 15-17 anni, i tre cassetti (testa e cuore · le mani · le carte), la sintesi e il principio degli "ingredienti da dosare" in base alla classe. |
 
 
-# Da Far Fare Assolutamente {#doc8}
+# Da Far Fare Assolutamente {#doc9}
 *Versione 0.2 · 27/07/2026 · Parte: Classe 1 — Informatica*
 
-## 1. Toccare un database vero e scrivere un po' di SQL {#doc8-sec1}
+## 1. Toccare un database vero e scrivere un po' di SQL {#doc9-sec1}
 
 **Cosa devono fare:** creare qualche tabella, metterci dei dati e scrivere le
 prime **query SQL** (le "domande" al database, tipo *"dammi tutti i prodotti
@@ -919,7 +1057,7 @@ prepara il progetto dello shop (l'elenco dei prodotti **è** un database).
 
 ---
 
-## 2. Costruire uno shop e-commerce funzionante (demo) {#doc8-sec2}
+## 2. Costruire uno shop e-commerce funzionante (demo) {#doc9-sec2}
 
 **Cosa devono fare:** realizzare un piccolo **negozio online funzionante** con
 prodotti e foto scelti da loro, e ottenerne un **link da mostrare**.
@@ -941,14 +1079,14 @@ tranne l'incasso vero.
 
 ---
 
-## Storia delle versioni (per noi) {#doc8-sec3}
+## Storia delle versioni (per noi) {#doc9-sec3}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
 | 0.1 | 27/07/2026 | Nasce l'elenco delle cose irrinunciabili. Primi due punti: (1) toccare un database vero e scrivere SQL (sqliteonline → phpMyAdmin/MariaDB via XAMPP portable → Neon/Supabase come piano B), legato allo shop; (2) costruire uno shop e-commerce funzionante (demo). |
 
 
-# Il Mio Negozio Online — Guida per i ragazzi {#doc9}
+# Il Mio Negozio Online — Guida per i ragazzi {#doc10}
 *Versione 1.5 · 16/08/2026 · Parte: Classe 1 — Informatica*
 
 ### Un negozio vero, con database ed email — costruito da te
@@ -980,7 +1118,7 @@ prof. Scaricalo sul computer prima di cominciare.
 
 ---
 
-## TAPPA 1 — Metti il negozio ONLINE (la prima vittoria) 🌍 {#doc9-sec1}
+## TAPPA 1 — Metti il negozio ONLINE (la prima vittoria) 🌍 {#doc10-sec1}
 
 Obiettivo: avere un **link** con il tuo negozio che funziona (con dei prodotti di
 esempio). Ci arriviamo in pochi minuti.
@@ -1030,7 +1168,7 @@ index.html
 
 ---
 
-## TAPPA 2 — Collega il database della classe 🗄️ {#doc9-sec2}
+## TAPPA 2 — Collega il database della classe 🗄️ {#doc10-sec2}
 
 Obiettivo: far arrivare nel tuo negozio i **prodotti veri**, presi dal database.
 
@@ -1074,7 +1212,7 @@ const SUPABASE_KEY  = "sb_publishable_xxxxx";
 
 ---
 
-## TAPPA 3 — Ricevi gli ordini via email 📧 {#doc9-sec3}
+## TAPPA 3 — Ricevi gli ordini via email 📧 {#doc10-sec3}
 
 Obiettivo: quando qualcuno preme *"Concludi l'ordine"*, ti arriva un'**email**.
 Usiamo un aiutante gratuito che si chiama **FormSubmit**.
@@ -1116,7 +1254,7 @@ const EMAIL_ORDINI  = "iltuonome@esempio.it";
 
 ---
 
-## TAPPA 4 — Fallo tuo 🎨 {#doc9-sec4}
+## TAPPA 4 — Fallo tuo 🎨 {#doc10-sec4}
 
 Adesso rendilo **tuo davvero**:
 - **Il nome:** nel file `index.html`, cambia la scritta dentro `<h1>🛒 Il mio negozio</h1>` (matita ✏️ → cambia → commit).
@@ -1130,7 +1268,7 @@ Adesso rendilo **tuo davvero**:
 
 ---
 
-## La prova del nove 🧠 {#doc9-sec5}
+## La prova del nove 🧠 {#doc10-sec5}
 
 Sai **spiegare a voce**, con parole tue:
 - dove stanno i **prodotti** (nel database della classe) e come fanno ad arrivare in vetrina?
@@ -1140,7 +1278,7 @@ Se sai raccontarlo, **hai capito davvero** — ed è quello che conta.
 
 ---
 
-## Se qualcosa non va 🔧 (succede a tutti) {#doc9-sec6}
+## Se qualcosa non va 🔧 (succede a tutti) {#doc10-sec6}
 
 - **Il link non si apre / pagina bianca:** aspetta un altro minuto, poi ricarica con `Ctrl + F5`. Controlla che il file si chiami **esattamente** `index.html`.
 - **I prodotti sono ancora quelli di esempio:** controlla di aver incollato i due valori del prof **tra le virgolette** e di aver fatto **Commit**. Aspetta un minuto e ricarica.
@@ -1150,10 +1288,10 @@ Se sai raccontarlo, **hai capito davvero** — ed è quello che conta.
 > normale — **capita a tutti i programmatori, anche ai più bravi.**
 
 
-# Il Mio Negozio Online — Piano-lezione {#doc10}
+# Il Mio Negozio Online — Piano-lezione {#doc11}
 *Versione 1.1 · 09/08/2026 · Parte: Classe 1 — Informatica*
 
-## In breve {#doc10-sec1}
+## In breve {#doc11-sec1}
 
 I ragazzi costruiscono un **negozio online vero** (con un link da mostrare a
 casa), collegato a un **database della classe** e con gli **ordini via email**.
@@ -1166,7 +1304,7 @@ Il filo è sempre lo stesso: **Vinci subito · Fallo tuo · Mostralo.**
 
 ---
 
-## Prima di iniziare — cosa prepara il prof (una volta sola) {#doc10-sec2}
+## Prima di iniziare — cosa prepara il prof (una volta sola) {#doc11-sec2}
 
 1. **Il database condiviso su Supabase** (già fatto): tabella `prodotti` con la
    policy di **sola lettura**. Consiglio: mettici prodotti simpatici, magari a
@@ -1184,7 +1322,7 @@ Il filo è sempre lo stesso: **Vinci subito · Fallo tuo · Mostralo.**
 
 ---
 
-## La scaletta (3 lezioni) {#doc10-sec3}
+## La scaletta (3 lezioni) {#doc11-sec3}
 
 ### Lezione 1 — "Il mio negozio è ONLINE" (Tappa 1)
 Obiettivo: ognuno ha un **link** che funziona (con prodotti di esempio).
@@ -1219,7 +1357,7 @@ Obiettivo: gli ordini arrivano per **email**, e ognuno **personalizza** il suo.
 
 ---
 
-## Canovaccio — spiegare il database dal vivo (10-15 min) {#doc10-sec4}
+## Canovaccio — spiegare il database dal vivo (10-15 min) {#doc11-sec4}
 
 Al proiettore, sul **tuo** Supabase. Poche cose, concrete:
 
@@ -1247,7 +1385,7 @@ Al proiettore, sul **tuo** Supabase. Poche cose, concrete:
 
 ---
 
-## Se lavori a gruppi (opzionale, 2-4 ragazzi) {#doc10-sec5}
+## Se lavori a gruppi (opzionale, 2-4 ragazzi) {#doc11-sec5}
 
 Ruoli **a rotazione**, così tutti provano tutto:
 - **Vetrina:** crea il repository e pubblica su GitHub Pages.
@@ -1260,7 +1398,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Gestire i ritmi diversi (importante per questa classe) {#doc10-sec6}
+## Gestire i ritmi diversi (importante per questa classe) {#doc11-sec6}
 
 - **Chi va piano:** basta arrivare alla **Tappa 1** (negozio online con prodotti
   di esempio). È già una vittoria vera e mostrabile. **Nessuno resta fuori.**
@@ -1271,7 +1409,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Valutazione (coerente col corso) {#doc10-sec7}
+## Valutazione (coerente col corso) {#doc11-sec7}
 
 1. **Il negozio che funziona è il biglietto d'ingresso, non il voto.**
 2. **Il voto nasce dalla prova dal vivo:** lo **spiega a voce** (cosa fa, dove
@@ -1281,7 +1419,7 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 
 ---
 
-## Checklist da tenere in aula {#doc10-sec8}
+## Checklist da tenere in aula {#doc11-sec8}
 
 - [ ] PC con browser + proiettore
 - [ ] I **due valori** del database (indirizzo + chiave pubblica)
@@ -1290,10 +1428,10 @@ pezzo. (Si lega bene a **Git**: ognuno lavora sul suo pezzo, poi si uniscono.)
 - [ ] Il tuo **negozio-esempio** già online da mostrare
 
 
-# Il Manuale di Godot {#doc11}
+# Il Manuale di Godot {#doc12}
 *Versione 0.5 · 26/07/2026 · Parte: Corso Godot / GDScript*
 
-## Scheda 1 — Come si valutano i compiti {#doc11-sec1}
+## Scheda 1 — Come si valutano i compiti {#doc12-sec1}
 *Le regole del gioco, chiare fin da subito.*
 
 Qui non ti freghiamo: sai **in anticipo** come funziona la valutazione. Leggila
@@ -1326,7 +1464,7 @@ ai più bravi. L'unica cosa che conta è che, alla fine, **tu abbia capito.**
 
 ---
 
-## Scheda 2 — Scrivere in Markdown {#doc11-sec2}
+## Scheda 2 — Scrivere in Markdown {#doc12-sec2}
 *La tua dispensa, fatta con due segnetti.*
 
 **Markdown**, si dice *"marc-daun"*, è un modo per scrivere **testo normale** e
@@ -1425,7 +1563,7 @@ computer. Ecco tutti i passaggi:
 
 ---
 
-## Capitolo 0 — Cos'è Godot, il parente di Lazarus {#doc11-sec3}
+## Capitolo 0 — Cos'è Godot, il parente di Lazarus {#doc12-sec3}
 
 **Godot** è un programma gratuito per creare **giochi** e app interattive.
 È molto simile, come spirito, a **Lazarus**: entrambi sono ambienti gratuiti
@@ -1464,7 +1602,7 @@ default e scena ancora vuota.
 
 ---
 
-## Capitolo 1 — I 4 concetti base di Godot {#doc11-sec4}
+## Capitolo 1 — I 4 concetti base di Godot {#doc12-sec4}
 
 Se capisci questi quattro, capisci Godot:
 
@@ -1480,7 +1618,7 @@ insieme; gli script danno vita ai nodi.
 
 ---
 
-## Capitolo 2 — GDScript: il linguaggio {#doc11-sec5}
+## Capitolo 2 — GDScript: il linguaggio {#doc12-sec5}
 
 GDScript è la lingua che si parla **dentro** Godot. È stato fatto apposta per
 somigliare a **Python**: si legge facile, si usa il **rientro con TAB** per
@@ -1504,7 +1642,7 @@ func _process(delta):
 
 ---
 
-## Capitolo 3 — Il nostro primo gioco: "Chirurgo Pasticcione" {#doc11-sec6}
+## Capitolo 3 — Il nostro primo gioco: "Chirurgo Pasticcione" {#doc12-sec6}
 
 **Idea:** un chirurgo maldestro fa cadere gli organi dal tavolo. Tu muovi il
 **vassoio** con le frecce ← → e li prendi al volo.
@@ -1523,7 +1661,7 @@ Il codice completo e commentato è in `godot/chirurgo-pasticcione/main.gd`.
 
 ---
 
-## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss" {#doc11-sec7}
+## Capitolo 4 — Il percorso: dagli esercizi al "progetto boss" {#doc12-sec7}
 
 Qui non si impara con la teoria astratta, ma **facendo**. Ogni esercizio insegna
 **un pezzo**; poi arriva un gioco più grande — il **"progetto boss"** — che mette
@@ -1585,7 +1723,7 @@ una vittoria mostrabile; chi corre di più mette le mani nel codice. Vale sempre
 
 ---
 
-## Come useremo l'AI {#doc11-sec8}
+## Come useremo l'AI {#doc12-sec8}
 
 L'AI è come la **calcolatrice in matematica**: aiuta, ma se non capisci cosa
 stai facendo non serve a niente.
@@ -1597,7 +1735,7 @@ stai facendo non serve a niente.
 
 ---
 
-## Changelog del manuale {#doc11-sec9}
+## Changelog del manuale {#doc12-sec9}
 
 | Versione | Data | Cosa è cambiato |
 |---|---|---|
@@ -1608,10 +1746,10 @@ stai facendo non serve a niente.
 | 0.5 | 26/07/2026 | Aspetto più sobrio e formale: rimosse tutte le icone/emoji; tolte le parentesi da titoli e scritte in grassetto; copertina senza emoji; istruzioni per principianti più complete (modello e screenshot); corretta una pagina vuota; le frasi tra virgolette non si spezzano più a fine riga. |
 
 
-# Eserciziario di Godot {#doc12}
+# Eserciziario di Godot {#doc13}
 *Versione 0.5 · 26/07/2026 · Parte: Corso Godot / GDScript*
 
-## Come funziona ogni esercizio {#doc12-sec1}
+## Come funziona ogni esercizio {#doc13-sec1}
 
 Ogni esercizio ha **4 livelli di aiuto**. Prova sempre da solo, e apri il
 livello successivo **solo se sei bloccato**:
@@ -1640,7 +1778,7 @@ aprirli. Nel PDF sono già aperti.*
 
 ---
 
-## Esercizio 1 — Il bottone che saluta {#doc12-sec2}
+## Esercizio 1 — Il bottone che saluta {#doc13-sec2}
 *Ponte da Lazarus: è il tuo `Button1Click` che cambia una `Caption`!*
 
 ### 🟢 Descrizione
@@ -1698,7 +1836,7 @@ func _quando_premo() -> void:
 
 ---
 
-## Esercizio 2 — Muovi il quadrato {#doc12-sec3}
+## Esercizio 2 — Muovi il quadrato {#doc13-sec3}
 *Concetto nuovo: il **game loop**, cioe' `_process`.*
 
 ### 🟢 Descrizione
@@ -1753,7 +1891,7 @@ func _process(delta: float) -> void:
 
 ---
 
-## Esercizio 3 — Prendi la moneta {#doc12-sec4}
+## Esercizio 3 — Prendi la moneta {#doc13-sec4}
 *Mette insieme: movimento + oggetto che cade + punteggio. Verso il gioco vero.*
 
 ### 🟢 Descrizione
@@ -1843,7 +1981,7 @@ func _aggiorna_punteggio() -> void:
 
 ---
 
-## Esercizio BOSS — Affonda la Bonomi {#doc12-sec5}
+## Esercizio BOSS — Affonda la Bonomi {#doc13-sec5}
 *Il primo "progetto boss": una battaglia navale in 3D già giocabile. Si apre, si gioca, si rende proprio.*
 
 ![Affonda la Bonomi in azione: il cubo d'acqua con il mirino verde, le coordinate scritte attorno al cubo e, in basso a sinistra, i comandi colorati dei tre assi (Colonna Q/A, Fila W/S, Profondità E/D).](manuale/immagini/AffondaBonomi.png)
@@ -1909,7 +2047,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## Changelog dell'eserciziario {#doc12-sec6}
+## Changelog dell'eserciziario {#doc13-sec6}
 
 | Versione | Data | Cosa e' cambiato |
 |---|---|---|
@@ -1920,10 +2058,10 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 | 0.5 | 26/07/2026 | Aspetto più sobrio: rimosse icone/emoji; parentesi tolte da titoli e grassetti; screenshot del BOSS spostato in cima all'esercizio; le frasi tra virgolette non si spezzano a fine riga. |
 
 
-# Quaderno dello Studente (modello) {#doc13}
+# Quaderno dello Studente (modello) {#doc14}
 *Parte: Corso Godot / GDScript*
 
-## Come si usa (semplice) {#doc13-sec1}
+## Come si usa (semplice) {#doc14-sec1}
 - Dopo **ogni lezione** aggiungi una pagina "Lezione".
 - Dopo **ogni esercizio/gioco** aggiungi una pagina "Il mio gioco".
 - Metti sempre uno **screenshot** del tuo lavoro: è la parte più bella. 📸
@@ -1932,7 +2070,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## PAGINA — Lezione (copia questo blocco ogni volta) {#doc13-sec2}
+## PAGINA — Lezione (copia questo blocco ogni volta) {#doc14-sec2}
 
 ### Lezione del ____/____/______  — titolo: ________________________
 
@@ -1948,7 +2086,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ---
 
-## PAGINA — Il mio gioco (copia questo blocco per ogni esercizio) {#doc13-sec3}
+## PAGINA — Il mio gioco (copia questo blocco per ogni esercizio) {#doc14-sec3}
 
 ### Gioco: _________________________   (esercizio n° ____)
 
@@ -1973,51 +2111,51 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 > file, e richiamale come nell'esempio: `![descrizione](immagini/nome.png)`.
 
 
-# Programma del Corso — Classe 2 {#doc14}
+# Programma del Corso — Classe 2 {#doc15}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 2 — Informatica*
 
-## 1. A colpo d'occhio {#doc14-sec1}
+## 1. A colpo d'occhio {#doc15-sec1}
 1. La Classe 2 e l'anno della programmazione che diverte: si creano videogiochi con Godot e piccole applicazioni con Lazarus.
 2. Si mette il primo piede nel mondo delle reti, partendo dalla rete di casa.
 3. Si impara a lavorare in squadra con Git, come in un vero team.
 
-## 2. Modulo A — Programmare con Godot {#doc14-sec2}
+## 2. Modulo A — Programmare con Godot {#doc15-sec2}
 1. Ripasso e avvio: scene, nodi, segnali, il game loop.
 2. Dai giochi semplici a un gioco un po' piu strutturato, personalizzato da ognuno.
 3. Il quaderno dello studente: documentare e saper spiegare cio che si fa.
 
-## 3. Modulo B — Lazarus (Free Pascal) {#doc14-sec3}
+## 3. Modulo B — Lazarus (Free Pascal) {#doc15-sec3}
 1. Riprendere interfacce ed eventi (bottoni, caselle di testo, proprieta).
 2. Piccole applicazioni utili (per esempio una calcolatrice piu completa).
 3. Il ponte tra Lazarus e Godot: stessi concetti, strumenti diversi.
 
-## 4. Modulo C — Introduzione alle reti {#doc14-sec4}
+## 4. Modulo C — Introduzione alle reti {#doc15-sec4}
 1. Cos'e una rete e a cosa serve.
 2. La rete di casa: modem, router, Wi-Fi, i dispositivi collegati.
 3. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo) e l'idea di "pacchetto".
 
-## 5. Modulo D — Lavorare in squadra con Git {#doc14-sec5}
+## 5. Modulo D — Lavorare in squadra con Git {#doc15-sec5}
 1. Progetti a gruppi con ruoli divisi (scena, nodi, interfaccia, movimenti).
 2. Introduzione a ramo e Pull Request, tutto in modo visuale.
 
-## 6. Verso la Classe 3 {#doc14-sec6}
+## 6. Verso la Classe 3 {#doc15-sec6}
 1. L'anno dopo si passa alle reti sul serio e all'hardware: cavi, indirizzi, montaggio, diagnosi.
 
-## 7. Valutazione {#doc14-sec7}
+## 7. Valutazione {#doc15-sec7}
 1. Progetti mostrabili (giochi e piccole app) e capacita di spiegarli a voce.
 2. Lavoro di gruppo: collaborazione e integrazione dei contributi.
 
 
-# Programma del Corso — Classe 3 {#doc15}
+# Programma del Corso — Classe 3 {#doc16}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A colpo d'occhio {#doc15-sec1}
+## 1. A colpo d'occhio {#doc16-sec1}
 1. La Classe 3 e l'anno in cui si mettono le mani su reti e hardware davvero: cavi, indirizzi, montaggio, diagnosi.
 2. Si consolida anche la programmazione degli anni prima (Godot e Lazarus), con progetti a gruppi.
 3. L'anno prepara la Classe 4, dove si progetta la rete di una scuola in Cisco Packet Tracer.
 4. La valutazione usa prove pratiche vere (cablaggio, piccole reti, buste di hardware e diagnosi).
 
-## 2. Modulo A — Reti, livello operativo {#doc15-sec2}
+## 2. Modulo A — Reti, livello operativo {#doc16-sec2}
 1. Concetti di base:
    1. LAN (Local Area Network: rete locale), cosa collega e a cosa serve.
    2. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo in rete), maschera di sottorete e gateway.
@@ -2030,43 +2168,43 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
    1. Cos'e Cisco Packet Tracer (simulatore di reti) e perche si usa a scuola.
    2. Costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping.
 
-## 3. Modulo B — Hardware e sistema operativo {#doc15-sec3}
+## 3. Modulo B — Hardware e sistema operativo {#doc16-sec3}
 1. I componenti del computer: processore, memoria RAM, disco (storage), alimentatore, scheda madre.
 2. Montaggio e smontaggio di una postazione, in sicurezza.
 3. Installazione del sistema operativo (Windows 10) e prime configurazioni.
 4. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
 
-## 4. Modulo C — Preventivo e relazione tecnica {#doc15-sec4}
+## 4. Modulo C — Preventivo e relazione tecnica {#doc16-sec4}
 1. Configurare e preventivare una postazione o un'aula, con prezzi reali.
 2. Scrivere una breve relazione tecnica: cosa serve, quanto costa, perche.
 
-## 5. Modulo D — Consolidare la programmazione {#doc15-sec5}
+## 5. Modulo D — Consolidare la programmazione {#doc16-sec5}
 1. Riprendere Godot e Lazarus con piccoli progetti a gruppi.
 2. Lavorare in team con Git: ognuno sul suo pezzo, poi si uniscono i contributi (ramo e Pull Request).
 
-## 6. Verso la Classe 4 {#doc15-sec6}
+## 6. Verso la Classe 4 {#doc16-sec6}
 1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati.
 2. Si prepara il terreno per il progetto e la prova di qualifica dell'anno dopo.
 
-## 7. Valutazione {#doc15-sec7}
+## 7. Valutazione {#doc16-sec7}
 1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, montaggio, diagnosi guasti.
 2. Le prove di riferimento del triennio sono raccolte (per ora) nella cartella del materiale da organizzare; verranno trascritte nel formato del corso.
 
-## 8. Materiale collegato (gia esistente, da trascrivere) {#doc15-sec8}
+## 8. Materiale collegato (gia esistente, da trascrivere) {#doc16-sec8}
 1. Prove di rete in Cisco Packet Tracer (due varianti anti-copia).
 2. Prove di cablaggio RJ45 e connettivita LAN.
 3. Buste di esame su hardware, sistema operativo, diagnosi e preventivo.
 4. Prova di diagnosi guasti (troubleshooting) per la Classe 3.
 
 
-# Le Reti di Computer — Teoria {#doc16}
+# Le Reti di Computer — Teoria {#doc17}
 *Versione 0.2 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. Cos'e una rete {#doc16-sec1}
+## 1. Cos'e una rete {#doc17-sec1}
 1. Una rete collega piu dispositivi e li fa comunicare e condividere cose (Internet, file, stampanti).
 2. Immagine utile: e come una rete stradale che collega tante case; i dati sono le auto che viaggiano da una casa all'altra.
 
-## 2. Gli apparecchi di rete in casa {#doc16-sec2}
+## 2. Gli apparecchi di rete in casa {#doc17-sec2}
 1. Modem (Modulator-Demodulator: modulatore-demodulatore): collega casa a Internet e traduce il segnale della linea (telefonica o fibra) in dati che il computer capisce.
 2. Router (instradatore): smista i dati tra la rete di casa e Internet e decide dove mandare ogni pacchetto. Di solito assegna anche gli indirizzi e fa da Wi-Fi.
 3. Modem-router: i due apparecchi in un'unica scatola, quella che di solito da l'operatore.
@@ -2080,26 +2218,26 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ![Schema della rete di casa: da Internet al modem, al router Wi-Fi, poi ai dispositivi via cavo (con lo switch) e senza fili (Wi-Fi).](classe-3/immagini/rete-di-casa.svg)
 
-## 3. I cavi di rete {#doc16-sec3}
+## 3. I cavi di rete {#doc17-sec3}
 1. Il cavo Ethernet ha un connettore RJ45 e dentro 8 fili raggruppati in 4 coppie intrecciate.
 2. Le coppie sono intrecciate apposta: cosi si disturbano di meno e il segnale e piu pulito.
 3. Le categorie (per esempio Cat 5e, Cat 6): piu alta e la categoria, piu veloce puo andare il cavo.
 4. Lo standard T568B stabilisce l'ordine dei colori quando si monta il connettore: lo useremo in laboratorio.
 5. Cenno: la fibra ottica porta i dati con la luce; e velocissima e adatta alle lunghe distanze.
 
-## 4. Hub, switch e routing {#doc16-sec4}
+## 4. Hub, switch e routing {#doc17-sec4}
 1. Hub: ripete il segnale a tutte le porte; risultato, traffico inutile e "collisioni".
 2. Switch: impara quale dispositivo e attaccato a ogni porta e manda i dati solo alla porta giusta.
 3. Routing (instradamento): il router sceglie la strada per far arrivare un pacchetto a una rete diversa. Instradare vuol dire proprio "scegliere il percorso".
 
-## 5. Gli indirizzi in rete {#doc16-sec5}
+## 5. Gli indirizzi in rete {#doc17-sec5}
 1. Indirizzo IP (Internet Protocol): l'indirizzo di un dispositivo, come il numero civico di una casa.
 2. Maschera di sottorete: dice quale parte dell'indirizzo indica la "via" (la rete) e quale il "civico" (il singolo dispositivo).
 3. Gateway (passaggio): la porta verso l'esterno, di solito il router.
 4. DHCP (Dynamic Host Configuration Protocol): assegna gli indirizzi IP in automatico, senza scriverli a mano.
 5. Cenno: il MAC address e l'indirizzo "di fabbrica" della scheda di rete, unico per ogni scheda.
 
-## 6. Il modello ISO/OSI (i 7 livelli) {#doc16-sec6}
+## 6. Il modello ISO/OSI (i 7 livelli) {#doc17-sec6}
 1. ISO e l'organizzazione che ha definito il modello; OSI (Open Systems Interconnection: interconnessione di sistemi aperti) e il nome del modello. Per questo si dice "modello ISO/OSI".
 2. E un modo per dividere la comunicazione in 7 piani, ognuno con un compito. Dal basso verso l'alto:
    1. Fisico: i segnali che viaggiano sul cavo o nell'aria.
@@ -2113,12 +2251,12 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ![Il modello ISO/OSI a 7 livelli, dall'alto (i programmi) al basso (i segnali sul cavo), con il ruolo di ciascun livello.](classe-3/immagini/modello-osi.svg)
 
-## 7. Il modello TCP/IP (i 4 livelli) {#doc16-sec7}
+## 7. Il modello TCP/IP (i 4 livelli) {#doc17-sec7}
 1. E il modello pratico con cui funziona Internet davvero.
 2. Ha 4 livelli: Accesso alla rete, Internet (IP), Trasporto (TCP o UDP), Applicazione.
 3. E una versione piu snella del modello ISO/OSI: fa le stesse cose, con meno piani.
 
-## 8. Come viaggiano i pacchetti {#doc16-sec8}
+## 8. Come viaggiano i pacchetti {#doc17-sec8}
 1. Un dato grande viene spezzato in tanti pacchetti piccoli.
 2. Ogni pacchetto porta un'intestazione con mittente e destinatario (gli indirizzi IP), come una busta con l'indirizzo scritto sopra.
 3. I router leggono l'indirizzo e instradano ogni pacchetto verso la destinazione, anche per strade diverse.
@@ -2128,7 +2266,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 ![Il viaggio di un pacchetto: il dato viene spezzato in pacchetti con l'indirizzo di arrivo, i router scelgono la strada, il destinatario li rimette in ordine.](classe-3/immagini/viaggio-pacchetto.svg)
 
-## 9. Due modi di spedire i dati: TCP e UDP {#doc16-sec9}
+## 9. Due modi di spedire i dati: TCP e UDP {#doc17-sec9}
 1. TCP (Transmission Control Protocol): la spedizione "con ricevuta di ritorno".
    1. Prima si stabilisce la connessione tra i due dispositivi.
    2. Ogni pacchetto viene confermato; se uno si perde, viene rispedito.
@@ -2139,16 +2277,16 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 > [GIALLO] La scelta dipende dal bisogno: meglio sicuro (TCP) oppure meglio veloce (UDP).
 
-## 10. Dalla teoria alla pratica {#doc16-sec10}
+## 10. Dalla teoria alla pratica {#doc17-sec10}
 1. In laboratorio costruiremo cavi veri e piccole reti reali.
 2. In Cisco Packet Tracer (simulatore di reti) progetteremo una rete e proveremo l'invio dei pacchetti.
 3. La modalita "simulazione" di Packet Tracer mostra il pacchetto che viaggia da un apparato all'altro: cosi la teoria di questo documento si vede in movimento.
 
 
-# Cablaggio RJ45 — Scheda pratica {#doc17}
+# Cablaggio RJ45 — Scheda pratica {#doc18}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc17-sec1}
+## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc18-sec1}
 
 Obiettivo: costruire con le tue mani un cavo di rete Ethernet, montando i
 connettori RJ45 con lo standard T568B, e verificare che funzioni collegando due
@@ -2215,42 +2353,42 @@ Se qualcosa non va:
 </details>
 
 
-# Programma del Corso — Classe 4 {#doc18}
+# Programma del Corso — Classe 4 {#doc19}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc18-sec1}
+## 1. A colpo d'occhio {#doc19-sec1}
 1. La Classe 4 porta a un progetto completo: la rete di una scuola, simulata in Cisco Packet Tracer.
 2. Si arriva alla prova di qualifica con validita regionale (Regione Lombardia).
 3. Si consolida tutto il triennio: reti, hardware, documentazione tecnica.
 
-## 2. Modulo A — Cisco Packet Tracer avanzato {#doc18-sec2}
+## 2. Modulo A — Cisco Packet Tracer avanzato {#doc19-sec2}
 1. Progettare la rete di una scuola su piu piani, con una dorsale (backbone) che collega i piani.
 2. Apparati e servizi: router, switch, server, DHCP (assegnazione automatica degli indirizzi).
 3. Suddividere la rete in sottoreti (VLAN: Virtual LAN, reti locali logiche separate).
 
-## 3. Modulo B — Collaudo e documentazione {#doc18-sec3}
+## 3. Modulo B — Collaudo e documentazione {#doc19-sec3}
 1. Collaudare la rete con il comando ping e verificare che tutto comunichi.
 2. Documentare la rete: mappa degli indirizzi, schema, scelte fatte.
 
-## 4. Modulo C — Preventivo dell'infrastruttura {#doc18-sec4}
+## 4. Modulo C — Preventivo dell'infrastruttura {#doc19-sec4}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 5. La prova di qualifica (diploma) {#doc18-sec5}
+## 5. La prova di qualifica (diploma) {#doc19-sec5}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 6. Materiale collegato (gia esistente, da trascrivere) {#doc18-sec6}
+## 6. Materiale collegato (gia esistente, da trascrivere) {#doc19-sec6}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc19}
+# Corso Informatica — indice generale {#doc20}
 *Versione 1.5 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc19-sec1}
+## In breve {#doc20-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -2266,7 +2404,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc19-sec2}
+## Parte 1 — Classe 1 (Informatica) {#doc20-sec2}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -2311,7 +2449,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc19-sec3}
+## Parte 2 — Corso Godot / GDScript {#doc20-sec3}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -2340,7 +2478,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc19-sec4}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc20-sec4}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -2364,7 +2502,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc19-sec5}
+## Parte 4 — Strumenti e configurazione {#doc20-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2382,7 +2520,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc19-sec6}
+## Dove sta tutto {#doc20-sec6}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -2392,10 +2530,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc20}
+# Materiale del Corso — Classe 1 {#doc21}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc20-sec1}
+## In breve {#doc21-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -2403,7 +2541,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc20-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc21-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -2413,7 +2551,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc20-sec3}
+## 2. Esercizi / progetti FATTI {#doc21-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -2440,7 +2578,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc20-sec4}
+## 3. Strumenti {#doc21-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -2448,7 +2586,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc20-sec5}
+## 4. In preparazione (prossimi passi) {#doc21-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -2458,7 +2596,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc20-sec6}
+## Dove sta tutto {#doc21-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`

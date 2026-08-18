@@ -1,0 +1,144 @@
+# Griglia degli Argomenti — scelta per anno
+
+**Versione 1.0** — 17/08/2026
+*Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
+argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
+colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
+avere la X su piu anni, uno difficile solo sulla 4a. Le aree di altri colleghi
+non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro.*
+
+---
+
+## 1. Come si usa
+1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
+2. Un argomento puo avere piu spunte (va bene in piu anni) oppure una sola.
+3. Quando mi dici le spunte, io le riporto nei programmi dei singoli anni.
+
+## 2. Fondamenti e cultura informatica
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Cos'e l'informatica, uso consapevole della tecnologia |  |  |  |  |
+| Rappresentazione dei dati: binario, decimale, esadecimale |  |  |  |  |
+| Codifica del testo (ASCII, Unicode), bit e byte |  |  |  |  |
+| Digitalizzazione di immagini e suoni |  |  |  |  |
+| Storia ed evoluzione dei calcolatori |  |  |  |  |
+| Glossario informatico (costruito dagli studenti) |  |  |  |  |
+| Organizzazione digitale: cartelle ad albero, gestione del tempo |  |  |  |  |
+
+## 3. Hardware: architettura, assemblaggio, manutenzione e diagnosi
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre) |  |  |  |  |
+| Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD) |  |  |  |  |
+| Assemblaggio e smontaggio di un PC |  |  |  |  |
+| Configuratore PC a budget e documentazione della configurazione |  |  |  |  |
+| RAID e partizioni dei dischi |  |  |  |  |
+| Manutenzione ordinaria e preventiva; tuning del PC |  |  |  |  |
+| Diagnosi guasti (troubleshooting): metodo e fasi |  |  |  |  |
+| Riparazione: PC funzionante da piu guasti; scheda intervento |  |  |  |  |
+
+## 4. Sistema operativo
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Windows: desktop, finestre, gestione di file e cartelle |  |  |  |  |
+| Installazione del sistema operativo |  |  |  |  |
+| Configurazione OS: componenti, servizi di rete, risorse condivise |  |  |  |  |
+
+## 5. Produttivita digitale (Google Workspace e Office)
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Google Drive: cartelle, sottocartelle, condivisione |  |  |  |  |
+| Google Documenti: formattazione, stili, impostazione pagina, sommario |  |  |  |  |
+| Google Fogli: formule, formattazione condizionale, grafici, preventivo |  |  |  |  |
+| Google Presentazioni: modelli, immagini, video |  |  |  |  |
+| Google Moduli: form e sondaggi |  |  |  |  |
+| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali |  |  |  |  |
+| Google Calendar, Classroom, Chat |  |  |  |  |
+| Microsoft Excel: scadenze e calendari |  |  |  |  |
+| Ricerca in rete: ricerca avanzata e operatori booleani |  |  |  |  |
+| Diagrammi di flusso (flowchart) |  |  |  |  |
+
+## 6. Grafica e multimedia
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Canva: immagini, locandine, loghi, rimozione sfondo, modelli |  |  |  |  |
+| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  |  |  |  |
+| Editing video e presentazioni multimediali |  |  |  |  |
+
+## 7. Reti
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Concetti: reti LAN e WAN, la rete di casa |  |  |  |  |
+| Apparecchi: modem, router, switch, hub, access point, repeater, powerline |  |  |  |  |
+| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  |  |  |
+| Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test |  |  |  |  |
+| Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  |  |  |  |
+| Come viaggiano i dati: pacchetti, rete a pacchetti |  |  |  |  |
+| Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli) |  |  |  |  |
+| Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN) |  |  |  |  |
+| Sicurezza di rete: firewall, segmentazione, rischi in rete |  |  |  |  |
+
+## 8. Programmazione, logica e algoritmi
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Logica e problem solving; algoritmi e strutture di controllo |  |  |  |  |
+| Coding a blocchi e porte logiche booseane (AND, OR, NOT) |  |  |  |  |
+| Lazarus base: ambiente, Hello World, variabili, funzioni, tipi di file |  |  |  |  |
+| Lazarus, interfaccia: RadioButton, ComboBox, PageControl, ecc. |  |  |  |  |
+| Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  |  |  |  |
+| Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  |  |  |
+| Interpretato e compilato; Lazarus e Delphi |  |  |  |  |
+| Godot e GDScript: scene, nodi, segnali, game loop, giochi |  |  |  |  |
+
+## 9. Database e gestione dei dati
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Concetto di database (archivio ordinato di dati) |  |  |  |  |
+| Linguaggio SQL: interrogare e gestire i dati |  |  |  |  |
+| Archivi digitali; migrazione dei dati |  |  |  |  |
+| Raccolta, strutturazione e analisi statistica dei dati |  |  |  |  |
+
+## 10. Web e realizzazione di siti
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| HTML5: la struttura di una pagina web |  |  |  |  |
+| CSS: l'aspetto grafico di una pagina web |  |  |  |  |
+| Google Sites: sito personale o scolastico |  |  |  |  |
+| La comunicazione sul web; come funziona il web |  |  |  |  |
+
+## 11. Intelligenza artificiale
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Intelligenza umana e artificiale: concetti e limiti |  |  |  |  |
+| Algoritmi dei social e impatto mediatico |  |  |  |  |
+| Industria 4.0 e automazione |  |  |  |  |
+
+## 12. Mondo del lavoro, project management e documentazione
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Project management: piano di Gantt, ruoli, pianificazione di un progetto |  |  |  |  |
+| Lavoro in team e presentazione del lavoro finito; tesine |  |  |  |  |
+| Documentazione tecnica: manuale utente, relazione, deployment |  |  |  |  |
+| Ricerca del lavoro: CV Europass, ricerca attiva |  |  |  |  |
+| Figure professionali dell'informatica |  |  |  |  |
+
+## 13. Progetti pratici del corso (nostri)
+
+| Argomento | 1a | 2a | 3a | 4a |
+|---|:--:|:--:|:--:|:--:|
+| Il Mio Negozio Online: web, database, ordini via email |  |  |  |  |
+| Giochi con Godot: dai semplici ai piu strutturati |  |  |  |  |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  |  |  |
+
+> [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. Non lo pianifichiamo in questa griglia.
