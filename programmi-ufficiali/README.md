@@ -27,9 +27,11 @@ per la classe che avanza.
 
 ## Come si usa l'Allegato A durante l'anno (convenzione del docente)
 1. A inizio anno si evidenzia in GIALLO tutto cio che si ha intenzione di fare in quell'annualita.
-2. Man mano che un argomento viene svolto, si TOGLIE la sua evidenziazione.
-3. A fine anno l'evidenziazione deve essere tutta tolta: cio che e stato tolto perche fatto costituisce il "programma svolto".
-4. Quindi il giallo indica sempre "pianificato ma non ancora fatto"; niente giallo a fine anno.
+2. Durante l'anno, voce per voce, ci sono due casi:
+   1. Voce FATTA -> si toglie solo l'evidenziazione (il testo resta).
+   2. Voce NON fatta -> si toglie la voce stessa (si cancella dal documento).
+3. Risultato a fine anno: niente piu giallo, e nel documento resta scritto SOLO cio che e stato davvero svolto. Quello e il "programma svolto".
+4. Quindi il giallo indica sempre "pianificato ma non ancora fatto".
 
 ## Cosa si produce a fine anno (documento per la Regione) — DELIVERABLE
 1. A fine anno, Claude genera il testo del "programma svolto" ORGANIZZATO PER AREA DI COMPETENZA e PER ANNUALITA, nello stesso ordine dell'Allegato A, pronto da COPIARE E INCOLLARE nel documento che la scuola invia alla Regione.
