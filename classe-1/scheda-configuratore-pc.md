@@ -1,10 +1,10 @@
 # Scheda Configuratore PC
 
-**Versione 0.1** — 17/08/2026
+**Versione 0.2** — 17/08/2026
 *Scheda pratica di Classe 1 (area hardware). Serve a configurare un PC scegliendo
 componenti compatibili tra loro, partendo dalla scheda madre. Per ogni componente
-si scrive marca, modello, costo e link (Amazon o altro sito), e soprattutto la
-sua compatibilita, cioe il vincolo che impone ai pezzi successivi.*
+si scrive marca, modello, costo e link, e si mettono le crocette sui formati e
+attacchi supportati: la compatibilita si vede confrontando le crocette.*
 
 ---
 
@@ -31,20 +31,92 @@ sua compatibilita, cioe il vincolo che impone ai pezzi successivi.*
 7. Dischi (SSD/HDD): secondo i connettori della scheda madre (M.2 o SATA).
 8. Alimentatore (PSU): potenza in Watt sufficiente, connettori giusti, formato che entra nel case.
 
-## 4. La tabella da compilare
-Compila una riga per componente. Nella colonna "Compatibilita" scrivi il dato-vincolo (formato, socket, tipo di RAM, ecc.).
+## 4. Le schede dei componenti (con le crocette di compatibilita)
+Per ogni componente scrivi marca, modello, costo e link, e metti una crocetta (X)
+nelle caselle □ dei formati e attacchi che quel componente supporta. La
+compatibilita si vede confrontando le crocette: cio che la scheda madre "e" deve
+rientrare in cio che gli altri componenti "accettano".
 
-| Componente | Marca | Modello | Compatibilita (dato-vincolo) | Costo | Link |
-|---|---|---|---|---|---|
-| Scheda madre |  |  | formato: ___ · socket: ___ · RAM: ___ · PCIe: ___ |  |  |
-| Case |  |  | accetta formato: ___ |  |  |
-| Processore (CPU) |  |  | socket: ___ |  |  |
-| Dissipatore |  |  | per socket: ___ |  |  |
-| Memoria RAM |  |  | tipo: ___ · numero moduli: ___ |  |  |
-| Scheda video (GPU) |  |  | slot PCIe x16 · lunghezza: ___ |  |  |
-| Disco (SSD/HDD) |  |  | connettore: M.2 / SATA |  |  |
-| Alimentatore (PSU) |  |  | potenza: ___ W · connettori |  |  |
-| TOTALE |  |  |  | euro ___ |  |
+### Scheda madre (scegli questa per prima)
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+Spunta le compatibilita:
+1. Formato (uno): □ mini-ITX   □ micro-ATX   □ ATX
+2. Socket (uno): □ AM4   □ AM5   □ LGA1700   □ altro (scrivi quale)
+3. Tipo di RAM: □ DDR4   □ DDR5
+4. Attacchi presenti: □ PCIe x16   □ M.2   □ SATA
+
+### Case
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Formati che accetta (anche piu di uno): □ mini-ITX   □ micro-ATX   □ ATX
+2. Regola: deve includere il formato spuntato sulla scheda madre.
+
+### Processore (CPU)
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Socket (uno): □ AM4   □ AM5   □ LGA1700   □ altro (scrivi quale)
+2. Regola: stesso socket della scheda madre.
+
+### Dissipatore
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Socket compatibili (anche piu di uno): □ AM4   □ AM5   □ LGA1700   □ altro
+2. Regola: deve includere il socket della scheda madre.
+
+### Memoria RAM
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Tipo: □ DDR4   □ DDR5
+2. Numero di moduli: □ 1   □ 2   □ 4
+3. Regola: stesso tipo della scheda madre, non piu moduli degli slot disponibili.
+
+### Scheda video (GPU)
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Attacco: □ PCIe x16
+2. Regola: serve uno slot PCIe x16 libero sulla scheda madre; controlla la lunghezza nel case.
+
+### Disco (SSD o HDD)
+
+| Marca | Modello | Costo (euro) | Link |
+|---|---|---|---|
+|  |  |  |  |
+
+1. Connettore: □ M.2   □ SATA
+2. Regola: il connettore deve essere presente sulla scheda madre.
+
+### Alimentatore (PSU)
+
+| Marca | Modello | Potenza (W) | Costo (euro) | Link |
+|---|---|---|---|---|
+|  |  |  |  |  |
+
+1. Formato: □ ATX   □ SFX
+
+### Totale
+
+| Costo totale (euro) |
+|---|
+|  |
 
 ## 5. Checklist di compatibilita finale
 1. Il formato della scheda madre entra nel case? (esempio: ATX in un case ATX)
