@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.23** — 18/08/2026
+**Versione 1.24** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.6 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.7 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -533,18 +533,23 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| HTML5: la struttura di una pagina web |  |  |  |  |
-| CSS: l'aspetto grafico di una pagina web |  |  |  |  |
-| Google Sites: sito personale o scolastico |  |  |  |  |
-| La comunicazione sul web; come funziona il web |  |  |  |  |
+| HTML5: la struttura di una pagina web |  |  | X | X |
+| CSS: l'aspetto grafico di una pagina web |  |  | X | X |
+| Google Sites: sito personale o scolastico |  |  | X | X |
+| La comunicazione sul web; come funziona il web |  |  | X | X |
 
 ## 11. Intelligenza artificiale {#doc6-sec11}
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Intelligenza umana e artificiale: concetti e limiti |  |  |  |  |
-| Algoritmi dei social e impatto mediatico |  |  |  |  |
-| Industria 4.0 e automazione |  |  |  |  |
+| Intelligenza umana e artificiale: concetti e limiti | X | X | X | X |
+| Usare un assistente AI per costruire il proprio libro di testo/quaderno | X | X | X | X |
+| Algoritmi dei social e impatto mediatico | X | X | X | X |
+| Industria 4.0 e automazione | X | X | X | X |
+
+> [GIALLO] Intelligenza artificiale: presente in tutti e quattro gli anni, crescendo di anno in anno. Uso centrale: ogni studente costruisce il PROPRIO libro di testo/quaderno partendo da quello del corso e aggiungendo le sue cose. Si lega al motore "Mostralo" e alla prova del nove "saperlo spiegare": l'AI aiuta a capire, non a saltare il pensiero.
+
+> [BLU] Strumento AI da verificare. Gli studenti hanno solo un account Gemini normale (non Pro) e con l'account scolastico non possono usare Claude. Da verificare che tutto il percorso AI, compreso costruire il proprio libro di testo, si possa fare con Gemini gratuito.
 
 ## 12. Mondo del lavoro, project management e documentazione {#doc6-sec12}
 

@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.6** — 18/08/2026
+**Versione 1.7** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -127,18 +127,23 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| HTML5: la struttura di una pagina web |  |  |  |  |
-| CSS: l'aspetto grafico di una pagina web |  |  |  |  |
-| Google Sites: sito personale o scolastico |  |  |  |  |
-| La comunicazione sul web; come funziona il web |  |  |  |  |
+| HTML5: la struttura di una pagina web |  |  | X | X |
+| CSS: l'aspetto grafico di una pagina web |  |  | X | X |
+| Google Sites: sito personale o scolastico |  |  | X | X |
+| La comunicazione sul web; come funziona il web |  |  | X | X |
 
 ## 11. Intelligenza artificiale
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Intelligenza umana e artificiale: concetti e limiti |  |  |  |  |
-| Algoritmi dei social e impatto mediatico |  |  |  |  |
-| Industria 4.0 e automazione |  |  |  |  |
+| Intelligenza umana e artificiale: concetti e limiti | X | X | X | X |
+| Usare un assistente AI per costruire il proprio libro di testo/quaderno | X | X | X | X |
+| Algoritmi dei social e impatto mediatico | X | X | X | X |
+| Industria 4.0 e automazione | X | X | X | X |
+
+> [GIALLO] Intelligenza artificiale: presente in tutti e quattro gli anni, crescendo di anno in anno. Uso centrale: ogni studente costruisce il PROPRIO libro di testo/quaderno partendo da quello del corso e aggiungendo le sue cose. Si lega al motore "Mostralo" e alla prova del nove "saperlo spiegare": l'AI aiuta a capire, non a saltare il pensiero.
+
+> [BLU] Strumento AI da verificare. Gli studenti hanno solo un account Gemini normale (non Pro) e con l'account scolastico non possono usare Claude. Da verificare che tutto il percorso AI, compreso costruire il proprio libro di testo, si possa fare con Gemini gratuito.
 
 ## 12. Mondo del lavoro, project management e documentazione
 
