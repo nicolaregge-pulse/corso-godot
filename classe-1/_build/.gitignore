@@ -1,0 +1,15 @@
+# Dipendenze npm (Playwright) — si reinstallano con "npm install", non si versionano
+node_modules/
+
+# Artefatti intermedi generati durante la creazione del PDF (non versionati)
+*.html
+.pdfname
+.build.json
+cover_check.png
+anteprima_full.png
+pg_*.png
+real_*.png
+v2_*.png
+griglia.png
+anteprima_volume.png
+__pycache__/

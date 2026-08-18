@@ -202,10 +202,63 @@ esattamente dove agire. Prima dell'azione indico, in quest'ordine:
    alto a destra, riquadro in basso, ecc.
 5. **L'AZIONE esatta**, **una alla volta**.
 
-**Mai** dare un comando "nudo" senza dire **dove** va messo. Testi/comandi/valori
-da copiare vanno **sempre in un blocco di codice** (col bottone "copia"), mai nel
-blockquote `>`. Un passo alla volta; se è terreno nuovo per lui, massima
-precisione.
+**Mai** dare un comando "nudo" senza dire **dove** va messo. Un passo alla volta;
+se è terreno nuovo per lui, massima precisione.
+
+**⭐ REGOLA COPIA (VINCOLANTE, chiesta da Nicola — non violarla mai):** qualunque
+cosa Nicola debba **copiare** (un nome file, un valore, un comando, un pezzo di
+testo) va **SEMPRE** in un **blocco di codice recintato** — cioè su una riga a
+parte, tra ` ``` ` e ` ``` ` — così compare il **bottone "copia"** e lui NON deve
+selezionare col mouse. Regole precise:
+- **NON basta** il codice "in linea" con un solo apice (`` `così` ``): NON ha il
+  bottone copia → vietato per le cose da copiare.
+- **NON** metterlo come testo normale nella frase, né nel blockquote `>`.
+- **Un valore per blocco:** un solo riquadro = una sola cosa da copiare, così un
+  clic copia esattamente quella e nient'altro.
+- Vale anche per **nomi di file**: es. il nome da dare a uno screenshot va nel suo
+  riquadro, da solo.
+- Il testo dentro il riquadro dev'essere **esattamente** ciò che serve, pronto da
+  incollare (nessuna barra `/` nei nomi file di Windows, ecc.).
+
+**Rinforzo (chiesto da Nicola, vale SEMPRE — è più importante di andare veloci):**
+- **Una sola azione per riga numerata.** Mai due clic nella stessa riga.
+- **Ogni riga dice DOVE prima di dire COSA:** applicazione → scheda/finestra →
+  area della pagina (es. "in alto a destra", "nel menu a sinistra") → il nome
+  **esatto** del bottone/voce (tra apici) → l'azione.
+- **Se Nicola manda uno screenshot, indico il punto ESATTO** su *quella*
+  schermata (dove si trova, com'è scritto), non un'istruzione generica.
+- **Non dare mai per scontato** che sappia dov'è un bottone o cosa fa un termine.
+  Nel dubbio, essere più precisi, non meno.
+- Meglio **lento e chiaro** che veloce e confuso: la fretta qui è un errore.
+
+## ⭐ Standard di formattazione dei documenti (VINCOLANTE)
+
+Tutti i documenti del corso — **presenti e futuri** — seguono lo standard scritto
+in **`REGOLE-FORMATTAZIONE.md`** (documento 00). È la regola, non un consiglio.
+Per questo progetto la **fonte di verità è Nicola** (nessun ruolo di soggetti
+esterni). Punti chiave da ricordare sempre:
+
+- **MD + PDF** per ogni documento; una **super-guida combinata** + zip dei singoli.
+- **Liste solo numerate e gerarchiche** (1, 1.1, 1.1.2): **niente elenchi puntati**.
+- **Niente emoji decorative** nei documenti; per evidenziare si usano i **box
+  colorati semantici** (rosso = disallineamento, blu = da confermare, giallo = nota).
+- **Titoli numerati** (00, 01, 02, 02b), **senza trattino** ("02 Panoramica"), mai
+  orfani a fine pagina.
+- **Sigle** esplicitate alla prima occorrenza; termini ricorrenti nel **GLOSSARIO**.
+- **Versione congelata** una volta stampata; correzioni nella successiva
+  (CHANGELOG_Vn + ERRATA_Vn in coda al combinato).
+- **REGOLA 0 (assoluta):** tutto ciò che l'utente deve **copiare** va in un
+  **blocco di codice** (col bottone "copia"), mai in linea né in citazione.
+
+**Come si concilia col metodo del corso:** cambia la **forma** (formattazione
+sobria, niente emoji/puntati), **non** la **sostanza pedagogica**. Restano intatti:
+tono di rispetto e incoraggiamento, passi piccolissimi, "Vinci subito · Fallo tuo ·
+Mostralo", celebrare ogni vittoria, coordinate sempre complete. Si può essere caldi
+e incoraggianti anche in prosa sobria e con liste numerate.
+
+> Nota di migrazione: i documenti già esistenti (guide, manuale, indici) si
+> adeguano **gradualmente** allo standard, non tutti in una volta, per non
+> introdurre errori. Ogni nuovo documento nasce già conforme.
 
 ## ⭐ Struttura del corso e flusso Git
 
@@ -235,17 +288,24 @@ Il corso stesso è versionato su Git, su due livelli:
   Prima farglielo **desiderare** (semplice), poi introdurlo quando il gioco di
   gruppo lo rende naturale.
 
+## ⭐ Carta e penna in OGNI lezione (TASSATIVO — richiesto da Nicola)
+
+Regola **vincolante e senza eccezioni**, da rispettare e da ricordare in **ogni
+singola lezione** di **tutti** gli anni:
+
+- **Ogni allievo deve avere carta e penna sul banco**, per prendere **appunti** e
+  fare **schemi a mano** — sempre, anche (e soprattutto) quando si lavora al
+  computer. Scrivere e disegnare a mano aiuta a capire e a fissare i concetti.
+- **Se un allievo non li ha, il docente glieli fornisce e segna una nota**
+  (annotazione), lezione per lezione. Non è un capriccio: è parte del metodo.
+- Gli appunti e gli schemi a mano **confluiscono nel quaderno personale** (anche
+  fotografati e incollati): alimentano il "Mostralo" e la prova del nove.
+- **Conseguenza per il materiale:** ogni piano-lezione, guida ed esercizio deve
+  dare per scontato carta e penna e, dove utile, **prevedere esplicitamente** il
+  momento "prendi appunti / fai lo schema a mano".
+
 ## ⭐ Regole operative permanenti (richieste da Nicola)
 
-0. **Formattazione dei documenti: vedi `REGOLE-DOCUMENTI.md`** (vincolante). Vale
-   per i documenti tecnici e di servizio (INDICE, CORSO, SCALETTA, RIPRENDIAMO,
-   guide del kit consegne, README): numerazione `00/01/02` senza trattino, solo
-   liste numerate gerarchiche, niente emoji decorativi (convertiti in testo tipo
-   `[NOTA]`), box colorati rosso/blu/giallo, glossario, sigle esplicitate,
-   versione nel nome file, super-guida con Sommario + segnalibri. I **materiali
-   didattici per i ragazzi** (manuale, eserciziario, quaderno) tengono invece il
-   loro stile amichevole (elenchi puntati ed emoji funzionali ammessi). REGOLA 0
-   assoluta: tutto ciò che l'utente deve copiare va in un blocco di codice.
 1. **Tutto versionato.** Ogni file (progetti Godot, script, documenti) va nel
    repository, sul branch del corso. Niente lavoro che vive solo sul PC.
 2. **Manuale in doppio formato.** Ogni volta che si produce un **PDF** (il
