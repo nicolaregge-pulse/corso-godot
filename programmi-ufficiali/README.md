@@ -1,6 +1,6 @@
 # Programmi ufficiali di informatica (Allegato A — riferimento)
 
-**Versione 0.5** — 18/08/2026
+**Versione 0.6** — 18/08/2026
 *Nota di riferimento sugli allegati ufficiali (Allegato A) e sul flusso di fine
 anno per la Regione. Accompagna i quattro PDF ufficiali nella cartella
 `programmi-ufficiali/`.*
@@ -24,6 +24,12 @@ Questa cartella contiene i documenti ufficiali forniti dal docente (Nicola).
 3. Il documento e organizzato **per competenze** (competenze alfabetiche/comunicazione, linguistica, tecnico-professionali, cittadinanza, IRC, scienze motorie, ecc.), e dentro ogni competenza gli argomenti sono divisi in "I Anno / II Anno / III Anno". E per questo che gli argomenti di informatica risultano sparsi su piu aree.
 4. La **quarta** e un documento a parte: contiene solo la quarta, non gli anni precedenti.
 5. Dentro gli argomenti sono spesso indicati i docenti: per l'informatica compaiono "Prof. Panaccione" (informatica di base: Google Workstation, foglio di calcolo, e in III anno sito/HTML) e "Regge" (in III anno: social, comunicazione sul web, netiquette, progetto finale, tesina, introduzione a Cisco Packet Tracer). Altre aree sono di altri docenti ("Erba", "Meles", robotica/arduino/stampa 3D, cittadinanza, diritto, IRC, scienze motorie, tirocinio).
+
+## Identificazione: ogni Allegato A ha CLASSE e ANNO
+1. Ogni Allegato A e legato a una classe precisa e a un anno scolastico preciso: sono i due dati che lo identificano, perche il documento cambia per ogni classe e per ogni anno.
+2. Nei file ufficiali questi dati stanno in copertina: la Sezione (es. "2 INF Spe"), l'I.D. Corso e l'Anno Formativo (A.F.) di ciascuna annualita.
+3. Per i documenti che generiamo noi (il programma svolto), li etichettiamo SEMPRE con classe + anno scolastico, anche nel nome del file. Esempio: `allegato-a_2INF_2025-26` (classe "2 INF", anno scolastico 2025-26).
+4. Cosi ogni versione resta distinta e ritrovabile, e non si confondono l'Allegato A di anni o classi diverse.
 
 ## I file e le coorti
 | File | I.D. Corso | Sezione | Annualita coperte |
