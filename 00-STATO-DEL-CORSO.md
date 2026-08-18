@@ -1,6 +1,6 @@
 # 00 Stato del Corso
 
-**Versione 2.1** — 18/08/2026
+**Versione 2.2** — 18/08/2026
 *Fonte di verita del corso (stella polare). Se un altro documento contraddice
 questo, vince questo. Decisa da Nicola.*
 
@@ -21,13 +21,16 @@ questo, vince questo. Decisa da Nicola.*
 6. Repository degli allievi: un'organizzazione GitHub della classe con un repository PRIVATO per ogni allievo, creati con GitHub Classroom (ognuno vede solo il suo; il docente vede tutti).
 7. Ogni studente costruisce il PROPRIO libro di testo/quaderno, che cresce a ogni lezione, con l'aiuto dell'AI (aiuta a capire, non a saltare il pensiero).
 8. Per questo progetto la fonte di verita e Nicola: nessun ruolo di soggetti esterni (Guido non c'entra: riguarda un'altra cosa, non il corso).
+9. Strumento SQL: SQLite. A scuola dal browser su sqliteonline.com (primo assaggio su w3schools Tryit SQL); sui PC nostri DB Browser for SQLite in versione portable. Il database e un solo file, versionabile in Git.
+10. Strumento AI: Gemini gratuito, l'unico disponibile sull'account scolastico (niente Claude a scuola). Copre tutto il percorso AI, compreso il quaderno personale.
+11. Godot in 3a e 4a; cablaggio RJ45 e prime reti in 3a e 4a.
 
 ## 3. Impianto pluriennale (Mappa, Griglia, Piano ore, Programmi)
 1. Mappa degli Argomenti: le macro-aree del corso, con indicazione di "di chi e" ciascuna area (alcune sono di altri docenti).
 2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
 3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
 4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
-5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), tutti con X? perche gli anni sono ancora da fissare.
+5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), collocati in 3a e 4a.
 
 ## 4. Allegato A e consegna alla Regione (workflow)
 1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.
@@ -41,11 +44,8 @@ questo, vince questo. Decisa da Nicola.*
 3. Cablaggio RJ45 e reti; in 4a il progetto forte: la rete di una scuola in Cisco Packet Tracer (VLAN, simulazione).
 
 ## 6. Punti aperti (da decidere/confermare con Nicola)
-1. Godot: in quali anni collocarlo (probabile 3a-4a, la 2a da valutare) e come integrarlo col corso dedicato.
-2. Strumento SQL senza installazione: proposta SQLite (browser sqliteonline.com + DB Browser portable), da confermare.
-3. Strumento AI: verificare che tutto si faccia con Gemini gratuito (gli studenti non hanno Claude sull'account scolastico).
-4. Cablaggio in 4a: da valutare.
-5. Affinare la colonna competenze della Griglia dove serve.
+1. Affinare la colonna competenze della Griglia dove serve, argomento per argomento.
+2. (Le scelte su Godot 3a-4a, cablaggio 3a-4a, strumento SQL = SQLite e strumento AI = Gemini sono CONFERMATE: vedi sezione 2.)
 
 ## 7. Ruolo di questo documento
 1. E la stella polare: in caso di contraddizione, vince questo, e nel documento in errore si apre un box rosso di disallineamento.

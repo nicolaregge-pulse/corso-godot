@@ -1,12 +1,12 @@
 # Il Libro del Corso
 
-**Versione 1.42** — 18/08/2026
+**Versione 1.43** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
 
 # Stato del Corso {#doc1}
-*Versione 2.1 · 18/08/2026 · Parte: Riferimento*
+*Versione 2.2 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Missione {#doc1-sec1}
 1. Corso di informatica pluriennale (classi 1-4) di istituto professionale, indirizzo Operatore Informatico; taglio pratico e tecnico.
@@ -23,13 +23,16 @@
 6. Repository degli allievi: un'organizzazione GitHub della classe con un repository PRIVATO per ogni allievo, creati con GitHub Classroom (ognuno vede solo il suo; il docente vede tutti).
 7. Ogni studente costruisce il PROPRIO libro di testo/quaderno, che cresce a ogni lezione, con l'aiuto dell'AI (aiuta a capire, non a saltare il pensiero).
 8. Per questo progetto la fonte di verita e Nicola: nessun ruolo di soggetti esterni (Guido non c'entra: riguarda un'altra cosa, non il corso).
+9. Strumento SQL: SQLite. A scuola dal browser su sqliteonline.com (primo assaggio su w3schools Tryit SQL); sui PC nostri DB Browser for SQLite in versione portable. Il database e un solo file, versionabile in Git.
+10. Strumento AI: Gemini gratuito, l'unico disponibile sull'account scolastico (niente Claude a scuola). Copre tutto il percorso AI, compreso il quaderno personale.
+11. Godot in 3a e 4a; cablaggio RJ45 e prime reti in 3a e 4a.
 
 ## 3. Impianto pluriennale (Mappa, Griglia, Piano ore, Programmi) {#doc1-sec3}
 1. Mappa degli Argomenti: le macro-aree del corso, con indicazione di "di chi e" ciascuna area (alcune sono di altri docenti).
 2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
 3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
 4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
-5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), tutti con X? perche gli anni sono ancora da fissare.
+5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), collocati in 3a e 4a.
 
 ## 4. Allegato A e consegna alla Regione (workflow) {#doc1-sec4}
 1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.
@@ -43,11 +46,8 @@
 3. Cablaggio RJ45 e reti; in 4a il progetto forte: la rete di una scuola in Cisco Packet Tracer (VLAN, simulazione).
 
 ## 6. Punti aperti (da decidere/confermare con Nicola) {#doc1-sec6}
-1. Godot: in quali anni collocarlo (probabile 3a-4a, la 2a da valutare) e come integrarlo col corso dedicato.
-2. Strumento SQL senza installazione: proposta SQLite (browser sqliteonline.com + DB Browser portable), da confermare.
-3. Strumento AI: verificare che tutto si faccia con Gemini gratuito (gli studenti non hanno Claude sull'account scolastico).
-4. Cablaggio in 4a: da valutare.
-5. Affinare la colonna competenze della Griglia dove serve.
+1. Affinare la colonna competenze della Griglia dove serve, argomento per argomento.
+2. (Le scelte su Godot 3a-4a, cablaggio 3a-4a, strumento SQL = SQLite e strumento AI = Gemini sono CONFERMATE: vedi sezione 2.)
 
 ## 7. Ruolo di questo documento {#doc1-sec7}
 1. E la stella polare: in caso di contraddizione, vince questo, e nel documento in errore si apre un box rosso di disallineamento.
@@ -453,7 +453,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.14 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.15 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare con una X.
@@ -544,7 +544,7 @@ corso-godot/
 |---|:--:|:--:|:--:|:--:|:--:|
 | Concetti: reti LAN e WAN, la rete di casa | X |  |  |  | 16 |
 | Apparecchi: modem, router, switch, hub, access point, repeater, powerline | X |  |  |  | 16 |
-| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  | X | X? | 16 |
+| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  | X | X | 16 |
 | Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test | X |  |  |  | 16 |
 | Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  | X | X | X | 16 |
 | Come viaggiano i dati: pacchetti, rete a pacchetti | X |  |  |  | 16 |
@@ -567,19 +567,19 @@ corso-godot/
 | Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X | 17 |
 | Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X | 17 |
 | Interpretato e compilato; Lazarus e Delphi |  | X | X |  | 17 |
-| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  | X? | X? | X? | 17 |
-| GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  | X? | X? | X? | 17 |
-| Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  | X? | X? | X? | 17 |
-| Game loop: _process(delta) e il movimento a fotogrammi |  | X? | X? | X? | 17 |
-| Collisioni, aree e punteggio (raccogliere oggetti in un gioco) |  | X? | X? | X? | 17 |
-| Primo gioco 2D completo (tipo "Chirurgo Pasticcione") |  | X? | X? | X? | 17 |
-| Dal 2D al 3D: il "progetto boss" |  | X? | X? | X? | 17 |
+| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  |  | X | X | 17 |
+| GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  |  | X | X | 17 |
+| Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  |  | X | X | 17 |
+| Game loop: _process(delta) e il movimento a fotogrammi |  |  | X | X | 17 |
+| Collisioni, aree e punteggio (raccogliere oggetti in un gioco) |  |  | X | X | 17 |
+| Primo gioco 2D completo (tipo "Chirurgo Pasticcione") |  |  | X | X | 17 |
+| Dal 2D al 3D: il "progetto boss" |  |  | X | X | 17 |
 
 > [GIALLO] Logica di base (le prime due righe): la mettiamo in 1a, e il fondamento del ragionamento informatico.
 
 > [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
 
-> [GIALLO] Godot e GDScript (tutte le righe con X? = da decidere insieme): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Quest'anno introduciamo Godot per la prima volta e dobbiamo ancora fissare dove collocarlo: probabile 3a e 4a, la 2a da valutare. La X con il punto interrogativo segna che l'anno e ancora aperto, non il fatto che si facciano o meno.
+> [GIALLO] Godot e GDScript (CONFERMATO in 3a e 4a): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte ed e un libro di testo organico spalmato su 2-3 anni. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Si introduce in 3a e si sviluppa in 4a.
 
 ## 9. Database e gestione dei dati {#doc6-sec9}
 
@@ -613,7 +613,7 @@ https://sqliteonline.com
 DB Browser for SQLite portable
 ```
 
-> [BLU] Strumento SQL: proposta sopra, ancora da confermare da Nicola. In sintesi: motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
+> [GIALLO] Strumento SQL: CONFERMATO. Motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
 
 ## 10. Web e realizzazione di siti {#doc6-sec10}
 
@@ -635,7 +635,7 @@ DB Browser for SQLite portable
 
 > [GIALLO] Intelligenza artificiale: presente in tutti e quattro gli anni, crescendo di anno in anno. Uso centrale: ogni studente costruisce il PROPRIO libro di testo/quaderno partendo da quello del corso e aggiungendo le sue cose. Si lega al motore "Mostralo" e alla prova del nove "saperlo spiegare": l'AI aiuta a capire, non a saltare il pensiero.
 
-> [BLU] Strumento AI da verificare. Gli studenti hanno solo un account Gemini normale (non Pro) e con l'account scolastico non possono usare Claude. Da verificare che tutto il percorso AI, compreso costruire il proprio libro di testo, si possa fare con Gemini gratuito.
+> [GIALLO] Strumento AI: CONFERMATO Gemini gratuito (e l'unico disponibile sull'account scolastico; niente Claude a scuola). Tutto il percorso AI, compreso costruire il proprio libro di testo, si fa con Gemini gratuito.
 
 ## 12. Mondo del lavoro, project management e documentazione {#doc6-sec12}
 
@@ -657,20 +657,20 @@ DB Browser for SQLite portable
 | Argomento | 1a | 2a | 3a | 4a | Comp. |
 |---|:--:|:--:|:--:|:--:|:--:|
 | Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X | 15/17 |
-| Giochi con Godot: dai semplici ai piu strutturati |  | X? | X? | X? | 17 |
-| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X? | 16 |
+| Giochi con Godot: dai semplici ai piu strutturati |  |  | X | X | 17 |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X | 16 |
 
 > [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
 
-> [GIALLO] Giochi con Godot (X? come nel capitolo 8): da decidere insieme, esattamente come per Godot/GDScript. C'e anche il corso dedicato di Godot, gestito a parte.
+> [GIALLO] Giochi con Godot (CONFERMATO in 3a e 4a): come per Godot/GDScript nel capitolo 8. C'e anche il corso dedicato di Godot, gestito a parte.
 
-> [GIALLO] Cablaggio RJ45: sicuramente in 3a; la 4a e da valutare (X?).
+> [GIALLO] Cablaggio RJ45: CONFERMATO in 3a e 4a.
 
 > [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. La competenza 14 dell'Allegato A raccoglie la sicurezza; non la pianifichiamo in dettaglio in questa griglia.
 
 
 # Piano delle Ore di Lezione — guida giorno per giorno {#doc7}
-*Versione 0.3 · 18/08/2026 · Parte: Riferimento*
+*Versione 0.4 · 18/08/2026 · Parte: Riferimento*
 
 ## 0. Regola fissa di OGNI lezione: carta e penna (tassativo) {#doc7-sec1}
 1. In ogni lezione, di ogni anno, ogni allievo deve avere carta e penna sul banco: si prendono appunti e si fanno schemi a mano, sempre, anche quando si lavora al computer.
@@ -685,12 +685,11 @@ DB Browser for SQLite portable
 2. Ogni Sotto-argomento indica tra parentesi le ore previste; l'elenco numerato sotto e proprio la sequenza delle ore, una riga per ora.
 3. L'ordine dall'alto in basso e gia l'ordine consigliato in cui procedere: leggere in sequenza equivale al calendario dell'anno.
 4. Ogni ora e pensata col metodo del corso: un piccolo obiettivo concreto, un risultato visibile, spazio per personalizzare ("Vinci subito, Fallo tuo, Mostralo").
-5. Le voci con la nota "da decidere" o "da confermare" seguono la Griglia: sono punti ancora aperti.
 
 ## 2. Legenda dei simboli {#doc7-sec3}
 1. (N ore): quante ore indicative servono per quel sotto-argomento.
 2. [FILO ROSSO]: attivita che torna in piu lezioni durante tutto l'anno (per esempio il Glossario e il Quaderno personale).
-3. [DA DECIDERE]: collocazione o strumento ancora da fissare insieme (vedi Griglia).
+3. [strumento: ...]: indica lo strumento confermato per quell'attivita (es. SQLite, Gemini).
 
 ---
 
@@ -873,7 +872,7 @@ altre materie.*
 1. Cos'e l'intelligenza artificiale, cosa sa fare e cosa no: esempi concreti; una discussione onesta sui limiti.
 2. Usare l'AI in modo giusto a scuola: aiuta a capire, non a saltare il pensiero; la regola della "prova del nove".
 
-### Usare un assistente AI per costruire il proprio libro di testo/quaderno (2 ore) [DA CONFERMARE strumento: Gemini]
+### Usare un assistente AI per costruire il proprio libro di testo/quaderno (2 ore) [strumento: Gemini]
 1. Come farsi aiutare dall'AI a spiegare meglio una pagina del proprio quaderno, con parole proprie.
 2. Come farsi fare domande dall'AI per verificare se ho capito (auto-verifica); si prova su un argomento gia fatto.
 
@@ -948,11 +947,6 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 1. Differenza tra linguaggio interpretato e compilato: cosa vuol dire "compilare"; perche un .exe e comodo.
 2. Lazarus e Delphi, cugini stretti: cosa hanno in comune; dove si usano nel lavoro reale.
 
-### Godot e GDScript (assaggio) (3 ore) [DA DECIDERE anno]
-1. Cos'e Godot e i suoi 4 concetti base (scene, nodi, segnali, script): il primo sguardo all'ambiente.
-2. Il primo "funziona!": un bottone che saluta (il ponte con l'evento click gia noto in Lazarus).
-3. Un movimento semplice col game loop: qualcosa che si muove sullo schermo; ognuno cambia colore/velocita. (Approfondimenti nel corso dedicato a Godot.)
-
 ## Macro-area: Reti {#doc7-sec16}
 
 ### Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte (3 ore)
@@ -986,7 +980,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 3. Un primo ordine via email: si prova il flusso semplice; ognuno mostra il suo negozio funzionante.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec19}
-1. Uso dell'AI per studiare e per il quaderno: farsi spiegare e farsi interrogare (auto-verifica). [DA CONFERMARE strumento: Gemini]
+1. Uso dell'AI per studiare e per il quaderno: farsi spiegare e farsi interrogare (auto-verifica). [strumento: Gemini]
 2. Un'ora di riflessione: come cambia il lavoro con l'automazione e l'AI; esempi vicini ai loro interessi.
 
 ---
@@ -1013,7 +1007,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Cos'e un database: un archivio ordinato; tabelle, righe e colonne con esempi vicini a loro (rubrica, negozio).
 2. Perche non basta un foglio di calcolo: relazioni tra dati; si progetta su carta una piccola tabella.
 
-### Linguaggio SQL: interrogare e gestire i dati (4 ore) [DA CONFERMARE strumento: SQLite]
+### Linguaggio SQL: interrogare e gestire i dati (4 ore) [strumento: SQLite]
 1. Aprire lo strumento e creare la prima tabella; inserire qualche dato.
 2. La query SELECT: chiedere i dati; filtrare con WHERE; ognuno interroga i propri dati.
 3. Ordinare e contare (ORDER BY, COUNT): far parlare i dati.
@@ -1071,7 +1065,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 2. Coordinate polari e rettangolari: due modi di dire "dove"; esempi visivi.
 3. Un piccolo disegno interattivo o animazione semplice: si vede muovere qualcosa fatto da loro.
 
-### Godot e GDScript (prosecuzione) (3 ore) [DA DECIDERE anno]
+### Godot e GDScript (prosecuzione) (3 ore)
 1. Collisioni, aree e punteggio: raccogliere oggetti in un gioco.
 2. Un primo gioco 2D completo (tipo "Chirurgo Pasticcione"): dalla scena al gioco giocabile.
 3. Si personalizza e si mostra il gioco. (Il grosso e nel corso dedicato a Godot.)
@@ -1101,7 +1095,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Si tira insieme il lavoro sulle reti (cavi + piccola LAN + ping) come progetto documentato.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec27}
-1. Usare l'AI per farsi aiutare a capire SQL, HTML o un errore, senza copiare: si prova su un caso reale. [DA CONFERMARE strumento: Gemini]
+1. Usare l'AI per farsi aiutare a capire SQL, HTML o un errore, senza copiare: si prova su un caso reale. [strumento: Gemini]
 2. Algoritmi e dati: come i servizi usano i nostri dati; un'ora di consapevolezza e privacy.
 
 ---
@@ -1159,7 +1153,7 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 2. Sviluppo con oggetti, dati e grafica insieme; si affrontano i bug con metodo.
 3. Si completa, si prova e si documenta: un lavoro da mostrare.
 
-### Godot e GDScript: il progetto boss e il 3D (3 ore) [DA DECIDERE anno]
+### Godot e GDScript: il progetto boss e il 3D (3 ore)
 1. Dal 2D al 3D: cosa cambia nel "progetto boss"; si imposta la scena 3D.
 2. Si sviluppa il progetto boss (movimento, obiettivi, punteggio) passo dopo passo.
 3. Si rifinisce e si mostra il gioco. (Percorso completo nel corso dedicato a Godot.)
@@ -1183,16 +1177,15 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 1. Cos'e una release: congelare una versione stabile del progetto (v1.0, v1.1...); si pubblica la release del progetto di gruppo, pronta da mostrare e da consegnare.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO] {#doc7-sec34}
-1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [DA CONFERMARE strumento: Gemini]
+1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [strumento: Gemini]
 2. Intelligenza umana e artificiale, limiti ed etica: una riflessione conclusiva, collegata al mondo del lavoro che li aspetta.
 
 ---
 
-## Nota finale: punti ancora aperti (dalla Griglia) {#doc7-sec35}
-1. Godot: l'anno preciso e ancora da decidere insieme (probabile 3a e 4a, la 2a da valutare). Nel piano e messo come assaggio in 2a e piu strutturato in 3a-4a, ma resta [DA DECIDERE].
-2. Strumento SQL: proposta SQLite (browser + portable), [DA CONFERMARE].
-3. Strumento AI: da verificare che tutto si faccia con Gemini gratuito, [DA CONFERMARE].
-4. Le ore indicate sono una stima e un ordine consigliato: si adattano al ritmo reale della classe, senza fretta.
+## Nota finale {#doc7-sec35}
+1. Decisioni confermate: Godot in 3a e 4a; cablaggio RJ45 in 3a e 4a; strumento SQL = SQLite (sqliteonline.com + DB Browser portable, w3schools per il primo assaggio); strumento AI = Gemini gratuito.
+2. Resta da affinare, dove serve, la corrispondenza argomento -> competenza dell'Allegato A (colonna "Comp." della Griglia).
+3. Le ore indicate sono una stima e un ordine consigliato: si adattano al ritmo reale della classe, senza fretta.
 
 
 # Organizzazione Git per gli Allievi {#doc8}
@@ -3104,19 +3097,19 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 
 # Programma del Corso — Classe 2 {#doc20}
-*Versione 0.2 · 18/08/2026 · Parte: Classe 2 — Informatica*
+*Versione 0.3 · 18/08/2026 · Parte: Classe 2 — Informatica*
 
 ## 1. A colpo d'occhio {#doc20-sec1}
 1. La Classe 2 e l'anno in cui si diventa piu autonomi: si prende in mano il sistema operativo e si cresce nella programmazione con Lazarus (oggetti piu ricchi).
 2. Si allarga la grafica (Canva avanzato, computer graphic, editing video) e si comincia a lavorare come in un team, con i ruoli di un progetto.
 3. Verso fine anno si aprono le prime reti con Cisco Packet Tracer e si avvia il progetto del Negozio Online.
-4. Godot resta da collocare (vedi Griglia): quest'anno, se lo si fa, e solo come assaggio; il percorso completo e nel corso dedicato a Godot.
+4. Godot non e in Classe 2: e collocato in 3a e 4a (col corso dedicato). In seconda la programmazione resta su Lazarus.
 
 ## 2. Gli argomenti dell'anno (dalla griglia) {#doc20-sec2}
 1. Fondamenti (fili rossi): Glossario personale (altri 50 termini, verso i 100 totali); Git di base ripreso e usato nel proprio repository.
 2. Sistema operativo: Windows (desktop, file e cartelle avanzato); installazione del sistema operativo; configurazione (componenti, servizi di rete, risorse condivise).
 3. Grafica e multimedia: Canva avanzato (rimozione sfondo, ritocco); computer graphic (piano cartesiano e schermo, 2D/3D); editing video e presentazioni multimediali.
-4. Programmazione: Lazarus con interfaccia e oggetti piu complessi (RadioButton, ComboBox, PageControl, variabili, funzioni); esercizi (calcolatrice, contasecondi, array, stringhe); interpretato e compilato (Lazarus e Delphi); Godot solo come assaggio, anno da decidere.
+4. Programmazione: Lazarus con interfaccia e oggetti piu complessi (RadioButton, ComboBox, PageControl, variabili, funzioni); esercizi (calcolatrice, contasecondi, array, stringhe); interpretato e compilato (Lazarus e Delphi). Godot non in seconda: e in 3a-4a.
 5. Reti: indirizzamento (IP, MAC, DHCP, DNS, gateway, porte); prime reti in Cisco Packet Tracer (verso fine anno).
 6. Mondo del lavoro: figure professionali dell'informatica; project management e ruoli; lavoro in team con simulazione della creazione di un software a ruoli.
 7. Progetti pratici: avvio del Negozio Online (e-commerce); giochi con Godot (da decidere).
@@ -3130,7 +3123,7 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 ## 4. Modulo B — Programmazione con Lazarus {#doc20-sec4}
 1. Interfacce e oggetti piu ricchi: RadioButton, ComboBox, PageControl; far reagire il programma alle scelte.
 2. Variabili e funzioni: memorizzare e riusare; piccole applicazioni utili (calcolatrice completa, timer).
-3. Array e stringhe; interpretato e compilato (Lazarus e Delphi). Godot: eventuale assaggio (scene, nodi, segnali, un bottone che saluta).
+3. Array e stringhe; interpretato e compilato (Lazarus e Delphi).
 
 ## 5. Modulo C — Grafica e multimedia {#doc20-sec5}
 1. Canva avanzato: rimozione sfondo e ritocco.

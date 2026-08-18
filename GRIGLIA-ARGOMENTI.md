@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.14** — 18/08/2026
+**Versione 1.15** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne 1a/2a/3a/4a (l'anno in cui l'argomento
 puo stare) e una colonna "Comp." che indica l'area di competenza dell'Allegato A
@@ -98,7 +98,7 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 |---|:--:|:--:|:--:|:--:|:--:|
 | Concetti: reti LAN e WAN, la rete di casa | X |  |  |  | 16 |
 | Apparecchi: modem, router, switch, hub, access point, repeater, powerline | X |  |  |  | 16 |
-| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  | X | X? | 16 |
+| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  | X | X | 16 |
 | Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test | X |  |  |  | 16 |
 | Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  | X | X | X | 16 |
 | Come viaggiano i dati: pacchetti, rete a pacchetti | X |  |  |  | 16 |
@@ -121,19 +121,19 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 | Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X | 17 |
 | Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X | 17 |
 | Interpretato e compilato; Lazarus e Delphi |  | X | X |  | 17 |
-| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  | X? | X? | X? | 17 |
-| GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  | X? | X? | X? | 17 |
-| Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  | X? | X? | X? | 17 |
-| Game loop: _process(delta) e il movimento a fotogrammi |  | X? | X? | X? | 17 |
-| Collisioni, aree e punteggio (raccogliere oggetti in un gioco) |  | X? | X? | X? | 17 |
-| Primo gioco 2D completo (tipo "Chirurgo Pasticcione") |  | X? | X? | X? | 17 |
-| Dal 2D al 3D: il "progetto boss" |  | X? | X? | X? | 17 |
+| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  |  | X | X | 17 |
+| GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  |  | X | X | 17 |
+| Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  |  | X | X | 17 |
+| Game loop: _process(delta) e il movimento a fotogrammi |  |  | X | X | 17 |
+| Collisioni, aree e punteggio (raccogliere oggetti in un gioco) |  |  | X | X | 17 |
+| Primo gioco 2D completo (tipo "Chirurgo Pasticcione") |  |  | X | X | 17 |
+| Dal 2D al 3D: il "progetto boss" |  |  | X | X | 17 |
 
 > [GIALLO] Logica di base (le prime due righe): la mettiamo in 1a, e il fondamento del ragionamento informatico.
 
 > [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
 
-> [GIALLO] Godot e GDScript (tutte le righe con X? = da decidere insieme): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Quest'anno introduciamo Godot per la prima volta e dobbiamo ancora fissare dove collocarlo: probabile 3a e 4a, la 2a da valutare. La X con il punto interrogativo segna che l'anno e ancora aperto, non il fatto che si facciano o meno.
+> [GIALLO] Godot e GDScript (CONFERMATO in 3a e 4a): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte ed e un libro di testo organico spalmato su 2-3 anni. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Si introduce in 3a e si sviluppa in 4a.
 
 ## 9. Database e gestione dei dati
 
@@ -167,7 +167,7 @@ https://sqliteonline.com
 DB Browser for SQLite portable
 ```
 
-> [BLU] Strumento SQL: proposta sopra, ancora da confermare da Nicola. In sintesi: motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
+> [GIALLO] Strumento SQL: CONFERMATO. Motore SQLite; a scuola si va su sqliteonline.com (e w3schools per il primo assaggio); sui PC nostri DB Browser for SQLite portable.
 
 ## 10. Web e realizzazione di siti
 
@@ -189,7 +189,7 @@ DB Browser for SQLite portable
 
 > [GIALLO] Intelligenza artificiale: presente in tutti e quattro gli anni, crescendo di anno in anno. Uso centrale: ogni studente costruisce il PROPRIO libro di testo/quaderno partendo da quello del corso e aggiungendo le sue cose. Si lega al motore "Mostralo" e alla prova del nove "saperlo spiegare": l'AI aiuta a capire, non a saltare il pensiero.
 
-> [BLU] Strumento AI da verificare. Gli studenti hanno solo un account Gemini normale (non Pro) e con l'account scolastico non possono usare Claude. Da verificare che tutto il percorso AI, compreso costruire il proprio libro di testo, si possa fare con Gemini gratuito.
+> [GIALLO] Strumento AI: CONFERMATO Gemini gratuito (e l'unico disponibile sull'account scolastico; niente Claude a scuola). Tutto il percorso AI, compreso costruire il proprio libro di testo, si fa con Gemini gratuito.
 
 ## 12. Mondo del lavoro, project management e documentazione
 
@@ -211,13 +211,13 @@ DB Browser for SQLite portable
 | Argomento | 1a | 2a | 3a | 4a | Comp. |
 |---|:--:|:--:|:--:|:--:|:--:|
 | Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X | 15/17 |
-| Giochi con Godot: dai semplici ai piu strutturati |  | X? | X? | X? | 17 |
-| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X? | 16 |
+| Giochi con Godot: dai semplici ai piu strutturati |  |  | X | X | 17 |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X | 16 |
 
 > [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
 
-> [GIALLO] Giochi con Godot (X? come nel capitolo 8): da decidere insieme, esattamente come per Godot/GDScript. C'e anche il corso dedicato di Godot, gestito a parte.
+> [GIALLO] Giochi con Godot (CONFERMATO in 3a e 4a): come per Godot/GDScript nel capitolo 8. C'e anche il corso dedicato di Godot, gestito a parte.
 
-> [GIALLO] Cablaggio RJ45: sicuramente in 3a; la 4a e da valutare (X?).
+> [GIALLO] Cablaggio RJ45: CONFERMATO in 3a e 4a.
 
 > [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. La competenza 14 dell'Allegato A raccoglie la sicurezza; non la pianifichiamo in dettaglio in questa griglia.

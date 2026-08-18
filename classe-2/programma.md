@@ -1,6 +1,6 @@
 # Programma del Corso — Classe 2
 
-**Versione 0.2** — 18/08/2026
+**Versione 0.3** — 18/08/2026
 *Mappa dell'anno per la Classe 2. Taglio pratico: risultati visibili a ogni passo,
 molto copia-modifica-sperimenta. Documento di lavoro, allineato alla Griglia degli
 Argomenti; per il dettaglio ora per ora vedi il Piano delle Ore di Lezione.*
@@ -11,13 +11,13 @@ Argomenti; per il dettaglio ora per ora vedi il Piano delle Ore di Lezione.*
 1. La Classe 2 e l'anno in cui si diventa piu autonomi: si prende in mano il sistema operativo e si cresce nella programmazione con Lazarus (oggetti piu ricchi).
 2. Si allarga la grafica (Canva avanzato, computer graphic, editing video) e si comincia a lavorare come in un team, con i ruoli di un progetto.
 3. Verso fine anno si aprono le prime reti con Cisco Packet Tracer e si avvia il progetto del Negozio Online.
-4. Godot resta da collocare (vedi Griglia): quest'anno, se lo si fa, e solo come assaggio; il percorso completo e nel corso dedicato a Godot.
+4. Godot non e in Classe 2: e collocato in 3a e 4a (col corso dedicato). In seconda la programmazione resta su Lazarus.
 
 ## 2. Gli argomenti dell'anno (dalla griglia)
 1. Fondamenti (fili rossi): Glossario personale (altri 50 termini, verso i 100 totali); Git di base ripreso e usato nel proprio repository.
 2. Sistema operativo: Windows (desktop, file e cartelle avanzato); installazione del sistema operativo; configurazione (componenti, servizi di rete, risorse condivise).
 3. Grafica e multimedia: Canva avanzato (rimozione sfondo, ritocco); computer graphic (piano cartesiano e schermo, 2D/3D); editing video e presentazioni multimediali.
-4. Programmazione: Lazarus con interfaccia e oggetti piu complessi (RadioButton, ComboBox, PageControl, variabili, funzioni); esercizi (calcolatrice, contasecondi, array, stringhe); interpretato e compilato (Lazarus e Delphi); Godot solo come assaggio, anno da decidere.
+4. Programmazione: Lazarus con interfaccia e oggetti piu complessi (RadioButton, ComboBox, PageControl, variabili, funzioni); esercizi (calcolatrice, contasecondi, array, stringhe); interpretato e compilato (Lazarus e Delphi). Godot non in seconda: e in 3a-4a.
 5. Reti: indirizzamento (IP, MAC, DHCP, DNS, gateway, porte); prime reti in Cisco Packet Tracer (verso fine anno).
 6. Mondo del lavoro: figure professionali dell'informatica; project management e ruoli; lavoro in team con simulazione della creazione di un software a ruoli.
 7. Progetti pratici: avvio del Negozio Online (e-commerce); giochi con Godot (da decidere).
@@ -31,7 +31,7 @@ Argomenti; per il dettaglio ora per ora vedi il Piano delle Ore di Lezione.*
 ## 4. Modulo B — Programmazione con Lazarus
 1. Interfacce e oggetti piu ricchi: RadioButton, ComboBox, PageControl; far reagire il programma alle scelte.
 2. Variabili e funzioni: memorizzare e riusare; piccole applicazioni utili (calcolatrice completa, timer).
-3. Array e stringhe; interpretato e compilato (Lazarus e Delphi). Godot: eventuale assaggio (scene, nodi, segnali, un bottone che saluta).
+3. Array e stringhe; interpretato e compilato (Lazarus e Delphi).
 
 ## 5. Modulo C — Grafica e multimedia
 1. Canva avanzato: rimozione sfondo e ritocco.
