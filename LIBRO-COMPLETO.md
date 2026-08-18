@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.26** — 18/08/2026
+**Versione 1.27** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.9 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.10 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -512,13 +512,19 @@ corso-godot/
 | Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X |
 | Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X |
 | Interpretato e compilato; Lazarus e Delphi |  | X | X |  |
-| Godot e GDScript: scene, nodi, segnali, game loop, giochi |  | X? | X? | X? |
+| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  | X? | X? | X? |
+| GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  | X? | X? | X? |
+| Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  | X? | X? | X? |
+| Game loop: _process(delta) e il movimento a fotogrammi |  | X? | X? | X? |
+| Collisioni, aree e punteggio (raccogliere oggetti in un gioco) |  | X? | X? | X? |
+| Primo gioco 2D completo (tipo "Chirurgo Pasticcione") |  | X? | X? | X? |
+| Dal 2D al 3D: il "progetto boss" |  | X? | X? | X? |
 
 > [GIALLO] Logica di base (le prime due righe): la mettiamo in 1a, e il fondamento del ragionamento informatico.
 
 > [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
 
-> [GIALLO] Godot e GDScript (X? = da decidere insieme): quest'anno lo introduciamo per la prima volta e dobbiamo ancora capire dove collocarlo. Probabile 3a e 4a; la 2a e da valutare. La X con il punto interrogativo segna proprio che e un argomento aperto, non ancora fissato.
+> [GIALLO] Godot e GDScript (tutte le righe con X? = da decidere insieme): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Quest'anno introduciamo Godot per la prima volta e dobbiamo ancora fissare dove collocarlo: probabile 3a e 4a, la 2a da valutare. La X con il punto interrogativo segna che l'anno e ancora aperto, non il fatto che si facciano o meno.
 
 ## 9. Database e gestione dei dati {#doc6-sec9}
 
