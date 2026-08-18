@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" font-family="'DejaVu Sans','Segoe UI',Arial,sans-serif">
+  <rect x="1" y="1" width="818" height="298" rx="14" fill="#ffffff" stroke="#e0d8ca"/>
+  <text x="410" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#2b3f57">Ordine dei colori — standard T568B</text>
+  <text x="410" y="60" text-anchor="middle" font-size="12" fill="#6a6259">connettore RJ45 visto con la linguetta in basso, da sinistra (pin 1) a destra (pin 8)</text>
+
+  <!-- 8 pin -->
+  <g>
+    <!-- pin 1: bianco-arancio -->
+    <rect x="60" y="90" width="80" height="120" rx="4" fill="#ffffff" stroke="#b9a97f"/>
+    <rect x="60" y="90" width="80" height="30" fill="#e8873a"/>
+    <text x="100" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">1</text>
+    <text x="100" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">bianco-</text>
+    <text x="100" y="269" text-anchor="middle" font-size="10.5" fill="#5a5147">arancio</text>
+
+    <!-- pin 2: arancio -->
+    <rect x="150" y="90" width="80" height="120" rx="4" fill="#e8873a" stroke="#b9772a"/>
+    <text x="190" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">2</text>
+    <text x="190" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">arancio</text>
+
+    <!-- pin 3: bianco-verde -->
+    <rect x="240" y="90" width="80" height="120" rx="4" fill="#ffffff" stroke="#b9a97f"/>
+    <rect x="240" y="90" width="80" height="30" fill="#3a9d4a"/>
+    <text x="280" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">3</text>
+    <text x="280" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">bianco-</text>
+    <text x="280" y="269" text-anchor="middle" font-size="10.5" fill="#5a5147">verde</text>
+
+    <!-- pin 4: blu -->
+    <rect x="330" y="90" width="80" height="120" rx="4" fill="#2f6fc0" stroke="#245aa0"/>
+    <text x="370" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">4</text>
+    <text x="370" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">blu</text>
+
+    <!-- pin 5: bianco-blu -->
+    <rect x="420" y="90" width="80" height="120" rx="4" fill="#ffffff" stroke="#b9a97f"/>
+    <rect x="420" y="90" width="80" height="30" fill="#2f6fc0"/>
+    <text x="460" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">5</text>
+    <text x="460" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">bianco-</text>
+    <text x="460" y="269" text-anchor="middle" font-size="10.5" fill="#5a5147">blu</text>
+
+    <!-- pin 6: verde -->
+    <rect x="510" y="90" width="80" height="120" rx="4" fill="#3a9d4a" stroke="#2c7a39"/>
+    <text x="550" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">6</text>
+    <text x="550" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">verde</text>
+
+    <!-- pin 7: bianco-marrone -->
+    <rect x="600" y="90" width="80" height="120" rx="4" fill="#ffffff" stroke="#b9a97f"/>
+    <rect x="600" y="90" width="80" height="30" fill="#8a5a3a"/>
+    <text x="640" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">7</text>
+    <text x="640" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">bianco-</text>
+    <text x="640" y="269" text-anchor="middle" font-size="10.5" fill="#5a5147">marrone</text>
+
+    <!-- pin 8: marrone -->
+    <rect x="690" y="90" width="80" height="120" rx="4" fill="#8a5a3a" stroke="#6d4630"/>
+    <text x="730" y="235" text-anchor="middle" font-size="12" font-weight="700" fill="#201b16">8</text>
+    <text x="730" y="255" text-anchor="middle" font-size="10.5" fill="#5a5147">marrone</text>
+  </g>
+</svg>

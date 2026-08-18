@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il mio negozio online</title>
+
+  <!--
+    ================================================================
+    NEGOZIO ONLINE — vetrina (GitHub Pages) + database (Supabase)
+    ----------------------------------------------------------------
+    Tutto ONLINE: funziona da casa, sul telefono, anche coi PC di
+    scuola spenti. La vetrina si pubblica su GitHub Pages; i prodotti
+    arrivano da un database vero in cloud (Supabase).
+
+    Mostra subito dei prodotti di esempio; per i prodotti VERI segui il
+    README.md e incolla i tuoi due valori di Supabase qui sotto, dove
+    c'è  <-- CAMBIA QUI
+    ================================================================
+  -->
+
+  <style>
+    :root { --colore: #2e7d32; }          /* <-- CAMBIA QUI il colore del negozio */
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; color: #222; background: #f5f5f5; }
+    header { background: var(--colore); color: #fff; padding: 18px 20px;
+             display: flex; align-items: center; justify-content: space-between; }
+    header h1 { margin: 0; font-size: 22px; }
+    .carrello-info { font-size: 16px; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    #stato { display: none; padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 15px; }
+    #stato.info   { background: #eef4ff; border: 1px solid #b6ccf5; color: #274690; }
+    #stato.errore { background: #fdecea; border: 1px solid #f5b5ae; color: #8a231b; }
+    .prodotti { display: grid; gap: 16px;
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .prodotto { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+                padding: 16px; text-align: center; }
+    .prodotto .foto { font-size: 54px; }
+    .prodotto .nome { font-weight: 700; margin: 8px 0 4px; }
+    .prodotto .prezzo { color: var(--colore); font-weight: 700; }
+    .prodotto button { margin-top: 10px; width: 100%; padding: 9px; background: var(--colore);
+                       color: #fff; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; }
+    .prodotto button:hover { opacity: .9; }
+    .cassa { margin-top: 24px; background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px; }
+    .cassa h2 { margin-top: 0; }
+    .cassa button { background: var(--colore); color: #fff; border: none; padding: 10px 16px;
+                    border-radius: 8px; font-size: 15px; cursor: pointer; }
+    #lista-carrello { list-style: none; padding: 0; }
+    #lista-carrello li { padding: 4px 0; border-bottom: 1px solid #eee; }
+    .totale { font-size: 18px; font-weight: 700; margin: 10px 0; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🛒 Il mio negozio</h1>            <!-- <-- CAMBIA QUI il nome -->
+    <div class="carrello-info">
+      Carrello: <span id="conteggio">0</span> · Totale: € <span id="totale-testa">0.00</span>
+    </div>
+  </header>
+
+  <main>
+    <div id="stato"></div>
+    <div id="prodotti" class="prodotti"></div>
+
+    <div class="cassa">
+      <h2>La tua cassa</h2>
+      <ul id="lista-carrello"></ul>
+      <div class="totale">Totale: € <span id="totale-cassa">0.00</span></div>
+      <button onclick="ordina()">Concludi l'ordine</button>
+    </div>
+  </main>
+
+  <script>
+    // ============================================================
+    // 1) I TUOI DUE VALORI DI SUPABASE (vedi README.md)
+    //    Finché sono vuoti, il negozio va in "modalità demo".
+    // ============================================================
+    const SUPABASE_URL = "https://dvphtapdixfovvwdqnck.supabase.co";   // <-- Project URL
+    const SUPABASE_KEY = "sb_publishable_UeAOoWTjizAoQkBElxXx9Q_e6Vznsvd";   // <-- chiave pubblica (publishable)
+
+    // Email dove ricevi gli ordini (ci pensa il servizio gratuito FormSubmit)
+    const EMAIL_ORDINI = "nicola.regge@piamarta.it";   // <-- CAMBIA QUI (la tua email)
+
+    // Prodotti finti usati SOLO in modalità demo (quando Supabase non è ancora collegato)
+    const PRODOTTI_DEMO = [
+      { nome: "Maglietta",  prezzo: 12.90, foto: "👕" },
+      { nome: "Scarpe",     prezzo: 39.90, foto: "👟" },
+      { nome: "Cappellino", prezzo:  9.90, foto: "🧢" },
+      { nome: "Zaino",      prezzo: 24.90, foto: "🎒" },
+    ];
+
+    let prodotti = [];
+    const carrello = [];
+
+    // ============================================================
+    // 2) CARICA I PRODOTTI: dal database vero se collegato, se no demo
+    // ============================================================
+    async function caricaProdotti() {
+      if (SUPABASE_URL && SUPABASE_KEY) {
+        try {
+          const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
+          const sb = createClient(SUPABASE_URL, SUPABASE_KEY);
+          const { data, error } = await sb.from("prodotti").select("*").order("id");
+          if (error) throw error;
+          prodotti = data;   // tutto ok: nessun messaggio
+        } catch (e) {
+          prodotti = PRODOTTI_DEMO;
+          mostraStato("⚠️ Non riesco a leggere il database. Controlla di aver incollato bene i due valori (indirizzo e chiave). Intanto vedi dei prodotti di esempio.", "errore");
+          console.warn("Supabase non raggiungibile:", e.message);
+        }
+      } else {
+        prodotti = PRODOTTI_DEMO;
+        mostraStato("ℹ️ Database non ancora collegato: stai vedendo prodotti di esempio. Metti i due valori (indirizzo e chiave) per i prodotti veri.", "info");
+      }
+      mostraProdotti();
+    }
+
+    // Mostra un avviso sopra i prodotti: tipo "info" (azzurro) o "errore" (rosso)
+    function mostraStato(testo, tipo) {
+      const s = document.getElementById("stato");
+      s.textContent = testo;
+      s.className = tipo;
+      s.style.display = "block";
+    }
+
+    // ============================================================
+    // 3) LA VETRINA E IL CARRELLO
+    // ============================================================
+    function mostraProdotti() {
+      const c = document.getElementById("prodotti");
+      c.innerHTML = "";
+      prodotti.forEach(function (p, i) {
+        c.innerHTML +=
+          '<div class="prodotto">' +
+            '<div class="foto">' + (p.foto || "📦") + '</div>' +
+            '<div class="nome">' + p.nome + '</div>' +
+            '<div class="prezzo">€ ' + Number(p.prezzo).toFixed(2) + '</div>' +
+            '<button onclick="aggiungi(' + i + ')">Aggiungi al carrello</button>' +
+          '</div>';
+      });
+    }
+
+    function aggiungi(i) { carrello.push(prodotti[i]); aggiornaCarrello(); }
+
+    function aggiornaCarrello() {
+      let totale = 0;
+      const lista = document.getElementById("lista-carrello");
+      lista.innerHTML = "";
+      carrello.forEach(function (p) {
+        totale += Number(p.prezzo);
+        lista.innerHTML += "<li>" + p.nome + " — € " + Number(p.prezzo).toFixed(2) + "</li>";
+      });
+      document.getElementById("conteggio").textContent = carrello.length;
+      document.getElementById("totale-testa").textContent = totale.toFixed(2);
+      document.getElementById("totale-cassa").textContent = totale.toFixed(2);
+    }
+
+    // Concludi l'ordine: manda l'email col riepilogo (via FormSubmit) e svuota il carrello
+    async function ordina() {
+      if (carrello.length === 0) { alert("Il carrello è vuoto! Aggiungi qualche prodotto."); return; }
+
+      const nome = prompt("Come ti chiami? (per l'ordine)") || "Cliente";
+
+      let totale = 0;
+      const righe = [];
+      carrello.forEach(function (p) {
+        totale += Number(p.prezzo);
+        righe.push("• " + p.nome + " — € " + Number(p.prezzo).toFixed(2));
+      });
+
+      // I dati che finiscono nell'email
+      const dati = {
+        _subject: "🛒 Nuovo ordine da " + nome,
+        _template: "table",     // email ordinata a tabella
+        _captcha: "false",
+        Cliente: nome,
+        Prodotti: righe.join("\n"),
+        Numero_prodotti: carrello.length,
+        Totale: "€ " + totale.toFixed(2),
+      };
+
+      try {
+        const r = await fetch("https://formsubmit.co/ajax/" + EMAIL_ORDINI, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(dati),
+        });
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        alert("Grazie " + nome + "! 🎉\nOrdine di " + carrello.length +
+              " prodotti per € " + totale.toFixed(2) + " inviato.\n(Negozio demo: nessun pagamento reale.)");
+        carrello.length = 0;   // svuota il carrello
+        aggiornaCarrello();
+      } catch (e) {
+        alert("Ops, non sono riuscito a inviare l'email (" + e.message + "). Riprova tra poco.");
+      }
+    }
+
+    caricaProdotti();   // fa partire tutto
+  </script>
+</body>
+</html>

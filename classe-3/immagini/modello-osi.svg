@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" font-family="'DejaVu Sans','Segoe UI',Arial,sans-serif">
+  <rect x="1" y="1" width="818" height="558" rx="14" fill="#ffffff" stroke="#e0d8ca"/>
+  <text x="410" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#2b3f57">Il modello ISO/OSI — i 7 livelli</text>
+  <text x="410" y="60" text-anchor="middle" font-size="12" fill="#6a6259">dall'alto (i programmi) al basso (il cavo)</text>
+
+  <!-- 7 livelli, dall'alto -->
+  <!-- ognuno: numero, nome, ruolo -->
+  <g font-size="14">
+    <rect x="120" y="78" width="580" height="56" rx="8" fill="#e8f3e9" stroke="#2e7d32"/>
+    <text x="150" y="112" font-weight="700" fill="#1e5b22">7  Applicazione</text>
+    <text x="690" y="112" text-anchor="end" fill="#3a6b3d">i programmi (web, posta)</text>
+
+    <rect x="120" y="140" width="580" height="52" rx="8" fill="#eef4ea" stroke="#3a6b3d"/>
+    <text x="150" y="172" font-weight="700" fill="#26492a">6  Presentazione</text>
+    <text x="690" y="172" text-anchor="end" fill="#3a6b3d">formato e codifica dei dati</text>
+
+    <rect x="120" y="198" width="580" height="52" rx="8" fill="#eaf1f8" stroke="#3a6ea5"/>
+    <text x="150" y="230" font-weight="700" fill="#274b73">5  Sessione</text>
+    <text x="690" y="230" text-anchor="end" fill="#3a6ea5">apre e chiude le conversazioni</text>
+
+    <rect x="120" y="256" width="580" height="52" rx="8" fill="#e6eef8" stroke="#3a6ea5"/>
+    <text x="150" y="288" font-weight="700" fill="#274b73">4  Trasporto</text>
+    <text x="690" y="288" text-anchor="end" fill="#3a6ea5">consegna: TCP o UDP</text>
+
+    <rect x="120" y="314" width="580" height="52" rx="8" fill="#f3eef8" stroke="#6a34a8"/>
+    <text x="150" y="346" font-weight="700" fill="#4a2378">3  Rete</text>
+    <text x="690" y="346" text-anchor="end" fill="#6a34a8">indirizzi e percorso: IP, router</text>
+
+    <rect x="120" y="372" width="580" height="52" rx="8" fill="#fbf3e2" stroke="#b8933f"/>
+    <text x="150" y="404" font-weight="700" fill="#8a6d1f">2  Collegamento dati</text>
+    <text x="690" y="404" text-anchor="end" fill="#b8933f">tra apparati vicini: MAC, switch</text>
+
+    <rect x="120" y="430" width="580" height="52" rx="8" fill="#fdecea" stroke="#c0392b"/>
+    <text x="150" y="462" font-weight="700" fill="#a4271b">1  Fisico</text>
+    <text x="690" y="462" text-anchor="end" fill="#c0392b">i segnali sul cavo o nell'aria</text>
+  </g>
+
+  <text x="410" y="516" text-anchor="middle" font-size="12" fill="#6a6259">Se qualcosa non va, si capisce "a che piano" cercare il problema.</text>
+</svg>

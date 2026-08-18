@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il mio negozio</title>
+
+  <!--
+    ================================================================
+    MINI-NEGOZIO — Livello 1 (la vetrina che funziona)
+    ----------------------------------------------------------------
+    Tutto in un solo file: si apre con DOPPIO CLIC, senza installare
+    niente e senza costi. Tre parti, come nell'architettura:
+      1) CSS      = l'ASPETTO (i colori, i riquadri)
+      2) HTML     = la STRUTTURA (cosa c'è nella pagina)
+      3) JavaScript = il MOVIMENTO (il carrello che funziona)
+
+    FALLO TUO: cambia il nome del negozio, i colori e i prodotti qui
+    sotto. Ogni punto da toccare è segnato con  <-- CAMBIA QUI
+    ================================================================
+  -->
+
+  <style>
+    /* ---------- 1) L'ASPETTO (CSS) ---------- */
+    :root {
+      --colore: #2e7d32;          /* <-- CAMBIA QUI il colore del negozio */
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0; color: #222; background: #f5f5f5;
+    }
+    header {
+      background: var(--colore); color: #fff;
+      padding: 18px 20px; display: flex;
+      align-items: center; justify-content: space-between;
+    }
+    header h1 { margin: 0; font-size: 22px; }
+    .carrello-info { font-size: 16px; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .prodotti {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .prodotto {
+      background: #fff; border: 1px solid #e0e0e0; border-radius: 10px;
+      padding: 16px; text-align: center;
+    }
+    .prodotto .foto { font-size: 54px; }          /* usiamo un'emoji come foto */
+    .prodotto .nome { font-weight: 700; margin: 8px 0 4px; }
+    .prodotto .prezzo { color: var(--colore); font-weight: 700; }
+    .prodotto button {
+      margin-top: 10px; width: 100%; padding: 9px;
+      background: var(--colore); color: #fff; border: none;
+      border-radius: 8px; font-size: 15px; cursor: pointer;
+    }
+    .prodotto button:hover { opacity: .9; }
+    .cassa {
+      margin-top: 24px; background: #fff; border: 1px solid #e0e0e0;
+      border-radius: 10px; padding: 16px;
+    }
+    .cassa h2 { margin-top: 0; }
+    .cassa button {
+      background: var(--colore); color: #fff; border: none;
+      padding: 10px 16px; border-radius: 8px; font-size: 15px; cursor: pointer;
+    }
+    #lista-carrello { list-style: none; padding: 0; }
+    #lista-carrello li { padding: 4px 0; border-bottom: 1px solid #eee; }
+    .totale { font-size: 18px; font-weight: 700; margin: 10px 0; }
+  </style>
+</head>
+
+<body>
+  <!-- ---------- 2) LA STRUTTURA (HTML) ---------- -->
+  <header>
+    <h1>🛒 Il mio negozio</h1>            <!-- <-- CAMBIA QUI il nome -->
+    <div class="carrello-info">
+      Carrello: <span id="conteggio">0</span> · Totale: € <span id="totale-testa">0.00</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- La vetrina: i prodotti compaiono qui, li mette il JavaScript -->
+    <div id="prodotti" class="prodotti"></div>
+
+    <!-- La cassa (demo: NON incassa soldi veri) -->
+    <div class="cassa">
+      <h2>La tua cassa</h2>
+      <ul id="lista-carrello"></ul>
+      <div class="totale">Totale: € <span id="totale-cassa">0.00</span></div>
+      <button onclick="ordina()">Concludi l'ordine</button>
+    </div>
+  </main>
+
+  <!-- ---------- 3) IL MOVIMENTO (JavaScript) ---------- -->
+  <script>
+    // I DATI: l'elenco dei prodotti.
+    // (Al Livello 2 questo elenco arriverà da un DATABASE vero.)
+    const prodotti = [
+      { nome: "Maglietta",  prezzo: 12.90, foto: "👕" },   // <-- CAMBIA QUI
+      { nome: "Scarpe",     prezzo: 39.90, foto: "👟" },
+      { nome: "Cappellino", prezzo:  9.90, foto: "🧢" },
+      { nome: "Zaino",      prezzo: 24.90, foto: "🎒" },
+    ];
+
+    const carrello = [];   // qui finiscono i prodotti aggiunti
+
+    // Disegna la vetrina leggendo l'elenco dei prodotti
+    function mostraProdotti() {
+      const contenitore = document.getElementById("prodotti");
+      contenitore.innerHTML = "";
+      prodotti.forEach(function (p, indice) {
+        contenitore.innerHTML +=
+          '<div class="prodotto">' +
+            '<div class="foto">' + p.foto + '</div>' +
+            '<div class="nome">' + p.nome + '</div>' +
+            '<div class="prezzo">€ ' + p.prezzo.toFixed(2) + '</div>' +
+            '<button onclick="aggiungi(' + indice + ')">Aggiungi al carrello</button>' +
+          '</div>';
+      });
+    }
+
+    // Aggiunge un prodotto al carrello
+    function aggiungi(indice) {
+      carrello.push(prodotti[indice]);
+      aggiornaCarrello();
+    }
+
+    // Aggiorna i numeri e la lista della cassa
+    function aggiornaCarrello() {
+      let totale = 0;
+      const lista = document.getElementById("lista-carrello");
+      lista.innerHTML = "";
+      carrello.forEach(function (p) {
+        totale += p.prezzo;
+        lista.innerHTML += "<li>" + p.nome + " — € " + p.prezzo.toFixed(2) + "</li>";
+      });
+      document.getElementById("conteggio").textContent = carrello.length;
+      document.getElementById("totale-testa").textContent = totale.toFixed(2);
+      document.getElementById("totale-cassa").textContent = totale.toFixed(2);
+    }
+
+    // La cassa demo: mostra un riepilogo (NON chiede soldi veri)
+    function ordina() {
+      if (carrello.length === 0) {
+        alert("Il carrello è vuoto! Aggiungi qualche prodotto.");
+        return;
+      }
+      let totale = 0;
+      carrello.forEach(function (p) { totale += p.prezzo; });
+      alert("Grazie per l'ordine!\nHai comprato " + carrello.length +
+            " prodotti per € " + totale.toFixed(2) + ".\n(Negozio demo: nessun pagamento reale.)");
+    }
+
+    mostraProdotti();   // fa partire tutto
+  </script>
+</body>
+</html>
