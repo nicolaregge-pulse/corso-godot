@@ -61,6 +61,7 @@ DOCS = {
     "programma-4":   {"src": "../classe-4/programma.md",        "title": "Programma del Corso — Classe 4"},
     "bussola":       {"src": "bussola-mondo-del-lavoro.md",     "title": "La Bussola del Lavoro"},
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},
+    "configuratore": {"src": "scheda-configuratore-pc.md",      "title": "Scheda Configuratore PC"},
 }
 
 

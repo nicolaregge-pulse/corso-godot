@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.1** — 17/08/2026
+**Versione 1.2** — 17/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -32,14 +32,14 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre) |  |  |  |  |
-| Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD) |  |  |  |  |
-| Assemblaggio e smontaggio di un PC |  |  |  |  |
-| Configuratore PC a budget e documentazione della configurazione |  |  |  |  |
-| RAID e partizioni dei dischi |  |  |  |  |
-| Manutenzione ordinaria e preventiva; tuning del PC |  |  |  |  |
-| Diagnosi guasti (troubleshooting): metodo e fasi |  |  |  |  |
-| Riparazione: PC funzionante da piu guasti; scheda intervento |  |  |  |  |
+| Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre) | X |  |  |  |
+| Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD) | X |  |  |  |
+| Assemblaggio e smontaggio di un PC | X |  |  |  |
+| Configuratore PC a budget e documentazione della configurazione (vedi Scheda Configuratore) | X |  |  |  |
+| RAID e partizioni dei dischi | X |  |  |  |
+| Manutenzione ordinaria e preventiva; tuning del PC | X |  |  |  |
+| Diagnosi guasti (troubleshooting): metodo e fasi | X |  |  |  |
+| Riparazione: PC funzionante da piu guasti; scheda intervento | X |  |  |  |
 
 ## 4. Sistema operativo
 
