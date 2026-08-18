@@ -1,12 +1,12 @@
 # Il Libro del Corso
 
-**Versione 1.40** — 18/08/2026
+**Versione 1.41** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
 
 # Stato del Corso {#doc1}
-*Versione 2.0 · 18/08/2026 · Parte: Riferimento*
+*Versione 2.1 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Missione {#doc1-sec1}
 1. Corso di informatica pluriennale (classi 1-4) di istituto professionale, indirizzo Operatore Informatico; taglio pratico e tecnico.
@@ -29,7 +29,7 @@
 2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
 3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
 4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
-5. Corso Godot dedicato (manuale + eserciziario) a parte: il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8).
+5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), tutti con X? perche gli anni sono ancora da fissare.
 
 ## 4. Allegato A e consegna alla Regione (workflow) {#doc1-sec4}
 1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.

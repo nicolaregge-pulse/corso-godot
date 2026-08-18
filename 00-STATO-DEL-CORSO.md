@@ -1,6 +1,6 @@
 # 00 Stato del Corso
 
-**Versione 2.0** — 18/08/2026
+**Versione 2.1** — 18/08/2026
 *Fonte di verita del corso (stella polare). Se un altro documento contraddice
 questo, vince questo. Decisa da Nicola.*
 
@@ -27,7 +27,7 @@ questo, vince questo. Decisa da Nicola.*
 2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
 3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
 4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
-5. Corso Godot dedicato (manuale + eserciziario) a parte: il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8).
+5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), tutti con X? perche gli anni sono ancora da fissare.
 
 ## 4. Allegato A e consegna alla Regione (workflow)
 1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.
