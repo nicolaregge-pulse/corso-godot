@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.24** — 18/08/2026
+**Versione 1.25** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.7 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.8 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -565,9 +565,15 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Il Mio Negozio Online: web, database, ordini via email |  |  |  |  |
-| Giochi con Godot: dai semplici ai piu strutturati |  |  |  |  |
-| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  |  |  |
+| Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X |
+| Giochi con Godot: dai semplici ai piu strutturati |  | X? | X? | X? |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X? |
+
+> [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
+
+> [GIALLO] Giochi con Godot (X? come nel capitolo 8): da decidere insieme, esattamente come per Godot/GDScript. C'e anche il corso dedicato di Godot, gestito a parte.
+
+> [GIALLO] Cablaggio RJ45: sicuramente in 3a; la 4a e da valutare (X?).
 
 > [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. Non lo pianifichiamo in questa griglia.
 

@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.7** — 18/08/2026
+**Versione 1.8** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -159,8 +159,14 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Il Mio Negozio Online: web, database, ordini via email |  |  |  |  |
-| Giochi con Godot: dai semplici ai piu strutturati |  |  |  |  |
-| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  |  |  |
+| Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X |
+| Giochi con Godot: dai semplici ai piu strutturati |  | X? | X? | X? |
+| Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X? |
+
+> [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
+
+> [GIALLO] Giochi con Godot (X? come nel capitolo 8): da decidere insieme, esattamente come per Godot/GDScript. C'e anche il corso dedicato di Godot, gestito a parte.
+
+> [GIALLO] Cablaggio RJ45: sicuramente in 3a; la 4a e da valutare (X?).
 
 > [GIALLO] Nota: la sicurezza informatica (cybersecurity) e un modulo "classico" deciso dalla Regione, che puo essere svolto da Regge o da un altro docente. Non lo pianifichiamo in questa griglia.
