@@ -53,6 +53,7 @@ DOCS = {
     "piano-ore":    {"src": "../PIANO-ORE-LEZIONE.md",            "title": "Piano delle Ore di Lezione — guida giorno per giorno"},
     "git-allievi":  {"src": "../ORGANIZZAZIONE-GIT-ALLIEVI.md",   "title": "Organizzazione Git per gli Allievi"},
     "regole-lab":   {"src": "../REGOLE-LABORATORIO.md",           "title": "Regole del Laboratorio di Informatica"},
+    "programmi-ufficiali": {"src": "../programmi-ufficiali/README.md", "title": "Programmi Ufficiali (Allegato A) — nota"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},

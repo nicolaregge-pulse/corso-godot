@@ -1,5 +1,12 @@
 # Programmi ufficiali di informatica (Allegato A — riferimento)
 
+**Versione 0.4** — 18/08/2026
+*Nota di riferimento sugli allegati ufficiali (Allegato A) e sul flusso di fine
+anno per la Regione. Accompagna i quattro PDF ufficiali nella cartella
+`programmi-ufficiali/`.*
+
+---
+
 Questa cartella contiene i documenti ufficiali forniti dal docente (Nicola).
 Sono la **fonte ufficiale** con cui confrontare il nostro corso (Mappa e Griglia
 degli Argomenti nascono anche da qui).
