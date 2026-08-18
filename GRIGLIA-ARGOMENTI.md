@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.5** — 18/08/2026
+**Versione 1.6** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -114,10 +114,14 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Concetto di database (archivio ordinato di dati) |  |  |  |  |
-| Linguaggio SQL: interrogare e gestire i dati |  |  |  |  |
-| Archivi digitali; migrazione dei dati |  |  |  |  |
-| Raccolta, strutturazione e analisi statistica dei dati |  |  |  |  |
+| Concetto di database (archivio ordinato di dati) |  |  | X | X |
+| Linguaggio SQL: interrogare e gestire i dati |  |  | X | X |
+| Archivi digitali; migrazione dei dati |  |  | X | X |
+| Raccolta, strutturazione e analisi statistica dei dati |  |  | X | X |
+
+> [GIALLO] Database e gestione dati: in 3a e 4a. Argomento nuovo, non ancora svolto: quest'anno lo avviamo per la prima volta.
+
+> [BLU] Strumento da confermare (SQL senza installazione). Proposta: usare SQLite (il database e un solo file, quindi si versiona in Git come tutto il resto). Due modi d'accesso, entrambi senza installazione: (1) a scuola, dal browser, sqliteonline.com per creare tabelle e scrivere SQL; (2) sui PC nostri, DB Browser for SQLite in versione portable (cartella singola, tutto a bottoni). Per i primissimi passi va bene anche l'editor "Tryit SQL" di W3Schools, con un database gia pronto in cui provare le prime SELECT.
 
 ## 10. Web e realizzazione di siti
 

@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.22** — 18/08/2026
+**Versione 1.23** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.5 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.6 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -520,10 +520,14 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Concetto di database (archivio ordinato di dati) |  |  |  |  |
-| Linguaggio SQL: interrogare e gestire i dati |  |  |  |  |
-| Archivi digitali; migrazione dei dati |  |  |  |  |
-| Raccolta, strutturazione e analisi statistica dei dati |  |  |  |  |
+| Concetto di database (archivio ordinato di dati) |  |  | X | X |
+| Linguaggio SQL: interrogare e gestire i dati |  |  | X | X |
+| Archivi digitali; migrazione dei dati |  |  | X | X |
+| Raccolta, strutturazione e analisi statistica dei dati |  |  | X | X |
+
+> [GIALLO] Database e gestione dati: in 3a e 4a. Argomento nuovo, non ancora svolto: quest'anno lo avviamo per la prima volta.
+
+> [BLU] Strumento da confermare (SQL senza installazione). Proposta: usare SQLite (il database e un solo file, quindi si versiona in Git come tutto il resto). Due modi d'accesso, entrambi senza installazione: (1) a scuola, dal browser, sqliteonline.com per creare tabelle e scrivere SQL; (2) sui PC nostri, DB Browser for SQLite in versione portable (cartella singola, tutto a bottoni). Per i primissimi passi va bene anche l'editor "Tryit SQL" di W3Schools, con un database gia pronto in cui provare le prime SELECT.
 
 ## 10. Web e realizzazione di siti {#doc6-sec10}
 
