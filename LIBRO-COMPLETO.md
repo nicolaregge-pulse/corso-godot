@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.20** — 16/08/2026
+**Versione 1.21** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.3 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.4 · 18/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -478,9 +478,10 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Canva: immagini, locandine, loghi, rimozione sfondo, modelli |  |  |  |  |
-| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  |  |  |  |
-| Editing video e presentazioni multimediali |  |  |  |  |
+| Canva base: immagini semplici, locandine, loghi, modelli | X |  |  |  |
+| Canva avanzato: rimozione sfondo, ritocco immagini |  | X | X |  |
+| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  | X | X | X |
+| Editing video e presentazioni multimediali |  | X | X | X |
 
 ## 7. Reti {#doc6-sec7}
 
@@ -1093,7 +1094,7 @@ tranne l'incasso vero.
 
 
 # Scheda Configuratore PC {#doc10}
-*Versione 0.2 · 17/08/2026 · Parte: Classe 1 — Informatica*
+*Versione 0.3 · 18/08/2026 · Parte: Classe 1 — Informatica*
 
 ## 1. La regola d'oro: si parte dalla scheda madre {#doc10-sec1}
 1. La scheda madre (motherboard) e il componente con piu vincoli: decide cosa potrai montare dopo.
@@ -1134,7 +1135,20 @@ Spunta le compatibilita:
 1. Formato (uno): □ mini-ITX   □ micro-ATX   □ ATX
 2. Socket (uno): □ AM4   □ AM5   □ LGA1700   □ altro (scrivi quale)
 3. Tipo di RAM: □ DDR4   □ DDR5
-4. Attacchi presenti: □ PCIe x16   □ M.2   □ SATA
+
+Slot e connettori presenti (scrivi QUANTI ce ne sono per ogni tipo):
+
+| Tipo | Quanti |
+|---|:--:|
+| Banchi di memoria RAM |  |
+| PCIe x16 (per la scheda video) |  |
+| PCIe x8 |  |
+| PCIe x4 |  |
+| PCIe x1 |  |
+| M.2 (per i dischi SSD) |  |
+| SATA (per dischi e SSD) |  |
+
+Questi numeri sono un vincolo: per esempio non puoi montare piu moduli RAM dei banchi disponibili, ne piu dischi M.2 dei connettori M.2.
 
 ### Case
 
@@ -1197,7 +1211,8 @@ Spunta le compatibilita:
 |---|---|---|---|---|
 |  |  |  |  |  |
 
-1. Formato: □ ATX   □ SFX
+1. Formato: ATX standard (entra nei case normali micro-ATX e ATX).
+2. Regola: la potenza in Watt deve bastare per tutti i componenti (per un PC da studio bastano circa 500-650 W).
 
 ### Totale
 

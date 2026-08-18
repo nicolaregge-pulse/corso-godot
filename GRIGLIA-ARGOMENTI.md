@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.3** — 17/08/2026
+**Versione 1.4** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -72,9 +72,10 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Canva: immagini, locandine, loghi, rimozione sfondo, modelli |  |  |  |  |
-| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  |  |  |  |
-| Editing video e presentazioni multimediali |  |  |  |  |
+| Canva base: immagini semplici, locandine, loghi, modelli | X |  |  |  |
+| Canva avanzato: rimozione sfondo, ritocco immagini |  | X | X |  |
+| Computer graphic: piano cartesiano e schermo, grafica 2D/3D |  | X | X | X |
+| Editing video e presentazioni multimediali |  | X | X | X |
 
 ## 7. Reti
 

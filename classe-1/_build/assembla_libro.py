@@ -34,8 +34,8 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.20"
-LIBRO_DATE = "16/08/2026"
+LIBRO_VERSION = "1.21"
+LIBRO_DATE = "18/08/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
 

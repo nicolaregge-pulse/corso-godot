@@ -1,6 +1,6 @@
 # Scheda Configuratore PC
 
-**Versione 0.2** — 17/08/2026
+**Versione 0.3** — 18/08/2026
 *Scheda pratica di Classe 1 (area hardware). Serve a configurare un PC scegliendo
 componenti compatibili tra loro, partendo dalla scheda madre. Per ogni componente
 si scrive marca, modello, costo e link, e si mettono le crocette sui formati e
@@ -47,7 +47,20 @@ Spunta le compatibilita:
 1. Formato (uno): □ mini-ITX   □ micro-ATX   □ ATX
 2. Socket (uno): □ AM4   □ AM5   □ LGA1700   □ altro (scrivi quale)
 3. Tipo di RAM: □ DDR4   □ DDR5
-4. Attacchi presenti: □ PCIe x16   □ M.2   □ SATA
+
+Slot e connettori presenti (scrivi QUANTI ce ne sono per ogni tipo):
+
+| Tipo | Quanti |
+|---|:--:|
+| Banchi di memoria RAM |  |
+| PCIe x16 (per la scheda video) |  |
+| PCIe x8 |  |
+| PCIe x4 |  |
+| PCIe x1 |  |
+| M.2 (per i dischi SSD) |  |
+| SATA (per dischi e SSD) |  |
+
+Questi numeri sono un vincolo: per esempio non puoi montare piu moduli RAM dei banchi disponibili, ne piu dischi M.2 dei connettori M.2.
 
 ### Case
 
@@ -110,7 +123,8 @@ Spunta le compatibilita:
 |---|---|---|---|---|
 |  |  |  |  |  |
 
-1. Formato: □ ATX   □ SFX
+1. Formato: ATX standard (entra nei case normali micro-ATX e ATX).
+2. Regola: la potenza in Watt deve bastare per tutti i componenti (per un PC da studio bastano circa 500-650 W).
 
 ### Totale
 
