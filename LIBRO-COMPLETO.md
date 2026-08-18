@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.16** — 16/08/2026
+**Versione 1.17** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.0 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.1 · 17/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -424,13 +424,15 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Cos'e l'informatica, uso consapevole della tecnologia |  |  |  |  |
-| Rappresentazione dei dati: binario, decimale, esadecimale |  |  |  |  |
-| Codifica del testo (ASCII, Unicode), bit e byte |  |  |  |  |
-| Digitalizzazione di immagini e suoni |  |  |  |  |
-| Storia ed evoluzione dei calcolatori |  |  |  |  |
-| Glossario informatico (costruito dagli studenti) |  |  |  |  |
-| Organizzazione digitale: cartelle ad albero, gestione del tempo |  |  |  |  |
+| Cos'e l'informatica, uso consapevole della tecnologia | X |  |  |  |
+| Rappresentazione dei dati: binario, decimale, esadecimale | X |  |  |  |
+| Codifica del testo (ASCII, Unicode), bit e byte | X |  |  |  |
+| Digitalizzazione di immagini e suoni | X |  |  |  |
+| Storia ed evoluzione dei calcolatori | X |  |  |  |
+| Glossario informatico (costruito dagli studenti) | X | X | X | X |
+| Organizzazione digitale: cartelle ad albero, gestione del tempo | X |  |  |  |
+
+> [GIALLO] Glossario: e in tutti e quattro gli anni. Ogni anno lo studente aggiunge almeno 50 termini a sua scelta, cumulativi: in quarta avra un glossario personale di almeno 200 termini.
 
 ## 3. Hardware: architettura, assemblaggio, manutenzione e diagnosi {#doc6-sec3}
 
