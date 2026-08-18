@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.18** — 16/08/2026
+**Versione 1.19** — 16/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -413,7 +413,7 @@ corso-godot/
 
 
 # Griglia degli Argomenti — scelta per anno {#doc6}
-*Versione 1.2 · 17/08/2026 · Parte: Riferimento*
+*Versione 1.3 · 17/08/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc6-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare.
@@ -451,24 +451,28 @@ corso-godot/
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Windows: desktop, finestre, gestione di file e cartelle |  |  |  |  |
-| Installazione del sistema operativo |  |  |  |  |
-| Configurazione OS: componenti, servizi di rete, risorse condivise |  |  |  |  |
+| Windows: desktop, finestre, gestione di file e cartelle | X | X |  |  |
+| Installazione del sistema operativo | X | X |  |  |
+| Configurazione OS: componenti, servizi di rete, risorse condivise | X | X |  |  |
+
+> [GIALLO] Sistema operativo: piu probabile in 2a, ma tenuto anche in 1a. Quest'anno non si e potuto fare perche i PC scolastici non davano i diritti da amministratore; dall'anno prossimo, con PC propri da assemblare e disassemblare, gli studenti installano il sistema operativo e si fanno amministratori.
 
 ## 5. Produttivita digitale (Google Workspace e Office) {#doc6-sec5}
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Google Drive: cartelle, sottocartelle, condivisione |  |  |  |  |
-| Google Documenti: formattazione, stili, impostazione pagina, sommario |  |  |  |  |
-| Google Fogli: formule, formattazione condizionale, grafici, preventivo |  |  |  |  |
-| Google Presentazioni: modelli, immagini, video |  |  |  |  |
-| Google Moduli: form e sondaggi |  |  |  |  |
-| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali |  |  |  |  |
-| Google Calendar, Classroom, Chat |  |  |  |  |
-| Microsoft Excel: scadenze e calendari |  |  |  |  |
-| Ricerca in rete: ricerca avanzata e operatori booleani |  |  |  |  |
-| Diagrammi di flusso (flowchart) |  |  |  |  |
+| Google Drive: cartelle, sottocartelle, condivisione | X |  |  |  |
+| Google Documenti: formattazione, stili, impostazione pagina, sommario | X |  |  |  |
+| Google Fogli: formule, formattazione condizionale, grafici, preventivo | X |  |  |  |
+| Google Presentazioni: modelli, immagini, video | X |  |  |  |
+| Google Moduli: form e sondaggi | X |  |  |  |
+| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali | X |  |  |  |
+| Google Calendar, Classroom, Chat | X |  |  |  |
+| Microsoft Excel: scadenze e calendari | X |  |  |  |
+| Ricerca in rete: ricerca avanzata e operatori booleani | X |  |  |  |
+| Diagrammi di flusso (flowchart) | X |  |  |  |
+
+> [GIALLO] Produttivita digitale: va fatta in 1a, perche sono strumenti che servono anche nelle altre materie. Puo essere svolta da un altro docente: di solito il prof. Panaccione (informatica di base), mentre Regge fa l'informatica avanzata. Regge la integra comunque nei suoi progetti.
 
 ## 6. Grafica e multimedia {#doc6-sec6}
 

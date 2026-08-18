@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.2** — 17/08/2026
+**Versione 1.3** — 17/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -45,24 +45,28 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Windows: desktop, finestre, gestione di file e cartelle |  |  |  |  |
-| Installazione del sistema operativo |  |  |  |  |
-| Configurazione OS: componenti, servizi di rete, risorse condivise |  |  |  |  |
+| Windows: desktop, finestre, gestione di file e cartelle | X | X |  |  |
+| Installazione del sistema operativo | X | X |  |  |
+| Configurazione OS: componenti, servizi di rete, risorse condivise | X | X |  |  |
+
+> [GIALLO] Sistema operativo: piu probabile in 2a, ma tenuto anche in 1a. Quest'anno non si e potuto fare perche i PC scolastici non davano i diritti da amministratore; dall'anno prossimo, con PC propri da assemblare e disassemblare, gli studenti installano il sistema operativo e si fanno amministratori.
 
 ## 5. Produttivita digitale (Google Workspace e Office)
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Google Drive: cartelle, sottocartelle, condivisione |  |  |  |  |
-| Google Documenti: formattazione, stili, impostazione pagina, sommario |  |  |  |  |
-| Google Fogli: formule, formattazione condizionale, grafici, preventivo |  |  |  |  |
-| Google Presentazioni: modelli, immagini, video |  |  |  |  |
-| Google Moduli: form e sondaggi |  |  |  |  |
-| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali |  |  |  |  |
-| Google Calendar, Classroom, Chat |  |  |  |  |
-| Microsoft Excel: scadenze e calendari |  |  |  |  |
-| Ricerca in rete: ricerca avanzata e operatori booleani |  |  |  |  |
-| Diagrammi di flusso (flowchart) |  |  |  |  |
+| Google Drive: cartelle, sottocartelle, condivisione | X |  |  |  |
+| Google Documenti: formattazione, stili, impostazione pagina, sommario | X |  |  |  |
+| Google Fogli: formule, formattazione condizionale, grafici, preventivo | X |  |  |  |
+| Google Presentazioni: modelli, immagini, video | X |  |  |  |
+| Google Moduli: form e sondaggi | X |  |  |  |
+| Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali | X |  |  |  |
+| Google Calendar, Classroom, Chat | X |  |  |  |
+| Microsoft Excel: scadenze e calendari | X |  |  |  |
+| Ricerca in rete: ricerca avanzata e operatori booleani | X |  |  |  |
+| Diagrammi di flusso (flowchart) | X |  |  |  |
+
+> [GIALLO] Produttivita digitale: va fatta in 1a, perche sono strumenti che servono anche nelle altre materie. Puo essere svolta da un altro docente: di solito il prof. Panaccione (informatica di base), mentre Regge fa l'informatica avanzata. Regge la integra comunque nei suoi progetti.
 
 ## 6. Grafica e multimedia
 
