@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.34** — 18/08/2026
+**Versione 1.35** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -2972,85 +2972,130 @@ Le idee sono le **stesse degli esercizi precedenti**, portate in 3D:
 
 
 # Programma del Corso — Classe 2 {#doc19}
-*Versione 0.1 · 17/08/2026 · Parte: Classe 2 — Informatica*
+*Versione 0.2 · 18/08/2026 · Parte: Classe 2 — Informatica*
 
 ## 1. A colpo d'occhio {#doc19-sec1}
-1. La Classe 2 e l'anno della programmazione che diverte: si creano videogiochi con Godot e piccole applicazioni con Lazarus.
-2. Si mette il primo piede nel mondo delle reti, partendo dalla rete di casa.
-3. Si impara a lavorare in squadra con Git, come in un vero team.
+1. La Classe 2 e l'anno in cui si diventa piu autonomi: si prende in mano il sistema operativo e si cresce nella programmazione con Lazarus (oggetti piu ricchi).
+2. Si allarga la grafica (Canva avanzato, computer graphic, editing video) e si comincia a lavorare come in un team, con i ruoli di un progetto.
+3. Verso fine anno si aprono le prime reti con Cisco Packet Tracer e si avvia il progetto del Negozio Online.
+4. Godot resta da collocare (vedi Griglia): quest'anno, se lo si fa, e solo come assaggio; il percorso completo e nel corso dedicato a Godot.
 
-## 2. Modulo A — Programmare con Godot {#doc19-sec2}
-1. Ripasso e avvio: scene, nodi, segnali, il game loop.
-2. Dai giochi semplici a un gioco un po' piu strutturato, personalizzato da ognuno.
-3. Il quaderno dello studente: documentare e saper spiegare cio che si fa.
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc19-sec2}
+1. Fondamenti (fili rossi): Glossario personale (altri 50 termini, verso i 100 totali); Git di base ripreso e usato nel proprio repository.
+2. Sistema operativo: Windows (desktop, file e cartelle avanzato); installazione del sistema operativo; configurazione (componenti, servizi di rete, risorse condivise).
+3. Grafica e multimedia: Canva avanzato (rimozione sfondo, ritocco); computer graphic (piano cartesiano e schermo, 2D/3D); editing video e presentazioni multimediali.
+4. Programmazione: Lazarus con interfaccia e oggetti piu complessi (RadioButton, ComboBox, PageControl, variabili, funzioni); esercizi (calcolatrice, contasecondi, array, stringhe); interpretato e compilato (Lazarus e Delphi); Godot solo come assaggio, anno da decidere.
+5. Reti: indirizzamento (IP, MAC, DHCP, DNS, gateway, porte); prime reti in Cisco Packet Tracer (verso fine anno).
+6. Mondo del lavoro: figure professionali dell'informatica; project management e ruoli; lavoro in team con simulazione della creazione di un software a ruoli.
+7. Progetti pratici: avvio del Negozio Online (e-commerce); giochi con Godot (da decidere).
+8. Intelligenza artificiale: intelligenza umana e artificiale; uso dell'AI per il proprio quaderno; algoritmi dei social; Industria 4.0 e automazione.
 
-## 3. Modulo B — Lazarus (Free Pascal) {#doc19-sec3}
-1. Riprendere interfacce ed eventi (bottoni, caselle di testo, proprieta).
-2. Piccole applicazioni utili (per esempio una calcolatrice piu completa).
-3. Il ponte tra Lazarus e Godot: stessi concetti, strumenti diversi.
+## 3. Modulo A — Sistema operativo {#doc19-sec3}
+1. Windows: desktop, finestre, gestione avanzata di file e cartelle, impostazioni utili.
+2. Installazione del sistema operativo: cosa serve e i passi principali (su PC nostro o in simulazione).
+3. Configurazione: componenti e servizi, risorse condivise in rete.
 
-## 4. Modulo C — Introduzione alle reti {#doc19-sec4}
-1. Cos'e una rete e a cosa serve.
-2. La rete di casa: modem, router, Wi-Fi, i dispositivi collegati.
-3. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo) e l'idea di "pacchetto".
+## 4. Modulo B — Programmazione con Lazarus {#doc19-sec4}
+1. Interfacce e oggetti piu ricchi: RadioButton, ComboBox, PageControl; far reagire il programma alle scelte.
+2. Variabili e funzioni: memorizzare e riusare; piccole applicazioni utili (calcolatrice completa, timer).
+3. Array e stringhe; interpretato e compilato (Lazarus e Delphi). Godot: eventuale assaggio (scene, nodi, segnali, un bottone che saluta).
 
-## 5. Modulo D — Lavorare in squadra con Git {#doc19-sec5}
-1. Progetti a gruppi con ruoli divisi (scena, nodi, interfaccia, movimenti).
-2. Introduzione a ramo e Pull Request, tutto in modo visuale.
+## 5. Modulo C — Grafica e multimedia {#doc19-sec5}
+1. Canva avanzato: rimozione sfondo e ritocco.
+2. Computer graphic: il piano cartesiano e lo schermo; 2D e 3D in parole semplici.
+3. Editing video e una presentazione multimediale da mostrare.
 
-## 6. Verso la Classe 3 {#doc19-sec6}
-1. L'anno dopo si passa alle reti sul serio e all'hardware: cavi, indirizzi, montaggio, diagnosi.
+## 6. Modulo D — Prime reti {#doc19-sec6}
+1. Indirizzamento: cos'e un indirizzo IP e MAC, DHCP e gateway, DNS e porte.
+2. Cisco Packet Tracer: collegare due PC e una piccola LAN con uno switch; il primo ping (verso fine anno).
 
-## 7. Valutazione {#doc19-sec7}
-1. Progetti mostrabili (giochi e piccole app) e capacita di spiegarli a voce.
+## 7. Modulo E — Mondo del lavoro e Git in team (avvio) {#doc19-sec7}
+1. Le figure professionali dell'informatica e i ruoli di un progetto.
+2. Progetti a gruppi con ruoli divisi (scena, nodi, interfaccia, movimenti/logica): si simula la creazione di un software a ruoli.
+3. Primo assaggio di lavoro condiviso con Git (la Fase 2 vera e propria, branch e Pull Request, e in Classe 3).
+
+## 8. Modulo F — Progetto Negozio Online (avvio) {#doc19-sec8}
+1. Si presenta il progetto e ognuno sceglie il proprio negozio (nome, tema, prodotti).
+2. Prima pagina con i prodotti e un primo ordine via email; ognuno mostra il suo negozio.
+
+## 9. Verso la Classe 3 {#doc19-sec9}
+1. L'anno dopo si passa alle reti sul serio e all'hardware pratico, e arrivano database e web (SQL, HTML, CSS, siti).
+
+## 10. Valutazione {#doc19-sec10}
+1. Progetti mostrabili (app Lazarus, grafica, negozio) e capacita di spiegarli a voce (la prova del nove).
 2. Lavoro di gruppo: collaborazione e integrazione dei contributi.
+3. Carta e penna in ogni lezione: appunti e schemi a mano confluiscono nel quaderno personale.
 
 
 # Programma del Corso — Classe 3 {#doc20}
-*Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
+*Versione 0.2 · 18/08/2026 · Parte: Classe 3 — Informatica*
 
 ## 1. A colpo d'occhio {#doc20-sec1}
-1. La Classe 3 e l'anno in cui si mettono le mani su reti e hardware davvero: cavi, indirizzi, montaggio, diagnosi.
-2. Si consolida anche la programmazione degli anni prima (Godot e Lazarus), con progetti a gruppi.
-3. L'anno prepara la Classe 4, dove si progetta la rete di una scuola in Cisco Packet Tracer.
-4. La valutazione usa prove pratiche vere (cablaggio, piccole reti, buste di hardware e diagnosi).
+1. La Classe 3 e l'anno in cui si mettono le mani su reti e cose vere: cavi, indirizzi, prime reti in Packet Tracer.
+2. Arrivano due grandi novita: i database con l'SQL e il web (pagine HTML e CSS, un sito con Google Sites).
+3. La programmazione cresce (Lazarus anche con grafica e coordinate) e il lavoro a gruppi diventa vero team con Git (branch e Pull Request).
+4. Hardware, sistema operativo e diagnosi tornano come ripresa mirata alle prove di qualifica regionali.
 
-## 2. Modulo A — Reti, livello operativo {#doc20-sec2}
-1. Concetti di base:
-   1. LAN (Local Area Network: rete locale), cosa collega e a cosa serve.
-   2. Indirizzo IP (Internet Protocol: l'indirizzo di un dispositivo in rete), maschera di sottorete e gateway.
-   3. DHCP (Dynamic Host Configuration Protocol: assegna gli indirizzi in automatico).
-2. Cablaggio fisico:
-   1. Il cavo di rete RJ45 e lo standard T568B.
-   2. Crimpare un cavo, costruire una piccola LAN a due PC con uno switch.
-   3. Test del cavo e verifica della connettivita con il comando ping.
-3. Prima rete in Cisco Packet Tracer:
-   1. Cos'e Cisco Packet Tracer (simulatore di reti) e perche si usa a scuola.
-   2. Costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping.
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc20-sec2}
+1. Fondamenti (fili rossi): Glossario personale (verso i 150 termini); Git in team (branch, Pull Request, merge).
+2. Database e gestione dati: concetto di database; SQL (interrogare e gestire i dati); archivi e migrazione; raccolta e analisi dei dati. Strumento proposto: SQLite (da confermare).
+3. Web e siti: come funziona il web; HTML5; CSS; Google Sites.
+4. Reti: cablaggio RJ45 (standard T568B, piccola LAN, ping); indirizzamento applicato; Cisco Packet Tracer con reti piu grandi.
+5. Programmazione: Lazarus con interfaccia ed esercizi (livello 3) e grafica/coordinate (2D/3D, polari e rettangolari); Godot in prosecuzione (anno da decidere).
+6. Grafica e multimedia: Canva avanzato, computer graphic, editing video (in continuita con la Classe 2).
+7. Mondo del lavoro: project management e lavoro in team (livello 3); documentazione tecnica (manuale utente, relazione).
+8. Progetti pratici: Negozio Online che cresce (con un piccolo database); cablaggio RJ45 e prime reti; giochi con Godot (da decidere).
+9. Intelligenza artificiale: uso dell'AI per capire (SQL, HTML, gli errori) senza copiare; algoritmi e dati, consapevolezza e privacy.
 
-## 3. Modulo B — Hardware e sistema operativo {#doc20-sec3}
-1. I componenti del computer: processore, memoria RAM, disco (storage), alimentatore, scheda madre.
-2. Montaggio e smontaggio di una postazione, in sicurezza.
-3. Installazione del sistema operativo (Windows 10) e prime configurazioni.
-4. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
+## 3. Modulo A — Reti, livello operativo {#doc20-sec3}
+1. Concetti di base: LAN (rete locale), indirizzo IP, maschera di sottorete e gateway, DHCP (assegnazione automatica degli indirizzi).
+2. Cablaggio fisico: il cavo RJ45 e lo standard T568B; crimpare un cavo; piccola LAN a due PC con uno switch; test e ping.
+3. Prima rete in Cisco Packet Tracer: cos'e il simulatore, costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping; primo assaggio di segmentazione.
 
-## 4. Modulo C — Preventivo e relazione tecnica {#doc20-sec4}
+## 4. Modulo B — Database e SQL {#doc20-sec4}
+1. Cos'e un database (archivio ordinato di dati): tabelle, righe e colonne, con esempi vicini a loro.
+2. SQL: creare una tabella, la query SELECT con filtri, ordinare e contare, inserire/aggiornare/cancellare.
+3. Archivi e migrazione; prime analisi dei dati (medie, conteggi, un grafico).
+4. Strumento (da confermare): SQLite, dal browser (sqliteonline.com) o portable (DB Browser for SQLite).
+
+## 5. Modulo C — Web: HTML, CSS e siti {#doc20-sec5}
+1. Come funziona il web: client e server in parole semplici.
+2. HTML5: la struttura di una pagina (titoli, testo, immagini, link, sezioni).
+3. CSS: colori, caratteri, spaziature; una pagina che si vede bene anche sul telefono.
+4. Google Sites: pubblicare un sito personale o scolastico (portfolio o progetto).
+
+## 6. Modulo D — Programmazione (consolidamento) {#doc20-sec6}
+1. Lazarus: progetti con piu finestre e oggetti; un gioco/utility scelto dagli studenti (MasterMind, quiz).
+2. Lazarus, grafica e coordinate: disegnare con x e y; coordinate polari e rettangolari; una piccola animazione.
+3. Godot in prosecuzione (se collocato quest'anno): collisioni, aree, punteggio, un primo gioco 2D completo. Il percorso completo e nel corso dedicato.
+
+## 7. Modulo E — Git in team (Fase 2) {#doc20-sec7}
+1. Il concetto di ramo (branch): ognuno lavora sul suo pezzo senza rompere quello degli altri.
+2. La Pull Request: proporre e unire le proprie modifiche al progetto comune; il merge.
+3. Tutto in modo visuale (browser), su un progetto di gruppo vero del corso.
+
+## 8. Modulo F — Hardware, sistema operativo e diagnosi (ripresa per la qualifica) {#doc20-sec8}
+1. Ripresa dei componenti del PC, montaggio/smontaggio in sicurezza.
+2. Installazione del sistema operativo (Windows) e prime configurazioni.
+3. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
+
+> [ROSSO] Disallineamento da tenere presente: nella Griglia, hardware e sistema operativo sono collocati in Classe 1 e 2. Qui tornano perche le prove di qualifica regionali del triennio (buste hardware/OS/diagnosi) li verificano in 3a e 4a. In Classe 3 quindi non sono una prima spiegazione, ma una ripresa e un allenamento mirato alla prova.
+
+## 9. Modulo G — Preventivo e relazione tecnica {#doc20-sec9}
 1. Configurare e preventivare una postazione o un'aula, con prezzi reali.
 2. Scrivere una breve relazione tecnica: cosa serve, quanto costa, perche.
 
-## 5. Modulo D — Consolidare la programmazione {#doc20-sec5}
-1. Riprendere Godot e Lazarus con piccoli progetti a gruppi.
-2. Lavorare in team con Git: ognuno sul suo pezzo, poi si uniscono i contributi (ramo e Pull Request).
-
-## 6. Verso la Classe 4 {#doc20-sec6}
-1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati.
+## 10. Verso la Classe 4 {#doc20-sec10}
+1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati, le VLAN.
 2. Si prepara il terreno per il progetto e la prova di qualifica dell'anno dopo.
 
-## 7. Valutazione {#doc20-sec7}
-1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, montaggio, diagnosi guasti.
-2. Le prove di riferimento del triennio sono raccolte (per ora) nella cartella del materiale da organizzare; verranno trascritte nel formato del corso.
+## 11. Valutazione {#doc20-sec11}
+1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, una query SQL, una pagina web, montaggio e diagnosi.
+2. Capacita di spiegare a voce cio che si e fatto (la prova del nove).
+3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
+4. Le prove di riferimento del triennio sono raccolte (per ora) nel materiale da organizzare; verranno trascritte nel formato del corso.
 
-## 8. Materiale collegato (gia esistente, da trascrivere) {#doc20-sec8}
+## 12. Materiale collegato (gia esistente, da trascrivere) {#doc20-sec12}
 1. Prove di rete in Cisco Packet Tracer (due varianti anti-copia).
 2. Prove di cablaggio RJ45 e connettivita LAN.
 3. Buste di esame su hardware, sistema operativo, diagnosi e preventivo.
@@ -3214,32 +3259,69 @@ Se qualcosa non va:
 
 
 # Programma del Corso — Classe 4 {#doc23}
-*Versione 0.1 · 17/08/2026 · Parte: Classe 4 — Informatica*
+*Versione 0.2 · 18/08/2026 · Parte: Classe 4 — Informatica*
 
 ## 1. A colpo d'occhio {#doc23-sec1}
-1. La Classe 4 porta a un progetto completo: la rete di una scuola, simulata in Cisco Packet Tracer.
-2. Si arriva alla prova di qualifica con validita regionale (Regione Lombardia).
-3. Si consolida tutto il triennio: reti, hardware, documentazione tecnica.
+1. Le reti sono il cuore dell'anno: con Cisco Packet Tracer si progetta e si simula una rete importante, tipo quella di una scuola, con tutti i componenti.
+2. Si approfondiscono i database (SQL avanzato) e il web (un sito piu completo), e si cura la documentazione tecnica.
+3. Ci si prepara al mondo del lavoro: CV Europass, tesine, presentazione del lavoro finito; e alla prova di qualifica con validita regionale (Regione Lombardia).
+4. Il Glossario personale arriva ad almeno 200 termini; il quaderno diventa un vero libro loro.
 
-## 2. Modulo A — Cisco Packet Tracer avanzato {#doc23-sec2}
-1. Progettare la rete di una scuola su piu piani, con una dorsale (backbone) che collega i piani.
-2. Apparati e servizi: router, switch, server, DHCP (assegnazione automatica degli indirizzi).
-3. Suddividere la rete in sottoreti (VLAN: Virtual LAN, reti locali logiche separate).
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc23-sec2}
+1. Fondamenti (fili rossi): Glossario personale (verso i 200 termini totali); Git, le release del progetto (Fase 2).
+2. Reti (il cuore): Cisco Packet Tracer con la rete di una scuola e le VLAN; sicurezza di rete (firewall, segmentazione); indirizzamento avanzato applicato; cablaggio (da valutare).
+3. Database: SQL avanzato (piu condizioni, piu tabelle, raggruppamenti); migrazione e analisi statistica dei dati.
+4. Web: un sito piu completo con HTML, CSS e Google Sites, parte del portfolio.
+5. Programmazione: Lazarus, progetto avanzato; Godot, il progetto boss e il 3D (anno da decidere).
+6. Mondo del lavoro: ricerca del lavoro (CV Europass, ricerca attiva); documentazione tecnica e deployment; lavoro in team e tesine.
+7. Intelligenza artificiale: l'AI come strumento di lavoro maturo; limiti ed etica, collegati al mondo del lavoro.
 
-## 3. Modulo B — Collaudo e documentazione {#doc23-sec3}
-1. Collaudare la rete con il comando ping e verificare che tutto comunichi.
-2. Documentare la rete: mappa degli indirizzi, schema, scelte fatte.
+## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc23-sec3}
+1. Progettare su carta la rete di una scuola (aule, segreteria, laboratori) e poi costruirla: router, switch, PC.
+2. Le VLAN: separare le reti (segreteria, studenti) mantenendo l'ordine; far comunicare le reti tramite il router.
+3. Simulare il funzionamento e testare i percorsi con il ping; documentare il progetto come compito di realta.
 
-## 4. Modulo C — Preventivo dell'infrastruttura {#doc23-sec4}
+## 4. Modulo B — Sicurezza di rete {#doc23-sec4}
+1. I rischi in rete e come ci si difende: il firewall in parole semplici, buone pratiche.
+2. La segmentazione come difesa: perche separare le reti aiuta; si applica alla rete-scuola.
+
+## 5. Modulo C — Database avanzato {#doc23-sec5}
+1. Query piu ricche: piu condizioni, piu tabelle (join semplice), raggruppare e riassumere (GROUP BY).
+2. Un mini-database completo per un caso reale (il negozio o la scuola), dalla progettazione alle query.
+3. Migrazione e analisi statistica dei dati raccolti.
+
+## 6. Modulo D — Web: sito completo {#doc23-sec6}
+1. Un sito piu ricco (piu pagine, menu, stile curato) su un tema scelto.
+2. Cura dell'aspetto e della resa su telefono; pubblicazione come parte del portfolio.
+
+## 7. Modulo E — Programmazione (livello massimo) {#doc23-sec7}
+1. Lazarus: un progetto piu strutturato scelto dagli studenti, con oggetti, dati e grafica insieme.
+2. Godot (se collocato quest'anno): dal 2D al 3D, il progetto boss (movimento, obiettivi, punteggio). Percorso completo nel corso dedicato.
+
+## 8. Modulo F — Collaudo e documentazione {#doc23-sec8}
+1. Collaudare la rete con il ping e verificare che tutto comunichi.
+2. Documentare: mappa degli indirizzi, schema, scelte fatte; manuale utente e relazione tecnica curati; cosa vuol dire mettere in produzione (deployment).
+
+## 9. Modulo G — Preventivo dell'infrastruttura {#doc23-sec9}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 5. La prova di qualifica (diploma) {#doc23-sec5}
+## 10. Modulo H — Mondo del lavoro e tesine {#doc23-sec10}
+1. Il CV Europass e la ricerca attiva del lavoro: dove cercare, come presentarsi, la mail di candidatura.
+2. Il gruppo porta a termine un progetto vero con ruoli chiari; si pubblica la release stabile (Git, Fase 2).
+3. La tesina/presentazione del lavoro finito: struttura, prove e presentazione alla classe.
+
+## 11. La prova di qualifica (diploma) {#doc23-sec11}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 6. Materiale collegato (gia esistente, da trascrivere) {#doc23-sec6}
+## 12. Valutazione {#doc23-sec12}
+1. Il progetto della rete-scuola (progettazione, VLAN, collaudo, documentazione) come prova forte dell'anno.
+2. Prove su database, web e la tesina finale; capacita di spiegare a voce cio che si e fatto.
+3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
+
+## 13. Materiale collegato (gia esistente, da trascrivere) {#doc23-sec13}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
