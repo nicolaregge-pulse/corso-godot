@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.8** — 18/08/2026
+**Versione 1.9** — 18/08/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne: 1a, 2a, 3a, 4a. Metti una X nella
 colonna dell'anno (o degli anni) in cui l'argomento puo stare: uno facile puo
@@ -81,15 +81,19 @@ non sono qui. Nasce unendo i quattro programmi ufficiali con il materiale nostro
 
 | Argomento | 1a | 2a | 3a | 4a |
 |---|:--:|:--:|:--:|:--:|
-| Concetti: reti LAN e WAN, la rete di casa |  |  |  |  |
-| Apparecchi: modem, router, switch, hub, access point, repeater, powerline |  |  |  |  |
-| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  |  |  |
-| Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test |  |  |  |  |
-| Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  |  |  |  |
-| Come viaggiano i dati: pacchetti, rete a pacchetti |  |  |  |  |
-| Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli) |  |  |  |  |
-| Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN) |  |  |  |  |
-| Sicurezza di rete: firewall, segmentazione, rischi in rete |  |  |  |  |
+| Concetti: reti LAN e WAN, la rete di casa | X |  |  |  |
+| Apparecchi: modem, router, switch, hub, access point, repeater, powerline | X |  |  |  |
+| Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping |  |  | X | X? |
+| Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test | X |  |  |  |
+| Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte |  | X | X | X |
+| Come viaggiano i dati: pacchetti, rete a pacchetti | X |  |  |  |
+| Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli) | X |  |  |  |
+| Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN) |  | X | X | X |
+| Sicurezza di rete: firewall, segmentazione, rischi in rete |  |  |  | X |
+
+> [GIALLO] Reti, parte teorica (concetti LAN/WAN, dispositivi di casa, Wi-Fi, come viaggiano i pacchetti, modello ISO/OSI e TCP/IP): in 1a. Si introduce qui e si richiama negli anni successivi, quando si costruiscono reti vere.
+
+> [GIALLO] Cisco Packet Tracer: si inizia a fine 2a, si prosegue un po' in 3a, ed e il cuore pulsante della 4a. In 4a il progetto forte: organizzare una rete importante, tipo quella di una scuola, con tutti i componenti, e simularne il funzionamento (indirizzamento, VLAN, test dei pacchetti). La sicurezza di rete (firewall, segmentazione) accompagna questo lavoro in 4a.
 
 ## 8. Programmazione, logica e algoritmi
 
