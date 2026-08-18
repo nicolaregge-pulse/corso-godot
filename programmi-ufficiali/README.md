@@ -25,6 +25,17 @@ degli Argomenti nascono anche da qui).
 Le tre coorti sono sfalsate di un anno: lo stesso Allegato A, compilato via via
 per la classe che avanza.
 
+## Come si usa l'Allegato A durante l'anno (convenzione del docente)
+1. A inizio anno si evidenzia in GIALLO tutto cio che si ha intenzione di fare in quell'annualita.
+2. Man mano che un argomento viene svolto, si TOGLIE la sua evidenziazione.
+3. A fine anno l'evidenziazione deve essere tutta tolta: cio che e stato tolto perche fatto costituisce il "programma svolto".
+4. Quindi il giallo indica sempre "pianificato ma non ancora fatto"; niente giallo a fine anno.
+
+## Cosa si produce a fine anno (documento per la Regione) — DELIVERABLE
+1. A fine anno, Claude genera il testo del "programma svolto" ORGANIZZATO PER AREA DI COMPETENZA e PER ANNUALITA, nello stesso ordine dell'Allegato A, pronto da COPIARE E INCOLLARE nel documento che la scuola invia alla Regione.
+2. Per far cadere ogni argomento nella competenza giusta serve una corrispondenza tra le nostre materie/macro-aree (Mappa e Griglia) e le competenze dell'Allegato A: e il ponte tra il nostro corso e il formato ufficiale.
+3. Il "cosa e stato svolto" si ricava dai materiali del corso (Piano delle Ore, programmi) o direttamente da cio che e stato de-evidenziato nell'Allegato A.
+
 ## Note d'uso
 1. Sono documenti di sola consultazione: non si modificano. Servono come riferimento.
 2. Il confronto argomento per argomento con il nostro corso e nella Mappa e nella Griglia degli Argomenti (radice del repository).
