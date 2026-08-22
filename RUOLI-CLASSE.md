@@ -1,6 +1,6 @@
 # Ruoli della Classe
 
-**Versione 0.1** — 18/08/2026
+**Versione 0.2** — 18/08/2026
 *Piccoli ruoli affidati agli allievi per aiutare tutta la classe a stare al passo
 e a lavorare bene insieme. Ogni ruolo e un compito chiaro e semplice, a rotazione,
 cosi tutti lo provano. Nessun ruolo e "da meno": ognuno serve al gruppo. Il primo
@@ -27,8 +27,12 @@ e piu importante e il Rallentatore.*
 2. E la voce del gruppo quando il gruppo non riesce a dirlo da solo: molti non alzano la mano per paura di sembrare lenti; il Rallentatore lo fa al posto loro, perche e il suo compito.
 
 ### Il segnale
-1. Si concorda un gesto chiaro con la classe (per esempio la mano aperta alzata, o la mano che "frena"). Deve essere semplice e visibile.
+1. Il gesto e: palmo della mano aperto e alzato, due piccole spinte in avanti ("ta-ta"), come per spingere indietro. Vuol dire "rallenta". Semplice e visibile; si mostra alla classe all'inizio.
 2. Quando il docente vede il segnale, si ferma davvero: rallenta, torna indietro di un passo, o disegna uno schema alla lavagna.
+
+### La nomina
+1. Il docente nomina il Rallentatore all'inizio dell'anno, meglio dopo aver conosciuto un po' i ragazzi (anche dopo il primo mese): si sceglie con cura la persona giusta.
+2. Questa nomina e annotata nel Promemoria delle cose da fare (documento a parte), cosi non si dimentica.
 
 ### Perche conta (soprattutto qui)
 1. In classe ci sono allievi che fanno fatica con la lingua italiana: capire richiede piu tempo, e non capire NON e una colpa, e normale.
