@@ -54,6 +54,7 @@ DOCS = {
     "git-allievi":  {"src": "../ORGANIZZAZIONE-GIT-ALLIEVI.md",   "title": "Organizzazione Git per gli Allievi"},
     "regole-lab":   {"src": "../REGOLE-LABORATORIO.md",           "title": "Regole del Laboratorio di Informatica"},
     "programmi-ufficiali": {"src": "../programmi-ufficiali/README.md", "title": "Programmi Ufficiali (Allegato A) — nota"},
+    "ruoli-classe": {"src": "../RUOLI-CLASSE.md",                     "title": "Ruoli della Classe"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},

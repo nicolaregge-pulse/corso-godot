@@ -1,6 +1,6 @@
 # Corso Informatica
 
-**Versione 1.9** — 18/08/2026
+**Versione 1.10** — 18/08/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che
@@ -45,6 +45,7 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 | `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.3 |
 | `ORGANIZZAZIONE-GIT-ALLIEVI.md` | Come organizziamo **Git per la classe**: un'organizzazione comune con un **repository privato per ogni allievo** (GitHub Classroom). | 0.1 |
 | `REGOLE-LABORATORIO.md` | Le **regole del laboratorio** di informatica: rispetto, cura delle postazioni, carta e penna, uso di internet/AI, con una versione breve da appendere. | 0.1 |
+| `RUOLI-CLASSE.md` | I **ruoli della classe** (a rotazione) per aiutare il gruppo: il **Rallentatore** (segnala quando si va troppo veloce) e altri ruoli proposti. | 0.1 |
 | `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.2 |
 | `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
 | `programma-svolto/` (cartella) | I **programmi svolti** per anno e classe (Allegato A vivo), da consegnare alla Regione. Organizzati in `<anno>/<classe>/`. | — |
