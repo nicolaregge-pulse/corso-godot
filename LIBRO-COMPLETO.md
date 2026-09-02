@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.51** — 18/08/2026
+**Versione 1.52** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1928,572 +1928,570 @@ per la classe che avanza.
 
 
 # Le Mie Parti nell'Allegato A {#doc14}
-*Versione 0.1 · 02/09/2026 · Parte: Riferimento*
+*Versione 0.2 · 02/09/2026 · Parte: Riferimento*
 
-> [BLU] Mappatura classi da confermare: PFP1 -> 2a, PFP2 -> 3a, PFP3 -> storico Operatore della 4a, PFP4 Tecnico -> anno di qualifica della 4a. La 2a e la 3a contengono anche gli anni precedenti (documenti cumulativi); la 4a Tecnico e ripartita da capo.
+> [BLU] Mappatura classi da confermare: PFP1 -> 2a, PFP2 -> 3a, PFP3 -> storico Operatore della 4a, PFP4 Tecnico -> anno di qualifica della 4a.
 
 ## Classe 2 (2026/27) {#doc14-sec1}
 *dal PFP 1 Operatore — nel 2025/26 era la 1a (compilato il I anno)*
 
 ### Competenza 8. Utilizzare le tecnologie informatiche per la comunicazione e la ricezione di informazioni  —  I Anno
-1. Presentazione corso
-2. Creazione Area Logica
-3. Norme comuni
-4. Cosa faremo quest'anno.
-5. Memorie di massa e RAM
-6. Video di Jobs
-7. Introduzione Glossario informatico
-8. Creazione Glossario
-9. Architettura del PC
-10. Utilizzo della Suite Google
-11. La rete: Hardware e software
-12. Reti e cittadinanza digitale Tipologie di reti LAN e WAN, protocolli di rete e funzionamento del web, sicurezza informatica, privacy e uso consapevole della tecnologia.
-13. Social e comunicazione sulla rete
-14. Rischi in rete
+Presentazione corso  
+Creazione Area Logica  
+Norme comuni  
+Cosa faremo quest'anno.  
+Memorie di massa e RAM  
+Video di Jobs  
+Introduzione Glossario informatico  
+Creazione Glossario  
+Architettura del PC  
+Utilizzo della Suite Google  
+La rete: Hardware e software  
+Reti e cittadinanza digitale Tipologie di reti LAN e WAN, protocolli di rete e funzionamento del web, sicurezza informatica, privacy e uso consapevole della tecnologia.  
+Social e comunicazione sulla rete  
+Rischi in rete
 
 ### Competenza 13. Approntare, monitorare e curare la manutenzione ordinaria di strumenti, utensili, attrezza  —  I Anno
-1. Le parti fondamentali di un PC
-2. Hardware e architettura Architettura di Von Neumann, componenti della CPU, memorie RAM e ROM, memorie di massa, periferiche di input e output, evoluzione storica dei calcolatori.
-3. Rappresentazione delle informazioni Sistemi di numerazione binario decimale ed esadecimale, codifica del testo ASCII e Unicode, digitalizzazione di immagini e suoni, bit byte e unità di misura.
-4. Assemblare un PC
-5. Informazioni di base sulle reti
+Le parti fondamentali di un PC  
+Hardware e architettura Architettura di Von Neumann, componenti della CPU, memorie RAM e ROM, memorie di massa, periferiche di input e output, evoluzione storica dei calcolatori.  
+Rappresentazione delle informazioni Sistemi di numerazione binario decimale ed esadecimale, codifica del testo ASCII e Unicode, digitalizzazione di immagini e suoni, bit byte e unità di misura.  
+Assemblare un PC  
+Informazioni di base sulle reti
 
 ### Competenza 14. Operare in sicurezza e nel rispetto delle norme di igiene e di salvaguardia ambientale, id  —  I Anno
-1. Prevenzione e protezione
-2. Organizzazione della prevenzione aziendale
-3. rischio-infortuni
-4. Meccanici e elettrici generali
-5. Macchine attrezzature
-6. Etichettatura rischi biologici e nucleari
-7. Rischi fisici vibrazioni rumore e radiazioni
-8. Microclima illuminazione videoterminali
-9. dpi
-10. organizzazione del lavoro
-11. ambiente di lavoro
-12. stress da lavoro correlato
-13. Movimentazione manuali carichi
-14. Movimentazione merci
-15. Segnaletica e emergenza
-16. rischio incendi e procedure di esodo
-17. procedure di sicurezza in base al profilo di rischio
-18. Rischio procedure organizzative primo soccorso
-19. incendi e infortuni mancati
-20. rischio agricoltura
+Prevenzione e protezione  
+Organizzazione della prevenzione aziendale  
+rischio-infortuni  
+Meccanici e elettrici generali  
+Macchine attrezzature  
+Etichettatura rischi biologici e nucleari  
+Rischi fisici vibrazioni rumore e radiazioni  
+Microclima illuminazione videoterminali  
+dpi  
+organizzazione del lavoro  
+ambiente di lavoro  
+stress da lavoro correlato  
+Movimentazione manuali carichi  
+Movimentazione merci  
+Segnaletica e emergenza  
+rischio incendi e procedure di esodo  
+procedure di sicurezza in base al profilo di rischio  
+Rischio procedure organizzative primo soccorso  
+incendi e infortuni mancati  
+rischio agricoltura
 
 ### Competenza 15. Installare, configurare e utilizzare supporti informatici hardware e software tipici dell’  —  I Anno
-1. Architettura del PC
-2. Utilizzo della Suite Google
-3. Applicativi di produttività Elaborazione testi, fogli di calcolo con formule e funzioni, creazione di grafici, sviluppo di presentazioni multimediali.
-4. La rete: Hardware e software
-5. Social e comunicazione sulla rete
-6. Rischi in rete
-7. Windows
-8. Il Web
-9. Strumenti Google
-10. Configuratore PC
-11. Doc configurazione PC
-12. Accesso a Classroom
-13. Case, Ram, VGA
-14. Google chat - Piantina di classe
-15. Impostazioni lavori in Document, Classroom, creazione grafici in Fogli
-16. Document e Classroom
-17. Inserimento immagini - Grafico con Fogli
-18. Motherboard
-19. Motherboard - Compito Slot - Socket
-20. Assegnamento compito sugli Hard Disk e inizio lavori in classe
-21. Smontaggio e assemblaggio PC
-22. Assemblaggio PC
-23. Cookies
-24. I cookies tecnici (sessione, generici, persistenti), stat,profil
-25. Video Cookies
-26. Creazione presentazione CONFIGURATORE
-27. Realizzazione e prova configuratore
-28. impostazione pagina e tabella
+Architettura del PC  
+Utilizzo della Suite Google  
+Applicativi di produttività Elaborazione testi, fogli di calcolo con formule e funzioni, creazione di grafici, sviluppo di presentazioni multimediali.  
+La rete: Hardware e software  
+Social e comunicazione sulla rete  
+Rischi in rete  
+Windows  
+Il Web  
+Strumenti Google  
+Configuratore PC  
+Doc configurazione PC  
+Accesso a Classroom  
+Case, Ram, VGA  
+Google chat - Piantina di classe  
+Impostazioni lavori in Document, Classroom, creazione grafici in Fogli  
+Document e Classroom  
+Inserimento immagini - Grafico con Fogli  
+Motherboard  
+Motherboard - Compito Slot - Socket  
+Assegnamento compito sugli Hard Disk e inizio lavori in classe  
+Smontaggio e assemblaggio PC  
+Assemblaggio PC  
+Cookies  
+I cookies tecnici (sessione, generici, persistenti), stat,profil  
+Video Cookies  
+Creazione presentazione CONFIGURATORE  
+Realizzazione e prova configuratore  
+impostazione pagina e tabella
 
 ### Competenza 16. Eseguire la manutenzione ordinaria e straordinaria di sistemi, reti, dispositivi e termina  —  I Anno
-1. Componenti PC (memoria di massa e cable)
-2. Glossario rete
-3. Continuazione reti WLAN e pacchetti
-4. Velocità 2.4 Ghz, 5 Ghz, cavo e Speed Test
-5. Router switch, Hub Powerline, Data extender
-6. La rete in casa
-7. Stampanti laser e Jet
-8. Lavoro in classe: doc stampante laser
-9. Scheda di ritiro PC
-10. Configurazione PC
-11. Pacchetti di rete
-12. Rete a pacchetti
-13. Modem e Voip
-14. Le reti, GPS
-15. Reti MAC address
+Componenti PC (memoria di massa e cable)  
+Glossario rete  
+Continuazione reti WLAN e pacchetti  
+Velocità 2.4 Ghz, 5 Ghz, cavo e Speed Test  
+Router switch, Hub Powerline, Data extender  
+La rete in casa  
+Stampanti laser e Jet  
+Lavoro in classe: doc stampante laser  
+Scheda di ritiro PC  
+Configurazione PC  
+Pacchetti di rete  
+Rete a pacchetti  
+Modem e Voip  
+Le reti, GPS  
+Reti MAC address
 
 ## Classe 3 (2026/27) {#doc14-sec2}
 *dal PFP 2 Operatore — nel 2025/26 era la 2a (compilati I e II anno)*
 
 ### Competenza 8. Utilizzare le tecnologie informatiche per la comunicazione e la ricezione di informazioni  —  II Anno
-1. L’ambiente Windows
-2. Creazioni di applicazioni con Lazarus
-3. Programmazione e Sviluppo Software Lazarus; funzioni, progetto, tipi di file,
-4. Esercizi: Master Mind e Slide Show
-5. Componenti UI Lazarus: RadioButton RadioGroup CheckGroup ComboBox PageControl
-6. Logica e Algoritmi generazione numeri casuali random risolutore prodotti notevoli
-7. Gestione dati stringhe array di caratteri variabili intere numeri
-8. Confronto ambienti Delphi vs Lazarus Rad Studio 12
-9. Conversione coordinate polari e rettangolari con Lazarus Software App Web Legacy Cookie e Project Management Check Code stringa e Informatica Path Lazarus calcolatrice somme e moltiplicazioni
-10. Il mondo del lavoro: configurare, assemblare e riparare
-11. Hardware e Architettura Assemblaggio e componenti del PC inclusi modelli economici Configurazione PC e interrogazione stampante Dischi RAID e partizione Internet hardware e software Switch di rete Bus e cicli di clock Analogia Biblioteca PC
-12. Scheda di intervento e fatturazione
+L’ambiente Windows  
+Creazioni di applicazioni con Lazarus  
+Programmazione e Sviluppo Software Lazarus; funzioni, progetto, tipi di file,  
+Esercizi: Master Mind e Slide Show  
+Componenti UI Lazarus: RadioButton RadioGroup CheckGroup ComboBox PageControl  
+Logica e Algoritmi generazione numeri casuali random risolutore prodotti notevoli  
+Gestione dati stringhe array di caratteri variabili intere numeri  
+Confronto ambienti Delphi vs Lazarus Rad Studio 12  
+Conversione coordinate polari e rettangolari con Lazarus Software App Web Legacy Cookie e Project Management Check Code stringa e Informatica Path Lazarus calcolatrice somme e moltiplicazioni  
+Il mondo del lavoro: configurare, assemblare e riparare  
+Hardware e Architettura Assemblaggio e componenti del PC inclusi modelli economici Configurazione PC e interrogazione stampante Dischi RAID e partizione Internet hardware e software Switch di rete Bus e cicli di clock Analogia Biblioteca PC  
+Scheda di intervento e fatturazione
 
 ### Competenza 12. Definire e pianificare fasi delle operazioni da compiere, nel rispetto della normativa sul  —  I Anno
-1. Presentazione corso
-2. Creazione Area Logica
-3. Norme comuni
-4. Inizializzazione Log book, regole e regolamento.
-5. Cosa faremo quest'anno.
-6. Memorie di massa e RAM in biblioteca JOBS
-7. Interrogazione su video di Jobs
-8. Introduzione Glossario informatico
-9. Intervento Policy Fumo
-10. Interrogazione Steve Jobs
-11. INTERVENTO SUL BULLISMO DA PARTE DELLA REFERENTE MAZZOLA
-12. The Great Hack
-13. NVIDIA analisi azienda
-14. Computer Graphic
-15. Supplenza, visione del film The Imitation game
-16. Creazione Glossario
-17. Curriculum Vitae
-18. RAE brainstorm
-19. Monitor LCD
-20. Progetto RAE
+Presentazione corso  
+Creazione Area Logica  
+Norme comuni  
+Inizializzazione Log book, regole e regolamento.  
+Cosa faremo quest'anno.  
+Memorie di massa e RAM in biblioteca JOBS  
+Interrogazione su video di Jobs  
+Introduzione Glossario informatico  
+Intervento Policy Fumo  
+Interrogazione Steve Jobs  
+INTERVENTO SUL BULLISMO DA PARTE DELLA REFERENTE MAZZOLA  
+The Great Hack  
+NVIDIA analisi azienda  
+Computer Graphic  
+Supplenza, visione del film The Imitation game  
+Creazione Glossario  
+Curriculum Vitae  
+RAE brainstorm  
+Monitor LCD  
+Progetto RAE
 
 ### Competenza 12. Definire e pianificare fasi delle operazioni da compiere, nel rispetto della normativa sul  —  II Anno
-1. Il mondo del lavoro: configurare, assemblare e riparare
-2. Scheda di intervento e fatturazione
-3. Rapporto col cliente
-4. Cittadinanza Digitale e Web Gestione contenuti Ban Spam UK Apple Fake news e pubblicità sul Web
-5. Google Sites Moduli
-6. Documents e Classroom
-7. Mobilità e informatica
-8. Algoritmo CRC su mail e codice fiscale Edit e caption su immagini Simulazione ufficio acquisti per acquisto stampante Simulazione moderatore per BAN e BOT sui social Cisco PT YouTube
-9. Cartografia e Grafica Rappresentazione della terra e algoritmi Coordinate Google Windows e vari portali Misure e algoritmi dei continenti Grafica 2D e 3D Creazione personale computer graphic Map Earth misure sulla terra La terra non è piatta algoritmi
+Il mondo del lavoro: configurare, assemblare e riparare  
+Scheda di intervento e fatturazione  
+Rapporto col cliente  
+Cittadinanza Digitale e Web Gestione contenuti Ban Spam UK Apple Fake news e pubblicità sul Web  
+Google Sites Moduli  
+Documents e Classroom  
+Mobilità e informatica  
+Algoritmo CRC su mail e codice fiscale Edit e caption su immagini Simulazione ufficio acquisti per acquisto stampante Simulazione moderatore per BAN e BOT sui social Cisco PT YouTube  
+Cartografia e Grafica Rappresentazione della terra e algoritmi Coordinate Google Windows e vari portali Misure e algoritmi dei continenti Grafica 2D e 3D Creazione personale computer graphic Map Earth misure sulla terra La terra non è piatta algoritmi
 
 ### Competenza 13. Approntare, monitorare e curare la manutenzione ordinaria di strumenti, utensili, attrezza  —  II Anno
-1. Configurare, assemblare e riparare
-2. Scheda di intervento e fatturazione
-3. Attività Didattiche e Orientamento Accoglienza presentazione classe e programma secondo anno Regolamento laboratorio e conoscenza classe Ripasso correzione verifiche e preparazione PanQuiz informatica e lavori di gruppo tavola rotonda
-4. Visione film Yesterday Alien
-5. Robinson Marcatore e discorso di Steve Jobs Glossario di informatica e formattazione Bit e byte
-6. Individuare malfunzionamenti su applicativi. Debug e risoluzioni problemi con Lazarus
-7. Lazarus vs Delphi
+Configurare, assemblare e riparare  
+Scheda di intervento e fatturazione  
+Attività Didattiche e Orientamento Accoglienza presentazione classe e programma secondo anno Regolamento laboratorio e conoscenza classe Ripasso correzione verifiche e preparazione PanQuiz informatica e lavori di gruppo tavola rotonda  
+Visione film Yesterday Alien  
+Robinson Marcatore e discorso di Steve Jobs Glossario di informatica e formattazione Bit e byte  
+Individuare malfunzionamenti su applicativi. Debug e risoluzioni problemi con Lazarus  
+Lazarus vs Delphi
 
 ### Competenza 14. Operare in sicurezza e nel rispetto delle norme di igiene e di salvaguardia ambientale, id  —  II Anno
-1. Concetti di rischio e danno
-2. Prevenzione e protezione
-3. Organizzazione della prevenzione aziendale
-4. rischio-infortuni
-5. Meccanici e elettrici generali
-6. Macchine attrezzature
-7. Etichettatura rischi biologici e nucleari
-8. Rischi fisici vibrazioni rumore e radiazioni
-9. Microclima illuminazione videoterminali
-10. dpi
-11. organizzazione del lavoro
-12. ambiente di lavoro
-13. stress da lavoro correlato
-14. Movimentazione manuali carichi
-15. Movimentazione merci
-16. Segnaletica e emergenza
-17. rischio incendi e procedure di esodo
-18. procedure di sicurezza in base al profilo di rischio
-19. Rischio procedure organizzative primo soccorso
-20. incendi e infortuni mancati
-21. rischio agricoltura
+Concetti di rischio e danno  
+Prevenzione e protezione  
+Organizzazione della prevenzione aziendale  
+rischio-infortuni  
+Meccanici e elettrici generali  
+Macchine attrezzature  
+Etichettatura rischi biologici e nucleari  
+Rischi fisici vibrazioni rumore e radiazioni  
+Microclima illuminazione videoterminali  
+dpi  
+organizzazione del lavoro  
+ambiente di lavoro  
+stress da lavoro correlato  
+Movimentazione manuali carichi  
+Movimentazione merci  
+Segnaletica e emergenza  
+rischio incendi e procedure di esodo  
+procedure di sicurezza in base al profilo di rischio  
+Rischio procedure organizzative primo soccorso  
+incendi e infortuni mancati  
+rischio agricoltura
 
 ### Competenza 15. Installare, configurare e utilizzare supporti informatici hardware e software tipici dell’  —  II Anno
-1. Windows
-2. Creazioni di applicazioni semplici con Lazarus
-3. Il mondo del lavoro: configurare, assemblare e riparare
-4. Prove di alcuni Software disponibili in rete
+Windows  
+Creazioni di applicazioni semplici con Lazarus  
+Il mondo del lavoro: configurare, assemblare e riparare  
+Prove di alcuni Software disponibili in rete
 
 ### Competenza 16. Eseguire la manutenzione ordinaria e straordinaria di sistemi, reti, dispositivi e termina  —  II Anno
-1. Reti Hardware e software
-2. Assemblare e riparare un PC
+Reti Hardware e software  
+Assemblare e riparare un PC
 
 ## Classe 4 (2026/27) — storico triennio Operatore {#doc14-sec3}
 *dal PFP 3 Operatore — compilati II e III anno*
 
 ### Competenza 2. Comunicare utilizzando semplici materiali visivi, sonori e digitali, con  —  II Anno
-1. utilizzo di word, Document, Canva e altri strumenti per scrivere contenuti diversi
+utilizzo di word, Document, Canva e altri strumenti per scrivere contenuti diversi
 
 ### Competenza 8. Utilizzare le tecnologie informatiche per la comunicazione e la ricezione di informazioni  —  III Anno
-1. I Social
-2. Privacy
-3. Sicurezza
-4. La comunicazione sul Web
-5. Netiquette
-6. Progetto finale
-7. Suddivisione del progetto in parti
-8. meccanica
-9. elettronica
-10. informatica/codice
-11. Creazione tesina individuale
-12. Introduzione Cisco Packet Tracer: esercitazione su semplici reti
+I Social  
+Privacy  
+Sicurezza  
+La comunicazione sul Web  
+Netiquette  
+Progetto finale  
+Suddivisione del progetto in parti  
+meccanica  
+elettronica  
+informatica/codice  
+Creazione tesina individuale  
+Introduzione Cisco Packet Tracer: esercitazione su semplici reti
 
 ### Competenza 12. Definire e pianificare fasi delle operazioni da compiere, nel rispetto della normativa sul  —  II Anno
-1. Analogico Digitale
-2. arduino display
-3. arduino sensori: rilevatore di gas
-4. Bullismo
-5. Censimento competenze
-6. Cerca, Definisci e informati...
-7. Compito assegnato su Classroom
-8. Compiti estivi - Glossario
-9. Computer graphics Death, Love, Robot
-10. Creazione guida HOW-TO
-11. Creazione indice programma svolto
-12. Excel
-13. Film su Hacking
-14. Finalizzazione lavoro NVIDIA
-15. Genio ribelle
-16. Glossario correzione e miglioramento
-17. Hard Disk - meccanica e proble - recupero dati- chkdsk - Disk Recovery
-18. Lavoro su auto a guida autonoma
-19. Materiale bullismo
-20. Organizzazione stage
-21. Preparazione stage
-22. Realizzazione materiale Bullismo
-23. Resoconto Stage
-24. Sistemi di numerazione
-25. Spedizioni materiale informatico e costi. Amazon vs Temu
-26. The Great Hack
-27. Tinkercad
-28. Tinkercad Blocchi
-29. Tirocinio analisi aziende
-30. Valutazione competenze personali
-31. Video sui cookies
-32. Lazarus/Object PAscal: Esempi di programmazione in ambiente visuale Windows
+Analogico Digitale  
+arduino display  
+arduino sensori: rilevatore di gas  
+Bullismo  
+Censimento competenze  
+Cerca, Definisci e informati...  
+Compito assegnato su Classroom  
+Compiti estivi - Glossario  
+Computer graphics Death, Love, Robot  
+Creazione guida HOW-TO  
+Creazione indice programma svolto  
+Excel  
+Film su Hacking  
+Finalizzazione lavoro NVIDIA  
+Genio ribelle  
+Glossario correzione e miglioramento  
+Hard Disk - meccanica e proble - recupero dati- chkdsk - Disk Recovery  
+Lavoro su auto a guida autonoma  
+Materiale bullismo  
+Organizzazione stage  
+Preparazione stage  
+Realizzazione materiale Bullismo  
+Resoconto Stage  
+Sistemi di numerazione  
+Spedizioni materiale informatico e costi. Amazon vs Temu  
+The Great Hack  
+Tinkercad  
+Tinkercad Blocchi  
+Tirocinio analisi aziende  
+Valutazione competenze personali  
+Video sui cookies  
+Lazarus/Object PAscal: Esempi di programmazione in ambiente visuale Windows
 
 ### Competenza 12. Definire e pianificare fasi delle operazioni da compiere, nel rispetto della normativa sul  —  III Anno
-1. Ideazione, pianificazione, realizzazione e presentazione di un progetto complesso
-2. Ideazione del progetto, analisi difficoltà. Spike
+Ideazione, pianificazione, realizzazione e presentazione di un progetto complesso  
+Ideazione del progetto, analisi difficoltà. Spike
 
 ### Competenza 13. Approntare, monitorare e curare la manutenzione ordinaria di strumenti, utensili, attrezza  —  II Anno
-1. Disassemblare e assemblare un pc
-2. Configurare un pc in base alle esigenze di un cliente considerando la compatibilità tra i componenti
+Disassemblare e assemblare un pc  
+Configurare un pc in base alle esigenze di un cliente considerando la compatibilità tra i componenti
 
 ### Competenza 13. Approntare, monitorare e curare la manutenzione ordinaria di strumenti, utensili, attrezza  —  III Anno
-1. Riparazione di PC
-2. Ottenere un PC funzionante da alcuni non funzionanti
+Riparazione di PC  
+Ottenere un PC funzionante da alcuni non funzionanti
 
 ### Competenza 14. Operare in sicurezza e nel rispetto delle norme di igiene e di salvaguardia ambientale, id  —  II Anno
-1. Sicurezza 1 ora Concetti di rischio e danno
-2. Sicurezza 2a ora Prevenzione e protezione
-3. Sicurezza 3 ora Organizzazione della prevenzione aziendale
-4. Sicurezza 8 ora: cadute, esplosioni, chimica, polveri, fumi,...
-5. Sicurezza Cybersecurity
-6. Sicurezza dei dati
-7. Sicurezza e Primo soccorso
-8. Sicurezza macchine - attrezzature
-9. SICUREZZA ORA 10 radiazioni rumori vibrazioni
-10. SICUREZZA ORA 11 microclima
-11. Sicurezza ora 4: Organi di vigilanza , controllo e assistenza
-12. Sicurezza ora 5: rischio infortuni
-13. Sicurezza ora 6 Rischi Elettrici
-14. SICUREZZA ORA 9 rischi cancerogeni e biologici
-15. Sicurezza sul lavoro
-16. La corrente nei laboratori e a casa. Spine, magneto-termico, diff.
-17. Piano di evacuazione
+Sicurezza 1 ora Concetti di rischio e danno  
+Sicurezza 2a ora Prevenzione e protezione  
+Sicurezza 3 ora Organizzazione della prevenzione aziendale  
+Sicurezza 8 ora: cadute, esplosioni, chimica, polveri, fumi,...  
+Sicurezza Cybersecurity  
+Sicurezza dei dati  
+Sicurezza e Primo soccorso  
+Sicurezza macchine - attrezzature  
+SICUREZZA ORA 10 radiazioni rumori vibrazioni  
+SICUREZZA ORA 11 microclima  
+Sicurezza ora 4: Organi di vigilanza , controllo e assistenza  
+Sicurezza ora 5: rischio infortuni  
+Sicurezza ora 6 Rischi Elettrici  
+SICUREZZA ORA 9 rischi cancerogeni e biologici  
+Sicurezza sul lavoro  
+La corrente nei laboratori e a casa. Spine, magneto-termico, diff.  
+Piano di evacuazione
 
 ### Competenza 15. Installare, configurare e utilizzare supporti informatici hardware e software tipici dell’  —  III Anno
-1. Tuning del PC
-2. Programmazione con Lazarus
+Tuning del PC  
+Programmazione con Lazarus
 
 ### Competenza 16. Eseguire la manutenzione ordinaria e straordinaria di sistemi, reti, dispositivi e termina  —  III Anno
-1. Protocolli di rete
-2. TCP/IP porte
+Protocolli di rete  
+TCP/IP porte
 
 ## Classe 4 (2026/27) — anno di qualifica (Tecnico Informatico) {#doc14-sec4}
 *dal PFP 4 Tecnico — ripartito come nuova tipologia di corso*
 
 ### Competenza 7. Utilizzare le reti e gli strumenti informatici in maniera consapevole nelle attività di st  —  IV Anno
-1. Analisi del dominio e del sorgente delle mail
-2. Nas, RAID e cloud
-3. Computer graphic: il piano cartesiano e lo schermo del PC
-4. Strumenti in rete
-5. Reti e Architettura di Rete Cisco Packet Tracer esercitazioni e segmentazione rete Lazarus e Cisco Packet Tracer Router e Switch segmentazione Cisco Packet Tracer Architettura di rete e figure professionali Cablatura classe Firewall MAC address DHCP DNS e Tcp/IP Dal Dominio all'indirizzo IP Switch di rete Cisco PT YouTube
+Analisi del dominio e del sorgente delle mail  
+Nas, RAID e cloud  
+Computer graphic: il piano cartesiano e lo schermo del PC  
+Strumenti in rete  
+Reti e Architettura di Rete Cisco Packet Tracer esercitazioni e segmentazione rete Lazarus e Cisco Packet Tracer Router e Switch segmentazione Cisco Packet Tracer Architettura di rete e figure professionali Cablatura classe Firewall MAC address DHCP DNS e Tcp/IP Dal Dominio all'indirizzo IP Switch di rete Cisco PT YouTube
 
 
 # Programma Preventivo 2026/27 (per competenza) {#doc15}
-*Versione 0.3 · 02/09/2026 · Parte: Riferimento*
-
-> [BLU] Scheletro dagli argomenti (macro) della Griglia; la Sicurezza e la struttura ufficiale a 16 ore. Si puo arricchire col dettaglio del Piano delle Ore.
+*Versione 0.4 · 02/09/2026 · Parte: Riferimento*
 
 ## Classe 1 (2026/27)  (nuova prima) {#doc15-sec1}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
-1. Rappresentazione dei dati: binario, decimale, esadecimale
-2. Codifica del testo (ASCII, Unicode), bit e byte
-3. Digitalizzazione di immagini e suoni
-4. Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale)
-5. Diagrammi di flusso (flowchart)
-6. Logica e problem solving; algoritmi e strutture di controllo
-7. Coding a blocchi e porte logiche booleane (AND, OR, NOT)
+Rappresentazione dei dati: binario, decimale, esadecimale  
+Codifica del testo (ASCII, Unicode), bit e byte  
+Digitalizzazione di immagini e suoni  
+Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale)  
+Diagrammi di flusso (flowchart)  
+Logica e problem solving; algoritmi e strutture di controllo  
+Coding a blocchi e porte logiche booleane (AND, OR, NOT)
 
 ### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
-1. 1a ora — Concetti di rischio e danno
-2. 2a ora — Prevenzione e protezione
-3. 3a ora — Organizzazione della prevenzione aziendale
-4. 4a ora — Organi di vigilanza, controllo e assistenza
-5. 5a ora — Rischio infortuni
-6. 6a ora — Rischi meccanici generali; rischi elettrici generali
-7. 7a ora — Macchine e attrezzature
-8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
-9. 9a ora — Rischi cancerogeni; rischi biologici
-10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
-11. 11a ora — Microclima ed illuminazione; videoterminali
-12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
-13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
-14. 14a ora — Segnaletica ed emergenza
-15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
-16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
+1a ora — Concetti di rischio e danno  
+2a ora — Prevenzione e protezione  
+3a ora — Organizzazione della prevenzione aziendale  
+4a ora — Organi di vigilanza, controllo e assistenza  
+5a ora — Rischio infortuni  
+6a ora — Rischi meccanici generali; rischi elettrici generali  
+7a ora — Macchine e attrezzature  
+8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri  
+9a ora — Rischi cancerogeni; rischi biologici  
+10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni  
+11a ora — Microclima ed illuminazione; videoterminali  
+12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato  
+13a ora — Movimentazione manuale dei carichi; movimentazione merci  
+14a ora — Segnaletica ed emergenza  
+15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio  
+16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
-1. Cos'e l'informatica, uso consapevole della tecnologia
-2. Storia ed evoluzione dei calcolatori
-3. Organizzazione digitale: cartelle ad albero, gestione del tempo
-4. Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre)
-5. Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD)
-6. Assemblaggio e smontaggio di un PC
-7. Configuratore PC a budget e documentazione della configurazione (vedi Scheda Configuratore)
-8. RAID e partizioni dei dischi
-9. Windows: desktop, finestre, gestione di file e cartelle
-10. Installazione del sistema operativo
-11. Configurazione OS: componenti, servizi di rete, risorse condivise
-12. Google Drive: cartelle, sottocartelle, condivisione
-13. Google Fogli: formule, formattazione condizionale, grafici, preventivo
-14. Google Moduli: form e sondaggi
-15. Google Calendar, Classroom, Chat
-16. Microsoft Excel: scadenze e calendari
-17. Ricerca in rete: ricerca avanzata e operatori booleani
-18. Intelligenza umana e artificiale: concetti e limiti
-19. Usare un assistente AI per costruire il proprio libro di testo/quaderno
-20. Industria 4.0 e automazione
+Cos'e l'informatica, uso consapevole della tecnologia  
+Storia ed evoluzione dei calcolatori  
+Organizzazione digitale: cartelle ad albero, gestione del tempo  
+Architettura del PC (Von Neumann, CPU, RAM/ROM, memorie, scheda madre)  
+Scelta dei componenti (case, RAM, scheda video, socket/slot, HDD/SSD)  
+Assemblaggio e smontaggio di un PC  
+Configuratore PC a budget e documentazione della configurazione (vedi Scheda Configuratore)  
+RAID e partizioni dei dischi  
+Windows: desktop, finestre, gestione di file e cartelle  
+Installazione del sistema operativo  
+Configurazione OS: componenti, servizi di rete, risorse condivise  
+Google Drive: cartelle, sottocartelle, condivisione  
+Google Fogli: formule, formattazione condizionale, grafici, preventivo  
+Google Moduli: form e sondaggi  
+Google Calendar, Classroom, Chat  
+Microsoft Excel: scadenze e calendari  
+Ricerca in rete: ricerca avanzata e operatori booleani  
+Intelligenza umana e artificiale: concetti e limiti  
+Usare un assistente AI per costruire il proprio libro di testo/quaderno  
+Industria 4.0 e automazione
 
 ### Competenza 16 — Tecnico-professionale d'indirizzo — manutenzione di sistemi, reti e dispositivi
-1. Manutenzione ordinaria e preventiva; tuning del PC
-2. Diagnosi guasti (troubleshooting): metodo e fasi
-3. Riparazione: PC funzionante da piu guasti; scheda intervento
-4. Concetti: reti LAN e WAN, la rete di casa
-5. Apparecchi: modem, router, switch, hub, access point, repeater, powerline
-6. Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test
-7. Come viaggiano i dati: pacchetti, rete a pacchetti
-8. Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli)
+Manutenzione ordinaria e preventiva; tuning del PC  
+Diagnosi guasti (troubleshooting): metodo e fasi  
+Riparazione: PC funzionante da piu guasti; scheda intervento  
+Concetti: reti LAN e WAN, la rete di casa  
+Apparecchi: modem, router, switch, hub, access point, repeater, powerline  
+Wireless: WLAN, Wi-Fi 2.4 e 5 GHz, speed test  
+Come viaggiano i dati: pacchetti, rete a pacchetti  
+Modelli ISO/OSI (7 livelli) e TCP/IP (4 livelli)
 
 ### Competenza 17 — Tecnico-professionale d'indirizzo — elaborazione dati: database e programmazione
-1. Lazarus, primi passi: ambiente, componenti semplici (Button, Edit, Label), Hello World
+Lazarus, primi passi: ambiente, componenti semplici (Button, Edit, Label), Hello World
 
 ### Competenza 1.2 — Comunicazione — materiali visivi, sonori e digitali (grafica, presentazioni, testi, mail)
-1. Google Documenti: formattazione, stili, impostazione pagina, sommario
-2. Google Presentazioni: modelli, immagini, video
-3. Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali
-4. Canva base: immagini semplici, locandine, loghi, modelli
-5. Algoritmi dei social e impatto mediatico
+Google Documenti: formattazione, stili, impostazione pagina, sommario  
+Google Presentazioni: modelli, immagini, video  
+Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali  
+Canva base: immagini semplici, locandine, loghi, modelli  
+Algoritmi dei social e impatto mediatico
 
-### Competenza trasv. — Trasversale (non legato a una sola competenza)
-1. Glossario informatico (costruito dagli studenti)
+### Competenza trasv. — Trasversale
+Glossario informatico (costruito dagli studenti)
 
 ## Classe 2 (2026/27)  (ex prima) {#doc15-sec2}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
-1. Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale)
-2. Project management: piano di Gantt, ruoli, pianificazione di un progetto
-3. Lavoro in team e presentazione del lavoro finito; tesine
-4. Figure professionali dell'informatica
+Git di base: versionare, il proprio repository personale, salvare con un commit (tutto visuale)  
+Project management: piano di Gantt, ruoli, pianificazione di un progetto  
+Lavoro in team e presentazione del lavoro finito; tesine  
+Figure professionali dell'informatica
 
 ### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
-1. 1a ora — Concetti di rischio e danno
-2. 2a ora — Prevenzione e protezione
-3. 3a ora — Organizzazione della prevenzione aziendale
-4. 4a ora — Organi di vigilanza, controllo e assistenza
-5. 5a ora — Rischio infortuni
-6. 6a ora — Rischi meccanici generali; rischi elettrici generali
-7. 7a ora — Macchine e attrezzature
-8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
-9. 9a ora — Rischi cancerogeni; rischi biologici
-10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
-11. 11a ora — Microclima ed illuminazione; videoterminali
-12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
-13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
-14. 14a ora — Segnaletica ed emergenza
-15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
-16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
+1a ora — Concetti di rischio e danno  
+2a ora — Prevenzione e protezione  
+3a ora — Organizzazione della prevenzione aziendale  
+4a ora — Organi di vigilanza, controllo e assistenza  
+5a ora — Rischio infortuni  
+6a ora — Rischi meccanici generali; rischi elettrici generali  
+7a ora — Macchine e attrezzature  
+8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri  
+9a ora — Rischi cancerogeni; rischi biologici  
+10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni  
+11a ora — Microclima ed illuminazione; videoterminali  
+12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato  
+13a ora — Movimentazione manuale dei carichi; movimentazione merci  
+14a ora — Segnaletica ed emergenza  
+15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio  
+16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
-1. Windows: desktop, finestre, gestione di file e cartelle
-2. Installazione del sistema operativo
-3. Configurazione OS: componenti, servizi di rete, risorse condivise
-4. Intelligenza umana e artificiale: concetti e limiti
-5. Usare un assistente AI per costruire il proprio libro di testo/quaderno
-6. Industria 4.0 e automazione
-7. Il Mio Negozio Online (e-commerce): web, database, ordini via email
+Windows: desktop, finestre, gestione di file e cartelle  
+Installazione del sistema operativo  
+Configurazione OS: componenti, servizi di rete, risorse condivise  
+Intelligenza umana e artificiale: concetti e limiti  
+Usare un assistente AI per costruire il proprio libro di testo/quaderno  
+Industria 4.0 e automazione  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email
 
 ### Competenza 16 — Tecnico-professionale d'indirizzo — manutenzione di sistemi, reti e dispositivi
-1. Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte
-2. Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)
+Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte  
+Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)
 
 ### Competenza 17 — Tecnico-professionale d'indirizzo — elaborazione dati: database e programmazione
-1. Lazarus, primi passi: ambiente, componenti semplici (Button, Edit, Label), Hello World
-2. Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni
-3. Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe
-4. Interpretato e compilato; Lazarus e Delphi
-5. Il Mio Negozio Online (e-commerce): web, database, ordini via email
+Lazarus, primi passi: ambiente, componenti semplici (Button, Edit, Label), Hello World  
+Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni  
+Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe  
+Interpretato e compilato; Lazarus e Delphi  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email
 
 ### Competenza 1.2 — Comunicazione — materiali visivi, sonori e digitali (grafica, presentazioni, testi, mail)
-1. Canva avanzato: rimozione sfondo, ritocco immagini
-2. Computer graphic: piano cartesiano e schermo, grafica 2D/3D
-3. Editing video e presentazioni multimediali
-4. Algoritmi dei social e impatto mediatico
+Canva avanzato: rimozione sfondo, ritocco immagini  
+Computer graphic: piano cartesiano e schermo, grafica 2D/3D  
+Editing video e presentazioni multimediali  
+Algoritmi dei social e impatto mediatico
 
-### Competenza trasv. — Trasversale (non legato a una sola competenza)
-1. Glossario informatico (costruito dagli studenti)
+### Competenza trasv. — Trasversale
+Glossario informatico (costruito dagli studenti)
 
 ## Classe 3 (2026/27)  (ex seconda) {#doc15-sec3}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
-1. Project management: piano di Gantt, ruoli, pianificazione di un progetto
-2. Lavoro in team e presentazione del lavoro finito; tesine
-3. Documentazione tecnica: manuale utente, relazione, deployment
-4. Figure professionali dell'informatica
-5. Git in team: branch, Pull Request, merge, release (Fase 2)
+Project management: piano di Gantt, ruoli, pianificazione di un progetto  
+Lavoro in team e presentazione del lavoro finito; tesine  
+Documentazione tecnica: manuale utente, relazione, deployment  
+Figure professionali dell'informatica  
+Git in team: branch, Pull Request, merge, release (Fase 2)
 
 ### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
-1. 1a ora — Concetti di rischio e danno
-2. 2a ora — Prevenzione e protezione
-3. 3a ora — Organizzazione della prevenzione aziendale
-4. 4a ora — Organi di vigilanza, controllo e assistenza
-5. 5a ora — Rischio infortuni
-6. 6a ora — Rischi meccanici generali; rischi elettrici generali
-7. 7a ora — Macchine e attrezzature
-8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
-9. 9a ora — Rischi cancerogeni; rischi biologici
-10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
-11. 11a ora — Microclima ed illuminazione; videoterminali
-12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
-13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
-14. 14a ora — Segnaletica ed emergenza
-15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
-16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
+1a ora — Concetti di rischio e danno  
+2a ora — Prevenzione e protezione  
+3a ora — Organizzazione della prevenzione aziendale  
+4a ora — Organi di vigilanza, controllo e assistenza  
+5a ora — Rischio infortuni  
+6a ora — Rischi meccanici generali; rischi elettrici generali  
+7a ora — Macchine e attrezzature  
+8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri  
+9a ora — Rischi cancerogeni; rischi biologici  
+10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni  
+11a ora — Microclima ed illuminazione; videoterminali  
+12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato  
+13a ora — Movimentazione manuale dei carichi; movimentazione merci  
+14a ora — Segnaletica ed emergenza  
+15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio  
+16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
-1. HTML5: la struttura di una pagina web
-2. CSS: l'aspetto grafico di una pagina web
-3. Google Sites: sito personale o scolastico
-4. La comunicazione sul web; come funziona il web
-5. Intelligenza umana e artificiale: concetti e limiti
-6. Usare un assistente AI per costruire il proprio libro di testo/quaderno
-7. Industria 4.0 e automazione
-8. Il Mio Negozio Online (e-commerce): web, database, ordini via email
+HTML5: la struttura di una pagina web  
+CSS: l'aspetto grafico di una pagina web  
+Google Sites: sito personale o scolastico  
+La comunicazione sul web; come funziona il web  
+Intelligenza umana e artificiale: concetti e limiti  
+Usare un assistente AI per costruire il proprio libro di testo/quaderno  
+Industria 4.0 e automazione  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email
 
 ### Competenza 16 — Tecnico-professionale d'indirizzo — manutenzione di sistemi, reti e dispositivi
-1. Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping
-2. Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte
-3. Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)
-4. Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli)
+Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping  
+Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte  
+Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)  
+Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli)
 
 ### Competenza 17 — Tecnico-professionale d'indirizzo — elaborazione dati: database e programmazione
-1. Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni
-2. Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe
-3. Lazarus, grafica e coordinate (2D/3D, polari e rettangolari)
-4. Interpretato e compilato; Lazarus e Delphi
-5. Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script)
-6. GDScript: il linguaggio (variabili, funzioni, stile simile a Python)
-7. Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus)
-8. Game loop: _process(delta) e il movimento a fotogrammi
-9. Collisioni, aree e punteggio (raccogliere oggetti in un gioco)
-10. Primo gioco 2D completo (tipo "Chirurgo Pasticcione")
-11. Dal 2D al 3D: il "progetto boss"
-12. Concetto di database (archivio ordinato di dati)
-13. Linguaggio SQL: interrogare e gestire i dati
-14. Archivi digitali; migrazione dei dati
-15. Raccolta, strutturazione e analisi statistica dei dati
-16. Il Mio Negozio Online (e-commerce): web, database, ordini via email
-17. Giochi con Godot: dai semplici ai piu strutturati
+Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni  
+Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe  
+Lazarus, grafica e coordinate (2D/3D, polari e rettangolari)  
+Interpretato e compilato; Lazarus e Delphi  
+Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script)  
+GDScript: il linguaggio (variabili, funzioni, stile simile a Python)  
+Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus)  
+Game loop: _process(delta) e il movimento a fotogrammi  
+Collisioni, aree e punteggio (raccogliere oggetti in un gioco)  
+Primo gioco 2D completo (tipo "Chirurgo Pasticcione")  
+Dal 2D al 3D: il "progetto boss"  
+Concetto di database (archivio ordinato di dati)  
+Linguaggio SQL: interrogare e gestire i dati  
+Archivi digitali; migrazione dei dati  
+Raccolta, strutturazione e analisi statistica dei dati  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email  
+Giochi con Godot: dai semplici ai piu strutturati
 
 ### Competenza 1.2 — Comunicazione — materiali visivi, sonori e digitali (grafica, presentazioni, testi, mail)
-1. Canva avanzato: rimozione sfondo, ritocco immagini
-2. Computer graphic: piano cartesiano e schermo, grafica 2D/3D
-3. Editing video e presentazioni multimediali
-4. Algoritmi dei social e impatto mediatico
+Canva avanzato: rimozione sfondo, ritocco immagini  
+Computer graphic: piano cartesiano e schermo, grafica 2D/3D  
+Editing video e presentazioni multimediali  
+Algoritmi dei social e impatto mediatico
 
-### Competenza trasv. — Trasversale (non legato a una sola competenza)
-1. Glossario informatico (costruito dagli studenti)
+### Competenza trasv. — Trasversale
+Glossario informatico (costruito dagli studenti)
 
 ## Classe 4 (2026/27)  (ex terza) {#doc15-sec4}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
-1. Lavoro in team e presentazione del lavoro finito; tesine
-2. Documentazione tecnica: manuale utente, relazione, deployment
-3. Git in team: branch, Pull Request, merge, release (Fase 2)
+Lavoro in team e presentazione del lavoro finito; tesine  
+Documentazione tecnica: manuale utente, relazione, deployment  
+Git in team: branch, Pull Request, merge, release (Fase 2)
 
 ### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
-1. 1a ora — Concetti di rischio e danno
-2. 2a ora — Prevenzione e protezione
-3. 3a ora — Organizzazione della prevenzione aziendale
-4. 4a ora — Organi di vigilanza, controllo e assistenza
-5. 5a ora — Rischio infortuni
-6. 6a ora — Rischi meccanici generali; rischi elettrici generali
-7. 7a ora — Macchine e attrezzature
-8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
-9. 9a ora — Rischi cancerogeni; rischi biologici
-10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
-11. 11a ora — Microclima ed illuminazione; videoterminali
-12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
-13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
-14. 14a ora — Segnaletica ed emergenza
-15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
-16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
+1a ora — Concetti di rischio e danno  
+2a ora — Prevenzione e protezione  
+3a ora — Organizzazione della prevenzione aziendale  
+4a ora — Organi di vigilanza, controllo e assistenza  
+5a ora — Rischio infortuni  
+6a ora — Rischi meccanici generali; rischi elettrici generali  
+7a ora — Macchine e attrezzature  
+8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri  
+9a ora — Rischi cancerogeni; rischi biologici  
+10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni  
+11a ora — Microclima ed illuminazione; videoterminali  
+12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato  
+13a ora — Movimentazione manuale dei carichi; movimentazione merci  
+14a ora — Segnaletica ed emergenza  
+15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio  
+16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
-1. HTML5: la struttura di una pagina web
-2. CSS: l'aspetto grafico di una pagina web
-3. Google Sites: sito personale o scolastico
-4. La comunicazione sul web; come funziona il web
-5. Intelligenza umana e artificiale: concetti e limiti
-6. Usare un assistente AI per costruire il proprio libro di testo/quaderno
-7. Industria 4.0 e automazione
-8. Il Mio Negozio Online (e-commerce): web, database, ordini via email
+HTML5: la struttura di una pagina web  
+CSS: l'aspetto grafico di una pagina web  
+Google Sites: sito personale o scolastico  
+La comunicazione sul web; come funziona il web  
+Intelligenza umana e artificiale: concetti e limiti  
+Usare un assistente AI per costruire il proprio libro di testo/quaderno  
+Industria 4.0 e automazione  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email
 
 ### Competenza 16 — Tecnico-professionale d'indirizzo — manutenzione di sistemi, reti e dispositivi
-1. Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping
-2. Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte
-3. Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)
-4. Sicurezza di rete: firewall, segmentazione, rischi in rete
-5. Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli)
+Cablaggio: cavo RJ45, standard T568B, piccola LAN, test e ping  
+Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte  
+Cisco Packet Tracer: dalle prime reti alla rete di una scuola (VLAN)  
+Sicurezza di rete: firewall, segmentazione, rischi in rete  
+Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli)
 
 ### Competenza 17 — Tecnico-professionale d'indirizzo — elaborazione dati: database e programmazione
-1. Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni
-2. Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe
-3. Lazarus, grafica e coordinate (2D/3D, polari e rettangolari)
-4. Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script)
-5. GDScript: il linguaggio (variabili, funzioni, stile simile a Python)
-6. Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus)
-7. Game loop: _process(delta) e il movimento a fotogrammi
-8. Collisioni, aree e punteggio (raccogliere oggetti in un gioco)
-9. Primo gioco 2D completo (tipo "Chirurgo Pasticcione")
-10. Dal 2D al 3D: il "progetto boss"
-11. Concetto di database (archivio ordinato di dati)
-12. Linguaggio SQL: interrogare e gestire i dati
-13. Archivi digitali; migrazione dei dati
-14. Raccolta, strutturazione e analisi statistica dei dati
-15. Il Mio Negozio Online (e-commerce): web, database, ordini via email
-16. Giochi con Godot: dai semplici ai piu strutturati
+Lazarus, interfaccia e oggetti piu complessi: RadioButton, ComboBox, PageControl, variabili, funzioni  
+Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe  
+Lazarus, grafica e coordinate (2D/3D, polari e rettangolari)  
+Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script)  
+GDScript: il linguaggio (variabili, funzioni, stile simile a Python)  
+Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus)  
+Game loop: _process(delta) e il movimento a fotogrammi  
+Collisioni, aree e punteggio (raccogliere oggetti in un gioco)  
+Primo gioco 2D completo (tipo "Chirurgo Pasticcione")  
+Dal 2D al 3D: il "progetto boss"  
+Concetto di database (archivio ordinato di dati)  
+Linguaggio SQL: interrogare e gestire i dati  
+Archivi digitali; migrazione dei dati  
+Raccolta, strutturazione e analisi statistica dei dati  
+Il Mio Negozio Online (e-commerce): web, database, ordini via email  
+Giochi con Godot: dai semplici ai piu strutturati
 
 ### Competenza 1.2 — Comunicazione — materiali visivi, sonori e digitali (grafica, presentazioni, testi, mail)
-1. Computer graphic: piano cartesiano e schermo, grafica 2D/3D
-2. Editing video e presentazioni multimediali
-3. Algoritmi dei social e impatto mediatico
+Computer graphic: piano cartesiano e schermo, grafica 2D/3D  
+Editing video e presentazioni multimediali  
+Algoritmi dei social e impatto mediatico
 
 ### Competenza 9 — Cittadinanza — mondo del lavoro, CV Europass, placement
-1. Ricerca del lavoro: CV Europass, ricerca attiva
+Ricerca del lavoro: CV Europass, ricerca attiva
 
-### Competenza trasv. — Trasversale (non legato a una sola competenza)
-1. Glossario informatico (costruito dagli studenti)
+### Competenza trasv. — Trasversale
+Glossario informatico (costruito dagli studenti)
 
 
 # Programma del Corso {#doc16}
@@ -4556,7 +4554,7 @@ Se qualcosa non va:
 
 
 # Corso Informatica — indice generale {#doc30}
-*Versione 1.14 · 02/09/2026 · Parte: Indici e cataloghi*
+*Versione 1.15 · 02/09/2026 · Parte: Indici e cataloghi*
 
 ## In breve {#doc30-sec1}
 
@@ -4595,8 +4593,8 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 | `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
 | `programma-svolto/` (cartella) | I **programmi svolti** per anno e classe (Allegato A vivo), da consegnare alla Regione. Organizzati in `<anno>/<classe>/`. | — |
 | `ARGOMENTI-SVOLTI.md` | Gli **argomenti gia svolti** da ogni classe l'anno scorso (2025/26), materia unica + Sicurezza separata, con la nomenclatura nuova 26/27. Base per pianificare e per il programma svolto. | 0.2 |
-| `MIE-PARTI-ALLEGATO-A.md` | **Le parti di Regge** estratte dai 4 Allegato A/PFP ufficiali, per competenza e anno (sono sparse tra piu competenze). | 0.1 |
-| `PROGRAMMA-PREVENTIVO-2026-27.md` | Il **programma previsto** di quest'anno per ogni classe, per competenza; da incollare nell'Allegato A ed evidenziare in giallo. | 0.1 |
+| `MIE-PARTI-ALLEGATO-A.md` | **Le parti di Regge** estratte dai 4 Allegato A/PFP ufficiali, per competenza e anno (sono sparse tra piu competenze); elenco senza numerazione. | 0.2 |
+| `PROGRAMMA-PREVENTIVO-2026-27.md` | Il **programma previsto** di quest'anno per ogni classe, per competenza; da incollare nell'Allegato A (senza numerazione) ed evidenziare in giallo. | 0.4 |
 | `REGOLE-FORMATTAZIONE.md` | Lo **standard** di formattazione di tutti i documenti. | 1.3 |
 
 Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 4).
