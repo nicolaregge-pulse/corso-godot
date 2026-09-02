@@ -1,6 +1,6 @@
 # Promemoria — Cose da Fare (Nicola)
 
-**Versione 0.1** — 18/08/2026
+**Versione 0.2** — 02/09/2026
 *Lista viva delle cose che Nicola deve fare, tenuta aggiornata da Claude. Non sono
 documenti da produrre (quelli li fa Claude): sono AZIONI che spettano a Nicola, a
 scuola o al computer. All'inizio della scuola, e ogni volta che Nicola chiede
@@ -24,8 +24,6 @@ cosa nuova, entra qui.*
 1. [DA FARE] Fornire a Claude l'esportazione del registro (Excel) di ogni classe, cosi Claude genera il programma svolto per la Regione (Allegato A aggiornato, per anno e classe).
 2. [DA FARE] Man mano che si svolgono gli argomenti, aggiornare l'Allegato A della classe (togliere il giallo a cio che e fatto, cancellare cio che non si e fatto).
 
-## 4. Il primo giorno di scuola (nota per Claude)
-1. Quando Nicola dice che la scuola e iniziata, Claude gli ricorda questa lista e chiede se ci sono cose nuove da aggiungere.
-2. Le cose che Nicola dira quel giorno vanno annotate qui, anche se le fara piu avanti.
-
-> [BLU] Se vuoi, Claude puo anche impostare un promemoria automatico per l'inizio della scuola: basta dirgli la data del primo giorno di lezione.
+## 4. Il primo giorno di scuola: 14 settembre 2026
+1. Primo giorno di lezione: 14/9/2026. E impostato un promemoria automatico per quel giorno, che ricorda a Nicola questa lista.
+2. Quel giorno: rivedere le cose da fare, e annotare le cose nuove che Nicola dira (anche se le fara piu avanti).

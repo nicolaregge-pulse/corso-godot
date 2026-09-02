@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.54** — 18/08/2026
+**Versione 1.55** — 02/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1444,7 +1444,7 @@ nel file (per la privacy degli allievi).
 
 
 # Promemoria — Cose da Fare (Nicola) {#doc11}
-*Versione 0.1 · 18/08/2026 · Parte: Riferimento*
+*Versione 0.2 · 02/09/2026 · Parte: Riferimento*
 
 ## 1. Come funziona {#doc11-sec1}
 1. Ogni voce dice: cosa fare, quando/il contesto, e lo stato (da fare / fatto).
@@ -1461,11 +1461,9 @@ nel file (per la privacy degli allievi).
 1. [DA FARE] Fornire a Claude l'esportazione del registro (Excel) di ogni classe, cosi Claude genera il programma svolto per la Regione (Allegato A aggiornato, per anno e classe).
 2. [DA FARE] Man mano che si svolgono gli argomenti, aggiornare l'Allegato A della classe (togliere il giallo a cio che e fatto, cancellare cio che non si e fatto).
 
-## 4. Il primo giorno di scuola (nota per Claude) {#doc11-sec4}
-1. Quando Nicola dice che la scuola e iniziata, Claude gli ricorda questa lista e chiede se ci sono cose nuove da aggiungere.
-2. Le cose che Nicola dira quel giorno vanno annotate qui, anche se le fara piu avanti.
-
-> [BLU] Se vuoi, Claude puo anche impostare un promemoria automatico per l'inizio della scuola: basta dirgli la data del primo giorno di lezione.
+## 4. Il primo giorno di scuola: 14 settembre 2026 {#doc11-sec4}
+1. Primo giorno di lezione: 14/9/2026. E impostato un promemoria automatico per quel giorno, che ricorda a Nicola questa lista.
+2. Quel giorno: rivedere le cose da fare, e annotare le cose nuove che Nicola dira (anche se le fara piu avanti).
 
 
 # Programmi Ufficiali (Allegato A) — nota {#doc12}

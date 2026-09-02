@@ -1,5 +1,9 @@
-<!-- Attestato Ruoli della Classe — v0.1 (02/09/2026). Foglio stampabile A4:
-     una nuova stampa a ogni rielezione. I nomi si scrivono a mano. -->
+<!-- Attestato Ruoli della Classe — v0.4 (02/09/2026). UN SOLO documento, 4 pagine
+     (una per classe: 1 INF, 2 INF, 3 INF, 4 INF). Foglio stampabile A4: una nuova
+     stampa a ogni rielezione. I nomi si scrivono a mano.
+     LOGO: il segnaposto {{LOGO}} viene sostituito in fase di render con il logo
+     Piamarta (se il file attestati/logo-piamarta.png o .jpg e presente), altrimenti
+     resta vuoto. -->
 <!doctype html>
 <html lang="it">
 <head>
@@ -9,32 +13,30 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    width: 210mm; height: 297mm;
     font-family: Georgia, "DejaVu Serif", "Times New Roman", serif;
     color: #1f3b57; background: #fdfcf7;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
-  .page { width: 100%; height: 100%; padding: 14mm; }
+  .page { width: 210mm; height: 297mm; padding: 14mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
   /* cornice esterna + filo dorato interno */
   .frame {
     width: 100%; height: 100%;
     border: 3px solid #1f3b57;
     box-shadow: inset 0 0 0 2px #fdfcf7, inset 0 0 0 4px #b8860b;
-    padding: 12mm 14mm;
+    padding: 10mm 14mm 12mm;
     display: flex; flex-direction: column;
     text-align: center;
   }
+  .logo { height: 20mm; width: auto; margin: 0 auto 4mm; display: block; }
   .kicker { letter-spacing: .35em; font-size: 12pt; color: #b8860b; text-transform: uppercase; }
-  .orn { color: #b8860b; font-size: 16pt; margin: 4mm 0; letter-spacing: .3em; }
+  .orn { color: #b8860b; font-size: 16pt; margin: 3mm 0; letter-spacing: .3em; }
   h1 { font-size: 34pt; margin: 2mm 0 0; letter-spacing: .06em; }
   .sub { font-size: 15pt; font-style: italic; color: #33475b; margin-top: 1mm; }
   .lab { margin-top: 3mm; font-size: 15pt; font-weight: bold; color: #b8860b; letter-spacing: .04em; }
-  .meta { margin-top: 8mm; font-size: 13pt; line-height: 2.1; }
-  .firma { font-style: italic; font-size: 22pt; color: #1f3b57; }
-  .classe { margin-top: 6mm; font-size: 44pt; font-weight: bold; letter-spacing: .10em; color: #1f3b57; }
+  .classe { margin-top: 5mm; font-size: 44pt; font-weight: bold; letter-spacing: .10em; color: #1f3b57; }
   .classe small { display:block; font-size: 12pt; font-weight: normal; letter-spacing:.3em; color:#b8860b; text-transform:uppercase; margin-bottom: 1mm; }
-  .meta .u { display: inline-block; min-width: 46mm; border-bottom: 1px solid #1f3b57; }
-  .roles { margin-top: 9mm; display: flex; flex-direction: column; gap: 9mm; }
+  .roles { margin-top: 8mm; display: flex; flex-direction: column; gap: 8mm; }
   .role {
     border: 1px solid #d9cba3; border-top: 4px solid #b8860b;
     background: #ffffff; padding: 7mm 8mm; text-align: center;
@@ -43,32 +45,91 @@
   .role .who { display: block; width: 62%; margin: 7mm auto 0; border-bottom: 1px solid #1f3b57; height: 8mm; }
   .motto { margin-top: auto; font-size: 13pt; font-style: italic; color: #33475b; }
   .sign { margin-top: 8mm; display: flex; justify-content: center; font-size: 14pt; }
-  .sign .u { display: inline-block; min-width: 55mm; border-bottom: 1px solid #1f3b57; }
+  .firma { font-style: italic; font-size: 22pt; color: #1f3b57; }
   .foot { margin-top: 6mm; font-size: 9pt; color: #8a7a4a; letter-spacing: .05em; }
 </style>
 </head>
 <body>
+  <!-- PAGINA 1 — Classe 1 INF -->
   <div class="page">
     <div class="frame">
-      <div class="kicker">AFGP · Piamarta Formazione</div>
+      {{LOGO}}
+      <div class="kicker">AFGP &middot; Piamarta Formazione</div>
       <div class="orn">&#10087; &#9670; &#10087;</div>
       <h1>Ruoli della Classe</h1>
       <div class="sub">Titoli in carica</div>
       <div class="lab">Laboratorio di Informatica</div>
-
-      <div class="classe"><small>Classe</small>{{CLASSE}}</div>
-
+      <div class="classe"><small>Classe</small>1 INF</div>
       <div class="roles">
         <div class="role"><span class="name">Rallentatore</span><span class="who">&nbsp;</span></div>
         <div class="role"><span class="name">Guardiano di Carta e Penna</span><span class="who">&nbsp;</span></div>
         <div class="role"><span class="name">Responsabile del Laboratorio</span><span class="who">&nbsp;</span></div>
       </div>
-
       <div class="motto">&laquo; Grazie per aiutare la nostra classe. &raquo;</div>
+      <div class="sign"><div>Il docente &nbsp;&nbsp; <span class="firma">Nicola Regge</span></div></div>
+      <div class="foot">Ruoli a rotazione — a ogni rielezione si stampa un foglio nuovo.</div>
+    </div>
+  </div>
 
-      <div class="sign">
-        <div>Il docente &nbsp;&nbsp; <span class="firma">Nicola Regge</span></div>
+  <!-- PAGINA 2 — Classe 2 INF -->
+  <div class="page">
+    <div class="frame">
+      {{LOGO}}
+      <div class="kicker">AFGP &middot; Piamarta Formazione</div>
+      <div class="orn">&#10087; &#9670; &#10087;</div>
+      <h1>Ruoli della Classe</h1>
+      <div class="sub">Titoli in carica</div>
+      <div class="lab">Laboratorio di Informatica</div>
+      <div class="classe"><small>Classe</small>2 INF</div>
+      <div class="roles">
+        <div class="role"><span class="name">Rallentatore</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Guardiano di Carta e Penna</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Responsabile del Laboratorio</span><span class="who">&nbsp;</span></div>
       </div>
+      <div class="motto">&laquo; Grazie per aiutare la nostra classe. &raquo;</div>
+      <div class="sign"><div>Il docente &nbsp;&nbsp; <span class="firma">Nicola Regge</span></div></div>
+      <div class="foot">Ruoli a rotazione — a ogni rielezione si stampa un foglio nuovo.</div>
+    </div>
+  </div>
+
+  <!-- PAGINA 3 — Classe 3 INF -->
+  <div class="page">
+    <div class="frame">
+      {{LOGO}}
+      <div class="kicker">AFGP &middot; Piamarta Formazione</div>
+      <div class="orn">&#10087; &#9670; &#10087;</div>
+      <h1>Ruoli della Classe</h1>
+      <div class="sub">Titoli in carica</div>
+      <div class="lab">Laboratorio di Informatica</div>
+      <div class="classe"><small>Classe</small>3 INF</div>
+      <div class="roles">
+        <div class="role"><span class="name">Rallentatore</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Guardiano di Carta e Penna</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Responsabile del Laboratorio</span><span class="who">&nbsp;</span></div>
+      </div>
+      <div class="motto">&laquo; Grazie per aiutare la nostra classe. &raquo;</div>
+      <div class="sign"><div>Il docente &nbsp;&nbsp; <span class="firma">Nicola Regge</span></div></div>
+      <div class="foot">Ruoli a rotazione — a ogni rielezione si stampa un foglio nuovo.</div>
+    </div>
+  </div>
+
+  <!-- PAGINA 4 — Classe 4 INF -->
+  <div class="page">
+    <div class="frame">
+      {{LOGO}}
+      <div class="kicker">AFGP &middot; Piamarta Formazione</div>
+      <div class="orn">&#10087; &#9670; &#10087;</div>
+      <h1>Ruoli della Classe</h1>
+      <div class="sub">Titoli in carica</div>
+      <div class="lab">Laboratorio di Informatica</div>
+      <div class="classe"><small>Classe</small>4 INF</div>
+      <div class="roles">
+        <div class="role"><span class="name">Rallentatore</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Guardiano di Carta e Penna</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Responsabile del Laboratorio</span><span class="who">&nbsp;</span></div>
+      </div>
+      <div class="motto">&laquo; Grazie per aiutare la nostra classe. &raquo;</div>
+      <div class="sign"><div>Il docente &nbsp;&nbsp; <span class="firma">Nicola Regge</span></div></div>
       <div class="foot">Ruoli a rotazione — a ogni rielezione si stampa un foglio nuovo.</div>
     </div>
   </div>
