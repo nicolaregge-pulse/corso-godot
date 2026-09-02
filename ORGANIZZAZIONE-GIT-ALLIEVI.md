@@ -1,6 +1,6 @@
 # Organizzazione Git per gli Allievi
 
-**Versione 0.3** — 02/09/2026
+**Versione 0.4** — 02/09/2026
 *Come organizziamo Git per la classe: un unico "progetto comune" (l'organizzazione
 della scuola) dentro cui ogni allievo ha il PROPRIO repository privato, che solo
 lui puo toccare e che il docente vede tutti. Strumento scelto: GitHub Classroom.
@@ -93,7 +93,15 @@ quaderno-e-esercizi-nomeallievo
 3. Il quaderno personale diventa, a fine anno, un libro loro di cui essere fieri: la prova concreta del "ce l'ho fatto io".
 
 ## 11. Punti ancora aperti
-1. Nome dell'organizzazione e degli assignment: da decidere insieme.
-2. Elenco della classe (roster) da caricare in Classroom.
+1. Nome degli assignment: da decidere insieme.
+2. Elenco della classe (roster) da caricare in Classroom 50.
 3. Momento dell'anno in cui attivare i repository personali (probabilmente dopo la lezione in cui gli allievi si creano l'account GitHub).
 4. Quando passare alla Fase 2 (progetto di gruppo con branch e Pull Request): quando la classe ha preso confidenza con il commit nel proprio repo.
+
+## 12. Stato dell'attivazione (aggiornato 02/09/2026)
+1. FATTO: creata l'organizzazione `informatica-piamarta` (proprietario: account personale nicolaregge-pulse; il nome era da decidere, ora e deciso).
+2. FATTO: inviata la richiesta di verifica docente su GitHub Education (prova: lettera d'incarico). In attesa di approvazione (di solito qualche giorno).
+3. VINCOLO EMERSO: Classroom 50 funziona solo con organizzazioni sul piano **GitHub Team** (a pagamento). Per i **docenti verificati**, pero, l'upgrade a GitHub Team e **gratuito** tramite GitHub Education. Quindi il passaggio Education non e un optional: e la chiave che sblocca Classroom 50.
+4. PROSSIMI PASSI, in ordine: (a) attendere l'email di approvazione Education; (b) fare l'upgrade gratuito dell'organizzazione a GitHub Team; (c) su Classroom 50 configurare l'organizzazione e creare le classi/assignment; (d) creare i repository degli allievi quando avranno l'account GitHub.
+5. RIPIEGO: se si dovesse partire prima dell'approvazione, il metodo manuale (un repository privato per allievo + un gruppo "Allievi" in sola lettura sul materiale comune) funziona anche sul piano Free, senza Classroom 50.
+6. NOTA su Contecavour32: l'email della scuola (`nicola.regge@piamarta.it`) e agganciata a un secondo account GitHub, `Contecavour32`. Per questo l'Education e stata richiesta sull'account principale nicolaregge-pulse usando il documento, non l'email.

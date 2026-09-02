@@ -370,7 +370,7 @@ l'intestazione del file.
 ### 1. Riferimento e stato
 1. `00-STATO-DEL-CORSO.md` — v2.2 (fonte di verità: decisioni e stato)
 2. `CORSO-INFORMATICA.md` — v1.16 (super-guida / indice generale)
-3. `PROMEMORIA-NICOLA.md` — v0.2 (cose da fare di Nicola)
+3. `PROMEMORIA-NICOLA.md` — v0.3 (cose da fare di Nicola)
 4. `01-GLOSSARIO.md` — v1.0
 
 ### 2. Pianificazione didattica
@@ -383,7 +383,7 @@ l'intestazione del file.
 2. `REGOLE-LABORATORIO.md` — v0.1
 3. `RUOLI-CLASSE.md` — v0.4
 4. `STRUTTURA-REPOSITORY.md` — v1.2
-5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.3 (repository allievi via Classroom 50)
+5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
 
 ### 4. Programmi per classe e documenti per la Regione
 1. `classe-1/programma.md` — v0.4

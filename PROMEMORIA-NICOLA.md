@@ -1,6 +1,6 @@
 # Promemoria — Cose da Fare (Nicola)
 
-**Versione 0.2** — 02/09/2026
+**Versione 0.3** — 02/09/2026
 *Lista viva delle cose che Nicola deve fare, tenuta aggiornata da Claude. Non sono
 documenti da produrre (quelli li fa Claude): sono AZIONI che spettano a Nicola, a
 scuola o al computer. All'inizio della scuola, e ogni volta che Nicola chiede
@@ -17,7 +17,7 @@ cosa nuova, entra qui.*
 ## 2. Da fare (inizio scuola e primo periodo)
 1. [DA FARE] Nominare il Rallentatore in classe (e mostrare a tutti il gesto: palmo alzato, due spinte "ta-ta" = rallenta). Meglio dopo aver conosciuto un po' i ragazzi, anche dopo il primo mese.
 2. [DA FARE] Scegliere se adottare anche altri ruoli di classe (custode del glossario, guardiano di carta e penna, tutor, responsabile laboratorio, responsabile "Mostralo") e dirlo a Claude, che li sviluppa.
-3. [DA FARE] Attivare i repository degli allievi con GitHub Classroom (organizzazione della classe + un repository privato per ognuno). Serve prima: creare gli account GitHub degli allievi in una lezione dedicata.
+3. [IN CORSO] Attivare i repository degli allievi con Classroom 50 (GitHub Classroom e stato ritirato il 28/08/2026). FATTO: creata l'organizzazione `informatica-piamarta` e inviata la verifica docente su GitHub Education (con la lettera d'incarico). DA FARE quando arriva l'email di approvazione Education: fare l'upgrade gratuito dell'organizzazione a GitHub Team (serve per far funzionare Classroom 50), poi creare le classi. Gli account GitHub degli allievi si creano prima, in una lezione dedicata.
 4. [DA FARE] Verificare che con Gemini gratuito si riesca a fare tutto il percorso AI (compreso costruire il quaderno personale), visto che a scuola non c'e Claude.
 
 ## 3. Durante l'anno / a fine anno
