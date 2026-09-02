@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.49** — 18/08/2026
+**Versione 1.50** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -2224,11 +2224,9 @@ per la classe che avanza.
 
 
 # Programma Preventivo 2026/27 (per competenza) {#doc15}
-*Versione 0.1 · 02/09/2026 · Parte: Riferimento*
+*Versione 0.2 · 02/09/2026 · Parte: Riferimento*
 
-> [ROSSO] Attenzione: la Sicurezza (competenza 14) e un modulo che nella nostra Griglia non e dettagliato (lo trattiamo come modulo a parte). Qui compare solo se un argomento e taggato 14. Per l'Allegato A la parte Sicurezza va aggiunta a mano o presa dagli Argomenti Svolti dell'anno scorso.
-
-> [BLU] E un primo scheletro dagli argomenti (macro) della Griglia: si puo arricchire con il dettaglio del Piano delle Ore.
+> [BLU] Scheletro dagli argomenti (macro) della Griglia, con la Sicurezza dai titoli ufficiali. Si puo arricchire col dettaglio del Piano delle Ore.
 
 ## Classe 1 (2026/27)  (nuova prima) {#doc15-sec1}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
@@ -2239,6 +2237,29 @@ per la classe che avanza.
 5. Diagrammi di flusso (flowchart)
 6. Logica e problem solving; algoritmi e strutture di controllo
 7. Coding a blocchi e porte logiche booleane (AND, OR, NOT)
+
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
+1. Concetti di rischio e danno
+2. Prevenzione e protezione
+3. Organizzazione della prevenzione aziendale
+4. rischio-infortuni
+5. Meccanici e elettrici generali
+6. Macchine attrezzature
+7. Etichettatura rischi biologici e nucleari
+8. Rischi fisici vibrazioni rumore e radiazioni
+9. Microclima illuminazione videoterminali
+10. dpi
+11. organizzazione del lavoro
+12. ambiente di lavoro
+13. stress da lavoro correlato
+14. Movimentazione manuali carichi
+15. Movimentazione merci
+16. Segnaletica e emergenza
+17. rischio incendi e procedure di esodo
+18. procedure di sicurezza in base al profilo di rischio
+19. Rischio procedure organizzative primo soccorso
+20. incendi e infortuni mancati
+21. rischio agricoltura
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. Cos'e l'informatica, uso consapevole della tecnologia
@@ -2292,6 +2313,29 @@ per la classe che avanza.
 3. Lavoro in team e presentazione del lavoro finito; tesine
 4. Figure professionali dell'informatica
 
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
+1. Concetti di rischio e danno
+2. Prevenzione e protezione
+3. Organizzazione della prevenzione aziendale
+4. rischio-infortuni
+5. Meccanici e elettrici generali
+6. Macchine attrezzature
+7. Etichettatura rischi biologici e nucleari
+8. Rischi fisici vibrazioni rumore e radiazioni
+9. Microclima illuminazione videoterminali
+10. dpi
+11. organizzazione del lavoro
+12. ambiente di lavoro
+13. stress da lavoro correlato
+14. Movimentazione manuali carichi
+15. Movimentazione merci
+16. Segnaletica e emergenza
+17. rischio incendi e procedure di esodo
+18. procedure di sicurezza in base al profilo di rischio
+19. Rischio procedure organizzative primo soccorso
+20. incendi e infortuni mancati
+21. rischio agricoltura
+
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. Windows: desktop, finestre, gestione di file e cartelle
 2. Installazione del sistema operativo
@@ -2328,6 +2372,29 @@ per la classe che avanza.
 3. Documentazione tecnica: manuale utente, relazione, deployment
 4. Figure professionali dell'informatica
 5. Git in team: branch, Pull Request, merge, release (Fase 2)
+
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
+1. Concetti di rischio e danno
+2. Prevenzione e protezione
+3. Organizzazione della prevenzione aziendale
+4. rischio-infortuni
+5. Meccanici e elettrici generali
+6. Macchine attrezzature
+7. Etichettatura rischi biologici e nucleari
+8. Rischi fisici vibrazioni rumore e radiazioni
+9. Microclima illuminazione videoterminali
+10. dpi
+11. organizzazione del lavoro
+12. ambiente di lavoro
+13. stress da lavoro correlato
+14. Movimentazione manuali carichi
+15. Movimentazione merci
+16. Segnaletica e emergenza
+17. rischio incendi e procedure di esodo
+18. procedure di sicurezza in base al profilo di rischio
+19. Rischio procedure organizzative primo soccorso
+20. incendi e infortuni mancati
+21. rischio agricoltura
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. HTML5: la struttura di una pagina web
@@ -2378,6 +2445,29 @@ per la classe che avanza.
 1. Lavoro in team e presentazione del lavoro finito; tesine
 2. Documentazione tecnica: manuale utente, relazione, deployment
 3. Git in team: branch, Pull Request, merge, release (Fase 2)
+
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
+1. Concetti di rischio e danno
+2. Prevenzione e protezione
+3. Organizzazione della prevenzione aziendale
+4. rischio-infortuni
+5. Meccanici e elettrici generali
+6. Macchine attrezzature
+7. Etichettatura rischi biologici e nucleari
+8. Rischi fisici vibrazioni rumore e radiazioni
+9. Microclima illuminazione videoterminali
+10. dpi
+11. organizzazione del lavoro
+12. ambiente di lavoro
+13. stress da lavoro correlato
+14. Movimentazione manuali carichi
+15. Movimentazione merci
+16. Segnaletica e emergenza
+17. rischio incendi e procedure di esodo
+18. procedure di sicurezza in base al profilo di rischio
+19. Rischio procedure organizzative primo soccorso
+20. incendi e infortuni mancati
+21. rischio agricoltura
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. HTML5: la struttura di una pagina web
