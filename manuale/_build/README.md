@@ -1,5 +1,7 @@
 # Come si genera il PDF del libro di testo
 
+**Versione 1.0** — 02/09/2026
+
 Questa cartella contiene gli **strumenti** che trasformano il sorgente
 `../manuale.md` (con le immagini di `../immagini/`) nel PDF impaginato
 `../manuale.pdf`.

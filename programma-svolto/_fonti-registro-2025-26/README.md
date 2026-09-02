@@ -1,5 +1,7 @@
 # Fonti registro — argomenti svolti 2025/26
 
+**Versione 1.0** — 02/09/2026
+
 File Excel esportati dal registro (argomenti svolti l'anno scorso), usati per
 generare `ARGOMENTI-SVOLTI.md` e, in futuro, i programmi svolti per la Regione.
 

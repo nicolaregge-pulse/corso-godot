@@ -1,5 +1,7 @@
 # Godot — la mia palestra di giochi 🎮
 
+**Versione 1.0** — 02/09/2026
+
 Cartella personale per imparare **Godot** e **GDScript**. Non c'entra con
 Quidoo Pulse: è uno spazio separato per fare pratica.
 

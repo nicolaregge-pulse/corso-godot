@@ -1,5 +1,7 @@
 # Inventario del materiale (da organizzare)
 
+**Versione 1.0** — 02/09/2026
+
 *Area di **raccolta provvisoria**. Qui è stato messo al sicuro tutto il materiale
 del **triennio** (esami, griglie, rubriche) fornito da Nicola, così non si perde
 niente. La sistemazione definitiva (cartelle per anno/materia, trascrizione in

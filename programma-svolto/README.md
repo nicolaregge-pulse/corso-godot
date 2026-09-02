@@ -1,5 +1,7 @@
 # Programma svolto (per anno e per classe)
 
+**Versione 1.0** — 02/09/2026
+
 Questa cartella raccoglie i **programmi effettivamente svolti**, cioe l'Allegato A
 aggiornato di ogni classe: la storia reale degli argomenti trattati. E il documento
 che, a fine anno, si consegna (copia-incolla) alla Regione.
