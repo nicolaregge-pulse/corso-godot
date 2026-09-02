@@ -383,7 +383,7 @@ l'intestazione del file.
 2. `REGOLE-LABORATORIO.md` — v0.1
 3. `RUOLI-CLASSE.md` — v0.4
 4. `STRUTTURA-REPOSITORY.md` — v1.2
-5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.2 (GitHub Classroom)
+5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.3 (repository allievi via Classroom 50)
 
 ### 4. Programmi per classe e documenti per la Regione
 1. `classe-1/programma.md` — v0.4

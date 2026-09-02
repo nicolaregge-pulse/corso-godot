@@ -1,6 +1,6 @@
 # Organizzazione Git per gli Allievi
 
-**Versione 0.2** — 02/09/2026
+**Versione 0.3** — 02/09/2026
 *Come organizziamo Git per la classe: un unico "progetto comune" (l'organizzazione
 della scuola) dentro cui ogni allievo ha il PROPRIO repository privato, che solo
 lui puo toccare e che il docente vede tutti. Strumento scelto: GitHub Classroom.
@@ -8,6 +8,8 @@ Questo documento fissa la struttura e il senso; la guida click-by-click per
 impostarlo la prepariamo insieme quando sei davanti allo schermo.*
 
 ---
+
+> [GIALLO] AGGIORNAMENTO (02/09/2026): GitHub Classroom e stato RITIRATO il 28/08/2026. Al suo posto usiamo Classroom 50 (classroom50.org): strumento gratuito e open-source, partner ufficiale di GitHub (Fifty Foundation), che funziona TUTTO da browser (niente installazioni). Non ha un proprio server ne database: crea e conserva tutto DENTRO la nostra organizzazione GitHub (repository, team, permessi). Vantaggio chiave: nessun lock-in — se un giorno lo strumento sparisse, i dati restano in GitHub e il metodo "a mano" descritto in questo documento resta valido come ripiego. La struttura a tre livelli, l'area comune e i tre requisiti qui sotto NON cambiano: Classroom 50 li realizza in automatico. Dove sotto si legge "GitHub Classroom", intendi "Classroom 50".
 
 ## 1. A cosa serve e perche (il senso)
 1. Ogni allievo ha uno spazio suo, sicuro: nessun altro puo guardarlo o romperlo. E il suo "libro" personale che cresce (quaderno + esercizi + progetti).
