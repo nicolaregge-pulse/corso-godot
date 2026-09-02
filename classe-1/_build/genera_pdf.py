@@ -56,6 +56,7 @@ DOCS = {
     "programmi-ufficiali": {"src": "../programmi-ufficiali/README.md", "title": "Programmi Ufficiali (Allegato A) — nota"},
     "ruoli-classe": {"src": "../RUOLI-CLASSE.md",                     "title": "Ruoli della Classe"},
     "promemoria":   {"src": "../PROMEMORIA-NICOLA.md",                "title": "Promemoria — Cose da Fare (Nicola)"},
+    "argomenti-svolti": {"src": "../ARGOMENTI-SVOLTI.md",             "title": "Argomenti Svolti (anno precedente 2025/26)"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},
