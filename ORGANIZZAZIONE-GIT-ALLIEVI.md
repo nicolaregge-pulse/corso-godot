@@ -1,6 +1,6 @@
 # Organizzazione Git per gli Allievi
 
-**Versione 0.1** — 18/08/2026
+**Versione 0.2** — 02/09/2026
 *Come organizziamo Git per la classe: un unico "progetto comune" (l'organizzazione
 della scuola) dentro cui ogni allievo ha il PROPRIO repository privato, che solo
 lui puo toccare e che il docente vede tutti. Strumento scelto: GitHub Classroom.
@@ -17,10 +17,16 @@ impostarlo la prepariamo insieme quando sei davanti allo schermo.*
 
 > [GIALLO] Perche conta doppio per noi: dare a ognuno uno spazio dignitoso e protetto, dove provarci non fa male, e il cuore del metodo del corso ("Vinci subito, Fallo tuo, Mostralo").
 
-## 2. La struttura a tre livelli
+### I tre requisiti vincolanti (chiesti da Nicola)
+1. Ogni allievo entra **solo** nel proprio repository: nessun allievo puo vedere o toccare quello di un altro.
+2. Il docente puo entrare in **tutti** i repository degli allievi.
+3. C'e una **parte comune** (il materiale per tutti) dove gli allievi possono **solo prelevare** (sola lettura): non possono modificarla. Solo il docente ci scrive.
+
+## 2. La struttura (tre livelli + area comune)
 1. Livello 1 — l'Organizzazione GitHub della classe: e il "progetto comune", l'ombrello che contiene tutto. La possiede il docente.
 2. Livello 2 — un repository privato per ogni allievo, dentro l'organizzazione. Ogni allievo e collaboratore solo del suo: vede e modifica soltanto quello. Il docente, come proprietario, li vede tutti.
 3. Livello 3 — il contenuto del repo personale: il quaderno dello studente, la cartella degli esercizi, i progetti. E il libro loro, che cresce a ogni lezione.
+4. Area comune — un repository a parte (es. `materiale-comune`) con il materiale per tutti: il docente ci scrive, gli allievi lo vedono in **sola lettura** (prelevano ma non modificano). Realizza il requisito 3.
 
 ## 3. Perche GitHub Classroom
 1. E lo strumento pensato apposta per la scuola, gratuito, tutto da browser (niente installazioni: coerente col vincolo delle postazioni scolastiche).
@@ -38,6 +44,7 @@ impostarlo la prepariamo insieme quando sei davanti allo schermo.*
 1. Docente: proprietario dell'organizzazione. Vede e puo entrare in tutti i repository degli allievi; corregge e valuta.
 2. Allievo: collaboratore solo del proprio repository. Non vede quelli dei compagni.
 3. Repository: privati. Nessun lavoro e pubblico se non lo decidiamo noi.
+4. Materiale comune: repository a parte con gli allievi in **sola lettura** (permesso "Read", assegnato tramite un team "Allievi"). Prelevano (pull) ma non possono modificare (niente push); solo il docente lo aggiorna.
 
 ## 6. Come si lega alle due fasi del corso
 1. Fase 1 (esercizi separati): ogni allievo lavora nel suo repository e salva con un commit. Se sbaglia un esercizio, gli altri restano intatti. Git semplice, un salvataggio alla volta.
