@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.50** — 18/08/2026
+**Versione 1.51** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -2224,9 +2224,9 @@ per la classe che avanza.
 
 
 # Programma Preventivo 2026/27 (per competenza) {#doc15}
-*Versione 0.2 · 02/09/2026 · Parte: Riferimento*
+*Versione 0.3 · 02/09/2026 · Parte: Riferimento*
 
-> [BLU] Scheletro dagli argomenti (macro) della Griglia, con la Sicurezza dai titoli ufficiali. Si puo arricchire col dettaglio del Piano delle Ore.
+> [BLU] Scheletro dagli argomenti (macro) della Griglia; la Sicurezza e la struttura ufficiale a 16 ore. Si puo arricchire col dettaglio del Piano delle Ore.
 
 ## Classe 1 (2026/27)  (nuova prima) {#doc15-sec1}
 ### Competenza 12 — Tecnico-professionale ricorsiva — pianificare le fasi, documentazione, algoritmi, organizzazione
@@ -2238,28 +2238,23 @@ per la classe che avanza.
 6. Logica e problem solving; algoritmi e strutture di controllo
 7. Coding a blocchi e porte logiche booleane (AND, OR, NOT)
 
-### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
-1. Concetti di rischio e danno
-2. Prevenzione e protezione
-3. Organizzazione della prevenzione aziendale
-4. rischio-infortuni
-5. Meccanici e elettrici generali
-6. Macchine attrezzature
-7. Etichettatura rischi biologici e nucleari
-8. Rischi fisici vibrazioni rumore e radiazioni
-9. Microclima illuminazione videoterminali
-10. dpi
-11. organizzazione del lavoro
-12. ambiente di lavoro
-13. stress da lavoro correlato
-14. Movimentazione manuali carichi
-15. Movimentazione merci
-16. Segnaletica e emergenza
-17. rischio incendi e procedure di esodo
-18. procedure di sicurezza in base al profilo di rischio
-19. Rischio procedure organizzative primo soccorso
-20. incendi e infortuni mancati
-21. rischio agricoltura
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
+1. 1a ora — Concetti di rischio e danno
+2. 2a ora — Prevenzione e protezione
+3. 3a ora — Organizzazione della prevenzione aziendale
+4. 4a ora — Organi di vigilanza, controllo e assistenza
+5. 5a ora — Rischio infortuni
+6. 6a ora — Rischi meccanici generali; rischi elettrici generali
+7. 7a ora — Macchine e attrezzature
+8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
+9. 9a ora — Rischi cancerogeni; rischi biologici
+10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
+11. 11a ora — Microclima ed illuminazione; videoterminali
+12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
+13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
+14. 14a ora — Segnaletica ed emergenza
+15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
+16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. Cos'e l'informatica, uso consapevole della tecnologia
@@ -2313,28 +2308,23 @@ per la classe che avanza.
 3. Lavoro in team e presentazione del lavoro finito; tesine
 4. Figure professionali dell'informatica
 
-### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
-1. Concetti di rischio e danno
-2. Prevenzione e protezione
-3. Organizzazione della prevenzione aziendale
-4. rischio-infortuni
-5. Meccanici e elettrici generali
-6. Macchine attrezzature
-7. Etichettatura rischi biologici e nucleari
-8. Rischi fisici vibrazioni rumore e radiazioni
-9. Microclima illuminazione videoterminali
-10. dpi
-11. organizzazione del lavoro
-12. ambiente di lavoro
-13. stress da lavoro correlato
-14. Movimentazione manuali carichi
-15. Movimentazione merci
-16. Segnaletica e emergenza
-17. rischio incendi e procedure di esodo
-18. procedure di sicurezza in base al profilo di rischio
-19. Rischio procedure organizzative primo soccorso
-20. incendi e infortuni mancati
-21. rischio agricoltura
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
+1. 1a ora — Concetti di rischio e danno
+2. 2a ora — Prevenzione e protezione
+3. 3a ora — Organizzazione della prevenzione aziendale
+4. 4a ora — Organi di vigilanza, controllo e assistenza
+5. 5a ora — Rischio infortuni
+6. 6a ora — Rischi meccanici generali; rischi elettrici generali
+7. 7a ora — Macchine e attrezzature
+8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
+9. 9a ora — Rischi cancerogeni; rischi biologici
+10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
+11. 11a ora — Microclima ed illuminazione; videoterminali
+12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
+13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
+14. 14a ora — Segnaletica ed emergenza
+15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
+16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. Windows: desktop, finestre, gestione di file e cartelle
@@ -2373,28 +2363,23 @@ per la classe che avanza.
 4. Figure professionali dell'informatica
 5. Git in team: branch, Pull Request, merge, release (Fase 2)
 
-### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
-1. Concetti di rischio e danno
-2. Prevenzione e protezione
-3. Organizzazione della prevenzione aziendale
-4. rischio-infortuni
-5. Meccanici e elettrici generali
-6. Macchine attrezzature
-7. Etichettatura rischi biologici e nucleari
-8. Rischi fisici vibrazioni rumore e radiazioni
-9. Microclima illuminazione videoterminali
-10. dpi
-11. organizzazione del lavoro
-12. ambiente di lavoro
-13. stress da lavoro correlato
-14. Movimentazione manuali carichi
-15. Movimentazione merci
-16. Segnaletica e emergenza
-17. rischio incendi e procedure di esodo
-18. procedure di sicurezza in base al profilo di rischio
-19. Rischio procedure organizzative primo soccorso
-20. incendi e infortuni mancati
-21. rischio agricoltura
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
+1. 1a ora — Concetti di rischio e danno
+2. 2a ora — Prevenzione e protezione
+3. 3a ora — Organizzazione della prevenzione aziendale
+4. 4a ora — Organi di vigilanza, controllo e assistenza
+5. 5a ora — Rischio infortuni
+6. 6a ora — Rischi meccanici generali; rischi elettrici generali
+7. 7a ora — Macchine e attrezzature
+8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
+9. 9a ora — Rischi cancerogeni; rischi biologici
+10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
+11. 11a ora — Microclima ed illuminazione; videoterminali
+12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
+13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
+14. 14a ora — Segnaletica ed emergenza
+15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
+16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. HTML5: la struttura di una pagina web
@@ -2446,28 +2431,23 @@ per la classe che avanza.
 2. Documentazione tecnica: manuale utente, relazione, deployment
 3. Git in team: branch, Pull Request, merge, release (Fase 2)
 
-### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza e igiene (titoli ufficiali dell'Allegato A)
-1. Concetti di rischio e danno
-2. Prevenzione e protezione
-3. Organizzazione della prevenzione aziendale
-4. rischio-infortuni
-5. Meccanici e elettrici generali
-6. Macchine attrezzature
-7. Etichettatura rischi biologici e nucleari
-8. Rischi fisici vibrazioni rumore e radiazioni
-9. Microclima illuminazione videoterminali
-10. dpi
-11. organizzazione del lavoro
-12. ambiente di lavoro
-13. stress da lavoro correlato
-14. Movimentazione manuali carichi
-15. Movimentazione merci
-16. Segnaletica e emergenza
-17. rischio incendi e procedure di esodo
-18. procedure di sicurezza in base al profilo di rischio
-19. Rischio procedure organizzative primo soccorso
-20. incendi e infortuni mancati
-21. rischio agricoltura
+### Competenza 14 — Tecnico-professionale ricorsiva — operare in sicurezza (16 ore ufficiali, fonte: Formazione Sicurezza Piamarta)
+1. 1a ora — Concetti di rischio e danno
+2. 2a ora — Prevenzione e protezione
+3. 3a ora — Organizzazione della prevenzione aziendale
+4. 4a ora — Organi di vigilanza, controllo e assistenza
+5. 5a ora — Rischio infortuni
+6. 6a ora — Rischi meccanici generali; rischi elettrici generali
+7. 7a ora — Macchine e attrezzature
+8. 8a ora — Cadute dall'alto; rischi da esplosione; rischi chimici; nebbie, oli, fumi, vapori, polveri
+9. 9a ora — Rischi cancerogeni; rischi biologici
+10. 10a ora — Radiazioni e rischi fisici; rischio rumore; rischio vibrazioni
+11. 11a ora — Microclima ed illuminazione; videoterminali
+12. 12a ora — DPI; organizzazione del lavoro; ambiente di lavoro; stress da lavoro correlato
+13. 13a ora — Movimentazione manuale dei carichi; movimentazione merci
+14. 14a ora — Segnaletica ed emergenza
+15. 15a ora — Rischio incendi e procedure di esodo; procedure di sicurezza in base al profilo di rischio
+16. 16a ora — Procedure organizzative di primo soccorso; incendi e infortuni mancati
 
 ### Competenza 15 — Tecnico-professionale d'indirizzo — installare/configurare hardware e software (office, sistema operativo, web)
 1. HTML5: la struttura di una pagina web
