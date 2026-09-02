@@ -1,5 +1,7 @@
 # Immagini del manuale
 
+**Versione 1.0** — 02/09/2026
+
 Qui vanno gli **screenshot** richiamati dal libro di testo (`../manuale.md`) e
 dall'eserciziario.
 

@@ -1,5 +1,8 @@
 # Il mio libro di Godot 🎮
 
+**Versione 1.0** — 18/08/2026
+*Modello del quaderno personale dello studente: si copia e si riempie, cresce a ogni lezione.*
+
 > Questo è il **tuo** libro. Cresce a ogni lezione e a ogni gioco che fai.
 > A fine anno sarà pieno di cose che hai costruito **tu**.
 

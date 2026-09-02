@@ -1,5 +1,7 @@
 # Affonda la Bonomi 🌊💣 (battaglia navale 3D — prototipo)
 
+**Versione 1.0** — 02/09/2026
+
 Una battaglia navale **in tre dimensioni**: invece della solita griglia a righe
 e colonne, c'è un **cubo** di celle d'acqua. Dentro è nascosto **un
 sottomarino**. Lanci una **bomba di profondità** su una cella: esplode e colpisce
