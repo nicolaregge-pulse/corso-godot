@@ -10,14 +10,16 @@ const htmlPath = path.join(DIR, 'ATTESTATO-RUOLI.html');
 let html = fs.readFileSync(htmlPath, 'utf8');
 
 // cerca il file logo
-const candidates = ['logo-piamarta.png', 'logo-piamarta.jpg', 'logo-piamarta.jpeg', 'logo-piamarta.webp'];
+// preferenza: file ufficiale (png/jpg) se c'e; altrimenti la ricostruzione svg
+const candidates = ['logo-piamarta.png', 'logo-piamarta.jpg', 'logo-piamarta.jpeg', 'logo-piamarta.webp', 'logo-piamarta.svg'];
 let logoTag = '';
 for (const name of candidates) {
   const p = path.join(DIR, name);
   if (fs.existsSync(p)) {
     const ext = path.extname(name).slice(1).replace('jpg', 'jpeg');
+    const mime = ext === 'svg' ? 'svg+xml' : ext;
     const b64 = fs.readFileSync(p).toString('base64');
-    logoTag = `<img class="logo" src="data:image/${ext};base64,${b64}" alt="Piamarta Formazione">`;
+    logoTag = `<img class="logo" src="data:image/${mime};base64,${b64}" alt="Piamarta Formazione">`;
     console.log('Logo trovato: ' + name);
     break;
   }
