@@ -1,11 +1,12 @@
 # Ruoli della Classe
 
-**Versione 0.3** — 02/09/2026
+**Versione 0.4** — 02/09/2026
 *Piccoli ruoli affidati agli allievi per aiutare tutta la classe a stare al passo
 e a lavorare bene insieme. Valgono per tutti e quattro gli anni (classi 1-4), a
 rotazione. I ruoli adottati sono TRE: il Rallentatore, il Guardiano di Carta e
-Penna, il Responsabile del Laboratorio. Ogni ruolo e un compito chiaro e semplice;
-nessuno e "da meno": ognuno serve al gruppo.*
+Penna, il Responsabile del Laboratorio. In fondo c'e la scheda di assegnazione per
+ogni classe, da portare in aula e compilare a mano. Nessun ruolo e "da meno":
+ognuno serve al gruppo.*
 
 ---
 
@@ -76,3 +77,40 @@ Oltre al Rallentatore (capitolo 3), si adottano altri due ruoli. In tutto sono T
 1. Si lega alle Regole del Laboratorio (rispetto, aiutarsi, l'errore non fa vergogna).
 2. Si lega alla competenza "mondo del lavoro": lavorare in team con ruoli chiari e a rotazione.
 3. Alimenta il motore del corso: qui provarci conviene e non fa male; chiedere di rallentare o chiedere aiuto e una cosa giusta.
+
+## 8. Assegnazione dei ruoli per classe (scheda da portare in classe)
+Una tabella per ogni classe con i tre ruoli. Si compila a mano in classe: chi ha
+il ruolo e le date della rotazione. I nomi si scrivono sulla copia stampata, non
+nel file (per la privacy degli allievi).
+
+### Classe 1 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 2 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 3 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 4 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |

@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.53** — 18/08/2026
+**Versione 1.54** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1335,7 +1335,7 @@ quaderno-e-esercizi-nomeallievo
 
 
 # Ruoli della Classe {#doc10}
-*Versione 0.3 · 02/09/2026 · Parte: Riferimento*
+*Versione 0.4 · 02/09/2026 · Parte: Riferimento*
 
 ## 1. Perche i ruoli (il senso) {#doc10-sec1}
 1. Dare a ogni allievo una responsabilita concreta verso il gruppo aiuta a sentirsi utili e parte di una squadra.
@@ -1404,6 +1404,43 @@ Oltre al Rallentatore (capitolo 3), si adottano altri due ruoli. In tutto sono T
 1. Si lega alle Regole del Laboratorio (rispetto, aiutarsi, l'errore non fa vergogna).
 2. Si lega alla competenza "mondo del lavoro": lavorare in team con ruoli chiari e a rotazione.
 3. Alimenta il motore del corso: qui provarci conviene e non fa male; chiedere di rallentare o chiedere aiuto e una cosa giusta.
+
+## 8. Assegnazione dei ruoli per classe (scheda da portare in classe) {#doc10-sec8}
+Una tabella per ogni classe con i tre ruoli. Si compila a mano in classe: chi ha
+il ruolo e le date della rotazione. I nomi si scrivono sulla copia stampata, non
+nel file (per la privacy degli allievi).
+
+### Classe 1 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 2 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 3 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
+
+### Classe 4 (2026/27)
+
+| Ruolo | Allievo | Dal | Al |
+|---|---|---|---|
+| Rallentatore |  |  |  |
+| Guardiano di Carta e Penna |  |  |  |
+| Responsabile del Laboratorio |  |  |  |
 
 
 # Promemoria — Cose da Fare (Nicola) {#doc11}
