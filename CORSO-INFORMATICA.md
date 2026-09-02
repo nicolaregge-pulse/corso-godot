@@ -1,6 +1,6 @@
 # Corso Informatica
 
-**Versione 1.12** — 02/09/2026
+**Versione 1.13** — 02/09/2026
 *Documento indice per il docente. Raccoglie in un solo posto **tutto** ciò che
 abbiamo prodotto: ogni documento, ogni esempio, ogni progetto — con la versione e
 lo stato di ciascuno. È l'evidenza completa del lavoro. Si aggiorna man mano che
@@ -38,9 +38,9 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 
 | Documento | Cos'è | Versione |
 |---|---|---|
-| `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 1.0 |
+| `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 2.2 |
 | `01-GLOSSARIO.md` | Il **glossario** dei termini del corso. | 1.0 |
-| `MAPPA-ARGOMENTI.md` | Le **macro-aree** del corso, unendo i programmi ufficiali col materiale nostro; indica anche di chi è ciascuna area. | 1.2 |
+| `MAPPA-ARGOMENTI.md` | Le **macro-aree** del corso, unendo i programmi ufficiali col materiale nostro; indica anche di chi è ciascuna area. | 1.3 |
 | `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª) e la colonna **Competenza (Allegato A)**. Completa su tutti i 12 capitoli. | 1.13 |
 | `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.3 |
 | `ORGANIZZAZIONE-GIT-ALLIEVI.md` | Come organizziamo **Git per la classe**: un'organizzazione comune con un **repository privato per ogni allievo** (GitHub Classroom). | 0.1 |
@@ -50,7 +50,8 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 | `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.2 |
 | `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
 | `programma-svolto/` (cartella) | I **programmi svolti** per anno e classe (Allegato A vivo), da consegnare alla Regione. Organizzati in `<anno>/<classe>/`. | — |
-| `ARGOMENTI-SVOLTI.md` | Gli **argomenti gia svolti** da ogni classe l'anno scorso (2025/26), per disciplina, con la nomenclatura nuova 26/27. Base per pianificare e per il programma svolto. | 0.1 |
+| `ARGOMENTI-SVOLTI.md` | Gli **argomenti gia svolti** da ogni classe l'anno scorso (2025/26), materia unica + Sicurezza separata, con la nomenclatura nuova 26/27. Base per pianificare e per il programma svolto. | 0.2 |
+| `MIE-PARTI-ALLEGATO-A.md` | **Le parti di Regge** estratte dai 4 Allegato A/PFP ufficiali, per competenza e anno (sono sparse tra piu competenze). | 0.1 |
 | `REGOLE-FORMATTAZIONE.md` | Lo **standard** di formattazione di tutti i documenti. | 1.3 |
 
 Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 4).
