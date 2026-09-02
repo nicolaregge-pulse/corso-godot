@@ -392,7 +392,7 @@ l'intestazione del file.
 4. `classe-4/programma.md` — v0.2
 5. `PROGRAMMA-PREVENTIVO-2026-27.md` — v0.4 (parti da incollare in Allegato A)
 6. `MIE-PARTI-ALLEGATO-A.md` — v0.2 (parti di Regge estratte dai PFP)
-7. `ARGOMENTI-SVOLTI.md` — v0.2 (svolto 2025/26, nomenclatura 26/27)
+7. `ARGOMENTI-SVOLTI.md` — v0.3 (svolto 2025/26, nomenclatura 26/27)
 8. `programma-svolto/README.md` — v1.0
 9. `programma-svolto/_fonti-registro-2025-26/README.md` — v1.0
 10. `programmi-ufficiali/README.md` — v0.6
