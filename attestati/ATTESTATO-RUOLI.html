@@ -1,0 +1,76 @@
+<!-- Attestato Ruoli della Classe — v0.1 (02/09/2026). Foglio stampabile A4:
+     una nuova stampa a ogni rielezione. I nomi si scrivono a mano. -->
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 210mm; height: 297mm;
+    font-family: Georgia, "DejaVu Serif", "Times New Roman", serif;
+    color: #1f3b57; background: #fdfcf7;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 100%; height: 100%; padding: 14mm; }
+  /* cornice esterna + filo dorato interno */
+  .frame {
+    width: 100%; height: 100%;
+    border: 3px solid #1f3b57;
+    box-shadow: inset 0 0 0 2px #fdfcf7, inset 0 0 0 4px #b8860b;
+    padding: 12mm 14mm;
+    display: flex; flex-direction: column;
+    text-align: center;
+  }
+  .kicker { letter-spacing: .35em; font-size: 12pt; color: #b8860b; text-transform: uppercase; }
+  .orn { color: #b8860b; font-size: 16pt; margin: 4mm 0; letter-spacing: .3em; }
+  h1 { font-size: 34pt; margin: 2mm 0 0; letter-spacing: .06em; }
+  .sub { font-size: 15pt; font-style: italic; color: #33475b; margin-top: 1mm; }
+  .meta { margin-top: 8mm; font-size: 13pt; line-height: 2.1; }
+  .meta .u { display: inline-block; min-width: 46mm; border-bottom: 1px solid #1f3b57; }
+  .roles { margin-top: 9mm; display: flex; flex-direction: column; gap: 7mm; }
+  .role {
+    border: 1px solid #d9cba3; border-left: 5px solid #b8860b;
+    background: #ffffff; padding: 5mm 8mm; text-align: left;
+    display: flex; align-items: baseline; justify-content: space-between;
+  }
+  .role .name { font-size: 16pt; font-weight: bold; }
+  .role .who { flex: 1; margin-left: 8mm; border-bottom: 1px solid #1f3b57; height: 9mm; }
+  .motto { margin-top: auto; font-size: 13pt; font-style: italic; color: #33475b; }
+  .sign { margin-top: 8mm; display: flex; justify-content: space-between; font-size: 12pt; }
+  .sign .u { display: inline-block; min-width: 55mm; border-bottom: 1px solid #1f3b57; }
+  .foot { margin-top: 6mm; font-size: 9pt; color: #8a7a4a; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="frame">
+      <div class="kicker">AFGP · Piamarta Formazione</div>
+      <div class="orn">&#10087; &#9670; &#10087;</div>
+      <h1>Ruoli della Classe</h1>
+      <div class="sub">Titoli in carica</div>
+
+      <div class="meta">
+        Classe <span class="u">&nbsp;</span> &nbsp;·&nbsp; Anno 2026/27<br>
+        Periodo: dal <span class="u">&nbsp;</span> al <span class="u">&nbsp;</span>
+      </div>
+
+      <div class="roles">
+        <div class="role"><span class="name">Rallentatore</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Guardiano di Carta e Penna</span><span class="who">&nbsp;</span></div>
+        <div class="role"><span class="name">Responsabile del Laboratorio</span><span class="who">&nbsp;</span></div>
+      </div>
+
+      <div class="motto">&laquo; Grazie per aiutare la nostra classe. &raquo;</div>
+
+      <div class="sign">
+        <div>Il docente <span class="u">&nbsp;</span></div>
+        <div>Data <span class="u">&nbsp;</span></div>
+      </div>
+      <div class="foot">Ruoli a rotazione — a ogni rielezione si stampa un foglio nuovo.</div>
+    </div>
+  </div>
+</body>
+</html>
