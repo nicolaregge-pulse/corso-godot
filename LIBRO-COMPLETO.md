@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.52** — 18/08/2026
+**Versione 1.53** — 18/08/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -1335,7 +1335,7 @@ quaderno-e-esercizi-nomeallievo
 
 
 # Ruoli della Classe {#doc10}
-*Versione 0.2 · 18/08/2026 · Parte: Riferimento*
+*Versione 0.3 · 02/09/2026 · Parte: Riferimento*
 
 ## 1. Perche i ruoli (il senso) {#doc10-sec1}
 1. Dare a ogni allievo una responsabilita concreta verso il gruppo aiuta a sentirsi utili e parte di una squadra.
@@ -1377,22 +1377,30 @@ quaderno-e-esercizi-nomeallievo
 2. Non si dice mai "ma e facile" o "andiamo avanti": si riprende piu piano o si rispiega in un altro modo.
 3. Cosi la classe impara che il segnale funziona davvero, e continuera a usarlo.
 
-## 4. Altri ruoli (proposta da confermare) {#doc10-sec4}
+## 4. I ruoli adottati (validi per tutti e quattro gli anni) {#doc10-sec4}
+Oltre al Rallentatore (capitolo 3), si adottano altri due ruoli. In tutto sono TRE, a rotazione, uguali per tutte le classi (1a, 2a, 3a, 4a).
 
-> [BLU] Questi ruoli sono una proposta di Claude per accompagnare il Rallentatore: si scelgono e si adattano con Nicola. Si possono introdurre pochi alla volta.
+### Guardiano di Carta e Penna
+1. A inizio lezione controlla che tutti abbiano carta e penna sul banco (si lega alla regola tassativa "carta e penna in ogni lezione").
+2. Avvisa il docente di chi ne e sprovvisto, cosi il docente puo fornirle e segnare la nota.
+3. Non e un "controllore" che mette in imbarazzo: e chi aiuta la classe a essere pronta a prendere appunti e fare schemi a mano.
 
-1. Custode del Glossario: annota le parole nuove o difficili che escono durante la lezione, cosi entrano nel glossario della classe (e in quello personale).
-2. Guardiano di Carta e Penna: controlla che tutti abbiano carta e penna sul banco a inizio lezione (si lega alla regola tassativa); avvisa il docente chi ne e sprovvisto.
-3. Aiuto-Compagno (tutor del giorno): chi ha capito aiuta chi e in difficolta, senza fare il lavoro al posto suo.
-4. Responsabile del Laboratorio: a fine lezione controlla che le postazioni siano in ordine (cavi, sedie, salvataggi).
-5. Responsabile del "Mostralo": si assicura che, quando qualcosa e pronto, venga mostrato alla classe (foto, schermo, breve racconto).
+### Responsabile del Laboratorio
+1. A fine lezione controlla che le postazioni siano in ordine: cavi e cuffie a posto, sedie sistemate, lavoro salvato, PC spenti o disconnessi come richiesto.
+2. Segnala subito eventuali guasti, senza colpa: le cose si guastano, nasconderlo no.
+3. Aiuta a lasciare il laboratorio pronto per la classe successiva.
 
-## 5. Attenzioni (dato il contesto) {#doc10-sec5}
-1. Comporre i ruoli con cura: dare il Rallentatore anche a chi di solito fatica puo dargli un compito importante e farlo sentire utile.
-2. Ruoli a rotazione: cosi nessuno si nasconde dietro i piu bravi e nessuno resta sempre indietro.
+## 5. Altri ruoli possibili (in futuro, non adottati ora) {#doc10-sec5}
+1. Custode del Glossario: annota le parole nuove o difficili che escono durante la lezione, cosi entrano nel glossario della classe.
+2. Aiuto-Compagno (tutor del giorno): chi ha capito aiuta chi e in difficolta, senza fare il lavoro al posto suo.
+3. Responsabile del "Mostralo": si assicura che, quando qualcosa e pronto, venga mostrato alla classe (foto, schermo, breve racconto).
+
+## 6. Attenzioni (dato il contesto) {#doc10-sec6}
+1. Comporre i ruoli con cura: dare un ruolo importante anche a chi di solito fatica puo farlo sentire utile.
+2. Ruoli a rotazione: cosi nessuno si nasconde dietro i piu bravi e nessuno resta sempre indietro. Tutti provano tutti e tre i ruoli.
 3. Ogni ruolo si chiude con un piccolo riconoscimento: "hai aiutato la classe".
 
-## 6. Collegamenti {#doc10-sec6}
+## 7. Collegamenti {#doc10-sec7}
 1. Si lega alle Regole del Laboratorio (rispetto, aiutarsi, l'errore non fa vergogna).
 2. Si lega alla competenza "mondo del lavoro": lavorare in team con ruoli chiari e a rotazione.
 3. Alimenta il motore del corso: qui provarci conviene e non fa male; chiedere di rallentare o chiedere aiuto e una cosa giusta.
@@ -4554,7 +4562,7 @@ Se qualcosa non va:
 
 
 # Corso Informatica — indice generale {#doc30}
-*Versione 1.15 · 02/09/2026 · Parte: Indici e cataloghi*
+*Versione 1.16 · 02/09/2026 · Parte: Indici e cataloghi*
 
 ## In breve {#doc30-sec1}
 
@@ -4587,7 +4595,7 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 | `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.3 |
 | `ORGANIZZAZIONE-GIT-ALLIEVI.md` | Come organizziamo **Git per la classe**: un'organizzazione comune con un **repository privato per ogni allievo** (GitHub Classroom). | 0.1 |
 | `REGOLE-LABORATORIO.md` | Le **regole del laboratorio** di informatica: rispetto, cura delle postazioni, carta e penna, uso di internet/AI, con una versione breve da appendere. | 0.1 |
-| `RUOLI-CLASSE.md` | I **ruoli della classe** (a rotazione) per aiutare il gruppo: il **Rallentatore** (segnala quando si va troppo veloce) e altri ruoli proposti. | 0.2 |
+| `RUOLI-CLASSE.md` | I **ruoli della classe** (a rotazione, per tutti e 4 gli anni): i tre adottati sono **Rallentatore**, **Guardiano di Carta e Penna**, **Responsabile del Laboratorio**. | 0.3 |
 | `PROMEMORIA-NICOLA.md` | La **lista viva** delle cose che Nicola deve fare (a scuola/al PC), tenuta aggiornata da Claude; si rilegge all'inizio della scuola. | 0.1 |
 | `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.2 |
 | `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
