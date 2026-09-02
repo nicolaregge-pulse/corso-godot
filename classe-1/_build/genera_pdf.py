@@ -58,6 +58,7 @@ DOCS = {
     "promemoria":   {"src": "../PROMEMORIA-NICOLA.md",                "title": "Promemoria — Cose da Fare (Nicola)"},
     "argomenti-svolti": {"src": "../ARGOMENTI-SVOLTI.md",             "title": "Argomenti Svolti (anno precedente 2025/26)"},
     "mie-parti":    {"src": "../MIE-PARTI-ALLEGATO-A.md",             "title": "Le Mie Parti nell'Allegato A"},
+    "preventivo":   {"src": "../PROGRAMMA-PREVENTIVO-2026-27.md",     "title": "Programma Preventivo 2026/27 (per competenza)"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},
