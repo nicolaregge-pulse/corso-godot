@@ -67,6 +67,8 @@ DOCS = {
     "programma-3":   {"src": "../classe-3/programma.md",        "title": "Programma del Corso — Classe 3"},
     "reti-teoria":   {"src": "../classe-3/reti-teoria.md",      "title": "Le Reti di Computer — Teoria"},
     "cablaggio-rj45": {"src": "../classe-3/esercizi/01-cablaggio-rj45.md", "title": "Cablaggio RJ45 — Scheda pratica"},
+    "troubleshooting": {"src": "../classe-3/troubleshooting-guasti.md", "title": "Troubleshooting Pratico — Guasti da Creare e Diagnosticare (Classe 3)"},
+    "corso-html-css": {"src": "../classe-3/corso-html-css.md",  "title": "Corso Base di HTML5 e CSS (Classe 3)"},
     "programma-4":   {"src": "../classe-4/programma.md",        "title": "Programma del Corso — Classe 4"},
     "bussola":       {"src": "bussola-mondo-del-lavoro.md",     "title": "La Bussola del Lavoro"},
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},

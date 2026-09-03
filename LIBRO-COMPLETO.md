@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.58** — 03/09/2026
+**Versione 1.59** — 03/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -5727,16 +5727,316 @@ Se qualcosa non va:
 </details>
 
 
-# Programma del Corso — Classe 4 {#doc29}
+# Troubleshooting Pratico — Guasti da Creare e Diagnosticare {#doc29}
+*Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
+
+## 1. A cosa serve e come si usa {#doc29-sec1}
+
+1. Obiettivo: portare l'allievo a **ragionare come un tecnico** — dal sintomo alla causa alla soluzione — non a imparare a memoria.
+2. Due modalita, complementari:
+   1. **Teorica a crocette** (capitolo 5): si legge la descrizione di un problema e si sceglie la soluzione giusta tra alcune. Utile in aula, veloce, buona per il ripasso e le buste d'esame.
+   2. **Pratica sui PC fisici** (capitolo 4): il docente provoca un guasto reale a PC spento; l'allievo, con la scheda di diagnosi, capisce cosa non va e lo ripara.
+3. Ritmo consigliato: prima un guasto **facilissimo** (vittoria subito), poi si sale di difficolta. Ogni allievo, alla fine, deve poter **raccontare** cosa ha trovato e come l'ha risolto (e la prova che ha capito davvero).
+4. Carta e penna sempre: la **scheda di diagnosi** (capitolo 3) si compila a mano e finisce nel quaderno personale.
+
+> [GIALLO] Motore del corso: il guasto e messo apposta dal docente. Sbagliare la prima ipotesi non e un errore dell'allievo, e parte del gioco: si prova, si verifica, si riprova. Zero vergogna.
+
+## 2. Sicurezza prima di tutto (VINCOLANTE) {#doc29-sec2}
+
+Regole da spiegare e far rispettare **prima** di toccare qualunque PC.
+
+1. Si lavora **sempre a PC spento e scollegato dalla presa di corrente**. Prima di aprire o toccare l'interno: spegnere, staccare la spina, e premere il pulsante di accensione una volta (scarica l'energia residua).
+2. **Scarica l'elettricita statica**: prima di toccare i componenti, toccare una parte metallica non verniciata del case. Meglio ancora un braccialetto antistatico. La statica danneggia i componenti in modo invisibile.
+3. **Non forzare mai** un componente o un connettore: se non entra, e nel verso sbagliato o nella sede sbagliata. Si inserisce con delicatezza fino allo scatto.
+4. **Non aprire mai l'alimentatore** e non toccarne l'interno: contiene tensioni pericolose anche da spento. Sull'alimentatore si toccano solo i cavi e l'interruttore esterno.
+5. Non provocare **cortocircuiti**: niente attrezzi metallici lasciati dentro il case, niente viti vaganti sulla scheda madre.
+6. Un componente/cavo alla volta: si crea **un solo guasto per prova**, cosi la diagnosi resta pulita.
+7. A fine attivita: si rimonta tutto correttamente, si verifica che il PC riparta, e si lascia la postazione in ordine (si lega alle Regole del Laboratorio).
+
+> [ROSSO] Vietato: aprire l'alimentatore; lavorare a PC acceso o con la spina attaccata; forzare i componenti; toccare la scheda video/RAM sui contatti dorati. Questi non sono guasti da esercizio: sono rischi per le persone o per l'hardware.
+
+## 3. Il metodo di diagnosi (la scheda dell'allievo) {#doc29-sec3}
+
+La scheda che l'allievo compila a mano per ogni guasto. Insegna il **metodo**, sempre lo stesso.
+
+1. **Osserva i sintomi** all'accensione, senza aprire niente:
+   1. Le ventole girano? Ci sono spie accese?
+   2. Si sentono segnali acustici (beep)?
+   3. C'e immagine sullo schermo? Compaiono scritte o messaggi d'errore?
+2. **Formula un'ipotesi**: dove sara il problema? (alimentazione, memoria, video, disco, avvio...). Scrivi l'ipotesi PRIMA di aprire.
+3. **Verifica una cosa alla volta**, partendo dalla piu semplice ed esterna (spine, interruttori, cavi del monitor) e poi dentro (sedi dei componenti, connettori sulla scheda madre).
+4. **Applica la soluzione** (ricollega, reinserisci a fondo, ecc.).
+5. **Prova**: il PC si accende? Parte il sistema operativo?
+6. **Scrivi l'esito**: qual era il guasto, come l'hai capito, come l'hai risolto. Questa riga e la piu importante.
+
+> [BLU] Schema del sintomo (utile da disegnare a mano):
+> non si accende nulla -> alimentazione; si accende ma niente video -> RAM / video / alimentazione CPU; parte ma "manca il disco" -> disco o avvio; immagine assente -> monitor o cavo video.
+
+## 4. Catalogo dei guasti fisici (per il docente) {#doc29-sec4}
+
+Per ogni guasto: cosa fare (a PC spento e scollegato), il sintomo atteso, la causa (la diagnosi corretta) e la soluzione. Difficolta: F = facile, M = media, D = difficile.
+
+### 4.1 Alimentazione
+
+| Guasto da creare | Sintomo atteso | Causa (diagnosi) | Soluzione | Diff. |
+|---|---|---|---|---|
+| Mettere l'interruttore dell'alimentatore su "O" (dietro il case) | PC completamente morto: nessuna ventola, nessuna spia | Alimentatore spento dall'interruttore | Rimettere l'interruttore su "I" | F |
+| Staccare il cavo di corrente dalla presa (o dall'alimentatore) | PC completamente morto | Manca l'alimentazione dalla rete | Ricollegare il cavo | F |
+| Allentare il connettore 24 pin (ATX) sulla scheda madre | Non si accende, o parte e si spegne subito | La scheda madre non riceve alimentazione stabile | Reinserire il 24 pin fino allo scatto | M |
+| Staccare il connettore alimentazione CPU (EPS 4/8 pin, in alto vicino alla CPU) | Le ventole girano ma nessun video, nessun avvio | La CPU non e alimentata | Ricollegare il connettore CPU | D |
+
+### 4.2 Memoria RAM
+
+| Guasto da creare | Sintomo atteso | Causa (diagnosi) | Soluzione | Diff. |
+|---|---|---|---|---|
+| Inserire un modulo RAM non a fondo (levette non scattate) | Non parte il video; spesso beep o spie di errore | Contatto della RAM assente/parziale | Reinserire la RAM premendo fino allo scatto delle levette | M |
+| Togliere tutta la RAM | Non si accende il video; segnali acustici ripetuti | Manca la memoria | Rimettere i moduli nelle sedi corrette | F/M |
+| Spostare l'unico modulo in uno slot diverso (o due moduli negli slot sbagliati) | Funziona ma non in "dual channel" (o non riconosce tutta la RAM) | Sedi non ottimali per il doppio canale | Rimettere nelle sedi indicate dal manuale della scheda madre | D |
+
+### 4.3 Video e scheda grafica
+
+| Guasto da creare | Sintomo atteso | Causa (diagnosi) | Soluzione | Diff. |
+|---|---|---|---|---|
+| Staccare il cavo del monitor dalla scheda video | Schermo "No signal" | Manca il segnale video | Ricollegare il cavo del monitor | F |
+| Collegare il monitor all'uscita della scheda madre invece che alla scheda video dedicata | Nessuna immagine (o immagine solo a volte) | Uscita video sbagliata | Spostare il cavo sull'uscita della scheda video | M |
+| Inserire la scheda video non a fondo nello slot PCIe | Nessun segnale video; a volte spie/beep | Contatto PCIe assente | Reinserire la scheda fino allo scatto del fermo | M |
+| Lasciare il monitor spento o su ingresso (HDMI/VGA) sbagliato | Schermo nero/"No signal" pur con PC acceso | Il problema e nel monitor, non nel PC | Accendere il monitor / scegliere l'ingresso giusto | F |
+
+### 4.4 Dischi e avvio
+
+| Guasto da creare | Sintomo atteso | Causa (diagnosi) | Soluzione | Diff. |
+|---|---|---|---|---|
+| Staccare il cavo dati SATA del disco | All'avvio: "No bootable device / inserire un disco di avvio" | Il disco non e collegato ai dati | Ricollegare il cavo SATA dati | M |
+| Staccare il cavo di alimentazione del disco | Il disco non viene rilevato | Il disco non e alimentato | Ricollegare l'alimentazione del disco | M |
+| Cambiare nel BIOS l'ordine di avvio (prima una USB vuota) | Il PC non trova il sistema operativo | Ordine di avvio sbagliato | Rimettere il disco come primo nell'ordine di avvio | M |
+
+### 4.5 Pannello frontale, raffreddamento, rete
+
+| Guasto da creare | Sintomo atteso | Causa (diagnosi) | Soluzione | Diff. |
+|---|---|---|---|---|
+| Staccare il cavetto del pulsante di accensione (Power SW) dal pannello frontale | Premendo il tasto non succede nulla (ma il PC e "vivo") | Il pulsante non e collegato alla scheda madre | Ricollegare il cavetto Power SW ai pin giusti | D |
+| Scollegare la ventola della CPU dal connettore CPU_FAN | Si accende e poi si spegne, o avviso "CPU fan error" | La scheda protegge la CPU dal surriscaldamento | Ricollegare la ventola al connettore CPU_FAN | M |
+| Staccare il cavo di rete (ethernet) | Nessuna connessione a internet | Cavo di rete scollegato | Ricollegare il cavo di rete | F |
+
+## 5. La parte teorica a crocette (banca domande) {#doc29-sec5}
+
+Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. La risposta corretta e indicata tra parentesi quadre per il docente (va tolta nella versione per gli allievi).
+
+1. Premo il pulsante di accensione e non succede assolutamente nulla: nessuna ventola, nessuna spia. Da cosa conviene partire?
+   1. Reinstallare il sistema operativo.
+   2. Controllare la spina, l'interruttore dell'alimentatore e i cavi di corrente.
+   3. Cambiare la scheda video.
+   4. Sostituire il disco. [Risposta: 2]
+2. Il PC si accende (le ventole girano) ma lo schermo resta nero e non parte niente. Quale ipotesi e piu probabile?
+   1. Il cavo di rete e staccato.
+   2. Il disco e pieno.
+   3. RAM mal inserita, oppure alimentazione della CPU o scheda video. 
+   4. Il monitor e troppo vecchio. [Risposta: 3]
+3. All'avvio compare il messaggio "No bootable device". Cosa controllo per primo?
+   1. La ventola della CPU.
+   2. I cavi (dati e alimentazione) del disco e l'ordine di avvio nel BIOS.
+   3. La scheda audio.
+   4. La tastiera. [Risposta: 2]
+4. Lo schermo dice "No signal" ma il PC sembra acceso. Prima mossa?
+   1. Aprire il case e togliere la RAM.
+   2. Controllare che il monitor sia acceso, sull'ingresso giusto, e il cavo collegato all'uscita video giusta.
+   3. Formattare il disco.
+   4. Cambiare l'alimentatore. [Risposta: 2]
+5. Sento dei beep ripetuti all'accensione e non c'e immagine. A cosa fanno pensare tipicamente?
+   1. A un problema di RAM (o video).
+   2. A internet lento.
+   3. A un file mancante nel sistema operativo.
+   4. Al mouse scollegato. [Risposta: 1]
+6. Il PC si accende e dopo pochi secondi si spegne da solo, oppure segnala "CPU fan error". Causa piu probabile?
+   1. Il disco e scollegato.
+   2. La ventola della CPU non gira / non e collegata (protezione dal surriscaldamento).
+   3. La scheda di rete e rotta.
+   4. Manca il cavo del monitor. [Risposta: 2]
+7. Metodo generale: qual e l'ordine giusto per diagnosticare?
+   1. Cambiare pezzi a caso finche funziona.
+   2. Osservare i sintomi, fare un'ipotesi, verificare una cosa alla volta dalla piu semplice, poi risolvere.
+   3. Reinstallare subito il sistema operativo.
+   4. Chiamare l'assistenza senza guardare. [Risposta: 2]
+8. Prima di aprire un PC per ripararlo, cosa faccio SEMPRE?
+   1. Lo lascio acceso per fare prima.
+   2. Lo spengo, stacco la spina e scarico la statica toccando il metallo del case.
+   3. Apro l'alimentatore per controllarlo.
+   4. Bagno le mani per pulirle. [Risposta: 2]
+
+## 6. Come valutare (griglia semplice) {#doc29-sec6}
+
+1. **Sicurezza**: ha lavorato a PC spento e scollegato, senza forzare? (si/no, prima di tutto).
+2. **Metodo**: ha osservato i sintomi e fatto un'ipotesi prima di aprire?
+3. **Diagnosi**: ha individuato la causa giusta (anche dopo qualche tentativo)?
+4. **Soluzione**: ha riparato e il PC riparte?
+5. **Racconto**: sa spiegare a parole sue cosa era successo e come l'ha risolto? (la prova del nove).
+
+> [GIALLO] Non conta "indovinare subito": conta il metodo e il saper raccontare. Un allievo che sbaglia due ipotesi ma ragiona bene e le verifica, ha capito piu di uno che azzecca a caso.
+
+## 7. Collegamenti {#doc29-sec7}
+
+1. **Prove di qualifica regionali**: le buste su hardware, sistema operativo e diagnosi (3a/4a) verificano proprio queste competenze. Questo kit e allenamento diretto.
+2. **Sicurezza sul lavoro**: il capitolo 2 si lega al modulo trasversale di sicurezza (lavorare in modo sicuro, DPI, rischi elettrici).
+3. **Metodo del corso**: vittoria subito (primo guasto facilissimo), si prova senza paura, si mostra e si racconta, carta e penna a ogni prova.
+4. **HTML5/CSS**: la parte teorica a crocette puo diventare una pagina web che si autocorregge (aggancio col corso HTML/CSS di Panaccione).
+
+
+# Corso Base di HTML5 e CSS {#doc30}
+*Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
+
+## 1. A cosa serve e come si usa {#doc30-sec1}
+
+1. Obiettivo: costruire **pagine web vere**, capendo la differenza tra la **struttura** (HTML: i mattoni) e l'**aspetto** (CSS: colori e stile).
+2. Regola d'oro del ritmo: **scrivi poco, guarda subito**. Ogni piccolo blocco di codice si prova nel browser prima di andare avanti. Il risultato a schermo e la ricompensa.
+3. Ognuno **personalizza** la sua pagina (nome, colori, foto, argomento preferito): la pagina e sua, non un esercizio uguale per tutti.
+4. Alla fine ogni allievo ha una **pagina online**, con un indirizzo web da mostrare. E la prova concreta del "ce l'ho fatto io".
+
+> [GIALLO] Metodo del corso: prima la vittoria facile (una pagina che dice "Ciao"), poi si aggiunge un pezzo alla volta. Un errore nel codice non rompe niente: si corregge e si riprova. Zero vergogna.
+
+## 2. Cosa serve (senza installare niente) {#doc30-sec2}
+
+1. **Per scrivere il codice**: va bene il **Blocco note** (gia presente su ogni PC). Meglio ancora l'editor nel browser di GitHub (`github.dev`, si apre premendo il tasto punto dentro un repository): scrivi e salvi li, senza installare.
+2. **Per vedere il risultato**: si salva il file con estensione `.html` e si fa **doppio clic**: si apre nel browser. Ogni volta che si cambia il codice, si salva e si ricarica la pagina (tasto F5).
+3. **Per pubblicare online**: **GitHub Pages** (capitolo 7), gratis, dal repository. Cosi la pagina va su internet a un vero indirizzo.
+
+> [BLU] A scuola non serve installare programmi: Blocco note + browser bastano per tutto il corso base. GitHub (repository e Pages) e lo stesso strumento che usiamo per il resto del corso.
+
+## 3. La prima vittoria: una pagina in 10 minuti {#doc30-sec3}
+
+1. Aprire il Blocco note, scrivere questo, e salvarlo con nome `index.html` (attenzione: non `index.html.txt`).
+
+```html
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>La mia pagina</title>
+  </head>
+  <body>
+    <h1>Ciao, sono Marco!</h1>
+    <p>Questa e la mia prima pagina web.</p>
+  </body>
+</html>
+```
+
+2. Fare doppio clic su `index.html`: si apre nel browser e si legge il titolo grande e la frase. **Prima vittoria fatta.**
+3. Personalizzare: cambiare il nome e la frase. Salvare, ricaricare (F5). E gia "sua".
+
+## 4. HTML5 — la struttura (i mattoni) {#doc30-sec4}
+
+1. Ogni pagina ha uno scheletro fisso: `<!doctype html>`, poi `<html>` che contiene `<head>` (informazioni, non si vede) e `<body>` (cio che si vede).
+2. I "mattoni" piu usati dentro il `body`:
+   1. Titoli: da `<h1>` (il piu grande) a `<h6>` (il piu piccolo).
+   2. Paragrafo di testo: `<p>...</p>`.
+   3. Immagine: `<img src="foto.jpg" alt="descrizione">`.
+   4. Collegamento (link): `<a href="https://...">testo del link</a>`.
+   5. Elenco: `<ul><li>voce</li><li>voce</li></ul>`.
+3. Sezioni per organizzare la pagina (HTML5): `<header>` (intestazione), `<main>` (contenuto principale), `<footer>` (piede pagina).
+4. Esempio da provare (aggiungerlo dentro il `body`):
+
+```html
+<header>
+  <h1>Il mio gioco preferito</h1>
+</header>
+<main>
+  <p>Si chiama <a href="https://esempio.it">Nome del gioco</a>.</p>
+  <img src="gioco.jpg" alt="immagine del gioco">
+  <ul>
+    <li>Perche mi piace</li>
+    <li>Come si gioca</li>
+  </ul>
+</main>
+<footer>
+  <p>Pagina fatta da Marco.</p>
+</footer>
+```
+
+> [GIALLO] Regola pratica: l'HTML dice COSA c'e (un titolo, un paragrafo, un'immagine). Non si occupa dei colori: quelli sono compito del CSS (capitolo 5).
+
+## 5. CSS — l'aspetto (colori, caratteri, spazi) {#doc30-sec5}
+
+1. Il CSS decide **come si vede** la pagina. Per iniziare, si scrive dentro il `<head>`, in un blocco `<style>`.
+2. Si sceglie un elemento (selettore) e gli si danno delle proprieta. Esempio da mettere nel `<head>`:
+
+```html
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222222;
+  }
+  h1 {
+    color: #1f6feb;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+  }
+</style>
+```
+
+3. Le proprieta di base piu utili:
+   1. `color`: colore del testo.
+   2. `background-color`: colore dello sfondo.
+   3. `font-family`: il carattere.
+   4. `font-size`: la grandezza del testo.
+   5. `text-align`: allineamento (`left`, `center`, `right`).
+   6. `padding` e `margin`: lo spazio dentro e fuori da un elemento.
+4. Dare uno stile solo ad alcuni elementi con le **classi**: nell'HTML si scrive `<p class="importante">...`, nel CSS `.importante { color: red; }`.
+
+> [BLU] Passo avanti (facoltativo): quando la pagina cresce, il CSS si sposta in un file a parte `stile.css` e si collega nel `<head>` con `<link rel="stylesheet" href="stile.css">`. Stesso risultato, piu ordine.
+
+## 6. Una pagina che si vede bene anche sul telefono {#doc30-sec6}
+
+1. Aggiungere nel `<head>` questa riga: dice al telefono di adattare la pagina allo schermo.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+2. Far si che le immagini non escano dallo schermo: nel CSS
+
+```html
+<style>
+  img { max-width: 100%; height: auto; }
+</style>
+```
+
+3. Provare la pagina restringendo la finestra del browser: il testo e le immagini si adattano. Questa e la base del "responsive".
+
+## 7. Pubblicare online con GitHub Pages (Mostralo) {#doc30-sec7}
+
+1. Si mette il file `index.html` in un **repository** su GitHub (lo stesso strumento del corso).
+2. Nelle impostazioni del repository si attiva **Pages** (si sceglie il ramo e la cartella da pubblicare). Dopo qualche minuto la pagina e online a un indirizzo tipo `https://nome-utente.github.io/nome-repo`.
+3. Da quel momento ogni salvataggio (commit) aggiorna la pagina online: si mostra al compagno, sul telefono, a casa.
+
+> [GIALLO] Nota pratica sulla pubblicazione: per pubblicare da un repository privato serve il piano GitHub Team (che l'organizzazione della scuola avra con la verifica docente); in alternativa si usa un repository pubblico dedicato alle pagine web (contiene solo l'HTML, nessun dato personale). La guida click-by-click per attivare Pages si fa insieme, davanti allo schermo.
+
+## 8. Idee di progetto (Fallo tuo) {#doc30-sec8}
+
+1. **La mia pagina**: chi sono, cosa mi piace, una foto, qualche link.
+2. **Pagina su una passione** (un gioco, uno sport, una band): titolo, testo, immagini, elenco.
+3. **Mini-sito a 3 pagine** con un menu di link tra loro (home, argomento, contatti): primo passo verso il sito professionale.
+4. **Quiz troubleshooting**: una pagina che presenta le domande a crocette e mostra se la risposta e giusta (aggancio col kit di troubleshooting).
+
+## 9. Collegamenti {#doc30-sec9}
+
+1. **Verso il sito professionale**: questo corso base e la rampa di lancio per il sito professionale della Classe 3.
+2. **Negozio online (Classe 1)**: li HTML, CSS e JavaScript sono gia usati; e una base pronta da cui prendere esempi.
+3. **Git e GitHub**: il web si sposa con il versionamento (salvo, pubblico, aggiorno) e con la leva "Mostralo".
+4. **Metodo del corso**: vittoria subito, personalizzazione, risultato mostrabile, carta e penna per lo schema della pagina.
+
+
+# Programma del Corso — Classe 4 {#doc31}
 *Versione 0.2 · 18/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc29-sec1}
+## 1. A colpo d'occhio {#doc31-sec1}
 1. Le reti sono il cuore dell'anno: con Cisco Packet Tracer si progetta e si simula una rete importante, tipo quella di una scuola, con tutti i componenti.
 2. Si approfondiscono i database (SQL avanzato) e il web (un sito piu completo), e si cura la documentazione tecnica.
 3. Ci si prepara al mondo del lavoro: CV Europass, tesine, presentazione del lavoro finito; e alla prova di qualifica con validita regionale (Regione Lombardia).
 4. Il Glossario personale arriva ad almeno 200 termini; il quaderno diventa un vero libro loro.
 
-## 2. Gli argomenti dell'anno (dalla griglia) {#doc29-sec2}
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc31-sec2}
 1. Fondamenti (fili rossi): Glossario personale (verso i 200 termini totali); Git, le release del progetto (Fase 2).
 2. Reti (il cuore): Cisco Packet Tracer con la rete di una scuola e le VLAN; sicurezza di rete (firewall, segmentazione); indirizzamento avanzato applicato; cablaggio (da valutare).
 3. Database: SQL avanzato (piu condizioni, piu tabelle, raggruppamenti); migrazione e analisi statistica dei dati.
@@ -5745,61 +6045,61 @@ Se qualcosa non va:
 6. Mondo del lavoro: ricerca del lavoro (CV Europass, ricerca attiva); documentazione tecnica e deployment; lavoro in team e tesine.
 7. Intelligenza artificiale: l'AI come strumento di lavoro maturo; limiti ed etica, collegati al mondo del lavoro.
 
-## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc29-sec3}
+## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc31-sec3}
 1. Progettare su carta la rete di una scuola (aule, segreteria, laboratori) e poi costruirla: router, switch, PC.
 2. Le VLAN: separare le reti (segreteria, studenti) mantenendo l'ordine; far comunicare le reti tramite il router.
 3. Simulare il funzionamento e testare i percorsi con il ping; documentare il progetto come compito di realta.
 
-## 4. Modulo B — Sicurezza di rete {#doc29-sec4}
+## 4. Modulo B — Sicurezza di rete {#doc31-sec4}
 1. I rischi in rete e come ci si difende: il firewall in parole semplici, buone pratiche.
 2. La segmentazione come difesa: perche separare le reti aiuta; si applica alla rete-scuola.
 
-## 5. Modulo C — Database avanzato {#doc29-sec5}
+## 5. Modulo C — Database avanzato {#doc31-sec5}
 1. Query piu ricche: piu condizioni, piu tabelle (join semplice), raggruppare e riassumere (GROUP BY).
 2. Un mini-database completo per un caso reale (il negozio o la scuola), dalla progettazione alle query.
 3. Migrazione e analisi statistica dei dati raccolti.
 
-## 6. Modulo D — Web: sito completo {#doc29-sec6}
+## 6. Modulo D — Web: sito completo {#doc31-sec6}
 1. Un sito piu ricco (piu pagine, menu, stile curato) su un tema scelto.
 2. Cura dell'aspetto e della resa su telefono; pubblicazione come parte del portfolio.
 
-## 7. Modulo E — Programmazione (livello massimo) {#doc29-sec7}
+## 7. Modulo E — Programmazione (livello massimo) {#doc31-sec7}
 1. Lazarus: un progetto piu strutturato scelto dagli studenti, con oggetti, dati e grafica insieme.
 2. Godot (se collocato quest'anno): dal 2D al 3D, il progetto boss (movimento, obiettivi, punteggio). Percorso completo nel corso dedicato.
 
-## 8. Modulo F — Collaudo e documentazione {#doc29-sec8}
+## 8. Modulo F — Collaudo e documentazione {#doc31-sec8}
 1. Collaudare la rete con il ping e verificare che tutto comunichi.
 2. Documentare: mappa degli indirizzi, schema, scelte fatte; manuale utente e relazione tecnica curati; cosa vuol dire mettere in produzione (deployment).
 
-## 9. Modulo G — Preventivo dell'infrastruttura {#doc29-sec9}
+## 9. Modulo G — Preventivo dell'infrastruttura {#doc31-sec9}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 10. Modulo H — Mondo del lavoro e tesine {#doc29-sec10}
+## 10. Modulo H — Mondo del lavoro e tesine {#doc31-sec10}
 1. Il CV Europass e la ricerca attiva del lavoro: dove cercare, come presentarsi, la mail di candidatura.
 2. Il gruppo porta a termine un progetto vero con ruoli chiari; si pubblica la release stabile (Git, Fase 2).
 3. La tesina/presentazione del lavoro finito: struttura, prove e presentazione alla classe.
 
-## 11. La prova di qualifica (diploma) {#doc29-sec11}
+## 11. La prova di qualifica (diploma) {#doc31-sec11}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 12. Valutazione {#doc29-sec12}
+## 12. Valutazione {#doc31-sec12}
 1. Il progetto della rete-scuola (progettazione, VLAN, collaudo, documentazione) come prova forte dell'anno.
 2. Prove su database, web e la tesina finale; capacita di spiegare a voce cio che si e fatto.
 3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
 
-## 13. Materiale collegato (gia esistente, da trascrivere) {#doc29-sec13}
+## 13. Materiale collegato (gia esistente, da trascrivere) {#doc31-sec13}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc30}
+# Corso Informatica — indice generale {#doc32}
 *Versione 1.16 · 02/09/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc30-sec1}
+## In breve {#doc32-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -5815,7 +6115,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc30-sec2}
+## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc32-sec2}
 
 Nella **radice del repository** stanno i documenti che governano tutto il corso,
 non un anno solo. Si leggono dal generale al dettaglio: dalla mappa delle
@@ -5844,7 +6144,7 @@ Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc30-sec3}
+## Parte 1 — Classe 1 (Informatica) {#doc32-sec3}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -5889,7 +6189,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc30-sec4}
+## Parte 2 — Corso Godot / GDScript {#doc32-sec4}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -5918,7 +6218,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc30-sec5}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc32-sec5}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -5942,7 +6242,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc30-sec6}
+## Parte 4 — Strumenti e configurazione {#doc32-sec6}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -5960,7 +6260,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc30-sec7}
+## Dove sta tutto {#doc32-sec7}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -5970,10 +6270,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc31}
+# Materiale del Corso — Classe 1 {#doc33}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc31-sec1}
+## In breve {#doc33-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -5981,7 +6281,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc31-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc33-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -5991,7 +6291,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc31-sec3}
+## 2. Esercizi / progetti FATTI {#doc33-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -6018,7 +6318,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc31-sec4}
+## 3. Strumenti {#doc33-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -6026,7 +6326,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc31-sec5}
+## 4. In preparazione (prossimi passi) {#doc33-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -6036,7 +6336,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc31-sec6}
+## Dove sta tutto {#doc33-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`

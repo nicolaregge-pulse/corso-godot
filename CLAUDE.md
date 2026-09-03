@@ -437,6 +437,8 @@ l'intestazione del file.
 ### 7. Materiali della Classe 3
 1. `classe-3/reti-teoria.md` — v0.2
 2. `classe-3/esercizi/01-cablaggio-rj45.md` — v0.1
+3. `classe-3/troubleshooting-guasti.md` — v0.1 (kit diagnosi guasti: teoria a crocette + guasti fisici) — Panaccione
+4. `classe-3/corso-html-css.md` — v0.1 (corso base HTML5/CSS, con pubblicazione su Pages) — Panaccione
 
 ### 8. Altri materiali e prototipi
 1. `README.md` (radice) — v1.0
@@ -444,7 +446,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.58 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.59 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).
