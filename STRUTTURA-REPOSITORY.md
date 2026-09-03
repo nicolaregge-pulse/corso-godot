@@ -1,6 +1,6 @@
 # Struttura del Repository
 
-**Versione 1.1** — 17/08/2026
+**Versione 1.2** — 18/08/2026
 *Mappa del repository su GitHub: cosa c'e ora e come sara l'albero completo.
 Serve per orientarsi e per sapere in anticipo dove andranno le cose.*
 
@@ -19,10 +19,18 @@ corso-godot/
 ├── 01-GLOSSARIO.md  (+ .pdf)           documento 01: glossario
 ├── REGOLE-FORMATTAZIONE.md  (+ .pdf)   standard di formattazione
 ├── STRUTTURA-REPOSITORY.md  (+ .pdf)   questa mappa
+├── MAPPA-ARGOMENTI.md  (+ .pdf)        macro-aree (di chi e ciascuna)
+├── GRIGLIA-ARGOMENTI.md  (+ .pdf)      argomenti x anno + colonna competenze
+├── PIANO-ORE-LEZIONE.md  (+ .pdf)      guida ora per ora (4 anni)
+├── ORGANIZZAZIONE-GIT-ALLIEVI.md (+pdf) repository per allievo (Classroom)
+├── REGOLE-LABORATORIO.md  (+ .pdf)     regole del laboratorio
 ├── CORSO-INFORMATICA.md  (+ .pdf)      indice generale
 ├── LIBRO-COMPLETO.md  (+ .pdf)         il libro unico (generato)
 ├── CLAUDE.md                           istruzioni interne (assistente)
 ├── README.md                           panoramica del repository
+│
+├── programmi-ufficiali/                Allegato A ufficiale (4 PDF) + nota
+├── programma-svolto/                   programmi svolti per <anno>/<classe> (Regione)
 │
 ├── classe-1/                           CORSO CLASSE 1 (completo)
 │   ├── programma.md  (+ .pdf)          mappa dell'anno
@@ -37,6 +45,13 @@ corso-godot/
 │   │   └── immagini/                   schemi + screenshot della guida
 │   ├── negozio-esempio/index.html      seconda versione di esempio
 │   └── _build/                         generatore dei PDF del corso
+│
+├── classe-2/programma.md  (+ .pdf)     programma Classe 2 (v0.2)
+├── classe-3/                           programma + reti-teoria + esercizi
+│   ├── programma.md  (+ .pdf)          programma Classe 3 (v0.2)
+│   ├── reti-teoria.md  (+ .pdf)        teoria delle reti (con schemi SVG)
+│   └── esercizi/01-cablaggio-rj45.md   scheda cablaggio a 4 livelli
+├── classe-4/programma.md  (+ .pdf)     programma Classe 4 (v0.2)
 │
 ├── manuale/                            CORSO GODOT (2a/3a)
 │   ├── manuale.md  (+ .pdf)            libro di testo di Godot

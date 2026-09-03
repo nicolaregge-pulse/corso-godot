@@ -1,12 +1,14 @@
 # Mappa degli Argomenti — Macro-aree
 
-**Versione 1.2** — 17/08/2026
+**Versione 1.3** — 18/08/2026
 *Contenitori di macro-argomenti dell'area informatica. Nasce unendo i quattro
 programmi ufficiali (prima, seconda, terza, quarta) con il materiale che abbiamo
 gia prodotto. Serve come "menu": gli argomenti sono raccolti per area, cosi si
 possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 
 ---
+
+> [BLU] Collegamento: la scelta per anno di ciascun argomento e nella Griglia degli Argomenti, che ha anche la colonna "Competenza (Allegato A)". I programmi ufficiali sono in realta l'ALLEGATO A, organizzato per competenze (1-17): per questo un argomento di informatica puo comparire in piu competenze. Vedi la nota in `programmi-ufficiali/`.
 
 ## 1. Come si legge questa mappa
 1. Ogni sezione e una macro-area (un contenitore di argomenti affini).
