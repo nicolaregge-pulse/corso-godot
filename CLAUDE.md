@@ -424,7 +424,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.55 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.57 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).
