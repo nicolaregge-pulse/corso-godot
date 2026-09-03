@@ -1,6 +1,6 @@
 # Piano delle Ore di Lezione
 
-**Versione 0.3** — 18/08/2026
+**Versione 0.4** — 18/08/2026
 *Guida operativa "giorno per giorno". Traduce la Griglia degli Argomenti in un
 albero: Macro-area, poi Sotto-argomento, poi la singola Ora di lezione con una
 breve descrizione di cosa fare. E il documento da guardare prima di ogni lezione
@@ -22,12 +22,11 @@ si adattano al ritmo della classe.*
 2. Ogni Sotto-argomento indica tra parentesi le ore previste; l'elenco numerato sotto e proprio la sequenza delle ore, una riga per ora.
 3. L'ordine dall'alto in basso e gia l'ordine consigliato in cui procedere: leggere in sequenza equivale al calendario dell'anno.
 4. Ogni ora e pensata col metodo del corso: un piccolo obiettivo concreto, un risultato visibile, spazio per personalizzare ("Vinci subito, Fallo tuo, Mostralo").
-5. Le voci con la nota "da decidere" o "da confermare" seguono la Griglia: sono punti ancora aperti.
 
 ## 2. Legenda dei simboli
 1. (N ore): quante ore indicative servono per quel sotto-argomento.
 2. [FILO ROSSO]: attivita che torna in piu lezioni durante tutto l'anno (per esempio il Glossario e il Quaderno personale).
-3. [DA DECIDERE]: collocazione o strumento ancora da fissare insieme (vedi Griglia).
+3. [strumento: ...]: indica lo strumento confermato per quell'attivita (es. SQLite, Gemini).
 
 ---
 
@@ -210,7 +209,7 @@ altre materie.*
 1. Cos'e l'intelligenza artificiale, cosa sa fare e cosa no: esempi concreti; una discussione onesta sui limiti.
 2. Usare l'AI in modo giusto a scuola: aiuta a capire, non a saltare il pensiero; la regola della "prova del nove".
 
-### Usare un assistente AI per costruire il proprio libro di testo/quaderno (2 ore) [DA CONFERMARE strumento: Gemini]
+### Usare un assistente AI per costruire il proprio libro di testo/quaderno (2 ore) [strumento: Gemini]
 1. Come farsi aiutare dall'AI a spiegare meglio una pagina del proprio quaderno, con parole proprie.
 2. Come farsi fare domande dall'AI per verificare se ho capito (auto-verifica); si prova su un argomento gia fatto.
 
@@ -285,11 +284,6 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 1. Differenza tra linguaggio interpretato e compilato: cosa vuol dire "compilare"; perche un .exe e comodo.
 2. Lazarus e Delphi, cugini stretti: cosa hanno in comune; dove si usano nel lavoro reale.
 
-### Godot e GDScript (assaggio) (3 ore) [DA DECIDERE anno]
-1. Cos'e Godot e i suoi 4 concetti base (scene, nodi, segnali, script): il primo sguardo all'ambiente.
-2. Il primo "funziona!": un bottone che saluta (il ponte con l'evento click gia noto in Lazarus).
-3. Un movimento semplice col game loop: qualcosa che si muove sullo schermo; ognuno cambia colore/velocita. (Approfondimenti nel corso dedicato a Godot.)
-
 ## Macro-area: Reti
 
 ### Indirizzamento: IP, MAC, DHCP, DNS, gateway, TCP/IP e porte (3 ore)
@@ -323,7 +317,7 @@ assemblare gli studenti potranno installare il sistema e fare gli amministratori
 3. Un primo ordine via email: si prova il flusso semplice; ognuno mostra il suo negozio funzionante.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO]
-1. Uso dell'AI per studiare e per il quaderno: farsi spiegare e farsi interrogare (auto-verifica). [DA CONFERMARE strumento: Gemini]
+1. Uso dell'AI per studiare e per il quaderno: farsi spiegare e farsi interrogare (auto-verifica). [strumento: Gemini]
 2. Un'ora di riflessione: come cambia il lavoro con l'automazione e l'AI; esempi vicini ai loro interessi.
 
 ---
@@ -350,7 +344,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Cos'e un database: un archivio ordinato; tabelle, righe e colonne con esempi vicini a loro (rubrica, negozio).
 2. Perche non basta un foglio di calcolo: relazioni tra dati; si progetta su carta una piccola tabella.
 
-### Linguaggio SQL: interrogare e gestire i dati (4 ore) [DA CONFERMARE strumento: SQLite]
+### Linguaggio SQL: interrogare e gestire i dati (4 ore) [strumento: SQLite]
 1. Aprire lo strumento e creare la prima tabella; inserire qualche dato.
 2. La query SELECT: chiedere i dati; filtrare con WHERE; ognuno interroga i propri dati.
 3. Ordinare e contare (ORDER BY, COUNT): far parlare i dati.
@@ -408,7 +402,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 2. Coordinate polari e rettangolari: due modi di dire "dove"; esempi visivi.
 3. Un piccolo disegno interattivo o animazione semplice: si vede muovere qualcosa fatto da loro.
 
-### Godot e GDScript (prosecuzione) (3 ore) [DA DECIDERE anno]
+### Godot e GDScript (prosecuzione) (3 ore)
 1. Collisioni, aree e punteggio: raccogliere oggetti in un gioco.
 2. Un primo gioco 2D completo (tipo "Chirurgo Pasticcione"): dalla scena al gioco giocabile.
 3. Si personalizza e si mostra il gioco. (Il grosso e nel corso dedicato a Godot.)
@@ -438,7 +432,7 @@ per i primi passi anche l'editor Tryit SQL di W3Schools.*
 1. Si tira insieme il lavoro sulle reti (cavi + piccola LAN + ping) come progetto documentato.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO]
-1. Usare l'AI per farsi aiutare a capire SQL, HTML o un errore, senza copiare: si prova su un caso reale. [DA CONFERMARE strumento: Gemini]
+1. Usare l'AI per farsi aiutare a capire SQL, HTML o un errore, senza copiare: si prova su un caso reale. [strumento: Gemini]
 2. Algoritmi e dati: come i servizi usano i nostri dati; un'ora di consapevolezza e privacy.
 
 ---
@@ -496,7 +490,7 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 2. Sviluppo con oggetti, dati e grafica insieme; si affrontano i bug con metodo.
 3. Si completa, si prova e si documenta: un lavoro da mostrare.
 
-### Godot e GDScript: il progetto boss e il 3D (3 ore) [DA DECIDERE anno]
+### Godot e GDScript: il progetto boss e il 3D (3 ore)
 1. Dal 2D al 3D: cosa cambia nel "progetto boss"; si imposta la scena 3D.
 2. Si sviluppa il progetto boss (movimento, obiettivi, punteggio) passo dopo passo.
 3. Si rifinisce e si mostra il gioco. (Percorso completo nel corso dedicato a Godot.)
@@ -520,13 +514,12 @@ i 200 termini totali) e Quaderno, che a fine anno diventa un vero libro loro.*
 1. Cos'e una release: congelare una versione stabile del progetto (v1.0, v1.1...); si pubblica la release del progetto di gruppo, pronta da mostrare e da consegnare.
 
 ## Macro-area: Intelligenza artificiale [FILO ROSSO]
-1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [DA CONFERMARE strumento: Gemini]
+1. Usare l'AI come strumento di lavoro maturo: farsi aiutare senza delegare il pensiero; casi reali di progetto. [strumento: Gemini]
 2. Intelligenza umana e artificiale, limiti ed etica: una riflessione conclusiva, collegata al mondo del lavoro che li aspetta.
 
 ---
 
-## Nota finale: punti ancora aperti (dalla Griglia)
-1. Godot: l'anno preciso e ancora da decidere insieme (probabile 3a e 4a, la 2a da valutare). Nel piano e messo come assaggio in 2a e piu strutturato in 3a-4a, ma resta [DA DECIDERE].
-2. Strumento SQL: proposta SQLite (browser + portable), [DA CONFERMARE].
-3. Strumento AI: da verificare che tutto si faccia con Gemini gratuito, [DA CONFERMARE].
-4. Le ore indicate sono una stima e un ordine consigliato: si adattano al ritmo reale della classe, senza fretta.
+## Nota finale
+1. Decisioni confermate: Godot in 3a e 4a; cablaggio RJ45 in 3a e 4a; strumento SQL = SQLite (sqliteonline.com + DB Browser portable, w3schools per il primo assaggio); strumento AI = Gemini gratuito.
+2. Resta da affinare, dove serve, la corrispondenza argomento -> competenza dell'Allegato A (colonna "Comp." della Griglia).
+3. Le ore indicate sono una stima e un ordine consigliato: si adattano al ritmo reale della classe, senza fretta.

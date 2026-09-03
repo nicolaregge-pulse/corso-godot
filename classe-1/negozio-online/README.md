@@ -1,5 +1,7 @@
 # Negozio online — note per il DOCENTE
 
+**Versione 1.0** — 02/09/2026
+
 Il negozio **tutto online**: la vetrina sta su **GitHub Pages**, i prodotti in un
 **database vero** su **Supabase**, gli ordini arrivano via **email** (FormSubmit).
 Funziona da casa, sul telefono, anche con i PC di scuola spenti.

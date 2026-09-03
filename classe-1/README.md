@@ -1,5 +1,7 @@
 # Classe 1 — Corso di Informatica
 
+**Versione 1.0** — 02/09/2026
+
 Spazio del corso di **Informatica per la Classe 1** (istituto professionale).
 È **separato** dal corso di Godot (che è per la seconda e la terza).
 

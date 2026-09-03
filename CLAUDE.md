@@ -6,53 +6,6 @@ lavora dentro `godot/`.
 
 ---
 
-## ⛔ REGOLE OPERATIVE DA NON DIMENTICARE (Nicola ci tiene — leggere per PRIME)
-
-**1. Nome del ramo di lavoro: sempre PULITO.** Il ramo deve avere un nome
-leggibile (es. `claude/corso-godot`). MAI lasciare o mostrare rami con suffissi
-casuali tipo `...-mubah1`. Se il sistema che avvia la sessione ne assegna uno
-così, spostare **subito** il lavoro su un ramo dal nome pulito. Non promettere
-mai "non lo vedrai più" se non dipende da me: dire la verità sui limiti.
-
-**2. Con che programma si apre ogni tipo di file** (scuola = zero installazioni,
-niente admin: usare SOLO ciò che è già presente):
-- **Codice `.gd`** → si scrive/apre **dentro Godot** (portabile, è già lì). Per
-  solo **leggerlo** come testo: click **destro** sul file → `Apri con` →
-  `Blocco note`. Mai doppio clic (apre Godot e fa partire il gioco).
-- **File `.md`** (manuale, eserciziario, quaderno) → si leggono **impaginati** su
-  `github.com` (browser); per modificarli, la matita di GitHub o `github.dev`
-  (tasto `.`). Per solo testo offline: `Blocco note`.
-- **Manuale da leggere impaginato** → il **PDF** (con SumatraPDF, portabile).
-- Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
-  Godot portabile, SumatraPDF portabile.
-
----
-
-## Contesto didattico
-
-- **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
-  ragazzi.
-- **Classi:** una **seconda** e una **terza** di **istituto professionale**.
-  → Taglio **pratico**: fare prima, teoria in piccole dosi legata al fare;
-  risultato visibile e "figo" a ogni passo; molto copia-modifica-sperimenta.
-  Sfruttare al massimo i 4 livelli di aiuto dell'eserciziario.
-- **Background dei ragazzi:** conoscono **Lazarus** (Free Pascal) a **livello
-  base**. Hanno usato pochi componenti:
-  - **TButton** (il bottone)
-  - **TEdit** (la casella di testo)
-  - la proprietà **Caption** (il testo mostrato)
-  - Progetti fatti: cose molto semplici, tipo una **calcolatrice**.
-- Quindi: **principianti**. Sanno cos'è un evento (click), una proprietà, una
-  variabile; non hanno mai visto un "game loop" né la programmazione a oggetti
-  avanzata.
-
-## Obiettivo del corso (quest'anno)
-
-- Un corso che **diverta**: la priorità è tenerli **agganciati**.
-- Tutti i progetti devono essere **molto usabili e accattivanti** — giochini
-  che li attirano e che possono mostrare/giocare subito. Niente esercizi aridi.
-- Difficoltà **graduale**, sempre con un risultato visibile a ogni passo.
-
 ## ⭐ Contesto umano e missione (leggere SEMPRE per prime)
 
 Gli studenti vivono spesso situazioni di **svantaggio sociale**: molti hanno un
@@ -120,6 +73,51 @@ Due ingranaggi di supporto:
 
 > Conseguenza pratica sugli esercizi: si parte SEMPRE da qualcosa di
 > **giocabile e personalizzabile**, non da esercizi "scolastici" astratti.
+
+## ⛔ REGOLE OPERATIVE DA NON DIMENTICARE (Nicola ci tiene — leggere per PRIME)
+
+**1. Nome del ramo di lavoro: sempre PULITO.** Il ramo deve avere un nome
+leggibile (es. `claude/corso-godot`). MAI lasciare o mostrare rami con suffissi
+casuali tipo `...-mubah1`. Se il sistema che avvia la sessione ne assegna uno
+così, spostare **subito** il lavoro su un ramo dal nome pulito. Non promettere
+mai "non lo vedrai più" se non dipende da me: dire la verità sui limiti.
+
+**2. Con che programma si apre ogni tipo di file** (scuola = zero installazioni,
+niente admin: usare SOLO ciò che è già presente):
+- **Codice `.gd`** → si scrive/apre **dentro Godot** (portabile, è già lì). Per
+  solo **leggerlo** come testo: click **destro** sul file → `Apri con` →
+  `Blocco note`. Mai doppio clic (apre Godot e fa partire il gioco).
+- **File `.md`** (manuale, eserciziario, quaderno) → si leggono **impaginati** su
+  `github.com` (browser); per modificarli, la matita di GitHub o `github.dev`
+  (tasto `.`). Per solo testo offline: `Blocco note`.
+- **Manuale da leggere impaginato** → il **PDF** (con SumatraPDF, portabile).
+- Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
+  Godot portabile, SumatraPDF portabile.
+
+## Contesto didattico
+
+- **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
+  ragazzi.
+- **Classi:** una **seconda** e una **terza** di **istituto professionale**.
+  → Taglio **pratico**: fare prima, teoria in piccole dosi legata al fare;
+  risultato visibile e "figo" a ogni passo; molto copia-modifica-sperimenta.
+  Sfruttare al massimo i 4 livelli di aiuto dell'eserciziario.
+- **Background dei ragazzi:** conoscono **Lazarus** (Free Pascal) a **livello
+  base**. Hanno usato pochi componenti:
+  - **TButton** (il bottone)
+  - **TEdit** (la casella di testo)
+  - la proprietà **Caption** (il testo mostrato)
+  - Progetti fatti: cose molto semplici, tipo una **calcolatrice**.
+- Quindi: **principianti**. Sanno cos'è un evento (click), una proprietà, una
+  variabile; non hanno mai visto un "game loop" né la programmazione a oggetti
+  avanzata.
+
+## Obiettivo del corso (quest'anno)
+
+- Un corso che **diverta**: la priorità è tenerli **agganciati**.
+- Tutti i progetti devono essere **molto usabili e accattivanti** — giochini
+  che li attirano e che possono mostrare/giocare subito. Niente esercizi aridi.
+- Difficoltà **graduale**, sempre con un risultato visibile a ogni passo.
 
 ## Metodo (come spiegare)
 
@@ -380,3 +378,73 @@ Repo del corso (nicolaregge-pulse/corso-godot) — layout OBIETTIVO:
   ├── esercizi/          (Fase 1: una sottocartella per esercizio)
   └── progetto-gruppo/   (Fase 2: progetto che evolve con branch/PR/release)
 ```
+
+## ⭐ Elenco documenti e versioni (indice, aggiornato 02/09/2026)
+
+Ogni documento del corso porta un **numero di versione** nella propria
+intestazione (`**Versione X.Y**`). Questo è l'indice di riferimento: quando un
+documento cambia si bumpa la versione nella sua intestazione **e** si aggiorna la
+riga qui sotto. La fonte di verità della singola versione resta sempre
+l'intestazione del file.
+
+### 1. Riferimento e stato
+1. `00-STATO-DEL-CORSO.md` — v2.2 (fonte di verità: decisioni e stato)
+2. `CORSO-INFORMATICA.md` — v1.16 (super-guida / indice generale)
+3. `PROMEMORIA-NICOLA.md` — v0.3 (cose da fare di Nicola)
+4. `01-GLOSSARIO.md` — v1.0
+
+### 2. Pianificazione didattica
+1. `MAPPA-ARGOMENTI.md` — v1.3
+2. `GRIGLIA-ARGOMENTI.md` — v1.15 (argomenti per anno + colonna competenze)
+3. `PIANO-ORE-LEZIONE.md` — v0.4 (piano ora-per-ora, 4 anni)
+
+### 3. Regole, standard e organizzazione
+1. `REGOLE-FORMATTAZIONE.md` — v1.3
+2. `REGOLE-LABORATORIO.md` — v0.1
+3. `RUOLI-CLASSE.md` — v0.4
+4. `STRUTTURA-REPOSITORY.md` — v1.2
+5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
+
+### 4. Programmi per classe e documenti per la Regione
+1. `classe-1/programma.md` — v0.4
+2. `classe-2/programma.md` — v0.3
+3. `classe-3/programma.md` — v0.2
+4. `classe-4/programma.md` — v0.2
+5. `PROGRAMMA-PREVENTIVO-2026-27.md` — v0.4 (parti da incollare in Allegato A)
+6. `MIE-PARTI-ALLEGATO-A.md` — v0.2 (parti di Regge estratte dai PFP)
+7. `ARGOMENTI-SVOLTI.md` — v0.3 (svolto 2025/26, nomenclatura 26/27)
+8. `programma-svolto/README.md` — v1.0
+9. `programma-svolto/_fonti-registro-2025-26/README.md` — v1.0
+10. `programmi-ufficiali/README.md` — v0.6
+
+### 5. Manuale (libro di testo + eserciziario)
+1. `manuale/manuale.md` — v0.5 (libro di testo)
+2. `manuale/eserciziario.md` — v0.5 (esercizi a 4 livelli)
+3. `manuale/quaderno-studente-TEMPLATE.md` — v1.0
+4. `manuale/immagini/README.md` — v1.0
+5. `manuale/_build/README.md` — v1.0
+
+### 6. Materiali della Classe 1
+1. `classe-1/README.md` — v1.0
+2. `classe-1/MATERIALE-PRONTO.md` — v1.4
+3. `classe-1/scheda-configuratore-pc.md` — v0.3
+4. `classe-1/bussola-mondo-del-lavoro.md` — v0.2
+5. `classe-1/da-far-fare-assolutamente.md` — v0.2
+6. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
+7. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
+8. `classe-1/negozio-online/README.md` — v1.0
+
+### 7. Materiali della Classe 3
+1. `classe-3/reti-teoria.md` — v0.2
+2. `classe-3/esercizi/01-cablaggio-rj45.md` — v0.1
+
+### 8. Altri materiali e prototipi
+1. `README.md` (radice) — v1.0
+2. `battaglia-navale-3d/README.md` — v1.0
+3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
+
+### 9. Libro combinato (generato)
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.57 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+
+### 10. Attestati (non testuali)
+1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).
