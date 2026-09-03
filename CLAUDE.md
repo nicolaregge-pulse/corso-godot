@@ -6,54 +6,6 @@ lavora dentro `godot/`.
 
 ---
 
-## ⛔ REGOLE OPERATIVE DA NON DIMENTICARE (Nicola ci tiene — leggere per PRIME)
-
-**1. Nome del ramo di lavoro: sempre PULITO.** Il ramo deve avere un nome
-leggibile (es. `claude/corso-godot`). MAI lasciare o mostrare rami con suffissi
-casuali tipo `...-mubah1`. Se il sistema che avvia la sessione ne assegna uno
-così, spostare **subito** il lavoro su un ramo dal nome pulito. Non promettere
-mai "non lo vedrai più" se non dipende da me: dire la verità sui limiti.
-
-**2. Con che programma si apre ogni tipo di file** (scuola = zero installazioni,
-niente admin: usare SOLO ciò che è già presente):
-- **Codice `.gd`** → si scrive/apre **dentro Godot** (portabile, è già lì). Per
-  solo **leggerlo** come testo: click **destro** sul file → `Apri con` →
-  `Blocco note`. Mai doppio clic (apre Godot e fa partire il gioco).
-- **File `.md`** (manuale, eserciziario, quaderno) → si leggono **impaginati** su
-  `github.com` (browser); per modificarli, la matita di GitHub o `github.dev`
-  (tasto `.`). Per solo testo offline: `Blocco note`.
-- **Manuale da leggere impaginato** → il **PDF** (con SumatraPDF, portabile).
-- Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
-  Godot portabile, SumatraPDF portabile.
-
----
-
-
-## Contesto didattico
-
-- **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
-  ragazzi.
-- **Classi:** una **seconda** e una **terza** di **istituto professionale**.
-  → Taglio **pratico**: fare prima, teoria in piccole dosi legata al fare;
-  risultato visibile e "figo" a ogni passo; molto copia-modifica-sperimenta.
-  Sfruttare al massimo i 4 livelli di aiuto dell'eserciziario.
-- **Background dei ragazzi:** conoscono **Lazarus** (Free Pascal) a **livello
-  base**. Hanno usato pochi componenti:
-  - **TButton** (il bottone)
-  - **TEdit** (la casella di testo)
-  - la proprietà **Caption** (il testo mostrato)
-  - Progetti fatti: cose molto semplici, tipo una **calcolatrice**.
-- Quindi: **principianti**. Sanno cos'è un evento (click), una proprietà, una
-  variabile; non hanno mai visto un "game loop" né la programmazione a oggetti
-  avanzata.
-
-## Obiettivo del corso (quest'anno)
-
-- Un corso che **diverta**: la priorità è tenerli **agganciati**.
-- Tutti i progetti devono essere **molto usabili e accattivanti** — giochini
-  che li attirano e che possono mostrare/giocare subito. Niente esercizi aridi.
-- Difficoltà **graduale**, sempre con un risultato visibile a ogni passo.
-
 ## ⭐ Contesto umano e missione (leggere SEMPRE per prime)
 
 Gli studenti vivono spesso situazioni di **svantaggio sociale**: molti hanno un
@@ -121,6 +73,51 @@ Due ingranaggi di supporto:
 
 > Conseguenza pratica sugli esercizi: si parte SEMPRE da qualcosa di
 > **giocabile e personalizzabile**, non da esercizi "scolastici" astratti.
+
+## ⛔ REGOLE OPERATIVE DA NON DIMENTICARE (Nicola ci tiene — leggere per PRIME)
+
+**1. Nome del ramo di lavoro: sempre PULITO.** Il ramo deve avere un nome
+leggibile (es. `claude/corso-godot`). MAI lasciare o mostrare rami con suffissi
+casuali tipo `...-mubah1`. Se il sistema che avvia la sessione ne assegna uno
+così, spostare **subito** il lavoro su un ramo dal nome pulito. Non promettere
+mai "non lo vedrai più" se non dipende da me: dire la verità sui limiti.
+
+**2. Con che programma si apre ogni tipo di file** (scuola = zero installazioni,
+niente admin: usare SOLO ciò che è già presente):
+- **Codice `.gd`** → si scrive/apre **dentro Godot** (portabile, è già lì). Per
+  solo **leggerlo** come testo: click **destro** sul file → `Apri con` →
+  `Blocco note`. Mai doppio clic (apre Godot e fa partire il gioco).
+- **File `.md`** (manuale, eserciziario, quaderno) → si leggono **impaginati** su
+  `github.com` (browser); per modificarli, la matita di GitHub o `github.dev`
+  (tasto `.`). Per solo testo offline: `Blocco note`.
+- **Manuale da leggere impaginato** → il **PDF** (con SumatraPDF, portabile).
+- Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
+  Godot portabile, SumatraPDF portabile.
+
+## Contesto didattico
+
+- **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
+  ragazzi.
+- **Classi:** una **seconda** e una **terza** di **istituto professionale**.
+  → Taglio **pratico**: fare prima, teoria in piccole dosi legata al fare;
+  risultato visibile e "figo" a ogni passo; molto copia-modifica-sperimenta.
+  Sfruttare al massimo i 4 livelli di aiuto dell'eserciziario.
+- **Background dei ragazzi:** conoscono **Lazarus** (Free Pascal) a **livello
+  base**. Hanno usato pochi componenti:
+  - **TButton** (il bottone)
+  - **TEdit** (la casella di testo)
+  - la proprietà **Caption** (il testo mostrato)
+  - Progetti fatti: cose molto semplici, tipo una **calcolatrice**.
+- Quindi: **principianti**. Sanno cos'è un evento (click), una proprietà, una
+  variabile; non hanno mai visto un "game loop" né la programmazione a oggetti
+  avanzata.
+
+## Obiettivo del corso (quest'anno)
+
+- Un corso che **diverta**: la priorità è tenerli **agganciati**.
+- Tutti i progetti devono essere **molto usabili e accattivanti** — giochini
+  che li attirano e che possono mostrare/giocare subito. Niente esercizi aridi.
+- Difficoltà **graduale**, sempre con un risultato visibile a ogni passo.
 
 ## Metodo (come spiegare)
 
