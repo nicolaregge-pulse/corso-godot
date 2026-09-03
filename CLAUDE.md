@@ -418,8 +418,8 @@ l'intestazione del file.
 10. `programmi-ufficiali/README.md` — v0.6
 
 ### 5. Manuale (libro di testo + eserciziario)
-1. `manuale/manuale.md` — v0.5 (libro di testo)
-2. `manuale/eserciziario.md` — v0.5 (esercizi a 4 livelli)
+1. `manuale/manuale.md` — v0.20 (libro di testo)
+2. `manuale/eserciziario.md` — v0.15 (esercizi a 4 livelli)
 3. `manuale/quaderno-studente-TEMPLATE.md` — v1.0
 4. `manuale/immagini/README.md` — v1.0
 5. `manuale/_build/README.md` — v1.0
@@ -444,7 +444,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.57 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.58 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).
