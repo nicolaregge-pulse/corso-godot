@@ -394,7 +394,7 @@ l'intestazione del file.
 4. `01-GLOSSARIO.md` — v1.0
 
 ### 2. Pianificazione didattica
-1. `MAPPA-ARGOMENTI.md` — v1.3
+1. `MAPPA-ARGOMENTI.md` — v1.4
 2. `GRIGLIA-ARGOMENTI.md` — v1.15 (argomenti per anno + colonna competenze)
 3. `PIANO-ORE-LEZIONE.md` — v0.4 (piano ora-per-ora, 4 anni)
 
@@ -434,6 +434,9 @@ l'intestazione del file.
 7. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
 8. `classe-1/negozio-online/README.md` — v1.0
 
+### 6b. Materiali della Classe 2
+1. `classe-2/condizioni-if-then.md` — v0.1 (condizioni SE/ALLORA: IFTTT, funzione SE di Google Fogli, social, Lazarus if/then/else)
+
 ### 7. Materiali della Classe 3
 1. `classe-3/reti-teoria.md` — v0.2
 2. `classe-3/esercizi/01-cablaggio-rj45.md` — v0.1
@@ -446,7 +449,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.59 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.60 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).

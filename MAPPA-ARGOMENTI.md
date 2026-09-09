@@ -1,6 +1,6 @@
 # Mappa degli Argomenti — Macro-aree
 
-**Versione 1.3** — 18/08/2026
+**Versione 1.4** — 09/09/2026
 *Contenitori di macro-argomenti dell'area informatica. Nasce unendo i quattro
 programmi ufficiali (prima, seconda, terza, quarta) con il materiale che abbiamo
 gia prodotto. Serve come "menu": gli argomenti sono raccolti per area, cosi si
@@ -105,6 +105,8 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 8. Godot e GDScript: scene, nodi, segnali, game loop, giochi personalizzati.
 
 > [GIALLO] Presente in: Prima, Seconda (forte su Lazarus), Terza, Quarta. Nostro: manuale ed eserciziario di Godot/GDScript.
+
+> [GIALLO] Selezione (if/then/else): si introduce in Seconda partendo da IFTTT (ifttt.com) e dalla funzione SE dei Fogli Google, con esempi dai social, poi si scrive in Lazarus. Documento dedicato: classe-2/condizioni-if-then.md.
 
 ## 8. Database e gestione dei dati
 1. Concetto di database (archivio ordinato di dati) e analogia con una biblioteca.

@@ -64,6 +64,7 @@ DOCS = {
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},
     "programma":     {"src": "programma.md",                    "title": "Programma del Corso"},
     "programma-2":   {"src": "../classe-2/programma.md",        "title": "Programma del Corso — Classe 2"},
+    "condizioni-if-then": {"src": "../classe-2/condizioni-if-then.md", "title": "Le Condizioni — SE… ALLORA… (IF/THEN/ELSE) e IFTTT (Classe 2)"},
     "programma-3":   {"src": "../classe-3/programma.md",        "title": "Programma del Corso — Classe 3"},
     "reti-teoria":   {"src": "../classe-3/reti-teoria.md",      "title": "Le Reti di Computer — Teoria"},
     "cablaggio-rj45": {"src": "../classe-3/esercizi/01-cablaggio-rj45.md", "title": "Cablaggio RJ45 — Scheda pratica"},
