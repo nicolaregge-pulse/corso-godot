@@ -437,6 +437,9 @@ l'intestazione del file.
 ### 6b. Materiali della Classe 2
 1. `classe-2/condizioni-if-then.md` — v0.1 (condizioni SE/ALLORA: IFTTT, funzione SE di Google Fogli, social, Lazarus if/then/else)
 
+### 6c. Materiale trasversale (tutti gli anni)
+1. `INTELLIGENZA-ARTIFICIALE.md` — v0.1 (IA: Gem vs Agenti autonomi; con Gemini)
+
 ### 7. Materiali della Classe 3
 1. `classe-3/reti-teoria.md` — v0.2
 2. `classe-3/esercizi/01-cablaggio-rj45.md` — v0.1
@@ -449,7 +452,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.60 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.61 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).

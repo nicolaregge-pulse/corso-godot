@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.60** — 03/09/2026
+**Versione 1.61** — 03/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -5634,16 +5634,106 @@ end;
 4. **Metodo del corso**: prima concreto (IFTTT) poi codice (Lazarus); vittoria subito, personalizzazione, si mostra; schemino della condizione disegnato a mano.
 
 
-# Programma del Corso — Classe 3 {#doc27}
+# Intelligenza Artificiale — Gem e Agenti Autonomi {#doc27}
+*Versione 0.1 · 09/09/2026 · Parte: Trasversale — tutti gli anni*
+
+## 1. A cosa serve e come si usa {#doc27-sec1}
+
+1. Obiettivo: capire la differenza tra due modi di usare l'AI — uno che **risponde** (il Gem) e uno che **agisce** (l'Agente) — e quando conviene l'uno o l'altro.
+2. Lo strumento che usiamo a scuola e **Gemini** (gratuito). In Gemini gli assistenti personalizzati si chiamano proprio **"Gems"**.
+3. Filo del metodo: prima si prova con un esempio concreto e "figo" (crei il tuo assistente), poi lo si personalizza e lo si mostra. L'errore non fa danno: si corregge il testo delle istruzioni e si riprova.
+
+> [GIALLO] Regola d'oro sull'uso dell'AI (vale sempre): l'AI serve a CAPIRE meglio, non a copiare o a saltare il ragionamento. La prova del nove resta sempre la stessa: se sai **raccontare a parole tue** cosa hai fatto e perche, allora hai capito davvero.
+
+## 2. Cos'e un Gem (assistente personalizzato) {#doc27-sec2}
+
+1. Un **Gem** (termine usato da Google/Gemini; in altri assistenti si chiama "GPT personalizzato") e come un **attore a cui hai dato un copione preciso**: un'AI a cui hai spiegato **chi deve essere** e **come deve comportarsi**.
+2. Esempio: prendi un normale assistente e gli dici *"Da oggi sei il mio insegnante di storia antica. Parlami come se fossimo nell'Antica Roma e alla fine di ogni spiegazione fammi un quiz."* Hai appena creato un Gem.
+3. Caratteristiche principali:
+   1. **Ruolo definito**: risponde sempre stando nel personaggio o nelle regole che gli hai dato.
+   2. **Conoscenza mirata**: puoi caricare dei documenti (i tuoi appunti, un libro in PDF) e fargli usare **solo** quelle informazioni.
+   3. **Interazione passiva**: risponde solo quando tu gli scrivi qualcosa (un "prompt", cioe un comando testuale). Da solo non fa nulla finche non glielo chiedi.
+
+## 3. Cos'e un Agente AI (sistema autonomo) {#doc27-sec3}
+
+1. Se il Gem e un attore con un copione, l'**Agente AI** e un **robottino virtuale con mani e strumenti**, capace di **prendere decisioni**. Non si limita a scriverti un testo: compie **azioni** per raggiungere l'obiettivo che gli hai dato.
+2. Esempio: dici *"Organizzami una ricerca su Marte, crea una presentazione con i punti chiave e mandamela via email."* Un normale Gem ti scriverebbe solo il testo. Un Agente AI, invece, naviga su internet, estrae i dati, apre un programma per le slide, crea il file e te lo **spedisce davvero** via email.
+3. I "superpoteri" di un Agente AI:
+   1. **Il cervello**: usa l'AI (come Gemini) per ragionare, pianificare i passaggi e capire gli errori.
+   2. **Gli strumenti (tools)**: puo usare programmi veri — cercare su internet, usare la calcolatrice, scrivere codice, leggere il calendario, inviare messaggi.
+   3. **Autonomia**: capisce da solo quali passaggi fare. Se una ricerca non da risultati, se ne accorge e riprova con parole diverse, senza che tu glielo dica.
+
+## 4. Il confronto: Gem contro Agente AI {#doc27-sec4}
+
+| Caratteristica | Gem (assistente personalizzato) | Agente AI (sistema autonomo) |
+|---|---|---|
+| Cosa fa principalmente | Genera testo, spiega concetti, riassume documenti seguendo istruzioni fisse | Pianifica azioni, usa strumenti digitali e completa compiti lunghi |
+| Come lavora | In un solo passaggio: tu chiedi, lui risponde | A cicli: pianifica, usa uno strumento, verifica, procede |
+| Rapporto col mondo esterno | Chiuso nella chat: sa solo cio che tu gli dici o carichi | Connesso al mondo: naviga sul web, usa app, modifica file |
+| Esempio per lo studio | "Interrogami sui dinosauri con domande a risposta multipla" | "Cerca le 5 notizie scientifiche di oggi, traducile e mettile in un documento" |
+
+### Lo stesso concetto, nomi diversi (nei vari assistenti)
+
+Ogni azienda usa un nome diverso per la stessa idea. Utile saperlo per non confondersi.
+
+| Idea | Google / Gemini | OpenAI / ChatGPT | Anthropic / Claude |
+|---|---|---|---|
+| Assistente personalizzato | Gems | GPT personalizzati (GPTs) | Projects |
+| Agente autonomo | funzioni e agenti in Gemini/Workspace | agenti / Assistants | Claude Code, Agent SDK |
+
+> [GIALLO] Curiosita concreta: l'agente che ha aiutato a preparare i documenti di questo corso e proprio un Agente AI, si chiama Claude Code, e usa strumenti (file, Git, ricerca sul web) in autonomia. A scuola noi useremo Gemini (gratuito) e i suoi Gems.
+
+## 5. Come si costruiscono (uno sguardo dietro le quinte) {#doc27-sec5}
+
+1. Bella notizia: oggi **non serve essere super-programmatori** per creare questi sistemi.
+2. **Per creare un Gem**: si scrive un **"prompt di sistema"**, cioe una descrizione molto chiara di come deve comportarsi. Esempio da copiare e adattare:
+
+```
+Sei un tutor simpatico. Spiega la matematica usando esempi legati ai videogiochi.
+Non dare mai la soluzione finale: guida lo studente a capirla, un passo alla volta.
+```
+
+3. **Per creare un Agente AI**: si usano dei software (chiamati **framework** o piattaforme **no-code**) dove, come incastrando mattoncini, si collega l'"intelligenza" (il modello) con gli "strumenti" (il permesso di cercare sul web, leggere le email, ecc.). L'agente capisce da solo quale strumento usare in base a cio che gli chiedi.
+
+## 6. Quando usare l'uno o l'altro (conclusione) {#doc27-sec6}
+
+1. Serve un **compagno di studio**, un correttore di testi o un personaggio con cui allenarti a parlare in un'altra lingua: il **Gem** e perfetto, facile e veloce da creare.
+2. Serve un assistente che faccia il lavoro "noioso" (copiare e incollare dati, scaricare file, organizzare appuntamenti, ricerche lunghe): allora e il momento dell'**Agente AI**.
+
+> [GIALLO] L'idea da portare a casa: il futuro non e solo "parlare" con i computer, ma **collaborare** con loro. Il Gem risponde; l'Agente agisce. Sapere che esistono tutti e due, e capirne la differenza, e gia una competenza.
+
+## 7. Attivita pratiche (crea il tuo assistente) {#doc27-sec7}
+
+1. **Vinci subito**: in Gemini, crea un Gem tutor con un prompt di sistema di due righe (vedi capitolo 5) e provalo con una domanda.
+2. **Fallo tuo**: personalizza il personaggio (un tutor di storia, un allenatore di inglese, un aiuto per i compiti) e le regole (per esempio "fai sempre un quiz alla fine").
+3. **Mostralo**: fai provare il tuo Gem a un compagno e raccontagli come l'hai istruito.
+4. **Carta e penna**: prima di costruirlo, disegna a mano uno schemino con due colonne — cosa fa un Gem, cosa fa un Agente — e un esempio per ciascuno.
+5. Attivita di ragionamento (sul quaderno): per tre compiti a scelta ("ripassa i verbi", "prenota un campo da calcio", "riassumi un capitolo"), scrivi se conviene un Gem o un Agente e perche.
+
+## 8. Uso responsabile dell'AI {#doc27-sec8}
+
+1. **Capire, non copiare**: l'AI e un aiuto per imparare, non un modo per saltare il lavoro. Vale la prova del nove: saperlo spiegare a parole proprie.
+2. **Controllare sempre**: l'AI puo sbagliare o inventare (allucinazioni). Quello che dice va verificato, soprattutto date, numeri e fonti.
+3. **Privacy e dati**: non inserire dati personali, di compagni o di famiglia negli assistenti. Si lega alla cittadinanza digitale.
+
+## 9. Collegamenti {#doc27-sec9}
+
+1. **Area Intelligenza artificiale**: e la base pratica per usare l'AI durante tutto il corso (in tutti gli anni), con lo strumento gratuito Gemini.
+2. **Mondo del lavoro / automazione**: gli agenti si legano all'idea di automatizzare compiti (Industria 4.0) e alle figure professionali dell'informatica.
+3. **Condizioni (se... allora...)**: un agente ragiona per passi e decisioni; e lo stesso "se... allora..." visto nel documento delle condizioni.
+4. **Metodo del corso**: prova subito, personalizza, mostra; l'AI aiuta a capire; ogni schema prima a mano.
+
+
+# Programma del Corso — Classe 3 {#doc28}
 *Versione 0.2 · 18/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A colpo d'occhio {#doc27-sec1}
+## 1. A colpo d'occhio {#doc28-sec1}
 1. La Classe 3 e l'anno in cui si mettono le mani su reti e cose vere: cavi, indirizzi, prime reti in Packet Tracer.
 2. Arrivano due grandi novita: i database con l'SQL e il web (pagine HTML e CSS, un sito con Google Sites).
 3. La programmazione cresce (Lazarus anche con grafica e coordinate) e il lavoro a gruppi diventa vero team con Git (branch e Pull Request).
 4. Hardware, sistema operativo e diagnosi tornano come ripresa mirata alle prove di qualifica regionali.
 
-## 2. Gli argomenti dell'anno (dalla griglia) {#doc27-sec2}
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc28-sec2}
 1. Fondamenti (fili rossi): Glossario personale (verso i 150 termini); Git in team (branch, Pull Request, merge).
 2. Database e gestione dati: concetto di database; SQL (interrogare e gestire i dati); archivi e migrazione; raccolta e analisi dei dati. Strumento proposto: SQLite (da confermare).
 3. Web e siti: come funziona il web; HTML5; CSS; Google Sites.
@@ -5654,69 +5744,69 @@ end;
 8. Progetti pratici: Negozio Online che cresce (con un piccolo database); cablaggio RJ45 e prime reti; giochi con Godot (da decidere).
 9. Intelligenza artificiale: uso dell'AI per capire (SQL, HTML, gli errori) senza copiare; algoritmi e dati, consapevolezza e privacy.
 
-## 3. Modulo A — Reti, livello operativo {#doc27-sec3}
+## 3. Modulo A — Reti, livello operativo {#doc28-sec3}
 1. Concetti di base: LAN (rete locale), indirizzo IP, maschera di sottorete e gateway, DHCP (assegnazione automatica degli indirizzi).
 2. Cablaggio fisico: il cavo RJ45 e lo standard T568B; crimpare un cavo; piccola LAN a due PC con uno switch; test e ping.
 3. Prima rete in Cisco Packet Tracer: cos'e il simulatore, costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping; primo assaggio di segmentazione.
 
-## 4. Modulo B — Database e SQL {#doc27-sec4}
+## 4. Modulo B — Database e SQL {#doc28-sec4}
 1. Cos'e un database (archivio ordinato di dati): tabelle, righe e colonne, con esempi vicini a loro.
 2. SQL: creare una tabella, la query SELECT con filtri, ordinare e contare, inserire/aggiornare/cancellare.
 3. Archivi e migrazione; prime analisi dei dati (medie, conteggi, un grafico).
 4. Strumento (da confermare): SQLite, dal browser (sqliteonline.com) o portable (DB Browser for SQLite).
 
-## 5. Modulo C — Web: HTML, CSS e siti {#doc27-sec5}
+## 5. Modulo C — Web: HTML, CSS e siti {#doc28-sec5}
 1. Come funziona il web: client e server in parole semplici.
 2. HTML5: la struttura di una pagina (titoli, testo, immagini, link, sezioni).
 3. CSS: colori, caratteri, spaziature; una pagina che si vede bene anche sul telefono.
 4. Google Sites: pubblicare un sito personale o scolastico (portfolio o progetto).
 
-## 6. Modulo D — Programmazione (consolidamento) {#doc27-sec6}
+## 6. Modulo D — Programmazione (consolidamento) {#doc28-sec6}
 1. Lazarus: progetti con piu finestre e oggetti; un gioco/utility scelto dagli studenti (MasterMind, quiz).
 2. Lazarus, grafica e coordinate: disegnare con x e y; coordinate polari e rettangolari; una piccola animazione.
 3. Godot in prosecuzione (se collocato quest'anno): collisioni, aree, punteggio, un primo gioco 2D completo. Il percorso completo e nel corso dedicato.
 
-## 7. Modulo E — Git in team (Fase 2) {#doc27-sec7}
+## 7. Modulo E — Git in team (Fase 2) {#doc28-sec7}
 1. Il concetto di ramo (branch): ognuno lavora sul suo pezzo senza rompere quello degli altri.
 2. La Pull Request: proporre e unire le proprie modifiche al progetto comune; il merge.
 3. Tutto in modo visuale (browser), su un progetto di gruppo vero del corso.
 
-## 8. Modulo F — Hardware, sistema operativo e diagnosi (ripresa per la qualifica) {#doc27-sec8}
+## 8. Modulo F — Hardware, sistema operativo e diagnosi (ripresa per la qualifica) {#doc28-sec8}
 1. Ripresa dei componenti del PC, montaggio/smontaggio in sicurezza.
 2. Installazione del sistema operativo (Windows) e prime configurazioni.
 3. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
 
 > [ROSSO] Disallineamento da tenere presente: nella Griglia, hardware e sistema operativo sono collocati in Classe 1 e 2. Qui tornano perche le prove di qualifica regionali del triennio (buste hardware/OS/diagnosi) li verificano in 3a e 4a. In Classe 3 quindi non sono una prima spiegazione, ma una ripresa e un allenamento mirato alla prova.
 
-## 9. Modulo G — Preventivo e relazione tecnica {#doc27-sec9}
+## 9. Modulo G — Preventivo e relazione tecnica {#doc28-sec9}
 1. Configurare e preventivare una postazione o un'aula, con prezzi reali.
 2. Scrivere una breve relazione tecnica: cosa serve, quanto costa, perche.
 
-## 10. Verso la Classe 4 {#doc27-sec10}
+## 10. Verso la Classe 4 {#doc28-sec10}
 1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati, le VLAN.
 2. Si prepara il terreno per il progetto e la prova di qualifica dell'anno dopo.
 
-## 11. Valutazione {#doc27-sec11}
+## 11. Valutazione {#doc28-sec11}
 1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, una query SQL, una pagina web, montaggio e diagnosi.
 2. Capacita di spiegare a voce cio che si e fatto (la prova del nove).
 3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
 4. Le prove di riferimento del triennio sono raccolte (per ora) nel materiale da organizzare; verranno trascritte nel formato del corso.
 
-## 12. Materiale collegato (gia esistente, da trascrivere) {#doc27-sec12}
+## 12. Materiale collegato (gia esistente, da trascrivere) {#doc28-sec12}
 1. Prove di rete in Cisco Packet Tracer (due varianti anti-copia).
 2. Prove di cablaggio RJ45 e connettivita LAN.
 3. Buste di esame su hardware, sistema operativo, diagnosi e preventivo.
 4. Prova di diagnosi guasti (troubleshooting) per la Classe 3.
 
 
-# Le Reti di Computer — Teoria {#doc28}
+# Le Reti di Computer — Teoria {#doc29}
 *Versione 0.2 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. Cos'e una rete {#doc28-sec1}
+## 1. Cos'e una rete {#doc29-sec1}
 1. Una rete collega piu dispositivi e li fa comunicare e condividere cose (Internet, file, stampanti).
 2. Immagine utile: e come una rete stradale che collega tante case; i dati sono le auto che viaggiano da una casa all'altra.
 
-## 2. Gli apparecchi di rete in casa {#doc28-sec2}
+## 2. Gli apparecchi di rete in casa {#doc29-sec2}
 1. Modem (Modulator-Demodulator: modulatore-demodulatore): collega casa a Internet e traduce il segnale della linea (telefonica o fibra) in dati che il computer capisce.
 2. Router (instradatore): smista i dati tra la rete di casa e Internet e decide dove mandare ogni pacchetto. Di solito assegna anche gli indirizzi e fa da Wi-Fi.
 3. Modem-router: i due apparecchi in un'unica scatola, quella che di solito da l'operatore.
@@ -5730,26 +5820,26 @@ end;
 
 ![Schema della rete di casa: da Internet al modem, al router Wi-Fi, poi ai dispositivi via cavo (con lo switch) e senza fili (Wi-Fi).](classe-3/immagini/rete-di-casa.svg)
 
-## 3. I cavi di rete {#doc28-sec3}
+## 3. I cavi di rete {#doc29-sec3}
 1. Il cavo Ethernet ha un connettore RJ45 e dentro 8 fili raggruppati in 4 coppie intrecciate.
 2. Le coppie sono intrecciate apposta: cosi si disturbano di meno e il segnale e piu pulito.
 3. Le categorie (per esempio Cat 5e, Cat 6): piu alta e la categoria, piu veloce puo andare il cavo.
 4. Lo standard T568B stabilisce l'ordine dei colori quando si monta il connettore: lo useremo in laboratorio.
 5. Cenno: la fibra ottica porta i dati con la luce; e velocissima e adatta alle lunghe distanze.
 
-## 4. Hub, switch e routing {#doc28-sec4}
+## 4. Hub, switch e routing {#doc29-sec4}
 1. Hub: ripete il segnale a tutte le porte; risultato, traffico inutile e "collisioni".
 2. Switch: impara quale dispositivo e attaccato a ogni porta e manda i dati solo alla porta giusta.
 3. Routing (instradamento): il router sceglie la strada per far arrivare un pacchetto a una rete diversa. Instradare vuol dire proprio "scegliere il percorso".
 
-## 5. Gli indirizzi in rete {#doc28-sec5}
+## 5. Gli indirizzi in rete {#doc29-sec5}
 1. Indirizzo IP (Internet Protocol): l'indirizzo di un dispositivo, come il numero civico di una casa.
 2. Maschera di sottorete: dice quale parte dell'indirizzo indica la "via" (la rete) e quale il "civico" (il singolo dispositivo).
 3. Gateway (passaggio): la porta verso l'esterno, di solito il router.
 4. DHCP (Dynamic Host Configuration Protocol): assegna gli indirizzi IP in automatico, senza scriverli a mano.
 5. Cenno: il MAC address e l'indirizzo "di fabbrica" della scheda di rete, unico per ogni scheda.
 
-## 6. Il modello ISO/OSI (i 7 livelli) {#doc28-sec6}
+## 6. Il modello ISO/OSI (i 7 livelli) {#doc29-sec6}
 1. ISO e l'organizzazione che ha definito il modello; OSI (Open Systems Interconnection: interconnessione di sistemi aperti) e il nome del modello. Per questo si dice "modello ISO/OSI".
 2. E un modo per dividere la comunicazione in 7 piani, ognuno con un compito. Dal basso verso l'alto:
    1. Fisico: i segnali che viaggiano sul cavo o nell'aria.
@@ -5763,12 +5853,12 @@ end;
 
 ![Il modello ISO/OSI a 7 livelli, dall'alto (i programmi) al basso (i segnali sul cavo), con il ruolo di ciascun livello.](classe-3/immagini/modello-osi.svg)
 
-## 7. Il modello TCP/IP (i 4 livelli) {#doc28-sec7}
+## 7. Il modello TCP/IP (i 4 livelli) {#doc29-sec7}
 1. E il modello pratico con cui funziona Internet davvero.
 2. Ha 4 livelli: Accesso alla rete, Internet (IP), Trasporto (TCP o UDP), Applicazione.
 3. E una versione piu snella del modello ISO/OSI: fa le stesse cose, con meno piani.
 
-## 8. Come viaggiano i pacchetti {#doc28-sec8}
+## 8. Come viaggiano i pacchetti {#doc29-sec8}
 1. Un dato grande viene spezzato in tanti pacchetti piccoli.
 2. Ogni pacchetto porta un'intestazione con mittente e destinatario (gli indirizzi IP), come una busta con l'indirizzo scritto sopra.
 3. I router leggono l'indirizzo e instradano ogni pacchetto verso la destinazione, anche per strade diverse.
@@ -5778,7 +5868,7 @@ end;
 
 ![Il viaggio di un pacchetto: il dato viene spezzato in pacchetti con l'indirizzo di arrivo, i router scelgono la strada, il destinatario li rimette in ordine.](classe-3/immagini/viaggio-pacchetto.svg)
 
-## 9. Due modi di spedire i dati: TCP e UDP {#doc28-sec9}
+## 9. Due modi di spedire i dati: TCP e UDP {#doc29-sec9}
 1. TCP (Transmission Control Protocol): la spedizione "con ricevuta di ritorno".
    1. Prima si stabilisce la connessione tra i due dispositivi.
    2. Ogni pacchetto viene confermato; se uno si perde, viene rispedito.
@@ -5789,16 +5879,16 @@ end;
 
 > [GIALLO] La scelta dipende dal bisogno: meglio sicuro (TCP) oppure meglio veloce (UDP).
 
-## 10. Dalla teoria alla pratica {#doc28-sec10}
+## 10. Dalla teoria alla pratica {#doc29-sec10}
 1. In laboratorio costruiremo cavi veri e piccole reti reali.
 2. In Cisco Packet Tracer (simulatore di reti) progetteremo una rete e proveremo l'invio dei pacchetti.
 3. La modalita "simulazione" di Packet Tracer mostra il pacchetto che viaggia da un apparato all'altro: cosi la teoria di questo documento si vede in movimento.
 
 
-# Cablaggio RJ45 — Scheda pratica {#doc29}
+# Cablaggio RJ45 — Scheda pratica {#doc30}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc29-sec1}
+## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc30-sec1}
 
 Obiettivo: costruire con le tue mani un cavo di rete Ethernet, montando i
 connettori RJ45 con lo standard T568B, e verificare che funzioni collegando due
@@ -5865,10 +5955,10 @@ Se qualcosa non va:
 </details>
 
 
-# Troubleshooting Pratico — Guasti da Creare e Diagnosticare {#doc30}
+# Troubleshooting Pratico — Guasti da Creare e Diagnosticare {#doc31}
 *Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A cosa serve e come si usa {#doc30-sec1}
+## 1. A cosa serve e come si usa {#doc31-sec1}
 
 1. Obiettivo: portare l'allievo a **ragionare come un tecnico** — dal sintomo alla causa alla soluzione — non a imparare a memoria.
 2. Due modalita, complementari:
@@ -5879,7 +5969,7 @@ Se qualcosa non va:
 
 > [GIALLO] Motore del corso: il guasto e messo apposta dal docente. Sbagliare la prima ipotesi non e un errore dell'allievo, e parte del gioco: si prova, si verifica, si riprova. Zero vergogna.
 
-## 2. Sicurezza prima di tutto (VINCOLANTE) {#doc30-sec2}
+## 2. Sicurezza prima di tutto (VINCOLANTE) {#doc31-sec2}
 
 Regole da spiegare e far rispettare **prima** di toccare qualunque PC.
 
@@ -5893,7 +5983,7 @@ Regole da spiegare e far rispettare **prima** di toccare qualunque PC.
 
 > [ROSSO] Vietato: aprire l'alimentatore; lavorare a PC acceso o con la spina attaccata; forzare i componenti; toccare la scheda video/RAM sui contatti dorati. Questi non sono guasti da esercizio: sono rischi per le persone o per l'hardware.
 
-## 3. Il metodo di diagnosi (la scheda dell'allievo) {#doc30-sec3}
+## 3. Il metodo di diagnosi (la scheda dell'allievo) {#doc31-sec3}
 
 La scheda che l'allievo compila a mano per ogni guasto. Insegna il **metodo**, sempre lo stesso.
 
@@ -5910,7 +6000,7 @@ La scheda che l'allievo compila a mano per ogni guasto. Insegna il **metodo**, s
 > [BLU] Schema del sintomo (utile da disegnare a mano):
 > non si accende nulla -> alimentazione; si accende ma niente video -> RAM / video / alimentazione CPU; parte ma "manca il disco" -> disco o avvio; immagine assente -> monitor o cavo video.
 
-## 4. Catalogo dei guasti fisici (per il docente) {#doc30-sec4}
+## 4. Catalogo dei guasti fisici (per il docente) {#doc31-sec4}
 
 Per ogni guasto: cosa fare (a PC spento e scollegato), il sintomo atteso, la causa (la diagnosi corretta) e la soluzione. Difficolta: F = facile, M = media, D = difficile.
 
@@ -5956,7 +6046,7 @@ Per ogni guasto: cosa fare (a PC spento e scollegato), il sintomo atteso, la cau
 | Scollegare la ventola della CPU dal connettore CPU_FAN | Si accende e poi si spegne, o avviso "CPU fan error" | La scheda protegge la CPU dal surriscaldamento | Ricollegare la ventola al connettore CPU_FAN | M |
 | Staccare il cavo di rete (ethernet) | Nessuna connessione a internet | Cavo di rete scollegato | Ricollegare il cavo di rete | F |
 
-## 5. La parte teorica a crocette (banca domande) {#doc30-sec5}
+## 5. La parte teorica a crocette (banca domande) {#doc31-sec5}
 
 Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. La risposta corretta e indicata tra parentesi quadre per il docente (va tolta nella versione per gli allievi).
 
@@ -6001,7 +6091,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
    3. Apro l'alimentatore per controllarlo.
    4. Bagno le mani per pulirle. [Risposta: 2]
 
-## 6. Come valutare (griglia semplice) {#doc30-sec6}
+## 6. Come valutare (griglia semplice) {#doc31-sec6}
 
 1. **Sicurezza**: ha lavorato a PC spento e scollegato, senza forzare? (si/no, prima di tutto).
 2. **Metodo**: ha osservato i sintomi e fatto un'ipotesi prima di aprire?
@@ -6011,7 +6101,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Non conta "indovinare subito": conta il metodo e il saper raccontare. Un allievo che sbaglia due ipotesi ma ragiona bene e le verifica, ha capito piu di uno che azzecca a caso.
 
-## 7. Collegamenti {#doc30-sec7}
+## 7. Collegamenti {#doc31-sec7}
 
 1. **Prove di qualifica regionali**: le buste su hardware, sistema operativo e diagnosi (3a/4a) verificano proprio queste competenze. Questo kit e allenamento diretto.
 2. **Sicurezza sul lavoro**: il capitolo 2 si lega al modulo trasversale di sicurezza (lavorare in modo sicuro, DPI, rischi elettrici).
@@ -6019,10 +6109,10 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 4. **HTML5/CSS**: la parte teorica a crocette puo diventare una pagina web che si autocorregge (aggancio col corso HTML/CSS di Panaccione).
 
 
-# Corso Base di HTML5 e CSS {#doc31}
+# Corso Base di HTML5 e CSS {#doc32}
 *Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A cosa serve e come si usa {#doc31-sec1}
+## 1. A cosa serve e come si usa {#doc32-sec1}
 
 1. Obiettivo: costruire **pagine web vere**, capendo la differenza tra la **struttura** (HTML: i mattoni) e l'**aspetto** (CSS: colori e stile).
 2. Regola d'oro del ritmo: **scrivi poco, guarda subito**. Ogni piccolo blocco di codice si prova nel browser prima di andare avanti. Il risultato a schermo e la ricompensa.
@@ -6031,7 +6121,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Metodo del corso: prima la vittoria facile (una pagina che dice "Ciao"), poi si aggiunge un pezzo alla volta. Un errore nel codice non rompe niente: si corregge e si riprova. Zero vergogna.
 
-## 2. Cosa serve (senza installare niente) {#doc31-sec2}
+## 2. Cosa serve (senza installare niente) {#doc32-sec2}
 
 1. **Per scrivere il codice**: va bene il **Blocco note** (gia presente su ogni PC). Meglio ancora l'editor nel browser di GitHub (`github.dev`, si apre premendo il tasto punto dentro un repository): scrivi e salvi li, senza installare.
 2. **Per vedere il risultato**: si salva il file con estensione `.html` e si fa **doppio clic**: si apre nel browser. Ogni volta che si cambia il codice, si salva e si ricarica la pagina (tasto F5).
@@ -6039,7 +6129,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [BLU] A scuola non serve installare programmi: Blocco note + browser bastano per tutto il corso base. GitHub (repository e Pages) e lo stesso strumento che usiamo per il resto del corso.
 
-## 3. La prima vittoria: una pagina in 10 minuti {#doc31-sec3}
+## 3. La prima vittoria: una pagina in 10 minuti {#doc32-sec3}
 
 1. Aprire il Blocco note, scrivere questo, e salvarlo con nome `index.html` (attenzione: non `index.html.txt`).
 
@@ -6060,7 +6150,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 2. Fare doppio clic su `index.html`: si apre nel browser e si legge il titolo grande e la frase. **Prima vittoria fatta.**
 3. Personalizzare: cambiare il nome e la frase. Salvare, ricaricare (F5). E gia "sua".
 
-## 4. HTML5 — la struttura (i mattoni) {#doc31-sec4}
+## 4. HTML5 — la struttura (i mattoni) {#doc32-sec4}
 
 1. Ogni pagina ha uno scheletro fisso: `<!doctype html>`, poi `<html>` che contiene `<head>` (informazioni, non si vede) e `<body>` (cio che si vede).
 2. I "mattoni" piu usati dentro il `body`:
@@ -6091,7 +6181,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Regola pratica: l'HTML dice COSA c'e (un titolo, un paragrafo, un'immagine). Non si occupa dei colori: quelli sono compito del CSS (capitolo 5).
 
-## 5. CSS — l'aspetto (colori, caratteri, spazi) {#doc31-sec5}
+## 5. CSS — l'aspetto (colori, caratteri, spazi) {#doc32-sec5}
 
 1. Il CSS decide **come si vede** la pagina. Per iniziare, si scrive dentro il `<head>`, in un blocco `<style>`.
 2. Si sceglie un elemento (selettore) e gli si danno delle proprieta. Esempio da mettere nel `<head>`:
@@ -6124,7 +6214,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [BLU] Passo avanti (facoltativo): quando la pagina cresce, il CSS si sposta in un file a parte `stile.css` e si collega nel `<head>` con `<link rel="stylesheet" href="stile.css">`. Stesso risultato, piu ordine.
 
-## 6. Una pagina che si vede bene anche sul telefono {#doc31-sec6}
+## 6. Una pagina che si vede bene anche sul telefono {#doc32-sec6}
 
 1. Aggiungere nel `<head>` questa riga: dice al telefono di adattare la pagina allo schermo.
 
@@ -6142,7 +6232,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 3. Provare la pagina restringendo la finestra del browser: il testo e le immagini si adattano. Questa e la base del "responsive".
 
-## 7. Pubblicare online con GitHub Pages (Mostralo) {#doc31-sec7}
+## 7. Pubblicare online con GitHub Pages (Mostralo) {#doc32-sec7}
 
 1. Si mette il file `index.html` in un **repository** su GitHub (lo stesso strumento del corso).
 2. Nelle impostazioni del repository si attiva **Pages** (si sceglie il ramo e la cartella da pubblicare). Dopo qualche minuto la pagina e online a un indirizzo tipo `https://nome-utente.github.io/nome-repo`.
@@ -6150,14 +6240,14 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Nota pratica sulla pubblicazione: per pubblicare da un repository privato serve il piano GitHub Team (che l'organizzazione della scuola avra con la verifica docente); in alternativa si usa un repository pubblico dedicato alle pagine web (contiene solo l'HTML, nessun dato personale). La guida click-by-click per attivare Pages si fa insieme, davanti allo schermo.
 
-## 8. Idee di progetto (Fallo tuo) {#doc31-sec8}
+## 8. Idee di progetto (Fallo tuo) {#doc32-sec8}
 
 1. **La mia pagina**: chi sono, cosa mi piace, una foto, qualche link.
 2. **Pagina su una passione** (un gioco, uno sport, una band): titolo, testo, immagini, elenco.
 3. **Mini-sito a 3 pagine** con un menu di link tra loro (home, argomento, contatti): primo passo verso il sito professionale.
 4. **Quiz troubleshooting**: una pagina che presenta le domande a crocette e mostra se la risposta e giusta (aggancio col kit di troubleshooting).
 
-## 9. Collegamenti {#doc31-sec9}
+## 9. Collegamenti {#doc32-sec9}
 
 1. **Verso il sito professionale**: questo corso base e la rampa di lancio per il sito professionale della Classe 3.
 2. **Negozio online (Classe 1)**: li HTML, CSS e JavaScript sono gia usati; e una base pronta da cui prendere esempi.
@@ -6165,16 +6255,16 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 4. **Metodo del corso**: vittoria subito, personalizzazione, risultato mostrabile, carta e penna per lo schema della pagina.
 
 
-# Programma del Corso — Classe 4 {#doc32}
+# Programma del Corso — Classe 4 {#doc33}
 *Versione 0.2 · 18/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc32-sec1}
+## 1. A colpo d'occhio {#doc33-sec1}
 1. Le reti sono il cuore dell'anno: con Cisco Packet Tracer si progetta e si simula una rete importante, tipo quella di una scuola, con tutti i componenti.
 2. Si approfondiscono i database (SQL avanzato) e il web (un sito piu completo), e si cura la documentazione tecnica.
 3. Ci si prepara al mondo del lavoro: CV Europass, tesine, presentazione del lavoro finito; e alla prova di qualifica con validita regionale (Regione Lombardia).
 4. Il Glossario personale arriva ad almeno 200 termini; il quaderno diventa un vero libro loro.
 
-## 2. Gli argomenti dell'anno (dalla griglia) {#doc32-sec2}
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc33-sec2}
 1. Fondamenti (fili rossi): Glossario personale (verso i 200 termini totali); Git, le release del progetto (Fase 2).
 2. Reti (il cuore): Cisco Packet Tracer con la rete di una scuola e le VLAN; sicurezza di rete (firewall, segmentazione); indirizzamento avanzato applicato; cablaggio (da valutare).
 3. Database: SQL avanzato (piu condizioni, piu tabelle, raggruppamenti); migrazione e analisi statistica dei dati.
@@ -6183,61 +6273,61 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 6. Mondo del lavoro: ricerca del lavoro (CV Europass, ricerca attiva); documentazione tecnica e deployment; lavoro in team e tesine.
 7. Intelligenza artificiale: l'AI come strumento di lavoro maturo; limiti ed etica, collegati al mondo del lavoro.
 
-## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc32-sec3}
+## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc33-sec3}
 1. Progettare su carta la rete di una scuola (aule, segreteria, laboratori) e poi costruirla: router, switch, PC.
 2. Le VLAN: separare le reti (segreteria, studenti) mantenendo l'ordine; far comunicare le reti tramite il router.
 3. Simulare il funzionamento e testare i percorsi con il ping; documentare il progetto come compito di realta.
 
-## 4. Modulo B — Sicurezza di rete {#doc32-sec4}
+## 4. Modulo B — Sicurezza di rete {#doc33-sec4}
 1. I rischi in rete e come ci si difende: il firewall in parole semplici, buone pratiche.
 2. La segmentazione come difesa: perche separare le reti aiuta; si applica alla rete-scuola.
 
-## 5. Modulo C — Database avanzato {#doc32-sec5}
+## 5. Modulo C — Database avanzato {#doc33-sec5}
 1. Query piu ricche: piu condizioni, piu tabelle (join semplice), raggruppare e riassumere (GROUP BY).
 2. Un mini-database completo per un caso reale (il negozio o la scuola), dalla progettazione alle query.
 3. Migrazione e analisi statistica dei dati raccolti.
 
-## 6. Modulo D — Web: sito completo {#doc32-sec6}
+## 6. Modulo D — Web: sito completo {#doc33-sec6}
 1. Un sito piu ricco (piu pagine, menu, stile curato) su un tema scelto.
 2. Cura dell'aspetto e della resa su telefono; pubblicazione come parte del portfolio.
 
-## 7. Modulo E — Programmazione (livello massimo) {#doc32-sec7}
+## 7. Modulo E — Programmazione (livello massimo) {#doc33-sec7}
 1. Lazarus: un progetto piu strutturato scelto dagli studenti, con oggetti, dati e grafica insieme.
 2. Godot (se collocato quest'anno): dal 2D al 3D, il progetto boss (movimento, obiettivi, punteggio). Percorso completo nel corso dedicato.
 
-## 8. Modulo F — Collaudo e documentazione {#doc32-sec8}
+## 8. Modulo F — Collaudo e documentazione {#doc33-sec8}
 1. Collaudare la rete con il ping e verificare che tutto comunichi.
 2. Documentare: mappa degli indirizzi, schema, scelte fatte; manuale utente e relazione tecnica curati; cosa vuol dire mettere in produzione (deployment).
 
-## 9. Modulo G — Preventivo dell'infrastruttura {#doc32-sec9}
+## 9. Modulo G — Preventivo dell'infrastruttura {#doc33-sec9}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 10. Modulo H — Mondo del lavoro e tesine {#doc32-sec10}
+## 10. Modulo H — Mondo del lavoro e tesine {#doc33-sec10}
 1. Il CV Europass e la ricerca attiva del lavoro: dove cercare, come presentarsi, la mail di candidatura.
 2. Il gruppo porta a termine un progetto vero con ruoli chiari; si pubblica la release stabile (Git, Fase 2).
 3. La tesina/presentazione del lavoro finito: struttura, prove e presentazione alla classe.
 
-## 11. La prova di qualifica (diploma) {#doc32-sec11}
+## 11. La prova di qualifica (diploma) {#doc33-sec11}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 12. Valutazione {#doc32-sec12}
+## 12. Valutazione {#doc33-sec12}
 1. Il progetto della rete-scuola (progettazione, VLAN, collaudo, documentazione) come prova forte dell'anno.
 2. Prove su database, web e la tesina finale; capacita di spiegare a voce cio che si e fatto.
 3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
 
-## 13. Materiale collegato (gia esistente, da trascrivere) {#doc32-sec13}
+## 13. Materiale collegato (gia esistente, da trascrivere) {#doc33-sec13}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc33}
+# Corso Informatica — indice generale {#doc34}
 *Versione 1.16 · 02/09/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc33-sec1}
+## In breve {#doc34-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -6253,7 +6343,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc33-sec2}
+## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc34-sec2}
 
 Nella **radice del repository** stanno i documenti che governano tutto il corso,
 non un anno solo. Si leggono dal generale al dettaglio: dalla mappa delle
@@ -6282,7 +6372,7 @@ Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc33-sec3}
+## Parte 1 — Classe 1 (Informatica) {#doc34-sec3}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -6327,7 +6417,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc33-sec4}
+## Parte 2 — Corso Godot / GDScript {#doc34-sec4}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -6356,7 +6446,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc33-sec5}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc34-sec5}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -6380,7 +6470,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc33-sec6}
+## Parte 4 — Strumenti e configurazione {#doc34-sec6}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -6398,7 +6488,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc33-sec7}
+## Dove sta tutto {#doc34-sec7}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -6408,10 +6498,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc34}
+# Materiale del Corso — Classe 1 {#doc35}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc34-sec1}
+## In breve {#doc35-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -6419,7 +6509,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc34-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc35-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -6429,7 +6519,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc34-sec3}
+## 2. Esercizi / progetti FATTI {#doc35-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -6456,7 +6546,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc34-sec4}
+## 3. Strumenti {#doc35-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -6464,7 +6554,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc34-sec5}
+## 4. In preparazione (prossimi passi) {#doc35-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -6474,7 +6564,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc34-sec6}
+## Dove sta tutto {#doc35-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
