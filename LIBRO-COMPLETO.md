@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.65** — 10/09/2026
+**Versione 1.66** — 10/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -6121,16 +6121,297 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 5. **Metodo del corso**: scenari concreti, vittoria subito, si mostra, carta e penna.
 
 
-# Programma del Corso — Classe 3 {#doc31}
+# Recupero INVALSI — Schede ed Esercizi (Sicurezza e Comunicazione) {#doc31}
+*Versione 0.1 · 10/09/2026 · Parte: Trasversale — tutti gli anni*
+
+## 1. Come si usa questo materiale (guida per il docente) {#doc31-sec1}
+1. **Stile della prova**: scenari concreti a crocette (quattro opzioni, una giusta). Ogni scenario e una situazione reale, non una regola astratta.
+2. **Si parte dal livello base** (dove la classe perde di piu) e si sale: prima password e rete non sicura, poi phishing e cookie, infine i dati di pagamento.
+3. **Prima si prova, poi si controlla**: le soluzioni con spiegazione sono tutte nella sezione 11, in fondo. Cosi il foglio si puo anche stampare come prova. Sbagliare e parte del gioco: nessuno si sente stupido.
+4. **Carta e penna** (tassativo): prima di rispondere, ogni allievo disegna a mano lo schema "rischio -> cosa faccio" (sezione 2). Gli schemi vanno nel quaderno personale.
+5. **Fallo tuo**: dopo gli scenari dati, ogni ragazzo ne inventa uno suo (una finta mail-truffa, un finto banner). L'ownership aggancia (sezione 9).
+6. **Mostralo e prova del nove**: si risponde bene solo se si sa spiegare a voce, con parole proprie, perche quella e la scelta giusta.
+7. **Attivita pratiche reali**: la sezione 8bis e un laboratorio da fare davvero (mandare una finta mail-truffa, simulare il wi-fi non sicuro, cacciare i cookie). E la parte che aggancia di piu: si impara provando in un ambiente protetto.
+8. **Misura del recupero**: la sezione 10 indica cinque domande da usare come prova iniziale e, identiche, come prova finale, per vedere il progresso.
+
+> [GIALLO] Zero vergogna, sul serio: e utile che il docente prepari una finta mail di phishing e che qualcuno "ci caschi". Cadere in una trappola preparata apposta, in classe, insegna piu di dieci regole a memoria. Succede a tutti, anche ai professionisti.
+
+## 2. Prima di iniziare: lo schema "rischio -> cosa faccio" (carta e penna) {#doc31-sec2}
+1. Su un foglio, ogni allievo disegna due colonne: a sinistra **il rischio** (cosa puo andare storto), a destra **cosa faccio** (il comportamento corretto).
+2. Si riempie una riga per ogni scenario affrontato. A fine percorso, quel foglio e il suo "prontuario" personale.
+3. Esempio gia pronto da copiare come modello: rischio "una mail mi mette fretta e chiede di cliccare" -> cosa faccio "non clicco, controllo il mittente, nel dubbio chiedo".
+
+## 3. Tema 1 — Password robusta (dimensione 4.1, livello base) {#doc31-sec3}
+
+### 3.1 Cosa sapere (mini-teoria)
+1. Una password e forte quando e **lunga** e **difficile da indovinare**: meglio una frase con parole, numeri e simboli che una parola corta.
+2. **Non si riusa** la stessa password su piu siti: se ne rubano una, non entrano ovunque.
+3. Un **gestore di password** (password manager) le ricorda al posto tuo: cosi puoi averne una diversa per ogni sito senza impazzire.
+4. La password **non si dice a nessuno**, nemmeno agli amici, nemmeno "solo per un attimo".
+
+### 3.2 Mettiti alla prova
+
+**D1.** Quale di queste password e la piu sicura?
+1. 123456
+2. Mario2010
+3. Il nome del tuo cane
+4. Una frase lunga con numeri e simboli, per esempio Tigre-Blu-42!
+
+**D2.** Ti iscrivi a un nuovo sito. Qual e la cosa migliore da fare con la password?
+1. Usare la stessa del tuo social, cosi non la dimentichi
+2. Sceglierne una nuova, diversa dalle altre (magari con un gestore di password)
+3. Scriverla su un foglietto attaccato al monitor
+4. Usare la tua data di nascita
+
+**D3.** Un amico ti chiede la password del tuo account di gioco per "aiutarti a salire di livello". Cosa fai?
+1. Gliela do, e un amico
+2. Non la do a nessuno, nemmeno agli amici
+3. La cambio in "1234" e gliela do
+4. Gli do anche l'email cosi fa prima
+
+## 4. Tema 2 — Dispositivo su rete non sicura (dimensione 4.1, livello base) {#doc31-sec4}
+
+### 4.1 Cosa sapere (mini-teoria)
+1. Su un **wi-fi pubblico e aperto** (bar, stazione) altri potrebbero "spiare" cio che fai: e come parlare a voce alta in una piazza.
+2. Su queste reti si evitano le **attivita sensibili** (banca, acquisti, inserire password importanti).
+3. Una rete **protetta da password** e in genere piu sicura di una completamente **aperta**.
+4. In caso di dubbio, e piu sicuro usare i **dati del proprio telefono** invece del wi-fi sconosciuto.
+
+### 4.2 Mettiti alla prova
+
+**D4.** Sei collegato al wi-fi gratuito di un bar. Quale attivita e meglio EVITARE?
+1. Leggere le notizie
+2. Guardare un video
+3. Entrare nel conto in banca (home banking)
+4. Ascoltare musica
+
+**D5.** Come capisci se una rete wi-fi e tendenzialmente piu sicura?
+1. Se ha un nome simpatico
+2. Se e protetta da una password invece di essere aperta a tutti
+3. Se e gratis
+4. Se ha molte tacche di segnale
+
+**D6.** In stazione appare una rete "Free_WiFi_Gratis" senza password. Cosa fai?
+1. Mi collego e faccio acquisti online
+2. Se proprio mi collego, lo faccio solo per cose non sensibili; meglio ancora uso i dati del telefono
+3. Mi collego e inserisco la carta di credito
+4. Mi collego e salvo tutte le password nel browser
+
+## 5. Tema 3 — E-mail sospetta e phishing (dimensione 4.1, livello intermedio) {#doc31-sec5}
+
+### 5.1 Cosa sapere (mini-teoria)
+1. **Phishing**: messaggi (email, SMS) che si fingono qualcuno di fidato (banca, corriere, social) per farti cliccare o dare dati. "Phishing" viene dall'inglese "fishing", pescare: buttano l'amo e sperano che qualcuno abbocchi.
+2. Segnali tipici: **fretta** ("entro 24 ore o perdi tutto"), **mittente strano**, errori di scrittura, un **link** che non corrisponde al sito vero.
+3. Regola d'oro: **non cliccare di getto**. Si controlla il mittente, non si inseriscono dati, e nel dubbio si verifica sul sito ufficiale (digitando l'indirizzo a mano) o si chiede.
+
+### 5.2 Mettiti alla prova
+
+**D7.** Ricevi una mail: "La tua casella sara chiusa! Clicca qui entro 24 ore". Come ti comporti?
+1. Clicco subito, non voglio perdere la casella
+2. Non clicco; controllo il mittente, non inserisco dati e nel dubbio chiedo
+3. Rispondo scrivendo la mia password
+4. Inoltro a tutti i miei contatti
+
+**D8.** Quale di questi e un segnale tipico di una mail di phishing?
+1. Un saluto con il tuo nome
+2. Un tono di urgenza che spinge ad agire subito ("entro 24 ore o perdi tutto")
+3. La presenza di un oggetto nella mail
+4. Il fatto che sia scritta in italiano
+
+**D9.** Un SMS dice: "Pacco in giacenza, paga 2 euro per la consegna" con un link. Cosa fai?
+1. Pago, sono solo 2 euro
+2. Non clicco il link; verifico sul sito ufficiale del corriere
+3. Inserisco subito i dati della carta
+4. Rispondo all'SMS con i miei dati
+
+## 6. Tema 4 — Cookie e tracciamento (dimensione 4.2, livello intermedio) {#doc31-sec6}
+
+### 6.1 Cosa sapere (mini-teoria)
+1. I **cookie** sono piccoli file che i siti salvano sul tuo dispositivo. Alcuni servono al sito per funzionare; altri, i cookie di **profilazione**, seguono i tuoi interessi per mostrarti **pubblicita mirata**.
+2. E per questo che dopo aver cercato un paio di scarpe le ritrovi nelle pubblicita ovunque: non e magia, e **tracciamento**.
+3. Sul **banner dei cookie** hai una scelta: puoi accettare tutto, oppure rifiutare o personalizzare quelli non necessari. Scegliere e un tuo diritto.
+
+### 6.2 Mettiti alla prova
+
+**D10.** Cosa sono, soprattutto, i cookie di profilazione?
+1. Biscotti
+2. Piccoli file che tracciano i tuoi interessi per mostrarti pubblicita mirata
+3. Virus che rompono il computer
+4. Le tue password
+
+**D11.** Appare il banner dei cookie su un sito. Qual e la scelta piu consapevole?
+1. Accetto tutto sempre, e piu veloce
+2. Leggo e scelgo: rifiuto o personalizzo quelli non necessari
+3. Chiudo il browser e rinuncio
+4. Non c'e nessuna scelta possibile
+
+**D12.** Perche un sito ti mostra la pubblicita di una cosa che hai cercato ieri?
+1. E magia
+2. Per via del tracciamento e della profilazione tramite cookie e dati
+3. Perche indovina a caso
+4. Perche sei una persona famosa
+
+## 7. Tema 5 — Richieste di dati di pagamento (dimensione 4.2, livello avanzato) {#doc31-sec7}
+
+### 7.1 Cosa sapere (mini-teoria)
+1. Alcuni dati non vanno **mai** condivisi via chat o email: numero completo della carta, codice **CVV** (le tre cifre dietro), **PIN**, password.
+2. Nessun servizio serio ti chiede la **foto della carta di credito** o il PIN "per verifica": chi lo chiede sta quasi sempre tentando una truffa.
+3. Quando paghi online, controlla che l'indirizzo del sito inizi con **https** (con il lucchetto) e che il sito sia conosciuto e affidabile.
+
+### 7.2 Mettiti alla prova
+
+**D13.** Un messaggio del "servizio clienti" chiede la foto della tua carta di credito (fronte e retro) "per verifica". Cosa fai?
+1. La mando, e il servizio clienti
+2. Non la mando: nessun servizio serio chiede la foto della carta
+3. Mando solo il numero, non tutta la foto
+4. Mando anche il PIN per sicurezza
+
+**D14.** Quali dati NON vanno mai condivisi via chat o email?
+1. Il tuo nome
+2. Numero completo della carta, CVV, PIN e password
+3. La tua citta
+4. Il tuo colore preferito
+
+**D15.** Stai per pagare su un sito. Da cosa capisci che e piu sicuro?
+1. Dal fatto che il sito e colorato e bello
+2. L'indirizzo inizia con https, c'e il lucchetto e il sito e conosciuto
+3. Dal fatto che chiede tanti dati
+4. Dal fatto che promette sconti enormi
+
+## 8. Comunicazione e collaborazione (area 2, la coda) {#doc31-sec8}
+Mini-blocco per i pochi rimasti indietro: comunicazione formale e netiquette.
+
+### 8.1 Cosa sapere (mini-teoria)
+1. Una **mail formale** ha un **oggetto** chiaro, si apre con un saluto, dice la cosa in modo ordinato e si chiude con nome e cognome.
+2. **Cc** (copia conoscenza): i destinatari si vedono tra loro. **Ccn** (copia conoscenza nascosta): i destinatari NON vedono gli altri indirizzi. Si usa Ccn per rispettare la privacy quando si scrive a molte persone.
+3. **Netiquette**: le buone maniere online. Scrivere TUTTO IN MAIUSCOLO equivale a urlare.
+
+### 8.2 Mettiti alla prova
+
+**D16.** Scrivi una mail al professore per giustificare un'assenza. Quale oggetto e migliore?
+1. ciao
+2. Giustificazione assenza del 12/09 - Mario Rossi 2INF
+3. (lascio l'oggetto vuoto)
+4. urgente!!!
+
+**D17.** Qual e la differenza tra Cc e Ccn?
+1. Non c'e nessuna differenza
+2. In Ccn i destinatari non vedono gli indirizzi degli altri (copia nascosta)
+3. Cc invia piu velocemente
+4. Ccn invia la mail due volte
+
+**D18.** Nella netiquette, scrivere un intero messaggio IN MAIUSCOLO significa...
+1. Che sei gentile
+2. Che stai urlando: e considerato maleducato
+3. Che scrivi meglio
+4. Che e obbligatorio
+
+## 8bis. Laboratorio pratico — attivita reali (guidate dal docente) {#doc31-sec9}
+Le crocette servono a capire; le attivita pratiche servono a **provarlo sulla
+pelle**, in un ambiente protetto dove sbagliare non fa danno. Sono tutte
+realizzabili a scuola con browser e strumenti gia presenti, senza installazioni.
+
+> [ROSSO] Regole della simulazione (da rispettare sempre): si resta DENTRO la classe, con account e dati **finti** o della scuola; non si raccolgono mai password o dati reali; nessuno viene preso in giro se "casca" nella trappola (e lo scopo, non una figuraccia). Terminata l'attivita, si fa sempre il debriefing: cosa era finto, quali erano i segnali.
+
+### 8bis.1 Operazione Phishing (il docente manda una finta mail-truffa)
+1. **Scopo**: i ragazzi ricevono una vera mail (finta, preparata dal docente) e devono riconoscerla come truffa **senza cliccare** nulla.
+2. **Preparazione (docente)**: si prepara una mail con dentro almeno tre segnali di phishing (fretta, mittente strano, link che non corrisponde). Template pronto da adattare:
+
+```
+Oggetto: ATTENZIONE! Il tuo account sara BLOCCATO tra 24 ore
+
+Gentile utente,
+abbiamo rilevato un accesso sospetto al tuo accont.
+Per non perdere i tuoi dati devi verificare SUBITO entro 24 ore.
+Clicca qui: http://scuola-verifica-account.example.com/login
+In caso contrario il profilo verra eliminato.
+
+Il Team di Assistenza
+```
+
+3. **Segnali nascosti nel template** (per il debriefing): il tono di urgenza e la minaccia; l'errore "accont"; il mittente e il dominio del link che non c'entrano con la scuola; il saluto generico "Gentile utente".
+4. **In classe**: il docente invia la mail alla casella della classe (o a un indirizzo di prova). Ogni ragazzo, sul quaderno, elenca i segnali che ha trovato e scrive "cosa faccio" (non clicco, controllo, chiedo).
+5. **Il link**, se qualcuno lo clicca, deve portare a una **pagina innocua** preparata dal docente che dice "Ci sei cascato! Ecco i segnali che potevi notare" (mai una pagina che chiede dati). In alternativa, il link non porta da nessuna parte e se ne parla a voce.
+6. **Debriefing**: si contano i segnali trovati, si spiega tutto, si celebra chi non ha cliccato e si rassicura chi ci e cascato ("succede a tutti, ora lo sai riconoscere").
+
+### 8bis.2 La piazza del wi-fi (simulazione senza computer, carta e penna)
+1. **Scopo**: capire con il corpo perche su una rete aperta non si mandano cose sensibili.
+2. **Come si gioca**: si scelgono tre ruoli: chi manda un messaggio, chi lo riceve, e un "ascoltatore" in mezzo (la rete aperta).
+3. **Rete aperta**: il mittente dice il messaggio **a voce alta** attraversando l'aula: l'ascoltatore lo sente tutto. Se il messaggio era "il mio PIN e 1234", ora lo sa anche lui.
+4. **Rete protetta (https)**: il mittente scrive il messaggio su un foglio, lo mette in una **busta chiusa** e la passa: l'ascoltatore non puo leggerlo.
+5. **Conclusione (sul quaderno)**: su rete aperta si fanno solo cose "da dire in piazza"; le cose sensibili si fanno solo "in busta chiusa" (https) o con i dati del telefono.
+
+### 8bis.3 http contro https, dal vivo (browser)
+1. Il docente apre un sito che usa **https** (con il lucchetto nella barra dell'indirizzo) e uno che usa **http** semplice.
+2. Si osserva insieme dove appare il lucchetto e cosa cambia nell'indirizzo.
+3. Messaggio chiave: quando inserisci dati (password, pagamenti), l'indirizzo deve avere **https** e il lucchetto.
+
+### 8bis.4 Quanto e forte la mia password (browser o carta e penna)
+1. **Versione carta e penna**: ogni ragazzo scrive due password, una debole (es. il proprio nome) e una forte (una frase con numeri e simboli), e a fianco quanto pensa ci vorrebbe a indovinarle. Se ne discute in classe.
+2. **Versione browser** (facoltativa): si usa un misuratore di robustezza delle password per confrontare le due e vedere la differenza. Regola: si provano password **inventate**, MAI quelle vere che si usano davvero.
+
+### 8bis.5 Caccia ai cookie (browser)
+1. Il docente apre un sito qualunque: appare il **banner dei cookie**.
+2. Si mostra la differenza tra "Accetta tutto" e "Personalizza / Rifiuta": si sceglie insieme in modo consapevole.
+3. Facoltativo: dalle impostazioni del browser si guardano i cookie salvati da quel sito, per far vedere che esistono davvero e "seguono" la navigazione.
+
+### 8bis.6 Costruisci e scambia la trappola (a coppie)
+1. Ogni ragazzo scrive una **finta mail o SMS di phishing** con almeno due segnali della truffa nascosti dentro.
+2. La passa al compagno, che deve **smascherarla** trovando i segnali.
+3. Le trappole migliori si leggono in classe: si impara di piu vedendo quelle degli altri.
+
+## 9. Attivita "Fallo tuo" e "Mostralo" {#doc31-sec10}
+1. **Fallo tuo — la trappola**: ogni ragazzo inventa e scrive una finta mail o SMS di phishing (o un finto banner cookie ingannevole), con almeno due "segnali" della truffa nascosti dentro. Poi la passa al compagno, che deve **smascherarla**.
+2. **Mostralo**: a coppie, uno spiega all'altro, a voce e con parole sue, perche una certa scelta e quella giusta (per esempio perche non si manda la foto della carta). Se lo sai raccontare, l'hai capito.
+3. **Nel quaderno**: incolla o fotografa il tuo schema "rischio -> cosa faccio" e la trappola che hai inventato.
+
+## 10. Prova iniziale e finale (misura del recupero) {#doc31-sec11}
+1. Usa queste cinque domande, una per tema, come **prova iniziale** prima di cominciare: **D1** (password), **D4** (rete non sicura), **D7** (phishing), **D11** (cookie), **D13** (dati di pagamento).
+2. A fine percorso riproponi **le stesse cinque domande** come prova finale.
+3. Il confronto tra prima e dopo mostra il progresso, in modo semplice e senza voti che spaventano.
+
+> [BLU] Da affinare quando arrivera il dettaglio per item dalla prova (area riservata INVALSI): se il buco pesa piu sulla 4.1 o sulla 4.2, si aggiungono qualche scenario in piu sul lato piu debole. Entrambe restano materia del corso.
+
+## 11. Soluzioni e spiegazioni {#doc31-sec12}
+Per ogni domanda: l'opzione corretta e il perche, in una riga. Da leggere DOPO aver provato.
+
+1. **D1 -> opzione 4** (la frase lunga con numeri e simboli). E lunga e difficile da indovinare; le altre sono corte o legate a dati personali facili da scoprire.
+2. **D2 -> opzione 2** (una nuova, diversa dalle altre). Non si riusa la stessa password; un gestore aiuta a ricordarle.
+3. **D3 -> opzione 2** (non la do a nessuno). La password non si condivide, nemmeno con gli amici.
+4. **D4 -> opzione 3** (home banking). Sul wi-fi pubblico si evitano le attivita sensibili come la banca.
+5. **D5 -> opzione 2** (protetta da password). Una rete aperta a tutti e in genere meno sicura.
+6. **D6 -> opzione 2** (solo cose non sensibili, meglio i dati del telefono). Su una rete aperta sconosciuta non si fanno acquisti ne si salvano password.
+7. **D7 -> opzione 2** (non clicco, controllo, nel dubbio chiedo). La fretta e un'esca: non si agisce di getto.
+8. **D8 -> opzione 2** (il tono di urgenza). Le altre sono cose normali di una mail qualunque.
+9. **D9 -> opzione 2** (verifico sul sito ufficiale del corriere). I "micro-pagamenti" con link sono una truffa classica.
+10. **D10 -> opzione 2** (file che tracciano i tuoi interessi). Servono a mostrarti pubblicita mirata.
+11. **D11 -> opzione 2** (leggo e scelgo). Accettare tutto per fretta e la scelta meno consapevole.
+12. **D12 -> opzione 2** (tracciamento e profilazione). Non e magia ne caso: sei stato "seguito".
+13. **D13 -> opzione 2** (non la mando). Nessun servizio serio chiede la foto della carta.
+14. **D14 -> opzione 2** (numero carta, CVV, PIN, password). Sono i dati che aprono i tuoi soldi: restano segreti.
+15. **D15 -> opzione 2** (https, lucchetto, sito conosciuto). Colori e sconti enormi non dicono nulla sulla sicurezza; anzi, gli sconti troppo belli sono spesso un'esca.
+16. **D16 -> opzione 2** (oggetto chiaro con nome e classe). Un oggetto vuoto o "urgente!!!" e poco professionale.
+17. **D17 -> opzione 2** (in Ccn i destinatari non si vedono). Serve a proteggere la privacy quando scrivi a molti.
+18. **D18 -> opzione 2** (stai urlando). Il maiuscolo fisso e considerato maleducato online.
+
+## 12. Collegamenti {#doc31-sec13}
+1. **RECUPERO-INVALSI**: il piano di cui questo e il materiale operativo.
+2. **INVALSI-GRADO10-2025-26**: i dati, i cinque temi e la mappa dei 22 quesiti da cui nascono questi scenari.
+3. **Corso HTML/CSS (Panaccione)**: questi quiz possono diventare una pagina web che si autocorregge; ottimo "mostralo".
+4. **Intelligenza artificiale**: attenzione, l'AI puo scrivere finte mail molto credibili; motivo in piu per saper riconoscere i segnali.
+5. **Metodo del corso**: scenari concreti, si prova subito, si mostra, carta e penna, zero vergogna.
+
+
+# Programma del Corso — Classe 3 {#doc32}
 *Versione 0.2 · 18/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A colpo d'occhio {#doc31-sec1}
+## 1. A colpo d'occhio {#doc32-sec1}
 1. La Classe 3 e l'anno in cui si mettono le mani su reti e cose vere: cavi, indirizzi, prime reti in Packet Tracer.
 2. Arrivano due grandi novita: i database con l'SQL e il web (pagine HTML e CSS, un sito con Google Sites).
 3. La programmazione cresce (Lazarus anche con grafica e coordinate) e il lavoro a gruppi diventa vero team con Git (branch e Pull Request).
 4. Hardware, sistema operativo e diagnosi tornano come ripresa mirata alle prove di qualifica regionali.
 
-## 2. Gli argomenti dell'anno (dalla griglia) {#doc31-sec2}
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc32-sec2}
 1. Fondamenti (fili rossi): Glossario personale (verso i 150 termini); Git in team (branch, Pull Request, merge).
 2. Database e gestione dati: concetto di database; SQL (interrogare e gestire i dati); archivi e migrazione; raccolta e analisi dei dati. Strumento proposto: SQLite (da confermare).
 3. Web e siti: come funziona il web; HTML5; CSS; Google Sites.
@@ -6141,69 +6422,69 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 8. Progetti pratici: Negozio Online che cresce (con un piccolo database); cablaggio RJ45 e prime reti; giochi con Godot (da decidere).
 9. Intelligenza artificiale: uso dell'AI per capire (SQL, HTML, gli errori) senza copiare; algoritmi e dati, consapevolezza e privacy.
 
-## 3. Modulo A — Reti, livello operativo {#doc31-sec3}
+## 3. Modulo A — Reti, livello operativo {#doc32-sec3}
 1. Concetti di base: LAN (rete locale), indirizzo IP, maschera di sottorete e gateway, DHCP (assegnazione automatica degli indirizzi).
 2. Cablaggio fisico: il cavo RJ45 e lo standard T568B; crimpare un cavo; piccola LAN a due PC con uno switch; test e ping.
 3. Prima rete in Cisco Packet Tracer: cos'e il simulatore, costruire una rete piccola, assegnare gli indirizzi, collaudare con il ping; primo assaggio di segmentazione.
 
-## 4. Modulo B — Database e SQL {#doc31-sec4}
+## 4. Modulo B — Database e SQL {#doc32-sec4}
 1. Cos'e un database (archivio ordinato di dati): tabelle, righe e colonne, con esempi vicini a loro.
 2. SQL: creare una tabella, la query SELECT con filtri, ordinare e contare, inserire/aggiornare/cancellare.
 3. Archivi e migrazione; prime analisi dei dati (medie, conteggi, un grafico).
 4. Strumento (da confermare): SQLite, dal browser (sqliteonline.com) o portable (DB Browser for SQLite).
 
-## 5. Modulo C — Web: HTML, CSS e siti {#doc31-sec5}
+## 5. Modulo C — Web: HTML, CSS e siti {#doc32-sec5}
 1. Come funziona il web: client e server in parole semplici.
 2. HTML5: la struttura di una pagina (titoli, testo, immagini, link, sezioni).
 3. CSS: colori, caratteri, spaziature; una pagina che si vede bene anche sul telefono.
 4. Google Sites: pubblicare un sito personale o scolastico (portfolio o progetto).
 
-## 6. Modulo D — Programmazione (consolidamento) {#doc31-sec6}
+## 6. Modulo D — Programmazione (consolidamento) {#doc32-sec6}
 1. Lazarus: progetti con piu finestre e oggetti; un gioco/utility scelto dagli studenti (MasterMind, quiz).
 2. Lazarus, grafica e coordinate: disegnare con x e y; coordinate polari e rettangolari; una piccola animazione.
 3. Godot in prosecuzione (se collocato quest'anno): collisioni, aree, punteggio, un primo gioco 2D completo. Il percorso completo e nel corso dedicato.
 
-## 7. Modulo E — Git in team (Fase 2) {#doc31-sec7}
+## 7. Modulo E — Git in team (Fase 2) {#doc32-sec7}
 1. Il concetto di ramo (branch): ognuno lavora sul suo pezzo senza rompere quello degli altri.
 2. La Pull Request: proporre e unire le proprie modifiche al progetto comune; il merge.
 3. Tutto in modo visuale (browser), su un progetto di gruppo vero del corso.
 
-## 8. Modulo F — Hardware, sistema operativo e diagnosi (ripresa per la qualifica) {#doc31-sec8}
+## 8. Modulo F — Hardware, sistema operativo e diagnosi (ripresa per la qualifica) {#doc32-sec8}
 1. Ripresa dei componenti del PC, montaggio/smontaggio in sicurezza.
 2. Installazione del sistema operativo (Windows) e prime configurazioni.
 3. Diagnosi dei guasti (triage): da una descrizione del problema, riconoscere il tipo di guasto e la causa probabile.
 
 > [ROSSO] Disallineamento da tenere presente: nella Griglia, hardware e sistema operativo sono collocati in Classe 1 e 2. Qui tornano perche le prove di qualifica regionali del triennio (buste hardware/OS/diagnosi) li verificano in 3a e 4a. In Classe 3 quindi non sono una prima spiegazione, ma una ripresa e un allenamento mirato alla prova.
 
-## 9. Modulo G — Preventivo e relazione tecnica {#doc31-sec9}
+## 9. Modulo G — Preventivo e relazione tecnica {#doc32-sec9}
 1. Configurare e preventivare una postazione o un'aula, con prezzi reali.
 2. Scrivere una breve relazione tecnica: cosa serve, quanto costa, perche.
 
-## 10. Verso la Classe 4 {#doc31-sec10}
+## 10. Verso la Classe 4 {#doc32-sec10}
 1. Il passo successivo e la rete di una scuola: piu piani, una dorsale, piu apparati, le VLAN.
 2. Si prepara il terreno per il progetto e la prova di qualifica dell'anno dopo.
 
-## 11. Valutazione {#doc31-sec11}
+## 11. Valutazione {#doc32-sec11}
 1. Prove pratiche: cablaggio RJ45, piccola rete in Packet Tracer, una query SQL, una pagina web, montaggio e diagnosi.
 2. Capacita di spiegare a voce cio che si e fatto (la prova del nove).
 3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
 4. Le prove di riferimento del triennio sono raccolte (per ora) nel materiale da organizzare; verranno trascritte nel formato del corso.
 
-## 12. Materiale collegato (gia esistente, da trascrivere) {#doc31-sec12}
+## 12. Materiale collegato (gia esistente, da trascrivere) {#doc32-sec12}
 1. Prove di rete in Cisco Packet Tracer (due varianti anti-copia).
 2. Prove di cablaggio RJ45 e connettivita LAN.
 3. Buste di esame su hardware, sistema operativo, diagnosi e preventivo.
 4. Prova di diagnosi guasti (troubleshooting) per la Classe 3.
 
 
-# Le Reti di Computer — Teoria {#doc32}
+# Le Reti di Computer — Teoria {#doc33}
 *Versione 0.2 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## 1. Cos'e una rete {#doc32-sec1}
+## 1. Cos'e una rete {#doc33-sec1}
 1. Una rete collega piu dispositivi e li fa comunicare e condividere cose (Internet, file, stampanti).
 2. Immagine utile: e come una rete stradale che collega tante case; i dati sono le auto che viaggiano da una casa all'altra.
 
-## 2. Gli apparecchi di rete in casa {#doc32-sec2}
+## 2. Gli apparecchi di rete in casa {#doc33-sec2}
 1. Modem (Modulator-Demodulator: modulatore-demodulatore): collega casa a Internet e traduce il segnale della linea (telefonica o fibra) in dati che il computer capisce.
 2. Router (instradatore): smista i dati tra la rete di casa e Internet e decide dove mandare ogni pacchetto. Di solito assegna anche gli indirizzi e fa da Wi-Fi.
 3. Modem-router: i due apparecchi in un'unica scatola, quella che di solito da l'operatore.
@@ -6217,26 +6498,26 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 
 ![Schema della rete di casa: da Internet al modem, al router Wi-Fi, poi ai dispositivi via cavo (con lo switch) e senza fili (Wi-Fi).](classe-3/immagini/rete-di-casa.svg)
 
-## 3. I cavi di rete {#doc32-sec3}
+## 3. I cavi di rete {#doc33-sec3}
 1. Il cavo Ethernet ha un connettore RJ45 e dentro 8 fili raggruppati in 4 coppie intrecciate.
 2. Le coppie sono intrecciate apposta: cosi si disturbano di meno e il segnale e piu pulito.
 3. Le categorie (per esempio Cat 5e, Cat 6): piu alta e la categoria, piu veloce puo andare il cavo.
 4. Lo standard T568B stabilisce l'ordine dei colori quando si monta il connettore: lo useremo in laboratorio.
 5. Cenno: la fibra ottica porta i dati con la luce; e velocissima e adatta alle lunghe distanze.
 
-## 4. Hub, switch e routing {#doc32-sec4}
+## 4. Hub, switch e routing {#doc33-sec4}
 1. Hub: ripete il segnale a tutte le porte; risultato, traffico inutile e "collisioni".
 2. Switch: impara quale dispositivo e attaccato a ogni porta e manda i dati solo alla porta giusta.
 3. Routing (instradamento): il router sceglie la strada per far arrivare un pacchetto a una rete diversa. Instradare vuol dire proprio "scegliere il percorso".
 
-## 5. Gli indirizzi in rete {#doc32-sec5}
+## 5. Gli indirizzi in rete {#doc33-sec5}
 1. Indirizzo IP (Internet Protocol): l'indirizzo di un dispositivo, come il numero civico di una casa.
 2. Maschera di sottorete: dice quale parte dell'indirizzo indica la "via" (la rete) e quale il "civico" (il singolo dispositivo).
 3. Gateway (passaggio): la porta verso l'esterno, di solito il router.
 4. DHCP (Dynamic Host Configuration Protocol): assegna gli indirizzi IP in automatico, senza scriverli a mano.
 5. Cenno: il MAC address e l'indirizzo "di fabbrica" della scheda di rete, unico per ogni scheda.
 
-## 6. Il modello ISO/OSI (i 7 livelli) {#doc32-sec6}
+## 6. Il modello ISO/OSI (i 7 livelli) {#doc33-sec6}
 1. ISO e l'organizzazione che ha definito il modello; OSI (Open Systems Interconnection: interconnessione di sistemi aperti) e il nome del modello. Per questo si dice "modello ISO/OSI".
 2. E un modo per dividere la comunicazione in 7 piani, ognuno con un compito. Dal basso verso l'alto:
    1. Fisico: i segnali che viaggiano sul cavo o nell'aria.
@@ -6250,12 +6531,12 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 
 ![Il modello ISO/OSI a 7 livelli, dall'alto (i programmi) al basso (i segnali sul cavo), con il ruolo di ciascun livello.](classe-3/immagini/modello-osi.svg)
 
-## 7. Il modello TCP/IP (i 4 livelli) {#doc32-sec7}
+## 7. Il modello TCP/IP (i 4 livelli) {#doc33-sec7}
 1. E il modello pratico con cui funziona Internet davvero.
 2. Ha 4 livelli: Accesso alla rete, Internet (IP), Trasporto (TCP o UDP), Applicazione.
 3. E una versione piu snella del modello ISO/OSI: fa le stesse cose, con meno piani.
 
-## 8. Come viaggiano i pacchetti {#doc32-sec8}
+## 8. Come viaggiano i pacchetti {#doc33-sec8}
 1. Un dato grande viene spezzato in tanti pacchetti piccoli.
 2. Ogni pacchetto porta un'intestazione con mittente e destinatario (gli indirizzi IP), come una busta con l'indirizzo scritto sopra.
 3. I router leggono l'indirizzo e instradano ogni pacchetto verso la destinazione, anche per strade diverse.
@@ -6265,7 +6546,7 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 
 ![Il viaggio di un pacchetto: il dato viene spezzato in pacchetti con l'indirizzo di arrivo, i router scelgono la strada, il destinatario li rimette in ordine.](classe-3/immagini/viaggio-pacchetto.svg)
 
-## 9. Due modi di spedire i dati: TCP e UDP {#doc32-sec9}
+## 9. Due modi di spedire i dati: TCP e UDP {#doc33-sec9}
 1. TCP (Transmission Control Protocol): la spedizione "con ricevuta di ritorno".
    1. Prima si stabilisce la connessione tra i due dispositivi.
    2. Ogni pacchetto viene confermato; se uno si perde, viene rispedito.
@@ -6276,16 +6557,16 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 
 > [GIALLO] La scelta dipende dal bisogno: meglio sicuro (TCP) oppure meglio veloce (UDP).
 
-## 10. Dalla teoria alla pratica {#doc32-sec10}
+## 10. Dalla teoria alla pratica {#doc33-sec10}
 1. In laboratorio costruiremo cavi veri e piccole reti reali.
 2. In Cisco Packet Tracer (simulatore di reti) progetteremo una rete e proveremo l'invio dei pacchetti.
 3. La modalita "simulazione" di Packet Tracer mostra il pacchetto che viaggia da un apparato all'altro: cosi la teoria di questo documento si vede in movimento.
 
 
-# Cablaggio RJ45 — Scheda pratica {#doc33}
+# Cablaggio RJ45 — Scheda pratica {#doc34}
 *Versione 0.1 · 17/08/2026 · Parte: Classe 3 — Informatica*
 
-## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc33-sec1}
+## Esercizio 1 — Costruire un cavo di rete diretto (RJ45) {#doc34-sec1}
 
 Obiettivo: costruire con le tue mani un cavo di rete Ethernet, montando i
 connettori RJ45 con lo standard T568B, e verificare che funzioni collegando due
@@ -6352,10 +6633,10 @@ Se qualcosa non va:
 </details>
 
 
-# Troubleshooting Pratico — Guasti da Creare e Diagnosticare {#doc34}
+# Troubleshooting Pratico — Guasti da Creare e Diagnosticare {#doc35}
 *Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A cosa serve e come si usa {#doc34-sec1}
+## 1. A cosa serve e come si usa {#doc35-sec1}
 
 1. Obiettivo: portare l'allievo a **ragionare come un tecnico** — dal sintomo alla causa alla soluzione — non a imparare a memoria.
 2. Due modalita, complementari:
@@ -6366,7 +6647,7 @@ Se qualcosa non va:
 
 > [GIALLO] Motore del corso: il guasto e messo apposta dal docente. Sbagliare la prima ipotesi non e un errore dell'allievo, e parte del gioco: si prova, si verifica, si riprova. Zero vergogna.
 
-## 2. Sicurezza prima di tutto (VINCOLANTE) {#doc34-sec2}
+## 2. Sicurezza prima di tutto (VINCOLANTE) {#doc35-sec2}
 
 Regole da spiegare e far rispettare **prima** di toccare qualunque PC.
 
@@ -6380,7 +6661,7 @@ Regole da spiegare e far rispettare **prima** di toccare qualunque PC.
 
 > [ROSSO] Vietato: aprire l'alimentatore; lavorare a PC acceso o con la spina attaccata; forzare i componenti; toccare la scheda video/RAM sui contatti dorati. Questi non sono guasti da esercizio: sono rischi per le persone o per l'hardware.
 
-## 3. Il metodo di diagnosi (la scheda dell'allievo) {#doc34-sec3}
+## 3. Il metodo di diagnosi (la scheda dell'allievo) {#doc35-sec3}
 
 La scheda che l'allievo compila a mano per ogni guasto. Insegna il **metodo**, sempre lo stesso.
 
@@ -6397,7 +6678,7 @@ La scheda che l'allievo compila a mano per ogni guasto. Insegna il **metodo**, s
 > [BLU] Schema del sintomo (utile da disegnare a mano):
 > non si accende nulla -> alimentazione; si accende ma niente video -> RAM / video / alimentazione CPU; parte ma "manca il disco" -> disco o avvio; immagine assente -> monitor o cavo video.
 
-## 4. Catalogo dei guasti fisici (per il docente) {#doc34-sec4}
+## 4. Catalogo dei guasti fisici (per il docente) {#doc35-sec4}
 
 Per ogni guasto: cosa fare (a PC spento e scollegato), il sintomo atteso, la causa (la diagnosi corretta) e la soluzione. Difficolta: F = facile, M = media, D = difficile.
 
@@ -6443,7 +6724,7 @@ Per ogni guasto: cosa fare (a PC spento e scollegato), il sintomo atteso, la cau
 | Scollegare la ventola della CPU dal connettore CPU_FAN | Si accende e poi si spegne, o avviso "CPU fan error" | La scheda protegge la CPU dal surriscaldamento | Ricollegare la ventola al connettore CPU_FAN | M |
 | Staccare il cavo di rete (ethernet) | Nessuna connessione a internet | Cavo di rete scollegato | Ricollegare il cavo di rete | F |
 
-## 5. La parte teorica a crocette (banca domande) {#doc34-sec5}
+## 5. La parte teorica a crocette (banca domande) {#doc35-sec5}
 
 Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. La risposta corretta e indicata tra parentesi quadre per il docente (va tolta nella versione per gli allievi).
 
@@ -6488,7 +6769,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
    3. Apro l'alimentatore per controllarlo.
    4. Bagno le mani per pulirle. [Risposta: 2]
 
-## 6. Come valutare (griglia semplice) {#doc34-sec6}
+## 6. Come valutare (griglia semplice) {#doc35-sec6}
 
 1. **Sicurezza**: ha lavorato a PC spento e scollegato, senza forzare? (si/no, prima di tutto).
 2. **Metodo**: ha osservato i sintomi e fatto un'ipotesi prima di aprire?
@@ -6498,7 +6779,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Non conta "indovinare subito": conta il metodo e il saper raccontare. Un allievo che sbaglia due ipotesi ma ragiona bene e le verifica, ha capito piu di uno che azzecca a caso.
 
-## 7. Collegamenti {#doc34-sec7}
+## 7. Collegamenti {#doc35-sec7}
 
 1. **Prove di qualifica regionali**: le buste su hardware, sistema operativo e diagnosi (3a/4a) verificano proprio queste competenze. Questo kit e allenamento diretto.
 2. **Sicurezza sul lavoro**: il capitolo 2 si lega al modulo trasversale di sicurezza (lavorare in modo sicuro, DPI, rischi elettrici).
@@ -6506,10 +6787,10 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 4. **HTML5/CSS**: la parte teorica a crocette puo diventare una pagina web che si autocorregge (aggancio col corso HTML/CSS di Panaccione).
 
 
-# Corso Base di HTML5 e CSS {#doc35}
+# Corso Base di HTML5 e CSS {#doc36}
 *Versione 0.1 · 03/09/2026 · Parte: Classe 3 — Informatica*
 
-## 1. A cosa serve e come si usa {#doc35-sec1}
+## 1. A cosa serve e come si usa {#doc36-sec1}
 
 1. Obiettivo: costruire **pagine web vere**, capendo la differenza tra la **struttura** (HTML: i mattoni) e l'**aspetto** (CSS: colori e stile).
 2. Regola d'oro del ritmo: **scrivi poco, guarda subito**. Ogni piccolo blocco di codice si prova nel browser prima di andare avanti. Il risultato a schermo e la ricompensa.
@@ -6518,7 +6799,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Metodo del corso: prima la vittoria facile (una pagina che dice "Ciao"), poi si aggiunge un pezzo alla volta. Un errore nel codice non rompe niente: si corregge e si riprova. Zero vergogna.
 
-## 2. Cosa serve (senza installare niente) {#doc35-sec2}
+## 2. Cosa serve (senza installare niente) {#doc36-sec2}
 
 1. **Per scrivere il codice**: va bene il **Blocco note** (gia presente su ogni PC). Meglio ancora l'editor nel browser di GitHub (`github.dev`, si apre premendo il tasto punto dentro un repository): scrivi e salvi li, senza installare.
 2. **Per vedere il risultato**: si salva il file con estensione `.html` e si fa **doppio clic**: si apre nel browser. Ogni volta che si cambia il codice, si salva e si ricarica la pagina (tasto F5).
@@ -6526,7 +6807,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [BLU] A scuola non serve installare programmi: Blocco note + browser bastano per tutto il corso base. GitHub (repository e Pages) e lo stesso strumento che usiamo per il resto del corso.
 
-## 3. La prima vittoria: una pagina in 10 minuti {#doc35-sec3}
+## 3. La prima vittoria: una pagina in 10 minuti {#doc36-sec3}
 
 1. Aprire il Blocco note, scrivere questo, e salvarlo con nome `index.html` (attenzione: non `index.html.txt`).
 
@@ -6547,7 +6828,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 2. Fare doppio clic su `index.html`: si apre nel browser e si legge il titolo grande e la frase. **Prima vittoria fatta.**
 3. Personalizzare: cambiare il nome e la frase. Salvare, ricaricare (F5). E gia "sua".
 
-## 4. HTML5 — la struttura (i mattoni) {#doc35-sec4}
+## 4. HTML5 — la struttura (i mattoni) {#doc36-sec4}
 
 1. Ogni pagina ha uno scheletro fisso: `<!doctype html>`, poi `<html>` che contiene `<head>` (informazioni, non si vede) e `<body>` (cio che si vede).
 2. I "mattoni" piu usati dentro il `body`:
@@ -6578,7 +6859,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Regola pratica: l'HTML dice COSA c'e (un titolo, un paragrafo, un'immagine). Non si occupa dei colori: quelli sono compito del CSS (capitolo 5).
 
-## 5. CSS — l'aspetto (colori, caratteri, spazi) {#doc35-sec5}
+## 5. CSS — l'aspetto (colori, caratteri, spazi) {#doc36-sec5}
 
 1. Il CSS decide **come si vede** la pagina. Per iniziare, si scrive dentro il `<head>`, in un blocco `<style>`.
 2. Si sceglie un elemento (selettore) e gli si danno delle proprieta. Esempio da mettere nel `<head>`:
@@ -6611,7 +6892,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [BLU] Passo avanti (facoltativo): quando la pagina cresce, il CSS si sposta in un file a parte `stile.css` e si collega nel `<head>` con `<link rel="stylesheet" href="stile.css">`. Stesso risultato, piu ordine.
 
-## 6. Una pagina che si vede bene anche sul telefono {#doc35-sec6}
+## 6. Una pagina che si vede bene anche sul telefono {#doc36-sec6}
 
 1. Aggiungere nel `<head>` questa riga: dice al telefono di adattare la pagina allo schermo.
 
@@ -6629,7 +6910,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 3. Provare la pagina restringendo la finestra del browser: il testo e le immagini si adattano. Questa e la base del "responsive".
 
-## 7. Pubblicare online con GitHub Pages (Mostralo) {#doc35-sec7}
+## 7. Pubblicare online con GitHub Pages (Mostralo) {#doc36-sec7}
 
 1. Si mette il file `index.html` in un **repository** su GitHub (lo stesso strumento del corso).
 2. Nelle impostazioni del repository si attiva **Pages** (si sceglie il ramo e la cartella da pubblicare). Dopo qualche minuto la pagina e online a un indirizzo tipo `https://nome-utente.github.io/nome-repo`.
@@ -6637,14 +6918,14 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 > [GIALLO] Nota pratica sulla pubblicazione: per pubblicare da un repository privato serve il piano GitHub Team (che l'organizzazione della scuola avra con la verifica docente); in alternativa si usa un repository pubblico dedicato alle pagine web (contiene solo l'HTML, nessun dato personale). La guida click-by-click per attivare Pages si fa insieme, davanti allo schermo.
 
-## 8. Idee di progetto (Fallo tuo) {#doc35-sec8}
+## 8. Idee di progetto (Fallo tuo) {#doc36-sec8}
 
 1. **La mia pagina**: chi sono, cosa mi piace, una foto, qualche link.
 2. **Pagina su una passione** (un gioco, uno sport, una band): titolo, testo, immagini, elenco.
 3. **Mini-sito a 3 pagine** con un menu di link tra loro (home, argomento, contatti): primo passo verso il sito professionale.
 4. **Quiz troubleshooting**: una pagina che presenta le domande a crocette e mostra se la risposta e giusta (aggancio col kit di troubleshooting).
 
-## 9. Collegamenti {#doc35-sec9}
+## 9. Collegamenti {#doc36-sec9}
 
 1. **Verso il sito professionale**: questo corso base e la rampa di lancio per il sito professionale della Classe 3.
 2. **Negozio online (Classe 1)**: li HTML, CSS e JavaScript sono gia usati; e una base pronta da cui prendere esempi.
@@ -6652,16 +6933,16 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 4. **Metodo del corso**: vittoria subito, personalizzazione, risultato mostrabile, carta e penna per lo schema della pagina.
 
 
-# Programma del Corso — Classe 4 {#doc36}
+# Programma del Corso — Classe 4 {#doc37}
 *Versione 0.2 · 18/08/2026 · Parte: Classe 4 — Informatica*
 
-## 1. A colpo d'occhio {#doc36-sec1}
+## 1. A colpo d'occhio {#doc37-sec1}
 1. Le reti sono il cuore dell'anno: con Cisco Packet Tracer si progetta e si simula una rete importante, tipo quella di una scuola, con tutti i componenti.
 2. Si approfondiscono i database (SQL avanzato) e il web (un sito piu completo), e si cura la documentazione tecnica.
 3. Ci si prepara al mondo del lavoro: CV Europass, tesine, presentazione del lavoro finito; e alla prova di qualifica con validita regionale (Regione Lombardia).
 4. Il Glossario personale arriva ad almeno 200 termini; il quaderno diventa un vero libro loro.
 
-## 2. Gli argomenti dell'anno (dalla griglia) {#doc36-sec2}
+## 2. Gli argomenti dell'anno (dalla griglia) {#doc37-sec2}
 1. Fondamenti (fili rossi): Glossario personale (verso i 200 termini totali); Git, le release del progetto (Fase 2).
 2. Reti (il cuore): Cisco Packet Tracer con la rete di una scuola e le VLAN; sicurezza di rete (firewall, segmentazione); indirizzamento avanzato applicato; cablaggio (da valutare).
 3. Database: SQL avanzato (piu condizioni, piu tabelle, raggruppamenti); migrazione e analisi statistica dei dati.
@@ -6670,61 +6951,61 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 6. Mondo del lavoro: ricerca del lavoro (CV Europass, ricerca attiva); documentazione tecnica e deployment; lavoro in team e tesine.
 7. Intelligenza artificiale: l'AI come strumento di lavoro maturo; limiti ed etica, collegati al mondo del lavoro.
 
-## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc36-sec3}
+## 3. Modulo A — Cisco Packet Tracer: la rete di una scuola {#doc37-sec3}
 1. Progettare su carta la rete di una scuola (aule, segreteria, laboratori) e poi costruirla: router, switch, PC.
 2. Le VLAN: separare le reti (segreteria, studenti) mantenendo l'ordine; far comunicare le reti tramite il router.
 3. Simulare il funzionamento e testare i percorsi con il ping; documentare il progetto come compito di realta.
 
-## 4. Modulo B — Sicurezza di rete {#doc36-sec4}
+## 4. Modulo B — Sicurezza di rete {#doc37-sec4}
 1. I rischi in rete e come ci si difende: il firewall in parole semplici, buone pratiche.
 2. La segmentazione come difesa: perche separare le reti aiuta; si applica alla rete-scuola.
 
-## 5. Modulo C — Database avanzato {#doc36-sec5}
+## 5. Modulo C — Database avanzato {#doc37-sec5}
 1. Query piu ricche: piu condizioni, piu tabelle (join semplice), raggruppare e riassumere (GROUP BY).
 2. Un mini-database completo per un caso reale (il negozio o la scuola), dalla progettazione alle query.
 3. Migrazione e analisi statistica dei dati raccolti.
 
-## 6. Modulo D — Web: sito completo {#doc36-sec6}
+## 6. Modulo D — Web: sito completo {#doc37-sec6}
 1. Un sito piu ricco (piu pagine, menu, stile curato) su un tema scelto.
 2. Cura dell'aspetto e della resa su telefono; pubblicazione come parte del portfolio.
 
-## 7. Modulo E — Programmazione (livello massimo) {#doc36-sec7}
+## 7. Modulo E — Programmazione (livello massimo) {#doc37-sec7}
 1. Lazarus: un progetto piu strutturato scelto dagli studenti, con oggetti, dati e grafica insieme.
 2. Godot (se collocato quest'anno): dal 2D al 3D, il progetto boss (movimento, obiettivi, punteggio). Percorso completo nel corso dedicato.
 
-## 8. Modulo F — Collaudo e documentazione {#doc36-sec8}
+## 8. Modulo F — Collaudo e documentazione {#doc37-sec8}
 1. Collaudare la rete con il ping e verificare che tutto comunichi.
 2. Documentare: mappa degli indirizzi, schema, scelte fatte; manuale utente e relazione tecnica curati; cosa vuol dire mettere in produzione (deployment).
 
-## 9. Modulo G — Preventivo dell'infrastruttura {#doc36-sec9}
+## 9. Modulo G — Preventivo dell'infrastruttura {#doc37-sec9}
 1. Preventivo economico dei materiali della rete, con prezzi reali.
 2. Relazione tecnica dell'infrastruttura.
 
-## 10. Modulo H — Mondo del lavoro e tesine {#doc36-sec10}
+## 10. Modulo H — Mondo del lavoro e tesine {#doc37-sec10}
 1. Il CV Europass e la ricerca attiva del lavoro: dove cercare, come presentarsi, la mail di candidatura.
 2. Il gruppo porta a termine un progetto vero con ruoli chiari; si pubblica la release stabile (Git, Fase 2).
 3. La tesina/presentazione del lavoro finito: struttura, prove e presentazione alla classe.
 
-## 11. La prova di qualifica (diploma) {#doc36-sec11}
+## 11. La prova di qualifica (diploma) {#doc37-sec11}
 1. Prova professionale per la qualifica di Tecnico Informatico (sistemi, reti e data management).
 2. Tre fasi: progettare la rete in Packet Tracer, collaudare i PC, preparare il preventivo dei materiali.
 3. La valutazione segue la rubrica ufficiale della Regione Lombardia.
 
-## 12. Valutazione {#doc36-sec12}
+## 12. Valutazione {#doc37-sec12}
 1. Il progetto della rete-scuola (progettazione, VLAN, collaudo, documentazione) come prova forte dell'anno.
 2. Prove su database, web e la tesina finale; capacita di spiegare a voce cio che si e fatto.
 3. Carta e penna in ogni lezione: appunti e schemi a mano nel quaderno personale.
 
-## 13. Materiale collegato (gia esistente, da trascrivere) {#doc36-sec13}
+## 13. Materiale collegato (gia esistente, da trascrivere) {#doc37-sec13}
 1. Esame di diploma ufficiale (giugno 2026) con validita della Regione.
 2. Rubrica di valutazione ufficiale della Regione Lombardia.
 3. Prove di rete in Cisco Packet Tracer del triennio.
 
 
-# Corso Informatica — indice generale {#doc37}
+# Corso Informatica — indice generale {#doc38}
 *Versione 1.16 · 02/09/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc37-sec1}
+## In breve {#doc38-sec1}
 
 Tutto il materiale sta nel **repository del corso** (`corso-godot`), sul branch
 `claude/corso-informatica-classe-1-hom2pq`. Ogni documento segue la regola
@@ -6740,7 +7021,7 @@ Il lavoro è organizzato in **quattro parti**:
 
 ---
 
-## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc37-sec2}
+## Parte 0 — Documenti di pianificazione (trasversali ai quattro anni) {#doc38-sec2}
 
 Nella **radice del repository** stanno i documenti che governano tutto il corso,
 non un anno solo. Si leggono dal generale al dettaglio: dalla mappa delle
@@ -6769,7 +7050,7 @@ Tutti questi sono anche **dentro il libro unico** (`LIBRO-COMPLETO`, vedi Parte 
 
 ---
 
-## Parte 1 — Classe 1 (Informatica) {#doc37-sec3}
+## Parte 1 — Classe 1 (Informatica) {#doc38-sec3}
 
 Cartella **`classe-1/`**. Il corso nuovo per la prima: taglio tecnico, tutto
 online e gratuito, con un primo progetto completo e testato.
@@ -6814,7 +7095,7 @@ nella guida e una **prova a freddo** prima della classe.
 
 ---
 
-## Parte 2 — Corso Godot / GDScript {#doc37-sec4}
+## Parte 2 — Corso Godot / GDScript {#doc38-sec4}
 
 Il corso parallelo di programmazione con Godot. Il "manuale" ha due parti (libro
 di testo + eserciziario) più il quaderno dello studente, e una serie di **giochi
@@ -6843,7 +7124,7 @@ I PDF consegnabili del manuale e dell'eserciziario sono versionati da `v0.1` a
 
 ---
 
-## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc37-sec5}
+## Parte 3 — Materiale del triennio (esami · griglie · rubriche) {#doc38-sec5}
 
 Cartella **`materiale-da-organizzare/`**. Area di **raccolta provvisoria**: qui è
 al sicuro tutto il materiale del triennio fornito dal docente (esami, griglie,
@@ -6867,7 +7148,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Parte 4 — Strumenti e configurazione {#doc37-sec6}
+## Parte 4 — Strumenti e configurazione {#doc38-sec6}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -6885,7 +7166,7 @@ passo previsto è la trascrizione dei due esami **Cisco Packet Tracer** in MD + 
 
 ---
 
-## Dove sta tutto {#doc37-sec7}
+## Dove sta tutto {#doc38-sec7}
 
 Repository **`corso-godot`**, branch `claude/corso-informatica-classe-1-hom2pq`.
 Ogni documento ha la sua fonte `.md` e, dove è un consegnabile, il `.pdf` accanto,
@@ -6895,10 +7176,10 @@ Questo documento (`CORSO-INFORMATICA.md`) è **l'indice generale**: parti da qui
 avere sott'occhio tutto ciò che esiste.
 
 
-# Materiale del Corso — Classe 1 {#doc38}
+# Materiale del Corso — Classe 1 {#doc39}
 *Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
 
-## In breve {#doc38-sec1}
+## In breve {#doc39-sec1}
 
 Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il suo
 **primo progetto completo e testato**: il **negozio online**. Tutto è **versionato**
@@ -6906,7 +7187,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 1. Documenti di programmazione (per il docente) {#doc38-sec2}
+## 1. Documenti di programmazione (per il docente) {#doc39-sec2}
 
 | Documento | Cos'è | Versione |
 |---|---|---|
@@ -6916,7 +7197,7 @@ Il corso di **Classe 1** è impostato (programma + bussola del lavoro) e ha il s
 
 ---
 
-## 2. Esercizi / progetti FATTI {#doc38-sec3}
+## 2. Esercizi / progetti FATTI {#doc39-sec3}
 
 ### ✅ Progetto 1 — "Il Mio Negozio Online" *(completo e testato)*
 
@@ -6943,7 +7224,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc38-sec4}
+## 3. Strumenti {#doc39-sec4}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -6951,7 +7232,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc38-sec5}
+## 4. In preparazione (prossimi passi) {#doc39-sec5}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -6961,7 +7242,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc38-sec6}
+## Dove sta tutto {#doc39-sec6}
 
 Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
 cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`

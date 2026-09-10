@@ -61,6 +61,7 @@ DOCS = {
     "intelligenza-artificiale": {"src": "../INTELLIGENZA-ARTIFICIALE.md", "title": "Intelligenza Artificiale — Gem e Agenti Autonomi"},
     "invalsi": {"src": "../INVALSI-GRADO10-2025-26.md", "title": "INVALSI Grado 10 (2025-2026) — Dati, analisi e note"},
     "recupero-invalsi": {"src": "../RECUPERO-INVALSI.md", "title": "Recupero INVALSI — Piano per Colmare le Lacune (competenze digitali DigComp)"},
+    "recupero-invalsi-esercizi": {"src": "../RECUPERO-INVALSI-esercizi.md", "title": "Recupero INVALSI — Schede ed Esercizi (Sicurezza e Comunicazione)"},
     "mie-parti":    {"src": "../MIE-PARTI-ALLEGATO-A.md",             "title": "Le Mie Parti nell'Allegato A"},
     "preventivo":   {"src": "../PROGRAMMA-PREVENTIVO-2026-27.md",     "title": "Programma Preventivo 2026/27 (per competenza)"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
