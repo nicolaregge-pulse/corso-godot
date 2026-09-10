@@ -1,14 +1,16 @@
 # INVALSI Grado 10 (2025-2026) — Dati, analisi e note per il corso
 
-**Versione 1.0** — 10/09/2026
+**Versione 1.1** — 10/09/2026
 *Analisi della restituzione dati INVALSI di grado 10 dell'anno 2025-2026 per la
 classe 2INFSPE (che ora e la seconda). Non e un riassunto per la lettura: e
 materiale di lavoro, base per le scelte del corso. Fonte primaria: quattro
 presentazioni scaricate dal portale INVALSI (restituzionedati.invalsi.it),
 archivio restituzioneproveinvalsi.zip (dati generali, italiano, matematica,
-competenze digitali). Documento gia prodotto nella sessione di origine:
-v1.0_Analisi_INVALSI_Grado10_2INFSPE_2026-09-10.pdf (33 pagine). Tutti i numeri
-rilevanti sono riportati qui: non serve accedere ai file originali.*
+competenze digitali), piu i materiali INVALSI sulla prova di Competenze Digitali
+(22 quesiti di esempio con griglia). Questa versione recepisce il documento di
+trasferimento v1.2 (analisi completa, 92 pagine): la correzione principale
+riguarda l'area Sicurezza (vedi sezione 9). Tutti i numeri rilevanti sono
+riportati qui: non serve accedere ai file originali.*
 
 ---
 
@@ -118,18 +120,60 @@ rilevanti sono riportati qui: non serve accedere ai file originali.*
 
 Profilo complessivo in una riga: sanno cercare e sanno produrre; sono deboli sulle parti normate della competenza digitale (sicurezza, protocolli, comunicazione formale, collaborazione strutturata). Deficit di regole e di consapevolezza dei rischi, non deficit tecnico.
 
+## 8bis. Il quadro DigComp 2.2 e la mappa dei quesiti di esempio
+Il quadro europeo DigComp 2.2 organizza le competenze digitali in aree e dimensioni. La prova ne misura quattro. Le dimensioni con cui e costruita:
+1. **Area 1 — Alfabetizzazione su informazione e dati**: 1.1 navigare/ricercare/filtrare, 1.2 valutare, 1.3 gestire.
+2. **Area 2 — Comunicazione e collaborazione**: 2.1 interagire, 2.2 condividere, 2.3 cittadinanza digitale, 2.4 collaborare, 2.5 netiquette, 2.6 identita digitale.
+3. **Area 3 — Creazione di contenuti**: 3.1 sviluppare, 3.2 integrare/rielaborare, 3.3 copyright e licenze, 3.4 programmazione.
+4. **Area 4 — Sicurezza**: 4.1 proteggere i dispositivi, 4.2 proteggere i dati personali e la privacy (al grado 10 solo queste due; vedi sezione 9).
+
+I ventidue quesiti di esempio pubblicati da INVALSI (utili per capire il taglio della prova e per costruire gli esercizi del recupero):
+
+| N. | Area | Dim. | Livello | Oggetto |
+|---|---|---|---|---|
+| 1 | Alfabetizzazione | 1.2 | Base | Verificare l'affidabilita confrontando piu fonti |
+| 2 | Alfabetizzazione | 1.1 | Base | Personalizzazione dei risultati: accesso o meno all'account |
+| 3 | Alfabetizzazione | 1.1 | Intermedio | Contenuti a pagamento nei risultati di ricerca |
+| 4 | Alfabetizzazione | 1.1 | Intermedio | Che cosa determina l'ordine dei risultati |
+| 5 | Alfabetizzazione | 1.1 | Avanzato | Ridurre la personalizzazione: navigazione in incognito |
+| 6 | Alfabetizzazione | 1.2 | Avanzato | Autenticita di un documento: il dominio di secondo livello |
+| 7 | Comunicazione | 2.1 | Base | Perche i social sono gratuiti |
+| 8 | Comunicazione | 2.2 | Base | Immagine a visualizzazione singola in messaggistica |
+| 9 | Comunicazione | 2.1 | Intermedio | Differenza fra i campi Cc e Ccn |
+| 10 | Comunicazione | 2.4 | Intermedio | Condivisione di una lavagna in videoconferenza |
+| 11 | Comunicazione | 2.1 | Avanzato | Come si ripartiscono i proventi dei regali virtuali |
+| 12 | Creazione | 3.2 | Base | Strumento piu rapido per generare grafici da molte tabelle |
+| 13 | Creazione | 3.2 | Base | Strumento di ritaglio in un editor di immagini |
+| 14 | Creazione | 3.3 | Intermedio | Titolarita di un testo generato con IA generativa |
+| 15 | Creazione | 3.1 | Intermedio | Ridurre il peso di un'immagine cambiando formato |
+| 16 | Creazione | 3.1 | Avanzato | Che cos'e un PDF editabile |
+| 17 | Creazione | 3.1 | Avanzato | Costruire un modulo online a griglia |
+| 18 | Sicurezza | 4.1 | Base | Scelta di una password robusta |
+| 19 | Sicurezza | 4.1 | Base | Impostazioni dello smartphone su wi-fi non sicuro |
+| 20 | Sicurezza | 4.2 | Intermedio | Gestione delle preferenze dei cookie |
+| 21 | Sicurezza | 4.1 | Intermedio | E-mail sospetta da mittente sconosciuto |
+| 22 | Sicurezza | 4.2 | Avanzato | Richiesta dell'immagine di una carta di credito |
+
+1. Distribuzione: 22 quesiti (8 base, 8 intermedio, 6 avanzato); 6 di alfabetizzazione, 5 di comunicazione, 6 di creazione, 5 di sicurezza.
+2. Nessun quesito di esempio copre 1.3, 2.3, 2.5, 2.6 e **3.4 Programmazione**. L'assenza non dice che non compaiano nella prova vera, solo che non sono illustrate. L'assenza della 3.4 e notevole in un indirizzo informatico: e l'unica dimensione che coincide con il nucleo tecnico della disciplina.
+3. La prova presuppone ambienti concreti (un editor di immagini, un modulo online, una videoconferenza con lavagna, un client di posta, il pannello impostazioni di uno smartphone): uno studente abituato a strumenti diversi puo sapere la cosa giusta e sbagliare lo stesso il quesito. Vale la pena verificare quali ambienti i ragazzi incontrano in laboratorio.
+
 ## 9. Che cosa misura l'area "Sicurezza" nella prova
-1. Attenzione: NON e la sicurezza informatica come materia tecnica. E l'area 4 del quadro DigComp, cioe la sicurezza dal punto di vista dell'utente. Comprende quattro competenze:
-   1. Proteggere i dispositivi: riconoscere una minaccia, aggiornamenti, credenziali e autenticazione, backup.
-   2. Proteggere i dati personali e la privacy: tracce lasciate navigando, permessi delle app, termini di servizio, nozione di dato personale.
-   3. Proteggere la salute e il benessere: rischi fisici e psicologici della vita online (dipendenza, cyberbullismo, uso consapevole).
-   4. Proteggere l'ambiente: impatto ambientale delle tecnologie digitali.
-2. NON comprende: crittografia, configurazione firewall, hardening, penetration testing, networking.
-3. I quesiti sono di scenario: una situazione (una mail sospetta, una richiesta di permessi, un post, una password) e si chiede di riconoscere il rischio e scegliere il comportamento corretto.
+1. Attenzione: NON e la sicurezza informatica come materia tecnica. E l'area 4 del quadro DigComp 2.2, cioe la sicurezza dal punto di vista dell'utente (comportamenti sicuri), non crittografia, firewall, hardening o reti.
+2. Il testo con cui INVALSI *presenta* l'area nomina anche la salute e il benessere e l'ambiente. Ma le dimensioni **effettivamente elencate e valutate al grado 10 sono soltanto DUE**:
+   1. **4.1 Proteggere i dispositivi**: scelta di password robuste, credenziali e autenticazione, configurare un dispositivo su una rete non sicura, riconoscere una minaccia (e-mail sospette, phishing), aggiornamenti, backup.
+   2. **4.2 Proteggere i dati personali e la privacy**: tracce lasciate navigando, cookie e tracciamento, permessi delle app, richieste di dati di pagamento, nozione di dato personale.
+3. I cinque temi davvero misurati dai quesiti di esempio (uno per quesito, dal 18 al 22):
+   1. Scelta di una password robusta (4.1, livello base).
+   2. Impostazioni dello smartphone su una rete wi-fi non sicura (4.1, livello base).
+   3. Riconoscere un'e-mail sospetta da mittente sconosciuto (4.1, livello intermedio).
+   4. Gestione delle preferenze dei cookie (4.2, livello intermedio).
+   5. Comportamento davanti alla richiesta dell'immagine di una carta di credito (4.2, livello avanzato).
+4. I quesiti sono di scenario: si presenta una situazione (una password, una rete non sicura, una mail sospetta, i cookie, una richiesta di dati) e si chiede di riconoscere il rischio e scegliere il comportamento corretto.
 
-> [BLU] Limite importante: la restituzione fornisce un unico valore aggregato per l'area sicurezza. Non dice quale delle quattro competenze sia caduta (il dettaglio per item non e presente). La distinzione conta: se il buco e sulla competenza 3 (salute e benessere) e un tema dell'intero consiglio di classe; se e sulle competenze 1 e 2 e materia del corso di Informatica.
+> [ROSSO] Correzione rispetto alla prima stesura di questa analisi (che elencava quattro competenze): al grado 10 l'area Sicurezza misura SOLTANTO le dimensioni 4.1 e 4.2. Quindi la debolezza della classe NON riguarda la salute/benessere (dipendenza, cyberbullismo) ne l'ambiente, che non sono valutati: riguarda la protezione dei dispositivi e dei dati personali. Sono contenuti di indirizzo e ricadono INTERAMENTE sul corso di Informatica, non sul consiglio di classe. Cade cosi l'ipotesi "forse e un tema di altri": il buco e nostro e si insegna.
 
-Nota utile: quest'area e l'unica in cui sono deboli anche i piu bravi, ed e l'unica fatta di conoscenze e consapevolezza piu che di abilita operativa. Chi e abile nell'uso degli strumenti non diventa automaticamente competente qui: sono contenuti che vanno insegnati, non scoperti usando il computer.
+Nota utile: quest'area e l'unica in cui sono deboli anche i piu bravi, ed e l'unica fatta di conoscenze e consapevolezza piu che di abilita operativa. Chi e abile nell'uso degli strumenti non diventa automaticamente competente qui: sono contenuti che vanno insegnati, non scoperti usando il computer. E la classe perde soprattutto sul livello base: il recupero riguarda i fondamentali.
 
 ## 10. Che cosa NON c'e nella restituzione
 1. Effetto scuola: nessun dato disponibile. Manca la misura del valore aggiunto (quanto la scuola abbia fatto progredire i ragazzi rispetto al punto di partenza). E l'informazione piu utile per un percorso IeFP, ed e quella che manca.
@@ -157,7 +201,12 @@ Nota utile: quest'area e l'unica in cui sono deboli anche i piu bravi, ed e l'un
 > [ROSSO] Ventitre studenti, una sola classe, un solo anno di rilevazione, senza effetto scuola e senza serie storica. Questi numeri servono a FARE DOMANDE, non a rispondere. Affermare "in italiano andiamo male" e legittimo su questa base. Affermare "il livello sta calando", "l'indirizzo funziona" oppure "questa classe e peggiore delle precedenti" NON lo e: mancano gli anni di confronto e la misura del valore aggiunto. L'unico dato che regge da solo, perche gia depurato del background, e il divario fra il rendimento in matematica e quello in italiano.
 
 ## 14. Punti aperti da risolvere
-1. Recuperare da INVALSI, se disponibile nell'area riservata della scuola, il dettaglio per item o per competenza dell'area sicurezza: senza quello non si sa quale delle quattro competenze DigComp sia caduta.
+1. Recuperare da INVALSI, se disponibile nell'area riservata della scuola, il dettaglio per item dell'area sicurezza: l'unico dubbio residuo e se il buco pesi piu sulla 4.1 (dispositivi) o sulla 4.2 (dati e privacy). Entrambe sono materia del corso di Informatica, quindi non cambia CHI interviene, ma aiuta a dosare dove insistere.
 2. Recuperare il dettaglio per ambito della prova di italiano.
 3. Chiarire con chi gestisce la restituzione la discrepanza nei conteggi regolari/posticipatari e maschi/femmine fra le tavole di italiano e matematica.
 4. Verificare perche l'effetto scuola non e disponibile e se possa esserlo in futuro.
+5. Verificare quali ambienti software i ragazzi usano in laboratorio, alla luce delle interfacce presupposte dai quesiti (sezione 8bis).
+
+## 15. Changelog
+1. **v1.1 (10/09/2026)**: allineata al documento di trasferimento v1.2. Correzione principale: al grado 10 l'area Sicurezza misura solo le dimensioni 4.1 e 4.2 (non salute/benessere ne ambiente) — la debolezza e quindi interamente materia del corso di Informatica, non del consiglio di classe. Aggiunti: la mappa dei 22 quesiti di esempio con il quadro DigComp 2.2 (sezione 8bis), i cinque temi di sicurezza effettivamente misurati (sezione 9), la precisazione che la classe perde soprattutto sul livello base.
+2. **v1.0 (10/09/2026)**: prima stesura dell'analisi in repo, dal documento di trasferimento v1.0.

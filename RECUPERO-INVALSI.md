@@ -1,14 +1,16 @@
 # Recupero INVALSI — Piano per Colmare le Lacune (competenze digitali DigComp)
 
-**Versione 0.1** — 10/09/2026
+**Versione 0.2** — 10/09/2026
 *Il contenitore per colmare le lacune emerse dalla prova INVALSI di grado 10
 (vedi documento INVALSI-GRADO10-2025-26). Non tocca tutto: mette a fuoco le due
 aree deboli che il corso di Informatica puo davvero insegnare — la Sicurezza da
-utente (DigComp area 4) e la Comunicazione e collaborazione (area 2). E
-allineato al quadro DigComp, lo stesso che la prova misura, cosi il recupero e
-verificabile alla rilevazione successiva. Documento di lavoro, cresce in schede
-ed esercizi. Metodo del corso: scenari concreti, vittoria subito, zero vergogna,
-carta e penna.*
+utente (DigComp area 4, dimensioni 4.1 e 4.2) e la Comunicazione e
+collaborazione (area 2). E allineato al quadro DigComp, lo stesso che la prova
+misura, cosi il recupero e verificabile alla rilevazione successiva. Questa
+versione recepisce la correzione del documento v1.2: al grado 10 l'area Sicurezza
+misura solo 4.1 e 4.2, entrambe materia nostra. Documento di lavoro, cresce in
+schede ed esercizi. Metodo del corso: scenari concreti, vittoria subito, zero
+vergogna, carta e penna.*
 
 ---
 
@@ -18,35 +20,35 @@ carta e penna.*
 3. Forti (non le tocchiamo qui): **Alfabetizzazione su informazioni e dati** e **Creazione di contenuti digitali** (quest'ultima addirittura sopra la Lombardia).
 
 ## 2. Le lacune da colmare (non solo sicurezza)
-1. **Sicurezza (area 4) — priorita 1.** La classe e indietro su tutta la distribuzione, fascia alta compresa. Quando anche i piu bravi sono deboli, di solito non e un problema di capacita ma di argomento non battuto a fondo: sono contenuti da insegnare, non da scoprire usando il computer.
+1. **Sicurezza (area 4) — priorita 1.** La classe e indietro su tutta la distribuzione, fascia alta compresa, ma **perde soprattutto sul livello base**: il recupero riguarda i fondamentali. Al grado 10 l'area misura solo 4.1 (dispositivi) e 4.2 (dati e privacy), entrambe materia nostra: e un buco insegnabile in modo diretto. Quando anche i piu bravi sono deboli, di solito non e un problema di capacita ma di argomento non battuto a fondo.
 2. **Comunicazione e collaborazione (area 2) — priorita 2 (coda).** La "testa" tiene, ma cinque ragazzi restano al livello base contro il 9% regionale: e un recupero mirato su poche persone, non un modulo per tutti.
 
-> [BLU] Da precisare quando avremo il dettaglio: la restituzione da un unico valore per la sicurezza, non dice QUALE delle quattro competenze dell'area 4 sia caduta. Recuperare il dettaglio per item (area riservata INVALSI) permette di mirare meglio. Fino ad allora, il piano copre in modo equilibrato le competenze 1 e 2, che sono le piu "nostre".
+> [BLU] Dettaglio ancora da recuperare (area riservata INVALSI): al grado 10 l'area Sicurezza misura SOLO le dimensioni 4.1 (dispositivi) e 4.2 (dati e privacy); l'unico dubbio residuo e su QUALE delle due pesi di piu il buco. Ma entrambe sono materia del corso, quindi non cambia CHI recupera, solo dove insistere. Fino ad allora il piano copre in modo equilibrato la 4.1 e la 4.2.
 
-## 3. Cosa possiamo insegnare noi (e cosa no)
-L'area 4 (Sicurezza da utente) ha quattro competenze. Non sono tutte del corso di Informatica.
-1. **Proteggere i dispositivi** (comp. 1): materia nostra.
-2. **Proteggere i dati personali e la privacy** (comp. 2): materia nostra.
-3. **Proteggere la salute e il benessere** (comp. 3): dipendenza, cyberbullismo, uso consapevole. E un tema dell'intero **consiglio di classe**, non solo di Informatica: qui lo tocchiamo di sponda, non lo carichiamo tutto sul corso.
-4. **Proteggere l'ambiente** (comp. 4): impatto ambientale del digitale. Trasversale, spunti brevi.
+## 3. Cosa misura la prova nella Sicurezza (ed e tutto nostro)
+Al grado 10 l'area 4 (Sicurezza da utente) misura **soltanto due dimensioni**, entrambe pienamente materia del corso di Informatica:
+1. **4.1 Proteggere i dispositivi**: password robuste, credenziali e autenticazione, uso di un dispositivo su rete non sicura, riconoscere le minacce (e-mail sospette, phishing), aggiornamenti, backup.
+2. **4.2 Proteggere i dati personali e la privacy**: tracce lasciate navigando, cookie e tracciamento, permessi delle app, richieste di dati di pagamento, nozione di dato personale.
 
-> [ROSSO] Da non confondere: questa "Sicurezza" (DigComp, dal punto di vista dell'utente) NON e la sicurezza informatica tecnica (crittografia, firewall, hardening, reti). Quella e un'altra area del corso. Qui si parla di comportamenti sicuri da utente.
+> [ROSSO] Correzione da tenere ferma: il testo di presentazione INVALSI nomina anche salute/benessere e ambiente, ma al grado 10 NON sono valutati. Quindi la debolezza della classe NON e su dipendenza o cyberbullismo (che restano temi del consiglio di classe, e qui non sono misurati): e tutta su dispositivi e dati personali. Il buco e nostro al 100%, e si insegna.
+
+> [ROSSO] Da non confondere: questa "Sicurezza" (DigComp, dal punto di vista dell'utente) NON e la sicurezza informatica tecnica (crittografia, firewall, hardening, reti). Quella e un'altra area, piu avanzata. Qui si parla di comportamenti sicuri da utente.
 
 ## 4. Il piano per area (contenuti e attivita)
 
-### 4.1 Sicurezza da utente (area 4, competenze 1 e 2)
-1. **Proteggere i dispositivi**:
-   1. Riconoscere una minaccia: phishing (mail/SMS ingannevoli), link sospetti, allegati, truffe comuni.
-   2. Aggiornamenti: perche tenere aggiornati sistema e app.
-   3. Credenziali e autenticazione: password robuste, gestori di password, autenticazione a due fattori.
-   4. Backup: cosa e perche, la regola "una copia in piu, in un altro posto".
-2. **Proteggere i dati e la privacy**:
-   1. Le tracce che lasciamo navigando; cookie e profilazione (aggancio al lavoro gia fatto sui cookie).
-   2. I permessi delle app (posizione, contatti, foto): cosa concedere e cosa no.
-   3. Termini di servizio: cosa accettiamo davvero.
-   4. Cos'e un dato personale; cenni al GDPR in parole semplici.
-3. **Attivita a scenario** (stile della prova): si presenta una situazione — una mail sospetta, una richiesta di permessi, una password, un post — e l'allievo riconosce il rischio e sceglie il comportamento corretto. Si puo fare come quiz a crocette (anche una pagina HTML che si autocorregge, aggancio al corso HTML/CSS).
-4. **Metodo**: casi reali e "figo", non regole astratte; carta e penna per lo schema "rischio -> cosa faccio"; zero vergogna (cadere in un finto phishing preparato dal docente e normale e utile).
+### 4.1 Sicurezza da utente (area 4, dimensioni 4.1 e 4.2)
+I cinque temi che la prova misura davvero (dai quesiti di esempio 18-22) sono il cuore del recupero. Per ciascuno, uno scenario concreto in stile prova:
+1. **Password robusta** (4.1, base): cosa rende forte una password, perche non riusarla, i gestori di password. Scenario: fra quattro password scegli quella davvero sicura e spiega perche.
+2. **Dispositivo su rete non sicura** (4.1, base): cosa fare e non fare sul wi-fi pubblico; le impostazioni dello smartphone. Scenario: sei collegato al wi-fi di un bar, quali attivita eviti (per esempio l'home banking).
+3. **E-mail sospetta / phishing** (4.1, intermedio): riconoscere mittente, link e allegati ingannevoli. Scenario: una mail chiede di cliccare un link "urgente", cosa controlli prima di agire.
+4. **Cookie e tracciamento** (4.2, intermedio): cosa sono i cookie, gestire le preferenze, la profilazione (aggancio al lavoro gia fatto sui cookie nel negozio online). Scenario: appare il banner dei cookie, quale scelta fai e perche.
+5. **Richieste di dati di pagamento** (4.2, avanzato): riconoscere una richiesta illegittima. Scenario: qualcuno chiede la foto della tua carta di credito "per verifica", come rispondi.
+
+Contorno che rinforza i cinque temi (senza appesantire): aggiornamenti di sistema e app, backup ("una copia in piu, in un altro posto"), permessi delle app (posizione, contatti, foto), nozione di dato personale con cenni al GDPR in parole semplici.
+
+1. **Attivita a scenario** (stile della prova): si presenta la situazione e l'allievo riconosce il rischio e sceglie il comportamento corretto. Si puo fare come quiz a crocette, anche una pagina HTML che si autocorregge (aggancio al corso HTML/CSS di Panaccione).
+2. **Si parte dal livello base** (dove la classe perde di piu) e si sale: prima password e rete non sicura, poi phishing e cookie, infine i dati di pagamento.
+3. **Metodo**: casi reali e "figo", non regole astratte; carta e penna per lo schema "rischio -> cosa faccio"; zero vergogna (cadere in un finto phishing preparato dal docente e normale e utile).
 
 ### 4.2 Comunicazione e collaborazione (area 2, la coda)
 1. **Comunicazione formale**:
@@ -71,8 +73,12 @@ La prova misura prima e seconda, e la leva vera e **la classe che sale**. Quindi
 
 ## 7. Caveat e punti aperti
 1. I numeri sono su 23 studenti, una classe, un anno: servono a orientare, non a dare certezze.
-2. Manca il dettaglio per item della sicurezza: appena disponibile, si affina il piano.
-3. La competenza 3 (salute e benessere) e da condividere con il consiglio di classe.
+2. Manca il dettaglio per item: sappiamo che l'area misura 4.1 e 4.2, non se pesi di piu l'una o l'altra. Appena disponibile (area riservata INVALSI) si affina il dosaggio; non cambia comunque chi recupera.
+3. Salute/benessere e ambiente NON sono misurati al grado 10: restano temi del consiglio di classe (cittadinanza digitale), fuori dal buco che recuperiamo qui.
+
+## 8bis. Changelog
+1. **v0.2 (10/09/2026)**: allineato alla correzione del documento v1.2. L'area Sicurezza al grado 10 misura solo 4.1 e 4.2 (tutto materia nostra, niente hand-off al consiglio di classe). Il piano ora ruota sui cinque temi effettivamente misurati (password, rete non sicura, phishing, cookie, dati di pagamento), partendo dal livello base.
+2. **v0.1 (10/09/2026)**: prima stesura del contenitore.
 
 ## 8. Collegamenti
 1. **INVALSI-GRADO10-2025-26**: la fonte dei dati e delle priorita.
