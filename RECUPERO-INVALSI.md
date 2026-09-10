@@ -1,4 +1,4 @@
-# Competenze Digitali (DigComp) — Piano di Recupero delle Lacune
+# Recupero INVALSI — Piano per Colmare le Lacune (competenze digitali DigComp)
 
 **Versione 0.1** — 10/09/2026
 *Il contenitore per colmare le lacune emerse dalla prova INVALSI di grado 10

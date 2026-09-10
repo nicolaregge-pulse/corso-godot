@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.62"
+LIBRO_VERSION = "1.63"
 LIBRO_DATE = "03/09/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -78,7 +78,7 @@ LIBRO = [
     ("Classe 2 — Informatica", "classe-2/programma.md",                       "Programma del Corso — Classe 2"),
     ("Classe 2 — Informatica", "classe-2/condizioni-if-then.md",              "Le Condizioni — SE… ALLORA… (IF/THEN/ELSE) e IFTTT"),
     ("Trasversale — tutti gli anni", "INTELLIGENZA-ARTIFICIALE.md",           "Intelligenza Artificiale — Gem e Agenti Autonomi"),
-    ("Trasversale — tutti gli anni", "COMPETENZE-DIGITALI-RECUPERO.md",        "Competenze Digitali (DigComp) — Piano di Recupero delle Lacune"),
+    ("Trasversale — tutti gli anni", "RECUPERO-INVALSI.md",                    "Recupero INVALSI — Piano per Colmare le Lacune (DigComp)"),
     ("Classe 3 — Informatica", "classe-3/programma.md",                       "Programma del Corso — Classe 3"),
     ("Classe 3 — Informatica", "classe-3/reti-teoria.md",                     "Le Reti di Computer — Teoria"),
     ("Classe 3 — Informatica", "classe-3/esercizi/01-cablaggio-rj45.md",      "Cablaggio RJ45 — Scheda pratica"),

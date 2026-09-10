@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.62** — 03/09/2026
+**Versione 1.63** — 03/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -5878,7 +5878,7 @@ Non dare mai la soluzione finale: guida lo studente a capirla, un passo alla vol
 4. **Metodo del corso**: prova subito, personalizza, mostra; l'AI aiuta a capire; ogni schema prima a mano.
 
 
-# Competenze Digitali (DigComp) — Piano di Recupero delle Lacune {#doc29}
+# Recupero INVALSI — Piano per Colmare le Lacune (DigComp) {#doc29}
 *Versione 0.1 · 10/09/2026 · Parte: Trasversale — tutti gli anni*
 
 ## 1. Da dove nasce (il collegamento con INVALSI) {#doc29-sec1}
