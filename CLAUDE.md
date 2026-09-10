@@ -443,6 +443,7 @@ l'intestazione del file.
 2. `INVALSI-GRADO10-2025-26.md` — v1.1 (analisi dati INVALSI grado 10 2INFSPE; area Sicurezza = solo 4.1/4.2 + mappa 22 quesiti)
 3. `RECUPERO-INVALSI.md` — v0.2 (piano recupero lacune DigComp: sicurezza 4.1/4.2 sui 5 temi misurati + comunicazione area 2)
 4. `RECUPERO-INVALSI-esercizi.md` — v0.1 (schede + esercizi a scenario + laboratorio pratico: finta mail phishing, wi-fi non sicuro, cookie)
+5. `quiz-recupero-invalsi/index.html` + `README.md` — v1.0 (quiz HTML autocorreggente, 18 scenari; pubblicabile su GitHub Pages)
 
 ### 7. Materiali della Classe 3
 1. `classe-3/reti-teoria.md` — v0.2

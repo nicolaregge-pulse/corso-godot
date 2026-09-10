@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quiz Sicurezza — Recupero INVALSI</title>
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --card: #ffffff;
+    --ink: #201b16;
+    --muted: #6a6259;
+    --line: #ddd4c6;
+    --blue: #3a6ea5;
+    --blue-dark: #274b73;
+    --ok-bg: #e7f5e9;
+    --ok-line: #2e7d33;
+    --ok-ink: #1e5a22;
+    --no-bg: #fdeceb;
+    --no-line: #c0392b;
+    --no-ink: #97271b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1814;
+      --card: #262119;
+      --ink: #efe8dd;
+      --muted: #b3a996;
+      --line: #3a3228;
+      --blue: #7ba9d6;
+      --blue-dark: #a9c8e6;
+      --ok-bg: #1e3320;
+      --ok-line: #4caf50;
+      --ok-ink: #a7dcaa;
+      --no-bg: #3a201d;
+      --no-line: #e06a5e;
+      --no-ink: #f0b3ab;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    padding: 0 16px;
+    padding-block: 24px 60px;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; }
+  header.hero {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  header.hero h1 {
+    font-size: 1.7rem;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  header.hero p {
+    margin: 0 auto;
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  /* barra punteggio appiccicata in alto */
+  .scorebar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    margin-bottom: 22px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .scorebar .prog { font-weight: 500; opacity: 0.95; }
+  .theme {
+    margin: 26px 0 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue-dark);
+    border-bottom: 2px solid var(--blue);
+    padding-bottom: 4px;
+  }
+  .q {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 16px 6px;
+    margin: 14px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .q .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin-bottom: 8px;
+  }
+  .q .prompt { font-weight: 600; margin: 0 0 12px; font-size: 1.03rem; }
+  .opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--bg);
+    color: var(--ink);
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 8px 0;
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: border-color 0.12s, background 0.12s;
+  }
+  .opt:hover:not(:disabled) { border-color: var(--blue); }
+  .opt:disabled { cursor: default; }
+  .opt.correct {
+    background: var(--ok-bg);
+    border-color: var(--ok-line);
+    color: var(--ok-ink);
+    font-weight: 600;
+  }
+  .opt.wrong {
+    background: var(--no-bg);
+    border-color: var(--no-line);
+    color: var(--no-ink);
+  }
+  .opt .mark { font-weight: 800; margin-right: 6px; }
+  .explain {
+    margin: 6px 0 12px;
+    padding: 11px 14px;
+    border-left: 4px solid var(--blue);
+    background: var(--bg);
+    border-radius: 8px;
+    font-size: 0.94rem;
+    color: var(--ink);
+  }
+  .explain.ok { border-left-color: var(--ok-line); }
+  .explain.no { border-left-color: var(--no-line); }
+  .explain b { color: var(--blue-dark); }
+  .hidden { display: none; }
+  /* riquadro finale */
+  #result {
+    background: var(--card);
+    border: 2px solid var(--blue);
+    border-radius: 16px;
+    padding: 22px;
+    margin: 26px 0 10px;
+    text-align: center;
+  }
+  #result h2 { margin: 0 0 8px; color: var(--blue-dark); }
+  #result .big { font-size: 2.4rem; font-weight: 800; color: var(--blue); }
+  #result p { color: var(--ink); margin: 8px auto 0; max-width: 520px; }
+  .btn {
+    display: inline-block;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+  .btn:hover { background: var(--blue-dark); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 34px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1>Quiz Sicurezza — Recupero INVALSI</h1>
+    <p>Diciotto situazioni vere. Scegli cosa faresti: la risposta si corregge da sola e ti spiega il perche. Sbagliare va benissimo, serve a imparare. In fondo trovi il tuo risultato.</p>
+  </header>
+
+  <div class="scorebar">
+    <span>Punteggio: <span id="score">0</span></span>
+    <span class="prog"><span id="done">0</span> / <span id="total">18</span> fatte</span>
+  </div>
+
+  <main id="quiz"></main>
+
+  <div id="result" class="hidden">
+    <h2>Risultato</h2>
+    <div class="big"><span id="finalScore">0</span> / <span id="finalTotal">18</span></div>
+    <p id="resultMsg"></p>
+    <button class="btn" id="restart">Ricomincia</button>
+  </div>
+
+  <footer>Corso di Informatica — prof. Nicola Regge · materiale di recupero DigComp (Sicurezza e Comunicazione)</footer>
+</div>
+
+<script>
+// I 18 scenari. Per ogni domanda, l'opzione giusta ha ok:true.
+// Le opzioni vengono mescolate a ogni caricamento, cosi la posizione non aiuta.
+const QUIZ = [
+  { tema: "Password robusta", liv: "Base",
+    prompt: "Quale di queste password e la piu sicura?",
+    opts: [
+      { t: "123456" },
+      { t: "Mario2010" },
+      { t: "Il nome del tuo cane" },
+      { t: "Una frase lunga con numeri e simboli, per esempio Tigre-Blu-42!", ok: true }
+    ],
+    why: "E lunga e difficile da indovinare. Le altre sono corte o legate a dati personali facili da scoprire." },
+
+  { tema: "Password robusta", liv: "Base",
+    prompt: "Ti iscrivi a un nuovo sito. Qual e la cosa migliore da fare con la password?",
+    opts: [
+      { t: "Usare la stessa del tuo social, cosi non la dimentichi" },
+      { t: "Sceglierne una nuova, diversa dalle altre (magari con un gestore di password)", ok: true },
+      { t: "Scriverla su un foglietto attaccato al monitor" },
+      { t: "Usare la tua data di nascita" }
+    ],
+    why: "Non si riusa la stessa password su piu siti: se ne rubano una, non entrano ovunque. Un gestore aiuta a ricordarle." },
+
+  { tema: "Password robusta", liv: "Base",
+    prompt: "Un amico ti chiede la password del tuo account di gioco per 'aiutarti a salire di livello'. Cosa fai?",
+    opts: [
+      { t: "Gliela do, e un amico" },
+      { t: "Non la do a nessuno, nemmeno agli amici", ok: true },
+      { t: "La cambio in 1234 e gliela do" },
+      { t: "Gli do anche l'email cosi fa prima" }
+    ],
+    why: "La password non si condivide con nessuno, nemmeno con gli amici, nemmeno 'solo per un attimo'." },
+
+  { tema: "Dispositivo su rete non sicura", liv: "Base",
+    prompt: "Sei collegato al wi-fi gratuito di un bar. Quale attivita e meglio EVITARE?",
+    opts: [
+      { t: "Leggere le notizie" },
+      { t: "Guardare un video" },
+      { t: "Entrare nel conto in banca (home banking)", ok: true },
+      { t: "Ascoltare musica" }
+    ],
+    why: "Su un wi-fi pubblico e aperto si evitano le attivita sensibili, come la banca." },
+
+  { tema: "Dispositivo su rete non sicura", liv: "Base",
+    prompt: "Come capisci se una rete wi-fi e tendenzialmente piu sicura?",
+    opts: [
+      { t: "Se ha un nome simpatico" },
+      { t: "Se e protetta da una password invece di essere aperta a tutti", ok: true },
+      { t: "Se e gratis" },
+      { t: "Se ha molte tacche di segnale" }
+    ],
+    why: "Una rete aperta a tutti e in genere meno sicura di una protetta da password." },
+
+  { tema: "Dispositivo su rete non sicura", liv: "Base",
+    prompt: "In stazione appare una rete 'Free_WiFi_Gratis' senza password. Cosa fai?",
+    opts: [
+      { t: "Mi collego e faccio acquisti online" },
+      { t: "Se proprio mi collego, lo faccio solo per cose non sensibili; meglio ancora uso i dati del telefono", ok: true },
+      { t: "Mi collego e inserisco la carta di credito" },
+      { t: "Mi collego e salvo tutte le password nel browser" }
+    ],
+    why: "Su una rete aperta sconosciuta non si fanno acquisti ne si salvano password: meglio i dati del telefono." },
+
+  { tema: "E-mail sospetta e phishing", liv: "Intermedio",
+    prompt: "Ricevi una mail: 'La tua casella sara chiusa! Clicca qui entro 24 ore'. Come ti comporti?",
+    opts: [
+      { t: "Clicco subito, non voglio perdere la casella" },
+      { t: "Non clicco; controllo il mittente, non inserisco dati e nel dubbio chiedo", ok: true },
+      { t: "Rispondo scrivendo la mia password" },
+      { t: "Inoltro a tutti i miei contatti" }
+    ],
+    why: "La fretta e un'esca: non si agisce di getto. Si controlla il mittente e non si inseriscono dati." },
+
+  { tema: "E-mail sospetta e phishing", liv: "Intermedio",
+    prompt: "Quale di questi e un segnale tipico di una mail di phishing?",
+    opts: [
+      { t: "Un saluto con il tuo nome" },
+      { t: "Un tono di urgenza che spinge ad agire subito ('entro 24 ore o perdi tutto')", ok: true },
+      { t: "La presenza di un oggetto nella mail" },
+      { t: "Il fatto che sia scritta in italiano" }
+    ],
+    why: "Le altre sono cose normali di una mail qualunque. L'urgenza forzata e invece un segnale classico di truffa." },
+
+  { tema: "E-mail sospetta e phishing", liv: "Intermedio",
+    prompt: "Un SMS dice: 'Pacco in giacenza, paga 2 euro per la consegna' con un link. Cosa fai?",
+    opts: [
+      { t: "Pago, sono solo 2 euro" },
+      { t: "Non clicco il link; verifico sul sito ufficiale del corriere", ok: true },
+      { t: "Inserisco subito i dati della carta" },
+      { t: "Rispondo all'SMS con i miei dati" }
+    ],
+    why: "I 'micro-pagamenti' con link sono una truffa classica: si verifica sempre sul sito ufficiale." },
+
+  { tema: "Cookie e tracciamento", liv: "Intermedio",
+    prompt: "Cosa sono, soprattutto, i cookie di profilazione?",
+    opts: [
+      { t: "Biscotti" },
+      { t: "Piccoli file che tracciano i tuoi interessi per mostrarti pubblicita mirata", ok: true },
+      { t: "Virus che rompono il computer" },
+      { t: "Le tue password" }
+    ],
+    why: "Sono file che seguono i tuoi interessi per mostrarti pubblicita su misura." },
+
+  { tema: "Cookie e tracciamento", liv: "Intermedio",
+    prompt: "Appare il banner dei cookie su un sito. Qual e la scelta piu consapevole?",
+    opts: [
+      { t: "Accetto tutto sempre, e piu veloce" },
+      { t: "Leggo e scelgo: rifiuto o personalizzo quelli non necessari", ok: true },
+      { t: "Chiudo il browser e rinuncio" },
+      { t: "Non c'e nessuna scelta possibile" }
+    ],
+    why: "Scegliere e un tuo diritto: accettare tutto per fretta e la scelta meno consapevole." },
+
+  { tema: "Cookie e tracciamento", liv: "Intermedio",
+    prompt: "Perche un sito ti mostra la pubblicita di una cosa che hai cercato ieri?",
+    opts: [
+      { t: "E magia" },
+      { t: "Per via del tracciamento e della profilazione tramite cookie e dati", ok: true },
+      { t: "Perche indovina a caso" },
+      { t: "Perche sei una persona famosa" }
+    ],
+    why: "Non e magia ne caso: sei stato 'seguito' tramite cookie e dati." },
+
+  { tema: "Richieste di dati di pagamento", liv: "Avanzato",
+    prompt: "Un messaggio del 'servizio clienti' chiede la foto della tua carta di credito (fronte e retro) 'per verifica'. Cosa fai?",
+    opts: [
+      { t: "La mando, e il servizio clienti" },
+      { t: "Non la mando: nessun servizio serio chiede la foto della carta", ok: true },
+      { t: "Mando solo il numero, non tutta la foto" },
+      { t: "Mando anche il PIN per sicurezza" }
+    ],
+    why: "Nessun servizio serio chiede la foto della carta o il PIN: chi lo fa sta tentando una truffa." },
+
+  { tema: "Richieste di dati di pagamento", liv: "Avanzato",
+    prompt: "Quali dati NON vanno mai condivisi via chat o email?",
+    opts: [
+      { t: "Il tuo nome" },
+      { t: "Numero completo della carta, CVV, PIN e password", ok: true },
+      { t: "La tua citta" },
+      { t: "Il tuo colore preferito" }
+    ],
+    why: "Sono i dati che aprono i tuoi soldi e i tuoi account: restano segreti." },
+
+  { tema: "Richieste di dati di pagamento", liv: "Avanzato",
+    prompt: "Stai per pagare su un sito. Da cosa capisci che e piu sicuro?",
+    opts: [
+      { t: "Dal fatto che il sito e colorato e bello" },
+      { t: "L'indirizzo inizia con https, c'e il lucchetto e il sito e conosciuto", ok: true },
+      { t: "Dal fatto che chiede tanti dati" },
+      { t: "Dal fatto che promette sconti enormi" }
+    ],
+    why: "Colori e sconti enormi non dicono nulla sulla sicurezza; anzi, gli sconti troppo belli sono spesso un'esca. Conta https col lucchetto." },
+
+  { tema: "Comunicazione", liv: "Coda",
+    prompt: "Scrivi una mail al professore per giustificare un'assenza. Quale oggetto e migliore?",
+    opts: [
+      { t: "ciao" },
+      { t: "Giustificazione assenza del 12/09 - Mario Rossi 2INF", ok: true },
+      { t: "(lascio l'oggetto vuoto)" },
+      { t: "urgente!!!" }
+    ],
+    why: "Un oggetto chiaro, con nome e classe, e professionale. Un oggetto vuoto o 'urgente!!!' no." },
+
+  { tema: "Comunicazione", liv: "Coda",
+    prompt: "Qual e la differenza tra Cc e Ccn?",
+    opts: [
+      { t: "Non c'e nessuna differenza" },
+      { t: "In Ccn i destinatari non vedono gli indirizzi degli altri (copia nascosta)", ok: true },
+      { t: "Cc invia piu velocemente" },
+      { t: "Ccn invia la mail due volte" }
+    ],
+    why: "Il Ccn (copia nascosta) protegge la privacy quando scrivi a molte persone." },
+
+  { tema: "Comunicazione", liv: "Coda",
+    prompt: "Nella netiquette, scrivere un intero messaggio IN MAIUSCOLO significa...",
+    opts: [
+      { t: "Che sei gentile" },
+      { t: "Che stai urlando: e considerato maleducato", ok: true },
+      { t: "Che scrivi meglio" },
+      { t: "Che e obbligatorio" }
+    ],
+    why: "Il maiuscolo fisso equivale a urlare ed e considerato maleducato online." }
+];
+
+const quizEl = document.getElementById("quiz");
+const scoreEl = document.getElementById("score");
+const doneEl = document.getElementById("done");
+const totalEl = document.getElementById("total");
+const resultEl = document.getElementById("result");
+const finalScoreEl = document.getElementById("finalScore");
+const finalTotalEl = document.getElementById("finalTotal");
+const resultMsgEl = document.getElementById("resultMsg");
+
+let score = 0;
+let done = 0;
+const TOTAL = QUIZ.length;
+
+function shuffle(a) {
+  const arr = a.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function render() {
+  quizEl.innerHTML = "";
+  score = 0; done = 0;
+  scoreEl.textContent = "0";
+  doneEl.textContent = "0";
+  totalEl.textContent = TOTAL;
+  resultEl.classList.add("hidden");
+
+  let lastTheme = null;
+  QUIZ.forEach((q, qi) => {
+    if (q.tema !== lastTheme) {
+      const h = document.createElement("div");
+      h.className = "theme";
+      h.textContent = q.tema;
+      quizEl.appendChild(h);
+      lastTheme = q.tema;
+    }
+
+    const card = document.createElement("div");
+    card.className = "q";
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = "Domanda " + (qi + 1) + " · " + q.liv;
+    card.appendChild(tag);
+
+    const p = document.createElement("p");
+    p.className = "prompt";
+    p.textContent = q.prompt;
+    card.appendChild(p);
+
+    const explain = document.createElement("div");
+    explain.className = "explain hidden";
+
+    const opts = shuffle(q.opts);
+    opts.forEach((o) => {
+      const b = document.createElement("button");
+      b.className = "opt";
+      b.textContent = o.t;
+      b.addEventListener("click", () => {
+        if (card.dataset.answered) return;
+        card.dataset.answered = "1";
+        done++;
+        doneEl.textContent = done;
+
+        // rivela: verde alla giusta, rosso alla sbagliata scelta
+        Array.from(card.querySelectorAll(".opt")).forEach((btn) => {
+          btn.disabled = true;
+          const isThis = btn === b;
+          const correct = btn.textContent === q.opts.find(x => x.ok).t;
+          if (correct) {
+            btn.classList.add("correct");
+            const m = document.createElement("span");
+            m.className = "mark"; m.textContent = "OK";
+            btn.prepend(m);
+          } else if (isThis) {
+            btn.classList.add("wrong");
+            const m = document.createElement("span");
+            m.className = "mark"; m.textContent = "X";
+            btn.prepend(m);
+          }
+        });
+
+        if (o.ok) {
+          score++;
+          scoreEl.textContent = score;
+          explain.className = "explain ok";
+          explain.innerHTML = "<b>Giusto!</b> " + q.why;
+        } else {
+          explain.className = "explain no";
+          explain.innerHTML = "<b>Rivedi.</b> " + q.why;
+        }
+
+        if (done === TOTAL) showResult();
+      });
+      card.appendChild(b);
+    });
+
+    card.appendChild(explain);
+    quizEl.appendChild(card);
+  });
+}
+
+function showResult() {
+  finalScoreEl.textContent = score;
+  finalTotalEl.textContent = TOTAL;
+  let msg;
+  if (score >= 16) {
+    msg = "Grande! Sai gia smascherare le trappole. Ora prova a spiegare a un compagno perche: se lo sai raccontare, l'hai capito davvero.";
+  } else if (score >= 11) {
+    msg = "Bene! Ti mancano solo pochi trucchi. Rileggi le spiegazioni delle domande sbagliate e riprova: farai il pieno.";
+  } else {
+    msg = "Ci sta, e cosi che si impara. Ora sai cosa guardare: rileggi le spiegazioni e riprova, vedrai la differenza. Nessuno nasce esperto.";
+  }
+  resultMsgEl.textContent = msg;
+  resultEl.classList.remove("hidden");
+  resultEl.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+document.getElementById("restart").addEventListener("click", () => {
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+render();
+</script>
+</body>
+</html>
