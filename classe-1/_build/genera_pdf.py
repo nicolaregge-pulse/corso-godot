@@ -49,6 +49,7 @@ DOCS = {
     "regole-formattazione": {"src": "../REGOLE-FORMATTAZIONE.md", "title": "Regole di Formattazione"},
     "struttura":    {"src": "../STRUTTURA-REPOSITORY.md",         "title": "Struttura del Repository"},
     "mappa-argomenti": {"src": "../MAPPA-ARGOMENTI.md",           "title": "Mappa degli Argomenti — Macro-aree"},
+    "menu-contenitori": {"src": "../MENU-CONTENITORI.md",         "title": "Menu del Corso — I Contenitori dell'Informatica"},
     "griglia-argomenti": {"src": "../GRIGLIA-ARGOMENTI.md",       "title": "Griglia degli Argomenti — scelta per anno"},
     "piano-ore":    {"src": "../PIANO-ORE-LEZIONE.md",            "title": "Piano delle Ore di Lezione — guida giorno per giorno"},
     "git-allievi":  {"src": "../ORGANIZZAZIONE-GIT-ALLIEVI.md",   "title": "Organizzazione Git per gli Allievi"},
