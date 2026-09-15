@@ -1,6 +1,6 @@
 # Mappa degli Argomenti — Macro-aree
 
-**Versione 1.4** — 09/09/2026
+**Versione 1.5** — 15/09/2026
 *Contenitori di macro-argomenti dell'area informatica. Nasce unendo i quattro
 programmi ufficiali (prima, seconda, terza, quarta) con il materiale che abbiamo
 gia prodotto. Serve come "menu": gli argomenti sono raccolti per area, cosi si
@@ -74,9 +74,10 @@ possono dosare tra gli anni. La collocazione per anno la decide Nicola.*
 5. Google Moduli: creazione di sondaggi e form.
 6. Gmail: invio e ricezione, contatti, CC/CCN, firma, etichette, inoltro, invio programmato, mail formali.
 7. Google Calendar, Classroom, Google Chat.
-8. Microsoft Excel (gestione scadenze e calendari) e cenni al pacchetto Office.
-9. Ricerca in rete: motori di ricerca, ricerca avanzata, operatori booleani.
-10. Diagrammi di flusso (flowchart).
+8. Google Takeout: scaricare una copia dei propri dati da tutti i servizi Google (backup e portabilita dei dati); serve anche a capire quali dati Google conserva su di noi (consapevolezza sulla privacy).
+9. Microsoft Excel (gestione scadenze e calendari) e cenni al pacchetto Office.
+10. Ricerca in rete: motori di ricerca, ricerca avanzata, operatori booleani.
+11. Diagrammi di flusso (flowchart).
 
 > [GIALLO] Presente in: Prima (base), Seconda (avanzato), Quarta. Di chi: Regge la integra tutta (scrivere documenti, fogli di calcolo, presentazioni), piu Canva per le rappresentazioni. Nostro: usata come strumento in tutti i progetti.
 

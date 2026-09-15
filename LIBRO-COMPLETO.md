@@ -1,6 +1,6 @@
 # Il Libro del Corso
 
-**Versione 1.66** — 10/09/2026
+**Versione 1.67** — 15/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
@@ -267,7 +267,7 @@ corso-godot/
 
 
 # Mappa degli Argomenti — Macro-aree {#doc5}
-*Versione 1.4 · 09/09/2026 · Parte: Riferimento*
+*Versione 1.5 · 15/09/2026 · Parte: Riferimento*
 
 > [BLU] Collegamento: la scelta per anno di ciascun argomento e nella Griglia degli Argomenti, che ha anche la colonna "Competenza (Allegato A)". I programmi ufficiali sono in realta l'ALLEGATO A, organizzato per competenze (1-17): per questo un argomento di informatica puo comparire in piu competenze. Vedi la nota in `programmi-ufficiali/`.
 
@@ -335,9 +335,10 @@ corso-godot/
 5. Google Moduli: creazione di sondaggi e form.
 6. Gmail: invio e ricezione, contatti, CC/CCN, firma, etichette, inoltro, invio programmato, mail formali.
 7. Google Calendar, Classroom, Google Chat.
-8. Microsoft Excel (gestione scadenze e calendari) e cenni al pacchetto Office.
-9. Ricerca in rete: motori di ricerca, ricerca avanzata, operatori booleani.
-10. Diagrammi di flusso (flowchart).
+8. Google Takeout: scaricare una copia dei propri dati da tutti i servizi Google (backup e portabilita dei dati); serve anche a capire quali dati Google conserva su di noi (consapevolezza sulla privacy).
+9. Microsoft Excel (gestione scadenze e calendari) e cenni al pacchetto Office.
+10. Ricerca in rete: motori di ricerca, ricerca avanzata, operatori booleani.
+11. Diagrammi di flusso (flowchart).
 
 > [GIALLO] Presente in: Prima (base), Seconda (avanzato), Quarta. Di chi: Regge la integra tutta (scrivere documenti, fogli di calcolo, presentazioni), piu Canva per le rappresentazioni. Nostro: usata come strumento in tutti i progetti.
 
@@ -574,7 +575,7 @@ sono quelle di cui andare piu fieri.
 
 
 # Griglia degli Argomenti — scelta per anno {#doc7}
-*Versione 1.15 · 18/08/2026 · Parte: Riferimento*
+*Versione 1.16 · 15/09/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc7-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare con una X.
@@ -644,6 +645,7 @@ sono quelle di cui andare piu fieri.
 | Google Moduli: form e sondaggi | X |  |  |  | 15 |
 | Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali | X |  |  |  | 1.2 |
 | Google Calendar, Classroom, Chat | X |  |  |  | 15 |
+| Google Takeout: scaricare una copia dei propri dati (backup, portabilita, privacy) | X |  |  |  | 1.2 |
 | Microsoft Excel: scadenze e calendari | X |  |  |  | 15 |
 | Ricerca in rete: ricerca avanzata e operatori booleani | X |  |  |  | 15 |
 | Diagrammi di flusso (flowchart) | X |  |  |  | 12 |

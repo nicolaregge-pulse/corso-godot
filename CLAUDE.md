@@ -394,9 +394,9 @@ l'intestazione del file.
 4. `01-GLOSSARIO.md` — v1.0
 
 ### 2. Pianificazione didattica
-1. `MAPPA-ARGOMENTI.md` — v1.4
+1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
 2. `MENU-CONTENITORI.md` — v0.1 (menu dei contenitori per i ragazzi: cosa possiamo fare + percorso a imbuto sui 4 anni)
-3. `GRIGLIA-ARGOMENTI.md` — v1.15 (argomenti per anno + colonna competenze)
+3. `GRIGLIA-ARGOMENTI.md` — v1.16 (argomenti per anno + colonna competenze)
 4. `PIANO-ORE-LEZIONE.md` — v0.4 (piano ora-per-ora, 4 anni)
 
 ### 3. Regole, standard e organizzazione
@@ -457,7 +457,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.66 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.67 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).

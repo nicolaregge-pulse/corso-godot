@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.15** — 18/08/2026
+**Versione 1.16** — 15/09/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne 1a/2a/3a/4a (l'anno in cui l'argomento
 puo stare) e una colonna "Comp." che indica l'area di competenza dell'Allegato A
@@ -77,6 +77,7 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 | Google Moduli: form e sondaggi | X |  |  |  | 15 |
 | Gmail: invio/ricezione, contatti, CC/CCN, firma, etichette, mail formali | X |  |  |  | 1.2 |
 | Google Calendar, Classroom, Chat | X |  |  |  | 15 |
+| Google Takeout: scaricare una copia dei propri dati (backup, portabilita, privacy) | X |  |  |  | 1.2 |
 | Microsoft Excel: scadenze e calendari | X |  |  |  | 15 |
 | Ricerca in rete: ricerca avanzata e operatori booleani | X |  |  |  | 15 |
 | Diagrammi di flusso (flowchart) | X |  |  |  | 12 |
