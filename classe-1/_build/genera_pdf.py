@@ -79,6 +79,7 @@ DOCS = {
     "bussola":       {"src": "bussola-mondo-del-lavoro.md",     "title": "La Bussola del Lavoro"},
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},
     "configuratore": {"src": "scheda-configuratore-pc.md",      "title": "Scheda Configuratore PC"},
+    "laboratorio-1": {"src": "laboratorio-01-utenze-e-aree.md", "title": "Laboratorio 1 — Le tue utenze e le tue aree di lavoro"},
 }
 
 
