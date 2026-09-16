@@ -434,9 +434,10 @@ l'intestazione del file.
 5. `classe-1/da-far-fare-assolutamente.md` — v0.2
 6. `classe-1/laboratorio-01-utenze-e-aree.md` — v0.1 (primo lab: login Windows + cartella in rete e account Google + Drive, prova password)
 7. `classe-1/laboratorio-02-area-logica-google-classroom.md` — v0.1 (secondo lab: area logica/cartelle ad albero, giro Google Suite, iscrizione a Classroom; ripasso sicurezza)
-8. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
-9. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
-10. `classe-1/negozio-online/README.md` — v1.0
+8. `classe-1/glossario-l2/glossario-l2.md` (+ `glossario.html` → `Glossario-L2-v1.0.pdf`) — v1.0 (glossario multilingue IT · EN · cinese semplificato caratteri+pinyin · arabo; PDF da HTML per i font CJK/arabo)
+9. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
+10. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
+11. `classe-1/negozio-online/README.md` — v1.0
 
 ### 6b. Materiali della Classe 2
 1. `classe-2/condizioni-if-then.md` — v0.1 (condizioni SE/ALLORA: IFTTT, funzione SE di Google Fogli, social, Lazarus if/then/else)
