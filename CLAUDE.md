@@ -433,9 +433,10 @@ l'intestazione del file.
 4. `classe-1/bussola-mondo-del-lavoro.md` — v0.2
 5. `classe-1/da-far-fare-assolutamente.md` — v0.2
 6. `classe-1/laboratorio-01-utenze-e-aree.md` — v0.1 (primo lab: login Windows + cartella in rete e account Google + Drive, prova password)
-7. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
-8. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
-9. `classe-1/negozio-online/README.md` — v1.0
+7. `classe-1/laboratorio-02-area-logica-google-classroom.md` — v0.1 (secondo lab: area logica/cartelle ad albero, giro Google Suite, iscrizione a Classroom; ripasso sicurezza)
+8. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
+9. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
+10. `classe-1/negozio-online/README.md` — v1.0
 
 ### 6b. Materiali della Classe 2
 1. `classe-2/condizioni-if-then.md` — v0.1 (condizioni SE/ALLORA: IFTTT, funzione SE di Google Fogli, social, Lazarus if/then/else)
@@ -459,7 +460,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.69 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.70 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).

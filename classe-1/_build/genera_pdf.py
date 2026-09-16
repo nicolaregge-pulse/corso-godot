@@ -81,6 +81,7 @@ DOCS = {
     "da-far-fare":   {"src": "da-far-fare-assolutamente.md",    "title": "Da Far Fare Assolutamente"},
     "configuratore": {"src": "scheda-configuratore-pc.md",      "title": "Scheda Configuratore PC"},
     "laboratorio-1": {"src": "laboratorio-01-utenze-e-aree.md", "title": "Laboratorio 1 — Le tue utenze e le tue aree di lavoro"},
+    "laboratorio-2": {"src": "laboratorio-02-area-logica-google-classroom.md", "title": "Laboratorio 2 — Area logica, Google Suite e Classroom"},
 }
 
 

@@ -34,7 +34,7 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.69"
+LIBRO_VERSION = "1.70"
 LIBRO_DATE = "16/09/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
@@ -70,6 +70,7 @@ LIBRO = [
     ("Riferimento",            "PROGRAMMA-PREVENTIVO-2026-27.md",              "Programma Preventivo 2026/27 (per competenza)"),
     ("Classe 1 — Informatica", "classe-1/programma.md",                       "Programma del Corso"),
     ("Classe 1 — Informatica", "classe-1/laboratorio-01-utenze-e-aree.md",    "Laboratorio 1 — Le tue utenze e le tue aree di lavoro"),
+    ("Classe 1 — Informatica", "classe-1/laboratorio-02-area-logica-google-classroom.md", "Laboratorio 2 — Area logica, Google Suite e Classroom"),
     ("Classe 1 — Informatica", "classe-1/bussola-mondo-del-lavoro.md",        "La Bussola del Lavoro"),
     ("Classe 1 — Informatica", "classe-1/da-far-fare-assolutamente.md",       "Da Far Fare Assolutamente"),
     ("Classe 1 — Informatica", "classe-1/scheda-configuratore-pc.md",         "Scheda Configuratore PC"),
