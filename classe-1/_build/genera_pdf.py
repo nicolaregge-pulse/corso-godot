@@ -54,6 +54,7 @@ DOCS = {
     "piano-ore":    {"src": "../PIANO-ORE-LEZIONE.md",            "title": "Piano delle Ore di Lezione — guida giorno per giorno"},
     "git-allievi":  {"src": "../ORGANIZZAZIONE-GIT-ALLIEVI.md",   "title": "Organizzazione Git per gli Allievi"},
     "regole-lab":   {"src": "../REGOLE-LABORATORIO.md",           "title": "Regole del Laboratorio di Informatica"},
+    "regolamento-digitale": {"src": "../REGOLAMENTO-STRUMENTI-DIGITALI-IA.md", "title": "Regolamento — Strumenti Informatici, Servizi Digitali e IA Generativa"},
     "programmi-ufficiali": {"src": "../programmi-ufficiali/README.md", "title": "Programmi Ufficiali (Allegato A) — nota"},
     "ruoli-classe": {"src": "../RUOLI-CLASSE.md",                     "title": "Ruoli della Classe"},
     "promemoria":   {"src": "../PROMEMORIA-NICOLA.md",                "title": "Promemoria — Cose da Fare (Nicola)"},

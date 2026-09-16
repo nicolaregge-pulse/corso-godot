@@ -402,9 +402,10 @@ l'intestazione del file.
 ### 3. Regole, standard e organizzazione
 1. `REGOLE-FORMATTAZIONE.md` — v1.3
 2. `REGOLE-LABORATORIO.md` — v0.1
-3. `RUOLI-CLASSE.md` — v0.4
-4. `STRUTTURA-REPOSITORY.md` — v1.2
-5. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
+3. `REGOLAMENTO-STRUMENTI-DIGITALI-IA.md` — v0.1 (regolamento + modulo presa visione/accettazione: strumenti informatici, servizi digitali, IA generativa)
+4. `RUOLI-CLASSE.md` — v0.4
+5. `STRUTTURA-REPOSITORY.md` — v1.2
+6. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
 
 ### 4. Programmi per classe e documenti per la Regione
 1. `classe-1/programma.md` — v0.4
@@ -458,7 +459,7 @@ l'intestazione del file.
 3. `materiale-da-organizzare/INVENTARIO.md` — v1.0
 
 ### 9. Libro combinato (generato)
-1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.68 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
+1. `LIBRO-COMPLETO.md` / `LIBRO-COMPLETO-vX.Y.pdf` — v1.69 (assemblato in automatico da `classe-1/_build/`; la versione è `LIBRO_VERSION`).
 
 ### 10. Attestati (non testuali)
 1. `attestati/ATTESTATO-RUOLI.html` → `ATTESTATO-RUOLI-v0.4.pdf` (unico PDF, 4 pagine, con logo Piamarta).
