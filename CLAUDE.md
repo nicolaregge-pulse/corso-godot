@@ -470,6 +470,7 @@ l'intestazione del file.
 6. `classe-1/laboratorio-01-utenze-e-aree.md` — v0.1 (primo lab: login Windows + cartella in rete e account Google + Drive, prova password)
 7. `classe-1/laboratorio-02-area-logica-google-classroom.md` — v0.1 (secondo lab: area logica/cartelle ad albero, giro Google Suite, iscrizione a Classroom; ripasso sicurezza)
 8. `classe-1/glossario-l2/glossario-l2.md` (+ `glossario.html` → `Glossario-L2-v1.0.pdf`) — v1.0 (glossario multilingue IT · EN · cinese semplificato caratteri+pinyin · arabo; PDF da HTML per i font CJK/arabo)
+8b. `classe-1/attivita-blocchi/attivita-blocchi.md` (+ `attivita-blocchi.html` → `attivita-blocchi-v0.1.pdf`) — v0.1 (attività jolly "tempo libero": primo gioco con i blocchi / Ora del Codice; trilingue IT/AR/ZH, a prova di errore, browser)
 9. `classe-1/esercizio-presentazione-famiglia/` — v1.1 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.1.pdf` + versione unica trilingue `...-v1.1.pdf`)
 10. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
 11. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
