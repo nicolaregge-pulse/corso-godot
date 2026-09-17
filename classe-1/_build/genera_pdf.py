@@ -59,6 +59,7 @@ DOCS = {
     "ruoli-classe": {"src": "../RUOLI-CLASSE.md",                     "title": "Ruoli della Classe"},
     "promemoria":   {"src": "../PROMEMORIA-NICOLA.md",                "title": "Promemoria — Cose da Fare (Nicola)"},
     "argomenti-svolti": {"src": "../ARGOMENTI-SVOLTI.md",             "title": "Argomenti Svolti (anno precedente 2025/26)"},
+    "argomenti-svolti-2627": {"src": "../ARGOMENTI-SVOLTI-2026-27.md", "title": "Argomenti Svolti 2026-27 — Registro delle attività (per Allegato A)"},
     "intelligenza-artificiale": {"src": "../INTELLIGENZA-ARTIFICIALE.md", "title": "Intelligenza Artificiale — Gem e Agenti Autonomi"},
     "invalsi": {"src": "../INVALSI-GRADO10-2025-26.md", "title": "INVALSI Grado 10 (2025-2026) — Dati, analisi e note"},
     "recupero-invalsi": {"src": "../RECUPERO-INVALSI.md", "title": "Recupero INVALSI — Piano per Colmare le Lacune (competenze digitali DigComp)"},
