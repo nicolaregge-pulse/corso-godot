@@ -22,8 +22,9 @@ precisa, che il motore "libro" non fa). Questo `.md` e la fonte. Documento inter
 > percorso che avanza: prima quest'anno, seconda proseguo della prima, terza
 > proseguo di prima+seconda); la QUARTA e a se stante (unione di due classi),
 > documento separato.
-> [BLU] Restano da confermare da Nicola solo le marcature "FATTO" delle Classi
-> 2/3/4 (qui ci sono per ora solo quelle sicure delle prime lezioni della Classe 1).
+> Nota (17/09/2026): le Classi 2, 3 e 4 iniziano lunedi 21/09/2026, quindi al
+> momento non hanno ancora nulla di svolto: e corretto che siano tutte in giallo
+> (da fare). Si aggiorneranno lezione per lezione a partire da quella data.
 
 ## 2. Classe 1 (prima) — sintesi
 1. FATTO finora: Presentazione corso; Creazione Area Logica; Norme comuni (regolamento); Cosa faremo quest'anno; Utilizzo Suite Google (avvio); Windows uso base; Accesso a Classroom; Document e Classroom (esercizio "Io e la mia famiglia" + consegna).
