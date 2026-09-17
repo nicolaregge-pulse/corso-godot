@@ -285,6 +285,18 @@ semplificato**. Regole pratiche:
 - **Eccezione**: i materiali **interni per il docente** (pianificazione, registro
   attività, regole, indici) restano in italiano; la regola vale per ciò che
   arriva in mano agli allievi.
+- **⭐ Testo latino dentro l'arabo/cinese (richiesto da Nicola):** nei testi in
+  arabo e cinese capita di dover scrivere parole in caratteri latini; vanno
+  gestite così, perché i ragazzi che leggono in arabo/cinese non restino spiazzati:
+  1. **Indirizzi e email** (es. `github.com`, un'email): NON si traducono (un
+     indirizzo si scrive sempre in lettere latine). Vanno marcati chiaramente
+     nella loro lingua come "indirizzo/e-mail: scrivilo esattamente così".
+  2. **Nomi dei bottoni dei siti**: NON scriverli in inglese. Il ragazzo spesso
+     fa tradurre il sito nella sua lingua, quindi il testo inglese non coincide
+     con quello che vede. Si descrive il bottone per **posizione + colore + a
+     cosa serve** (che valgono in qualunque lingua), con la parola **italiana**
+     probabile come aiuto (invitando a tradurre la pagina in italiano). Mai
+     affidarsi al solo testo del bottone.
 
 ## ⭐ Struttura del corso e flusso Git
 
@@ -471,8 +483,8 @@ l'intestazione del file.
 7. `classe-1/laboratorio-02-area-logica-google-classroom.md` — v0.1 (secondo lab: area logica/cartelle ad albero, giro Google Suite, iscrizione a Classroom; ripasso sicurezza)
 8. `classe-1/glossario-l2/glossario-l2.md` (+ `glossario.html` → `Glossario-L2-v1.0.pdf`) — v1.0 (glossario multilingue IT · EN · cinese semplificato caratteri+pinyin · arabo; PDF da HTML per i font CJK/arabo)
 8b. `classe-1/attivita-blocchi/attivita-blocchi.md` (+ `attivita-blocchi.html` → `attivita-blocchi-v0.1.pdf`) — v0.1 (attività jolly "tempo libero": primo gioco con i blocchi / Ora del Codice; trilingue IT/AR/ZH, a prova di errore, browser)
-8c. `classe-1/github-crea-account/github-crea-account.md` (+ `github-crea-account.html` → `github-crea-account-v0.1.pdf`) — v0.1 (prima lezione Git: crea account GitHub con email scuola ed entra; trilingue IT/AR/ZH; gestione inglese con traduzione Chrome; nota "provare prima i permessi/posta esterna")
-9. `classe-1/esercizio-presentazione-famiglia/` — v1.1 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.1.pdf` + versione unica trilingue `...-v1.1.pdf`)
+8c. `classe-1/github-crea-account/github-crea-account.md` (+ `github-crea-account.html` → `github-crea-account-v0.2.pdf`) — v0.2 (prima lezione Git: crea account GitHub con email scuola ed entra; trilingue IT/AR/ZH; bottoni per posizione/colore, indirizzi marcati; nota "provare prima i permessi/posta esterna")
+9. `classe-1/esercizio-presentazione-famiglia/` — v1.2 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link + nota su indirizzi/bottoni nelle 3 lingue. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.2.pdf` + versione unica trilingue `...-v1.2.pdf`)
 10. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
 11. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
 12. `classe-1/negozio-online/README.md` — v1.0
