@@ -15,8 +15,8 @@ cosa nuova, entra qui.*
 3. Quando qualcosa e fatto, si segna [FATTO] e resta a storico (non si cancella subito).
 
 ## 2. Da fare (inizio scuola e primo periodo)
-1. [DA FARE] Nominare il Rallentatore in classe (e mostrare a tutti il gesto: palmo alzato, due spinte "ta-ta" = rallenta). Meglio dopo aver conosciuto un po' i ragazzi, anche dopo il primo mese.
-2. [DA FARE] Scegliere se adottare anche altri ruoli di classe (custode del glossario, guardiano di carta e penna, tutor, responsabile laboratorio, responsabile "Mostralo") e dirlo a Claude, che li sviluppa.
+1. [FATTO] Nominare il Rallentatore in classe (e mostrare a tutti il gesto: palmo alzato, due spinte "ta-ta" = rallenta). Classe 1 (2026/27): ruoli assegnati; foglio "diploma" con i nomi consegnato a Nicola (i nomi restano fuori da Git per privacy).
+2. [FATTO] Scelti i ruoli adottati: sono TRE — Rallentatore, Guardiano di Carta e Penna, Responsabile del Laboratorio (vedi RUOLI-CLASSE.md). Assegnati in Classe 1.
 3. [IN CORSO] Attivare i repository degli allievi con Classroom 50 (GitHub Classroom e stato ritirato il 28/08/2026). FATTO: creata l'organizzazione `informatica-piamarta` e inviata la verifica docente su GitHub Education (con la lettera d'incarico). DA FARE quando arriva l'email di approvazione Education: fare l'upgrade gratuito dell'organizzazione a GitHub Team (serve per far funzionare Classroom 50), poi creare le classi. Gli account GitHub degli allievi si creano prima, in una lezione dedicata.
 4. [DA FARE] Verificare che con Gemini gratuito si riesca a fare tutto il percorso AI (compreso costruire il quaderno personale), visto che a scuola non c'e Claude.
 
