@@ -435,7 +435,7 @@ l'intestazione del file.
 6. `MIE-PARTI-ALLEGATO-A.md` — v0.2 (parti di Regge estratte dai PFP)
 7. `ARGOMENTI-SVOLTI.md` — v0.3 (svolto 2025/26, nomenclatura 26/27)
 7b. `ARGOMENTI-SVOLTI-2026-27.md` — v0.1 (registro attività svolte 2026/27, agganciato all'Allegato A; si aggiorna a ogni lezione)
-7c. `allegato-a-stato/allegato-a-stato.md` (+ `allegato-a-stato.html` → `Allegato-A-Stato-v0.1.pdf`) — v0.1 (Allegato A con stato fatto/da fare; da fare evidenziato in giallo; per ora Classe 1)
+7c. `allegato-a-stato/allegato-a-stato.md` (+ `allegato-a-stato.html` → `Allegato-A-Stato-v0.2.pdf`) — v0.2 (Allegato A con stato fatto/da fare; da fare evidenziato in giallo; per ora Classe 1)
 8. `programma-svolto/README.md` — v1.0
 9. `programma-svolto/_fonti-registro-2025-26/README.md` — v1.0
 10. `programmi-ufficiali/README.md` — v0.6

@@ -1,6 +1,6 @@
 # Allegato A — Stato del programma (fatto / da fare)
 
-**Versione 0.1** — 17/09/2026
+**Versione 0.2** — 17/09/2026
 *Documento di lavoro per la Regione: prende le parti dell'Allegato A (le mie, da
 MIE-PARTI-ALLEGATO-A) e segna, competenza per competenza, cosa e stato SVOLTO
 (fatto) e cosa NON ancora (da fare, evidenziato in giallo). Man mano che una
@@ -29,4 +29,5 @@ precisa, che il motore "libro" non fa). Questo `.md` e la fonte. Documento inter
 2. Aggiornare a ogni lezione insieme al registro ARGOMENTI-SVOLTI-2026-27.
 
 ## 4. Changelog
-1. **v0.1 (17/09/2026)**: prima versione. Classe 1 (prima) con marcature FATTO/DA FARE per le competenze 8, 13, 14, 15, 16.
+1. **v0.2 (17/09/2026)**: programma della Classe 1 ampliato — dichiarato tutto ciò che potremmo fare (cultura informatica, produttività Google completa, ricerca in rete, logica/coding a blocchi, sicurezza da utente, IA, grafica/Canva, negozio online, reti e cablaggio, mondo del lavoro). Il non svolto resta in giallo.
+2. **v0.1 (17/09/2026)**: prima versione. Classe 1 (prima) con marcature FATTO/DA FARE per le competenze 8, 13, 14, 15, 16.
