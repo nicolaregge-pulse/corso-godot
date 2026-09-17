@@ -94,6 +94,14 @@ niente admin: usare SOLO ciò che è già presente):
 - Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
   Godot portabile, SumatraPDF portabile.
 
+**3. Prefisso `PPP` = "prendi in considerazione ma NON rispondere".** Quando una
+riga di Nicola inizia con `PPP`, è un **promemoria da annotare e tenere presente**
+nel lavoro, **non** una domanda: NON ci si costruisce sopra una risposta o una
+spiegazione lunga. Serve a **non far scorrere la chat**. Comportamento:
+- Registrare il contenuto come nota/promemoria e agirci quando pertinente.
+- Rispondere in modo **minimo o nullo** (al più un cenno brevissimo di presa in
+  carico), mai un blocco esplicativo.
+
 ## Contesto didattico
 
 - **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
