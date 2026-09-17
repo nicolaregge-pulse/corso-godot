@@ -1,6 +1,6 @@
 # Esercizio — Io e la mia famiglia (Google Documenti + Classroom)
 
-**Versione 1.0** — 17/09/2026
+**Versione 1.1** — 17/09/2026
 *Primo esercizio vero della Classe 1 (di fatto la prima lezione operativa): ogni
 allievo crea un documento con Google Documenti per presentare se stesso e la
 propria famiglia (origini, provenienza, storia), e lo consegna su Classroom. Gli
@@ -48,5 +48,10 @@ carta e penna per la scaletta, fallo tuo, mostralo, occhio alla privacy.*
 3. Ownership e racconto di se (motore "Fallo tuo / Mostralo"); valorizza le origini di ciascuno.
 4. Cittadinanza digitale: condividere con criterio, non pubblicare dati personali online.
 
-## 5. Changelog
-1. **v1.0 (17/09/2026)**: prima versione. Consegna trilingue (IT/AR/ZH), passo-passo Classroom + Google Traduttore + consegna, nota privacy e nota docente.
+## 5. File consegnabili
+1. Tre file monolingui, ognuno con TUTTE le indicazioni complete: `esercizio-it.html` → `...-IT-v1.1.pdf`, `esercizio-ar.html` → `...-AR-v1.1.pdf`, `esercizio-zh.html` → `...-ZH-v1.1.pdf`.
+2. Resta disponibile anche `esercizio.html` (versione unica con le 3 lingue affiancate, utile per proiettare).
+
+## 6. Changelog
+1. **v1.1 (17/09/2026)**: aggiunti i 3 file monolingui (IT/AR/ZH) con tutte le indicazioni; spiegazione a cosa servono i 2 link del compito (Google Documenti, Google Traduttore); passi resi piu semplici e completi (creare il lavoro e consegnare su Classroom).
+2. **v1.0 (17/09/2026)**: prima versione. Consegna trilingue affiancata, passo-passo Classroom + Google Traduttore + consegna, nota privacy e nota docente.

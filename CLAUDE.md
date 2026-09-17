@@ -258,6 +258,25 @@ e incoraggianti anche in prosa sobria e con liste numerate.
 > adeguano **gradualmente** allo standard, non tutti in una volta, per non
 > introdurre errori. Ogni nuovo documento nasce già conforme.
 
+## ⭐ Ogni testo per i ragazzi nelle 3 lingue (VINCOLANTE — richiesto da Nicola)
+
+Ogni testo **destinato agli allievi** (consegne, esercizi, guide, avvisi, schede)
+deve essere **disponibile nelle 3 lingue** del gruppo: **italiano, arabo, cinese
+semplificato**. Regole pratiche:
+
+- Va bene sia **3 file separati** (uno per lingua) sia **un unico file** con le
+  tre lingue affiancate; per le consegne operative si preferiscono i **3 file
+  monolingui**, ognuno con **tutte** le indicazioni complete.
+- Le indicazioni devono essere **semplici e complete** ("a prova di errore"):
+  spiegare tutto, compreso a cosa servono link/strumenti, come si crea il lavoro e
+  come si consegna.
+- **Font per il PDF**: cinese **WenQuanYi Zen Hei**, arabo **Amiri** (installato in
+  `~/.fonts`); questi documenti si generano da **HTML** (non dal motore "libro"
+  che usa DejaVu, privo di cinese/arabo). L'arabo va reso **RTL** (`dir="rtl"`).
+- **Eccezione**: i materiali **interni per il docente** (pianificazione, registro
+  attività, regole, indici) restano in italiano; la regola vale per ciò che
+  arriva in mano agli allievi.
+
 ## ⭐ Struttura del corso e flusso Git
 
 ### Due ambienti: "autore" (Nicola) vs "ragazzi"
@@ -436,7 +455,7 @@ l'intestazione del file.
 6. `classe-1/laboratorio-01-utenze-e-aree.md` — v0.1 (primo lab: login Windows + cartella in rete e account Google + Drive, prova password)
 7. `classe-1/laboratorio-02-area-logica-google-classroom.md` — v0.1 (secondo lab: area logica/cartelle ad albero, giro Google Suite, iscrizione a Classroom; ripasso sicurezza)
 8. `classe-1/glossario-l2/glossario-l2.md` (+ `glossario.html` → `Glossario-L2-v1.0.pdf`) — v1.0 (glossario multilingue IT · EN · cinese semplificato caratteri+pinyin · arabo; PDF da HTML per i font CJK/arabo)
-9. `classe-1/esercizio-presentazione-famiglia/esercizio-presentazione-famiglia.md` (+ `esercizio.html` → `Esercizio-Io-e-la-mia-famiglia-v1.0.pdf`) — v1.0 (esercizio trilingue IT/AR/ZH: presentazione di sé e famiglia con Google Documenti; passo-passo Classroom + Google Traduttore + consegna)
+9. `classe-1/esercizio-presentazione-famiglia/` — v1.1 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.1.pdf` + versione unica trilingue `...-v1.1.pdf`)
 10. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
 11. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
 12. `classe-1/negozio-online/README.md` — v1.0
