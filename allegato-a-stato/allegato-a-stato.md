@@ -18,7 +18,12 @@ precisa, che il motore "libro" non fa). Questo `.md` e la fonte. Documento inter
 3. Copre tutte le classi: Classe 1 (costruita sul programma del I anno) e Classi 2, 3, 4 (dalle parti reali dell'Allegato A in MIE-PARTI). La corrispondenza classe/anno per 2/3/4 e da confermare (vedi nota in MIE-PARTI).
 4. In prima e seconda e presente la parte di assemblaggio PC (smontare/riassemblare) e installazione del sistema operativo con creazione delle utenze/account. Il PDF si costruisce da `allegato-a-stato.html`; le classi 2/3/4 sono generate da MIE-PARTI con lo script `_build/build_allegato.py` (in scratchpad; se serve lo versioniamo).
 
-> [BLU] Da confermare da Nicola: le marcature "FATTO" (qui ci sono solo quelle sicure delle prime lezioni) e la mappatura anno/competenza (vedi nota in MIE-PARTI-ALLEGATO-A).
+> Struttura confermata (17/09/2026): triennio unico prima->seconda->terza (un
+> percorso che avanza: prima quest'anno, seconda proseguo della prima, terza
+> proseguo di prima+seconda); la QUARTA e a se stante (unione di due classi),
+> documento separato.
+> [BLU] Restano da confermare da Nicola solo le marcature "FATTO" delle Classi
+> 2/3/4 (qui ci sono per ora solo quelle sicure delle prime lezioni della Classe 1).
 
 ## 2. Classe 1 (prima) — sintesi
 1. FATTO finora: Presentazione corso; Creazione Area Logica; Norme comuni (regolamento); Cosa faremo quest'anno; Utilizzo Suite Google (avvio); Windows uso base; Accesso a Classroom; Document e Classroom (esercizio "Io e la mia famiglia" + consegna).

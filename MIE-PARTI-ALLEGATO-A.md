@@ -5,7 +5,14 @@
 
 ---
 
-> [BLU] Mappatura classi da confermare: PFP1 -> 2a, PFP2 -> 3a, PFP3 -> storico Operatore della 4a, PFP4 Tecnico -> anno di qualifica della 4a.
+> Struttura confermata da Nicola (17/09/2026): il corso e un TRIENNIO unico
+> (prima -> seconda -> terza) = un solo percorso che avanza nel tempo. La prima
+> inizia quest'anno (I annualita); la seconda e il proseguo della prima (II
+> annualita); la terza e il proseguo di prima+seconda (III annualita). La QUARTA
+> e a se stante (unione di due classi): documento separato, tutto suo.
+> Nota operativa: quest'anno le classi 2 e 3 sono coorti gia avviate negli anni
+> scorsi (si compila la colonna dell'annualita corrente); il dettaglio coorte
+> per coorte lo confermeremo quando serve.
 
 ## Classe 2 (2026/27)
 *dal PFP 1 Operatore — nel 2025/26 era la 1a (compilato il I anno)*
