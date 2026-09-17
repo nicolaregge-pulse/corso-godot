@@ -40,7 +40,7 @@ questo, vince questo. Decisa da Nicola.*
 
 ## 5. Progetti pratici
 1. "Il Mio Negozio Online" (e-commerce): vetrina su GitHub Pages, database su Supabase, ordini via FormSubmit. Progetto pilota completato e testato; cresce dalla 2a alla 4a.
-2. Giochi con Godot: dai semplici al "progetto boss" (anno da decidere).
+2. Giochi con Godot: dai semplici al "progetto boss". Collocazione confermata da Nicola (17/09/2026): Godot arriva DOPO aver fatto Lazarus, quindi a fine prima o in seconda.
 3. Cablaggio RJ45 e reti; in 4a il progetto forte: la rete di una scuola in Cisco Packet Tracer (VLAN, simulazione).
 
 ## 6. Punti aperti (da decidere/confermare con Nicola)
