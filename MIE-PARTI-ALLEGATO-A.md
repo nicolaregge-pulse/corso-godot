@@ -13,6 +13,11 @@
 > Nota operativa: quest'anno le classi 2 e 3 sono coorti gia avviate negli anni
 > scorsi (si compila la colonna dell'annualita corrente); il dettaglio coorte
 > per coorte lo confermeremo quando serve.
+> [BLU] Dubbio parcheggiato (da capire): non e ancora certo che il percorso sia
+> un unico triennio 1-2-3; potrebbe anche essere 1-2 come un blocco e poi 3-4 che
+> "ricomincia" da capo (come un nuovo primo-secondo). Certo per ora: la seconda
+> prosegue la prima, la terza prosegue prima+seconda, la prima inizia quest'anno,
+> la quarta e a se stante. Nicola confermera quando lo avra chiarito.
 
 ## Classe 2 (2026/27)
 *dal PFP 1 Operatore — nel 2025/26 era la 1a (compilato il I anno)*
