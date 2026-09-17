@@ -69,6 +69,7 @@ DOCS = {
     "allegato-classe-2": {"src": "../allegato-a-2026-27/allegato-a-classe-2.md", "title": "Allegato A 2026/27 — Le mie parti (Regge) — Classe 2"},
     "allegato-classe-3": {"src": "../allegato-a-2026-27/allegato-a-classe-3.md", "title": "Allegato A 2026/27 — Le mie parti (Regge) — Classe 3"},
     "allegato-classe-4": {"src": "../allegato-a-2026-27/allegato-a-classe-4.md", "title": "Allegato A 2026/27 — Le mie parti (Regge) — Classe 4"},
+    "guida-notebooklm-classroom": {"src": "../GUIDA-NOTEBOOKLM-CLASSROOM.md", "title": "Guida operativa — NotebookLM e Google Classroom (per il docente)"},
     "preventivo":   {"src": "../PROGRAMMA-PREVENTIVO-2026-27.md",     "title": "Programma Preventivo 2026/27 (per competenza)"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
