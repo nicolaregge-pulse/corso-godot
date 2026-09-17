@@ -436,6 +436,7 @@ l'intestazione del file.
 6. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
 7. `GUIDA-NOTEBOOKLM-CLASSROOM.md` (→ `GUIDA-NOTEBOOKLM-CLASSROOM-v0.1.pdf`) — v0.1 (guida operativa docente: NotebookLM + creare un compito su Classroom, passo-passo; cosa caricare, cosa far abilitare)
 8. `SCHEDA-NOTEBOOKLM-SUBITO.md` (→ `SCHEDA-NOTEBOOKLM-SUBITO-v0.1.pdf`) — v0.1 (scheda pronta "ricetta": solo i passi, la prima volta con NotebookLM, senza spiegazioni)
+9. `SCHEDA-DUE-MONDI-CLASSROOM-GITHUB.md` (→ `SCHEDA-DUE-MONDI-CLASSROOM-GITHUB-v0.1.pdf`) — v0.1 (scheda chiara: Classroom vs GitHub vs NotebookLM, chi mette cosa, l'unico ponte a mano)
 
 ### 4. Programmi per classe e documenti per la Regione
 1. `classe-1/programma.md` — v0.4
