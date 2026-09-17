@@ -72,6 +72,7 @@ DOCS = {
     "guida-notebooklm-classroom": {"src": "../GUIDA-NOTEBOOKLM-CLASSROOM.md", "title": "Guida operativa — NotebookLM e Google Classroom (per il docente)"},
     "scheda-notebooklm-subito": {"src": "../SCHEDA-NOTEBOOKLM-SUBITO.md", "title": "NotebookLM — la prima volta (scheda pronta)"},
     "scheda-due-mondi": {"src": "../SCHEDA-DUE-MONDI-CLASSROOM-GITHUB.md", "title": "I due mondi: Classroom e GitHub (scheda pronta)"},
+    "scheda-triade": {"src": "../SCHEDA-TRIADE-NOTEBOOKLM-CLASSROOM-GIT.md", "title": "La triade: NotebookLM, Classroom e Git (scheda pronta)"},
     "preventivo":   {"src": "../PROGRAMMA-PREVENTIVO-2026-27.md",     "title": "Programma Preventivo 2026/27 (per competenza)"},
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
