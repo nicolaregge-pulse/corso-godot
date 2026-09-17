@@ -95,7 +95,8 @@ niente admin: usare SOLO ciò che è già presente):
   Godot portabile, SumatraPDF portabile.
 
 **3. Prefisso `PPP` = "prendi in considerazione ma NON rispondere".** Quando una
-riga di Nicola inizia con `PPP`, è un **promemoria da annotare e tenere presente**
+riga di Nicola inizia con `PPP` (a voce, dettando, l'equivalente è **"parcheggia,
+parcheggia, parcheggia"**), è un **promemoria da annotare e tenere presente**
 nel lavoro, **non** una domanda: NON ci si costruisce sopra una risposta o una
 spiegazione lunga. Serve a **non far scorrere la chat**. Comportamento:
 - Registrare il contenuto come nota/promemoria e agirci quando pertinente.
