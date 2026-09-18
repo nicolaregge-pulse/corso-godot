@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A4 landscape;margin:8mm;}*{box-sizing:border-box;}
+body{margin:0;font-family:"Liberation Sans",sans-serif;}
+h1{font-size:15pt;text-align:center;color:#16324a;margin:2px 0 6px;}
+svg{display:block;margin:0 auto;}
+.lab{font-family:"Liberation Sans",sans-serif;font-size:12px;fill:#16324a;font-weight:bold;}
+.lead{stroke:#16324a;stroke-width:1.4;fill:none;}
+.dot{fill:#16324a;}
+</style></head><body>
+<h1>Dentro il PC (disegno realistico)</h1>
+<svg width="960" height="600" viewBox="0 0 960 600">
+<defs>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5560"/><stop offset="1" stop-color="#2b333b"/></linearGradient>
+  <linearGradient id="inside" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a434d"/><stop offset="1" stop-color="#232a31"/></linearGradient>
+  <linearGradient id="pcb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f6b4a"/><stop offset="1" stop-color="#124d34"/></linearGradient>
+  <radialGradient id="fan" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#6b7681"/><stop offset="1" stop-color="#2b333b"/></radialGradient>
+  <linearGradient id="ram" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d6fb0"/><stop offset="1" stop-color="#24466f"/></linearGradient>
+  <linearGradient id="gpu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a4048"/><stop offset="1" stop-color="#191d22"/></linearGradient>
+  <linearGradient id="psu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20252b"/><stop offset="1" stop-color="#0e1114"/></linearGradient>
+  <linearGradient id="heat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9cdd2"/><stop offset="1" stop-color="#8b9096"/></linearGradient>
+</defs>
+
+<!-- case outer -->
+<rect x="30" y="24" width="640" height="552" rx="12" fill="url(#metal)" stroke="#12161a" stroke-width="4"/>
+<rect x="54" y="48" width="592" height="504" rx="8" fill="url(#inside)" stroke="#12161a" stroke-width="2"/>
+
+<!-- motherboard -->
+<rect x="78" y="70" width="470" height="420" rx="6" fill="url(#pcb)" stroke="#0c3a27" stroke-width="2"/>
+<!-- pcb traces -->
+<g stroke="#2f8c62" stroke-width="1" opacity="0.6">
+  <line x1="90" y1="90" x2="520" y2="90"/><line x1="90" y1="110" x2="300" y2="110"/><line x1="120" y1="300" x2="520" y2="300"/><line x1="200" y1="70" x2="200" y2="470"/><line x1="430" y1="130" x2="430" y2="460"/></g>
+<!-- mounting screws -->
+<g fill="#0c3a27"><circle cx="92" cy="84" r="4"/><circle cx="534" cy="84" r="4"/><circle cx="92" cy="476" r="4"/><circle cx="534" cy="476" r="4"/></g>
+
+<!-- CPU cooler (heatsink fins + fan) -->
+<rect x="150" y="110" width="150" height="150" rx="8" fill="url(#heat)" stroke="#5f6469" stroke-width="2"/>
+<g stroke="#7d8288" stroke-width="2">
+  <line x1="162" y1="110" x2="162" y2="260"/><line x1="178" y1="110" x2="178" y2="260"/><line x1="194" y1="110" x2="194" y2="260"/><line x1="210" y1="110" x2="210" y2="260"/><line x1="226" y1="110" x2="226" y2="260"/><line x1="242" y1="110" x2="242" y2="260"/><line x1="258" y1="110" x2="258" y2="260"/><line x1="274" y1="110" x2="274" y2="260"/><line x1="290" y1="110" x2="290" y2="260"/></g>
+<circle cx="225" cy="185" r="58" fill="url(#fan)" stroke="#1b2026" stroke-width="3"/>
+<g fill="#4b555f" opacity="0.9"><path d="M225 185 L235 135 Q250 150 245 175 Z"/><path d="M225 185 L275 195 Q262 212 238 205 Z"/><path d="M225 185 L215 235 Q198 220 205 197 Z"/><path d="M225 185 L175 176 Q188 158 212 166 Z"/></g>
+<circle cx="225" cy="185" r="12" fill="#2b333b" stroke="#1b2026" stroke-width="2"/>
+
+<!-- RAM sticks -->
+<g>
+  <rect x="360" y="96" width="20" height="170" rx="3" fill="url(#ram)" stroke="#16324a" stroke-width="1.5"/>
+  <rect x="388" y="96" width="20" height="170" rx="3" fill="url(#ram)" stroke="#16324a" stroke-width="1.5"/>
+  <rect x="416" y="96" width="20" height="170" rx="3" fill="url(#ram)" stroke="#16324a" stroke-width="1.5"/>
+  <rect x="444" y="96" width="20" height="170" rx="3" fill="url(#ram)" stroke="#16324a" stroke-width="1.5"/>
+</g>
+
+<!-- GPU (card + 2 fans) -->
+<rect x="96" y="360" width="410" height="96" rx="6" fill="url(#gpu)" stroke="#0d0f12" stroke-width="2"/>
+<circle cx="180" cy="408" r="40" fill="url(#fan)" stroke="#0d0f12" stroke-width="3"/>
+<circle cx="330" cy="408" r="40" fill="url(#fan)" stroke="#0d0f12" stroke-width="3"/>
+<g fill="#20252b"><path d="M180 408 L188 372 Q202 384 196 402 Z"/><path d="M180 408 L216 416 Q204 430 187 423 Z"/><path d="M180 408 L172 444 Q158 432 165 414 Z"/>
+<path d="M330 408 L338 372 Q352 384 346 402 Z"/><path d="M330 408 L366 416 Q354 430 337 423 Z"/><path d="M330 408 L322 444 Q308 432 315 414 Z"/></g>
+<circle cx="180" cy="408" r="9" fill="#12161a"/><circle cx="330" cy="408" r="9" fill="#12161a"/>
+
+<!-- SSD -->
+<rect x="470" y="300" width="70" height="46" rx="4" fill="#2b333b" stroke="#12161a" stroke-width="2"/>
+<rect x="478" y="308" width="30" height="10" rx="2" fill="#4a5560"/>
+
+<!-- PSU bottom -->
+<rect x="78" y="500" width="470" height="52" rx="6" fill="url(#psu)" stroke="#0a0c0e" stroke-width="2"/>
+<circle cx="120" cy="526" r="20" fill="none" stroke="#3a434d" stroke-width="3"/>
+<g stroke="#3a434d" stroke-width="2"><line x1="120" y1="526" x2="120" y2="508"/><line x1="120" y1="526" x2="135" y2="536"/><line x1="120" y1="526" x2="105" y2="536"/></g>
+
+<!-- cables -->
+<g class="lead" stroke="#c0392b" stroke-width="3" opacity="0.85"><path d="M300 500 C 360 470, 420 300, 470 270"/></g>
+<g class="lead" stroke="#f1c40f" stroke-width="3" opacity="0.85"><path d="M340 500 C 420 470, 470 360, 506 350"/></g>
+
+<!-- labels -->
+<g class="lab">
+  <line class="lead" x1="700" y1="60" x2="548" y2="80"/><circle class="dot" cx="700" cy="60" r="3"/><text x="708" y="64">Scheda madre</text>
+  <line class="lead" x1="700" y1="185" x2="283" y2="185"/><circle class="dot" cx="700" cy="185" r="3"/><text x="708" y="189">CPU + dissipatore</text>
+  <line class="lead" x1="700" y1="150" x2="464" y2="150"/><circle class="dot" cx="700" cy="150" r="3"/><text x="708" y="120">RAM (memoria)</text>
+  <line class="lead" x1="700" y1="408" x2="506" y2="408"/><circle class="dot" cx="700" cy="408" r="3"/><text x="708" y="412">Scheda video (GPU)</text>
+  <line class="lead" x1="700" y1="323" x2="540" y2="323"/><circle class="dot" cx="700" cy="323" r="3"/><text x="708" y="300">Hard Disk / SSD</text>
+  <line class="lead" x1="700" y1="526" x2="548" y2="526"/><circle class="dot" cx="700" cy="526" r="3"/><text x="708" y="530">Alimentatore</text>
+  <line class="lead" x1="700" y1="470" x2="672" y2="300"/><circle class="dot" cx="700" cy="470" r="3"/><text x="708" y="474">Case (scatola)</text>
+</g>
+</svg>
+</body></html>
