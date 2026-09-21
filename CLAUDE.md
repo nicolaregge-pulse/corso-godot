@@ -477,6 +477,7 @@ l'intestazione del file.
 8. `SCHEDA-NOTEBOOKLM-SUBITO.md` (→ `SCHEDA-NOTEBOOKLM-SUBITO-v0.1.pdf`) — v0.1 (scheda pronta "ricetta": solo i passi, la prima volta con NotebookLM, senza spiegazioni)
 9. `SCHEDA-DUE-MONDI-CLASSROOM-GITHUB.md` (→ `SCHEDA-DUE-MONDI-CLASSROOM-GITHUB-v0.1.pdf`) — v0.1 (scheda chiara: Classroom vs GitHub vs NotebookLM, chi mette cosa, l'unico ponte a mano)
 10. `SCHEDA-TRIADE-NOTEBOOKLM-CLASSROOM-GIT.md` (→ `SCHEDA-TRIADE-NOTEBOOKLM-CLASSROOM-GIT-v0.1.pdf`) — v0.1 (scheda triade: come gestire e lavorare al meglio con i tre; giro completo + esempio concreto)
+11. `guida-docenti-alunni-non-italofoni/GUIDA-DOCENTI-ALUNNI-NON-ITALOFONI.md` (+ `guida-docenti.html` → `Guida-Docenti-Alunni-Non-Italofoni-v0.1.pdf`) — v0.1 (guida per gli altri docenti: come gestire le lezioni con alunni che non parlano italiano; principi + pratiche concrete che stiamo facendo + strumenti; esempio del quiz trilingue su Moduli con lo script e come si gestisce)
 
 ### 4. Programmi per classe e documenti per la Regione
 1. `classe-1/programma.md` — v0.4
