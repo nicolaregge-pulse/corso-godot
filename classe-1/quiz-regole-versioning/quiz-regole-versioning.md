@@ -1,10 +1,12 @@
 # Quiz — Regole della classe e Versioning (per Google Moduli)
 
-**Versione 1.0** — 21/09/2026
+**Versione 1.1** — 21/09/2026
 *Quiz trilingue (IT/AR/ZH) per interrogare la Classe 1 su: regole della classe e
 versioning. Si crea su Google Moduli con lo script `crea-modulo.gs` (1 clic) e si
 allega come Compito su Classroom. Documento interno per il docente (istruzioni +
-chiave delle risposte).*
+chiave delle risposte). v1.1: aggiunta la guida illustrata passo-passo
+`come-eseguire-script.html` → `Come-Eseguire-Script-v1.0.pdf` (con i disegni di
+dove cliccare, compresa la schermata "app non verificata").*
 
 ## 1. Cosa contiene
 
@@ -30,6 +32,10 @@ script.google.com
 
 Fatto: il Modulo è creato con tutte le domande e le risposte giuste già segnate
 (il punteggio si calcola da solo).
+
+> Se non sei pratico di computer, segui la **guida illustrata** passo-passo con i
+> disegni di dove cliccare: `come-eseguire-script.html` →
+> `Come-Eseguire-Script-v1.0.pdf` (mostra anche la schermata "app non verificata").
 
 ## 3. Come allegarlo su Google Classroom
 

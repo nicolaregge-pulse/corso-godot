@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A4;margin:13mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",sans-serif;color:#161616;margin:0;font-size:11pt;line-height:1.5;}
+h1{font-size:18pt;text-align:center;margin:0 0 2px;color:#16324a;}
+.subt{text-align:center;font-size:10pt;color:#3a6ea5;margin:0 0 12px;}
+.step{border:1px solid #ccd6e0;border-radius:10px;padding:10px 14px;margin:0 0 12px;page-break-inside:avoid;}
+.num{display:inline-block;background:#16324a;color:#fff;border-radius:50%;width:26px;height:26px;text-align:center;line-height:26px;font-weight:bold;margin-right:6px;}
+.st{font-size:13pt;font-weight:bold;color:#16324a;vertical-align:middle;}
+ol{margin:6px 0;padding-inline-start:24px;}li{margin:4px 0;}
+.code{border:1px solid #ccd6e0;background:#f6f8fb;border-radius:6px;padding:6px 10px;margin:6px 0;font-family:"Liberation Mono",monospace;font-size:11pt;display:inline-block;}
+.warn{border:1px solid #d9b3b3;background:#fdf2f2;border-radius:8px;padding:8px 12px;margin:8px 0;color:#7a1f1f;}
+.tip{border:1px solid #b8933f;background:#fbf6e9;border-radius:8px;padding:8px 12px;margin:8px 0;}
+.mock{text-align:center;margin:8px 0;}
+.cap{font-size:9pt;color:#57606a;text-align:center;margin-top:2px;}
+b.red{color:#c62828;}
+</style></head><body>
+<h1>Come eseguire lo script del quiz — passo per passo</h1>
+<div class="subt">Guida illustrata "a prova di errore" · anche per chi non è pratico di computer · uso docente</div>
+
+<div class="tip"><b>Cosa otterrai:</b> alla fine avrai un <b>quiz già pronto su Google Moduli</b>, con tutte le domande in 3 lingue e il punteggio automatico. Lo script fa il lavoro noioso al posto tuo. Fai <b>un passo alla volta</b>, con calma.</div>
+
+<div class="step">
+<div><span class="num">1</span><span class="st">Apri il sito degli script</span></div>
+<ol>
+<li>Apri il browser (Chrome) e nella barra dell'indirizzo, in alto, scrivi questo indirizzo esatto e premi Invio:</li>
+</ol>
+<div class="code">script.google.com</div>
+<ol start="2">
+<li>Se chiede di accedere, entra con il tuo <b>account della scuola</b> (la tua email della scuola).</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">2</span><span class="st">Premi "Nuovo progetto"</span></div>
+<div class="mock">
+<svg width="440" height="150" viewBox="0 0 440 150">
+  <rect x="2" y="2" width="436" height="146" rx="6" fill="#ffffff" stroke="#c3ccd6" stroke-width="2"/>
+  <rect x="2" y="2" width="436" height="30" rx="6" fill="#eef2f6"/>
+  <circle cx="18" cy="17" r="4" fill="#e0655b"/><circle cx="30" cy="17" r="4" fill="#e6b04b"/><circle cx="42" cy="17" r="4" fill="#6ab04b"/>
+  <text x="70" y="21" font-size="10" fill="#57606a" font-family="Liberation Mono">script.google.com</text>
+  <!-- left area -->
+  <text x="16" y="52" font-size="11" font-weight="bold" fill="#16324a">Apps Script</text>
+  <!-- Nuovo progetto button -->
+  <rect x="16" y="66" width="150" height="34" rx="8" fill="#e8f0fe" stroke="#3a6ea5" stroke-width="1.5"/>
+  <text x="30" y="88" font-size="15" fill="#1a56c4" font-weight="bold">+</text>
+  <text x="46" y="88" font-size="12" fill="#1a56c4" font-weight="bold">Nuovo progetto</text>
+  <!-- projects list hint -->
+  <text x="185" y="80" font-size="10" fill="#8a97a5">(sotto: l'elenco dei tuoi progetti)</text>
+  <!-- red arrow -->
+  <path d="M250 118 C 210 116, 180 110, 150 100" fill="none" stroke="#c62828" stroke-width="2.5" marker-end="url(#ar)"/>
+  <defs><marker id="ar" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M1 1 L10 5.5 L1 10 Z" fill="#c62828"/></marker></defs>
+  <text x="255" y="122" font-size="10" fill="#c62828" font-weight="bold">clicca qui</text>
+</svg>
+<div class="cap">Il bottone "Nuovo progetto" è in ALTO A SINISTRA, con il segno +.</div>
+</div>
+<ol>
+<li>In alto a sinistra, premi il bottone azzurro <b>"Nuovo progetto"</b> (col segno <b>+</b>). Se la pagina è in inglese, la scritta è "New project".</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">3</span><span class="st">Cancella il codice di esempio</span></div>
+<div class="mock">
+<svg width="440" height="150" viewBox="0 0 440 150">
+  <rect x="2" y="2" width="436" height="146" rx="6" fill="#ffffff" stroke="#c3ccd6" stroke-width="2"/>
+  <!-- toolbar -->
+  <rect x="2" y="2" width="436" height="28" rx="6" fill="#eef2f6"/>
+  <text x="14" y="20" font-size="10" fill="#57606a">Progetto senza titolo</text>
+  <!-- left file rail -->
+  <rect x="2" y="30" width="70" height="118" fill="#f4f6f9"/>
+  <text x="10" y="50" font-size="9" fill="#57606a">Codice.gs</text>
+  <!-- code area -->
+  <rect x="80" y="40" width="348" height="100" rx="4" fill="#fbfdff" stroke="#dfe6ee"/>
+  <rect x="86" y="48" width="250" height="16" rx="3" fill="#ffe3e3"/>
+  <text x="92" y="60" font-size="10" fill="#b23b3b" font-family="Liberation Mono">function myFunction() {</text>
+  <text x="100" y="80" font-size="10" fill="#9aa6b2" font-family="Liberation Mono">  ...</text>
+  <text x="92" y="100" font-size="10" fill="#b23b3b" font-family="Liberation Mono">}</text>
+  <text x="92" y="128" font-size="9" fill="#c62828" font-weight="bold">seleziona tutto (Ctrl+A) e cancella</text>
+</svg>
+<div class="cap">Nel riquadro centrale c'è del codice di esempio: va tolto tutto.</div>
+</div>
+<ol>
+<li>Clicca dentro il riquadro del codice (al centro).</li>
+<li>Premi insieme <b>Ctrl + A</b> (seleziona tutto), poi il tasto <b>Canc</b> per cancellare. Il riquadro deve restare <b>vuoto</b>.</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">4</span><span class="st">Incolla lo script del quiz</span></div>
+<ol>
+<li>Apri il file <b>crea-modulo.gs</b> (te l'ho mandato) e <b>copia tutto</b> il suo contenuto.</li>
+<li>Torna sul riquadro vuoto del codice e <b>incolla</b> (Ctrl + V). Ora il riquadro è pieno del testo dello script.</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">5</span><span class="st">Premi "Esegui"</span></div>
+<div class="mock">
+<svg width="440" height="70" viewBox="0 0 440 70">
+  <rect x="2" y="2" width="436" height="66" rx="6" fill="#eef2f6" stroke="#c3ccd6" stroke-width="1.5"/>
+  <!-- save -->
+  <rect x="16" y="20" width="70" height="30" rx="6" fill="#ffffff" stroke="#c3ccd6"/>
+  <text x="30" y="40" font-size="11" fill="#57606a">Salva</text>
+  <!-- function dropdown -->
+  <rect x="100" y="20" width="120" height="30" rx="6" fill="#ffffff" stroke="#3a6ea5"/>
+  <text x="110" y="40" font-size="11" fill="#16324a" font-weight="bold">creaQuiz  ▾</text>
+  <!-- Esegui -->
+  <rect x="240" y="20" width="90" height="30" rx="6" fill="#1a56c4"/>
+  <text x="252" y="40" font-size="11" fill="#ffffff" font-weight="bold">▶ Esegui</text>
+  <path d="M360 35 C 345 35, 340 35, 332 35" fill="none" stroke="#c62828" stroke-width="2.5" marker-end="url(#ar2)"/>
+  <defs><marker id="ar2" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M1 1 L10 5.5 L1 10 Z" fill="#c62828"/></marker></defs>
+  <text x="366" y="39" font-size="10" fill="#c62828" font-weight="bold">premi qui</text>
+</svg>
+<div class="cap">In alto: controlla che nel menù ci sia "creaQuiz", poi premi "Esegui".</div>
+</div>
+<ol>
+<li>In alto, nel menù a tendina, deve esserci scritto <b>creaQuiz</b> (di solito c'è già).</li>
+<li>Premi il bottone blu <b>"Esegui"</b> (con il triangolino ▶).</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">6</span><span class="st">Autorizza (la parte che sembra spaventosa, ma è sicura)</span></div>
+<div class="warn"><b>Attenzione:</b> la <b>prima volta</b> Google chiede il permesso e mostra una schermata che dice <b class="red">"Google non ha verificato questa app"</b>. È normale: l'app sei tu. Segui questi clic esatti.</div>
+<div class="mock">
+<svg width="440" height="140" viewBox="0 0 440 140">
+  <rect x="60" y="6" width="320" height="128" rx="8" fill="#ffffff" stroke="#c3ccd6" stroke-width="2"/>
+  <text x="80" y="34" font-size="12" fill="#16324a" font-weight="bold">Google non ha verificato questa app</text>
+  <text x="80" y="56" font-size="10" fill="#57606a">L'app richiede l'accesso ai tuoi dati.</text>
+  <!-- Avanzate link -->
+  <text x="80" y="86" font-size="11" fill="#1a56c4" font-weight="bold" text-decoration="underline">Avanzate</text>
+  <path d="M180 82 C 150 82, 140 82, 130 84" fill="none" stroke="#c62828" stroke-width="2.5" marker-end="url(#ar3)"/>
+  <defs><marker id="ar3" markerWidth="11" markerHeight="11" refX="8" refY="5.5" orient="auto"><path d="M1 1 L10 5.5 L1 10 Z" fill="#c62828"/></marker></defs>
+  <text x="188" y="86" font-size="9.5" fill="#c62828" font-weight="bold">1) clicca "Avanzate"</text>
+  <text x="80" y="112" font-size="10.5" fill="#1a56c4">Vai a Progetto senza titolo (non sicuro)</text>
+  <text x="80" y="128" font-size="9.5" fill="#c62828" font-weight="bold">2) clicca questa scritta</text>
+</svg>
+<div class="cap">Prima "Avanzate", poi "Vai a … (non sicuro)", poi "Consenti".</div>
+</div>
+<ol>
+<li>Nella finestra che si apre, premi <b>"Rivedi autorizzazioni"</b> e scegli il tuo <b>account scuola</b>.</li>
+<li>Alla schermata "Google non ha verificato questa app", in basso a sinistra clicca la scritta <b>"Avanzate"</b>.</li>
+<li>Poi clicca la scritta <b>"Vai a Progetto senza titolo (non sicuro)"</b>. (La parola "non sicuro" fa paura ma va bene: è il tuo script.)</li>
+<li>Infine premi il bottone <b>"Consenti"</b> in fondo.</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">7</span><span class="st">Trova il link del Modulo creato</span></div>
+<div class="mock">
+<svg width="440" height="86" viewBox="0 0 440 86">
+  <rect x="2" y="2" width="436" height="82" rx="6" fill="#f7f9fb" stroke="#c3ccd6" stroke-width="1.5"/>
+  <text x="14" y="22" font-size="10" fill="#57606a" font-weight="bold">Registro di esecuzione</text>
+  <text x="14" y="44" font-size="10" fill="#16324a" font-family="Liberation Mono">Link per MODIFICARLO:  https://docs.google.com/forms/…</text>
+  <text x="14" y="64" font-size="10" fill="#16324a" font-family="Liberation Mono">Link da COMPILARE:     https://docs.google.com/forms/…</text>
+</svg>
+<div class="cap">In basso, nel "Registro di esecuzione", compaiono due link.</div>
+</div>
+<ol>
+<li>In basso appare il riquadro <b>"Registro di esecuzione"</b> con due link.</li>
+<li>Clicca il primo (<b>MODIFICARLO</b>): si apre il tuo <b>Modulo-quiz già pronto</b> in Google Moduli. Fatto!</li>
+</ol>
+</div>
+
+<div class="step">
+<div><span class="num">8</span><span class="st">Allega il quiz su Google Classroom</span></div>
+<ol>
+<li>In Classroom (corso Classe 1), in alto scegli <b>"Lavori del corso"</b>.</li>
+<li>Premi <b>"+ Crea"</b> (in alto a sinistra) e scegli <b>"Compito"</b>.</li>
+<li>In basso premi <b>"Aggiungi"</b> e scegli <b>"Google Moduli"</b>: seleziona il quiz.</li>
+<li>Scrivi il titolo e premi <b>"Assegna"</b>.</li>
+</ol>
+</div>
+
+<div class="tip"><b>Se qualcosa non torna:</b> puoi sempre rifare da capo. Se premi "Esegui" più volte, crei più Moduli uguali: quelli che non servono si cancellano da Google Drive (cestino). Nulla si rompe.</div>
+
+</body></html>
