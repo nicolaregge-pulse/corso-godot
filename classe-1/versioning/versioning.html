@@ -11,6 +11,13 @@ h1{font-size:16pt;text-align:center;margin:0 0 2px;color:#16324a;}
 ol{margin:4px 0;padding-inline-start:22px;}li{margin:3px 0;}
 svg{display:block;margin:2px auto 6px;}
 .v{font-family:"Liberation Sans";font-weight:bold;}
+.pg{page-break-before:always;}
+h2{font-size:12.5pt;color:#16324a;border-bottom:1.5px solid #3a6ea5;padding-bottom:2px;margin:10px 0 6px;}
+.ex{border:1px solid #ccd6e0;border-radius:9px;padding:8px 12px;margin:0 0 9px;page-break-inside:avoid;}
+.exh{font-weight:bold;color:#16324a;}
+.cap .it{font-size:9.3pt;color:#3a5266;}
+.cap .a{direction:rtl;font-family:"Amiri",serif;font-size:10.5pt;display:block;}
+.cap .z{font-family:"WenQuanYi Zen Hei",sans-serif;font-size:10pt;display:block;}
 </style></head><body>
 <h1>Le versioni — il flusso completo (major e minor)</h1>
 <div class="subt">v&lt;major&gt;.&lt;minor&gt; · release principale e piccole modifiche &nbsp;·&nbsp; Italiano • <span class="ar">العربية</span> • <span class="cn">中文</span> &nbsp;·&nbsp; Classe 1</div>
@@ -67,4 +74,63 @@ svg{display:block;margin:2px auto 6px;}
 <li><b>为什么：</b> 一眼看出是小改动（minor）还是大更新（major）；已交付的版本不会被覆盖。课程里版本写在文件名里（如 <span class="v">Regole-Classe-v1.1</span>）。</li>
 </ol>
 </div>
+
+<div class="pg"></div>
+<h2>Esempi di alberi di versioni (casi molto diversi)</h2>
+
+<div class="ex"><div class="exh">1. Lineare semplice</div>
+<svg width="440" height="52" viewBox="0 0 440 52">
+<line x1="30" y1="30" x2="410" y2="30" stroke="#2e7d32" stroke-width="3"/>
+<g fill="#2e7d32"><circle cx="30" cy="30" r="5"/><circle cx="160" cy="30" r="5"/><circle cx="290" cy="30" r="5"/></g>
+<circle cx="410" cy="30" r="7" fill="#c62828"/>
+<g class="v" font-size="12" fill="#16324a"><text x="16" y="18">v1.0</text><text x="146" y="18">v1.1</text><text x="276" y="18">v1.2</text></g>
+<text x="392" y="18" class="v" font-size="13" fill="#c62828">v2.0</text></svg>
+<div class="cap"><span class="it">Piccole modifiche, poi una grande novità.</span> <span class="a">خطّي: تعديلات صغيرة ثم تجديد كبير.</span><span class="z">线性：小改动，然后一次大更新。</span></div></div>
+
+<div class="ex"><div class="exh">2. Con il "patch" (terzo numero)</div>
+<svg width="440" height="58" viewBox="0 0 440 58">
+<line x1="30" y1="30" x2="410" y2="30" stroke="#5d4037" stroke-width="3"/>
+<g fill="#5d4037"><circle cx="30" cy="30" r="4"/><circle cx="120" cy="30" r="4"/><circle cx="210" cy="30" r="4"/></g>
+<circle cx="360" cy="30" r="6" fill="#3a6ea5"/>
+<g class="v" font-size="11" fill="#16324a"><text x="14" y="18">v1.0.0</text><text x="104" y="18">v1.0.1</text><text x="194" y="18">v1.0.2</text><text x="338" y="18">v1.1.0</text></g>
+<text x="70" y="48" font-size="9" fill="#5d4037">patch: correzioni piccolissime</text>
+<text x="270" y="48" font-size="9" fill="#3a6ea5">minor: aggiunta</text></svg>
+<div class="cap"><span class="it">Il terzo numero (patch) è per correzioni piccolissime.</span> <span class="a">الرقم الثالث (patch) لتصحيحات صغيرة جدًا.</span><span class="z">第三个数字（patch）用于极小的修正。</span></div></div>
+
+<div class="ex"><div class="exh">3. Con rami (branch)</div>
+<svg width="440" height="110" viewBox="0 0 440 110">
+<line x1="30" y1="35" x2="320" y2="35" stroke="#2e7d32" stroke-width="3"/>
+<g fill="#2e7d32"><circle cx="30" cy="35" r="5"/><circle cx="170" cy="35" r="5"/><circle cx="320" cy="35" r="5"/></g>
+<g class="v" font-size="11" fill="#16324a"><text x="16" y="24">v1.0</text><text x="156" y="24">v1.1</text><text x="306" y="24">v1.2</text></g>
+<text x="200" y="50" font-size="9" fill="#2e7d32">vecchia versione: solo correzioni</text>
+<path d="M170 35 C 210 60, 220 80, 250 85" fill="none" stroke="#3a6ea5" stroke-width="2.5"/>
+<line x1="250" y1="85" x2="410" y2="85" stroke="#3a6ea5" stroke-width="3"/>
+<g fill="#3a6ea5"><circle cx="250" cy="85" r="5"/><circle cx="410" cy="85" r="5"/></g>
+<g class="v" font-size="11" fill="#16324a"><text x="234" y="104">v2.0</text><text x="392" y="104">v2.1</text></g>
+<text x="270" y="74" font-size="9" fill="#3a6ea5">nuova versione in parallelo</text></svg>
+<div class="cap"><span class="it">La vecchia versione continua (correzioni) mentre nasce la nuova.</span> <span class="a">النسخة القديمة تستمر بينما تُولد الجديدة.</span><span class="z">旧版本继续，同时诞生新版本。</span></div></div>
+
+<div class="ex"><div class="exh">4. Pre-rilascio (0.x)</div>
+<svg width="440" height="52" viewBox="0 0 440 52">
+<line x1="30" y1="30" x2="410" y2="30" stroke="#b8860b" stroke-width="3"/>
+<g fill="#b8860b"><circle cx="30" cy="30" r="4"/><circle cx="95" cy="30" r="4"/><circle cx="160" cy="30" r="4"/><circle cx="225" cy="30" r="4"/></g>
+<text x="255" y="34" font-size="14" fill="#b8860b">…</text>
+<circle cx="410" cy="30" r="7" fill="#2e7d32"/>
+<g class="v" font-size="11" fill="#16324a"><text x="16" y="18">v0.1</text><text x="81" y="18">v0.2</text><text x="146" y="18">v0.3</text><text x="211" y="18">v0.4</text></g>
+<text x="390" y="18" class="v" font-size="13" fill="#2e7d32">v1.0</text></svg>
+<div class="cap"><span class="it">Le 0.x = ancora in prova; v1.0 = primo rilascio completo (i nostri file usano spesso 0.x).</span> <span class="a">0.x = قيد التجربة؛ v1.0 = أول إصدار كامل.</span><span class="z">0.x＝还在试验；v1.0＝第一个完整版本。</span></div></div>
+
+<div class="ex"><div class="exh">5. Ripartenza (progetto nuovo)</div>
+<svg width="440" height="92" viewBox="0 0 440 92">
+<line x1="30" y1="28" x2="250" y2="28" stroke="#7a7f87" stroke-width="3"/>
+<g fill="#7a7f87"><circle cx="30" cy="28" r="4"/><circle cx="110" cy="28" r="4"/><circle cx="190" cy="28" r="4"/><circle cx="250" cy="28" r="5"/></g>
+<g class="v" font-size="10.5" fill="#57606a"><text x="18" y="18">v1.0</text><text x="94" y="18">v1.5</text><text x="174" y="18">v2.0</text><text x="234" y="18">v2.3</text></g>
+<path d="M250 28 C 300 40, 120 55, 70 70" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="3 3" marker-end="url(#r5)"/>
+<defs><marker id="r5" markerWidth="11" markerHeight="11" refX="7" refY="6" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#c62828"/></marker></defs>
+<line x1="60" y1="72" x2="410" y2="72" stroke="#2e7d32" stroke-width="3"/>
+<g fill="#2e7d32"><circle cx="60" cy="72" r="6"/><circle cx="410" cy="72" r="5"/></g>
+<g class="v" font-size="12" fill="#16324a"><text x="44" y="90">v1.0</text><text x="392" y="90">v1.1</text></g>
+<text x="150" y="60" font-size="9" fill="#c62828" font-weight="bold">progetto nuovo / riscritto da zero</text></svg>
+<div class="cap"><span class="it">Un progetto nuovo (o riscritto da zero) ricomincia pulito da v1.0.</span> <span class="a">مشروع جديد يبدأ من جديد من v1.0.</span><span class="z">新的（或重写的）项目从 v1.0 重新开始。</span></div></div>
+
 </body></html>
