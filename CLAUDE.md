@@ -117,9 +117,14 @@ argomenti **realmente svolti**. Compito di Claude, ogni giorno di lezione:
   le manda (le presenze contengono nomi di minori → restano in scratchpad, NON
   nel repo).
 - **Tenere traccia** durante la lezione (anche voti "domande al volo": 70 OK / 50 KO).
+- **⏰ FIRMA ENTRO LE 14:05 (VINCOLANTE):** i registri vengono **inviati alle
+  14:05**; le ore **non firmate entro quell'ora** vengono **tolte dal monte ore
+  della Regione**. Perciò Nicola firma **subito in classe** il programma previsto
+  (anche con argomenti provvisori) e li corregge dopo. **Compito di Claude:
+  ricordare la firma IN AULA, prima delle 14:05** (non a fine giornata).
 - **A FINE giornata: CHIEDERE a Nicola gli argomenti realmente svolti** e
-  aggiornare (`ARGOMENTI-SVOLTI-2026-27.md`, senza nomi), e **ricordargli di
-  controllare/firmare** il registro.
+  aggiornare (`ARGOMENTI-SVOLTI-2026-27.md`, senza nomi). La firma è già stata
+  fatta prima (vedi sopra); a fine giornata si sistemano solo gli **argomenti**.
 
 **5. Libro di testo Classe 1 (workflow VINCOLANTE).** Ogni lezione produce un
 documento **MD + PDF versionato** (e si **archivia anche l'HTML** quando la resa
