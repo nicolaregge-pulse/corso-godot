@@ -103,6 +103,18 @@ spiegazione lunga. Serve a **non far scorrere la chat**. Comportamento:
 - Rispondere in modo **minimo o nullo** (al più un cenno brevissimo di presa in
   carico), mai un blocco esplicativo.
 
+**4. Registro (firma ore): segnare SEMPRE il PROGRAMMA INIZIALE su tutte le ore.**
+Logica di Nicola: firma in anticipo il programma previsto su ogni ora, per non
+rischiare di lasciare **ore non firmate**; a fine giornata lo aggiorna con gli
+argomenti **realmente svolti**. Compito di Claude, ogni giorno di lezione:
+- **Memorizzare** il programma previsto e le **presenze/assenze** quando Nicola
+  le manda (le presenze contengono nomi di minori → restano in scratchpad, NON
+  nel repo).
+- **Tenere traccia** durante la lezione (anche voti "domande al volo": 70 OK / 50 KO).
+- **A FINE giornata: CHIEDERE a Nicola gli argomenti realmente svolti** e
+  aggiornare (`ARGOMENTI-SVOLTI-2026-27.md`, senza nomi), e **ricordargli di
+  controllare/firmare** il registro.
+
 ## Contesto didattico
 
 - **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
