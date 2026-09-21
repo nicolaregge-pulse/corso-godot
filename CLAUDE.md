@@ -94,14 +94,20 @@ niente admin: usare SOLO ciò che è già presente):
 - Regola d'oro: **mai far installare programmi**. Solo Blocco note, browser,
   Godot portabile, SumatraPDF portabile.
 
-**3. Prefisso `PPP` = "prendi in considerazione ma NON rispondere".** Quando una
-riga di Nicola inizia con `PPP` (a voce, dettando, l'equivalente è **"parcheggia,
-parcheggia, parcheggia"**), è un **promemoria da annotare e tenere presente**
-nel lavoro, **non** una domanda: NON ci si costruisce sopra una risposta o una
-spiegazione lunga. Serve a **non far scorrere la chat**. Comportamento:
-- Registrare il contenuto come nota/promemoria e agirci quando pertinente.
-- Rispondere in modo **minimo o nullo** (al più un cenno brevissimo di presa in
-  carico), mai un blocco esplicativo.
+**3. Prefisso `PPP` = "prendi in considerazione ma NON dare l'output finché non
+dico avanti".** Quando una riga di Nicola inizia con `PPP` (a voce, dettando,
+l'equivalente è **"parcheggia, parcheggia, parcheggia"**), è un **promemoria da
+annotare**: NON si consegna il risultato finale / non si riempie la chat finché
+Nicola non dice **"avanti"**. Serve a **non far scorrere la chat**. Comportamento:
+- Registrare il contenuto come nota/promemoria.
+- **Iniziare a preparare** in silenzio (bozze, file, ragionamento), ma **non
+  consegnare** l'output finale finché non arriva **"avanti"**.
+- Rispondere in modo **minimo** (al più un cenno brevissimo di presa in carico),
+  mai un blocco esplicativo, finché non è dato l'"avanti".
+- **Eccezione:** se dentro il `PPP` c'è un'azione concreta esplicita (es. "dammi
+  il PDF il prima possibile", "committa"), quella si esegue subito.
+- Dettaglio completo nel file interno `REGOLE-NOSTRE-CLAUDE-NICOLA.md` (le nostre
+  convenzioni, da non confondere con le regole PER i ragazzi).
 
 **4. Registro (firma ore): segnare SEMPRE il PROGRAMMA INIZIALE su tutte le ore.**
 Logica di Nicola: firma in anticipo il programma previsto su ogni ora, per non
@@ -452,6 +458,7 @@ l'intestazione del file.
 2. `CORSO-INFORMATICA.md` — v1.16 (super-guida / indice generale)
 3. `PROMEMORIA-NICOLA.md` — v0.3 (cose da fare di Nicola)
 4. `01-GLOSSARIO.md` — v1.0
+5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.1 (convenzioni interne Nicola↔Claude, es. sigla PPP; NON sono le regole per i ragazzi)
 
 ### 2. Pianificazione didattica
 1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
@@ -512,7 +519,7 @@ l'intestazione del file.
 8i. `classe-1/libro-di-testo/libro-classe1.md` (+ `_build/libro-classe1.html` → `libro-classe1-v0.1.pdf`) — v0.1 (LIBRO DI TESTO Classe 1: raccoglie appunti/teoria/esercitazioni; cresce a ogni lezione; PDF per leggere, MD per l'AI dei ragazzi)
 8j. `classe-1/accesso-blocco-schermo/accesso-blocco-schermo.md` (+ `.html` → `Accesso-Blocco-Schermo-v1.0.pdf`) — v1.0 (scheda UNICA trilingue: Ctrl+Alt+Canc — login/logout, blocca/sblocca schermo; spiega tutte le voci del menu; con disegno della schermata; separata dalle Regole)
 8k. `classe-1/regole-classe/regole-classe.md` (+ `.html` → `Regole-Classe-v1.1.pdf`) — v1.1 (scheda UNICA trilingue: regole di comportamento in classe — alzare la mano ben alta + cenno del docente; attenzione/lavoro con l orologio sulla lavagna, niente YouTube, si aspetta l esercitazione su Classroom)
-8l. `classe-1/versioning/versioning.md` (+ `.html` → `Versioning-v2.1.pdf`) — v2.1 (scheda UNICA trilingue: flusso completo delle versioni, major/minor, ripartenza da .0 con nuova linea a ogni release principale; con disegno a due linee)
+8l. `classe-1/versioning/versioning.md` (+ `.html` → `Versioning-v2.2.pdf`) — v2.2 (scheda UNICA trilingue: flusso completo delle versioni, major/minor, ripartenza da .0 con nuova linea a ogni release principale; pagine con alberi eterogenei; grafo complesso stile Git con rami che si staccano e rientrano con merge sul ramo principale)
 9. `classe-1/esercizio-presentazione-famiglia/` — v1.2 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link + nota su indirizzi/bottoni nelle 3 lingue. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.2.pdf` + versione unica trilingue `...-v1.2.pdf` + **versione ILLUSTRATA** `...-IMMAGINI-v1.2.pdf` (disegni con frecce + QR per Classroom, per chi non legge italiano; `esercizio-immagini.html`))
 10. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
 11. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1
