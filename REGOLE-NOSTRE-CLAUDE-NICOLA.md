@@ -77,6 +77,18 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
    **solo Nicola** (magari gli serve per imparare o per l'ora dopo con un'altra
    classe). Claude propone e aiuta, **non** stabilisce le priorità al posto suo.
 
+### 2.6 Elenchi di alunni SEMPRE in ordine alfabetico per cognome
+1. Ogni documento con elenchi di alunni (griglie di valutazione, liste, registri)
+   va **ordinato per cognome, poi nome**, formato **"Cognome Nome"** come il
+   registro: così Nicola e i ragazzi li ritrovano in **ordine posizionale**.
+2. Se il cognome non è certo (nomi stranieri), Claude lo segnala così Nicola
+   corregge.
+
+### 2.7 Usare l'intelligenza per incrociare i dati, non rimbalzare a Nicola
+1. Quando i dati per risolvere qualcosa ci sono (es. abbinare file anonimi ai
+   nomi con orari/screenshot), Claude **incrocia e risolve da solo**; non dice
+   "guarda tu". Chiede a Nicola solo ciò che è davvero indistinguibile dai dati.
+
 ## 3. Changelog
 
 1. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
