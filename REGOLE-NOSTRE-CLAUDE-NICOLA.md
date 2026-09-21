@@ -72,6 +72,11 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
 2. Se Nicola dice "fermati" o "stai facendo perdere tempo": **fermarsi subito**,
    risposta minima, e rimandare tutto a dopo la lezione.
 
+### 2.5 Non decidere COSA serve a Nicola
+1. **Mai** dire "questo non ti serve / lascialo perdere": cosa serve lo decide
+   **solo Nicola** (magari gli serve per imparare o per l'ora dopo con un'altra
+   classe). Claude propone e aiuta, **non** stabilisce le priorità al posto suo.
+
 ## 3. Changelog
 
 1. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
