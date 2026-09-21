@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<title>Libro di Testo — Informatica Classe 1 — Corso di Informatica — Classe 1</title>
+<style>
+:root {
+  --godot-blue: #3a6ea5;
+  --godot-blue-dark: #2b3f57;
+  --ink: #201b16;
+  --muted: #6a6259;
+  --line: #d9d0c2;
+  --code-bg: #f5f2ec;
+  --tip-bg: #f6f1e6;
+  --tip-border: #b8933f;
+  --serif: "DejaVu Serif", Georgia, "Liberation Serif", serif;   /* standard doc 00: font unico DejaVu */
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 11.7pt; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.62;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- COPERTINA ---------- */
+.cover {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  page-break-after: always;
+  background: linear-gradient(170deg, #ffffff 0%, #f3ede1 100%);
+}
+.cover img.logo {
+  width: 190px;
+  height: auto;
+  margin-bottom: 30px;
+}
+.cover .title {
+  font-family: var(--serif);
+  font-size: 50pt;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.05;
+  margin: 0;
+}
+.cover .rule-cover {
+  width: 90px;
+  height: 2px;
+  background: var(--godot-blue);
+  margin: 20px 0 18px;
+}
+.cover .subtitle {
+  font-size: 22pt;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--godot-blue);
+  margin: 0;
+}
+.cover .emoji { font-size: 22pt; font-style: normal; }
+.cover .meta {
+  margin-top: 46px;
+  padding: 10px 24px;
+  border: 1px solid var(--godot-blue);
+  color: var(--godot-blue-dark);
+  font-size: 12.5pt;
+  letter-spacing: 0.5px;
+  background: #fff;
+}
+.cover .author {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 12pt;
+  font-style: italic;
+}
+
+/* ---------- CONTENUTO ---------- */
+main { padding: 0; }
+
+/* ---------- APERTURA DI CAPITOLO (stile libro) ---------- */
+.chapter {
+  page-break-before: always;
+  text-align: center;
+  margin: 0 0 30px;
+  padding-top: 6mm;
+}
+main > .chapter:first-child { page-break-before: avoid; }
+.chapter .kicker {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--godot-blue);
+  margin-bottom: 12px;
+}
+h2.ctitle {
+  font-family: var(--serif);
+  font-size: 27pt;
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--ink);
+  margin: 0 auto;
+  max-width: 88%;
+  page-break-after: avoid;
+}
+.chapter .csub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12.5pt;
+  color: var(--muted);
+  margin: 10px auto 0;
+  max-width: 82%;
+  line-height: 1.4;
+}
+.chapter .csub code { font-style: normal; }
+.chapter::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--godot-blue);
+  margin: 16px auto 0;
+}
+
+/* Sezione normale (##) nello standard doc 00: a sinistra, scorre nel testo */
+h2.sec {
+  font-family: var(--serif);
+  font-size: 16.5pt;
+  font-weight: 700;
+  color: var(--godot-blue-dark);
+  text-align: left;
+  margin: 24px 0 8px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--godot-blue);
+  page-break-after: avoid;
+}
+
+/* sottotitoli di sezione dentro il capitolo */
+h3 {
+  font-family: var(--serif);
+  font-size: 15.5pt;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--godot-blue-dark);
+  text-align: left;
+  margin: 26px 0 8px;
+  page-break-after: avoid;
+}
+h4 {
+  font-size: 12.5pt;
+  text-align: left;
+  margin: 18px 0 6px;
+  page-break-after: avoid;
+}
+
+p { margin: 0 0 11px; }
+
+a { color: var(--godot-blue); text-decoration: none; }
+
+strong { color: #16324a; }
+
+code {
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+}
+
+/* Codice: NERO SU BIANCO (fondo chiaro) — pensato per la STAMPA: niente
+   blocchi scuri che sprecano toner. Colori di sintassi scuri, ben leggibili. */
+pre.code {
+  background: #faf8f3;
+  color: #1c1712;
+  padding: 14px 16px;
+  border-radius: 6px;
+  white-space: pre-wrap;       /* manda a capo le righe lunghe: niente testo tagliato */
+  overflow-wrap: anywhere;
+  font-size: 9pt;
+  line-height: 1.5;
+  text-align: left;
+  margin: 14px 0 16px;
+  border: 1px solid var(--line);
+}
+pre.code code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+pre.code .kw  { color: #9a3b0c; font-weight: 700; }
+pre.code .str { color: #276b2a; }
+pre.code .num { color: #6a34a8; }
+pre.code .com { color: #8a7f6f; font-style: italic; }
+
+/* ---------- TABELLE ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0 20px;
+  font-size: 10pt;
+  text-align: left;
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 7px 11px;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: var(--godot-blue);
+  color: #fff;
+  font-weight: 700;
+}
+tr:nth-child(even) td { background: #f7f4ee; }
+
+/* ---------- CITAZIONI / SUGGERIMENTI ---------- */
+blockquote {
+  margin: 16px 0;
+  padding: 12px 18px;
+  background: var(--tip-bg);
+  border-left: 4px solid var(--tip-border);
+  color: #3a342b;
+  font-style: italic;
+  text-align: left;
+  page-break-inside: avoid;
+}
+blockquote p { margin: 0; }
+blockquote p + p { margin-top: 8px; }
+
+/* ---------- BOX COLORATI SEMANTICI (standard doc 00, punto 8) ---------- */
+.box {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-left: 5px solid;
+  border-radius: 4px;
+  text-align: left;
+  page-break-inside: avoid;
+}
+.box p { margin: 0; }
+.box p + p { margin-top: 8px; }
+.box .box-tag {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 9pt;
+  margin-bottom: 5px;
+}
+.box-rosso  { background: #fdecea; border-color: #c0392b; }
+.box-rosso  .box-tag { color: #a4271b; }
+.box-blu    { background: #eaf1f8; border-color: #3a6ea5; }
+.box-blu    .box-tag { color: #274b73; }
+.box-giallo { background: #fbf3e2; border-color: #b8933f; }
+.box-giallo .box-tag { color: #8a6d1f; }
+
+/* ---------- IMMAGINI ---------- */
+figure.fig {
+  margin: 20px 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+figure.fig img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+}
+figure.fig figcaption {
+  margin-top: 9px;
+  font-size: 9.5pt;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Segnaposto per uno screenshot non ancora inserito */
+figure.fig .ph {
+  border: 2px dashed #b9a97f;
+  background: #fbf7ee;
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+}
+figure.fig .ph-tag {
+  font-weight: 700;
+  color: #8a6d1f;
+  font-size: 11pt;
+}
+figure.fig .ph-desc {
+  color: #5a5147;
+  font-size: 10pt;
+  font-style: italic;
+  margin-top: 6px;
+}
+figure.fig .ph-file {
+  margin-top: 8px;
+  font-size: 9.5pt;
+  color: #6a6259;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 24px 0;
+}
+
+/* Liste: numerate e gerarchiche (1, 1.1, 1.1.2) via counter — standard doc 00 */
+ol {
+  list-style: none;
+  counter-reset: item;
+  margin: 0 0 12px;
+  padding-left: 2.2em;
+  text-align: left;
+}
+ol > li {
+  counter-increment: item;
+  margin: 4px 0;
+}
+ol > li::before {
+  content: counters(item, ".") ". ";
+  font-weight: 700;
+  color: var(--godot-blue-dark);
+}
+ul { list-style: disc; margin: 0 0 12px; padding-left: 24px; text-align: left; }
+ul li { margin: 4px 0; }
+
+/* ---------- LIVELLI DI AIUTO (i 4 livelli dell'eserciziario) ---------- */
+/* Nel PDF sono mostrati APERTI; il colore del bordo segue il pallino. */
+details.livello {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--line);
+  border-radius: 5px;
+  margin: 14px 0;
+  padding: 0 16px 8px;
+  background: #fcfaf5;
+  text-align: left;
+}
+details.livello > summary {
+  list-style: none;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 12.5pt;
+  padding: 9px 16px;
+  margin: 0 -16px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #f0ebe0;
+  page-break-after: avoid;
+}
+details.livello > summary::-webkit-details-marker { display: none; }
+details.livello > summary::marker { content: ""; }
+details.lv2 { border-left-color: #d9a400; }
+details.lv2 > summary { background: #fbf1cd; }
+details.lv3 { border-left-color: #de7a1a; }
+details.lv3 > summary { background: #fbe3cc; }
+details.lv4 { border-left-color: #d23b3b; }
+details.lv4 > summary { background: #f7dada; }
+</style>
+</head>
+<body>
+  <section class="cover">
+    
+    <div class="title">Libro di Testo — Informatica Classe 1</div>
+    <div class="rule-cover"></div>
+    <div class="subtitle">Corso di Informatica — Classe 1</div>
+    <div class="meta">Versione 0.1 · 21/09/2026</div>
+    <div class="author">Corso a cura del prof. Nicola Regge</div>
+  </section>
+  <main>
+    <h2 id="0-come-lavoriamo-leggere-per-prime" class="sec">0. Come lavoriamo (leggere per prime)</h2>
+<ol>
+<li>Ogni lezione: <strong>carta e penna sul banco</strong> per appunti e schemi a mano.</li>
+<li>Si lavora <strong>un passo alla volta</strong>, con un risultato concreto da vedere subito.</li>
+<li>
+<p>Consegne e materiali stanno su <strong>Google Classroom</strong>; i documenti si scrivono
+ con <strong>Google Documenti</strong>.</p>
+</li>
+<li>
+<p><strong>L&rsquo;AI aiuta a capire, non a saltare il pensiero</strong>: la prova che hai capito è
+ <strong>saperlo spiegare a voce</strong> con parole tue.</p>
+</li>
+<li>
+<p>Chi scrive meglio nella propria lingua può scrivere in <strong>arabo/cinese</strong> e poi
+ tradurre in italiano con Google Traduttore.</p>
+</li>
+</ol>
+<h2 id="1-che-cose-linformatica" class="sec">1. Che cos&rsquo;è l&rsquo;informatica</h2>
+<ol>
+<li>
+<p>L&rsquo;informatica è la scienza che studia come <strong>trattare le informazioni</strong> con
+ strumenti automatici: il computer riceve dati (input), li elabora e restituisce
+ risultati (output).</p>
+</li>
+<li>
+<p>Il computer da solo non &ldquo;capisce&rdquo;: esegue <strong>istruzioni</strong> precise che gli diamo.</p>
+</li>
+<li>Impareremo a usare bene gli strumenti (computer, Google, Git) e, più avanti, a
+ creare noi qualcosa (siti, giochi).</li>
+</ol>
+<h2 id="2-il-computer-e-le-sue-parti" class="sec">2. Il computer e le sue parti</h2>
+<ol>
+<li><strong>CPU (processore):</strong> il &ldquo;cervello&rdquo;, esegue tutti i calcoli.</li>
+<li>
+<p><strong>RAM (memoria):</strong> memoria di lavoro, veloce ma <strong>temporanea</strong> (si svuota allo
+ spegnimento).</p>
+</li>
+<li>
+<p><strong>Hard Disk / SSD:</strong> dove si salvano i file in modo <strong>permanente</strong> (restano
+ anche da spento).</p>
+</li>
+<li>
+<p><strong>Scheda madre:</strong> la base che collega e fa comunicare tutti i pezzi.</p>
+</li>
+<li><strong>Scheda video (GPU):</strong> disegna la grafica (immagini, video, giochi).</li>
+<li><strong>Alimentatore:</strong> porta la corrente a tutti i pezzi.</li>
+<li><strong>Case:</strong> la scatola che contiene e protegge tutto.</li>
+</ol>
+<h3 id="21-come-si-assembla-dove-va-ogni-pezzo">2.1 Come si assembla (dove va ogni pezzo)</h3>
+<ol>
+<li>La <strong>scheda madre</strong> si fissa alla parete di fondo del <strong>case</strong>.</li>
+<li>
+<p>La <strong>CPU</strong> va nello zoccolo (socket) al centro-alto della scheda madre; sopra
+ il dissipatore con la ventola.</p>
+</li>
+<li>
+<p>La <strong>RAM</strong> entra negli slot lunghi accanto alla CPU (fino al &ldquo;clic&rdquo;).</p>
+</li>
+<li>La <strong>scheda video</strong> va nello slot PCIe, in basso sulla scheda madre.</li>
+<li>L&rsquo;<strong>Hard Disk/SSD</strong> nel vano del case, collegato con un cavo alla scheda madre.</li>
+<li>L&rsquo;<strong>alimentatore</strong> in basso nel case; dà corrente a tutti.</li>
+</ol>
+<h3 id="22-scegliere-i-pezzi-compatibilita-e-budget">2.2 Scegliere i pezzi (compatibilità e budget)</h3>
+<ol>
+<li>
+<p>Con il sito <code>it.pcpartpicker.com/list/</code> (modalità <strong>Builder</strong>) si sceglie un
+ pezzo per ogni categoria.</p>
+</li>
+<li>
+<p>Il sito <strong>controlla la compatibilità</strong> (avvisa in rosso se due pezzi non vanno
+ insieme) e <strong>somma il prezzo totale</strong>.</p>
+</li>
+<li>
+<p>Obiettivo: montare un PC che funzioni <strong>entro un budget</strong> (es. 700 €).</p>
+</li>
+</ol>
+<h2 id="3-utenze-e-aree-di-lavoro" class="sec">3. Utenze e aree di lavoro</h2>
+<ol>
+<li>
+<p><strong>Account e password:</strong> ognuno ha il proprio account della scuola; la password
+ va tenuta al sicuro e robusta (lunga, con lettere, numeri e simboli).</p>
+</li>
+<li>
+<p><strong>Le aree:</strong> cartella personale in rete + spazio su <strong>Google Drive</strong>; i file si
+ organizzano in <strong>cartelle e sottocartelle</strong> (area logica).</p>
+</li>
+<li>
+<p><strong>Chiudere bene il computer:</strong> quando hai finito, blocca o disconnetti con
+ <code>Ctrl + Alt + Canc</code>; non lasciare il PC aperto e incustodito.</p>
+</li>
+</ol>
+<h2 id="4-google-suite-e-classroom" class="sec">4. Google Suite e Classroom</h2>
+<ol>
+<li><strong>Google Documenti:</strong> il programma per scrivere i testi (si salva da solo).</li>
+<li>
+<p><strong>Consegnare un compito su Classroom:</strong> aprire il corso &ldquo;Lavori del corso&rdquo; 
+ il compito &ldquo;Aggiungi o crea&rdquo; &ldquo;Documenti Google&rdquo; scrivere &ldquo;Consegna&rdquo;.</p>
+</li>
+<li>
+<p><strong>Il voto:</strong> l&rsquo;allievo vede il voto <strong>solo dopo</strong> che il docente clicca
+ &ldquo;Restituisci&rdquo;.</p>
+</li>
+</ol>
+<h2 id="5-github-e-i-repository" class="sec">5. GitHub e i repository</h2>
+<ol>
+<li>
+<p><strong>GitHub</strong> è un sito dove i programmatori <strong>salvano e condividono</strong> il codice
+ dei loro progetti e collaborano.</p>
+</li>
+<li>
+<p><strong>Repository (repo):</strong> la &ldquo;cartella-progetto&rdquo; digitale che contiene tutti i
+ file <strong>e la storia di ogni modifica</strong> fatta nel tempo.</p>
+</li>
+<li>
+<p>A cosa serve la storia delle modifiche: si può <strong>tornare a una versione
+ precedente</strong> se qualcosa va storto, e si capisce chi ha cambiato cosa e quando.</p>
+</li>
+<li>
+<p><strong>Git</strong> è il sistema che tiene traccia delle modifiche; <strong>GitHub</strong> è il sito
+ che ospita i progetti online.</p>
+</li>
+</ol>
+<h2 id="6-sicurezza-e-regole-di-laboratorio" class="sec">6. Sicurezza e regole di laboratorio</h2>
+<ol>
+<li><strong>Password robuste</strong> e mai condivise; attenzione a e-mail sospette (phishing).</li>
+<li>
+<p><strong>Regole &ldquo;quando hai finito&rdquo;</strong>: niente giochi, niente YouTube, niente cose che
+ fanno rumore; resti al tuo posto; blocca/esci col <code>Ctrl + Alt + Canc</code>.</p>
+</li>
+<li>
+<p><strong>Se hai finito</strong>: ripassa, fai lo schema a mano sul quaderno, aiuta un
+ compagno, prova a spiegare a voce cosa hai capito.</p>
+</li>
+</ol>
+<h2 id="7-esercitazioni-svolte" class="sec">7. Esercitazioni svolte</h2>
+<ol>
+<li>
+<p><strong>Io e la mia famiglia</strong> — presentazione di sé e della famiglia con Google
+ Documenti, consegna su Classroom (anche scrivendo nella propria lingua +
+ traduzione).</p>
+</li>
+<li>
+<p><strong>Ricerca: cos&rsquo;è GitHub e cos&rsquo;è un repository</strong> — piccola ricerca in rete,
+ scritta in un documento e consegnata su Classroom.</p>
+</li>
+<li>
+<p><strong>I componenti del PC</strong> — per ogni componente spiegare a cosa serve con parole
+ proprie + due domande personali.</p>
+</li>
+<li>
+<p><strong>Costruisci il tuo PC</strong> — montare un PC compatibile a budget con PCPartPicker
+ (Builder) e scrivere la lista con il prezzo totale.</p>
+</li>
+</ol>
+<h2 id="8-glossario-essenziale" class="sec">8. Glossario (essenziale)</h2>
+<ol>
+<li><strong>CPU:</strong> processore, il &ldquo;cervello&rdquo; del PC.</li>
+<li><strong>RAM:</strong> memoria di lavoro veloce e temporanea.</li>
+<li><strong>SSD/Hard Disk:</strong> memoria permanente dove si salvano i file.</li>
+<li><strong>Repository:</strong> cartella-progetto con i file e la storia delle modifiche.</li>
+<li><strong>Commit:</strong> un salvataggio (una &ldquo;fotografia&rdquo;) delle modifiche fatte.</li>
+<li><strong>Compatibilità:</strong> quando due pezzi funzionano bene insieme.
+(Il glossario completo multilingue è nel documento <code>glossario-l2</code>.)</li>
+</ol>
+<h2 id="9-changelog" class="sec">9. Changelog</h2>
+<ol>
+<li><strong>v0.1 (21/09/2026)</strong>: prima versione. Come lavoriamo; cos&rsquo;è l&rsquo;informatica; il
+ computer e le sue parti (+ assemblaggio + scelta pezzi); utenze e aree; Google
+ Suite e Classroom; GitHub e repository; sicurezza e regole di laboratorio;
+ elenco esercitazioni svolte; glossario essenziale.</li>
+</ol>
+  </main>
+</body>
+</html>

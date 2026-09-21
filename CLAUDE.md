@@ -115,6 +115,14 @@ argomenti **realmente svolti**. Compito di Claude, ogni giorno di lezione:
   aggiornare (`ARGOMENTI-SVOLTI-2026-27.md`, senza nomi), e **ricordargli di
   controllare/firmare** il registro.
 
+**5. Libro di testo Classe 1 (workflow VINCOLANTE).** Ogni lezione produce un
+documento **MD + PDF versionato** (e si **archivia anche l'HTML** quando la resa
+è da HTML). Poi Claude **aggiunge automaticamente** quel contenuto al **libro di
+testo complessivo** `classe-1/libro-di-testo/libro-classe1.md` (bump versione +
+voce nel changelog). Il **PDF serve per leggere/stampare**, l'**MD si dà ai
+ragazzi per la loro AI** (che spiega/traduce nella loro lingua). **Claude mette
+SEMPRE tutto su Git e lo tiene aggiornato** (MD, PDF e HTML).
+
 ## Contesto didattico
 
 - **Docente:** Nicola. Sta imparando Godot in prima persona, in parallelo ai
@@ -501,6 +509,7 @@ l'intestazione del file.
 8f. `classe-1/costruisci-pc/costruisci-pc.md` (+ HTML IT/AR/ZH → `Costruisci-PC-IT/AR/ZH-v1.0.pdf`) — v1.0 (consegna: montare un PC con it.pcpartpicker.com in modalità Builder, componenti compatibili a budget; lista+prezzo in Google Documenti, consegna su Classroom; 3 file monolingui)
 8g. `classe-1/componenti-pc-compito/componenti-pc.md` (+ HTML IT/AR/ZH → `Componenti-PC-IT/AR/ZH-v1.0.pdf`) — v1.0 (consegna dopo i componenti fisici: spiegare a cosa serve ogni pezzo con parole proprie + domande personali anti copia/AI; consegna su Classroom o foto; 3 file monolingui)
 8h. `classe-1/regole-fine-lavoro/regole-fine.md` (+ HTML IT/AR/ZH → `Regole-Fine-Lavoro-IT/AR/ZH-v1.0.pdf`) — v1.0 (regole di laboratorio 'quando hai finito o non hai niente da fare': no giochi/YouTube/rumore, resti al posto, blocca/esci col Ctrl+Alt+Canc, + cosa fare di utile; 3 file monolingui da caricare su Classroom)
+8i. `classe-1/libro-di-testo/libro-classe1.md` (+ `_build/libro-classe1.html` → `libro-classe1-v0.1.pdf`) — v0.1 (LIBRO DI TESTO Classe 1: raccoglie appunti/teoria/esercitazioni; cresce a ogni lezione; PDF per leggere, MD per l'AI dei ragazzi)
 9. `classe-1/esercizio-presentazione-famiglia/` — v1.2 (esercizio "Io e la mia famiglia": presentazione di sé/famiglia con Google Documenti + consegna su Classroom; passo-passo "a prova di errore" con spiegazione dei 2 link + nota su indirizzi/bottoni nelle 3 lingue. Fonte `esercizio-presentazione-famiglia.md`; **3 file monolingui** `...-IT/AR/ZH-v1.2.pdf` + versione unica trilingue `...-v1.2.pdf` + **versione ILLUSTRATA** `...-IMMAGINI-v1.2.pdf` (disegni con frecce + QR per Classroom, per chi non legge italiano; `esercizio-immagini.html`))
 10. `classe-1/negozio-online/GUIDA-RAGAZZI.md` — v1.5
 11. `classe-1/negozio-online/PIANO-LEZIONE.md` — v1.1

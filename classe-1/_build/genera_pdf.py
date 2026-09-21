@@ -77,6 +77,7 @@ DOCS = {
     "guida-negozio": {"src": "negozio-online/GUIDA-RAGAZZI.md", "title": "Il Mio Negozio Online"},
     "piano-lezione": {"src": "negozio-online/PIANO-LEZIONE.md", "title": "Piano-lezione: Il Mio Negozio Online"},
     "materiale":     {"src": "MATERIALE-PRONTO.md",             "title": "Materiale del Corso — Classe 1"},
+    "libro-classe1": {"src": "libro-di-testo/libro-classe1.md", "title": "Libro di Testo — Informatica Classe 1"},
     "programma":     {"src": "programma.md",                    "title": "Programma del Corso"},
     "programma-2":   {"src": "../classe-2/programma.md",        "title": "Programma del Corso — Classe 2"},
     "condizioni-if-then": {"src": "../classe-2/condizioni-if-then.md", "title": "Le Condizioni — SE… ALLORA… (IF/THEN/ELSE) e IFTTT (Classe 2)"},
