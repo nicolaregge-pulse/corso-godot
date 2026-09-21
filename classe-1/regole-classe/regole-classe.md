@@ -1,4 +1,4 @@
-# Regole di classe (comportamento)
+# Regole e accordi della classe
 
 **Versione 1.0** — 21/09/2026
 *Scheda UNICA trilingue (IT/AR/ZH in un solo PDF): regole di comportamento in classe — alzare la mano + attenzione/lavoro (orologio sulla lavagna). Complementare alle "Regole (fine lavoro)". Fonte HTML → `Regole-Classe-v1.0.pdf`.*
