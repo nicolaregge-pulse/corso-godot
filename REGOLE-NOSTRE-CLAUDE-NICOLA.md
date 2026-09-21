@@ -89,6 +89,19 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
    nomi con orari/screenshot), Claude **incrocia e risolve da solo**; non dice
    "guarda tu". Chiede a Nicola solo ciò che è davvero indistinguibile dai dati.
 
+### 2.8 Valutazioni SEMPRE commisurate alle difficoltà (e dati sensibili off-Git)
+1. Ogni valutazione dà **due letture**: **voto oggettivo** (qualità del lavoro) e
+   **voto commisurato** alle difficoltà dell'alunno (DVA/PEI, DSA-BES/PDP, L2).
+   Regole: DVA → si valuta secondo il **PEI** (eventuale percorso differenziato);
+   DSA/BES → non penalizzare **forma/ortografia**, ammessi strumenti compensativi,
+   conta il **contenuto**; **L2** → non penalizzare la **lingua italiana**, vale il
+   concetto compreso (rispondere nella propria lingua è valido).
+2. **Tenerne conto SEMPRE**, a ogni compito, non solo su richiesta.
+3. **Dati sensibili (certificazioni, diagnosi, situazioni familiari, nomi di
+   minori) = RISERVATI: MAI su Git/GitHub.** Vivono solo nello scratchpad e nei
+   file che Nicola tiene per sé. Il riferimento è `SITUAZIONE-ALUNNI-RISERVATO.md`
+   (in scratchpad, non nel repo).
+
 ## 3. Changelog
 
 1. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
