@@ -1,6 +1,6 @@
 # Materiale del Corso — Classe 1 (Informatica)
 
-**Versione 1.4** — 16/08/2026
+**Versione 1.5** — 23/09/2026
 *Documento per il docente. L'elenco di tutto il materiale pronto e degli esercizi
 già fatti, con lo stato di ciascuno. Si aggiorna man mano che il corso cresce.*
 
@@ -51,6 +51,22 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
+## 2b. Schede e attività pronte (settembre 2026)
+
+Materiale creato con l'inizio della scuola, quasi tutto **trilingue (IT/AR/ZH)** e con PDF consegnabile. Elenco per aree (dettaglio e versioni nell'indice di `CLAUDE.md`):
+
+| Area | Materiali pronti (≥ v1.0) |
+|---|---|
+| **Regole e ambiente** | `regole-classe` (v1.1), `regole-fine-lavoro` (v1.0), `accesso-blocco-schermo` (v1.0) |
+| **Hardware / PC** | `parti-del-pc` (v1.0), `componenti-pc-compito` (v1.0), `costruisci-pc` (v1.0), compito hardware (PDF v1.2) |
+| **Versioning** | scheda `versioning` (v2.3, con grafo stile Git) + quiz su Moduli (v1.1) |
+| **G Suite / Classroom** | `esercizio-presentazione-famiglia` (v1.2) |
+| **Git (avvicinamento)** | `ricerca-github` (v1.0) |
+| **Inclusione / L2** | `glossario-l2` (v1.0) |
+| **Libro di testo Classe 1** | `libro-di-testo/libro-classe1.md` (v0.1, cresce a ogni lezione) |
+
+In bozza (da completare): i due laboratori (`laboratorio-01`, `laboratorio-02`, v0.1), `github-crea-account` (v0.2), `attivita-blocchi` (v0.1), `consegna-senza-tastiera` (v0.1).
+
 ## 3. Strumenti
 
 | Cosa | A cosa serve |
@@ -71,6 +87,5 @@ nella guida e fare una **prova a freddo**.
 
 ## Dove sta tutto
 
-Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
-cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
-consegnabile accanto.
+Repository del corso (ramo principale `main`), cartella **`classe-1/`**. Ogni
+documento ha la sua fonte `.md` e il `.pdf` consegnabile accanto.

@@ -1,6 +1,6 @@
 # Promemoria — Cose da Fare (Nicola)
 
-**Versione 0.3** — 02/09/2026
+**Versione 0.4** — 23/09/2026
 *Lista viva delle cose che Nicola deve fare, tenuta aggiornata da Claude. Non sono
 documenti da produrre (quelli li fa Claude): sono AZIONI che spettano a Nicola, a
 scuola o al computer. All'inizio della scuola, e ogni volta che Nicola chiede
@@ -24,6 +24,13 @@ cosa nuova, entra qui.*
 1. [DA FARE] Fornire a Claude l'esportazione del registro (Excel) di ogni classe, cosi Claude genera il programma svolto per la Regione (Allegato A aggiornato, per anno e classe).
 2. [DA FARE] Man mano che si svolgono gli argomenti, aggiornare l'Allegato A della classe (togliere il giallo a cio che e fatto, cancellare cio che non si e fatto).
 
-## 4. Il primo giorno di scuola: 14 settembre 2026
-1. Primo giorno di lezione: 14/9/2026. E impostato un promemoria automatico per quel giorno, che ricorda a Nicola questa lista.
-2. Quel giorno: rivedere le cose da fare, e annotare le cose nuove che Nicola dira (anche se le fara piu avanti).
+## 4. Inizio scuola (storico)
+1. [FATTO] Primo giorno di lezione: 14/09/2026. La scuola e iniziata; le lezioni della Classe 1 sono in corso (a fine settembre: hardware, GitHub, versioning).
+2. Regola che resta valida: a ogni lezione si rivede questa lista e si annotano le cose nuove che Nicola dice (anche se le fara piu avanti).
+
+## 5. Account GitHub degli allievi (in corso, Classe 1)
+1. [IN CORSO] Creare gli account GitHub degli allievi della prima, uno alla volta. Ostacolo emerso in aula: la rete della scuola ha un solo indirizzo (NAT), quindi GitHub blocca con "too many requests" quando molti si registrano insieme. Ripieghi: registrarsi con email+password (non col bottone Google), usare i dati mobili del telefono, oppure creare gli account da casa.
+
+## 6. Changelog
+1. **v0.4 (23/09/2026)**: archiviato come storico il "14 settembre" (scuola iniziata); aggiunta la voce sugli account GitHub degli allievi e sul blocco "too many requests".
+2. **v0.3 (02/09/2026)**: ruoli assegnati; attivazione repository allievi con Classroom 50; verifiche Gemini e Allegato A.

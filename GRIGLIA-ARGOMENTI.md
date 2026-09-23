@@ -1,6 +1,6 @@
 # Griglia degli Argomenti — scelta per anno
 
-**Versione 1.16** — 15/09/2026
+**Versione 1.17** — 23/09/2026
 *Griglia di lavoro. Per ogni macro-area (solo quelle di Regge) c'e l'elenco degli
 argomenti, uno per riga, con quattro colonne 1a/2a/3a/4a (l'anno in cui l'argomento
 puo stare) e una colonna "Comp." che indica l'area di competenza dell'Allegato A
@@ -122,7 +122,7 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 | Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X | 17 |
 | Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X | 17 |
 | Interpretato e compilato; Lazarus e Delphi |  | X | X |  | 17 |
-| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  |  | X | X | 17 |
+| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  | X | X | X | 17 |
 | GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  |  | X | X | 17 |
 | Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  |  | X | X | 17 |
 | Game loop: _process(delta) e il movimento a fotogrammi |  |  | X | X | 17 |
@@ -134,7 +134,7 @@ fine anno serve a collocare cio che e stato svolto nella competenza giusta.*
 
 > [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
 
-> [GIALLO] Godot e GDScript (CONFERMATO in 3a e 4a): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte ed e un libro di testo organico spalmato su 2-3 anni. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Si introduce in 3a e si sviluppa in 4a.
+> [GIALLO] Godot e GDScript (collocazione decisa da Nicola il 17/09/2026): Godot arriva DOPO Lazarus. Si INTRODUCE come assaggio gia a fine 1a / in 2a (il "vinci subito": il bottone che saluta, i 4 concetti base) e si SVILUPPA davvero in 3a e 4a (movimento, collisioni, primo gioco 2D, fino al "progetto boss" 3D). I tempi esatti dipendono dalla DINAMICA della classe. Queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), un libro di testo organico spalmato su 2-3 anni.
 
 ## 9. Database e gestione dei dati
 
@@ -212,12 +212,12 @@ DB Browser for SQLite portable
 | Argomento | 1a | 2a | 3a | 4a | Comp. |
 |---|:--:|:--:|:--:|:--:|:--:|
 | Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X | 15/17 |
-| Giochi con Godot: dai semplici ai piu strutturati |  |  | X | X | 17 |
+| Giochi con Godot: dai semplici ai piu strutturati (assaggio dopo Lazarus, sviluppo in 3a-4a) |  | X | X | X | 17 |
 | Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X | 16 |
 
 > [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
 
-> [GIALLO] Giochi con Godot (CONFERMATO in 3a e 4a): come per Godot/GDScript nel capitolo 8. C'e anche il corso dedicato di Godot, gestito a parte.
+> [GIALLO] Giochi con Godot: come per Godot/GDScript nel capitolo 8 — assaggio dopo Lazarus (fine 1a/2a) e sviluppo in 3a-4a, con tempi legati alla dinamica della classe. C'e anche il corso dedicato di Godot, gestito a parte.
 
 > [GIALLO] Cablaggio RJ45: CONFERMATO in 3a e 4a.
 

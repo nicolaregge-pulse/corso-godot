@@ -450,7 +450,7 @@ Repo del corso (nicolaregge-pulse/corso-godot) — layout OBIETTIVO:
   └── progetto-gruppo/   (Fase 2: progetto che evolve con branch/PR/release)
 ```
 
-## ⭐ Elenco documenti e versioni (indice, aggiornato 02/09/2026)
+## ⭐ Elenco documenti e versioni (indice, aggiornato 23/09/2026)
 
 Ogni documento del corso porta un **numero di versione** nella propria
 intestazione (`**Versione X.Y**`). Questo è l'indice di riferimento: quando un
@@ -459,16 +459,16 @@ riga qui sotto. La fonte di verità della singola versione resta sempre
 l'intestazione del file.
 
 ### 1. Riferimento e stato
-1. `00-STATO-DEL-CORSO.md` — v2.2 (fonte di verità: decisioni e stato)
-2. `CORSO-INFORMATICA.md` — v1.16 (super-guida / indice generale)
-3. `PROMEMORIA-NICOLA.md` — v0.3 (cose da fare di Nicola)
-4. `01-GLOSSARIO.md` — v1.0
+1. `00-STATO-DEL-CORSO.md` — v2.3 (fonte di verità: decisioni e stato)
+2. `CORSO-INFORMATICA.md` — v1.17 (super-guida / indice generale)
+3. `PROMEMORIA-NICOLA.md` — v0.4 (cose da fare di Nicola)
+4. `01-GLOSSARIO.md` — v1.1
 5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.3 (convenzioni interne Nicola↔Claude, es. sigla PPP; NON sono le regole per i ragazzi)
 
 ### 2. Pianificazione didattica
 1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
 2. `MENU-CONTENITORI.md` — v0.1 (menu dei contenitori per i ragazzi: cosa possiamo fare + percorso a imbuto sui 4 anni)
-3. `GRIGLIA-ARGOMENTI.md` — v1.16 (argomenti per anno + colonna competenze)
+3. `GRIGLIA-ARGOMENTI.md` — v1.17 (argomenti per anno + colonna competenze; Godot: assaggio dopo Lazarus 1ª/2ª, sviluppo 3ª-4ª)
 4. `PIANO-ORE-LEZIONE.md` — v0.4 (piano ora-per-ora, 4 anni)
 
 ### 3. Regole, standard e organizzazione
@@ -509,7 +509,7 @@ l'intestazione del file.
 
 ### 6. Materiali della Classe 1
 1. `classe-1/README.md` — v1.0
-2. `classe-1/MATERIALE-PRONTO.md` — v1.4
+2. `classe-1/MATERIALE-PRONTO.md` — v1.5 (aggiornato con i materiali di settembre 2026)
 3. `classe-1/scheda-configuratore-pc.md` — v0.3
 4. `classe-1/bussola-mondo-del-lavoro.md` — v0.2
 5. `classe-1/da-far-fare-assolutamente.md` — v0.2
