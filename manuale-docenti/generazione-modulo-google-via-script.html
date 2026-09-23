@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A4;margin:16mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",sans-serif;color:#1a1a1a;margin:0;font-size:11pt;line-height:1.5;}
+h1{font-size:18pt;color:#16324a;margin:0 0 4px;border-bottom:2.5px solid #16324a;padding-bottom:6px;}
+h2{font-size:13pt;color:#16324a;border-bottom:1.5px solid #3a6ea5;padding-bottom:2px;margin:16px 0 6px;page-break-after:avoid;}
+ol{margin:5px 0;padding-inline-start:26px;}li{margin:4px 0;}p em{color:#3a5266;}strong{color:#16324a;}
+pre{background:#f6f8fb;border:1px solid #ccd6e0;border-radius:6px;padding:7px 11px;font-family:"Liberation Mono",monospace;font-size:9.5pt;white-space:pre-wrap;word-break:break-word;}
+code{font-family:"Liberation Mono",monospace;background:#f2f4f7;padding:1px 4px;border-radius:3px;}
+</style></head><body><h1>Manuale docenti — Generazione di un Modulo Google via script</h1>
+<p><strong>Versione 0.1</strong> — 23/09/2026
+<em>Capitolo del manuale per i docenti: come creare in automatico un'esercitazione
+(quiz) su Google Moduli usando un piccolo script (Google Apps Script), invece di
+inserire le domande a mano una per una. Basato sulla procedura provata in classe
+il 23/09/2026 (funzionante). Documento interno per il docente.</em></p>
+<h2>00 A cosa serve</h2>
+<ol>
+<li>Creare un <strong>quiz/esercitazione su Google Moduli</strong> in automatico, con le
+   domande, le risposte esatte e il <strong>punteggio automatico</strong> già impostati.</li>
+<li>È molto utile quando le domande sono <strong>tante</strong> o <strong>trilingui</strong> (IT/AR/ZH):
+   scriverle a mano nel Modulo sarebbe lunghissimo.</li>
+<li>Lo script si esegue <strong>una volta</strong> e genera il Modulo pronto.</li>
+</ol>
+<h2>01 L'idea in breve</h2>
+<ol>
+<li>Uno <strong>script</strong> è un piccolo programma. Il nostro legge un <strong>elenco di domande</strong>
+   e costruisce il Modulo al posto nostro.</li>
+<li>Ogni domanda ha un <strong>testo</strong> e alcune <strong>opzioni</strong>; una è segnata come giusta.</li>
+<li>Lo script mette tutto nel Modulo e attiva il punteggio automatico.</li>
+</ol>
+<h2>02 Com'è fatto lo script (struttura)</h2>
+<ol>
+<li>Comincia con <code>function creaQuiz(){</code> e finisce con <code>}</code>.</li>
+<li>Contiene un elenco <code>D</code> con <strong>una riga per domanda</strong>. Ogni riga è così:
+   <code>["Testo della domanda", [["opzione giusta", true], ["opzione sbagliata", false], ...]]</code>.</li>
+<li>La parola <strong><code>true</code></strong> segna la <strong>risposta giusta</strong> (è la chiave delle risposte).</li>
+<li>Regola pratica: <strong>una riga per domanda</strong> — così quando si incolla il testo non
+   si spezza a metà.</li>
+</ol>
+<p>Esempio breve (2 domande) — quello completo sull'hardware è in
+<code>classe-1/quiz-hardware/crea-modulo-hardware.gs</code>:</p>
+<pre><code>function creaQuiz(){
+  var f=FormApp.create(&quot;Esercitazione - Hardware del PC&quot;).setIsQuiz(true);
+  var D=[
+  [&quot;A cosa serve la CPU?&quot;,[[&quot;È il cervello del PC: fa i calcoli&quot;,true],[&quot;Conserva i file&quot;,false]]],
+  [&quot;Dove si salvano i file in modo permanente?&quot;,[[&quot;Nel disco (Hard Disk o SSD)&quot;,true],[&quot;Nella RAM&quot;,false]]]
+  ];
+  D.forEach(function(q){var i=f.addMultipleChoiceItem();i.setTitle(q[0]).setPoints(1).setRequired(true);i.setChoices(q[1].map(function(o){return i.createChoice(o[0],o[1]);}));});
+  Logger.log(&quot;PRONTO. Modifica: &quot;+f.getEditUrl());
+}
+</code></pre>
+<h2>03 Come eseguire lo script (passo-passo, provato)</h2>
+<ol>
+<li>Nella <strong>barra dell'indirizzo</strong> del browser scrivi</li>
+</ol>
+<pre><code>script.new
+</code></pre>
+<p>e premi Invio: si apre un progetto nuovo (accedi con l'account scuola).
+2. Nel riquadro del codice al centro: premi <strong>Ctrl+A</strong> poi <strong>Canc</strong> (svuotalo).
+3. <strong>Incolla</strong> lo script (Ctrl+V). Controlla che l'<strong>ultima riga</strong> sia una graffa <code>}</code>.
+4. Premi <strong>Ctrl+S</strong> (salva): la scritta "Modifiche non salvate" sparisce.
+5. In alto, nel menù delle funzioni (dove c'è "Nessuna funzione"), scegli <strong><code>creaQuiz</code></strong>.
+6. Premi <strong>"Esegui"</strong> (il triangolino ▶ a sinistra, accanto a "Debug"). Attenzione:
+   <strong>NON</strong> premere "Esegui il deployment" (il bottone blu in alto a destra).
+7. La prima volta chiede il permesso: <strong>"Rivedi autorizzazioni"</strong> → scegli
+   l'<strong>account scuola</strong> → se compare "Google non ha verificato questa app", clicca
+   <strong>"Avanzate"</strong> → <strong>"Vai a Progetto senza titolo (non sicuro)"</strong> → poi <strong>"Consenti"</strong>.
+8. In basso, nel <strong>"Log esecuzione"</strong>, compare <strong>"PRONTO. Modifica: https://…"</strong> e
+   <strong>"Esecuzione completata"</strong>. <strong>Clicca quel link</strong>: si apre il Modulo già pronto.</p>
+<h2>04 Allegare il Modulo su Google Classroom</h2>
+<ol>
+<li>In Classroom, apri il corso → scheda <strong>"Lavori del corso"</strong>.</li>
+<li>In alto a sinistra premi <strong>"+ Crea"</strong> → <strong>"Compito"</strong>.</li>
+<li>In basso premi <strong>"Aggiungi"</strong> → <strong>"Google Moduli"</strong> → scegli il quiz creato.</li>
+<li>Scrivi il titolo e premi <strong>"Assegna"</strong>.</li>
+</ol>
+<h2>05 Cambiare le domande</h2>
+<ol>
+<li>Riapri lo script (resta salvato in <code>script.new</code> → "I miei progetti").</li>
+<li>Modifica il testo dentro <code>D</code>: cambia domande, opzioni e la parola <code>true</code> (che
+   segna la risposta giusta).</li>
+<li>Ri-esegui: si crea un <strong>nuovo</strong> Modulo (non modifica il vecchio).</li>
+</ol>
+<h2>06 Errori da evitare (imparati in classe)</h2>
+<ol>
+<li><strong>Non usare "Esegui il deployment"</strong> (bottone blu in alto a destra): non serve
+   e apre una finestra "Nuovo deployment" che confonde. Si usa <strong>"Esegui"</strong> a sinistra.</li>
+<li><strong>Incolla troncato</strong> (errore "Unexpected end of input"): la copia si è spezzata.
+   Rifai copia-incolla, usa la versione <strong>compatta</strong> (una riga per domanda) e
+   controlla che l'ultima riga sia <code>}</code>.</li>
+<li><strong>"Google non ha verificato questa app"</strong> è <strong>normale</strong>: Avanzate → Vai a…
+   (non sicuro) → Consenti. È roba tua, è sicura.</li>
+<li><strong>Rieseguendo</strong> si creano <strong>più Moduli</strong> uguali: i doppioni inutili si
+   cancellano da Google Drive (cestino).</li>
+</ol>
+<h2>07 Note utili</h2>
+<ol>
+<li>Le domande possono essere <strong>trilingui</strong> (italiano/arabo/cinese) nel testo.</li>
+<li>La <strong>chiave delle risposte</strong> è già dentro lo script (le opzioni con <code>true</code>).</li>
+<li>Lo script si riusa l'anno dopo o per altri argomenti cambiando solo le domande.</li>
+</ol>
+<h2>08 Changelog</h2>
+<ol>
+<li><strong>v0.1 (23/09/2026)</strong>: primo capitolo, scritto dopo la prima creazione riuscita
+   in classe (quiz Hardware del PC). Struttura dello script, esecuzione passo-passo,
+   allegare su Classroom, come cambiare le domande, errori da evitare.</li>
+</ol></body></html>
