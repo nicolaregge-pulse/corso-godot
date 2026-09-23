@@ -115,6 +115,24 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
 3. Vale per i **consegnabili agli allievi**; i documenti interni mantengono il loro nome.
 4. Da riportare anche in REGOLE-FORMATTAZIONE quando lo si aggiorna.
 
+### 2.10 Standard della griglia di correzione (da fare OGNI volta)
+Ogni volta che si correggono consegne, Claude produce **sempre** una griglia con,
+per ciascun alunno, queste colonne (in questo spirito):
+1. **Cognome e nome**, elenco **ordinato per cognome** (formato "Cognome Nome").
+2. **Data e ora di consegna**, presa dal file (timestamp / colonna "Data modifica"
+   di Drive). Utile anche per capire chi ha fatto in fretta o all'ultimo.
+3. **Consegna**: Sì / Assente / Non consegnato — la lista è **completa** (tutta la
+   classe, non solo chi ha consegnato); i mancanti si incrociano col registro.
+4. **Certificazione ufficiale** (DVA/DSA/BES) e **Difficoltà segnalata** (es. L2).
+5. **Voto oggettivo** + **Compenso** + **Voto commisurato** (vedi 2.8).
+6. **Nota** breve (completezza, parole proprie, errori tipici).
+Regole di lavoro:
+7. **Abbinamento file→alunno risolto da Claude** anche per i file "senza titolo"
+   (via proprietario/orario, incrociando i dati — vedi 2.7); i dati di minori
+   restano **solo in scratchpad, mai su Git** (vedi 2.8).
+8. Output: **Excel** (modificabile) + **PDF a colori** (stampabile) + **HTML** per
+   l'anteprima.
+
 ## 3. Changelog
 
 1. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
