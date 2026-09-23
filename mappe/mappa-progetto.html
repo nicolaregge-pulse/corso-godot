@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A3 landscape;margin:9mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",sans-serif;color:#1a1a1a;margin:0;font-size:8.4pt;line-height:1.32;}
+h1{font-size:20pt;color:#16324a;margin:0;}
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #16324a;padding-bottom:5px;margin-bottom:7px;}
+.head .sub{font-size:9pt;color:#3a6ea5;max-width:520px;text-align:right;}
+.pipe{display:flex;gap:6px;margin-bottom:8px;}
+.pstep{flex:1;background:#eef2f7;border:1px solid #c7d2de;border-radius:7px;padding:5px 7px;position:relative;}
+.pstep .pn{font-size:7pt;color:#8a97a5;text-transform:uppercase;letter-spacing:.5px;}
+.pstep .pt{font-weight:bold;color:#16324a;font-size:9.5pt;}
+.pstep .pd{font-size:7.6pt;color:#4a5663;}
+.arrowcol{display:flex;align-items:center;color:#9aa7b4;font-weight:bold;font-size:13pt;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
+.panel{border:1px solid #cdd6df;border-radius:8px;overflow:hidden;page-break-inside:avoid;}
+.panel .bar{color:#fff;font-weight:bold;padding:4px 8px;font-size:9.5pt;}
+.panel .body{padding:5px 9px;}
+.panel ol{margin:2px 0;padding-left:16px;}.panel li{margin:2px 0;}
+.panel .k{font-weight:bold;color:#274b73;}
+.tag{display:inline-block;background:#eef2f7;border-radius:8px;padding:0 5px;font-size:7pt;color:#4a5663;margin:1px 1px;}
+.wide{grid-column:span 2;}
+.bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:8px;}
+.legend{font-size:7.2pt;color:#6b7280;margin-top:6px;text-align:center;}
+</style></head><body>
+
+<div class="head">
+<div><h1>Corso di Informatica (IeFP) — Mappa del progetto</h1>
+<div style="font-size:8.6pt;color:#4a5663;">Classi 1–4 "Operatore Informatico" · Centro Piamarta · A.F. 2026/27 · docente Nicola Regge</div></div>
+<div class="sub">Percorso di qualità e dignità per ragazzi in svantaggio: "Vinci subito · Fallo tuo · Mostralo". Tutto versionato su Git; i dati dei minori restano fuori dal repository.</div>
+</div>
+
+<!-- PIPELINE / LOGICA -->
+<div class="pipe">
+<div class="pstep"><div class="pn">1 · Perché</div><div class="pt">Missione &amp; Metodo</div><div class="pd">Stella polare (00-STATO): decisioni e regole</div></div>
+<div class="arrowcol">▶</div>
+<div class="pstep"><div class="pn">2 · Cosa</div><div class="pt">Programma</div><div class="pd">Mappa · Griglia · Piano ore (4 anni a imbuto)</div></div>
+<div class="arrowcol">▶</div>
+<div class="pstep"><div class="pn">3 · Con cosa</div><div class="pt">Materiali</div><div class="pd">Schede, libri, quiz, giochi (trilingue)</div></div>
+<div class="arrowcol">▶</div>
+<div class="pstep"><div class="pn">4 · In aula</div><div class="pt">Lezione &amp; Gestione</div><div class="pd">Registri, assenze, sbobinature, quaderni</div></div>
+<div class="arrowcol">▶</div>
+<div class="pstep"><div class="pn">5 · Verso la Regione</div><div class="pt">Valutazione &amp; Allegato A</div><div class="pd">Voti /100 · svolto per competenza</div></div>
+</div>
+
+<!-- GRID DETTAGLIO -->
+<div class="grid">
+
+<div class="panel"><div class="bar" style="background:#16324a">1 · Missione e metodo</div><div class="body">
+<ol>
+<li><span class="k">Chi</span>: ragazzi spesso in svantaggio/migratori; qui "cosa fatta bene", rispetto e fiducia.</li>
+<li><span class="k">Motore</span>: Vinci subito · Fallo tuo · Mostralo. Errore = zero vergogna.</li>
+<li><span class="k">Prova del nove</span>: saperlo spiegare a voce con parole proprie.</li>
+<li><span class="k">Tassativo</span>: carta e penna in ogni lezione.</li>
+<li><span class="k">Stella polare</span>: 00-STATO-DEL-CORSO (fonte di verità).</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#6a4ca8">2 · Struttura didattica</div><div class="body">
+<ol>
+<li><span class="k">Imbuto 4 anni</span>: 1ª basi larghe → 4ª specializzazione.</li>
+<li><span class="k">Documenti</span>: Mappa, Menu, Griglia (competenze), Piano ore.</li>
+<li><span class="k">Fili rossi</span>: glossario, quaderno, IA, Git.</li>
+<li><span class="k">Programmazione</span>: Lazarus → poi Godot (assaggio 1ª/2ª, sviluppo 3ª-4ª).</li>
+<li><span class="k">3ª novità</span>: Database/SQL, Web, reti/cablaggio.</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#2e8b57">3 · Materiali creati</div><div class="body">
+<ol>
+<li><span class="k">Classe 1</span>: regole, hardware (parti/componenti/costruisci PC), versioning, GitHub, utenze&amp;password, negozio online.</li>
+<li><span class="k">Quiz</span>: Google Moduli via script (trilingue, autocorrezione).</li>
+<li><span class="k">Libro di testo</span> Classe 1 + libri personali per allievo.</li>
+<li><span class="k">Godot</span>: manuale + eserciziario + giochi.</li>
+<li><span class="k">Terza</span>: contenitore "Comunicazione digitale".</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#c47a1a">4 · Gestione della classe</div><div class="body">
+<ol>
+<li><span class="k">Un Excel per classe</span>: Allievi · Registro voti · Assenze · Allegato A.</li>
+<li><span class="k">Voti in centesimi</span> (/100): sempre due letture, oggettivo + commisurato.</li>
+<li><span class="k">Regole voto</span>: presente-non-consegna = 30; assente = —.</li>
+<li><span class="k">Domande al volo</span>: 70 OK / 50 KO.</li>
+<li><span class="k">Firma ore entro le 14:05</span> (monte ore Regione).</li>
+</ol></div></div>
+
+</div>
+
+<!-- SECONDA RIGA -->
+<div class="grid" style="margin-top:7px;">
+
+<div class="panel"><div class="bar" style="background:#b5423a">5 · Regione — Allegato A (PFP)</div><div class="body">
+<ol>
+<li><span class="k">Preventivo</span> per competenza → si evidenzia in <b>giallo</b> ciò che si farà.</li>
+<li><span class="k">Durante l'anno</span>: fatto → togli il giallo; non fatto → cancella.</li>
+<li><span class="k">Fonte svolto</span>: export Excel del registro elettronico.</li>
+<li><span class="k">Fine anno</span>: programma svolto per competenza → docx ufficiale.</li>
+<li>Sorgenti in repo: MIE-PARTI, allegato-a-*, PROGRAMMA-PREVENTIVO.</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#1c8c8c">6 · Git e versioning</div><div class="body">
+<ol>
+<li><span class="k">main</span> = area autore; <span class="k">Release</span> vX.Y = versione stabile per i ragazzi.</li>
+<li><span class="k">Due fasi</span>: 1ª esercizi separati (1 commit) → 3ª-4ª branch/PR/release.</li>
+<li><span class="k">Repo allievi</span>: organizzazione + 1 repo privato ciascuno (Classroom 50).</li>
+<li><span class="k">Tutto visuale</span>: browser / GitHub Desktop, mai la riga di comando.</li>
+<li>Ogni documento: MD (sorgente) + PDF (consegnabile) versionati.</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#3a6ea5">7 · Sbobinature e quaderni</div><div class="body">
+<ol>
+<li><span class="k">Sbobinatura</span> della lezione → teoria, argomenti, note dei ragazzi.</li>
+<li><span class="k">Conservazione integrale</span> (verbatim) + versione lavorata.</li>
+<li><span class="k">Quaderno personale</span>: ogni ragazzo ha il SUO libro che cresce.</li>
+<li>Alimenta: libro di testo, argomenti svolti, "Mostralo".</li>
+</ol></div></div>
+
+<div class="panel"><div class="bar" style="background:#6b7280">8 · Regole trasversali</div><div class="body">
+<ol>
+<li><span class="k">Privacy</span>: nomi/certificazioni/assenze dei minori = solo scratchpad, MAI su Git.</li>
+<li><span class="k">Trilingue</span> (IT/AR/ZH) per ogni materiale degli allievi.</li>
+<li><span class="k">Nomi file</span>: DATA_Descrizione_Chi_Lingua_vX.Y (Chi = Classe-N-PerTutti o Classe-N-Cognome-Nome).</li>
+<li><span class="k">Formattazione</span>: liste numerate, niente emoji, box colorati.</li>
+</ol></div></div>
+
+</div>
+
+<!-- BOTTOM: STRUMENTI -->
+<div class="bottom">
+<div class="panel"><div class="bar" style="background:#274b73">Strumenti (scuola = browser + portable)</div><div class="body">
+<span class="tag">Browser</span><span class="tag">GitHub / Classroom 50</span><span class="tag">Google Suite + Classroom</span><span class="tag">Google Moduli (quiz via script)</span><span class="tag">Gemini (IA)</span><span class="tag">SQLite / DB Browser</span><span class="tag">Godot portable</span><span class="tag">PCPartPicker</span><span class="tag">Canva</span>
+</div></div>
+<div class="panel"><div class="bar" style="background:#274b73">Stato attuale (23/09/2026)</div><div class="body">
+<ol>
+<li>Classe 1 in corso (hardware, GitHub, versioning); registri e valutazioni attivi.</li>
+<li>Terza avviata (prossima: Database/SQL). Quarta: stage gio/ven da ottobre.</li>
+<li>Account GitHub allievi: in corso (ostacolo "too many requests").</li>
+</ol></div></div>
+<div class="panel"><div class="bar" style="background:#274b73">Da sviluppare (roadmap)</div><div class="body">
+<ol>
+<li>Corso per il docente su IA: GEM e agenti.</li>
+<li>Albero cartelle secondo la tassonomia.</li>
+<li>Confronto Allegato A prima/dopo.</li>
+</ol></div></div>
+</div>
+
+<div class="legend">Mappa generata il 23/09/2026 · fonte di verità: 00-STATO-DEL-CORSO.md · i riquadri seguono la logica del progetto da sinistra (perché) a destra (Regione).</div>
+</body></html>

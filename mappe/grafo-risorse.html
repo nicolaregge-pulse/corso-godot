@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A3 landscape;margin:8mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",sans-serif;color:#1a1a1a;margin:0;font-size:8.2pt;line-height:1.3;}
+h1{font-size:18pt;color:#16324a;margin:0;}
+.head{border-bottom:3px solid #16324a;padding-bottom:4px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:flex-end;}
+.head .sub{font-size:8.4pt;color:#3a6ea5;text-align:right;max-width:560px;}
+.cols{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:8px;}
+.zone{border:1px solid #cdd6df;border-radius:8px;overflow:hidden;}
+.zone>.bar{color:#fff;font-weight:bold;padding:4px 8px;font-size:10pt;}
+.zone>.body{padding:6px 8px;}
+.node{border:1px solid #d5dee7;border-left:4px solid #888;border-radius:6px;padding:4px 8px;margin:0 0 6px;}
+.node .nt{font-weight:bold;color:#20364a;font-size:9pt;}
+.node .nd{font-size:7.7pt;color:#4a5663;}
+.node .acc{font-size:7pt;color:#7a8794;}
+.tree{font-family:"Liberation Mono","DejaVu Sans Mono",monospace;font-size:7.4pt;line-height:1.45;color:#243b52;white-space:pre;}
+.tree b{color:#16324a;}
+.grp{font-weight:bold;color:#6a4ca8;}
+.riserv{border:1.6px solid #c0392b;background:#fdecec;border-radius:7px;padding:6px 9px;color:#8c2020;}
+.riserv .rt{font-weight:bold;}
+.flussi{border:1px solid #cdd6df;border-radius:8px;margin-top:8px;}
+.flussi .bar{background:#274b73;color:#fff;font-weight:bold;padding:4px 8px;font-size:10pt;}
+.flussi .body{padding:6px 10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px 18px;}
+.flussi ol{margin:0;padding-left:16px;}.flussi li{margin:2px 0;font-size:8pt;}
+.tags{margin-top:8px;border:1px solid #cdd6df;border-radius:8px;padding:6px 9px;}
+.tags .bar{font-weight:bold;color:#274b73;margin-bottom:3px;}
+.tag{display:inline-block;background:#eef2f7;border:1px solid #dbe3ec;border-radius:8px;padding:1px 7px;font-size:7.4pt;color:#3a4b5c;margin:2px 2px;}
+.k{font-weight:bold;color:#274b73;}
+</style></head><body>
+
+<div class="head">
+<div><h1>Corso di Informatica — Grafo delle risorse</h1>
+<div style="font-size:8.2pt;color:#4a5663;">Dove sta cosa: repository, portali, piattaforme e come si collegano · 23/09/2026</div></div>
+<div class="sub">Ambiente AUTORE = repository GitHub (ramo main). I ragazzi usano il browser: Google Classroom/Drive + i loro repository. I dati dei minori vivono SOLO nell'area privata, mai nel repository.</div>
+</div>
+
+<div class="cols">
+
+<!-- COLONNA 1: REPOSITORY -->
+<div class="zone"><div class="bar" style="background:#1c8c8c">Repository del corso · GitHub &nbsp;<span style="font-weight:normal;font-size:7.5pt">nicolaregge-pulse/corso-godot · ramo main</span></div>
+<div class="body">
+<div class="tree"><b>corso-godot/</b>
+<span class="grp">├─ [Riferimento]</span> 00-STATO · 01-GLOSSARIO
+│     CLAUDE · CORSO-INFORMATICA · PROMEMORIA
+<span class="grp">├─ [Pianificazione]</span> MAPPA · MENU
+│     GRIGLIA-ARGOMENTI · PIANO-ORE-LEZIONE
+<span class="grp">├─ [Regole/organizz.]</span> REGOLE-FORMATTAZIONE
+│     REGOLE-NOSTRE · RUOLI-CLASSE · REGOLAMENTO-IA
+│     STRUTTURA-REPOSITORY · STRUTTURA-REGISTRI
+│     ORGANIZZAZIONE-GIT-ALLIEVI
+<span class="grp">├─ [Regione/Allegato A]</span> MIE-PARTI
+│     PROGRAMMA-PREVENTIVO · ARGOMENTI-SVOLTI
+│     allegato-a-2026-27/ · allegato-a-stato/
+│     programmi-ufficiali/ · programma-svolto/
+<span class="grp">├─ classe-1/</span> (materiali prima: hardware,
+│     versioning, GitHub, negozio, libro-di-testo,
+│     utenze-password, quiz…)  · <b>classe-2/3/4</b>
+<span class="grp">├─ manuale/</span> (Godot: libro + eserciziario + immagini)
+<span class="grp">├─ manuale-docenti/</span> · guida-docenti-non-italofoni/
+<span class="grp">├─ sbobinature/</span> · esercizi/ · consegne/ · attestati/
+<span class="grp">├─ [Giochi Godot]</span> torta-in-faccia · acchiappa-la-talpa
+│     schiva-gli-asteroidi · chirurgo-pasticcione
+│     rompi-i-mattoni · gioco-del-quindici · …
+<span class="grp">└─ docs/</span> → <b>GitHub Pages</b> (giochi giocabili online)</div>
+<div style="font-size:7.4pt;color:#6b7280;margin-top:5px;">Ogni documento: <b>.md</b> (sorgente) + <b>.pdf</b> (consegnabile), versionati. <b>main</b> = area autore; le <b>Release vX.Y</b> sono la versione stabile per i ragazzi.</div>
+</div></div>
+
+<!-- COLONNA 2: GITHUB PLATFORM + GOOGLE -->
+<div class="zone"><div class="bar" style="background:#24292f">Piattaforma GitHub</div>
+<div class="body">
+<div class="node" style="border-left-color:#24292f"><div class="nt">Repository del corso</div><div class="nd">Nicola prepara qui; pubblica Release per i ragazzi.</div><div class="acc">github.com/nicolaregge-pulse/corso-godot</div></div>
+<div class="node" style="border-left-color:#24292f"><div class="nt">GitHub Pages</div><div class="nd">La cartella docs/ diventa siti/giochi giocabili da link.</div><div class="acc">nicolaregge-pulse.github.io/…</div></div>
+<div class="node" style="border-left-color:#24292f"><div class="nt">Organizzazione allievi + Classroom 50</div><div class="nd">1 repository privato per allievo; Fase 2 branch/PR.</div><div class="acc">org. "informatica-piamarta" · in attesa GitHub Education</div></div>
+</div>
+<div class="bar" style="background:#1a73e8">Piattaforma Google</div>
+<div class="body">
+<div class="node" style="border-left-color:#1a73e8"><div class="nt">Google Classroom</div><div class="nd">Il docente assegna i compiti; i ragazzi consegnano.</div></div>
+<div class="node" style="border-left-color:#1a73e8"><div class="nt">Drive / Documenti</div><div class="nd">I ragazzi scrivono e consegnano i lavori.</div></div>
+<div class="node" style="border-left-color:#1a73e8"><div class="nt">Google Moduli</div><div class="nd">Quiz autocorretti, creati con uno script (trilingue).</div></div>
+<div class="node" style="border-left-color:#1a73e8"><div class="nt">Gemini (IA) · NotebookLM</div><div class="nd">Aiuta a capire e traduce; studio dai materiali .md.</div></div>
+</div></div>
+
+<!-- COLONNA 3: SCUOLA/REGIONE + PRIVATO -->
+<div class="zone"><div class="bar" style="background:#b5423a">Scuola e Regione</div>
+<div class="body">
+<div class="node" style="border-left-color:#b5423a"><div class="nt">DIDAweb — registro elettronico</div><div class="nd">Firma ore (entro le 14:05), presenze/assenze, argomenti.</div></div>
+<div class="node" style="border-left-color:#b5423a"><div class="nt">Portale Regione — Allegato A (PFP)</div><div class="nd">Il programma svolto ufficiale (docx) per competenza.</div></div>
+</div>
+<div class="bar" style="background:#c0392b">Area privata del docente (RISERVATO)</div>
+<div class="body">
+<div class="riserv"><div class="rt">FUORI dal repository (scratchpad / PC di Nicola)</div>
+<ol style="margin:4px 0;padding-left:16px;">
+<li>Registri delle 4 classi: <b>Allievi · Voti · Assenze · Allegato A</b>.</li>
+<li>Certificazioni, difficoltà, note disciplinari.</li>
+<li>Libri personali dei ragazzi (con nomi e lavori).</li>
+<li>Sbobinature integrali (verbatim).</li>
+</ol>
+<div style="font-size:7.4pt;">Nomi e dati dei minori: <b>MAI su Git/GitHub</b>.</div></div>
+</div></div>
+
+</div>
+
+<!-- FLUSSI PRINCIPALI (gli archi del grafo) -->
+<div class="flussi"><div class="bar">Flussi principali (come si collegano le risorse)</div>
+<div class="body">
+<ol>
+<li><span class="k">Autore→Ragazzi:</span> Nicola prepara nel repo (main) → pubblica <b>Release</b> → i ragazzi ricevono la versione stabile.</li>
+<li><span class="k">Giochi online:</span> repo <b>docs/</b> → <b>GitHub Pages</b> → gioco giocabile da un link.</li>
+</ol>
+<ol start="3">
+<li><span class="k">Compiti:</span> Classroom (allega Moduli/Documenti) → i ragazzi consegnano su <b>Drive</b> → Nicola scarica lo ZIP → valuta in <b>area privata</b>.</li>
+<li><span class="k">Regione:</span> <b>DIDAweb</b> (presenze/argomenti) → export Excel → aggiorna <b>Allegato A</b> nel repo → <b>docx</b> per la Regione.</li>
+</ol>
+<ol start="5">
+<li><span class="k">AI dei ragazzi:</span> i materiali <b>.md</b> → <b>NotebookLM / Gemini</b> → l'AI spiega e traduce nella loro lingua.</li>
+<li><span class="k">Repo allievi:</span> <b>Classroom 50</b> crea 1 repository privato per allievo nell'organizzazione.</li>
+</ol>
+</div></div>
+
+<div class="tags"><div class="bar">Strumenti (browser / portable, senza installazioni)</div>
+<span class="tag">GitHub Desktop (PC di Nicola)</span><span class="tag">github.dev (tasto ".")</span><span class="tag">PCPartPicker</span><span class="tag">Canva</span><span class="tag">sqliteonline.com + DB Browser</span><span class="tag">Godot portable</span><span class="tag">SumatraPDF portable</span><span class="tag">editor.godotengine.org (ripiego)</span>
+</div>
+
+</body></html>

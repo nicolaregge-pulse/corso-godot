@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"/><style>
+@page{size:A4 landscape;margin:7mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",sans-serif;color:#1a1a1a;margin:0;font-size:6.6pt;line-height:1.22;}
+h1{font-size:13pt;color:#16324a;margin:0;}
+.head{border-bottom:3px solid #16324a;padding-bottom:4px;margin-bottom:7px;display:flex;justify-content:space-between;align-items:flex-end;}
+.head .sub{font-size:6.6pt;color:#3a6ea5;text-align:right;max-width:560px;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;align-items:start;}
+.panel{border:1px solid #cdd6df;border-radius:6px;overflow:hidden;margin-bottom:5px;}
+.panel .bar{color:#fff;font-weight:bold;padding:2px 6px;font-size:7.3pt;}
+.panel .body{padding:3px 6px;}
+.row{display:flex;justify-content:space-between;gap:6px;border-bottom:1px dotted #e1e7ee;padding:1px 0;}
+.row .f{color:#243b52;}.row .f b{color:#16324a;}
+.row .c{color:#8a97a5;white-space:nowrap;font-size:7pt;}
+.mono{font-family:"Liberation Mono","DejaVu Sans Mono",monospace;}
+.note{font-size:7pt;color:#6b7280;margin-top:3px;}
+.k{color:#6a4ca8;font-weight:bold;}
+.foot{margin-top:5px;border:1px solid #cdd6df;border-radius:6px;padding:4px 8px;font-size:6.4pt;color:#33475b;}
+.foot b{color:#16324a;}
+</style></head><body>
+
+<div class="head">
+<div><h1>Corso di Informatica — Mappa dell'albero dei file</h1>
+<div style="font-size:6.4pt;color:#4a5663;">Repository nicolaregge-pulse/corso-godot · ramo main · 23/09/2026 · ~555 file</div></div>
+<div class="sub">Ogni file porta il percorso nel nome (regola 2.13, cartelle con "__"): da questa mappa + i nomi si ricostruisce tutto l'albero. I dati dei minori NON sono qui (stanno nell'area privata).</div>
+</div>
+
+<div class="grid">
+
+<!-- COLONNA 1 -->
+<div>
+<div class="panel"><div class="bar" style="background:#16324a">Radice · Riferimento e regole (area Docente)</div><div class="body">
+<div class="row"><span class="f">00-STATO · 01-GLOSSARIO · CLAUDE</span><span class="c">.md</span></div>
+<div class="row"><span class="f">CORSO-INFORMATICA · PROMEMORIA</span><span class="c">.md</span></div>
+<div class="row"><span class="f">MAPPA · MENU · GRIGLIA · PIANO-ORE</span><span class="c">pianif.</span></div>
+<div class="row"><span class="f">REGOLE-FORMATTAZIONE · REGOLE-LABORATORIO</span><span class="c">.md</span></div>
+<div class="row"><span class="f">REGOLE-NOSTRE · RUOLI-CLASSE · REGOLAMENTO-IA</span><span class="c">.md</span></div>
+<div class="row"><span class="f">STRUTTURA-REPOSITORY · STRUTTURA-REGISTRI</span><span class="c">.md</span></div>
+<div class="row"><span class="f">ORGANIZZAZIONE-GIT-ALLIEVI · README</span><span class="c">.md</span></div>
+<div class="row"><span class="f">SCHEDA-* (NotebookLM/Classroom/GitHub)</span><span class="c">×4</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#b5423a">Regione · Allegato A (PFP)</div><div class="body">
+<div class="row"><span class="f">MIE-PARTI · PROGRAMMA-PREVENTIVO</span><span class="c">.md</span></div>
+<div class="row"><span class="f">ARGOMENTI-SVOLTI · ARGOMENTI-SVOLTI-2026-27</span><span class="c">.md</span></div>
+<div class="row"><span class="f"><b>allegato-a-2026-27/</b></span><span class="c">9</span></div>
+<div class="row"><span class="f"><b>allegato-a-stato/</b></span><span class="c">4</span></div>
+<div class="row"><span class="f"><b>programmi-ufficiali/</b> (docx PFP 1-4)</span><span class="c">10</span></div>
+<div class="row"><span class="f"><b>programma-svolto/</b> (+ _fonti registro)</span><span class="c">5</span></div>
+<div class="row"><span class="f">classe-1/2/3/4 · programma.md</span><span class="c">×4</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#6b7280">Trasversale · Sbobinature · Strumenti</div><div class="body">
+<div class="row"><span class="f">INTELLIGENZA-ARTIFICIALE · INVALSI · RECUPERO-*</span><span class="c">.md</span></div>
+<div class="row"><span class="f"><b>quiz-recupero-invalsi/</b></span><span class="c">2</span></div>
+<div class="row"><span class="f"><b>sbobinature/</b> (README + template)</span><span class="c">2</span></div>
+<div class="row"><span class="f"><b>strumenti/</b> (nome-albero.py)</span><span class="c">2</span></div>
+</div></div>
+</div>
+
+<!-- COLONNA 2: CLASSE 1 -->
+<div>
+<div class="panel"><div class="bar" style="background:#2e8b57">classe-1/ · materiali della Prima</div><div class="body">
+<div class="row"><span class="f">README · MATERIALE-PRONTO · programma · bussola…</span><span class="c">15</span></div>
+<div class="row"><span class="f"><b>regole-classe/</b> · <b>regole-fine-lavoro/</b></span><span class="c">3·7</span></div>
+<div class="row"><span class="f"><b>accesso-blocco-schermo/</b> · <b>utenze-password/</b></span><span class="c">3·2</span></div>
+<div class="row"><span class="f"><b>parti-del-pc/</b> · <b>componenti-pc-compito/</b></span><span class="c">10·7</span></div>
+<div class="row"><span class="f"><b>costruisci-pc/</b> · <b>compito-hardware-semplice/</b></span><span class="c">7·2</span></div>
+<div class="row"><span class="f"><b>versioning/</b> · <b>quiz-regole-versioning/</b></span><span class="c">3·11</span></div>
+<div class="row"><span class="f"><b>quiz-hardware/</b> · <b>ricerca-github/</b></span><span class="c">1·7</span></div>
+<div class="row"><span class="f"><b>github-crea-account/</b> · <b>scheda-present.-github/</b></span><span class="c">3·1</span></div>
+<div class="row"><span class="f"><b>esercizio-presentazione-famiglia/</b></span><span class="c">11</span></div>
+<div class="row"><span class="f"><b>glossario-l2/</b> · <b>attivita-blocchi/</b></span><span class="c">3·3</span></div>
+<div class="row"><span class="f"><b>consegna-senza-tastiera/</b></span><span class="c">3</span></div>
+<div class="row"><span class="f"><b>libro-di-testo/</b> (libro-classe1)</span><span class="c">3</span></div>
+<div class="row"><span class="f"><b>negozio-online/</b> · <b>negozio-esempio/</b></span><span class="c">8·1</span></div>
+<div class="row"><span class="f"><b>_build/</b> (generatore PDF/libro)</span><span class="c">40</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#2e8b57">classe-2 / 3 / 4</div><div class="body">
+<div class="row"><span class="f"><b>classe-2/</b> (condizioni if-then…)</span><span class="c">4</span></div>
+<div class="row"><span class="f"><b>classe-3/</b> reti · troubleshooting · html-css</span><span class="c">8</span></div>
+<div class="row"><span class="f">classe-3/<b>comunicazione-digitale/</b> · esercizi · immagini</span><span class="c">3·2·4</span></div>
+<div class="row"><span class="f"><b>classe-4/</b></span><span class="c">2</span></div>
+</div></div>
+</div>
+
+<!-- COLONNA 3: GODOT + docs -->
+<div>
+<div class="panel"><div class="bar" style="background:#6a4ca8">Godot · manuale e giochi</div><div class="body">
+<div class="row"><span class="f"><b>manuale/</b> (libro + eserciziario)</span><span class="c">38</span></div>
+<div class="row"><span class="f">manuale/<b>immagini/</b> · <b>_build/</b></span><span class="c">12·10</span></div>
+<div class="row"><span class="f"><b>manuale-docenti/</b> (script Moduli)</span><span class="c">3</span></div>
+<div class="row"><span class="f"><b>guida-docenti-alunni-non-italofoni/</b></span><span class="c">3</span></div>
+<div class="row"><span class="f"><b>esercizi/</b> (4 esercizi Godot a livelli)</span><span class="c">×4</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#c47a1a">Giochi Godot (progetti)</div><div class="body">
+<div class="row"><span class="f"><b>torta-in-faccia/</b> · <b>torta-panaccione/</b></span><span class="c">17·17</span></div>
+<div class="row"><span class="f"><b>acchiappa-la-talpa/</b> · <b>acchiappa-le-stelle/</b></span><span class="c">17·5</span></div>
+<div class="row"><span class="f"><b>schiva-gli-asteroidi/</b> · <b>chirurgo-pasticcione/</b></span><span class="c">9·4</span></div>
+<div class="row"><span class="f"><b>rompi-i-mattoni/</b> · <b>gioco-del-quindici/</b></span><span class="c">11·9</span></div>
+<div class="row"><span class="f"><b>battaglia-navale-3d/</b></span><span class="c">9</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#1c8c8c">docs/ → GitHub Pages (giochi online)</div><div class="body">
+<div class="row"><span class="f">asteroidi · mattoni · quindici · talpa</span><span class="c">9 cad.</span></div>
+<div class="row"><span class="f">torta · torta-panaccione · cassaforte</span><span class="c">9/1</span></div>
+<div class="note">Ogni sottocartella = un gioco giocabile da un link web.</div>
+</div></div>
+</div>
+
+<!-- COLONNA 4: CONSEGNE + AREA PRIVATA -->
+<div>
+<div class="panel"><div class="bar" style="background:#3a6ea5">Consegne · Attestati · Materiale</div><div class="body">
+<div class="row"><span class="f"><b>consegne/</b> (_MODELLO · _PROF · 1informatica)</span><span class="c">14</span></div>
+<div class="row"><span class="f"><b>attestati/</b> (ATTESTATO-RUOLI)</span><span class="c">4</span></div>
+<div class="row"><span class="f"><b>materiale-da-organizzare/</b> (triennio grezzo)</span><span class="c">31</span></div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#c0392b">Area privata del docente (NON nel repo)</div><div class="body">
+<div class="row"><span class="f mono">quaderni__classe-N__Cognome-Nome__…</span><span class="c">libri</span></div>
+<div class="row"><span class="f mono">registri (Allievi·Voti·Assenze·AllegatoA)</span><span class="c">×4</span></div>
+<div class="row"><span class="f mono">sbobinature integrali (verbatim)</span><span class="c"> </span></div>
+<div class="note" style="color:#8c2020;">Nomi e dati dei minori: solo scratchpad / PC di Nicola, MAI su Git.</div>
+</div></div>
+
+<div class="panel"><div class="bar" style="background:#274b73">Come si ricostruisce</div><div class="body">
+<div class="row"><span class="f">1. I file "sciolti" hanno il percorso nel nome (con "__").</span><span class="c"> </span></div>
+<div class="row"><span class="f">2. `strumenti/nome-albero.py espandi` → ricrea l'albero.</span><span class="c"> </span></div>
+<div class="row"><span class="f">3. Su Windows: "__" diventa la cartella "\".</span><span class="c"> </span></div>
+</div></div>
+</div>
+
+</div>
+
+<div class="foot">
+<b>Legenda:</b> in <b>grassetto</b> = cartelle; il numero a destra = quanti file contiene. <b>_build/</b> = generatori PDF (non materiale). <b>Aree di primo livello (tassonomia):</b> Docente (riferimento/regole) · Comune (materiale per tutte le classi) · classe-1/2/3/4 · Regione (Allegato A) · manuale Godot · giochi · docs (web) · sbobinature · strumenti · <span style="color:#8c2020">area privata (fuori dal repo)</span>.
+</div>
+
+</body></html>
