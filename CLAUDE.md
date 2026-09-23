@@ -463,7 +463,7 @@ l'intestazione del file.
 2. `CORSO-INFORMATICA.md` — v1.17 (super-guida / indice generale)
 3. `PROMEMORIA-NICOLA.md` — v0.4 (cose da fare di Nicola)
 4. `01-GLOSSARIO.md` — v1.1
-5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.5 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi con classe; NON sono le regole per i ragazzi)
+5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.6 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi: Classe-N-PerTutti o Classe-N-Cognome-Nome; NON sono le regole per i ragazzi)
 
 ### 2. Pianificazione didattica
 1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
@@ -525,7 +525,7 @@ l'intestazione del file.
 8g. `classe-1/componenti-pc-compito/componenti-pc.md` (+ HTML IT/AR/ZH → `Componenti-PC-IT/AR/ZH-v1.0.pdf`) — v1.0 (consegna dopo i componenti fisici: spiegare a cosa serve ogni pezzo con parole proprie + domande personali anti copia/AI; consegna su Classroom o foto; 3 file monolingui)
 8h. `classe-1/regole-fine-lavoro/regole-fine.md` (+ HTML IT/AR/ZH → `Regole-Fine-Lavoro-IT/AR/ZH-v1.0.pdf`) — v1.0 (regole di laboratorio 'quando hai finito o non hai niente da fare': no giochi/YouTube/rumore, resti al posto, blocca/esci col Ctrl+Alt+Canc, + cosa fare di utile; 3 file monolingui da caricare su Classroom)
 8i. `classe-1/libro-di-testo/libro-classe1.md` (+ `_build/libro-classe1.html` → `libro-classe1-v0.1.pdf`) — v0.1 (LIBRO DI TESTO Classe 1: raccoglie appunti/teoria/esercitazioni; cresce a ogni lezione; PDF per leggere, MD per l'AI dei ragazzi)
-8i2. `classe-1/utenze-password/utenze-password.html` (→ `20260923_Le-Mie-Utenze-Password_Classe-1_multilingua_v1.0.pdf`) — v1.0 (scheda da compilare a penna: utenze e password di computer scuola/Google/GitHub; trilingue IT/AR/ZH, una pagina, con nota di sicurezza "tienila al sicuro")
+8i2. `classe-1/utenze-password/utenze-password.html` (→ `20260923_Le-Mie-Utenze-Password_Classe-1-PerTutti_multilingua_v1.0.pdf`) — v1.0 (scheda da compilare a penna: utenze e password di computer scuola/Google/GitHub; trilingue IT/AR/ZH, una pagina, con nota di sicurezza "tienila al sicuro")
 8j. `classe-1/accesso-blocco-schermo/accesso-blocco-schermo.md` (+ `.html` → `Accesso-Blocco-Schermo-v1.0.pdf`) — v1.0 (scheda UNICA trilingue: Ctrl+Alt+Canc — login/logout, blocca/sblocca schermo; spiega tutte le voci del menu; con disegno della schermata; separata dalle Regole)
 8k. `classe-1/regole-classe/regole-classe.md` (+ `.html` → `Regole-Classe-v1.1.pdf`) — v1.1 (scheda UNICA trilingue: regole di comportamento in classe — alzare la mano ben alta + cenno del docente; attenzione/lavoro con l orologio sulla lavagna, niente YouTube, si aspetta l esercitazione su Classroom)
 8l. `classe-1/versioning/versioning.md` (+ `.html` → `Versioning-v2.3.pdf`) — v2.3 (scheda UNICA trilingue: flusso completo delle versioni, major/minor, ripartenza da .0 con nuova linea a ogni release principale; pagine con alberi eterogenei; grafo complesso stile Git a 4 rami paralleli con branch/merge, che termina in 2 versioni principali v1.x e v2.0)
