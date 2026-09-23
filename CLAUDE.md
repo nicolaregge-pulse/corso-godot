@@ -461,7 +461,7 @@ l'intestazione del file.
 ### 1. Riferimento e stato
 1. `00-STATO-DEL-CORSO.md` — v2.3 (fonte di verità: decisioni e stato)
 2. `CORSO-INFORMATICA.md` — v1.17 (super-guida / indice generale)
-3. `PROMEMORIA-NICOLA.md` — v0.4 (cose da fare di Nicola)
+3. `PROMEMORIA-NICOLA.md` — v0.5 (cose da fare di Nicola + roadmap cose da sviluppare con Claude)
 4. `01-GLOSSARIO.md` — v1.1
 5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.6 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi: Classe-N-PerTutti o Classe-N-Cognome-Nome; NON sono le regole per i ragazzi)
 

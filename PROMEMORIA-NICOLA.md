@@ -1,6 +1,6 @@
 # Promemoria — Cose da Fare (Nicola)
 
-**Versione 0.4** — 23/09/2026
+**Versione 0.5** — 23/09/2026
 *Lista viva delle cose che Nicola deve fare, tenuta aggiornata da Claude. Non sono
 documenti da produrre (quelli li fa Claude): sono AZIONI che spettano a Nicola, a
 scuola o al computer. All'inizio della scuola, e ogni volta che Nicola chiede
@@ -31,6 +31,14 @@ cosa nuova, entra qui.*
 ## 5. Account GitHub degli allievi (in corso, Classe 1)
 1. [IN CORSO] Creare gli account GitHub degli allievi della prima, uno alla volta. Ostacolo emerso in aula: la rete della scuola ha un solo indirizzo (NAT), quindi GitHub blocca con "too many requests" quando molti si registrano insieme. Ripieghi: registrarsi con email+password (non col bottone Google), usare i dati mobili del telefono, oppure creare gli account da casa.
 
-## 6. Changelog
-1. **v0.4 (23/09/2026)**: archiviato come storico il "14 settembre" (scuola iniziata); aggiunta la voce sugli account GitHub degli allievi e sul blocco "too many requests".
-2. **v0.3 (02/09/2026)**: ruoli assegnati; attivazione repository allievi con Classroom 50; verifiche Gemini e Allegato A.
+## 6. Cose da sviluppare con Claude (roadmap — si fanno quando Nicola dice "avanti")
+1. [DA FARE] **Corso per Nicola su AI**: agenti, GEM (assistenti Gemini personalizzati) e come "simulare un professionista" (programmatore, segretaria...) con l'AI. Base: `INTELLIGENZA-ARTIFICIALE.md`.
+2. [DA FARE] **Albero di cartelle compatibile con la tassonomia** del corso (classi / macro-argomenti / competenze Allegato A), coerente con lo schema nomi file (regola 2.9).
+3. [DA FARE] **Programma di confronto Allegato A prima/dopo**: dato l'Allegato A prima e dopo le modifiche, evidenzia le differenze (per non scrivere in sezioni non di competenza). Modalita: Nicola scarica -> Claude sistema -> ricarica + PDF differenze; oppure diretto se il file e su Google Drive.
+4. [DA FARE] **File di sbobinatura (trascrizioni)**: al momento NON esistono. Se si vuole, creare cartella + processo: Nicola manda audio/testo, Claude pulisce e alimenta libro di testo + argomenti svolti. Versioni coi nomi in scratchpad, versioni pulite su Git.
+5. [DA FARE] **Libri campione allievi**: rifiniture (teoria di Liu bilingue? pagina "appunti a mano"?) e poi replica per tutta la classe. I file coi nomi restano in scratchpad (non su Git).
+
+## 7. Changelog
+1. **v0.5 (23/09/2026)**: aggiunta la sez. 6 "Cose da sviluppare con Claude" (corso AI/GEM/agenti, albero tassonomia, confronto Allegato A, sbobinature, rifiniture libri allievo).
+2. **v0.4 (23/09/2026)**: archiviato come storico il "14 settembre" (scuola iniziata); aggiunta la voce sugli account GitHub degli allievi e sul blocco "too many requests".
+3. **v0.3 (02/09/2026)**: ruoli assegnati; attivazione repository allievi con Classroom 50; verifiche Gemini e Allegato A.
