@@ -547,6 +547,7 @@ l'intestazione del file.
 2. `classe-3/esercizi/01-cablaggio-rj45.md` — v0.1
 3. `classe-3/troubleshooting-guasti.md` — v0.1 (kit diagnosi guasti: teoria a crocette + guasti fisici) — Panaccione
 4. `classe-3/corso-html-css.md` — v0.1 (corso base HTML5/CSS, con pubblicazione su Pages) — Panaccione
+5. `classe-3/comunicazione-digitale/comunicazione-digitale.md` (+ `.html` → `Comunicazione-Digitale-v0.1.pdf`) — v0.1 (contenitore "Addetto alla comunicazione digitale" per la terza, nato dai bisogni delle aziende di stage: contenuti/siti/social/Facebook; profilo + competenze + 6 moduli + progetto finale, strumenti browser, legami con e-commerce/HTML-CSS/stage; bozza da confermare)
 
 ### 8. Altri materiali e prototipi
 1. `README.md` (radice) — v1.0
