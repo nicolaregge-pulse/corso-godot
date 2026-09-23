@@ -463,7 +463,8 @@ l'intestazione del file.
 2. `CORSO-INFORMATICA.md` — v1.17 (super-guida / indice generale)
 3. `PROMEMORIA-NICOLA.md` — v0.5 (cose da fare di Nicola + roadmap cose da sviluppare con Claude)
 4. `01-GLOSSARIO.md` — v1.1
-5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.6 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi: Classe-N-PerTutti o Classe-N-Cognome-Nome; NON sono le regole per i ragazzi)
+5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.7 (convenzioni interne Nicola↔Claude: PPP, schema nomi file cronologia/cosa/chi, conservazione integrale; NON sono le regole per i ragazzi)
+5c. `sbobinature/README.md` (+ `TEMPLATE-sbobinatura.md`) — v0.1 (trascrizioni lezioni: conservazione integrale + versione lavorata; alimenta libro di testo, argomenti svolti e note dei ragazzi; nomi solo in scratchpad)
 
 ### 2. Pianificazione didattica
 1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
