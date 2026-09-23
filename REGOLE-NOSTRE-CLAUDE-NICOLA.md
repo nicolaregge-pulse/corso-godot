@@ -111,3 +111,13 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
 2. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
+
+### 2.9 Nome dei file consegnabili (PDF/HTML per i ragazzi): schema fisso
+1. Formato: **`AAAAMMGG_Descrizione_Lingua_vX.Y.ext`**
+   - `AAAAMMGG` = anno-mese-giorno (es. 20260923); ordina i file per data da solo.
+   - `Descrizione` = parole legate da trattino (es. Compito-Hardware-PC).
+   - `Lingua` = `trilingue` (IT+AR+ZH nello stesso file) oppure `IT`/`AR`/`ZH` per i file monolingui.
+   - `vX.Y` = versione (coincide con quella nell'intestazione dell'MD).
+2. Esempio: `20260923_Compito-Hardware-PC_trilingue_v1.1.pdf`.
+3. Vale per i **consegnabili agli allievi**; i documenti interni mantengono il loro nome.
+4. Da riportare anche in REGOLE-FORMATTAZIONE quando lo si aggiorna.
