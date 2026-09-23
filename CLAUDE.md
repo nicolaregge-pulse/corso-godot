@@ -477,6 +477,7 @@ l'intestazione del file.
 3. `REGOLAMENTO-STRUMENTI-DIGITALI-IA.md` — v0.1 (regolamento + modulo presa visione/accettazione: strumenti informatici, servizi digitali, IA generativa)
 4. `RUOLI-CLASSE.md` — v0.4
 5. `STRUTTURA-REPOSITORY.md` — v1.2
+5b. `STRUTTURA-REGISTRI-CLASSI.md` — v0.1 (struttura logica delle 4 classi: un Excel per classe con Allievi/Registro voti/Assenze/Allegato A; dati coi nomi solo fuori dal repo; flusso Allegato A)
 6. `ORGANIZZAZIONE-GIT-ALLIEVI.md` — v0.4 (repository allievi via Classroom 50)
 7. `GUIDA-NOTEBOOKLM-CLASSROOM.md` (→ `GUIDA-NOTEBOOKLM-CLASSROOM-v0.1.pdf`) — v0.1 (guida operativa docente: NotebookLM + creare un compito su Classroom, passo-passo; cosa caricare, cosa far abilitare)
 8. `SCHEDA-NOTEBOOKLM-SUBITO.md` (→ `SCHEDA-NOTEBOOKLM-SUBITO-v0.1.pdf`) — v0.1 (scheda pronta "ricetta": solo i passi, la prima volta con NotebookLM, senza spiegazioni)
