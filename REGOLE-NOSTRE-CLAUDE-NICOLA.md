@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 0.2** — 21/09/2026
+**Versione 0.3** — 23/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -24,6 +24,9 @@ es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
 2. **Però nel frattempo preparo:** appena vedo `PPP` **inizio a preparare** la
    risposta o il documento (ragionamento, bozza, file), ma **non consegno** il
    risultato finale / non riempio la chat: aspetto il tuo **"avanti"**.
+2bis. **Subito, non dopo:** il PPP va **recepito e tenuto in caldo SUBITO** e in
+   **silenzio** (niente risposte/output); non si rimanda il ragionamento a
+   un'analisi successiva. L'unica cosa che si rimanda è la **consegna** dell'output.
 3. **Serve a non far scorrere la chat:** è un promemoria da tenere in caldo, non
    una richiesta di spiegone immediato.
 4. **Eccezione — richiesta diretta dentro il PPP:** se dopo `PPP` c'è un ordine
@@ -130,12 +133,27 @@ Regole di lavoro:
 7. **Abbinamento file→alunno risolto da Claude** anche per i file "senza titolo"
    (via proprietario/orario, incrociando i dati — vedi 2.7); i dati di minori
    restano **solo in scratchpad, mai su Git** (vedi 2.8).
-8. Output: **Excel** (modificabile) + **PDF a colori** (stampabile) + **HTML** per
-   l'anteprima.
+8. Output: si **generano** Excel (modificabile) + PDF a colori (stampabile) + HTML
+   (anteprima), ma la **consegna** segue la regola 2.11.
+
+### 2.11 Cosa consegno di default (preferenza di Nicola)
+1. Di norma a Nicola serve **solo il PDF "sensibile" (riservato)**: quello completo
+   con voti + certificazioni/difficoltà. È l'unico che mando in automatico.
+2. Gli **altri formati e versioni** (PDF non sensibile senza certificazioni, Excel
+   modificabile, foglio "indicazioni personali", HTML) li **genero e li tengo in
+   silenzio in scratchpad**, senza mandarli: li consegno **solo su richiesta**.
+3. **Eccezione:** un output pensato **per i ragazzi** (es. indicazioni personali da
+   consegnare a ciascuno) lo do quando serve a quello scopo.
+4. Voti sempre in **centesimi (/100)**; presente che non consegna = **30**, assente
+   = nessun voto (vedi 2.10).
 
 ## 3. Changelog
 
-1. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
+1. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
+   centesimi e regola "presente non consegna = 30 / assente = nessun voto";
+   nuova 2.11 = di default consegno solo il PDF sensibile (riservato), gli altri
+   formati li tengo in silenzio in scratchpad e li do su richiesta.
+2. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
    prima ciò che funziona; comandi in copia-incolla e scorciatoie dirette; mai
    dare ai ragazzi file con le risposte, due versioni separate; fermarsi subito
    quando si perde tempo in classe).
