@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 0.7** — 23/09/2026
+**Versione 0.8** — 23/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -165,26 +165,51 @@ Regole di lavoro:
    da esso si ricava la versione **lavorata** (la parte senza nomi va su Git).
 3. Dettaglio operativo del flusso sbobinature in `sbobinature/README.md`.
 
+### 2.13 Nome deterministico: il percorso è dentro il nome
+Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
+**esattamente dove va salvato**, così da un mucchio di file (es. 20 scaricati) si
+**ricostruisce l'albero** delle cartelle — su Windows o su Git — in modo automatico.
+1. Formato: `cartella__sottocartella__…__NomeFile.ext` — le cartelle del percorso
+   (dal root del repo) si scrivono all'inizio, separate da **`__` (doppio underscore)**.
+2. Il `NomeFile` finale segue lo schema 2.9 datato: `AAAAMMGG_Descrizione_Lingua_vX.Y.ext`.
+   La classe / di-chi-è è **già data dal percorso** (es. `classe-1`,
+   `quaderni__classe-1__Sala-Andrea`), quindi il token `Chi` non si ripete.
+3. **Ricostruzione (deterministica)**: si divide il nome sui `__`; tutti i pezzi
+   tranne l'ultimo sono cartelle, l'ultimo è il file. Su Git `__`→`/`, su Windows `__`→`\`.
+4. Il **singolo `_`** resta il separatore dei campi DENTRO il NomeFile; il `__` è
+   SOLO per le cartelle: mai `__` dentro una descrizione.
+5. Esempi:
+   - `classe-1__utenze-password__20260923_Le-Mie-Utenze-Password_multilingua_v1.0.pdf` → `classe-1/utenze-password/…`
+   - `sbobinature__20260923_Sbobinatura_Classe-1_v1.0.md` → `sbobinature/…`
+   - `quaderni__classe-1__Sala-Andrea__20260923_Libro-Studente_v1.0.pdf` → `quaderni/classe-1/Sala-Andrea/…` (scratchpad, coi nomi dei minori)
+6. Strumento: `strumenti/nome-albero.py` fa **espandi** (nomi piatti → albero) e
+   **collassa** (albero → nomi piatti). Uso soprattutto per i file che invio
+   "sciolti": così Nicola li rimette nell'albero con un clic.
+7. Vale da qui in poi; i file già dentro le loro cartelle non vanno rinominati.
+
 ## 3. Changelog
 
-1. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
+1. **v0.8 (23/09/2026)**: aggiunta 2.13 "Nome deterministico" — il percorso è nel
+   nome (cartelle separate da `__`), così da un mucchio di file si ricostruisce
+   l'albero; strumento `strumenti/nome-albero.py` (espandi/collassa).
+2. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
    che Nicola detta/riporta e le sbobinature si tengono sempre anche verbatim.
-2. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
+3. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
    (parola fissa `PerTutti`), non la classe "nuda"; il `Chi` comincia sempre
    dalla classe, poi PerTutti oppure Cognome-Nome.
-3. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
+4. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
    anche la **classe** (es. `Classe-1-Sala-Andrea`), così si sa di che classe è.
-4. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
+5. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
    (di chi è: Classe-N / Cognome-Nome / Corso / Docente), ordine `DATA _ COSA _ CHI
    _ LINGUA _ vX.Y`, con migrazione graduale.
-5. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
+6. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
    centesimi e regola "presente non consegna = 30 / assente = nessun voto";
    nuova 2.11 = di default consegno solo il PDF sensibile (riservato), gli altri
    formati li tengo in silenzio in scratchpad e li do su richiesta.
-6. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
+7. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
    prima ciò che funziona; comandi in copia-incolla e scorciatoie dirette; mai
    dare ai ragazzi file con le risposte, due versioni separate; fermarsi subito
    quando si perde tempo in classe).
-7. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
+8. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
