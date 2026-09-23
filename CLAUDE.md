@@ -542,6 +542,7 @@ l'intestazione del file.
 
 ### 6c. Materiale trasversale (tutti gli anni)
 1. `INTELLIGENZA-ARTIFICIALE.md` — v0.1 (IA: Gem vs Agenti autonomi; con Gemini)
+1b. `corso-docente-ai/corso-agenti-gem.md` (→ `20260923_Corso-Agenti-e-GEM_Docente_v1.0.pdf`) — v1.0 (CORSO PER IL DOCENTE su Agenti e GEM: i tre livelli chat/GEM/agente, creare un Gem in Gemini passo-passo, "simulare un professionista", ricettario di 5 Gem pronti da copiare, cenni sugli agenti, regole/privacy, piano in 3 passi; area Docente)
 2. `INVALSI-GRADO10-2025-26.md` — v1.1 (analisi dati INVALSI grado 10 2INFSPE; area Sicurezza = solo 4.1/4.2 + mappa 22 quesiti)
 3. `RECUPERO-INVALSI.md` — v0.2 (piano recupero lacune DigComp: sicurezza 4.1/4.2 sui 5 temi misurati + comunicazione area 2)
 4. `RECUPERO-INVALSI-esercizi.md` — v0.1 (schede + esercizi a scenario + laboratorio pratico: finta mail phishing, wi-fi non sicuro, cookie)
