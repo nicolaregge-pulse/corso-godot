@@ -1,6 +1,6 @@
 # Manuale docenti — Generazione di un Modulo Google via script
 
-**Versione 0.1** — 23/09/2026
+**Versione 0.2** — 23/09/2026
 *Capitolo del manuale per i docenti: come creare in automatico un'esercitazione
 (quiz) su Google Moduli usando un piccolo script (Google Apps Script), invece di
 inserire le domande a mano una per una. Basato sulla procedura provata in classe
@@ -80,6 +80,30 @@ script.new
    segna la risposta giusta).
 3. Ri-esegui: si crea un **nuovo** Modulo (non modifica il vecchio).
 
+## 05b Rifare o aggiornare un quiz già creato (questa eventualità)
+
+Capita spesso: hai già creato il quiz, poi vuoi **cambiare qualcosa** (per esempio
+rendere anche le opzioni di risposta trilingui, non solo le domande). Come si fa:
+
+1. **Rifarlo da capo con la versione nuova** (il modo più semplice):
+   1. Nella scheda di Apps Script, clicca **dentro il riquadro del codice**.
+   2. Premi **Ctrl+A** poi **Canc** (svuoti tutto).
+   3. **Incolla** la nuova versione dello script (Ctrl+V).
+   4. **Ctrl+S** → scegli **`creaQuiz`** → **Esegui**.
+   5. Nel **Log** compare un **nuovo** link "PRONTO. Modifica: …": è un **Modulo
+      nuovo** (lo script **non** modifica quello vecchio).
+   6. Apri il nuovo Modulo e **cancella il vecchio** da Google Drive, per non
+      confonderti.
+2. **Punto chiave da ricordare:** ogni **Esecuzione** crea **sempre un Modulo
+   nuovo**. Non "aggiorna" il precedente. Perciò, se hai creato tre volte, avrai
+   tre Moduli: tieni solo l'ultimo e cancella gli altri.
+3. **Se devi cambiare solo poco** (una o due domande): conviene **non** rieseguire
+   lo script, ma modificare le domande **a mano** dentro il Modulo già creato
+   (apri il Modulo → clicca la domanda → cambia il testo).
+4. **Nota didattica utile:** questo "rifare da capo e tenere l'ultima versione" è
+   proprio il concetto di **versione/release** (vedi la scheda sul *versioning*):
+   ogni esecuzione è una nuova versione, si tiene la buona e si scartano le vecchie.
+
 ## 06 Errori da evitare (imparati in classe)
 
 1. **Non usare "Esegui il deployment"** (bottone blu in alto a destra): non serve
@@ -100,6 +124,9 @@ script.new
 
 ## 08 Changelog
 
-1. **v0.1 (23/09/2026)**: primo capitolo, scritto dopo la prima creazione riuscita
+1. **v0.2 (23/09/2026)**: aggiunta la sezione 05b "Rifare o aggiornare un quiz già
+   creato" (ogni Esecuzione crea un Modulo nuovo; come sostituire il codice e
+   rieseguire; quando invece conviene modificare a mano; legame col versioning).
+2. **v0.1 (23/09/2026)**: primo capitolo, scritto dopo la prima creazione riuscita
    in classe (quiz Hardware del PC). Struttura dello script, esecuzione passo-passo,
    allegare su Classroom, come cambiare le domande, errori da evitare.

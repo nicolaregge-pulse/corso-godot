@@ -7,7 +7,7 @@ ol{margin:5px 0;padding-inline-start:26px;}li{margin:4px 0;}p em{color:#3a5266;}
 pre{background:#f6f8fb;border:1px solid #ccd6e0;border-radius:6px;padding:7px 11px;font-family:"Liberation Mono",monospace;font-size:9.5pt;white-space:pre-wrap;word-break:break-word;}
 code{font-family:"Liberation Mono",monospace;background:#f2f4f7;padding:1px 4px;border-radius:3px;}
 </style></head><body><h1>Manuale docenti — Generazione di un Modulo Google via script</h1>
-<p><strong>Versione 0.1</strong> — 23/09/2026
+<p><strong>Versione 0.2</strong> — 23/09/2026
 <em>Capitolo del manuale per i docenti: come creare in automatico un'esercitazione
 (quiz) su Google Moduli usando un piccolo script (Google Apps Script), invece di
 inserire le domande a mano una per una. Basato sulla procedura provata in classe
@@ -80,6 +80,29 @@ il 23/09/2026 (funzionante). Documento interno per il docente.</em></p>
    segna la risposta giusta).</li>
 <li>Ri-esegui: si crea un <strong>nuovo</strong> Modulo (non modifica il vecchio).</li>
 </ol>
+<h2>05b Rifare o aggiornare un quiz già creato (questa eventualità)</h2>
+<p>Capita spesso: hai già creato il quiz, poi vuoi <strong>cambiare qualcosa</strong> (per esempio
+rendere anche le opzioni di risposta trilingui, non solo le domande). Come si fa:</p>
+<ol>
+<li><strong>Rifarlo da capo con la versione nuova</strong> (il modo più semplice):</li>
+<li>Nella scheda di Apps Script, clicca <strong>dentro il riquadro del codice</strong>.</li>
+<li>Premi <strong>Ctrl+A</strong> poi <strong>Canc</strong> (svuoti tutto).</li>
+<li><strong>Incolla</strong> la nuova versione dello script (Ctrl+V).</li>
+<li><strong>Ctrl+S</strong> → scegli <strong><code>creaQuiz</code></strong> → <strong>Esegui</strong>.</li>
+<li>Nel <strong>Log</strong> compare un <strong>nuovo</strong> link "PRONTO. Modifica: …": è un <strong>Modulo
+      nuovo</strong> (lo script <strong>non</strong> modifica quello vecchio).</li>
+<li>Apri il nuovo Modulo e <strong>cancella il vecchio</strong> da Google Drive, per non
+      confonderti.</li>
+<li><strong>Punto chiave da ricordare:</strong> ogni <strong>Esecuzione</strong> crea <strong>sempre un Modulo
+   nuovo</strong>. Non "aggiorna" il precedente. Perciò, se hai creato tre volte, avrai
+   tre Moduli: tieni solo l'ultimo e cancella gli altri.</li>
+<li><strong>Se devi cambiare solo poco</strong> (una o due domande): conviene <strong>non</strong> rieseguire
+   lo script, ma modificare le domande <strong>a mano</strong> dentro il Modulo già creato
+   (apri il Modulo → clicca la domanda → cambia il testo).</li>
+<li><strong>Nota didattica utile:</strong> questo "rifare da capo e tenere l'ultima versione" è
+   proprio il concetto di <strong>versione/release</strong> (vedi la scheda sul <em>versioning</em>):
+   ogni esecuzione è una nuova versione, si tiene la buona e si scartano le vecchie.</li>
+</ol>
 <h2>06 Errori da evitare (imparati in classe)</h2>
 <ol>
 <li><strong>Non usare "Esegui il deployment"</strong> (bottone blu in alto a destra): non serve
@@ -100,6 +123,9 @@ il 23/09/2026 (funzionante). Documento interno per il docente.</em></p>
 </ol>
 <h2>08 Changelog</h2>
 <ol>
+<li><strong>v0.2 (23/09/2026)</strong>: aggiunta la sezione 05b "Rifare o aggiornare un quiz già
+   creato" (ogni Esecuzione crea un Modulo nuovo; come sostituire il codice e
+   rieseguire; quando invece conviene modificare a mano; legame col versioning).</li>
 <li><strong>v0.1 (23/09/2026)</strong>: primo capitolo, scritto dopo la prima creazione riuscita
    in classe (quiz Hardware del PC). Struttura dello script, esecuzione passo-passo,
    allegare su Classroom, come cambiare le domande, errori da evitare.</li>
