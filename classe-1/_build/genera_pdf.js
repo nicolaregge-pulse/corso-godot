@@ -37,7 +37,7 @@ const PDF_PATH = info.pdf;
       '<div style="width:100%; font-size:8px; color:#8a97a5; ' +
       'font-family: Segoe UI, Arial, sans-serif; padding:0 16mm; ' +
       'display:flex; justify-content:space-between;">' +
-      '<span>Corso di Informatica — Classe 1</span>' +
+      '<span>Corso di Informatica — classi 1, 2, 3, 4</span>' +
       '<span>Pag. <span class="pageNumber"></span> / <span class="totalPages"></span></span>' +
       '</div>',
   };

@@ -37,7 +37,7 @@ DOC_DIR = MANUALE_DIR
 #   python3 genera_pdf.py manuale      (default)
 #   python3 genera_pdf.py eserciziario
 # ---------------------------------------------------------------------------
-COVER_SUBTITLE = "Corso di Informatica — Classe 1"
+COVER_SUBTITLE = "Corso di Informatica — classi 1, 2, 3, 4"
 COVER_AUTHOR = "Corso a cura del prof. Nicola Regge"
 
 # I documenti del corso Classe 1. 'src' è relativo alla cartella classe-1/.

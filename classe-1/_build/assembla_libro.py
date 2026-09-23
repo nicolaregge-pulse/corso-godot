@@ -34,8 +34,8 @@ import genera_pdf as G  # riusa tutte le funzioni di impaginazione già collauda
 # ---------------------------------------------------------------------------
 # Versione del LIBRO COMPLETO (si alza quando cambia il contenuto aggregato)
 # ---------------------------------------------------------------------------
-LIBRO_VERSION = "1.70"
-LIBRO_DATE = "16/09/2026"
+LIBRO_VERSION = "1.71"
+LIBRO_DATE = "23/09/2026"
 LIBRO_TITLE = "Il Libro del Corso"
 LIBRO_SUBTITLE = "Corso di Informatica — tutti i documenti in uno"
 
@@ -202,6 +202,25 @@ def main():
     body_html = re.sub(r"<h1(?P<attrs>[^>]*)>(?P<inner>.*?)</h1>",
                        h1_repl, body_html, flags=re.DOTALL)
 
+    # 3c) FRONTESPIZIO DI PARTE: prima del PRIMO documento di ogni Parte (es.
+    #     "Classe 1 — Informatica") inserisco una pagina-divisore con page-break,
+    #     così ogni classe (e ogni parte) inizia visibilmente su una pagina nuova.
+    seen_parti = set()
+    for d in documenti:
+        if d["parte"] in seen_parti:
+            continue
+        seen_parti.add(d["parte"])
+        marker = f'<div class="docdiv"><h1 id="{d["anchor"]}"'
+        partdiv = (
+            f'<div class="partdiv"><div class="pd-kicker">Parte</div>'
+            f'<div class="pd-title">{html.escape(d["parte"])}</div></div>'
+        )
+        if marker in body_html:
+            body_html = body_html.replace(marker, partdiv + marker, 1)
+        else:
+            print(f"⚠️  Frontespizio: marker non trovato per la parte "
+                  f"'{d['parte']}' ({d['anchor']})")
+
     # 4) l'INDICE cliccabile (parti -> documenti -> sezioni)
     toc = ['<section class="toc"><h2 class="toc-h">Indice</h2>']
     parte_corrente = None
@@ -277,6 +296,29 @@ h1.dtitle {
   max-width: 90%;
 }
 .docdiv + p em { color: var(--muted); }   /* riga versione sotto il titolo */
+
+/* ---------- FRONTESPIZIO DI PARTE (Classe 1/2/3/4, Riferimento, ecc.) ---------- */
+.partdiv {
+  page-break-before: always;
+  page-break-after: always;
+  padding-top: 95mm;
+  text-align: center;
+}
+.partdiv .pd-kicker {
+  font-family: var(--serif);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 13pt;
+  color: var(--godot-blue);
+}
+.partdiv .pd-title {
+  font-family: var(--serif);
+  font-size: 40pt;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--godot-blue-dark);
+  margin-top: 12px;
+}
 
 /* ---------- INDICE ---------- */
 .toc {

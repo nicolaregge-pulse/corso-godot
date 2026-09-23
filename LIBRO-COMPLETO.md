@@ -1,12 +1,12 @@
 # Il Libro del Corso
 
-**Versione 1.70** — 16/09/2026
+**Versione 1.71** — 23/09/2026
 *Corso di Informatica — tutti i documenti in uno. Fonte unica generata automaticamente da `classe-1/_build/assembla_libro.py`: **non modificare a mano**, si rigenera dai singoli documenti.*
 
 ---
 
 # Stato del Corso {#doc1}
-*Versione 2.2 · 18/08/2026 · Parte: Riferimento*
+*Versione 2.3 · 23/09/2026 · Parte: Riferimento*
 
 ## 1. Missione {#doc1-sec1}
 1. Corso di informatica pluriennale (classi 1-4) di istituto professionale, indirizzo Operatore Informatico; taglio pratico e tecnico.
@@ -20,19 +20,19 @@
 3. Con gli studenti tutto e visuale (browser e GitHub Desktop): mai la riga di comando. A scuola niente installazioni: si predilige browser e software portable.
 4. Carta e penna in OGNI lezione (tassativo): appunti e schemi a mano, sempre; se un allievo non li ha, il docente glieli fornisce e segna una nota. Confluiscono nel quaderno personale.
 5. Git a due fasi: Fase 1 (in 1a) esercizi separati con un commit ciascuno nel proprio repository; Fase 2 (3a-4a) progetto di gruppo che evolve con ramo, Pull Request e release.
-6. Repository degli allievi: un'organizzazione GitHub della classe con un repository PRIVATO per ogni allievo, creati con GitHub Classroom (ognuno vede solo il suo; il docente vede tutti).
+6. Repository degli allievi: un'organizzazione GitHub della classe con un repository PRIVATO per ogni allievo, creati con Classroom 50 (GitHub Classroom e stato ritirato il 28/08/2026); ognuno vede solo il suo, il docente vede tutti.
 7. Ogni studente costruisce il PROPRIO libro di testo/quaderno, che cresce a ogni lezione, con l'aiuto dell'AI (aiuta a capire, non a saltare il pensiero).
 8. Per questo progetto la fonte di verita e Nicola: nessun ruolo di soggetti esterni (Guido non c'entra: riguarda un'altra cosa, non il corso).
 9. Strumento SQL: SQLite. A scuola dal browser su sqliteonline.com (primo assaggio su w3schools Tryit SQL); sui PC nostri DB Browser for SQLite in versione portable. Il database e un solo file, versionabile in Git.
 10. Strumento AI: Gemini gratuito, l'unico disponibile sull'account scolastico (niente Claude a scuola). Copre tutto il percorso AI, compreso il quaderno personale.
-11. Godot in 3a e 4a; cablaggio RJ45 e prime reti in 3a e 4a.
+11. Godot: introdotto DOPO Lazarus (assaggio a fine 1a/in 2a) e sviluppato davvero in 3a e 4a; i tempi esatti dipendono dalla DINAMICA della classe (decisione di Nicola del 17/09/2026, vedi sez. 5). Cablaggio RJ45 e prime reti in 3a e 4a.
 
 ## 3. Impianto pluriennale (Mappa, Griglia, Piano ore, Programmi) {#doc1-sec3}
 1. Mappa degli Argomenti: le macro-aree del corso, con indicazione di "di chi e" ciascuna area (alcune sono di altri docenti).
 2. Griglia degli Argomenti (completa, 12 capitoli): ogni argomento ha le spunte 1a/2a/3a/4a e una colonna "Comp." con l'area di competenza dell'Allegato A che tocca.
 3. Piano delle Ore di Lezione: l'albero macro-area -> sotto-argomento -> singola ora, guida giorno per giorno.
 4. Programmi dei quattro anni: allineati alla Griglia; Classe 1 la piu sviluppata, Classi 2-3-4 avviate.
-5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e stato portato negli argomenti della Griglia (capitolo 8), collocati in 3a e 4a.
+5. Corso Godot dedicato (manuale + eserciziario): e un documento ORGANICO, quasi un libro di testo, che Nicola usa e fa crescere man mano che gli studenti lavorano su Godot; puo spalmarsi su 2-3 anni. Per questo se ne tiene lo storico delle versioni (come per un libro che cresce). Il suo dettaglio e negli argomenti della Griglia (capitolo 8): Godot si INTRODUCE dopo Lazarus (assaggio a fine 1a/2a) e si SVILUPPA in 3a e 4a, con tempi che dipendono dalla dinamica della classe.
 
 ## 4. Allegato A e consegna alla Regione (workflow) {#doc1-sec4}
 1. L'Allegato A NON e una "Bibbia" fissa: e il programma effettivamente svolto per una classe specifica (la storia reale degli argomenti). Cambia ogni anno e si modifica quando si fanno cose nuove o le si sposta di anno.
@@ -42,21 +42,25 @@
 
 ## 5. Progetti pratici {#doc1-sec5}
 1. "Il Mio Negozio Online" (e-commerce): vetrina su GitHub Pages, database su Supabase, ordini via FormSubmit. Progetto pilota completato e testato; cresce dalla 2a alla 4a.
-2. Giochi con Godot: dai semplici al "progetto boss" (anno da decidere).
+2. Giochi con Godot: dai semplici al "progetto boss". Collocazione confermata da Nicola (17/09/2026): Godot arriva DOPO Lazarus — assaggio a fine prima o in seconda, sviluppo vero in terza e quarta; i tempi esatti dipendono dalla dinamica della classe.
 3. Cablaggio RJ45 e reti; in 4a il progetto forte: la rete di una scuola in Cisco Packet Tracer (VLAN, simulazione).
 
 ## 6. Punti aperti (da decidere/confermare con Nicola) {#doc1-sec6}
 1. Affinare la colonna competenze della Griglia dove serve, argomento per argomento.
-2. (Le scelte su Godot 3a-4a, cablaggio 3a-4a, strumento SQL = SQLite e strumento AI = Gemini sono CONFERMATE: vedi sezione 2.)
+2. (Le scelte su Godot — assaggio a fine 1a/2a e sviluppo in 3a-4a —, cablaggio 3a-4a, strumento SQL = SQLite e strumento AI = Gemini sono CONFERMATE: vedi sezione 2.)
 
 ## 7. Ruolo di questo documento {#doc1-sec7}
 1. E la stella polare: in caso di contraddizione, vince questo, e nel documento in errore si apre un box rosso di disallineamento.
 2. Si aggiorna quando cambiano le decisioni; le versioni gia stampate restano congelate.
 3. Ogni volta che si produce o aggiorna un documento, si rigenera il libro complessivo e si alza la sua versione: tutto resta versionato e "tutto dentro".
 
+## 8. Changelog {#doc1-sec8}
+1. **v2.3 (23/09/2026)**: chiarita la collocazione di Godot (decisione di Nicola): introdotto dopo Lazarus (assaggio a fine 1a/2a) e sviluppato in 3a-4a, con tempi che dipendono dalla dinamica della classe (sez. 2 e 3); aggiornato il repository allievi a Classroom 50 (GitHub Classroom ritirato il 28/08); aggiunto questo changelog.
+2. **v2.2 (18/08/2026)**: versione precedente (impianto pluriennale, decisioni confermate SQLite/Gemini, workflow Allegato A).
+
 
 # Glossario {#doc2}
-*Versione 1.0 · 16/08/2026 · Parte: Riferimento*
+*Versione 1.1 · 23/09/2026 · Parte: Riferimento*
 
 ## 1. Documenti e versioni {#doc2-sec1}
 1. MD (Markdown: testo formattato semplice): il formato sorgente dei documenti.
@@ -74,6 +78,10 @@
 8. Release: una versione congelata e stabile, contrassegnata da un'etichetta (tag).
 9. GitHub Desktop: il programma visuale per usare Git senza riga di comando.
 10. GitHub Pages: pubblica gratis una pagina web direttamente dal repository.
+11. Organizzazione GitHub: l'"ombrello" della classe, di proprieta del docente, che contiene i repository degli allievi.
+12. GitHub Education: il programma che verifica i docenti; una volta verificati danno gratis l'upgrade a GitHub Team.
+13. GitHub Team: il piano dell'organizzazione (a pagamento, ma gratis per i docenti verificati) richiesto da Classroom 50.
+14. Classroom 50 (classroom50.org): lo strumento da browser che crea un repository per ogni allievo dentro l'organizzazione (sostituisce GitHub Classroom, ritirato il 28/08/2026).
 
 ## 3. Il negozio online {#doc2-sec3}
 1. Database: un magazzino ordinato di dati (per esempio l'elenco dei prodotti).
@@ -83,11 +91,18 @@
 5. HTML (HyperText Markup Language): la struttura di una pagina web.
 6. CSS (Cascading Style Sheets): l'aspetto grafico di una pagina web.
 7. JavaScript: la logica e l'interattivita di una pagina web.
+8. SQLite: il motore SQL scelto per il corso; il database e un solo file, facile da versionare in Git.
+9. DB Browser for SQLite: il programma portable (senza installazione) per aprire e usare un database SQLite sui PC della scuola; dal browser si usa invece sqliteonline.com.
 
 ## 4. Godot {#doc2-sec4}
 1. Godot: il motore gratuito per creare videogiochi.
 2. GDScript: il linguaggio di programmazione di Godot, in stile Python.
 3. Scena e nodi: il modo in cui in Godot si costruisce cio che si vede e si usa.
+
+## 5. Intelligenza artificiale (AI) {#doc2-sec5}
+1. IA generativa: strumenti che generano testo/immagini a partire da una richiesta; nel corso aiutano a CAPIRE, non a saltare il pensiero (la prova e saperlo spiegare a voce).
+2. Gemini: l'assistente AI di Google, gratuito e unico disponibile sull'account scolastico (a scuola non c'e Claude); copre tutto il percorso AI del corso.
+3. Quaderno personale con l'AI: ogni allievo costruisce il proprio libro/quaderno facendosi aiutare dall'AI (anche a tradurre nella propria lingua).
 
 
 # Regole di Formattazione {#doc3}
@@ -575,7 +590,7 @@ sono quelle di cui andare piu fieri.
 
 
 # Griglia degli Argomenti — scelta per anno {#doc7}
-*Versione 1.16 · 15/09/2026 · Parte: Riferimento*
+*Versione 1.17 · 23/09/2026 · Parte: Riferimento*
 
 ## 1. Come si usa {#doc7-sec1}
 1. Ogni riga e un argomento; le colonne 1a/2a/3a/4a sono da spuntare con una X.
@@ -690,7 +705,7 @@ sono quelle di cui andare piu fieri.
 | Lazarus, esercizi: calcolatrice, contasecondi, MasterMind, array/stringhe |  | X | X | X | 17 |
 | Lazarus, grafica e coordinate (2D/3D, polari e rettangolari) |  |  | X | X | 17 |
 | Interpretato e compilato; Lazarus e Delphi |  | X | X |  | 17 |
-| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  |  | X | X | 17 |
+| Godot: cos'e, l'ambiente, i 4 concetti base (scene, nodi, segnali, script) |  | X | X | X | 17 |
 | GDScript: il linguaggio (variabili, funzioni, stile simile a Python) |  |  | X | X | 17 |
 | Segnali ed eventi in Godot (il bottone che risponde, come Button1Click di Lazarus) |  |  | X | X | 17 |
 | Game loop: _process(delta) e il movimento a fotogrammi |  |  | X | X | 17 |
@@ -702,7 +717,7 @@ sono quelle di cui andare piu fieri.
 
 > [GIALLO] Lazarus cresce di difficolta salendo di anno: in 1a solo componenti semplici (Button, Edit, Label, come gia conoscevano da prima); dalla 2a si aggiungono oggetti piu complessi (RadioButton, ComboBox, PageControl), esercizi e via via la grafica. In 4a il livello massimo.
 
-> [GIALLO] Godot e GDScript (CONFERMATO in 3a e 4a): queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), che vive a parte ed e un libro di testo organico spalmato su 2-3 anni. La progressione e quella del corso dedicato: si parte dal "vinci subito" (il bottone che saluta), si passa al movimento e alle collisioni, fino al primo gioco 2D e al "progetto boss" con il salto al 3D. Si introduce in 3a e si sviluppa in 4a.
+> [GIALLO] Godot e GDScript (collocazione decisa da Nicola il 17/09/2026): Godot arriva DOPO Lazarus. Si INTRODUCE come assaggio gia a fine 1a / in 2a (il "vinci subito": il bottone che saluta, i 4 concetti base) e si SVILUPPA davvero in 3a e 4a (movimento, collisioni, primo gioco 2D, fino al "progetto boss" 3D). I tempi esatti dipendono dalla DINAMICA della classe. Queste voci sono il DETTAGLIO estratto dal corso dedicato a Godot (manuale + eserciziario), un libro di testo organico spalmato su 2-3 anni.
 
 ## 9. Database e gestione dei dati {#doc7-sec9}
 
@@ -780,12 +795,12 @@ DB Browser for SQLite portable
 | Argomento | 1a | 2a | 3a | 4a | Comp. |
 |---|:--:|:--:|:--:|:--:|:--:|
 | Il Mio Negozio Online (e-commerce): web, database, ordini via email |  | X | X | X | 15/17 |
-| Giochi con Godot: dai semplici ai piu strutturati |  |  | X | X | 17 |
+| Giochi con Godot: dai semplici ai piu strutturati (assaggio dopo Lazarus, sviluppo in 3a-4a) |  | X | X | X | 17 |
 | Cablaggio RJ45 e prime reti (schede pratiche a 4 livelli) |  |  | X | X | 16 |
 
 > [GIALLO] Negozio Online (e-commerce): in 2a, 3a e 4a; e un progetto che cresce di anno in anno (dal semplice all'ordine via email fino al database).
 
-> [GIALLO] Giochi con Godot (CONFERMATO in 3a e 4a): come per Godot/GDScript nel capitolo 8. C'e anche il corso dedicato di Godot, gestito a parte.
+> [GIALLO] Giochi con Godot: come per Godot/GDScript nel capitolo 8 — assaggio dopo Lazarus (fine 1a/2a) e sviluppo in 3a-4a, con tempi legati alla dinamica della classe. C'e anche il corso dedicato di Godot, gestito a parte.
 
 > [GIALLO] Cablaggio RJ45: CONFERMATO in 3a e 4a.
 
@@ -1669,7 +1684,7 @@ nel file (per la privacy degli allievi).
 
 
 # Promemoria — Cose da Fare (Nicola) {#doc13}
-*Versione 0.3 · 02/09/2026 · Parte: Riferimento*
+*Versione 0.5 · 23/09/2026 · Parte: Riferimento*
 
 ## 1. Come funziona {#doc13-sec1}
 1. Ogni voce dice: cosa fare, quando/il contesto, e lo stato (da fare / fatto).
@@ -1677,8 +1692,8 @@ nel file (per la privacy degli allievi).
 3. Quando qualcosa e fatto, si segna [FATTO] e resta a storico (non si cancella subito).
 
 ## 2. Da fare (inizio scuola e primo periodo) {#doc13-sec2}
-1. [DA FARE] Nominare il Rallentatore in classe (e mostrare a tutti il gesto: palmo alzato, due spinte "ta-ta" = rallenta). Meglio dopo aver conosciuto un po' i ragazzi, anche dopo il primo mese.
-2. [DA FARE] Scegliere se adottare anche altri ruoli di classe (custode del glossario, guardiano di carta e penna, tutor, responsabile laboratorio, responsabile "Mostralo") e dirlo a Claude, che li sviluppa.
+1. [FATTO] Nominare il Rallentatore in classe (e mostrare a tutti il gesto: palmo alzato, due spinte "ta-ta" = rallenta). Classe 1 (2026/27): ruoli assegnati; foglio "diploma" con i nomi consegnato a Nicola (i nomi restano fuori da Git per privacy).
+2. [FATTO] Scelti i ruoli adottati: sono TRE — Rallentatore, Guardiano di Carta e Penna, Responsabile del Laboratorio (vedi RUOLI-CLASSE.md). Assegnati in Classe 1.
 3. [IN CORSO] Attivare i repository degli allievi con Classroom 50 (GitHub Classroom e stato ritirato il 28/08/2026). FATTO: creata l'organizzazione `informatica-piamarta` e inviata la verifica docente su GitHub Education (con la lettera d'incarico). DA FARE quando arriva l'email di approvazione Education: fare l'upgrade gratuito dell'organizzazione a GitHub Team (serve per far funzionare Classroom 50), poi creare le classi. Gli account GitHub degli allievi si creano prima, in una lezione dedicata.
 4. [DA FARE] Verificare che con Gemini gratuito si riesca a fare tutto il percorso AI (compreso costruire il quaderno personale), visto che a scuola non c'e Claude.
 
@@ -1686,9 +1701,24 @@ nel file (per la privacy degli allievi).
 1. [DA FARE] Fornire a Claude l'esportazione del registro (Excel) di ogni classe, cosi Claude genera il programma svolto per la Regione (Allegato A aggiornato, per anno e classe).
 2. [DA FARE] Man mano che si svolgono gli argomenti, aggiornare l'Allegato A della classe (togliere il giallo a cio che e fatto, cancellare cio che non si e fatto).
 
-## 4. Il primo giorno di scuola: 14 settembre 2026 {#doc13-sec4}
-1. Primo giorno di lezione: 14/9/2026. E impostato un promemoria automatico per quel giorno, che ricorda a Nicola questa lista.
-2. Quel giorno: rivedere le cose da fare, e annotare le cose nuove che Nicola dira (anche se le fara piu avanti).
+## 4. Inizio scuola (storico) {#doc13-sec4}
+1. [FATTO] Primo giorno di lezione: 14/09/2026. La scuola e iniziata; le lezioni della Classe 1 sono in corso (a fine settembre: hardware, GitHub, versioning).
+2. Regola che resta valida: a ogni lezione si rivede questa lista e si annotano le cose nuove che Nicola dice (anche se le fara piu avanti).
+
+## 5. Account GitHub degli allievi (in corso, Classe 1) {#doc13-sec5}
+1. [IN CORSO] Creare gli account GitHub degli allievi della prima, uno alla volta. Ostacolo emerso in aula: la rete della scuola ha un solo indirizzo (NAT), quindi GitHub blocca con "too many requests" quando molti si registrano insieme. Ripieghi: registrarsi con email+password (non col bottone Google), usare i dati mobili del telefono, oppure creare gli account da casa.
+
+## 6. Cose da sviluppare con Claude (roadmap — si fanno quando Nicola dice "avanti") {#doc13-sec6}
+1. [DA FARE] **Corso per Nicola su AI**: agenti, GEM (assistenti Gemini personalizzati) e come "simulare un professionista" (programmatore, segretaria...) con l'AI. Base: `INTELLIGENZA-ARTIFICIALE.md`.
+2. [DA FARE] **Albero di cartelle compatibile con la tassonomia** del corso (classi / macro-argomenti / competenze Allegato A), coerente con lo schema nomi file (regola 2.9).
+3. [DA FARE] **Programma di confronto Allegato A prima/dopo**: dato l'Allegato A prima e dopo le modifiche, evidenzia le differenze (per non scrivere in sezioni non di competenza). Modalita: Nicola scarica -> Claude sistema -> ricarica + PDF differenze; oppure diretto se il file e su Google Drive.
+4. [DA FARE] **File di sbobinatura (trascrizioni)**: al momento NON esistono. Se si vuole, creare cartella + processo: Nicola manda audio/testo, Claude pulisce e alimenta libro di testo + argomenti svolti. Versioni coi nomi in scratchpad, versioni pulite su Git.
+5. [DA FARE] **Libri campione allievi**: rifiniture (teoria di Liu bilingue? pagina "appunti a mano"?) e poi replica per tutta la classe. I file coi nomi restano in scratchpad (non su Git).
+
+## 7. Changelog {#doc13-sec7}
+1. **v0.5 (23/09/2026)**: aggiunta la sez. 6 "Cose da sviluppare con Claude" (corso AI/GEM/agenti, albero tassonomia, confronto Allegato A, sbobinature, rifiniture libri allievo).
+2. **v0.4 (23/09/2026)**: archiviato come storico il "14 settembre" (scuola iniziata); aggiunta la voce sugli account GitHub degli allievi e sul blocco "too many requests".
+3. **v0.3 (02/09/2026)**: ruoli assegnati; attivazione repository allievi con Classroom 50; verifiche Gemini e Allegato A.
 
 
 # Programmi Ufficiali (Allegato A) — nota {#doc14}
@@ -2616,7 +2646,19 @@ Nota utile: quest'area e l'unica in cui sono deboli anche i piu bravi, ed e l'un
 # Le Mie Parti nell'Allegato A {#doc17}
 *Versione 0.2 · 02/09/2026 · Parte: Riferimento*
 
-> [BLU] Mappatura classi da confermare: PFP1 -> 2a, PFP2 -> 3a, PFP3 -> storico Operatore della 4a, PFP4 Tecnico -> anno di qualifica della 4a.
+> Struttura confermata da Nicola (17/09/2026): il corso e un TRIENNIO unico
+> (prima -> seconda -> terza) = un solo percorso che avanza nel tempo. La prima
+> inizia quest'anno (I annualita); la seconda e il proseguo della prima (II
+> annualita); la terza e il proseguo di prima+seconda (III annualita). La QUARTA
+> e a se stante (unione di due classi): documento separato, tutto suo.
+> Nota operativa: quest'anno le classi 2 e 3 sono coorti gia avviate negli anni
+> scorsi (si compila la colonna dell'annualita corrente); il dettaglio coorte
+> per coorte lo confermeremo quando serve.
+> [BLU] Dubbio parcheggiato (da capire): non e ancora certo che il percorso sia
+> un unico triennio 1-2-3; potrebbe anche essere 1-2 come un blocco e poi 3-4 che
+> "ricomincia" da capo (come un nuovo primo-secondo). Certo per ora: la seconda
+> prosegue la prima, la terza prosegue prima+seconda, la prima inizia quest'anno,
+> la quarta e a se stante. Nicola confermera quando lo avra chiarito.
 
 ## Classe 2 (2026/27) {#doc17-sec1}
 *dal PFP 1 Operatore — nel 2025/26 era la 1a (compilato il I anno)*
@@ -7297,7 +7339,7 @@ Ogni domanda: una descrizione del problema e alcune risposte; una sola giusta. L
 
 
 # Corso Informatica — indice generale {#doc41}
-*Versione 1.16 · 02/09/2026 · Parte: Indici e cataloghi*
+*Versione 1.17 · 23/09/2026 · Parte: Indici e cataloghi*
 
 ## In breve {#doc41-sec1}
 
@@ -7323,15 +7365,15 @@ macro-aree, alla scelta di quale anno, fino all'ora di lezione.
 
 | Documento | Cos'è | Versione |
 |---|---|---|
-| `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 2.2 |
-| `01-GLOSSARIO.md` | Il **glossario** dei termini del corso. | 1.0 |
+| `00-STATO-DEL-CORSO.md` | La **fonte di verità**: missione, decisioni confermate, stato attuale. | 2.3 |
+| `01-GLOSSARIO.md` | Il **glossario** dei termini del corso. | 1.1 |
 | `MAPPA-ARGOMENTI.md` | Le **macro-aree** del corso, unendo i programmi ufficiali col materiale nostro; indica anche di chi è ciascuna area. | 1.3 |
-| `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª) e la colonna **Competenza (Allegato A)**. Completa su tutti i 12 capitoli. | 1.13 |
+| `GRIGLIA-ARGOMENTI.md` | La **griglia** macro-area → argomenti con la spunta dell'anno (1ª/2ª/3ª/4ª) e la colonna **Competenza (Allegato A)**. Completa su tutti i 12 capitoli. | 1.17 |
 | `PIANO-ORE-LEZIONE.md` | La **guida giorno per giorno**: l'albero macro-area → sotto-argomento → **singola ora di lezione**, con una breve descrizione di cosa fare in ogni ora. È il documento da guardare prima di ogni lezione. | 0.3 |
 | `ORGANIZZAZIONE-GIT-ALLIEVI.md` | Come organizziamo **Git per la classe**: un'organizzazione comune con un **repository privato per ogni allievo** (GitHub Classroom). | 0.1 |
 | `REGOLE-LABORATORIO.md` | Le **regole del laboratorio** di informatica: rispetto, cura delle postazioni, carta e penna, uso di internet/AI, con una versione breve da appendere. | 0.1 |
 | `RUOLI-CLASSE.md` | I **ruoli della classe** (a rotazione, per tutti e 4 gli anni): i tre adottati sono **Rallentatore**, **Guardiano di Carta e Penna**, **Responsabile del Laboratorio**. | 0.3 |
-| `PROMEMORIA-NICOLA.md` | La **lista viva** delle cose che Nicola deve fare (a scuola/al PC), tenuta aggiornata da Claude; si rilegge all'inizio della scuola. | 0.1 |
+| `PROMEMORIA-NICOLA.md` | La **lista viva** delle cose che Nicola deve fare (a scuola/al PC), tenuta aggiornata da Claude; si rilegge all'inizio della scuola. | 0.4 |
 | `STRUTTURA-REPOSITORY.md` | L'**albero del repository**: com'è ora e come sarà a regime. | 1.2 |
 | `programmi-ufficiali/` (README + 4 PDF) | I **programmi ufficiali** (Allegato A) delle classi, con nota su struttura e workflow di fine anno per la Regione. | 0.6 |
 | `programma-svolto/` (cartella) | I **programmi svolti** per anno e classe (Allegato A vivo), da consegnare alla Regione. Organizzati in `<anno>/<classe>/`. | — |
@@ -7471,7 +7513,7 @@ avere sott'occhio tutto ciò che esiste.
 
 
 # Materiale del Corso — Classe 1 {#doc42}
-*Versione 1.4 · 16/08/2026 · Parte: Indici e cataloghi*
+*Versione 1.5 · 23/09/2026 · Parte: Indici e cataloghi*
 
 ## In breve {#doc42-sec1}
 
@@ -7518,7 +7560,23 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 3. Strumenti {#doc42-sec4}
+## 2b. Schede e attività pronte (settembre 2026) {#doc42-sec4}
+
+Materiale creato con l'inizio della scuola, quasi tutto **trilingue (IT/AR/ZH)** e con PDF consegnabile. Elenco per aree (dettaglio e versioni nell'indice di `CLAUDE.md`):
+
+| Area | Materiali pronti (≥ v1.0) |
+|---|---|
+| **Regole e ambiente** | `regole-classe` (v1.1), `regole-fine-lavoro` (v1.0), `accesso-blocco-schermo` (v1.0) |
+| **Hardware / PC** | `parti-del-pc` (v1.0), `componenti-pc-compito` (v1.0), `costruisci-pc` (v1.0), compito hardware (PDF v1.2) |
+| **Versioning** | scheda `versioning` (v2.3, con grafo stile Git) + quiz su Moduli (v1.1) |
+| **G Suite / Classroom** | `esercizio-presentazione-famiglia` (v1.2) |
+| **Git (avvicinamento)** | `ricerca-github` (v1.0) |
+| **Inclusione / L2** | `glossario-l2` (v1.0) |
+| **Libro di testo Classe 1** | `libro-di-testo/libro-classe1.md` (v0.1, cresce a ogni lezione) |
+
+In bozza (da completare): i due laboratori (`laboratorio-01`, `laboratorio-02`, v0.1), `github-crea-account` (v0.2), `attivita-blocchi` (v0.1), `consegna-senza-tastiera` (v0.1).
+
+## 3. Strumenti {#doc42-sec5}
 
 | Cosa | A cosa serve |
 |---|---|
@@ -7526,7 +7584,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## 4. In preparazione (prossimi passi) {#doc42-sec5}
+## 4. In preparazione (prossimi passi) {#doc42-sec6}
 
 - **Screenshot** nella guida del negozio + **prova a freddo** prima della classe.
 - Gli **altri moduli** del programma, ancora da sviluppare in libro di testo +
@@ -7536,8 +7594,7 @@ nella guida e fare una **prova a freddo**.
 
 ---
 
-## Dove sta tutto {#doc42-sec6}
+## Dove sta tutto {#doc42-sec7}
 
-Repository del corso, branch `claude/corso-informatica-classe-1-hom2pq`,
-cartella **`classe-1/`**. Ogni documento ha la sua fonte `.md` e il `.pdf`
-consegnabile accanto.
+Repository del corso (ramo principale `main`), cartella **`classe-1/`**. Ogni
+documento ha la sua fonte `.md` e il `.pdf` consegnabile accanto.
