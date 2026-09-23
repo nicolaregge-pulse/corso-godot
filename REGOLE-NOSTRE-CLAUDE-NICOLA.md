@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 0.4** — 23/09/2026
+**Versione 0.5** — 23/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -111,16 +111,17 @@ Il nome deve far capire a colpo d'occhio, in quest'ordine (chiesto da Nicola):
 1. Formato: **`AAAAMMGG_Descrizione_Chi_Lingua_vX.Y.ext`**
    - `AAAAMMGG` = anno-mese-giorno (es. 20260923) → **cronologia**; ordina i file per data da solo.
    - `Descrizione` = **cosa** è: argomento in parole legate da trattino (es. `Compito-Hardware-PC`).
-   - `Chi` = **di chi è / a chi appartiene**:
-     - `Classe-1` … `Classe-4` per un materiale di una classe;
-     - `Cognome-Nome` per il file di un **singolo allievo** (quaderno, consegna) — es. `Sala-Andrea`;
+   - `Chi` = **di chi è / a chi appartiene** (include SEMPRE la classe):
+     - `Classe-1` … `Classe-4` per un materiale di una classe intera;
+     - per il file di un **singolo allievo**: **classe + Cognome-Nome**, così si sa
+       anche di che classe è — es. `Classe-1-Sala-Andrea`;
      - `Corso` per un materiale generale non legato a una classe;
      - `Docente` per un documento interno del docente.
    - `Lingua` = **`multilingua`** (IT+AR+ZH insieme) oppure `IT`/`AR`/`ZH` per i monolingui; **si omette** se non è materiale multilingue.
    - `vX.Y` = versione (coincide con quella nell'intestazione dell'MD).
 2. Token opzionali: `Chi` e `Lingua` si mettono **quando servono**, ma l'ordine resta sempre `DATA _ COSA _ CHI _ LINGUA _ vX.Y`.
 3. Esempi:
-   - `20260923_Libro-Studente_Sala-Andrea_v1.0.pdf` (di un allievo)
+   - `20260923_Libro-Studente_Classe-1-Sala-Andrea_v1.0.pdf` (di un allievo della prima)
    - `20260923_Registro-Voti_Classe-1_v1.0.xlsx` (di una classe)
    - `20260923_Le-Mie-Utenze-Password_Classe-1_multilingua_v1.0.pdf`
    - `20260923_Compito-Hardware-PC_Classe-1_multilingua_v1.2.pdf`
@@ -158,17 +159,19 @@ Regole di lavoro:
 
 ## 3. Changelog
 
-1. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
+1. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
+   anche la **classe** (es. `Classe-1-Sala-Andrea`), così si sa di che classe è.
+2. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
    (di chi è: Classe-N / Cognome-Nome / Corso / Docente), ordine `DATA _ COSA _ CHI
    _ LINGUA _ vX.Y`, con migrazione graduale.
-2. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
+3. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
    centesimi e regola "presente non consegna = 30 / assente = nessun voto";
    nuova 2.11 = di default consegno solo il PDF sensibile (riservato), gli altri
    formati li tengo in silenzio in scratchpad e li do su richiesta.
-3. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
+4. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
    prima ciò che funziona; comandi in copia-incolla e scorciatoie dirette; mai
    dare ai ragazzi file con le risposte, due versioni separate; fermarsi subito
    quando si perde tempo in classe).
-4. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
+5. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.

@@ -463,7 +463,7 @@ l'intestazione del file.
 2. `CORSO-INFORMATICA.md` — v1.17 (super-guida / indice generale)
 3. `PROMEMORIA-NICOLA.md` — v0.4 (cose da fare di Nicola)
 4. `01-GLOSSARIO.md` — v1.1
-5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.4 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi; NON sono le regole per i ragazzi)
+5. `REGOLE-NOSTRE-CLAUDE-NICOLA.md` — v0.5 (convenzioni interne Nicola↔Claude, es. sigla PPP + schema nomi file cronologia/cosa/chi con classe; NON sono le regole per i ragazzi)
 
 ### 2. Pianificazione didattica
 1. `MAPPA-ARGOMENTI.md` — v1.5 (aggiunto Google Takeout in Produttività digitale)
