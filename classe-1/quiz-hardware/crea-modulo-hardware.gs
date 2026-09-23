@@ -4,7 +4,7 @@
   Uso: script.new -> Ctrl+A -> Canc -> incolla -> Ctrl+S -> scegli creaQuiz -> Esegui -> autorizza.
 */
 function creaQuiz(){
-  var f=FormApp.create("Esercitazione - Hardware del PC").setIsQuiz(true);
+  var f=FormApp.create("20260923_Esercitazione-Hardware-PC_multilingua_v1.0").setIsQuiz(true);
   var D=[
   ["1) A cosa serve la CPU? / ما وظيفة المعالج (CPU)؟ / CPU 有什么用？",[["È il cervello del PC: fa i calcoli / هو عقل الحاسوب: يقوم بالحسابات / 电脑的大脑：进行运算",true],["Conserva i file per sempre / يحفظ الملفات للأبد / 永久保存文件",false],["Mostra le immagini sullo schermo / يعرض الصور على الشاشة / 在屏幕上显示图像",false]]],
   ["2) A cosa serve la RAM? / ما وظيفة الذاكرة (RAM)؟ / 内存 RAM 有什么用？",[["Memoria temporanea per i programmi aperti / ذاكرة مؤقتة للبرامج المفتوحة / 打开程序的临时内存",true],["Conserva i file per sempre / يحفظ الملفات للأبد / 永久保存文件",false],["Raffredda il computer / يبرّد الحاسوب / 给电脑散热",false]]],
