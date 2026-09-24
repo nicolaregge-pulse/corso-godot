@@ -1,6 +1,6 @@
 # Consegna — Documento sulla configurazione del PC
 
-**Versione 1.0** — 24/09/2026
+**Versione 1.1** — 24/09/2026
 *Consegna per la Classe 1: gli allievi creano un documento in Google Documenti
 che spiega, con parole loro, la teoria di oggi (formati/standard del PC) e vi
 inseriscono immagini prese dal web; consegna su Google Classroom. Include una
@@ -45,5 +45,9 @@ mini-guida "come si inserisce un'immagine". Trilingue: 3 file monolingui
 ---
 
 ## Changelog
+- **v1.1** (24/09/2026) — compito piu chiaro (trova piu standard possibile, per
+  ognuno immagine + descrizione della tipologia; regola d'oro); guida immagini
+  con metodo "salva e inserisci" per primo + copia-incolla; box "problemi
+  frequenti"; corretto "quattro punti" -> argomenti. Versione visibile nel PDF.
 - **v1.0** (24/09/2026) — prima versione trilingue (IT/AR/ZH) con mini-guida
-  immagini e schema del percorso menu; estesa a processori per marca e memorie.
+  immagini e schema del percorso menu.
