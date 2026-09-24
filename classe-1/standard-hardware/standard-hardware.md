@@ -115,9 +115,17 @@ supporta **una** sola generazione.
 > PCPartPicker quando montiamo il PC (attività "Costruisci il PC"): avvisa se
 > socket, RAM o form factor non combaciano. Ora sappiamo perché lo fa.
 
+## Schema alla lavagna (fatto in classe)
+
+Lo stesso contenuto è stato disegnato a mano alla lavagna durante la lezione del
+24/09/2026 (metodo "carta e penna"): SLOT schede (PCIe con la tacca), SLOT RAM
+(piedini + tacca), SOCKET CPU (il processore che si ribalta + i pin sotto),
+GRANDEZZA MB/CASE → AT, ATX, mini-ATX. Foto: `immagini/20260924_Classe-1-PerTutti_Lavagna-Configurazione-PC.jpg`.
+
 ---
 
 ## Changelog
 
 - **v1.0** (24/09/2026) — prima versione: form factor, PCIe, socket, RAM con
-  disegni in proporzione reale (Fig. 1–4). Fonte HTML → PDF.
+  disegni in proporzione reale (Fig. 1–4) e nelle 3 lingue (IT/AR/ZH). Fonte
+  HTML → PDF. Aggiunta la foto dello schema alla lavagna della lezione.
