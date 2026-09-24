@@ -4,11 +4,11 @@
 *Classe 1 — Informatica. Scheda docente + appunti per i ragazzi sugli standard
 hardware: form factor (AT/ATX/microATX/Mini-ITX), slot PCIe (x1/x4/x8/x16),
 socket della CPU (Intel LGA vs AMD PGA/AM5), tipi di RAM (DDR3/DDR4/DDR5, DIMM
-vs SO-DIMM). Il PDF (`Standard-Hardware-v1.0.pdf`) contiene i disegni con le
-forme in proporzione reale; questo `.md` è la fonte versionata e serve anche
-all'AI dei ragazzi per spiegare/tradurre.*
+vs SO-DIMM). I PDF (`20260924_Classe-1-PerTutti_v1.0_Standard-Configurazione-PC_IT/AR/ZH.pdf`)
+contengono i disegni con le forme in proporzione reale, nelle 3 lingue; questo
+`.md` è la fonte versionata e serve anche all'AI dei ragazzi per spiegare/tradurre.*
 
-> Nota: i disegni (Fig. 1–4) sono nel file `standard-hardware.html` → PDF. Qui
+> Nota: i disegni (Fig. 1–4) sono nei file `standard-hardware-it/ar/zh.html` → PDF. Qui
 > sono descritti a parole così che l'AI possa spiegarli in un'altra lingua.
 
 ---

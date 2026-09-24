@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>电脑标准与配置</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "WenQuanYi Zen Hei","Liberation Sans",Arial,sans-serif; color:#1b2733; font-size:11pt; line-height:1.55; margin:0; }
+  h1 { font-size:20pt; color:#12467a; margin:0 0 2mm; }
+  h2 { font-size:14pt; color:#12467a; border-bottom:2px solid #cfe0f0; padding-bottom:1.5mm; margin:7mm 0 3mm; }
+  .sub { color:#5a6b7b; font-size:10pt; margin:0 0 3mm; }
+  p { margin:0 0 2.4mm; }
+  ol { margin:0 0 2.4mm; padding-left:6mm; }
+  li { margin:0 0 1.2mm; }
+  table { border-collapse:collapse; width:100%; font-size:10pt; margin:2mm 0 3mm; }
+  th,td { border:1px solid #b9c8d6; padding:2mm 2.4mm; text-align:left; vertical-align:top; }
+  th { background:#eaf2fb; color:#12467a; }
+  .box { border-left:5px solid; padding:2.4mm 3mm; margin:3mm 0; border-radius:2px; font-size:10pt; }
+  .giallo { background:#fdf7e3; border-color:#e6b800; }
+  .blu { background:#eaf3fb; border-color:#2b7cc4; }
+  .rosso { background:#fbecec; border-color:#cf3b3b; }
+  .fig { text-align:center; margin:3mm 0 2mm; }
+  .figcap { font-size:9.5pt; color:#5a6b7b; margin-top:1mm; }
+  .pagebreak { page-break-before:always; }
+  .lat { font-family:"Liberation Sans",Arial,sans-serif; }
+</style>
+</head>
+<body>
+
+<h1>电脑标准与配置</h1>
+<p class="sub">一年级 · 信息技术 · 图形按真实比例绘制 · 产品型号和缩写（<span class="lat">ATX、PCIe、DDR5、Intel</span> 等）保留拉丁字母</p>
+
+<div class="box giallo">
+<b>本课核心思想。</b> 电脑内部的零件必须<b>互相匹配</b>：主板只能装进某些机箱，CPU 只能装进特定的插座（socket），内存只能插进它专用的插槽。为了让它们都能匹配，全世界统一了<b>共同的尺寸和形状</b>：这就是<b>标准</b>。今天看四个最重要的：<b>主板尺寸</b>（<span class="lat">form factor</span>）、<b><span class="lat">PCIe</span> 插槽</b>、CPU 的<b>插座</b>（<span class="lat">socket</span>）、<b>内存类型</b>。</div>
+
+<div class="box blu">
+<b>纸和笔。</b> 看屏幕之前，每个人先在笔记本上手绘一个"主板"长方形，标出：CPU 装在哪里（socket）、内存装在哪里（又长又窄的插槽）、显卡装在哪里（<span class="lat">PCIe x16</span> 插槽）。最后和真实的对照一下。</div>
+
+<!-- ============ 1 ============ -->
+<h2>1. 主板尺寸（<span class="lat">Form factor</span>）</h2>
+<p><b><span class="lat">Form factor</span></b> = 主板的<b>标准尺寸</b>。它也决定需要哪种<b>机箱</b>：大主板装不进小机箱，小主板可以装进大机箱。</p>
+
+<div class="fig">
+<svg width="470" height="300" viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" font-family="WenQuanYi Zen Hei,Arial,sans-serif">
+  <rect x="24" y="30" width="168" height="134" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="2"/>
+  <rect x="24" y="30" width="134" height="134" fill="#e5f5ea" fill-opacity="0.55" stroke="#2f9e57" stroke-width="2"/>
+  <rect x="24" y="30" width="94" height="94" fill="#fdeede" fill-opacity="0.7" stroke="#e08a1e" stroke-width="2"/>
+  <text x="24" y="24" font-size="9" fill="#5a6b7b">↖ 后部接口角 — 固定孔从这里开始</text>
+  <text x="196" y="160" font-size="11" fill="#12467a" font-weight="bold" font-family="Arial">ATX</text>
+  <text x="196" y="173" font-size="8.5" fill="#5a6b7b" font-family="Arial">305 × 244 mm</text>
+  <text x="120" y="118" font-size="10" fill="#2f9e57" font-weight="bold" font-family="Arial">microATX</text>
+  <text x="120" y="129" font-size="8" fill="#5a6b7b" font-family="Arial">244 × 244 mm</text>
+  <text x="30" y="60" font-size="9.5" fill="#c0700a" font-weight="bold" font-family="Arial">Mini-ITX</text>
+  <text x="30" y="71" font-size="7.5" fill="#5a6b7b" font-family="Arial">170 × 170</text>
+  <rect x="300" y="30" width="150" height="98" fill="#f2f2f2" stroke="#9aa7b3" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="305" y="52" font-size="10" fill="#7a8896" font-weight="bold" font-family="Arial">AT / Baby-AT</text>
+  <text x="305" y="68" font-size="8.5" fill="#8a97a5">老式（80–90年代）</text>
+  <text x="305" y="82" font-size="8.5" fill="#8a97a5">现在已不使用</text>
+  <text x="24" y="185" font-size="8.5" fill="#5a6b7b">三种主板共用左上角：小的能装进大的机箱，反过来不行。</text>
+</svg>
+<div class="figcap">图 1 — 按比例绘制的三种尺寸对比。主板越大，插槽和接口越多。</div>
+</div>
+
+<table>
+<tr><th>名称</th><th>尺寸</th><th>插槽 / 扩展</th><th>用途 — 产品型号</th></tr>
+<tr><td class="lat"><b>ATX</b></td><td>305 × 244 mm</td><td>多（4 内存，多 PCIe）</td><td>最常见。台式机和游戏电脑。如 <span class="lat">ASUS、MSI、Gigabyte</span> 的 ATX 主板</td></tr>
+<tr><td class="lat"><b>microATX</b></td><td>244 × 244 mm</td><td>中等（2–4 内存）</td><td>小型、经济型电脑，办公</td></tr>
+<tr><td class="lat"><b>Mini-ITX</b></td><td>170 × 170 mm</td><td>少（2 内存，1 PCIe）</td><td>迷你电脑、客厅电脑（HTPC）</td></tr>
+<tr><td class="lat"><b>E-ATX</b></td><td>305 × 330 mm</td><td>非常多</td><td>工作站和高端电脑</td></tr>
+<tr><td class="lat"><b>AT / Baby-AT</b></td><td>老式</td><td>—</td><td>旧 IBM 标准，已停产（仅作常识）</td></tr>
+</table>
+
+<div class="box giallo"><b>要记住：</b><span class="lat">ATX</span> 是"标准"款；其它是它的变化版本。<b>越小 = 空间越少 = 插槽越少</b>。</div>
+
+<!-- ============ 2 ============ -->
+<h2 class="pagebreak">2. <span class="lat">PCIe</span> 插槽 — 插扩展卡的地方</h2>
+<p><b><span class="lat">PCIe</span></b>（<span class="lat">PCI Express</span>）是插<b>扩展卡</b>的插槽，最主要的是<b>显卡</b>（<span class="lat">GPU</span>）。数字（<span class="lat">x1、x4、x8、x16</span>）表示有多少条"通道"（数据线）：通道越多越快。短卡也能插进长插槽。</p>
+
+<div class="fig">
+<svg width="440" height="200" viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" font-family="WenQuanYi Zen Hei,Arial,sans-serif">
+  <rect x="20" y="18" width="160" height="16" rx="2" fill="#2b7cc4"/><rect x="34" y="18" width="4" height="16" fill="#fff"/>
+  <text x="190" y="30" font-size="10" fill="#12467a"><tspan font-weight="bold" font-family="Arial">PCIe x16</tspan> — 89 mm · 显卡</text>
+  <rect x="20" y="52" width="101" height="16" rx="2" fill="#3a8fd0"/><rect x="34" y="52" width="4" height="16" fill="#fff"/>
+  <text x="190" y="64" font-size="10" fill="#12467a"><tspan font-weight="bold" font-family="Arial">PCIe x8</tspan> — 56 mm · RAID、高速卡</text>
+  <rect x="20" y="86" width="70" height="16" rx="2" fill="#5aa3da"/><rect x="34" y="86" width="4" height="16" fill="#fff"/>
+  <text x="190" y="98" font-size="10" fill="#12467a"><tspan font-weight="bold" font-family="Arial">PCIe x4</tspan> — 39 mm · NVMe 固态硬盘</text>
+  <rect x="20" y="120" width="45" height="16" rx="2" fill="#8cc0e6"/><rect x="34" y="120" width="4" height="16" fill="#fff"/>
+  <text x="190" y="132" font-size="10" fill="#12467a"><tspan font-weight="bold" font-family="Arial">PCIe x1</tspan> — 25 mm · 网卡、声卡、USB</text>
+  <line x1="20" y1="152" x2="180" y2="152" stroke="#b9c8d6" stroke-width="1"/>
+  <text x="20" y="168" font-size="8.5" fill="#5a6b7b">条形图按比例：通道越多越长。</text>
+  <text x="20" y="182" font-size="8.5" fill="#5a6b7b">白色小缺口是"防呆口"，保证插入方向正确。</text>
+</svg>
+<div class="figcap">图 2 — 四种 PCIe 插槽的真实比例（89 / 56 / 39 / 25 mm）。</div>
+</div>
+
+<table>
+<tr><th>插槽</th><th>通道</th><th>用途（常见型号）</th></tr>
+<tr><td class="lat"><b>PCIe x16</b></td><td>16</td><td><b>显卡</b>（<span class="lat">NVIDIA GeForce、AMD Radeon</span>）</td></tr>
+<tr><td class="lat"><b>PCIe x8</b></td><td>8</td><td>RAID 卡、高速网卡、第二块显卡</td></tr>
+<tr><td class="lat"><b>PCIe x4</b></td><td>4</td><td><span class="lat">NVMe</span> 固态硬盘转接卡、控制器</td></tr>
+<tr><td class="lat"><b>PCIe x1</b></td><td>1</td><td>网卡、声卡、<span class="lat">USB</span>、采集卡</td></tr>
+</table>
+
+<div class="box blu"><b><span class="lat">PCIe</span> 版本（速度）。</b> 除了长度还有<b>代数</b>：<span class="lat">PCIe 3.0 → 4.0 → 5.0</span>。每升一代带宽<b>翻倍</b>，但插槽形状不变（互相兼容）。<b><span class="lat">M.2</span></b> 是专给 <span class="lat">NVMe</span> 固态硬盘的小插槽：用 <span class="lat">PCIe</span> 通道，但形状独特。</div>
+
+<!-- ============ 3 ============ -->
+<h2 class="pagebreak">3. 插座（<span class="lat">Socket</span>）— 放 CPU 的地方</h2>
+<p><b>插座</b>（<span class="lat">socket</span>）是主板上放 <b>CPU</b>（处理器）的"底座"。每个插座有名字，只能装特定的 CPU。两大家族，有一个重要的物理区别：</p>
+
+<div class="fig">
+<svg width="450" height="215" viewBox="0 0 450 215" xmlns="http://www.w3.org/2000/svg" font-family="WenQuanYi Zen Hei,Arial,sans-serif">
+  <defs>
+    <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#2b7cc4"/></pattern>
+    <pattern id="pins" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.3" fill="#c0700a"/></pattern>
+  </defs>
+  <rect x="20" y="20" width="150" height="150" rx="4" fill="#eef4fb" stroke="#2b7cc4" stroke-width="2"/>
+  <path d="M28 28 L44 28 L28 44 Z" fill="#2b7cc4"/>
+  <rect x="40" y="45" width="112" height="112" fill="url(#dots)"/>
+  <text x="20" y="188" font-size="10" fill="#12467a" font-weight="bold" font-family="Arial">Intel — LGA</text>
+  <text x="20" y="202" font-size="8.6" fill="#5a6b7b">针脚在插座上；CPU 是平的触点</text>
+  <rect x="250" y="20" width="150" height="150" rx="4" fill="#fdf3e7" stroke="#e08a1e" stroke-width="2"/>
+  <path d="M258 28 L274 28 L258 44 Z" fill="#e08a1e"/>
+  <rect x="270" y="45" width="112" height="112" fill="url(#pins)"/>
+  <text x="250" y="188" font-size="10" fill="#c0700a" font-weight="bold" font-family="Arial">AMD — PGA</text>
+  <text x="250" y="202" font-size="8.6" fill="#5a6b7b">针脚在 <tspan font-family="Arial">CPU</tspan> 上（<tspan font-family="Arial">AM5</tspan> 则是 <tspan font-family="Arial">LGA</tspan>）</text>
+</svg>
+<div class="figcap">图 3 — LGA（针脚在插座）对比 PGA（针脚在 CPU）。左上角的小三角是"第一针"，指示正确方向。</div>
+</div>
+
+<table>
+<tr><th>插座</th><th>类型</th><th>可装的 CPU（型号）</th></tr>
+<tr><td class="lat"><b>Intel LGA1700</b></td><td class="lat">LGA</td><td class="lat">Intel Core 12/13/14 代（i3 / i5 / i7 / i9）</td></tr>
+<tr><td class="lat"><b>Intel LGA1851</b></td><td class="lat">LGA</td><td class="lat">Intel Core Ultra（第二代）</td></tr>
+<tr><td class="lat"><b>AMD AM4</b></td><td class="lat">PGA</td><td class="lat">AMD Ryzen 1000 → 5000 系列</td></tr>
+<tr><td class="lat"><b>AMD AM5</b></td><td class="lat">LGA</td><td class="lat">AMD Ryzen 7000 和 9000 系列</td></tr>
+<tr><td class="lat">Intel LGA4677 / AMD SP5</td><td class="lat">LGA</td><td>服务器和工作站（<span class="lat">Xeon、EPYC</span>）</td></tr>
+</table>
+
+<div class="box rosso"><b>注意别搞混。</b> 名字里的数字（<span class="lat">1700、1851、AM4</span>…）和<b>触点数量</b>有关，不代表"有多强"。CPU 和主板要<b>成对购买</b>，确认插座相同。</div>
+
+<!-- ============ 4 ============ -->
+<h2 class="pagebreak">4. 内存类型 — <span class="lat">DDR3、DDR4、DDR5</span></h2>
+<p><b>内存</b>（<span class="lat">RAM</span>）是工作记忆：插在 CPU 旁边长插槽里的"内存条"。每一代 — <span class="lat">DDR3、DDR4、DDR5</span> — 的<b>缺口（防呆口）位置都不同</b>：所以<b>不可能</b>插错插槽。主板只支持<b>一种</b>代数。</p>
+
+<div class="fig">
+<svg width="450" height="230" viewBox="0 0 450 230" xmlns="http://www.w3.org/2000/svg" font-family="WenQuanYi Zen Hei,Arial,sans-serif">
+  <rect x="20" y="20" width="340" height="26" rx="3" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="1.6"/>
+  <rect x="20" y="40" width="340" height="6" fill="#d9a441"/><rect x="150" y="40" width="8" height="6" fill="#fff"/><rect x="150" y="20" width="8" height="26" fill="#fff" stroke="#2b7cc4" stroke-width="1"/>
+  <text x="368" y="30" font-size="9.5" fill="#12467a" font-weight="bold" font-family="Arial">DDR3</text><text x="368" y="42" font-size="7.6" fill="#5a6b7b" font-family="Arial">240 pin · 1,5 V</text>
+  <rect x="20" y="70" width="340" height="26" rx="3" fill="#e5f5ea" stroke="#2f9e57" stroke-width="1.6"/>
+  <rect x="20" y="90" width="340" height="6" fill="#d9a441"/><rect x="196" y="90" width="8" height="6" fill="#fff"/><rect x="196" y="70" width="8" height="26" fill="#fff" stroke="#2f9e57" stroke-width="1"/>
+  <text x="368" y="80" font-size="9.5" fill="#2f7d47" font-weight="bold" font-family="Arial">DDR4</text><text x="368" y="92" font-size="7.6" fill="#5a6b7b" font-family="Arial">288 pin · 1,2 V</text>
+  <rect x="20" y="120" width="340" height="26" rx="3" fill="#fdeede" stroke="#e08a1e" stroke-width="1.6"/>
+  <rect x="20" y="140" width="340" height="6" fill="#d9a441"/><rect x="172" y="140" width="8" height="6" fill="#fff"/><rect x="172" y="120" width="8" height="26" fill="#fff" stroke="#e08a1e" stroke-width="1"/>
+  <text x="368" y="130" font-size="9.5" fill="#c0700a" font-weight="bold" font-family="Arial">DDR5</text><text x="368" y="142" font-size="7.6" fill="#5a6b7b" font-family="Arial">288 pin · 1,1 V</text>
+  <text x="20" y="164" font-size="8.5" fill="#5a6b7b">白色缺口每一代位置都不同（示意位置）：不能互换。</text>
+  <rect x="20" y="182" width="188" height="24" rx="3" fill="#f0f0f0" stroke="#7a8896" stroke-width="1.4"/>
+  <rect x="20" y="200" width="188" height="6" fill="#c9a24a"/><rect x="120" y="200" width="7" height="6" fill="#fff"/><rect x="120" y="182" width="7" height="24" fill="#fff" stroke="#7a8896" stroke-width="1"/>
+  <text x="218" y="197" font-size="9.5" fill="#5a6b7b" font-weight="bold"><tspan font-family="Arial">SO-DIMM</tspan> — 笔记本内存（更短）</text>
+</svg>
+<div class="figcap">图 4 — 三代台式机内存（DIMM）缺口位置不同，下面是笔记本的 SO-DIMM。</div>
+</div>
+
+<table>
+<tr><th>类型</th><th>针脚（DIMM）</th><th>电压</th><th>常见速度 · 产品型号</th></tr>
+<tr><td class="lat"><b>DDR3</b></td><td>240</td><td>1,5 V</td><td class="lat">DDR3-1600（PC3-12800）— 老电脑</td></tr>
+<tr><td class="lat"><b>DDR4</b></td><td>288</td><td>1,2 V</td><td class="lat">DDR4-3200（PC4-25600）— 较新标准</td></tr>
+<tr><td class="lat"><b>DDR5</b></td><td>288</td><td>1,1 V</td><td><span class="lat">DDR5-5600 / 6000</span> — 现行。如 <span class="lat">Corsair、Kingston、Crucial</span></td></tr>
+<tr><td class="lat"><b>SO-DIMM</b></td><td>更短</td><td>—</td><td>同样名字 + "<span class="lat">SO-DIMM</span>"：笔记本内存</td></tr>
+</table>
+
+<div class="box giallo"><b>注意针脚。</b> <span class="lat">DDR4</span> 和 <span class="lat">DDR5</span> 都是 288 针，但<b>缺口位置不同</b>，主板只支持一种：不能互换。台式机内存（<span class="lat">DIMM</span>，长）和笔记本内存（<span class="lat">SO-DIMM</span>，短）不同。</div>
+
+<!-- ============ 5 ============ -->
+<h2>5. 小结 — 什么必须和什么匹配</h2>
+<ol>
+<li><b>机箱 ⟷ 主板</b>：相同的尺寸（<span class="lat">ATX、microATX、Mini-ITX</span>）。</li>
+<li><b>主板 ⟷ CPU</b>：相同的插座（<span class="lat">LGA1700、AM5</span>…）。</li>
+<li><b>主板 ⟷ 内存</b>：相同的代数（<span class="lat">DDR4</span> 配 <span class="lat">DDR4</span>，<span class="lat">DDR5</span> 配 <span class="lat">DDR5</span>）。</li>
+<li><b>显卡 ⟷ 主板</b>：<span class="lat">PCIe x16</span> 插槽。</li>
+</ol>
+
+<div class="box blu"><b>检验（能讲出来）。</b> 最后每个人用自己的话讲："为什么 AMD 的 CPU 不能装在 Intel 主板上？为什么 DDR5 插不进 DDR4 插槽？" 能讲清楚，就是真懂了。</div>
+
+<div class="box giallo"><b>和作业的联系。</b> 这些标准正是 <span class="lat">PCPartPicker</span> 网站装机时检查的内容（"组装电脑"活动）：如果插座、内存或尺寸不匹配它会提示。现在我们知道<b>为什么</b>了。</div>
+
+</body>
+</html>

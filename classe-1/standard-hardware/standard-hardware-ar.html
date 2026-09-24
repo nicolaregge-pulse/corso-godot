@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>معايير الحاسوب وتركيبه</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Amiri","Liberation Sans",Arial,sans-serif; color:#1b2733; font-size:12pt; line-height:1.7; margin:0; direction:rtl; }
+  h1 { font-size:21pt; color:#12467a; margin:0 0 2mm; }
+  h2 { font-size:15pt; color:#12467a; border-bottom:2px solid #cfe0f0; padding-bottom:1.5mm; margin:7mm 0 3mm; }
+  .sub { color:#5a6b7b; font-size:10.5pt; margin:0 0 3mm; }
+  p { margin:0 0 2.4mm; }
+  ol { margin:0 0 2.4mm; padding-right:6mm; padding-left:0; }
+  li { margin:0 0 1.2mm; }
+  table { border-collapse:collapse; width:100%; font-size:11pt; margin:2mm 0 3mm; }
+  th,td { border:1px solid #b9c8d6; padding:2mm 2.4mm; text-align:right; vertical-align:top; }
+  th { background:#eaf2fb; color:#12467a; }
+  .box { border-right:5px solid; border-left:0; padding:2.4mm 3mm; margin:3mm 0; border-radius:2px; font-size:11pt; }
+  .giallo { background:#fdf7e3; border-color:#e6b800; }
+  .blu { background:#eaf3fb; border-color:#2b7cc4; }
+  .rosso { background:#fbecec; border-color:#cf3b3b; }
+  .fig { text-align:center; margin:3mm 0 2mm; }
+  .figcap { font-size:10pt; color:#5a6b7b; margin-top:1mm; }
+  .pagebreak { page-break-before:always; }
+  .lat { font-family:"Liberation Sans",Arial,sans-serif; direction:ltr; unicode-bidi:embed; display:inline-block; }
+</style>
+</head>
+<body>
+
+<h1>معايير الحاسوب وتركيبه</h1>
+<p class="sub">الصف الأول · معلوماتية · الرسوم بمقياس حقيقي · أسماء المنتجات والرموز (<span class="lat">ATX، PCIe، DDR5، Intel</span>) تبقى بالأحرف اللاتينية</p>
+
+<div class="box giallo">
+<b>الفكرة الأساسية للدرس.</b> داخل الحاسوب يجب أن <b>تتوافق</b> القطع معًا: اللوحة الأم تدخل فقط في صناديق معيّنة، والمعالج (CPU) يدخل فقط في مقبس (socket) محدّد، والذاكرة تدخل فقط في فتحتها الخاصة. لكي تتوافق كلها، اتّفق العالم على <b>مقاسات وأشكال مشتركة</b>: هذه هي <b>المعايير</b>. اليوم نرى الأربعة الأهم: <b>حجم اللوحة الأم</b> (<span class="lat">form factor</span>)، <b>فتحات <span class="lat">PCIe</span></b>، <b>مقبس</b> المعالج (<span class="lat">socket</span>)، <b>أنواع الذاكرة</b>.</div>
+
+<div class="box blu">
+<b>ورقة وقلم.</b> قبل النظر إلى الشاشة، يرسم كل واحد بيده على الدفتر مستطيلًا يمثّل "اللوحة الأم" ويحدّد عليه: أين يوضع المعالج (socket)، أين الذاكرة (الفتحات الطويلة الضيّقة)، أين كرت الشاشة (فتحة <span class="lat">PCIe x16</span>). في النهاية يقارن رسمه بالحقيقي.</div>
+
+<!-- ============ 1 ============ -->
+<h2>1. حجم اللوحة الأم (<span class="lat">Form factor</span>)</h2>
+<p><b><span class="lat">Form factor</span></b> = <b>المقاس المعياري</b> للوحة الأم. وهو يحدّد أيضًا أي <b>صندوق</b> (case) نحتاج: اللوحة الكبيرة لا تدخل في صندوق صغير، والصغيرة تدخل في الكبير.</p>
+
+<div class="fig">
+<svg width="470" height="300" viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" font-family="Amiri,Arial,sans-serif" style="direction:ltr">
+  <rect x="24" y="30" width="168" height="134" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="2"/>
+  <rect x="24" y="30" width="134" height="134" fill="#e5f5ea" fill-opacity="0.55" stroke="#2f9e57" stroke-width="2"/>
+  <rect x="24" y="30" width="94" height="94" fill="#fdeede" fill-opacity="0.7" stroke="#e08a1e" stroke-width="2"/>
+  <text x="196" y="160" font-size="11" fill="#12467a" font-weight="bold" font-family="Arial">ATX</text>
+  <text x="196" y="173" font-size="8.5" fill="#5a6b7b" font-family="Arial">305 × 244 mm</text>
+  <text x="120" y="118" font-size="10" fill="#2f9e57" font-weight="bold" font-family="Arial">microATX</text>
+  <text x="120" y="129" font-size="8" fill="#5a6b7b" font-family="Arial">244 × 244 mm</text>
+  <text x="30" y="60" font-size="9.5" fill="#c0700a" font-weight="bold" font-family="Arial">Mini-ITX</text>
+  <text x="30" y="71" font-size="7.5" fill="#5a6b7b" font-family="Arial">170 × 170</text>
+  <rect x="300" y="30" width="150" height="98" fill="#f2f2f2" stroke="#9aa7b3" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="305" y="52" font-size="10" fill="#7a8896" font-weight="bold" font-family="Arial">AT / Baby-AT</text>
+  <text x="448" y="70" font-size="9" fill="#8a97a5" text-anchor="end">قديم (الثمانينات والتسعينات)</text>
+  <text x="448" y="84" font-size="9" fill="#8a97a5" text-anchor="end">لم يعد يُستخدم اليوم</text>
+  <text x="448" y="185" font-size="8.5" fill="#5a6b7b" text-anchor="end">اللوحات الثلاث تشترك في الزاوية العليا: الصغيرة تدخل في صندوق الكبيرة، وليس العكس.</text>
+</svg>
+<div class="figcap">الشكل 1 — مقارنة المقاسات الثلاثة بمقياس حقيقي. كلما كبرت اللوحة زادت الفتحات والموصّلات.</div>
+</div>
+
+<table>
+<tr><th>الاسم</th><th>المقاس</th><th>الفتحات / التوسعة</th><th>الاستخدام — أسماء المنتجات</th></tr>
+<tr><td class="lat"><b>ATX</b></td><td>305 × 244 mm</td><td>كثيرة (٤ ذاكرة، عدّة PCIe)</td><td>الأكثر شيوعًا. حواسيب مكتبية وألعاب. مثل لوحات <span class="lat">ASUS، MSI، Gigabyte</span></td></tr>
+<tr><td class="lat"><b>microATX</b></td><td>244 × 244 mm</td><td>متوسطة (٢–٤ ذاكرة)</td><td>حواسيب صغيرة واقتصادية، مكاتب</td></tr>
+<tr><td class="lat"><b>Mini-ITX</b></td><td>170 × 170 mm</td><td>قليلة (٢ ذاكرة، ١ PCIe)</td><td>حواسيب مصغّرة، حاسوب الصالة (HTPC)</td></tr>
+<tr><td class="lat"><b>E-ATX</b></td><td>305 × 330 mm</td><td>كثيرة جدًا</td><td>محطات العمل والحواسيب المتطوّرة</td></tr>
+<tr><td class="lat"><b>AT / Baby-AT</b></td><td>قديم</td><td>—</td><td>معيار <span class="lat">IBM</span> القديم، لم يعد يُباع (ثقافة عامة فقط)</td></tr>
+</table>
+
+<div class="box giallo"><b>للتذكّر:</b> <span class="lat">ATX</span> هو المعيار "العادي"؛ والباقي تنويعات عليه. <b>أصغر = مساحة أقل = فتحات أقل</b>.</div>
+
+<!-- ============ 2 ============ -->
+<h2 class="pagebreak">2. فتحات <span class="lat">PCIe</span> — حيث تُركَّب البطاقات الإضافية</h2>
+<p><b><span class="lat">PCIe</span></b> (<span class="lat">PCI Express</span>) هي فتحة <b>بطاقات التوسعة</b>، وأهمّها <b>كرت الشاشة</b> (<span class="lat">GPU</span>). الرقم (<span class="lat">x1، x4، x8، x16</span>) يدلّ على عدد "المسارات" (خطوط البيانات): مسارات أكثر = أسرع. البطاقة القصيرة تدخل أيضًا في فتحة أطول.</p>
+
+<div class="fig">
+<svg width="440" height="200" viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" font-family="Amiri,Arial,sans-serif" style="direction:ltr">
+  <rect x="260" y="18" width="160" height="16" rx="2" fill="#2b7cc4"/><rect x="402" y="18" width="4" height="16" fill="#fff"/>
+  <text x="250" y="30" font-size="10" fill="#12467a" text-anchor="end"><tspan font-weight="bold" font-family="Arial">PCIe x16</tspan> — 89 mm · كرت الشاشة</text>
+  <rect x="319" y="52" width="101" height="16" rx="2" fill="#3a8fd0"/><rect x="402" y="52" width="4" height="16" fill="#fff"/>
+  <text x="250" y="64" font-size="10" fill="#12467a" text-anchor="end"><tspan font-weight="bold" font-family="Arial">PCIe x8</tspan> — 56 mm · RAID، بطاقات سريعة</text>
+  <rect x="350" y="86" width="70" height="16" rx="2" fill="#5aa3da"/><rect x="402" y="86" width="4" height="16" fill="#fff"/>
+  <text x="250" y="98" font-size="10" fill="#12467a" text-anchor="end"><tspan font-weight="bold" font-family="Arial">PCIe x4</tspan> — 39 mm · قرص NVMe</text>
+  <rect x="375" y="120" width="45" height="16" rx="2" fill="#8cc0e6"/><rect x="402" y="120" width="4" height="16" fill="#fff"/>
+  <text x="250" y="132" font-size="10" fill="#12467a" text-anchor="end"><tspan font-weight="bold" font-family="Arial">PCIe x1</tspan> — 25 mm · شبكة، صوت، USB</text>
+  <line x1="260" y1="152" x2="420" y2="152" stroke="#b9c8d6" stroke-width="1"/>
+  <text x="420" y="168" font-size="8.5" fill="#5a6b7b" text-anchor="end">الأشرطة بمقياس: يزيد الطول بزيادة المسارات.</text>
+  <text x="420" y="182" font-size="8.5" fill="#5a6b7b" text-anchor="end">الثلمة البيضاء الصغيرة "مفتاح" يضمن اتجاه الإدخال الصحيح.</text>
+</svg>
+<div class="figcap">الشكل 2 — فتحات <span class="lat">PCIe</span> الأربع بمقياس حقيقي (89 / 56 / 39 / 25 mm).</div>
+</div>
+
+<table>
+<tr><th>الفتحة</th><th>المسارات</th><th>ما يُركَّب فيها (أسماء شائعة)</th></tr>
+<tr><td class="lat"><b>PCIe x16</b></td><td>16</td><td><b>كرت الشاشة</b> (<span class="lat">NVIDIA GeForce، AMD Radeon</span>)</td></tr>
+<tr><td class="lat"><b>PCIe x8</b></td><td>8</td><td>بطاقات <span class="lat">RAID</span>، شبكة سريعة، كرت شاشة ثانٍ</td></tr>
+<tr><td class="lat"><b>PCIe x4</b></td><td>4</td><td>محوّلات أقراص <span class="lat">NVMe</span>، متحكّمات</td></tr>
+<tr><td class="lat"><b>PCIe x1</b></td><td>1</td><td>بطاقات شبكة، صوت، <span class="lat">USB</span>، التقاط فيديو</td></tr>
+</table>
+
+<div class="box blu"><b>إصدارات <span class="lat">PCIe</span> (السرعة).</b> إضافة إلى الطول هناك <b>الجيل</b>: <span class="lat">PCIe 3.0 → 4.0 → 5.0</span>. مع كل قفزة يتضاعف النطاق، لكن شكل الفتحة يبقى نفسه (متوافقة). أمّا <b><span class="lat">M.2</span></b> ففتحة صغيرة مخصّصة لأقراص <span class="lat">NVMe</span>: تستخدم مسارات <span class="lat">PCIe</span> لكن لها شكل خاص.</div>
+
+<!-- ============ 3 ============ -->
+<h2 class="pagebreak">3. المقبس (<span class="lat">Socket</span>) — حيث يوضع المعالج</h2>
+<p><b>المقبس</b> (<span class="lat">socket</span>) هو "القاعدة" على اللوحة الأم حيث يوضع <b>المعالج</b> (CPU). لكل مقبس اسم ويقبل معالجات معيّنة فقط. عائلتان كبيرتان، بينهما فرق مادّي مهمّ:</p>
+
+<div class="fig">
+<svg width="450" height="215" viewBox="0 0 450 215" xmlns="http://www.w3.org/2000/svg" font-family="Amiri,Arial,sans-serif" style="direction:ltr">
+  <defs>
+    <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2" fill="#2b7cc4"/></pattern>
+    <pattern id="pins" width="15" height="15" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.3" fill="#c0700a"/></pattern>
+  </defs>
+  <rect x="280" y="20" width="150" height="150" rx="4" fill="#eef4fb" stroke="#2b7cc4" stroke-width="2"/>
+  <path d="M422 28 L406 28 L422 44 Z" fill="#2b7cc4"/>
+  <rect x="298" y="45" width="112" height="112" fill="url(#dots)"/>
+  <text x="430" y="188" font-size="10" fill="#12467a" font-weight="bold" font-family="Arial" text-anchor="end">Intel — LGA</text>
+  <text x="430" y="202" font-size="9" fill="#5a6b7b" text-anchor="end">الأسنان في المقبس؛ المعالج نقاط مسطّحة</text>
+  <rect x="20" y="20" width="150" height="150" rx="4" fill="#fdf3e7" stroke="#e08a1e" stroke-width="2"/>
+  <path d="M162 28 L146 28 L162 44 Z" fill="#e08a1e"/>
+  <rect x="38" y="45" width="112" height="112" fill="url(#pins)"/>
+  <text x="170" y="188" font-size="10" fill="#c0700a" font-weight="bold" font-family="Arial" text-anchor="end">AMD — PGA</text>
+  <text x="170" y="202" font-size="9" fill="#5a6b7b" text-anchor="end">الأسنان على المعالج (<tspan font-family="Arial">AM5</tspan> فهو <tspan font-family="Arial">LGA</tspan>)</text>
+</svg>
+<div class="figcap">الشكل 3 — <span class="lat">LGA</span> (الأسنان في المقبس) مقابل <span class="lat">PGA</span> (الأسنان على المعالج). المثلّث الصغير في الزاوية هو "السنّ الأول" ويحدّد الاتجاه الصحيح.</div>
+</div>
+
+<table>
+<tr><th>المقبس</th><th>النوع</th><th>المعالجات المقبولة (أسماء)</th></tr>
+<tr><td class="lat"><b>Intel LGA1700</b></td><td class="lat">LGA</td><td class="lat">Intel Core 12/13/14 (i3 / i5 / i7 / i9)</td></tr>
+<tr><td class="lat"><b>Intel LGA1851</b></td><td class="lat">LGA</td><td class="lat">Intel Core Ultra (الجيل ٢)</td></tr>
+<tr><td class="lat"><b>AMD AM4</b></td><td class="lat">PGA</td><td class="lat">AMD Ryzen 1000 → 5000</td></tr>
+<tr><td class="lat"><b>AMD AM5</b></td><td class="lat">LGA</td><td class="lat">AMD Ryzen 7000 و 9000</td></tr>
+<tr><td class="lat">Intel LGA4677 / AMD SP5</td><td class="lat">LGA</td><td>خوادم ومحطات عمل (<span class="lat">Xeon، EPYC</span>)</td></tr>
+</table>
+
+<div class="box rosso"><b>انتبه لئلّا تخلط.</b> الرقم في الاسم (<span class="lat">1700، 1851، AM4</span>…) مرتبط بعدد <b>النقاط</b>، لا يعني "مدى القوّة". يُشترى المعالج واللوحة الأم <b>معًا</b> مع التأكّد من تطابق المقبس.</div>
+
+<!-- ============ 4 ============ -->
+<h2 class="pagebreak">4. أنواع الذاكرة — <span class="lat">DDR3، DDR4، DDR5</span></h2>
+<p><b>الذاكرة</b> (<span class="lat">RAM</span>) هي ذاكرة العمل: "أعواد" تُركَّب في الفتحات الطويلة قرب المعالج. كل جيل — <span class="lat">DDR3، DDR4، DDR5</span> — له <b>ثلمة (مفتاح) في موضع مختلف</b>: لذلك <b>يستحيل</b> وضعها في الفتحة الخطأ. اللوحة الأم تدعم <b>جيلًا واحدًا</b> فقط.</p>
+
+<div class="fig">
+<svg width="450" height="230" viewBox="0 0 450 230" xmlns="http://www.w3.org/2000/svg" font-family="Amiri,Arial,sans-serif" style="direction:ltr">
+  <rect x="90" y="20" width="340" height="26" rx="3" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="1.6"/>
+  <rect x="90" y="40" width="340" height="6" fill="#d9a441"/><rect x="292" y="40" width="8" height="6" fill="#fff"/><rect x="292" y="20" width="8" height="26" fill="#fff" stroke="#2b7cc4" stroke-width="1"/>
+  <text x="82" y="30" font-size="9.5" fill="#12467a" font-weight="bold" font-family="Arial" text-anchor="end">DDR3</text><text x="82" y="42" font-size="7.6" fill="#5a6b7b" font-family="Arial" text-anchor="end">240 pin · 1,5 V</text>
+  <rect x="90" y="70" width="340" height="26" rx="3" fill="#e5f5ea" stroke="#2f9e57" stroke-width="1.6"/>
+  <rect x="90" y="90" width="340" height="6" fill="#d9a441"/><rect x="246" y="90" width="8" height="6" fill="#fff"/><rect x="246" y="70" width="8" height="26" fill="#fff" stroke="#2f9e57" stroke-width="1"/>
+  <text x="82" y="80" font-size="9.5" fill="#2f7d47" font-weight="bold" font-family="Arial" text-anchor="end">DDR4</text><text x="82" y="92" font-size="7.6" fill="#5a6b7b" font-family="Arial" text-anchor="end">288 pin · 1,2 V</text>
+  <rect x="90" y="120" width="340" height="26" rx="3" fill="#fdeede" stroke="#e08a1e" stroke-width="1.6"/>
+  <rect x="90" y="140" width="340" height="6" fill="#d9a441"/><rect x="270" y="140" width="8" height="6" fill="#fff"/><rect x="270" y="120" width="8" height="26" fill="#fff" stroke="#e08a1e" stroke-width="1"/>
+  <text x="82" y="130" font-size="9.5" fill="#c0700a" font-weight="bold" font-family="Arial" text-anchor="end">DDR5</text><text x="82" y="142" font-size="7.6" fill="#5a6b7b" font-family="Arial" text-anchor="end">288 pin · 1,1 V</text>
+  <text x="430" y="164" font-size="8.5" fill="#5a6b7b" text-anchor="end">الثلمة البيضاء في موضع مختلف لكل جيل (مواضع تقريبية): لا تتبادل.</text>
+  <rect x="242" y="182" width="188" height="24" rx="3" fill="#f0f0f0" stroke="#7a8896" stroke-width="1.4"/>
+  <rect x="242" y="200" width="188" height="6" fill="#c9a24a"/><rect x="322" y="200" width="7" height="6" fill="#fff"/><rect x="322" y="182" width="7" height="24" fill="#fff" stroke="#7a8896" stroke-width="1"/>
+  <text x="232" y="197" font-size="9.5" fill="#5a6b7b" font-weight="bold" text-anchor="end"><tspan font-family="Arial">SO-DIMM</tspan> — ذاكرة المحمول (أقصر)</text>
+</svg>
+<div class="figcap">الشكل 4 — أجيال ذاكرة سطح المكتب الثلاثة (DIMM) بثلمة في موضع مختلف، وتحتها <span class="lat">SO-DIMM</span> للمحمول.</div>
+</div>
+
+<table>
+<tr><th>النوع</th><th>النقاط (DIMM)</th><th>الجهد</th><th>السرعات الشائعة · أسماء المنتجات</th></tr>
+<tr><td class="lat"><b>DDR3</b></td><td>240</td><td>1,5 V</td><td class="lat">DDR3-1600 (PC3-12800) — حواسيب قديمة</td></tr>
+<tr><td class="lat"><b>DDR4</b></td><td>288</td><td>1,2 V</td><td class="lat">DDR4-3200 (PC4-25600) — معيار حديث</td></tr>
+<tr><td class="lat"><b>DDR5</b></td><td>288</td><td>1,1 V</td><td><span class="lat">DDR5-5600 / 6000</span> — الحالي. مثل <span class="lat">Corsair، Kingston، Crucial</span></td></tr>
+<tr><td class="lat"><b>SO-DIMM</b></td><td>أقصر</td><td>—</td><td>نفس الاسم + "<span class="lat">SO-DIMM</span>": ذاكرة الحاسوب المحمول</td></tr>
+</table>
+
+<div class="box giallo"><b>انتبه للنقاط.</b> <span class="lat">DDR4</span> و <span class="lat">DDR5</span> كلاهما 288 نقطة، لكن <b>الثلمة في موضع مختلف</b> واللوحة الأم تدعم واحدًا فقط: غير متبادلة. ذاكرة سطح المكتب (<span class="lat">DIMM</span>، طويلة) تختلف عن ذاكرة المحمول (<span class="lat">SO-DIMM</span>، قصيرة).</div>
+
+<!-- ============ 5 ============ -->
+<h2>5. الخلاصة — ما الذي يجب أن يتوافق مع ماذا</h2>
+<ol>
+<li><b>الصندوق ⟷ اللوحة الأم</b>: نفس المقاس (<span class="lat">ATX، microATX، Mini-ITX</span>).</li>
+<li><b>اللوحة الأم ⟷ المعالج</b>: نفس المقبس (<span class="lat">LGA1700، AM5</span>…).</li>
+<li><b>اللوحة الأم ⟷ الذاكرة</b>: نفس الجيل (<span class="lat">DDR4</span> مع <span class="lat">DDR4</span>، <span class="lat">DDR5</span> مع <span class="lat">DDR5</span>).</li>
+<li><b>كرت الشاشة ⟷ اللوحة الأم</b>: فتحة <span class="lat">PCIe x16</span>.</li>
+</ol>
+
+<div class="box blu"><b>الاختبار الحقيقي (أن تشرحه).</b> في النهاية يشرح كل واحد بكلماته: "لماذا لا أستطيع وضع معالج <span class="lat">AMD</span> على لوحة <span class="lat">Intel</span>؟ لماذا لا تدخل <span class="lat">DDR5</span> في فتحة <span class="lat">DDR4</span>؟" إن استطاع الشرح فقد فهم حقًّا.</div>
+
+<div class="box giallo"><b>الصلة بالواجب.</b> هذه المعايير هي بالضبط ما يتحقّق منه موقع <span class="lat">PCPartPicker</span> عند تجميع الحاسوب (نشاط "ركّب الحاسوب"): ينبّه إن لم يتوافق المقبس أو الذاكرة أو المقاس. الآن نعرف <b>لماذا</b> يفعل ذلك.</div>
+
+</body>
+</html>

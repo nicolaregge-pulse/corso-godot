@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 0.9** — 23/09/2026
+**Versione 1.0** — 24/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -105,13 +105,13 @@ tempo prezioso in classe. Errori reali, e le regole che ne derivano.
    file che Nicola tiene per sé. Il riferimento è `SITUAZIONE-ALUNNI-RISERVATO.md`
    (in scratchpad, non nel repo).
 
-### 2.9 Nome dei file: schema fisso (cronologia · cosa · di chi è)
-Il nome deve far capire a colpo d'occhio, in quest'ordine (chiesto da Nicola):
-**1) la cronologia (quando), 2) di cosa si tratta, 3) di chi è.**
-1. Formato: **`AAAAMMGG_Descrizione_Chi_Lingua_vX.Y.ext`**
-   - `AAAAMMGG` = anno-mese-giorno (es. 20260923) → **cronologia**; ordina i file per data da solo.
-   - `Descrizione` = **cosa** è: argomento in parole legate da trattino (es. `Compito-Hardware-PC`).
-   - `Chi` = **di chi è / dove sta** — se è di una classe comincia dalla classe,
+### 2.9 Nome dei file: schema fisso (data · classe · versione · oggetto)
+Il nome deve far capire a colpo d'occhio, in **quest'ordine esatto** (chiesto da
+Nicola): **1) DATA, 2) CLASSE/di-chi-è, 3) VERSIONE, 4) OGGETTO** (e la lingua in
+coda, solo se multilingue).
+1. Formato: **`AAAAMMGG_Chi_vX.Y_Descrizione_Lingua.ext`**
+   - `AAAAMMGG` = anno-mese-giorno (es. 20260924) → **DATA**; ordina i file per data da solo.
+   - `Chi` = **CLASSE / di chi è / dove sta** — se è di una classe comincia dalla classe,
      altrimenti usa l'**area** giusta:
      - materiale per **tutta una classe**: `Classe-N-PerTutti` — es. `Classe-1-PerTutti`;
      - file di un **singolo allievo**: `Classe-N-Cognome-Nome` — es. `Classe-1-Sala-Andrea`;
@@ -119,14 +119,17 @@ Il nome deve far capire a colpo d'occhio, in quest'ordine (chiesto da Nicola):
        sicurezza, glossario per i ragazzi): area **`Comune`** — es. `Comune`;
      - documento **interno del docente** (pianificazione, regole, stato, indici): `Docente`;
      - documenti per la **Regione** (Allegato A, PFP): `Regione`.
-   - `Lingua` = **`multilingua`** (IT+AR+ZH insieme) oppure `IT`/`AR`/`ZH` per i monolingui; **si omette** se non è materiale multilingue.
-   - `vX.Y` = versione (coincide con quella nell'intestazione dell'MD).
-2. Token opzionali: `Chi` e `Lingua` si mettono **quando servono**, ma l'ordine resta sempre `DATA _ COSA _ CHI _ LINGUA _ vX.Y`.
+   - `vX.Y` = **VERSIONE** (coincide con quella nell'intestazione dell'MD).
+   - `Descrizione` = **OGGETTO**: cosa è, in parole legate da trattino (es. `Standard-Configurazione-PC`).
+   - `Lingua` = **`multilingua`** (IT+AR+ZH insieme) oppure `IT`/`AR`/`ZH` per i monolingui; **si mette in coda** e **si omette** se non è materiale multilingue.
+2. L'ordine resta **sempre** `DATA _ CHI _ VERSIONE _ OGGETTO _ (LINGUA)`. `Chi` e
+   `Lingua` si mettono quando servono, ma non cambiano mai di posizione.
 3. Esempi:
-   - `20260923_Libro-Studente_Classe-1-Sala-Andrea_v1.0.pdf` (di un allievo della prima)
-   - `20260923_Registro-Voti_Classe-1-PerTutti_v1.0.xlsx` (di tutta la classe)
-   - `20260923_Le-Mie-Utenze-Password_Classe-1-PerTutti_multilingua_v1.0.pdf`
-   - `20260923_Compito-Hardware-PC_Classe-1-PerTutti_multilingua_v1.2.pdf`
+   - `20260924_Classe-1-Sala-Andrea_v1.0_Libro-Studente.pdf` (di un allievo della prima)
+   - `20260924_Classe-1-PerTutti_v1.0_Registro-Voti.xlsx` (di tutta la classe)
+   - `20260924_Classe-1-PerTutti_v1.0_Standard-Configurazione-PC_IT.pdf` (monolingue IT)
+   - `20260924_Classe-1-PerTutti_v1.2_Compito-Hardware-PC_multilingua.pdf`
+   - `20260924_Comune_v1.0_Regole-Laboratorio_multilingua.pdf` (tema generale)
 4. Vale per **consegnabili e file di lavoro** (allievi, classi); i documenti interni possono omettere `Chi`.
 5. **Migrazione graduale**: i file già esistenti si adeguano man mano, non tutti in una volta. Da riportare anche in REGOLE-FORMATTAZIONE quando lo si aggiorna.
 
@@ -173,7 +176,7 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
 **ricostruisce l'albero** delle cartelle — su Windows o su Git — in modo automatico.
 1. Formato: `cartella__sottocartella__…__NomeFile.ext` — le cartelle del percorso
    (dal root del repo) si scrivono all'inizio, separate da **`__` (doppio underscore)**.
-2. Il `NomeFile` finale segue lo schema 2.9 datato: `AAAAMMGG_Descrizione_Lingua_vX.Y.ext`.
+2. Il `NomeFile` finale segue lo schema 2.9 datato: `AAAAMMGG_vX.Y_Descrizione_Lingua.ext`.
    La classe / di-chi-è è **già data dal percorso** (es. `classe-1`,
    `quaderni__classe-1__Sala-Andrea`), quindi il token `Chi` non si ripete.
 3. **Ricostruzione (deterministica)**: si divide il nome sui `__`; tutti i pezzi
@@ -191,32 +194,49 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
    "sciolti": così Nicola li rimette nell'albero con un clic.
 7. Vale da qui in poi; i file già dentro le loro cartelle non vanno rinominati.
 
+### 2.14 Classe 1: il materiale è SEMPRE trilingue (IT · AR · ZH)
+1. In **Classe 1** ogni materiale **destinato agli allievi** (schede, esercizi,
+   guide, consegne, appunti) si produce **sempre** nelle **3 lingue** del gruppo:
+   **italiano, arabo, cinese semplificato**. Non è un "quando serve": è la regola.
+2. Formato preferito: **3 file monolingui** (`_IT`, `_AR`, `_ZH`), ognuno completo;
+   i diagrammi/immagini sono gli stessi, cambiano testo ed etichette.
+3. **Font PDF**: cinese **WenQuanYi Zen Hei**, arabo **Amiri** (con `dir="rtl"`);
+   questi PDF si generano da **HTML** (non dal motore "libro" con DejaVu).
+4. **Sigle e nomi di prodotto** (ATX, PCIe, DDR5, Intel, LGA1700, GitHub, indirizzi
+   e email) **restano in lettere latine** anche dentro arabo/cinese; i **bottoni
+   dei siti** si descrivono per posizione + colore (vedi CLAUDE.md), non in inglese.
+5. **Eccezione**: i materiali **interni del docente** (pianificazione, regole,
+   registro, indici) restano in italiano.
+
 ## 3. Changelog
 
-1. **v0.9 (23/09/2026)**: aree per i file non di una classe (2.9) — `Comune`
+1. **v1.0 (24/09/2026)**: corretto l'ordine dello schema nomi file (2.9) su
+   richiesta di Nicola → **`DATA _ CHI _ VERSIONE _ OGGETTO _ (LINGUA)`** (data,
+   classe, versione, oggetto; lingua in coda); aggiornati esempi e 2.13. Aggiunta
+   **2.14**: in Classe 1 il materiale per gli allievi è **sempre trilingue** (IT/AR/ZH).
+2. **v0.9 (23/09/2026)**: aree per i file non di una classe (2.9) — `Comune`
    (tema generale per tutte le classi, es. regole di laboratorio), `Docente`
    (interno), `Regione` (Allegato A/PFP); esempi deterministici aggiornati.
-2. **v0.8 (23/09/2026)**: aggiunta 2.13 "Nome deterministico" — il percorso è nel
+3. **v0.8 (23/09/2026)**: aggiunta 2.13 "Nome deterministico" — il percorso è nel
    nome (cartelle separate da `__`), così da un mucchio di file si ricostruisce
    l'albero; strumento `strumenti/nome-albero.py` (espandi/collassa).
-3. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
+4. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
    che Nicola detta/riporta e le sbobinature si tengono sempre anche verbatim.
-4. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
+5. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
    (parola fissa `PerTutti`), non la classe "nuda"; il `Chi` comincia sempre
    dalla classe, poi PerTutti oppure Cognome-Nome.
-5. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
+6. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
    anche la **classe** (es. `Classe-1-Sala-Andrea`), così si sa di che classe è.
-6. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
-   (di chi è: Classe-N / Cognome-Nome / Corso / Docente), ordine `DATA _ COSA _ CHI
-   _ LINGUA _ vX.Y`, con migrazione graduale.
-7. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
+7. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
+   (di chi è: Classe-N / Cognome-Nome / Corso / Docente), con migrazione graduale.
+8. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
    centesimi e regola "presente non consegna = 30 / assente = nessun voto";
    nuova 2.11 = di default consegno solo il PDF sensibile (riservato), gli altri
    formati li tengo in silenzio in scratchpad e li do su richiesta.
-8. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
+9. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
    prima ciò che funziona; comandi in copia-incolla e scorciatoie dirette; mai
    dare ai ragazzi file con le risposte, due versioni separate; fermarsi subito
    quando si perde tempo in classe).
-9. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
+10. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
