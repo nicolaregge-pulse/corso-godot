@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Progetta il tuo PC</title>
+<style>
+@page{size:A4;margin:12mm 12mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:10.3pt;line-height:1.35;margin:0;}
+h1{font-size:16pt;color:#12467a;margin:0 0 1mm;}
+.sub{color:#5a6b7b;font-size:9.3pt;margin:0 0 2mm;}
+.lead{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2mm 3mm;border-radius:3px;font-size:9.6pt;margin:0 0 3mm;}
+.name{border:1px solid #b9c8d6;border-radius:4px;padding:1.5mm 2.5mm;font-size:9pt;margin:0 0 3mm;background:#fafcff;}
+.sec{border:1.5px solid #cfe0f0;border-radius:7px;padding:2.5mm 3mm;margin:2.5mm 0;break-inside:avoid;}
+.sec h2{font-size:11.5pt;color:#12467a;margin:0 0 1.5mm;}
+.center{border:2px solid #2e8b57;background:#f2faf5;}
+.center h2{color:#1f6e43;}
+.row{margin:1mm 0;}
+.k{font-weight:bold;color:#1b3a5c;}
+.box{display:inline-block;width:11px;height:11px;border:1.4px solid #34506a;border-radius:2px;vertical-align:-1px;margin:0 2px 0 6px;}
+.ln{display:inline-block;border-bottom:1px solid #7a8896;min-width:38mm;height:11px;}
+.ln.lg{min-width:60mm;}
+.hint{color:#8a6d3b;font-size:8.4pt;}
+.addr{font-family:"DejaVu Sans Mono",monospace;font-size:8.6pt;}
+table{border-collapse:collapse;width:100%;}
+.fig{text-align:center;margin:1mm 0 2mm;}
+.chk{white-space:nowrap;}
+.two{column-count:2;column-gap:6mm;}
+</style></head><body>
+
+<h1>Progetta il tuo PC — parti dalla SCHEDA MADRE</h1>
+<p class="sub">Classe 1 · Informatica · scheda da compilare a penna (carta e penna) — prima di comprare, si progetta.</p>
+
+<div class="lead"><b>Idea chiave:</b> la <b>scheda madre (motherboard)</b> è il <b>centro</b> di tutto. La scegli <b>per prima</b>: da lei dipendono il case, l'alimentatore, il processore, la RAM, lo storage. Compila prima il riquadro verde, poi tutti gli altri <b>in base a quello</b>.</div>
+
+<div class="fig">
+<svg width="470" height="150" viewBox="0 0 470 150" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif" font-size="9">
+  <rect x="185" y="58" width="100" height="34" rx="5" fill="#e5f5ea" stroke="#2e8b57" stroke-width="2"/>
+  <text x="235" y="72" text-anchor="middle" font-weight="bold" fill="#1f6e43">SCHEDA MADRE</text>
+  <text x="235" y="84" text-anchor="middle" font-size="7.5" fill="#5a6b7b">il centro</text>
+  <!-- nodes -->
+  <g fill="#eaf3fb" stroke="#2b7cc4">
+    <rect x="20" y="12" width="90" height="24" rx="4"/><rect x="190" y="10" width="90" height="24" rx="4"/><rect x="360" y="12" width="90" height="24" rx="4"/>
+    <rect x="20" y="114" width="90" height="24" rx="4"/><rect x="190" y="116" width="90" height="24" rx="4"/><rect x="360" y="114" width="90" height="24" rx="4"/>
+  </g>
+  <g text-anchor="middle" fill="#12467a" font-size="8.5">
+    <text x="65" y="27">CASE</text><text x="235" y="25">PROCESSORE</text><text x="405" y="27">ALIMENTATORE</text>
+    <text x="65" y="129">RAM</text><text x="235" y="131">STORAGE</text><text x="405" y="129">SCHEDA VIDEO</text>
+  </g>
+  <g stroke="#9db9d8" stroke-width="1.3">
+    <line x1="185" y1="70" x2="110" y2="30"/><line x1="235" y1="58" x2="235" y2="34"/><line x1="285" y1="70" x2="360" y2="30"/>
+    <line x1="185" y1="82" x2="110" y2="122"/><line x1="235" y1="92" x2="235" y2="116"/><line x1="285" y1="82" x2="360" y2="122"/>
+  </g>
+</svg>
+</div>
+
+<div class="name">Nome e cognome: <span class="ln lg"></span> &nbsp; A cosa serve il PC: <span class="chk"><span class="box"></span>ufficio/studio</span> <span class="chk"><span class="box"></span>gaming</span> <span class="chk"><span class="box"></span>video/creator</span> &nbsp; Budget: <span class="ln"></span> €</div>
+
+<div class="sec center">
+<h2>1. LA SCHEDA MADRE (scegli questa per prima)</h2>
+<div class="row"><span class="k">Modello:</span> <span class="ln lg"></span></div>
+<div class="row"><span class="k">Form factor:</span> <span class="chk"><span class="box"></span><span class="addr">ATX</span></span> <span class="chk"><span class="box"></span><span class="addr">microATX</span></span> <span class="chk"><span class="box"></span><span class="addr">Mini-ITX</span></span> <span class="chk"><span class="box"></span><span class="addr">AT</span> (vecchio)</span></div>
+<div class="row"><span class="k">Socket (per la CPU):</span> <span class="chk"><span class="box"></span><span class="addr">Intel LGA1700</span></span> <span class="chk"><span class="box"></span><span class="addr">Intel LGA1851</span></span> <span class="chk"><span class="box"></span><span class="addr">AMD AM4</span></span> <span class="chk"><span class="box"></span><span class="addr">AMD AM5</span></span> <span class="chk"><span class="box"></span>altro: <span class="ln"></span></span></div>
+<div class="row"><span class="k">RAM supportata:</span> <span class="chk"><span class="box"></span><span class="addr">DDR4</span></span> <span class="chk"><span class="box"></span><span class="addr">DDR5</span></span> &nbsp; n° slot RAM: <span class="chk"><span class="box"></span>2</span> <span class="chk"><span class="box"></span>4</span></div>
+<div class="row"><span class="k">Slot presenti:</span> <span class="chk"><span class="box"></span><span class="addr">PCIe x16</span> (video)</span> <span class="chk"><span class="box"></span><span class="addr">M.2</span> (SSD NVMe): n°<span class="ln" style="min-width:12mm"></span></span> <span class="chk"><span class="box"></span><span class="addr">SATA</span>: n°<span class="ln" style="min-width:12mm"></span></span></div>
+</div>
+
+<div class="two">
+<div class="sec">
+<h2>2. Processore (CPU)</h2>
+<div class="hint">Deve avere lo STESSO socket della scheda madre.</div>
+<div class="row"><span class="k">Marca:</span> <span class="chk"><span class="box"></span>Intel</span> <span class="chk"><span class="box"></span>AMD</span></div>
+<div class="row"><span class="k">Modello:</span> <span class="ln"></span></div>
+</div>
+
+<div class="sec">
+<h2>3. RAM (memoria)</h2>
+<div class="hint">Stessa generazione della scheda madre (DDR4/DDR5).</div>
+<div class="row"><span class="chk"><span class="box"></span><span class="addr">DDR4</span></span> <span class="chk"><span class="box"></span><span class="addr">DDR5</span></span> &nbsp; Quantità: <span class="chk"><span class="box"></span>8GB</span> <span class="chk"><span class="box"></span>16GB</span> <span class="chk"><span class="box"></span>32GB</span></div>
+</div>
+
+<div class="sec">
+<h2>4. Storage (memoria di massa)</h2>
+<div class="hint">Meglio SSD; il più veloce è NVMe su M.2.</div>
+<div class="row"><span class="chk"><span class="box"></span>SSD NVMe (<span class="addr">M.2</span>)</span> <span class="chk"><span class="box"></span>SSD <span class="addr">SATA</span></span> <span class="chk"><span class="box"></span>HDD</span></div>
+<div class="row">Capacità: <span class="ln"></span></div>
+</div>
+
+<div class="sec">
+<h2>5. Scheda video (GPU)</h2>
+<div class="hint">Va nello slot PCIe x16. Per l'ufficio può bastare quella integrata.</div>
+<div class="row"><span class="chk"><span class="box"></span>Integrata (ufficio)</span> <span class="chk"><span class="box"></span>Dedicata (gaming)</span></div>
+<div class="row"><span class="k">Modello:</span> <span class="ln"></span></div>
+</div>
+
+<div class="sec">
+<h2>6. Case</h2>
+<div class="hint">Deve essere del form factor della scheda madre.</div>
+<div class="row"><span class="chk"><span class="box"></span><span class="addr">ATX</span></span> <span class="chk"><span class="box"></span><span class="addr">microATX</span></span> <span class="chk"><span class="box"></span><span class="addr">Mini-ITX</span></span></div>
+</div>
+
+<div class="sec">
+<h2>7. Alimentatore</h2>
+<div class="hint">Potenza in base a CPU + scheda video. Non risparmiare qui.</div>
+<div class="row">Potenza (W): <span class="chk"><span class="box"></span>~450W</span> <span class="chk"><span class="box"></span>~650W</span> <span class="chk"><span class="box"></span>~750W+</span></div>
+</div>
+</div>
+
+<div class="sec" style="border-color:#e6b800;background:#fdf7e3;">
+<h2 style="color:#8a6d00">Controllo finale — combacia tutto?</h2>
+<div class="row"><span class="box"></span> Case <b>=</b> form factor della scheda madre &nbsp;&nbsp; <span class="box"></span> CPU <b>=</b> socket della scheda madre</div>
+<div class="row"><span class="box"></span> RAM <b>=</b> generazione (DDR) della scheda madre &nbsp;&nbsp; <span class="box"></span> Scheda video nello slot <span class="addr">PCIe x16</span> &nbsp;&nbsp; <span class="box"></span> Totale entro il budget</div>
+</div>
+
+</body></html>
