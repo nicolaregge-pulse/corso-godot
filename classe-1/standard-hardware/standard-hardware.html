@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>Standard e configurazione del PC</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Liberation Sans","DejaVu Sans",Arial,sans-serif; color:#1b2733; font-size:10.6pt; line-height:1.45; margin:0; }
+  h1 { font-size:20pt; color:#12467a; margin:0 0 2mm; }
+  h2 { font-size:14pt; color:#12467a; border-bottom:2px solid #cfe0f0; padding-bottom:1.5mm; margin:7mm 0 3mm; }
+  h3 { font-size:11.5pt; color:#1b3a5c; margin:4mm 0 1.5mm; }
+  .sub { color:#5a6b7b; font-size:9.6pt; margin:0 0 3mm; }
+  p { margin:0 0 2.4mm; }
+  ol { margin:0 0 2.4mm; padding-left:6mm; }
+  li { margin:0 0 1mm; }
+  table { border-collapse:collapse; width:100%; font-size:9.5pt; margin:2mm 0 3mm; }
+  th,td { border:1px solid #b9c8d6; padding:2mm 2.4mm; text-align:left; vertical-align:top; }
+  th { background:#eaf2fb; color:#12467a; }
+  .box { border-left:5px solid; padding:2.4mm 3mm; margin:3mm 0; border-radius:2px; font-size:9.7pt; }
+  .giallo { background:#fdf7e3; border-color:#e6b800; }
+  .blu { background:#eaf3fb; border-color:#2b7cc4; }
+  .rosso { background:#fbecec; border-color:#cf3b3b; }
+  .fig { text-align:center; margin:3mm 0 2mm; }
+  .figcap { font-size:9pt; color:#5a6b7b; margin-top:1mm; }
+  .pagebreak { page-break-before:always; }
+  code { background:#eef3f8; padding:0 3px; border-radius:3px; font-family:"DejaVu Sans Mono",monospace; font-size:9pt; }
+  .lead { font-size:9.7pt; color:#33475b; }
+</style>
+</head>
+<body>
+
+<h1>Standard e configurazione del PC</h1>
+<p class="sub">Classe 1 — Informatica · scheda docente e appunti per i ragazzi · le forme sono disegnate in proporzione reale</p>
+
+<div class="box giallo">
+<b>Idea guida della lezione.</b> Dentro un computer i pezzi devono <b>combaciare</b>: una scheda madre entra solo in certi case, una CPU entra solo in un certo socket, una RAM entra solo nel suo slot. Per farli combaciare tutti nel mondo si sono messi d'accordo su delle <b>misure e forme comuni</b>: sono gli <b>standard</b>. Oggi vediamo i quattro più importanti: <b>form factor</b> (grandezza scheda madre/case), <b>slot PCIe</b>, <b>socket</b> della CPU, <b>tipi di RAM</b>.</p>
+</div>
+
+<div class="box blu">
+<b>Carta e penna.</b> Prima di guardare lo schermo, ognuno disegna a mano sul quaderno un rettangolo "scheda madre" e ci segna: dove va la CPU (socket), dove le RAM (slot lunghi e stretti), dove la scheda video (slot PCIe x16). Alla fine confronta il suo disegno con quello vero.</p>
+</div>
+
+<!-- ============ 1. FORM FACTOR ============ -->
+<h2>1. Form factor — la taglia della scheda madre</h2>
+<p><b>Form factor</b> (si legge <i>"form factor"</i>, vuol dire "fattore di forma") = la <b>misura standard</b> della scheda madre. Decide anche quale <b>case</b> (il "cassone") serve: una scheda grande non entra in un case piccolo, una piccola sta anche in uno grande.</p>
+
+<div class="fig">
+<svg width="470" height="300" viewBox="0 0 470 300" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif">
+  <!-- scale 0.55 px/mm, nested from top-left (shared mounting corner) -->
+  <!-- ATX 305x244 -> 168x134 -->
+  <rect x="24" y="30" width="168" height="134" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="2"/>
+  <!-- microATX 244x244 -> 134x134 -->
+  <rect x="24" y="30" width="134" height="134" fill="#e5f5ea" fill-opacity="0.55" stroke="#2f9e57" stroke-width="2"/>
+  <!-- Mini-ITX 170x170 -> 94x94 -->
+  <rect x="24" y="30" width="94" height="94" fill="#fdeede" fill-opacity="0.7" stroke="#e08a1e" stroke-width="2"/>
+  <!-- rear I/O corner marker -->
+  <text x="24" y="24" font-size="9" fill="#5a6b7b">↖ angolo I/O (retro) — i fori di fissaggio partono da qui</text>
+  <!-- labels -->
+  <text x="196" y="160" font-size="11" fill="#12467a" font-weight="bold">ATX</text>
+  <text x="196" y="173" font-size="8.5" fill="#5a6b7b">305 × 244 mm</text>
+  <text x="120" y="118" font-size="10" fill="#2f9e57" font-weight="bold">microATX</text>
+  <text x="120" y="129" font-size="8" fill="#5a6b7b">244 × 244 mm</text>
+  <text x="30" y="60" font-size="9.5" fill="#c0700a" font-weight="bold">Mini-ITX</text>
+  <text x="30" y="71" font-size="7.5" fill="#5a6b7b">170 × 170</text>
+  <!-- AT historical, separate dashed -->
+  <rect x="300" y="30" width="150" height="98" fill="#f2f2f2" stroke="#9aa7b3" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="305" y="52" font-size="10" fill="#7a8896" font-weight="bold">AT / Baby-AT</text>
+  <text x="305" y="66" font-size="8.5" fill="#8a97a5">storico (anni '80–'90)</text>
+  <text x="305" y="79" font-size="8.5" fill="#8a97a5">non più usato oggi</text>
+  <text x="24" y="185" font-size="8.5" fill="#5a6b7b">Le tre schede attuali condividono l'angolo in alto a sinistra: una più piccola sta nel case della più grande, non viceversa.</text>
+</svg>
+<div class="figcap">Fig. 1 — Le taglie a confronto, disegnate in proporzione. Più la scheda è grande, più slot e connettori ha.</div>
+</div>
+
+<table>
+<tr><th>Nome (sigla)</th><th>Misura</th><th>Slot / espansione</th><th>Quando si usa — nomi di prodotto</th></tr>
+<tr><td><b>ATX</b></td><td>305 × 244 mm</td><td>Tanti (4 RAM, più PCIe)</td><td>Il più diffuso. PC desktop e da gioco. Es. schede "ATX" ASUS, MSI, Gigabyte, ASRock</td></tr>
+<tr><td><b>microATX</b> (mATX)</td><td>244 × 244 mm</td><td>Medi (2–4 RAM)</td><td>PC compatti ed economici, uffici</td></tr>
+<tr><td><b>Mini-ITX</b></td><td>170 × 170 mm</td><td>Pochi (2 RAM, 1 PCIe)</td><td>Mini-PC, PC da salotto (HTPC), postazioni piccole</td></tr>
+<tr><td><b>E-ATX</b></td><td>305 × 330 mm</td><td>Moltissimi</td><td>Workstation e PC di fascia alta</td></tr>
+<tr><td><b>AT / Baby-AT</b></td><td>storico</td><td>—</td><td>Vecchio standard IBM, non più in commercio (solo cultura generale)</td></tr>
+</table>
+
+<div class="box giallo"><b>Da ricordare.</b> ATX è lo standard "normale". Le altre sono variazioni sulla stessa idea: <b>più piccola = meno spazio = meno slot</b>.</div>
+
+<!-- ============ 2. PCIe ============ -->
+<h2 class="pagebreak">2. Slot PCIe — dove si infilano le schede aggiuntive</h2>
+<p><b>PCIe</b> (<i>PCI Express</i>) è lo slot dove si inseriscono le <b>schede di espansione</b>: prima fra tutte la <b>scheda video</b> (GPU). Esistono in quattro lunghezze; il numero (x1, x4, x8, x16) dice quante "corsie" (linee di dati) ha: più corsie = più veloce. Una scheda corta entra anche in uno slot lungo.</p>
+
+<div class="fig">
+<svg width="440" height="200" viewBox="0 0 440 200" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif">
+  <!-- scale 1.8 px/mm; x1=25->45, x4=39->70, x8=56->101, x16=89->160 -->
+  <!-- x16 -->
+  <rect x="20" y="18" width="160" height="16" rx="2" fill="#2b7cc4"/>
+  <rect x="34" y="18" width="4" height="16" fill="#fff"/>
+  <text x="190" y="30" font-size="10" fill="#12467a"><tspan font-weight="bold">PCIe x16</tspan> — 89 mm · scheda video (GPU)</text>
+  <!-- x8 -->
+  <rect x="20" y="52" width="101" height="16" rx="2" fill="#3a8fd0"/>
+  <rect x="34" y="52" width="4" height="16" fill="#fff"/>
+  <text x="190" y="64" font-size="10" fill="#12467a"><tspan font-weight="bold">PCIe x8</tspan> — 56 mm · RAID, schede veloci</text>
+  <!-- x4 -->
+  <rect x="20" y="86" width="70" height="16" rx="2" fill="#5aa3da"/>
+  <rect x="34" y="86" width="4" height="16" fill="#fff"/>
+  <text x="190" y="98" font-size="10" fill="#12467a"><tspan font-weight="bold">PCIe x4</tspan> — 39 mm · SSD NVMe su adattatore</text>
+  <!-- x1 -->
+  <rect x="20" y="120" width="45" height="16" rx="2" fill="#8cc0e6"/>
+  <rect x="34" y="120" width="4" height="16" fill="#fff"/>
+  <text x="190" y="132" font-size="10" fill="#12467a"><tspan font-weight="bold">PCIe x1</tspan> — 25 mm · rete, audio, USB</text>
+  <!-- baseline note -->
+  <line x1="20" y1="152" x2="180" y2="152" stroke="#b9c8d6" stroke-width="1"/>
+  <text x="20" y="168" font-size="8.5" fill="#5a6b7b">Le barre sono in scala: la lunghezza cresce con il numero di corsie.</text>
+  <text x="20" y="182" font-size="8.5" fill="#5a6b7b">La piccola tacca bianca è la "chiave" che tiene fermo il verso di inserimento.</text>
+</svg>
+<div class="figcap">Fig. 2 — I quattro slot PCIe in proporzione reale (89 / 56 / 39 / 25 mm).</div>
+</div>
+
+<table>
+<tr><th>Slot</th><th>Corsie</th><th>Cosa ci si mette (nomi tipici)</th></tr>
+<tr><td><b>PCIe x16</b></td><td>16</td><td><b>Scheda video</b> (NVIDIA GeForce, AMD Radeon)</td></tr>
+<tr><td><b>PCIe x8</b></td><td>8</td><td>Schede RAID, schede di rete veloci, seconda GPU</td></tr>
+<tr><td><b>PCIe x4</b></td><td>4</td><td>Adattatori per SSD <b>NVMe</b>, controller</td></tr>
+<tr><td><b>PCIe x1</b></td><td>1</td><td>Schede di rete, audio, USB, acquisizione video</td></tr>
+</table>
+
+<div class="box blu"><b>Versioni PCIe (la velocità).</b> Oltre alla lunghezza c'è la <b>generazione</b>: PCIe <b>3.0 → 4.0 → 5.0</b>. Ad ogni salto la banda <b>raddoppia</b>, ma la forma dello slot resta uguale (sono compatibili). <b>M.2</b> è invece un piccolo slot dedicato agli SSD NVMe: usa le corsie PCIe ma ha una forma tutta sua.</div>
+
+<!-- ============ 3. SOCKET ============ -->
+<h2 class="pagebreak">3. Socket — dove si appoggia la CPU</h2>
+<p>Il <b>socket</b> è lo "zoccolo" sulla scheda madre dove si mette la <b>CPU</b> (il processore). Ogni socket ha un nome e accetta solo certe CPU: è la coppia che deve combaciare per prima. Due grandi famiglie, con una differenza fisica importante.</p>
+
+<div class="fig">
+<svg width="450" height="215" viewBox="0 0 450 215" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif">
+  <!-- LEFT: LGA (pins in socket) -->
+  <rect x="20" y="20" width="150" height="150" rx="4" fill="#eef4fb" stroke="#2b7cc4" stroke-width="2"/>
+  <!-- pin-1 corner -->
+  <path d="M28 28 L44 28 L28 44 Z" fill="#2b7cc4"/>
+  <g fill="#2b7cc4">
+    <!-- grid of dots = lands/pins in socket -->
+    <!-- generated 9x9 -->
+    <!-- rows -->
+    <g>
+      <!-- use circles -->
+    </g>
+  </g>
+  <!-- draw dot grid via many small circles -->
+  <g fill="#3a8fd0">
+  <!-- y rows every 13px from 40..170, x every 13 from 40..160 -->
+  </g>
+  <!-- simplified dot grid -->
+  <g fill="#2b7cc4">
+    <!-- manually placed 8x8 -->
+    <!-- we place with pattern-ish coordinates -->
+  </g>
+  <!-- Use a pattern of dots -->
+  <defs>
+    <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#2b7cc4"/>
+    </pattern>
+    <pattern id="pins" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.3" fill="#c0700a"/>
+    </pattern>
+  </defs>
+  <rect x="40" y="45" width="112" height="112" fill="url(#dots)"/>
+  <text x="20" y="188" font-size="10" fill="#12467a" font-weight="bold">Intel — LGA</text>
+  <text x="20" y="201" font-size="8.3" fill="#5a6b7b">(Land Grid Array) i pin sono NEL socket</text>
+  <text x="20" y="212" font-size="8.3" fill="#5a6b7b">la CPU ha contatti piatti</text>
+
+  <!-- RIGHT: PGA (pins on CPU) -->
+  <rect x="250" y="20" width="150" height="150" rx="4" fill="#fdf3e7" stroke="#e08a1e" stroke-width="2"/>
+  <path d="M258 28 L274 28 L258 44 Z" fill="#e08a1e"/>
+  <rect x="270" y="45" width="112" height="112" fill="url(#pins)"/>
+  <text x="250" y="188" font-size="10" fill="#c0700a" font-weight="bold">AMD — PGA</text>
+  <text x="250" y="201" font-size="8.3" fill="#5a6b7b">(Pin Grid Array) i pin sono SULLA CPU</text>
+  <text x="250" y="212" font-size="8.3" fill="#5a6b7b">(AM5 invece è LGA, come Intel)</text>
+</svg>
+<div class="figcap">Fig. 3 — LGA (pin nel socket) contro PGA (pin sulla CPU). Il triangolino in alto a sinistra è il "pin 1": indica il verso giusto.</div>
+</div>
+
+<table>
+<tr><th>Socket</th><th>Tipo</th><th>CPU che accetta (nomi)</th></tr>
+<tr><td><b>Intel LGA1700</b></td><td>LGA</td><td>Intel Core 12ª · 13ª · 14ª gen (i3 / i5 / i7 / i9)</td></tr>
+<tr><td><b>Intel LGA1851</b></td><td>LGA</td><td>Intel Core Ultra (serie 2)</td></tr>
+<tr><td><b>AMD AM4</b></td><td>PGA</td><td>AMD Ryzen serie 1000 → 5000</td></tr>
+<tr><td><b>AMD AM5</b></td><td>LGA</td><td>AMD Ryzen serie 7000 e 9000</td></tr>
+<tr><td>Intel LGA4677 / AMD SP5</td><td>LGA</td><td>Server e workstation (Xeon, EPYC)</td></tr>
+</table>
+
+<div class="box rosso"><b>Attenzione a non confondersi.</b> Il numero nel nome (1700, 1851, AM4…) è legato ai <b>contatti</b>, non è "quanto è potente". Serve solo a sapere quale CPU entra in quale scheda. CPU e scheda madre si comprano <b>sempre in coppia</b>, controllando che il socket sia lo stesso.</div>
+
+<!-- ============ 4. RAM ============ -->
+<h2 class="pagebreak">4. Tipi di RAM — DDR3, DDR4, DDR5</h2>
+<p>La <b>RAM</b> è la memoria di lavoro: le "bacchette" (moduli) che si infilano negli slot lunghi vicino alla CPU. Ogni generazione — <b>DDR3, DDR4, DDR5</b> — ha la <b>tacca (chiave) in una posizione diversa</b>: così è <b>impossibile</b> mettere una RAM nello slot sbagliato. La scheda madre supporta <b>una</b> sola generazione.</p>
+
+<div class="fig">
+<svg width="450" height="230" viewBox="0 0 450 230" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif">
+  <!-- DIMM sticks same length 340px, notch at different x -->
+  <!-- DDR3: notch fraction ~0.40 -->
+  <g>
+    <rect x="20" y="20" width="340" height="26" rx="3" fill="#e8f1fb" stroke="#2b7cc4" stroke-width="1.6"/>
+    <!-- contacts -->
+    <rect x="20" y="40" width="340" height="6" fill="#d9a441"/>
+    <!-- notch -->
+    <rect x="150" y="40" width="8" height="6" fill="#fff"/>
+    <rect x="150" y="20" width="8" height="26" fill="#fff" stroke="#2b7cc4" stroke-width="1"/>
+    <text x="368" y="30" font-size="9.5" fill="#12467a" font-weight="bold">DDR3</text>
+    <text x="368" y="42" font-size="7.6" fill="#5a6b7b">240 pin · 1,5 V</text>
+  </g>
+  <!-- DDR4: notch ~0.52 -->
+  <g>
+    <rect x="20" y="70" width="340" height="26" rx="3" fill="#e5f5ea" stroke="#2f9e57" stroke-width="1.6"/>
+    <rect x="20" y="90" width="340" height="6" fill="#d9a441"/>
+    <rect x="196" y="90" width="8" height="6" fill="#fff"/>
+    <rect x="196" y="70" width="8" height="26" fill="#fff" stroke="#2f9e57" stroke-width="1"/>
+    <text x="368" y="80" font-size="9.5" fill="#2f7d47" font-weight="bold">DDR4</text>
+    <text x="368" y="92" font-size="7.6" fill="#5a6b7b">288 pin · 1,2 V</text>
+  </g>
+  <!-- DDR5: notch ~0.46 -->
+  <g>
+    <rect x="20" y="120" width="340" height="26" rx="3" fill="#fdeede" stroke="#e08a1e" stroke-width="1.6"/>
+    <rect x="20" y="140" width="340" height="6" fill="#d9a441"/>
+    <rect x="172" y="140" width="8" height="6" fill="#fff"/>
+    <rect x="172" y="120" width="8" height="26" fill="#fff" stroke="#e08a1e" stroke-width="1"/>
+    <text x="368" y="130" font-size="9.5" fill="#c0700a" font-weight="bold">DDR5</text>
+    <text x="368" y="142" font-size="7.6" fill="#5a6b7b">288 pin · 1,1 V</text>
+  </g>
+  <text x="20" y="164" font-size="8.5" fill="#5a6b7b">La tacca bianca è in una posizione diversa per ogni generazione (posizioni indicative): non si scambiano.</text>
+  <!-- SO-DIMM -->
+  <g>
+    <rect x="20" y="182" width="188" height="24" rx="3" fill="#f0f0f0" stroke="#7a8896" stroke-width="1.4"/>
+    <rect x="20" y="200" width="188" height="6" fill="#c9a24a"/>
+    <rect x="120" y="200" width="7" height="6" fill="#fff"/>
+    <rect x="120" y="182" width="7" height="24" fill="#fff" stroke="#7a8896" stroke-width="1"/>
+    <text x="218" y="197" font-size="9.5" fill="#5a6b7b" font-weight="bold">SO-DIMM — RAM dei portatili (più corta)</text>
+  </g>
+</svg>
+<div class="figcap">Fig. 4 — Le tre generazioni di RAM da desktop (DIMM) con la tacca in posizione diversa, e sotto la SO-DIMM dei portatili.</div>
+</div>
+
+<table>
+<tr><th>Tipo</th><th>Pin (DIMM)</th><th>Tensione</th><th>Velocità tipiche · nomi di prodotto</th></tr>
+<tr><td><b>DDR3</b></td><td>240</td><td>1,5 V</td><td>DDR3-1600 (PC3-12800) — PC vecchi</td></tr>
+<tr><td><b>DDR4</b></td><td>288</td><td>1,2 V</td><td>DDR4-3200 (PC4-25600) — standard recente</td></tr>
+<tr><td><b>DDR5</b></td><td>288</td><td>1,1 V</td><td>DDR5-5600 / 6000 — attuale. Es. Corsair Vengeance, Kingston Fury, Crucial</td></tr>
+<tr><td><b>SO-DIMM</b></td><td>più corta</td><td>—</td><td>Stessa sigla + "SO-DIMM": la RAM dei portatili</td></tr>
+</table>
+
+<div class="box giallo"><b>Attenzione ai pin.</b> DDR4 e DDR5 hanno tutte e due 288 pin, ma la <b>tacca è in un punto diverso</b> e la scheda madre ne supporta una sola: non sono intercambiabili. La RAM del desktop (DIMM, lunga) è diversa da quella del portatile (SO-DIMM, corta).</div>
+
+<!-- ============ RIEPILOGO ============ -->
+<h2>5. Riepilogo — cosa deve combaciare con cosa</h2>
+<ol>
+<li><b>Case ⟷ scheda madre</b>: stesso form factor (ATX, microATX, Mini-ITX).</li>
+<li><b>Scheda madre ⟷ CPU</b>: stesso <b>socket</b> (LGA1700, AM5…).</li>
+<li><b>Scheda madre ⟷ RAM</b>: stessa <b>generazione</b> (DDR4 con DDR4, DDR5 con DDR5).</li>
+<li><b>Scheda video ⟷ scheda madre</b>: slot <b>PCIe x16</b>.</li>
+</ol>
+
+<div class="box blu"><b>La prova del nove (saperlo spiegare).</b> Alla fine ogni ragazzo prova a raccontare a voce, con parole sue: "Perché non posso mettere una CPU AMD su una scheda Intel? Perché una DDR5 non entra in uno slot DDR4?". Se lo sa spiegare, ha capito davvero.</div>
+
+<div class="box giallo"><b>Collegamento al compito.</b> Questi standard sono esattamente i controlli che fa il sito <i>PCPartPicker</i> quando montiamo il PC (attività "Costruisci il PC"): avvisa se socket, RAM o form factor non combaciano. Ora sappiamo <b>perché</b> lo fa.</div>
+
+</body>
+</html>
