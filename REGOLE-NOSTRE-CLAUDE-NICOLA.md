@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 1.0** — 24/09/2026
+**Versione 1.1** — 24/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -208,35 +208,77 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
 5. **Eccezione**: i materiali **interni del docente** (pianificazione, regole,
    registro, indici) restano in italiano.
 
+### 2.15 Versione: bump a OGNI giro di modifica (confermato da Nicola)
+1. Ogni volta che cambia il **contenuto** di un documento consegnabile, si
+   **bumpa SEMPRE** la versione (anche tra un giro e l'altro nella stessa
+   sessione). **Mai riusare** un numero già usato; mai due file diversi con lo
+   stesso numero.
+2. La versione va **sia nel nome file** (schema 2.9) **sia nell'intestazione**
+   del documento (MD e resa PDF), e le due devono coincidere.
+
+### 2.16 Bobina = trascrizione integrale delle nostre chat
+1. La **bobina** è il posto unico con la **trascrizione INTEGRALE (verbatim)**
+   di tutti gli scambi Nicola↔Claude.
+2. Contiene nomi di minori → vive **in scratchpad, MAI su Git**. Da essa si
+   ricava la parte pulita (senza nomi) per libro/argomenti (vedi 2.12).
+
+### 2.17 I due libri (confermato da Nicola)
+1. **Libro dei ragazzi (quaderno personale)**: cresce in **ordine CRONOLOGICO**
+   (è l'unico che i ragazzi capiscono). Ogni ragazzo ha nel suo libro **tutte**
+   le spiegazioni e gli esercizi.
+   - **Assente**: la teoria+esercitazione si inseriscono lo stesso ma in
+     **colore diverso** (= non svolta da lui).
+   - Se la **rifà**, ricompare **più avanti** in cronologia (quando l'ha
+     svolta davvero).
+   - Contiene nomi/lavori → **scratchpad** (privato); ai ragazzi in PDF/stampa;
+     aggiornamento **a blocchi** (non a ogni minuto).
+2. **Libro COMPLETO** (libro di testo generale): si arricchisce in modo
+   **ORGANICO / tematico**, non cronologico. Se un contenuto cronologico viene
+   poi **arricchito**, si decide **caso per caso** se aggiornare la pagina
+   vecchia o mettere la teoria nuova più completa **più avanti**.
+
+### 2.18 Schede per lezione
+1. Per ogni lezione si punta al **più completo possibile** (teoria +
+   esercitazione, trilingui). Ma **può bastare un solo PDF** per lezione.
+
+### 2.19 Interazioni brevi (Nicola ha poco tempo)
+1. Rispondere con **poco testo**: confermare in poche righe, niente blocchi
+   lunghi se non richiesti. Andare al sodo.
+
 ## 3. Changelog
 
-1. **v1.0 (24/09/2026)**: corretto l'ordine dello schema nomi file (2.9) su
+1. **v1.1 (24/09/2026)**: aggiunte 2.15 (bump versione a ogni giro), 2.16 (bobina
+   = trascrizione integrale chat in scratchpad), 2.17 (due libri: ragazzi
+   cronologico con assenti in colore diverso; completo organico/tematico), 2.18
+   (schede per lezione: il più completo possibile, ma può bastare 1 PDF), 2.19
+   (interazioni brevi).
+2. **v1.0 (24/09/2026)**: corretto l'ordine dello schema nomi file (2.9) su
    richiesta di Nicola → **`DATA _ CHI _ VERSIONE _ OGGETTO _ (LINGUA)`** (data,
    classe, versione, oggetto; lingua in coda); aggiornati esempi e 2.13. Aggiunta
    **2.14**: in Classe 1 il materiale per gli allievi è **sempre trilingue** (IT/AR/ZH).
-2. **v0.9 (23/09/2026)**: aree per i file non di una classe (2.9) — `Comune`
+3. **v0.9 (23/09/2026)**: aree per i file non di una classe (2.9) — `Comune`
    (tema generale per tutte le classi, es. regole di laboratorio), `Docente`
    (interno), `Regione` (Allegato A/PFP); esempi deterministici aggiornati.
-3. **v0.8 (23/09/2026)**: aggiunta 2.13 "Nome deterministico" — il percorso è nel
+4. **v0.8 (23/09/2026)**: aggiunta 2.13 "Nome deterministico" — il percorso è nel
    nome (cartelle separate da `__`), così da un mucchio di file si ricostruisce
    l'albero; strumento `strumenti/nome-albero.py` (espandi/collassa).
-4. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
+5. **v0.7 (23/09/2026)**: aggiunta 2.12 "Conservazione integrale (verbatim)" — cio
    che Nicola detta/riporta e le sbobinature si tengono sempre anche verbatim.
-5. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
+6. **v0.6 (23/09/2026)**: materiale per tutta la classe = `Classe-N-PerTutti`
    (parola fissa `PerTutti`), non la classe "nuda"; il `Chi` comincia sempre
    dalla classe, poi PerTutti oppure Cognome-Nome.
-6. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
+7. **v0.5 (23/09/2026)**: nel token `Chi` (2.9) il file di un allievo include ora
    anche la **classe** (es. `Classe-1-Sala-Andrea`), così si sa di che classe è.
-7. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
+8. **v0.4 (23/09/2026)**: schema nomi file esteso (2.9) — aggiunto il token `Chi`
    (di chi è: Classe-N / Cognome-Nome / Corso / Docente), con migrazione graduale.
-8. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
+9. **v0.3 (23/09/2026)**: PPP da recepire subito e in silenzio (2bis); voti in
    centesimi e regola "presente non consegna = 30 / assente = nessun voto";
    nuova 2.11 = di default consegno solo il PDF sensibile (riservato), gli altri
    formati li tengo in silenzio in scratchpad e li do su richiesta.
-9. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
+10. **v0.2 (21/09/2026)**: aggiunta la sezione "Lezioni dagli errori" (in diretta
    prima ciò che funziona; comandi in copia-incolla e scorciatoie dirette; mai
    dare ai ragazzi file con le risposte, due versioni separate; fermarsi subito
    quando si perde tempo in classe).
-10. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
+11. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
