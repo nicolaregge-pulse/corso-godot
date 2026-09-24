@@ -1,6 +1,6 @@
 # Libro di testo — Informatica Classe 1
 
-**Versione 0.3** — 24/09/2026
+**Versione 0.4** — 24/09/2026
 *Il libro di testo della Classe 1: raccoglie in un unico posto gli appunti, la
 teoria e le esercitazioni svolte in classe. Cresce a ogni lezione. Due formati:
 il PDF (`libro-classe1-vX.Y.pdf`) per leggere e stampare; questo MD è la fonte
@@ -100,6 +100,32 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
 > **NVMe/AHCI** = il linguaggio · **PCIe/SATA** = la strada. Il disco più veloce
 > oggi è un **SSD NVMe su M.2 collegato via PCIe**.
 
+#### 2.4.1 In parole semplici — la storia dello storage
+
+1. Una volta c'erano solo gli **HDD**: dischi che **girano**, con una **testina**
+   che legge e scrive, un po' come la puntina di un giradischi. Funzionano, ma
+   sono **lenti** e delicati, perché hanno **parti in movimento**.
+2. Poi sono arrivati gli **SSD**: **niente parti in movimento**, salvano tutto in
+   **chip di memoria** (NAND Flash), come una chiavetta USB molto evoluta. Sono
+   più **veloci**, silenziosi e resistenti agli urti.
+3. Ma non tutti gli SSD sono uguali. Un **SSD SATA** usa la **vecchia strada**
+   dell'hard disk: è veloce, ma ha un limite (~560 MB/s). Un **SSD NVMe** usa una
+   **strada nuova e larghissima**, il **PCIe** (la stessa della scheda video e
+   della CPU), e va **molto** più veloce.
+4. Tre parole da **non confondere**:
+   1. la **FORMA** — `M.2`, il "bastoncino" che si incastra sulla scheda madre;
+   2. il **LINGUAGGIO** — `NVMe` o `AHCI`, cioè come il computer "parla" col disco;
+   3. la **STRADA** — `PCIe` (autostrada) o `SATA` (strada normale), per dove
+      passano i dati.
+5. **In pratica:** per far "volare" un computer, la prima cosa da fare è mettere
+   un **SSD** (meglio se **NVMe**): è il salto di velocità che si sente di più,
+   più ancora che cambiare processore.
+
+> [GIALLO] Immagine mentale: pensa a una **consegna di pacchi**. La **forma** è il
+> tipo di furgone, il **linguaggio** è la lingua con cui parli al corriere, la
+> **strada** è l'autostrada o la stradina di campagna. Per andare veloce servono
+> tutte e tre giuste: furgone adatto (M.2), lingua moderna (NVMe), autostrada (PCIe).
+
 ## 3. Utenze e aree di lavoro
 1. **Account e password:** ognuno ha il proprio account della scuola; la password
    va tenuta al sicuro e robusta (lunga, con lettere, numeri e simboli).
@@ -156,6 +182,7 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
 (Il glossario completo multilingue è nel documento `glossario-l2`.)
 
 ## 9. Changelog
+4. **v0.4 (24/09/2026)**: aggiunta 2.4.1 "In parole semplici — la storia dello storage" (paginetta descrittiva con analogia).
 3. **v0.3 (24/09/2026)**: aggiunta 2.4 "Lo storage: i 5 livelli" (HDD/SSD, SATA/NVMe, AHCI/NVMe, connettori SATA/M.2, interfaccia PCIe) con infografica.
 2. **v0.2 (24/09/2026)**: aggiunta 2.3 "Standard e compatibilità" (form factor,
    PCIe, socket, processori per marca, RAM) e l'esercitazione "Documento sulla
