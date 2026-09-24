@@ -1,6 +1,6 @@
 # Libro di testo — Informatica Classe 1
 
-**Versione 0.2** — 24/09/2026
+**Versione 0.3** — 24/09/2026
 *Il libro di testo della Classe 1: raccoglie in un unico posto gli appunti, la
 teoria e le esercitazioni svolte in classe. Cresce a ogni lezione. Due formati:
 il PDF (`libro-classe1-vX.Y.pdf`) per leggere e stampare; questo MD è la fonte
@@ -76,6 +76,30 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
 > [GIALLO] È il "perché" dei controlli che fa PCPartPicker quando si monta il PC.
 > Materiale: scheda `standard-hardware` (teoria trilingue con i disegni in scala).
 
+### 2.4 Lo storage: i 5 livelli (dove si salvano i file)
+
+![I 5 livelli dello storage digitale](immagini/20260924_Storage-5-Livelli.jpg)
+
+1. **Livello 1 — Tecnologia:** l'**HDD** (meccanico) ha un piatto che gira e una
+   testina che si muove; l'**SSD** (elettrico) usa **celle NAND Flash**, senza
+   parti in movimento (più veloce e resistente).
+2. **Livello 2 — Tipo e velocità:** HDD meccanico ~160 MB/s; **SSD SATA** (2,5")
+   ~560 MB/s; **SSD NVMe** molto più veloce (Gen3 ~3.500, Gen4 ~7.500, Gen5
+   ~12.000+ MB/s).
+3. **Livello 3 — Logica di controllo (il "linguaggio"):** **AHCI** (vecchio):
+   seriale, una sola coda, va bene per l'HDD; **NVMe** (moderno): in parallelo,
+   fino a 65.535 code, perfetto per i chip dell'SSD.
+4. **Livello 4 — Connettore fisico:** **SATA** (con cavo, robusto) oppure **M.2**
+   (a incastro diretto sulla scheda madre, piccolo). Attenzione: **M.2 è solo una
+   FORMA** del connettore (può essere SATA o NVMe).
+5. **Livello 5 — Interfaccia (la "strada" sulla scheda madre):** il **bus SATA**
+   è lento e passa da un controller; il **bus PCIe** è velocissimo ed è collegato
+   direttamente alla **CPU** (le "corsie" x4).
+
+> [GIALLO] Da ricordare, le tre cose diverse: **M.2** = la forma del connettore ·
+> **NVMe/AHCI** = il linguaggio · **PCIe/SATA** = la strada. Il disco più veloce
+> oggi è un **SSD NVMe su M.2 collegato via PCIe**.
+
 ## 3. Utenze e aree di lavoro
 1. **Account e password:** ognuno ha il proprio account della scuola; la password
    va tenuta al sicuro e robusta (lunga, con lettere, numeri e simboli).
@@ -132,6 +156,7 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
 (Il glossario completo multilingue è nel documento `glossario-l2`.)
 
 ## 9. Changelog
+3. **v0.3 (24/09/2026)**: aggiunta 2.4 "Lo storage: i 5 livelli" (HDD/SSD, SATA/NVMe, AHCI/NVMe, connettori SATA/M.2, interfaccia PCIe) con infografica.
 2. **v0.2 (24/09/2026)**: aggiunta 2.3 "Standard e compatibilità" (form factor,
    PCIe, socket, processori per marca, RAM) e l'esercitazione "Documento sulla
    configurazione del PC".
