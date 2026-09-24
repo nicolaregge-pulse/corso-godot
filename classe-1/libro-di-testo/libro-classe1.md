@@ -1,6 +1,6 @@
 # Libro di testo — Informatica Classe 1
 
-**Versione 0.1** — 21/09/2026
+**Versione 0.2** — 24/09/2026
 *Il libro di testo della Classe 1: raccoglie in un unico posto gli appunti, la
 teoria e le esercitazioni svolte in classe. Cresce a ogni lezione. Due formati:
 il PDF (`libro-classe1-vX.Y.pdf`) per leggere e stampare; questo MD è la fonte
@@ -55,6 +55,27 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
    insieme) e **somma il prezzo totale**.
 3. Obiettivo: montare un PC che funzioni **entro un budget** (es. 700 €).
 
+### 2.3 Standard e compatibilità (form factor, PCIe, socket, RAM)
+1. **Standard** = misure e forme comuni, decise da tutti, perché i pezzi
+   **combacino**. I quattro principali:
+2. **Form factor (grandezza della scheda madre e del case):** `ATX` (305×244 mm),
+   `microATX` (244×244), `Mini-ITX` (170×170); `AT` è il vecchio standard. Più
+   grande = più slot.
+3. **Slot PCIe (schede aggiuntive):** `x1, x4, x8, x16` (lunghezze crescenti); nel
+   `x16` va la **scheda video**. Versioni `3.0/4.0/5.0` (velocità); `M.2` per gli
+   SSD NVMe.
+4. **Socket (dove si appoggia la CPU):** Intel = `LGA` (pin nel socket, es.
+   `LGA1700`); AMD = `PGA` (pin sulla CPU, es. `AM4`) o `LGA` (`AM5`). CPU e
+   scheda madre si comprano **in coppia**.
+5. **Processori per marca:** Intel Core `i3/i5/i7/i9`; AMD Ryzen `3/5/7/9`.
+6. **RAM (memorie):** `DDR3/DDR4/DDR5`, con la **tacca in posizione diversa** (non
+   si scambiano); `DIMM` (desktop) vs `SO-DIMM` (portatili).
+7. **Cosa deve combaciare:** case↔scheda madre (form factor), scheda madre↔CPU
+   (socket), scheda madre↔RAM (generazione), scheda video↔slot `PCIe x16`.
+
+> [GIALLO] È il "perché" dei controlli che fa PCPartPicker quando si monta il PC.
+> Materiale: scheda `standard-hardware` (teoria trilingue con i disegni in scala).
+
 ## 3. Utenze e aree di lavoro
 1. **Account e password:** ognuno ha il proprio account della scuola; la password
    va tenuta al sicuro e robusta (lunga, con lettere, numeri e simboli).
@@ -97,6 +118,9 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
    proprie + due domande personali.
 4. **Costruisci il tuo PC** — montare un PC compatibile a budget con PCPartPicker
    (Builder) e scrivere la lista con il prezzo totale.
+5. **Documento sulla configurazione del PC** — spiegare con parole proprie gli
+   standard (form factor, PCIe, socket, processori per marca, memorie) e inserire
+   immagini dal web descrivendo la tipologia; consegna su Classroom.
 
 ## 8. Glossario (essenziale)
 1. **CPU:** processore, il "cervello" del PC.
@@ -108,6 +132,9 @@ corso; la lingua è l'italiano (l'AI fa da ponte per arabo e cinese).*
 (Il glossario completo multilingue è nel documento `glossario-l2`.)
 
 ## 9. Changelog
+2. **v0.2 (24/09/2026)**: aggiunta 2.3 "Standard e compatibilità" (form factor,
+   PCIe, socket, processori per marca, RAM) e l'esercitazione "Documento sulla
+   configurazione del PC".
 1. **v0.1 (21/09/2026)**: prima versione. Come lavoriamo; cos'è l'informatica; il
    computer e le sue parti (+ assemblaggio + scelta pezzi); utenze e aree; Google
    Suite e Classroom; GitHub e repository; sicurezza e regole di laboratorio;
