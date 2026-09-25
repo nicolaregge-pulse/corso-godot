@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 1.7** — 24/09/2026
+**Versione 1.8** — 25/09/2026
 *Convenzioni operative tra Nicola e Claude per lavorare bene insieme. Documento
 INTERNO. NON sono le regole per i ragazzi (quelle stanno nei materiali di classe,
 es. `classe-1/regole-classe/`). Questo file serve a NON confondere i due piani.*
@@ -338,3 +338,10 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
 17. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
+
+### 2.23 Libri individuali: solo le lingue che servono all'allievo
+1. Nel **libro individuale** vanno solo le lingue utili a **quell'allievo**:
+   **italiano** per tutti; **italiano + la sua lingua** solo per chi ha una lingua
+   madre diversa (es. bangla, arabo, cinese). Le altre lingue si tolgono.
+2. In copertina e nei nomi file si scrive sempre **Cognome Nome** (cognome prima).
+3. Chi ha quale lingua è un dato sugli allievi → sta in **scratchpad**, mai su Git.
