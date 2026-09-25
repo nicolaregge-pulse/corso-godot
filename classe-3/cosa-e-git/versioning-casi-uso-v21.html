@@ -1,133 +1,30 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>GitHub e il versioning — dispensa 2ª</title>
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Versioning — casi d'uso con grafi</title>
 <style>
 @page{size:A4;margin:16mm 15mm;}*{box-sizing:border-box;}
-body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11.3pt;line-height:1.6;margin:0;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.5;margin:0;}
 .cover{height:250mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;page-break-after:always;background:linear-gradient(160deg,#eef4fb,#f0ecfb);}
-.cover h1{font-size:31pt;color:#12467a;margin:4px 0;}
-.cover .t{font-size:14pt;color:#444;}
-.cover .s{font-size:11.5pt;color:#6a4ca8;max-width:130mm;margin-top:20px;}
-h2{font-size:15.5pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.5mm;margin:7mm 0 2.5mm;page-break-after:avoid;}
-h3{font-size:12pt;color:#1b3a5c;margin:4mm 0 1mm;page-break-after:avoid;}
-p{margin:0 0 2.5mm;}
-ol,ul{margin:0 0 2.5mm;padding-left:6mm;}li{margin:1.5mm 0;}
-.box{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
-.ex{background:#f2f7f2;border-left:5px solid #2f9e57;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
-.ex b.tag{color:#2f7d47;}
-.note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
-.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.8pt;}
-.fig{text-align:center;margin:3mm 0;page-break-inside:avoid;}
-.cap{font-size:9.2pt;color:#5a6b7b;}
-table{border-collapse:collapse;width:100%;font-size:10.3pt;margin:2mm 0;}
-th,td{border:1px solid #b9c8d6;padding:2mm 2.5mm;text-align:left;vertical-align:top;}
-th{background:#eaf2fb;color:#12467a;}
-.lav{background:#fafafa;border:2px solid #333;border-radius:6px;padding:3mm;margin:3mm 0;}
+.cover h1{font-size:30pt;color:#12467a;margin:4px 0;}
+.cover .t{font-size:13pt;color:#444;}
+.cover .s{font-size:11pt;color:#6a4ca8;max-width:130mm;margin-top:18px;}
+h2{font-size:14pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.2mm;margin:6mm 0 2mm;page-break-after:avoid;}
+p{margin:0 0 2mm;}
+.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.6pt;}
 .uc{background:#f6f8fa;border:1px solid #d6e0ea;border-radius:6px;padding:2mm 4mm 3mm;margin:3mm 0;page-break-inside:avoid;}
 .uc h2{margin-top:1mm;border:none;color:#12467a;font-size:13.5pt;}
 .exp{font-size:10.5pt;color:#33475b;margin-bottom:1mm;}
+.fig{text-align:center;margin:1mm 0;}
 .leg{background:#fdf6e3;border-left:5px solid #d0a516;padding:2mm 3mm;border-radius:3px;margin:3mm 0;font-size:10pt;}
+text{font-family:'DejaVu Sans Mono',monospace;}
 .intro{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.6pt;}
-svg text{font-family:'DejaVu Sans Mono',monospace;}
 </style></head><body>
 
 <div class="cover">
-<div class="t">Dispensa · Classe 2 · Informatica · v2.1</div>
-<h1>GitHub e il versioning</h1>
-<div class="t">quello che abbiamo scritto insieme alla lavagna, spiegato per bene</div>
-<div class="s">Partiamo dallo schema della <b>nostra lavagna</b> e lo apriamo pezzo per pezzo: cos'è GitHub, che tipo di servizio è (PaaS, Freemium) e come funzionano le <b>versioni</b>. Con esempi e senza comandi da digitare. Classe 2 · Informatica.</div>
+<div class="t">Approfondimento · v2.1</div>
+<h1>Versioning: 11 casi d'uso</h1>
+<div class="t">gli stessi concetti (commit, branch, merge, release) in situazioni tutte diverse</div>
+<div class="s">Ogni caso ha un <b>grafo</b> (pallino = commit/versione, linea = tempo che scorre da sinistra a destra) e una <b>spiegazione di massima</b>. Serve per imparare a <b>leggere</b> la storia di un progetto. Informatica.</div>
 </div>
 
-<h2>1. Partiamo dalla nostra lavagna</h2>
-<p>Ecco, ridisegnato in ordine, lo schema che abbiamo costruito insieme alla lavagna. Ogni riquadro è una tappa: nelle prossime pagine le apriamo una per una.</p>
-<div class="fig"><svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="11">
-<!-- GitHub -->
-<rect x="175" y="8" width="150" height="34" rx="6" fill="#eaf3fb" stroke="#12467a" stroke-width="2"/>
-<text x="250" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#12467a">GitHub</text>
-<!-- azienda / servizio -->
-<line x1="250" y1="42" x2="250" y2="58" stroke="#12467a" stroke-width="1.5"/>
-<rect x="90" y="58" width="150" height="30" rx="5" fill="#fff" stroke="#2b7cc4"/><text x="165" y="78" text-anchor="middle" fill="#12467a">è un'AZIENDA</text>
-<rect x="260" y="58" width="150" height="30" rx="5" fill="#fff" stroke="#2b7cc4"/><text x="335" y="78" text-anchor="middle" fill="#12467a">è un SERVIZIO</text>
-<line x1="165" y1="42" x2="165" y2="58" stroke="#2b7cc4" stroke-width="1.2"/>
-<line x1="335" y1="42" x2="335" y2="58" stroke="#2b7cc4" stroke-width="1.2"/>
-<line x1="250" y1="42" x2="165" y2="42" stroke="#2b7cc4" stroke-width="1.2"/>
-<line x1="250" y1="42" x2="335" y2="42" stroke="#2b7cc4" stroke-width="1.2"/>
-<!-- repository -->
-<line x1="335" y1="88" x2="335" y2="104" stroke="#c0392b" stroke-width="1.5"/>
-<rect x="245" y="104" width="185" height="30" rx="5" fill="#fbecec" stroke="#c0392b"/><text x="337" y="124" text-anchor="middle" fill="#a5281c">tiene Repository di codice</text>
-<!-- PaaS e Freemium -->
-<line x1="337" y1="134" x2="337" y2="150" stroke="#2f9e57" stroke-width="1.5"/>
-<rect x="250" y="150" width="110" height="46" rx="5" fill="#eaf7ee" stroke="#2f9e57"/><text x="305" y="169" text-anchor="middle" font-weight="bold" fill="#1f7a43">PaaS</text><text x="305" y="186" text-anchor="middle" font-size="8.5" fill="#1f7a43">Platform as a Service</text>
-<rect x="375" y="150" width="110" height="46" rx="5" fill="#fff6e0" stroke="#d0a516"/><text x="430" y="169" text-anchor="middle" font-weight="bold" fill="#8a6d00">FREEMIUM</text><text x="430" y="186" text-anchor="middle" font-size="8.5" fill="#8a6d00">free ↑ premium</text>
-<line x1="337" y1="150" x2="305" y2="150" stroke="#2f9e57" stroke-width="1.2"/>
-<line x1="337" y1="150" x2="430" y2="150" stroke="#d0a516" stroke-width="1.2"/>
-<!-- Versioning -->
-<rect x="15" y="150" width="150" height="34" rx="6" fill="#f0ecfb" stroke="#6a4ca8" stroke-width="2"/>
-<text x="90" y="167" text-anchor="middle" font-size="14" font-weight="bold" fill="#4a2f88">VERSIONING</text>
-<text x="90" y="180" text-anchor="middle" font-size="9" fill="#6a4ca8">le versioni: 1 . 2 . 3</text>
-<!-- grafo versioning -->
-<line x1="30" y1="250" x2="230" y2="250" stroke="#2b7cc4" stroke-width="2"/>
-<g fill="#2b7cc4"><circle cx="55" cy="250" r="5"/><circle cx="120" cy="250" r="5"/><circle cx="205" cy="250" r="5"/></g>
-<path d="M120 250 C150 220 180 220 205 250" fill="none" stroke="#8d54c9" stroke-width="1.6"/>
-<circle cx="163" cy="224" r="4" fill="#8d54c9"/>
-<g font-size="8.5"><text x="48" y="270" fill="#12467a">v1.0</text><text x="150" y="219" fill="#7a3fb8">v1.1</text><text x="196" y="270" fill="#12467a">v2.0</text></g>
-<text x="130" y="292" text-anchor="middle" font-size="8.5" fill="#556">le versioni pubblicate crescono nel tempo</text>
-</svg><div class="cap">Lo schema della lezione: GitHub è azienda e servizio; tiene repository di codice; come servizio è una piattaforma (PaaS) col modello Freemium; e il progetto cresce per versioni (versioning).</div></div>
-<div class="fig"><img src="immagini/20260925_Classe-2_Lavagna-GitHub.jpg" style="max-width:100%;border:1px solid #bbb;border-radius:5px"><div class="cap">La <b>lavagna della lezione</b> (3ª ora): lo schema originale scritto in classe, da cui parte questa dispensa.</div></div>
-
-<h2>2. GitHub: un'azienda e un servizio</h2>
-<p>Alla lavagna abbiamo scritto due parole sopra "GitHub": <b>azienda</b> e <b>servizio</b>. Vediamo perché tutte e due sono vere.</p>
-<h3>È un'azienda</h3>
-<p>Dietro GitHub c'è una <b>società vera</b> — <b>GitHub, Inc.</b>, nata nel 2008 e dal 2018 di proprietà di <b>Microsoft</b>. Come ogni azienda deve mantenersi: ci arriviamo al punto "Freemium".</p>
-<h3>È un servizio (online)</h3>
-<p>GitHub è un <b>sito</b> dove metti i tuoi progetti <b>online</b>: per tenerli al sicuro, mostrarli e lavorarci in gruppo. Non è un programma che installi col CD: lo usi dal <b>browser</b>.</p>
-<div class="box"><b>Attenzione a non confondere:</b> <b>Git</b> è lo <b>strumento</b> (la tecnologia che tiene la storia di un progetto, gratis e di nessuno); <b>GitHub</b> è il <b>servizio online</b> (l'azienda) dove quei progetti vivono in rete. Git è il <b>motore</b>, GitHub è il <b>garage online</b>.</div>
-
-<h2>3. Che cosa tiene: i repository di codice</h2>
-<p>Sulla lavagna, sotto "servizio", abbiamo scritto <b>"repository di codice"</b>: è ciò che GitHub custodisce.</p>
-<p>Un <b>repository</b> (in breve "repo") è la <b>cartella-progetto</b> con dentro i file <b>e tutta la loro storia</b>. Ogni salvataggio della storia si chiama <b>commit</b> (una "fotografia" del progetto con un messaggio). Se lavori in gruppo, puoi aprire un <b>branch</b> (una strada di lavoro parallela) e poi riunirlo con un <b>merge</b>.</p>
-<div class="ex"><b class="tag">Esempio.</b> Il tuo gioco "SpaceRun" è un repository su GitHub: dentro c'è il gioco <b>e</b> il diario di tutte le modifiche. Puoi tornare a com'era la settimana scorsa in qualsiasi momento.</div>
-
-<h2>4. Che tipo di servizio è: PaaS</h2>
-<p>Alla lavagna: <b>PaaS = Platform as a Service</b>, cioè "piattaforma <b>come servizio</b>". Vuol dire che qualcuno ti mette a disposizione online una <b>piattaforma già pronta</b>, e tu la usi senza costruirti e mantenere i computer, i server e tutto il resto.</p>
-<div class="ex"><b class="tag">Analogia della cucina.</b> Per aprire un ristorante puoi <b>costruirti la cucina da zero</b> (tanta fatica) oppure <b>affittare una cucina già attrezzata</b> e pensare solo a cucinare. GitHub è la cucina già pronta: tu porti il progetto, il resto lo mette lui.</div>
-<h3>La famiglia "…aaS"</h3>
-<p>PaaS non è da solo: fa parte di una famiglia di servizi online, tutti con la sigla che finisce in <b>"aaS"</b> (<i>as a Service</i>). Cambia quanto lavoro fai tu:</p>
-<table>
-<tr><th>Sigla</th><th>Nome</th><th>Cosa ti danno pronto</th><th>Esempio</th></tr>
-<tr><td><b>IaaS</b></td><td>Infrastructure as a Service</td><td>Solo i "muri e la corrente": server nudi.</td><td>Amazon AWS, Google Cloud</td></tr>
-<tr><td><b>PaaS</b></td><td>Platform as a Service</td><td>La cucina già attrezzata: piattaforma pronta.</td><td>GitHub, Netlify</td></tr>
-<tr><td><b>SaaS</b></td><td>Software as a Service</td><td>Il piatto già servito: un programma pronto nel browser.</td><td>Gmail, Google Documenti</td></tr>
-</table>
-<div class="ex"><b class="tag">Come ricordarli — la pizzeria.</b> <b>IaaS</b> = affitti il locale vuoto. <b>PaaS</b> = affitti la cucina attrezzata. <b>SaaS</b> = ti fai consegnare la pizza pronta. Più scendi, meno fatica fai.</div>
-
-<h2>5. Come si paga: il modello Freemium</h2>
-<p>Sulla lavagna: <b>Freemium = FREE ↑ PREMIUM</b>. È una parola nata unendo <b>free</b> (gratis) e <b>premium</b> (a pagamento). Significa: le funzioni <b>di base sono gratis</b> per tutti; se vuoi funzioni <b>in più</b>, paghi un abbonamento.</p>
-<div class="ex"><b class="tag">Esempio che conosci.</b> Tanti giochi per telefono e app come Spotify funzionano così: gratis con qualche limite, a pagamento per togliere pubblicità o avere funzioni extra. <b>GitHub è uguale:</b> a te studente basta e avanza la parte gratis.</div>
-<div class="box"><b>Ecco perché "azienda" e "Freemium" stanno insieme:</b> GitHub è un'azienda, quindi deve guadagnare; lo fa lasciando gratis l'uso normale e facendo pagare le funzioni avanzate a chi ne ha bisogno (aziende, team grandi).</div>
-
-<h2>6. Il versioning: le versioni 1.2.3</h2>
-<p>L'ultima parte della lavagna: <b>VERSIONING</b>, con il numero <span class="lbl">1.2.3</span>. Quando un progetto raggiunge un punto "buono", gli si dà un <b>numero di versione</b> fatto di tre cifre:</p>
-<table>
-<tr><th>Cifra</th><th>Nome</th><th>Aumenta quando…</th></tr>
-<tr><td><b>1</b></td><td>major</td><td>cambi <b>tutto</b>, in modo grosso (magari incompatibile col vecchio)</td></tr>
-<tr><td><b>2</b></td><td>minor</td><td>aggiungi una <b>funzione nuova</b>, ma il resto funziona ancora</td></tr>
-<tr><td><b>3</b></td><td>patch</td><td>correggi solo un <b>bug</b>, niente di nuovo</td></tr>
-</table>
-<div class="ex"><b class="tag">Esempio.</b> <span class="lbl">v1.0.0</span> prima versione giocabile → aggiungi i suoni: <span class="lbl">v1.1.0</span> → correggi un bug: <span class="lbl">v1.1.1</span> → rifai tutto da capo: <span class="lbl">v2.0.0</span>.</div>
-<h3>Il grafo che abbiamo disegnato</h3>
-<p>Alla lavagna avevamo disegnato la linea delle versioni con un ramo che si stacca e rientra. Ecco cosa racconta: il progetto va avanti su <span class="lbl">main</span>, ogni tanto si pubblica una versione (le bandierine), e un ramo di lavoro si può staccare e poi riunire.</p>
-<div class="fig"><svg width="470" height="95" viewBox="0 0 470 95" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
-<line x1="30" y1="60" x2="445" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
-<g fill="#2b7cc4"><circle cx="55" cy="60" r="6"/><circle cx="235" cy="60" r="6"/><circle cx="420" cy="60" r="6"/></g>
-<g stroke="#d0a516" stroke-width="1.5"><line x1="55" y1="60" x2="55" y2="38"/><line x1="420" y1="60" x2="420" y2="38"/></g>
-<g fill="#d0a516"><rect x="55" y="27" width="30" height="11"/><rect x="420" y="27" width="30" height="11"/></g>
-<g fill="#7a5b00"><text x="58" y="36">v1.0</text><text x="423" y="36">v2.0</text></g>
-<path d="M120 60 C170 90 210 90 260 78" fill="none" stroke="#8d54c9" stroke-width="2"/>
-<circle cx="190" cy="88" r="5" fill="#8d54c9"/><text x="190" y="82" text-anchor="middle" fill="#7a3fb8">v1.1 (ramo)</text>
-</svg><div class="cap">Da <span class="lbl">v1.0</span> il progetto cresce; un ramo porta la <span class="lbl">v1.1</span> e si riunisce; poi un grande cambiamento porta alla <span class="lbl">v2.0</span>.</div></div>
-<div class="note"><b>Regola d'oro:</b> una versione già pubblicata <b>non si riusa mai</b>. Se cambi anche una sola cosa, prima <b>aumenti</b> il numero e poi pubblichi.</div>
-
-<h2>7. Casi d'uso: 11 grafi con spiegazione</h2>
-<p>Vediamo Git/versioning "in azione". In ogni grafo il <b>pallino</b> è un commit/versione e la <b>linea</b> è il tempo (da sinistra a destra).</p>
 <div class="intro"><b>Come si legge un grafo:</b> ogni <b>pallino</b> è un <b>commit</b> (una fotografia salvata). La <b>linea orizzontale</b> in alto è di solito <span class="lbl">main</span>, il ramo principale. Le linee colorate che si staccano sono <b>branch</b> (rami di lavoro). Quando due linee si riuniscono è un <b>merge</b>. Le <b>bandierine gialle</b> sono le <b>release</b> (versioni pubblicate, es. <span class="lbl">v1.0</span>).</div>
 
 <div class="uc">
@@ -296,30 +193,5 @@ svg text{font-family:'DejaVu Sans Mono',monospace;}
 </div>
 
 <div class="leg"><b>In sintesi:</b> con pochi elementi — commit, branch, merge, tag/release — si descrivono <b>tutte</b> le situazioni di un progetto reale, dalla più semplice (linea dritta) alle più complesse (integrazione di squadra, manutenzione parallela, conflitti). Saper <b>leggere</b> questi grafi è già metà del lavoro.</div>
-
-
-<h2>8. Riepilogo (la lavagna in tre righe)</h2>
-<ol>
-<li><b>GitHub</b> è un'<b>azienda</b> e un <b>servizio</b> online dove tieni i tuoi <b>repository di codice</b> (con Git sotto, come motore).</li>
-<li>Come servizio è una <b>piattaforma pronta (PaaS)</b>, della famiglia <b>…aaS</b>, e si paga in <b>Freemium</b> (base gratis, extra a pagamento).</li>
-<li>Il progetto cresce per <b>versioni</b> (<span class="lbl">1.2.3</span>): major, minor, patch — e una versione pubblicata non si tocca più.</li>
-</ol>
-<p class="cap">Per vedere tante situazioni diverse con i grafi, guarda la scheda "Versioning — 11 casi d'uso".</p>
-
-<h2>9. Glossario</h2>
-<table>
-<tr><th>Parola</th><th>Vuol dire</th></tr>
-<tr><td class="lbl">GitHub</td><td>il sito-servizio (azienda di Microsoft) che ospita i progetti online</td></tr>
-<tr><td class="lbl">Git</td><td>lo strumento (gratis) che tiene la storia di un progetto — il "motore" sotto GitHub</td></tr>
-<tr><td class="lbl">repository</td><td>la cartella-progetto con dentro i file e tutta la loro storia</td></tr>
-<tr><td class="lbl">commit</td><td>un salvataggio (una fotografia) del progetto con un messaggio</td></tr>
-<tr><td class="lbl">branch</td><td>una strada di lavoro parallela, per provare senza rovinare il main</td></tr>
-<tr><td class="lbl">merge</td><td>unire un ramo con quello principale (main)</td></tr>
-<tr><td class="lbl">PaaS</td><td>"piattaforma come servizio": una piattaforma online già pronta (es. GitHub)</td></tr>
-<tr><td class="lbl">IaaS / SaaS</td><td>gli altri servizi …aaS: infrastruttura (server nudi) / software pronto nel browser</td></tr>
-<tr><td class="lbl">Freemium</td><td>base gratis, funzioni avanzate a pagamento</td></tr>
-<tr><td class="lbl">versioning</td><td>dare un numero (v1.2.3) alle versioni: major . minor . patch</td></tr>
-<tr><td class="lbl">release</td><td>una versione pubblicata e "congelata"; non si riusa mai un numero già dato</td></tr>
-</table>
 
 </body></html>
