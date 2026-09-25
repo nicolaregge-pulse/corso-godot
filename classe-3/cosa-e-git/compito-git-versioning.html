@@ -17,10 +17,17 @@ ol{margin:0 0 2mm;padding-left:6mm;}li{margin:1.8mm 0;}
 .note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.2pt;}
 .fig{text-align:center;margin:2mm 0 3mm;page-break-inside:avoid;}
 .cap{font-size:9pt;color:#5a6b7b;}
+.ver{border-collapse:separate;border-spacing:0;margin:1mm auto 2mm;text-align:center;page-break-inside:avoid;}
+.ver td{padding:0 3mm;font-size:9.5pt;font-weight:bold;vertical-align:top;}
+.ver td span{font-weight:normal;font-size:8.6pt;color:#5a6b7b;}
+.ver .big,.ver .mid,.ver .sml{font-size:26pt;font-family:"DejaVu Sans Mono",monospace;border-radius:4px;padding:1mm 5mm;}
+.ver .big{background:#fbe3e3;color:#b02a2a;}.ver .mid{background:#e3eefb;color:#1f5fa0;}.ver .sml{background:#e3f5e8;color:#23803f;}
+.ver .dot{font-size:26pt;padding:0 1mm;}
+.ex{background:#eef3f8;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:2mm 0 3mm;font-size:10.3pt;}
 </style></head><body>
 
 <h1>Compito: Git e Versioning · কাজ: গিট ও ভার্সনিং</h1>
-<p class="sub">Classe 3 · Informatica · si scrive in Google Documenti e si consegna su Google Classroom · bilingue IT / বাংলা</p>
+<p class="sub">Classe 3 · Informatica · si scrive in Google Documenti e si consegna su Google Classroom · bilingue IT / বাংলা · v1.1</p>
 
 <div class="it">
 <div class="goal"><b>Obiettivo:</b> dimostrare che hai capito <b>cos'è Git</b> e <b>come funzionano le versioni</b>, con parole tue. Conta la comprensione, non le frasi perfette.</div>
@@ -34,24 +41,40 @@ ol{margin:0 0 2mm;padding-left:6mm;}li{margin:1.8mm 0;}
 <li>Qual è la <b>differenza tra Git e GitHub</b>?</li>
 </ol>
 
-<h3>Parte 2 — Versioning (ragiona)</h3>
-<p>Le versioni si scrivono come <b class="lbl">vX.Y.Z</b> (X = cambiamento grosso, Y = funzione nuova, Z = correzione bug). Un gioco è alla versione <b class="lbl">v1.2.0</b>. Scrivi <b>quale sarà la nuova versione</b> in ciascun caso e <b>perché</b>:</p>
+<h3>Parte 2 — Le versioni (i numeri)</h3>
+<p>Ogni versione di un programma ha un <b>numero con 3 parti</b>, separate da punti. Esempio: <b class="lbl">v1.2.0</b></p>
+<table class="ver"><tr><td class="big">1</td><td class="dot">.</td><td class="mid">2</td><td class="dot">.</td><td class="sml">0</td></tr>
+<tr><td>GRANDE<br><span>tutto nuovo, rifatto da capo</span></td><td></td><td>MEDIO<br><span>una cosa nuova in più</span></td><td></td><td>PICCOLO<br><span>ho corretto un errore</span></td></tr></table>
+<p><b>La regola:</b> ogni volta cambi <b>un solo numero</b> e gli aggiungi <b>+1</b>. I numeri alla sua <b>destra</b> tornano a <b>0</b>.</p>
+<div class="ex"><b>Esempio già risolto:</b> il gioco è alla <b class="lbl">v1.2.0</b>. Il personaggio passava dentro i muri: <b>correggo questo errore</b>. È una cosa <b>piccola</b> → cambia il numero PICCOLO → <b class="lbl">v1.2.1</b></div>
+<p><b>Adesso tocca a te.</b> Ogni volta <b>riparti da</b> <b class="lbl">v1.2.0</b>. Per ogni caso: <b>(a)</b> scrivi la nuova versione, <b>(b)</b> cerchia quale numero hai cambiato.</p>
 <ol>
-<li>Correggi un piccolo <b>bug</b>. → nuova versione: ______</li>
-<li>Aggiungi un <b>nuovo livello</b> al gioco (le cose vecchie funzionano ancora). → ______</li>
-<li>Riscrivi <b>tutto da capo</b> con un motore nuovo, incompatibile col vecchio. → ______</li>
+<li>Il punteggio a volte si azzerava da solo: <b>correggi questo errore</b>.<br>(a) v___.___.___ &nbsp;&nbsp; (b) GRANDE · MEDIO · PICCOLO</li>
+<li>Aggiungi al gioco un <b>livello nuovo</b>. I livelli vecchi funzionano ancora.<br>(a) v___.___.___ &nbsp;&nbsp; (b) GRANDE · MEDIO · PICCOLO</li>
+<li><b>Rifai tutto il gioco da capo</b>, in modo nuovo. I salvataggi vecchi non funzionano più.<br>(a) v___.___.___ &nbsp;&nbsp; (b) GRANDE · MEDIO · PICCOLO</li>
 </ol>
-<p>Poi guarda questo grafo e rispondi: <b>quanti branch</b> vedi oltre al main? <b>Quanti merge</b>? A cosa serviva il ramo rosso?</p>
-<div class="fig"><svg width="440" height="115" viewBox="0 0 440 115" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
-<line x1="25" y1="60" x2="415" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
-<g fill="#2b7cc4"><circle cx="55" cy="60" r="6"/><circle cx="230" cy="60" r="6"/><circle cx="390" cy="60" r="6"/></g>
-<text x="18" y="53" fill="#12467a" font-weight="bold">main</text>
-<path d="M110 60 C150 26 190 26 230 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
-<circle cx="170" cy="27" r="5" fill="#cf3b3b"/><text x="170" y="18" text-anchor="middle" fill="#cf3b3b">correzione bug</text>
-<path d="M55 60 C150 102 300 102 360 78" fill="none" stroke="#2f9e57" stroke-width="2"/>
-<circle cx="210" cy="98" r="5" fill="#2f9e57"/><text x="210" y="113" text-anchor="middle" fill="#2f7d47">nuova funzione</text>
-</svg></div>
 
+<h3>Parte 2b — Leggi il disegno dei rami</h3>
+<p>La <b>linea blu</b> è il <b>main</b>: la versione principale del gioco. Ogni pallino è un salvataggio (commit).<br>
+Una <b>linea colorata</b> è un <b>branch</b> (ramo): una strada a parte, per lavorare senza rovinare il main.<br>
+Quando la linea colorata <b>rientra</b> nella linea blu, è un <b>merge</b> (unione): il lavoro fatto a parte entra nel main.</p>
+<div class="fig"><svg width="470" height="165" viewBox="0 0 470 165" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial,sans-serif" font-size="9">
+<defs><marker id="arc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#444"/></marker></defs>
+<line x1="20" y1="80" x2="450" y2="80" stroke="#2b7cc4" stroke-width="4"/>
+<text x="20" y="72" fill="#12467a" font-weight="bold" font-size="11">main</text>
+<g fill="#2b7cc4"><circle cx="70" cy="80" r="7"/><circle cx="150" cy="80" r="7"/><circle cx="240" cy="80" r="7"/><circle cx="320" cy="80" r="7"/><circle cx="400" cy="80" r="7"/></g>
+<path d="M150 80 C165 35 225 35 240 80" fill="none" stroke="#cf3b3b" stroke-width="3" marker-end="url(#arc)"/>
+<circle cx="195" cy="46" r="6" fill="#cf3b3b"/><text x="195" y="28" text-anchor="middle" fill="#cf3b3b" font-weight="bold" font-size="10">correzione errore</text>
+<path d="M70 80 C110 150 360 150 400 80" fill="none" stroke="#2f9e57" stroke-width="3" marker-end="url(#arc)"/>
+<circle cx="235" cy="132" r="6" fill="#2f9e57"/><text x="235" y="155" text-anchor="middle" fill="#2f7d47" font-weight="bold" font-size="10">livello nuovo</text>
+<text x="128" y="62" text-anchor="end" fill="#444">parte &#8599;</text>
+<text x="262" y="62" fill="#444">&#8600; rientra</text>
+</svg></div>
+<ol>
+<li>Conta le <b>linee colorate</b> (rossa e verde non sono blu). Quanti <b>branch</b> ci sono? ______</li>
+<li>Conta i punti dove una linea colorata <b>rientra</b> nella linea blu. Quanti <b>merge</b> ci sono? ______</li>
+<li>Leggi la scritta sopra la <b>linea rossa</b>. A cosa serviva quel ramo? ____________________</li>
+</ol>
 <h3>Parte 3 — La tua esperienza</h3>
 <ol>
 <li>Racconta <b>cosa hai fatto oggi</b> con GitHub (es. creare l'account, entrare). Cosa è stato <b>facile</b>, cosa <b>difficile</b>?</li>
@@ -73,15 +96,40 @@ ol{margin:0 0 2mm;padding-left:6mm;}li{margin:1.8mm 0;}
 <li><b>Git ও GitHub-এর পার্থক্য</b> কী?</li>
 </ol>
 
-<h3>অংশ ২ — Versioning (চিন্তা করো)</h3>
-<p>ভার্সন লেখা হয় <b class="lbl">vX.Y.Z</b> হিসেবে (X = বড় পরিবর্তন, Y = নতুন ফিচার, Z = বাগ সংশোধন)। একটি গেম <b class="lbl">v1.2.0</b> ভার্সনে আছে। প্রতিটি ক্ষেত্রে <b>নতুন ভার্সন কী হবে</b> এবং <b>কেন</b> লেখো:</p>
+<h3>অংশ ২ — ভার্সন (সংখ্যাগুলো)</h3>
+<p>প্রতিটি প্রোগ্রামের ভার্সনে <b>৩ অংশের একটি সংখ্যা</b> থাকে, মাঝে বিন্দু দিয়ে। উদাহরণ: <b class="lbl">v1.2.0</b></p>
+<table class="ver"><tr><td class="big">1</td><td class="dot">.</td><td class="mid">2</td><td class="dot">.</td><td class="sml">0</td></tr>
+<tr><td>বড়<br><span>সব নতুন, শুরু থেকে আবার বানানো</span></td><td></td><td>মাঝারি<br><span>একটি নতুন জিনিস যোগ</span></td><td></td><td>ছোট<br><span>একটি ভুল ঠিক করা</span></td></tr></table>
+<p><b>নিয়ম:</b> প্রতিবার <b>শুধু একটি সংখ্যা</b> বদলাও, তাতে <b>+1</b> যোগ করো। তার <b>ডান দিকের</b> সংখ্যাগুলো আবার <b>0</b> হয়ে যায়।</p>
+<div class="ex"><b>সমাধান করা উদাহরণ:</b> গেমটি <b class="lbl">v1.2.0</b>-এ আছে। চরিত্রটি দেয়ালের ভেতর দিয়ে চলে যেত: <b>এই ভুলটি ঠিক করি</b>। এটি <b>ছোট</b> কাজ → ছোট সংখ্যাটি বদলায় → <b class="lbl">v1.2.1</b></div>
+<p><b>এবার তোমার পালা।</b> প্রতিবার <b class="lbl">v1.2.0</b> <b>থেকে শুরু করো</b>। প্রতিটির জন্য: <b>(ক)</b> নতুন ভার্সন লেখো, <b>(খ)</b> কোন সংখ্যা বদলেছ তা গোল দাগ দাও।</p>
 <ol>
-<li>একটি ছোট <b>বাগ</b> ঠিক করলে। → নতুন ভার্সন: ______</li>
-<li>গেমে একটি <b>নতুন লেভেল</b> যোগ করলে (পুরনো জিনিস এখনও কাজ করে)। → ______</li>
-<li>সম্পূর্ণ <b>নতুন করে</b>, পুরনোর সাথে বেমানান একটি নতুন ইঞ্জিন দিয়ে লিখলে। → ______</li>
+<li>স্কোর মাঝে মাঝে নিজে থেকে শূন্য হয়ে যেত: <b>এই ভুলটি ঠিক করো</b>।<br>(ক) v___.___.___ &nbsp;&nbsp; (খ) বড় · মাঝারি · ছোট</li>
+<li>গেমে একটি <b>নতুন লেভেল</b> যোগ করো। পুরনো লেভেলগুলো এখনও কাজ করে।<br>(ক) v___.___.___ &nbsp;&nbsp; (খ) বড় · মাঝারি · ছোট</li>
+<li><b>পুরো গেমটি শুরু থেকে আবার বানাও</b>, নতুনভাবে। পুরনো সেভগুলো আর কাজ করে না।<br>(ক) v___.___.___ &nbsp;&nbsp; (খ) বড় · মাঝারি · ছোট</li>
 </ol>
-<p>তারপর এই গ্রাফটি দেখে উত্তর দাও: main ছাড়া <b>কতটি branch</b> দেখছ? <b>কতটি merge</b>? লাল শাখাটি কী কাজে লেগেছিল? <span class="cap">(গ্রাফটি উপরের ইতালীয় অংশে আছে)</span></p>
 
+<h3>অংশ ২খ — শাখার ছবিটি পড়ো</h3>
+<p><b>নীল লাইন</b> হলো <b>main</b>: গেমের মূল ভার্সন। প্রতিটি গোল বিন্দু একটি সেভ (commit)।<br>
+একটি <b>রঙিন লাইন</b> হলো একটি <b>branch</b> (শাখা): আলাদা একটি পথ, যাতে main নষ্ট না করে কাজ করা যায়।<br>
+রঙিন লাইনটি যখন নীল লাইনে <b>ফিরে আসে</b>, সেটি একটি <b>merge</b> (একত্রীকরণ): আলাদা করে করা কাজ main-এ ঢোকে।</p>
+<div class="fig"><svg width="470" height="165" viewBox="0 0 470 165" xmlns="http://www.w3.org/2000/svg" font-family="NotoBN,Liberation Sans,sans-serif" font-size="9">
+<defs><marker id="arভ" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#444"/></marker></defs>
+<line x1="20" y1="80" x2="450" y2="80" stroke="#2b7cc4" stroke-width="4"/>
+<text x="20" y="72" fill="#12467a" font-weight="bold" font-size="11">main</text>
+<g fill="#2b7cc4"><circle cx="70" cy="80" r="7"/><circle cx="150" cy="80" r="7"/><circle cx="240" cy="80" r="7"/><circle cx="320" cy="80" r="7"/><circle cx="400" cy="80" r="7"/></g>
+<path d="M150 80 C165 35 225 35 240 80" fill="none" stroke="#cf3b3b" stroke-width="3" marker-end="url(#arভ)"/>
+<circle cx="195" cy="46" r="6" fill="#cf3b3b"/><text x="195" y="28" text-anchor="middle" fill="#cf3b3b" font-weight="bold" font-size="10">ভুল সংশোধন</text>
+<path d="M70 80 C110 150 360 150 400 80" fill="none" stroke="#2f9e57" stroke-width="3" marker-end="url(#arভ)"/>
+<circle cx="235" cy="132" r="6" fill="#2f9e57"/><text x="235" y="155" text-anchor="middle" fill="#2f7d47" font-weight="bold" font-size="10">নতুন লেভেল</text>
+<text x="128" y="62" text-anchor="end" fill="#444">শুরু &#8599;</text>
+<text x="262" y="62" fill="#444">&#8600; ফিরে আসে</text>
+</svg></div>
+<ol>
+<li><b>রঙিন লাইনগুলো</b> গোনো (লাল আর সবুজ, নীল নয়)। কতটি <b>branch</b> আছে? ______</li>
+<li>রঙিন লাইন যেখানে নীল লাইনে <b>ফিরে আসে</b> সেই জায়গাগুলো গোনো। কতটি <b>merge</b> আছে? ______</li>
+<li><b>লাল লাইনের</b> উপরের লেখাটি পড়ো। ওই শাখাটি কী কাজে লেগেছিল? ____________________</li>
+</ol>
 <h3>অংশ ৩ — তোমার অভিজ্ঞতা</h3>
 <ol>
 <li>আজ GitHub দিয়ে <b>কী করেছ</b> বলো (যেমন অ্যাকাউন্ট তৈরি, লগইন)। কী <b>সহজ</b> ছিল, কী <b>কঠিন</b>?</li>
