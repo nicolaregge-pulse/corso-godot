@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Git facile - Classe 2</title>
+<style>
+@page{size:A4;margin:15mm 15mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:13pt;line-height:1.6;margin:0;}
+h1{font-size:21pt;color:#12467a;margin:0 0 1mm;}
+.sub{color:#5a6b7b;font-size:10pt;margin:0 0 3mm;}
+h2{font-size:15pt;color:#12467a;border-bottom:3px solid #cfe0f0;padding-bottom:1mm;margin:6mm 0 2mm;page-break-after:avoid;}
+ol{margin:0 0 2mm;padding-left:7mm;}li{margin:2mm 0;}
+.box{border-radius:6px;padding:3mm 4mm;margin:3mm 0;page-break-inside:avoid;}
+.goal{background:#e9f6ee;border-left:6px solid #2f9e57;}
+.note{background:#fdf6e3;border-left:6px solid #d0a516;}
+.blu{background:#eef3f8;border-left:6px solid #2b7cc4;}
+.w{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin:2mm 0;}
+.card{border:2px solid #cfe0f0;border-radius:8px;padding:3mm;text-align:center;page-break-inside:avoid;}
+.card b{font-size:15pt;color:#12467a;display:block;}
+.card small{font-size:11pt;color:#444;}
+.fig{text-align:center;margin:2mm 0;page-break-inside:avoid;}
+.addr{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 5px;border-radius:3px;}
+.q{page-break-inside:avoid;margin:3mm 0;}
+.opt{display:block;margin-left:6mm;}
+.page{page-break-before:always;}
+.ar{direction:rtl;text-align:right;font-family:"DejaVu Sans",sans-serif;font-size:12.5pt;line-height:1.8;}
+.ar ol{padding-left:0;padding-right:7mm;}
+.ar .opt{margin-left:0;margin-right:6mm;}
+.ar .ltr{direction:ltr;unicode-bidi:embed;}
+.ar .goal,.ar .note,.ar .blu{border-left:none;border-right:6px solid;}
+.ar .goal{border-right-color:#2f9e57}.ar .note{border-right-color:#d0a516}.ar .blu{border-right-color:#2b7cc4}
+</style></head><body>
+
+<!-- ======================= ITALIANO ======================= -->
+<h1>Git: salvare la storia del tuo lavoro</h1>
+<p class="sub">Classe 2 · Informatica · 25/09/2026 · v1.0 · teoria + compito · Italiano</p>
+
+<div class="box goal"><b>Oggi impari 4 parole e 1 idea.</b> L'idea: il computer può ricordare <b>tutte le versioni</b> del tuo lavoro, come i <b>salvataggi di un videogioco</b>.</div>
+<div class="box note"><b>Carta e penna:</b> mentre leggi, copia sul quaderno il disegno dei salvataggi (pagina 1) e le 4 parole (pagina 2).</div>
+
+<h2>1. Il problema</h2>
+<p>Hai mai visto file così?</p>
+<div class="fig"><svg width="470" height="90" viewBox="0 0 470 90" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="11">
+<g fill="#eef3f8" stroke="#2b7cc4" stroke-width="2"><rect x="10" y="10" width="60" height="52" rx="4"/><rect x="170" y="10" width="60" height="52" rx="4"/><rect x="330" y="10" width="60" height="52" rx="4"/></g>
+<text x="40" y="80" text-anchor="middle">tema.doc</text><text x="200" y="80" text-anchor="middle">tema-finale.doc</text><text x="360" y="80" text-anchor="middle">tema-finale-VERO.doc</text>
+<text x="440" y="45" font-size="30" fill="#cf3b3b">?</text></svg></div>
+<p>Dopo un po' <b>non sai più</b> quale è quello giusto. È un gran <b>disordine</b>.</p>
+
+<h2>2. La soluzione: Git</h2>
+<p><b>Git</b> è un programma che <b>salva la storia</b> del tuo lavoro. Ogni volta che salvi, Git si ricorda com'era. Se sbagli, puoi <b>tornare indietro</b>.</p>
+<p>È come nei <b>videogiochi</b>: salvi prima del boss. Se perdi, riparti dal salvataggio.</p>
+<div class="fig"><svg width="470" height="80" viewBox="0 0 470 80" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="11">
+<line x1="30" y1="35" x2="440" y2="35" stroke="#2b7cc4" stroke-width="4"/>
+<g fill="#2b7cc4"><circle cx="60" cy="35" r="11"/><circle cx="190" cy="35" r="11"/><circle cx="320" cy="35" r="11"/><circle cx="430" cy="35" r="11"/></g>
+<g fill="#fff" font-weight="bold" text-anchor="middle"><text x="60" y="39">1</text><text x="190" y="39">2</text><text x="320" y="39">3</text><text x="430" y="39">4</text></g>
+<g text-anchor="middle" fill="#333"><text x="60" y="68">inizio</text><text x="190" y="68">titolo</text><text x="320" y="68">foto</text><text x="430" y="68">finito</text></g>
+</svg><br><small>Ogni pallino è un <b>salvataggio</b>. Puoi tornare a qualsiasi pallino.</small></div>
+
+<div class="page"></div>
+<h2>3. Le 4 parole di Git</h2>
+<div class="w">
+<div class="card"><b>repository</b><small>la <b>cartella</b> del progetto, con tutta la sua storia</small></div>
+<div class="card"><b>commit</b><small>un <b>salvataggio</b> (come una foto del lavoro)</small></div>
+<div class="card"><b>branch</b><small>una <b>strada a parte</b>, per provare senza rovinare</small></div>
+<div class="card"><b>merge</b><small><b>unire</b> la strada a parte con quella principale</small></div>
+</div>
+<div class="fig"><svg width="470" height="120" viewBox="0 0 470 120" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="11">
+<line x1="20" y1="75" x2="450" y2="75" stroke="#2b7cc4" stroke-width="4"/><text x="20" y="100" fill="#12467a" font-weight="bold">strada principale (main)</text>
+<g fill="#2b7cc4"><circle cx="70" cy="75" r="8"/><circle cx="380" cy="75" r="8"/></g>
+<path d="M70 75 C110 20 330 20 380 75" fill="none" stroke="#2f9e57" stroke-width="4"/>
+<circle cx="225" cy="33" r="8" fill="#2f9e57"/><text x="225" y="16" text-anchor="middle" fill="#2f7d47" font-weight="bold">branch: provo una cosa nuova</text>
+<text x="395" y="60" fill="#333">merge: la unisco</text>
+</svg></div>
+
+<h2>4. Git e GitHub: non sono la stessa cosa</h2>
+<ol><li><b>Git</b> = il <b>programma</b> che salva la storia.</li><li><b>GitHub</b> = il <b>sito internet</b> dove metti i tuoi progetti, per non perderli e lavorare con altri. L'indirizzo è <span class="addr">github.com</span></li></ol>
+
+<h2>5. I numeri delle versioni</h2>
+<p>Ogni versione ha un numero. Si parte da <b>v1.0</b>.</p>
+<ol><li><b>Piccola modifica</b> (correggo un errore): cambia il numero <b>dopo</b> il punto. v1.0 → <b>v1.1</b></li>
+<li><b>Grande cambiamento</b> (rifaccio tutto): cambia il numero <b>prima</b> del punto e dopo si rimette 0. v1.1 → <b>v2.0</b></li></ol>
+
+<div class="page"></div>
+<h2>6. Compito</h2>
+<div class="box blu"><b>Come si fa:</b>
+<ol><li>Nel browser scrivi <span class="addr">docs.new</span> e premi Invio: si apre un documento nuovo.</li>
+<li>In alto a sinistra clicca "Documento senza titolo" e scrivi il titolo: <b>Git - Cognome Nome</b></li>
+<li>Scrivi solo le <b>risposte</b> (per esempio: 1 B, 2 A...). Non serve copiare le domande.</li>
+<li>Alla fine consegna su <b>Classroom</b>.</li></ol></div>
+
+<p><b>Esercizio 1. Scegli la risposta giusta</b> (scrivi la lettera).</p>
+<div class="q">1. Git serve a...<span class="opt">A) giocare online</span><span class="opt">B) salvare la storia del lavoro</span><span class="opt">C) scrivere email</span></div>
+<div class="q">2. Un <b>commit</b> è...<span class="opt">A) un salvataggio</span><span class="opt">B) un sito</span><span class="opt">C) un errore</span></div>
+<div class="q">3. <b>GitHub</b> è...<span class="opt">A) un programma per disegnare</span><span class="opt">B) un sito internet dove metti i progetti</span><span class="opt">C) una cartella del computer</span></div>
+<div class="q">4. Un <b>branch</b> serve a...<span class="opt">A) cancellare tutto</span><span class="opt">B) provare una cosa nuova senza rovinare il lavoro</span><span class="opt">C) spegnere il computer</span></div>
+
+<p><b>Esercizio 2. Le versioni</b> (scrivi il numero).</p>
+<div class="box note"><b>Esempio già fatto:</b> il gioco è alla v1.0. Correggo un piccolo errore → <b>v1.1</b></div>
+<div class="q">5. Il gioco è alla v1.1. Correggo un altro piccolo errore → v1.___</div>
+<div class="q">6. Il gioco è alla v1.2. Rifaccio tutto da capo → v___.0</div>
+
+<p><b>Esercizio 3. Una frase tua</b> (anche corta).</p>
+<div class="q">7. Scrivi una volta in cui ti sarebbe servito <b>tornare indietro</b> a una versione vecchia (un compito, una foto, un disegno...).</div>
+
+<div class="box goal"><b>Hai finito? Bravo!</b> Hai imparato la stessa cosa che usano i programmatori veri al lavoro.</div>
+
+</body></html>
