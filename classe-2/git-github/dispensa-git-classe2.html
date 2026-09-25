@@ -30,7 +30,7 @@ svg text{font-family:'DejaVu Sans Mono',monospace;}
 </style></head><body>
 
 <div class="cover">
-<div class="t">Dispensa · Classe 2 · Informatica · v2.1</div>
+<div class="t">Dispensa · Classe 2 · Informatica · v2.2</div>
 <h1>GitHub e il versioning</h1>
 <div class="t">quello che abbiamo scritto insieme alla lavagna, spiegato per bene</div>
 <div class="s">Partiamo dallo schema della <b>nostra lavagna</b> e lo apriamo pezzo per pezzo: cos'è GitHub, che tipo di servizio è (PaaS, Freemium) e come funzionano le <b>versioni</b>. Con esempi e senza comandi da digitare. Classe 2 · Informatica.</div>
@@ -126,8 +126,8 @@ svg text{font-family:'DejaVu Sans Mono',monospace;}
 </svg><div class="cap">Da <span class="lbl">v1.0</span> il progetto cresce; un ramo porta la <span class="lbl">v1.1</span> e si riunisce; poi un grande cambiamento porta alla <span class="lbl">v2.0</span>.</div></div>
 <div class="note"><b>Regola d'oro:</b> una versione già pubblicata <b>non si riusa mai</b>. Se cambi anche una sola cosa, prima <b>aumenti</b> il numero e poi pubblichi.</div>
 
-<h2>7. Casi d'uso: 11 grafi con spiegazione</h2>
-<p>Vediamo Git/versioning "in azione". In ogni grafo il <b>pallino</b> è un commit/versione e la <b>linea</b> è il tempo (da sinistra a destra).</p>
+<h2>7. Casi d'uso: 15 grafi con spiegazione (fino a 5 livelli)</h2>
+<p>Vediamo Git/versioning "in azione". In ogni grafo il <b>pallino</b> è un commit/versione e la <b>linea</b> è il tempo (da sinistra a destra). I primi sono semplici; gli ultimi arrivano a <b>cinque livelli</b> di rami.</p>
 <div class="intro"><b>Come si legge un grafo:</b> ogni <b>pallino</b> è un <b>commit</b> (una fotografia salvata). La <b>linea orizzontale</b> in alto è di solito <span class="lbl">main</span>, il ramo principale. Le linee colorate che si staccano sono <b>branch</b> (rami di lavoro). Quando due linee si riuniscono è un <b>merge</b>. Le <b>bandierine gialle</b> sono le <b>release</b> (versioni pubblicate, es. <span class="lbl">v1.0</span>).</div>
 
 <div class="uc">
@@ -292,6 +292,79 @@ svg text{font-family:'DejaVu Sans Mono',monospace;}
 <path d="M300 22 C360 22 380 45 405 45" fill="none" stroke="#d0a516" stroke-width="2"/>
 <path d="M300 92 C360 92 380 45 405 45" fill="none" stroke="#d0a516" stroke-width="2"/>
 <circle cx="415" cy="45" r="7" fill="#d0a516"/><text x="415" y="70" text-anchor="middle" fill="#7a5b00">merge risolto ⚡</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>12. Squadra a 5 rami con due release</h2>
+<p class="exp">Un progetto vero di gruppo: sul <b>main</b> si pubblicano le versioni, mentre <b>quattro rami</b> diversi (grafica, movimenti, audio, menu) lavorano in parallelo e rientrano in momenti diversi. Cinque linee in tutto.</p>
+<div class="fig"><svg width="500" height="175" viewBox="0 0 500 175" font-size="8">
+<line x1="25" y1="28" x2="480" y2="28" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="45" cy="28" r="6"/><circle cx="200" cy="28" r="6"/><circle cx="330" cy="28" r="6"/><circle cx="460" cy="28" r="6"/></g>
+<text x="18" y="24" text-anchor="end" fill="#12467a" font-weight="bold">main</text>
+<g stroke="#d0a516" stroke-width="1.5"><line x1="330" y1="28" x2="330" y2="10"/><line x1="460" y1="28" x2="460" y2="10"/></g>
+<g fill="#d0a516"><rect x="332" y="4" width="30" height="10"/><rect x="430" y="4" width="30" height="10"/></g>
+<g fill="#7a5b00" font-size="7"><text x="334" y="12">v1.0</text><text x="432" y="12">v2.0</text></g>
+<!-- r1 grafica -->
+<path d="M70 28 C110 58 130 58 200 28" fill="none" stroke="#cf3b3b" stroke-width="1.8"/><circle cx="135" cy="55" r="4.5" fill="#cf3b3b"/><text x="135" y="70" text-anchor="middle" fill="#cf3b3b">grafica</text>
+<!-- r2 movimenti -->
+<path d="M90 28 C140 88 260 88 330 28" fill="none" stroke="#2f9e57" stroke-width="1.8"/><g fill="#2f9e57"><circle cx="160" cy="84" r="4.5"/><circle cx="250" cy="84" r="4.5"/></g><text x="200" y="99" text-anchor="middle" fill="#2f7d47">movimenti</text>
+<!-- r3 audio -->
+<path d="M110 28 C170 118 300 118 400 60 C420 45 440 35 460 28" fill="none" stroke="#8d54c9" stroke-width="1.8"/><g fill="#8d54c9"><circle cx="200" cy="115" r="4.5"/><circle cx="320" cy="112" r="4.5"/></g><text x="250" y="131" text-anchor="middle" fill="#7a3fb8">audio</text>
+<!-- r4 menu -->
+<path d="M130 28 C190 150 330 150 430 60 C445 48 452 40 460 28" fill="none" stroke="#c98a1a" stroke-width="1.8"/><circle cx="270" cy="147" r="4.5" fill="#c98a1a"/><text x="300" y="163" text-anchor="middle" fill="#9a6a10">menu</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>13. Rami annidati: cinque livelli di profondità</h2>
+<p class="exp">Una funzione grande si divide in pezzi: dal main nasce un ramo, da quel ramo un <b>sotto-ramo</b>, e ancora più giù. Ogni livello rientra nel precedente. Qui si scende di <b>cinque livelli</b>.</p>
+<div class="fig"><svg width="500" height="180" viewBox="0 0 500 180" font-size="8">
+<line x1="25" y1="25" x2="480" y2="25" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="45" cy="25" r="6"/><circle cx="470" cy="25" r="6"/></g><text x="18" y="21" text-anchor="end" fill="#12467a" font-weight="bold">main</text>
+<path d="M90 25 C120 55 130 55 160 55" fill="none" stroke="#cf3b3b" stroke-width="1.8"/><line x1="160" y1="55" x2="380" y2="55" stroke="#cf3b3b" stroke-width="1.8"/><path d="M380 55 C420 55 430 25 470 25" fill="none" stroke="#cf3b3b" stroke-width="1.8"/><text x="95" y="50" fill="#cf3b3b">livello 1</text>
+<path d="M180 55 C205 85 215 85 245 85" fill="none" stroke="#2f9e57" stroke-width="1.8"/><line x1="245" y1="85" x2="330" y2="85" stroke="#2f9e57" stroke-width="1.8"/><path d="M330 85 C355 85 360 55 380 55" fill="none" stroke="#2f9e57" stroke-width="1.8"/><text x="185" y="80" fill="#2f7d47">livello 2</text>
+<path d="M255 85 C280 113 288 113 312 113" fill="none" stroke="#8d54c9" stroke-width="1.8"/><path d="M312 113 C332 113 322 85 330 85" fill="none" stroke="#8d54c9" stroke-width="1.8"/><text x="258" y="108" fill="#7a3fb8">livello 3</text>
+<path d="M280 113 C300 141 306 141 326 141" fill="none" stroke="#c98a1a" stroke-width="1.8"/><path d="M326 141 C340 141 320 113 312 113" fill="none" stroke="#c98a1a" stroke-width="1.8"/><text x="283" y="136" fill="#9a6a10">livello 4</text>
+<circle cx="300" cy="141" r="4.5" fill="#c98a1a"/>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>14. Due versioni major mantenute insieme</h2>
+<p class="exp">Dopo la <span class="lbl">v1.0</span> il main punta alla <span class="lbl">v2.0</span>, ma la v1 resta in uso: un <b>ramo di manutenzione</b> sforna <span class="lbl">v1.1</span>/<span class="lbl">v1.2</span> (solo fix), e più tardi anche la v2 avrà il suo ramo di manutenzione. Tante linee vive insieme.</p>
+<div class="fig"><svg width="500" height="165" viewBox="0 0 500 165" font-size="7.5">
+<line x1="25" y1="30" x2="480" y2="30" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="45" cy="30" r="6"/><circle cx="150" cy="30" r="6"/><circle cx="320" cy="30" r="6"/><circle cx="470" cy="30" r="6"/></g><text x="18" y="26" text-anchor="end" fill="#12467a" font-weight="bold">main</text>
+<g fill="#d0a516"><rect x="135" y="8" width="30" height="10"/><rect x="305" y="8" width="30" height="10"/></g><g stroke="#d0a516" stroke-width="1.4"><line x1="150" y1="30" x2="150" y2="18"/><line x1="320" y1="30" x2="320" y2="18"/></g><g fill="#7a5b00"><text x="137" y="16">v1.0</text><text x="307" y="16">v2.0</text></g>
+<!-- manutenzione v1 -->
+<path d="M150 30 C190 70 210 70 250 70" fill="none" stroke="#2f9e57" stroke-width="1.8"/><line x1="250" y1="70" x2="430" y2="70" stroke="#2f9e57" stroke-width="1.8"/>
+<g fill="#2f9e57"><circle cx="250" cy="70" r="4.5"/><circle cx="340" cy="70" r="4.5"/><circle cx="430" cy="70" r="4.5"/></g>
+<g fill="#1f7a43"><text x="240" y="86">v1.1</text><text x="330" y="86">v1.2</text><text x="420" y="86">v1.3</text></g><text x="150" y="100" fill="#2f7d47">ramo manutenzione v1.x</text>
+<!-- manutenzione v2 -->
+<path d="M320 30 C360 128 380 128 420 128" fill="none" stroke="#8d54c9" stroke-width="1.8"/><line x1="420" y1="128" x2="470" y2="128" stroke="#8d54c9" stroke-width="1.8"/>
+<g fill="#8d54c9"><circle cx="420" cy="128" r="4.5"/><circle cx="470" cy="128" r="4.5"/></g><g fill="#7a3fb8"><text x="410" y="144">v2.1</text></g><text x="330" y="158" fill="#7a3fb8">ramo manutenzione v2.x</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>15. Storia realistica: rami, hotfix, revert e conflitto</h2>
+<p class="exp">Il quadro completo: il main avanza con le release; una <b>feature</b> lunga con un <b>sotto-ramo</b>; un <b>hotfix</b> urgente; un <b>revert</b> per annullare un errore; e un <b>merge con conflitto</b> risolto. Cinque livelli di attività insieme.</p>
+<div class="fig"><svg width="500" height="185" viewBox="0 0 500 185" font-size="7.5">
+<line x1="25" y1="40" x2="480" y2="40" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="45" cy="40" r="6"/><circle cx="150" cy="40" r="6"/></g>
+<circle cx="235" cy="40" r="6" fill="#c0392b"/><circle cx="300" cy="40" r="6" fill="#2f9e57"/>
+<g fill="#2b7cc4"><circle cx="380" cy="40" r="6"/><circle cx="470" cy="40" r="6"/></g>
+<text x="18" y="36" text-anchor="end" fill="#12467a" font-weight="bold">main</text>
+<text x="235" y="30" text-anchor="middle" fill="#c0392b" font-size="7">errore</text><text x="300" y="30" text-anchor="middle" fill="#2f7d47" font-size="7">revert</text>
+<g fill="#d0a516"><rect x="455" y="18" width="30" height="10"/></g><line x1="470" y1="40" x2="470" y2="28" stroke="#d0a516" stroke-width="1.4"/><text x="457" y="26" fill="#7a5b00">v2.0</text>
+<!-- hotfix -->
+<path d="M90 40 C120 14 150 14 180 40" fill="none" stroke="#e07b1a" stroke-width="1.8"/><circle cx="135" cy="15" r="4.5" fill="#e07b1a"/><text x="135" y="10" text-anchor="middle" fill="#b5610f">hotfix</text>
+<!-- feature + sub -->
+<path d="M110 40 C150 80 180 80 220 80" fill="none" stroke="#2f9e57" stroke-width="1.8"/><line x1="220" y1="80" x2="360" y2="80" stroke="#2f9e57" stroke-width="1.8"/><path d="M360 80 C395 80 400 40 380 40" fill="none" stroke="#2f9e57" stroke-width="1.8"/><text x="115" y="75" fill="#2f7d47">feature</text>
+<path d="M240 80 C265 108 275 108 300 108" fill="none" stroke="#c98a1a" stroke-width="1.8"/><path d="M300 108 C325 108 320 80 330 80" fill="none" stroke="#c98a1a" stroke-width="1.8"/><text x="245" y="103" fill="#9a6a10">sotto-ramo</text>
+<!-- branch conflitto -->
+<path d="M60 40 C120 150 300 150 360 108" fill="none" stroke="#8d54c9" stroke-width="1.8"/><g fill="#8d54c9"><circle cx="200" cy="146" r="4.5"/><circle cx="300" cy="140" r="4.5"/></g><text x="210" y="162" fill="#7a3fb8">ramo parallelo (stessa riga) → merge con conflitto ⚡</text>
 </svg></div>
 </div>
 
