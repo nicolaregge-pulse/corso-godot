@@ -1,139 +1,131 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Git — mini dispensa</title>
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Git — dispensa facile</title>
 <style>
-@page{size:A4;margin:16mm 15mm;}*{box-sizing:border-box;}
-body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.5;margin:0;}
+@page{size:A4;margin:17mm 16mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11.3pt;line-height:1.6;margin:0;}
 .cover{height:250mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;page-break-after:always;background:linear-gradient(160deg,#eef4fb,#f0ecfb);}
-.cover h1{font-size:30pt;color:#12467a;margin:4px 0;}
-.cover .t{font-size:13pt;color:#444;}
-.cover .s{font-size:11pt;color:#6a4ca8;max-width:120mm;margin-top:18px;}
-h2{font-size:15pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.5mm;margin:6mm 0 2.5mm;page-break-after:avoid;}
+.cover h1{font-size:32pt;color:#12467a;margin:4px 0;}
+.cover .t{font-size:14pt;color:#444;}
+.cover .s{font-size:11.5pt;color:#6a4ca8;max-width:130mm;margin-top:20px;line-height:1.6;}
+h2{font-size:15.5pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.5mm;margin:7mm 0 2.5mm;page-break-after:avoid;}
 h3{font-size:12pt;color:#1b3a5c;margin:4mm 0 1mm;page-break-after:avoid;}
+p{margin:0 0 2.5mm;}
 ol,ul{margin:0 0 2.5mm;padding-left:6mm;}li{margin:1.5mm 0;}
-.sec{}
-.box{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
-.warn{background:#fbecec;border-left:5px solid #cf3b3b;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
-.note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
-.addr,.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.6pt;}
+.box{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
+.warn{background:#fbecec;border-left:5px solid #cf3b3b;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
+.note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
+.ex{background:#f2f7f2;border-left:5px solid #2f9e57;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.8pt;}
+.ex b.tag,.note b.tag{color:#2f7d47;}
+.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.8pt;}
 .fig{text-align:center;margin:3mm 0;page-break-inside:avoid;}
-.cap{font-size:9pt;color:#5a6b7b;}
-table{border-collapse:collapse;width:100%;font-size:10pt;margin:2mm 0;}
+.cap{font-size:9.2pt;color:#5a6b7b;}
+table{border-collapse:collapse;width:100%;font-size:10.3pt;margin:2mm 0;}
 th,td{border:1px solid #b9c8d6;padding:2mm 2.5mm;text-align:left;vertical-align:top;}
 th{background:#eaf2fb;color:#12467a;}
-.idx{font-size:11.5pt;line-height:1.9;}
+.idx{font-size:11.8pt;line-height:2;}
 .idx b{color:#12467a;}
-.uc{background:#f5f7fa;border:1px solid #d6e0ea;border-radius:5px;padding:2mm 3mm 3mm;margin:3mm 0;page-break-inside:avoid;}
+.uc{background:#f6f8fa;border:1px solid #d6e0ea;border-radius:5px;padding:2mm 3mm 3mm;margin:3mm 0;page-break-inside:avoid;}
 .uc h3{margin-top:1mm;}
 </style></head><body>
 
 <div class="cover">
-<div class="t">Mini dispensa</div>
-<h1>Git</h1>
-<div class="t">cos'è, la storia, i servizi, il versioning e i casi d'uso</div>
-<div class="s">Git è lo strumento che tiene la <b>storia</b> di un progetto: puoi tornare indietro nel tempo, sapere chi ha cambiato cosa e lavorare in gruppo senza rovinare il lavoro degli altri. Classe 3 · Informatica.</div>
+<div class="t">Dispensa facile</div>
+<h1>Git &amp; GitHub</h1>
+<div class="t">raccontati con parole semplici</div>
+<div class="s">Alla fine di questa dispensa saprai <b>cos'è Git</b>, <b>a cosa serve</b>, che differenza c'è con <b>GitHub</b>, come funziona il <b>versioning</b> e vedrai <b>tanti esempi</b> di come si usa davvero. Niente comandi da digitare: qui capiamo le idee. Classe 3 · Informatica.</div>
 </div>
 
-<h2>Argomenti</h2>
+<h2>Di cosa parliamo</h2>
 <div class="idx">
-<b>1.</b> Il problema che Git risolve · cos'è<br>
-<b>2.</b> La storia di Git (chi l'ha inventato e perché)<br>
-<b>3.</b> "L'azienda Git": Git, GitHub e chi ci sta dietro<br>
-<b>4.</b> Quali servizi dà Git (e GitHub)<br>
-<b>5.</b> I concetti base e la logica (come "ragiona" Git)<br>
-<b>6.</b> Branch e merge<br>
-<b>7.</b> Git e GitHub — il flusso di lavoro (push, pull, Pull Request)<br>
-<b>8.</b> Il versioning: cos'è e <b>come si fa</b>, passo per passo<br>
-<b>9.</b> Casi d'uso con esempi di grafi<br>
-<b>10.</b> Glossario
+<b>1.</b> Partiamo da un problema che conosci già<br>
+<b>2.</b> Cos'è Git, in due parole<br>
+<b>3.</b> Un po' di storia: chi l'ha inventato e perché<br>
+<b>4.</b> Git e GitHub non sono la stessa cosa<br>
+<b>5.</b> GitHub è un <i>servizio</i>: PaaS, la famiglia …aaS (IaaS/SaaS) e il Freemium<br>
+<b>6.</b> Le parole di Git spiegate facili (repository, commit, branch, merge)<br>
+<b>7.</b> Come si lavora davvero (la storia di due compagni)<br>
+<b>8.</b> Il versioning: i numeri <span class="lbl">1.2.3</span> e come si fa<br>
+<b>9.</b> Tanti casi d'uso con i grafi<br>
+<b>10.</b> Riepilogo e glossario
 </div>
 
-<h2 class="sec">1. Il problema che Git risolve</h2>
-<p>Immagina di scrivere un programma (o una tesi) e di salvare i file così:</p>
-<div class="warn"><b class="lbl">progetto_finale.doc</b> · <b class="lbl">progetto_finale_v2.doc</b> · <b class="lbl">progetto_DEFINITIVO.doc</b> · <b class="lbl">progetto_DEFINITIVO_vero_QUESTO.doc</b></div>
+<h2>1. Partiamo da un problema che conosci già</h2>
+<p>Immagina di dover consegnare una ricerca. La scrivi al computer e, per non perderla, ogni tanto la salvi con un nome nuovo. Dopo qualche giorno sul tuo desktop c'è questa scena:</p>
+<div class="warn"><span class="lbl">ricerca.doc</span> · <span class="lbl">ricerca_v2.doc</span> · <span class="lbl">ricerca_BUONA.doc</span> · <span class="lbl">ricerca_DEFINITIVA.doc</span> · <span class="lbl">ricerca_DEFINITIVA_vera_QUESTA.doc</span></div>
+<p>Ti suona familiare, vero? È un pasticcio. E nascono tre problemi:</p>
 <ol>
-<li>Non sai più <b>qual è l'ultima versione</b> né <b>cosa è cambiato</b> tra una e l'altra.</li>
-<li>Se cancelli qualcosa per sbaglio, <b>non torni indietro</b>.</li>
-<li>Se siete in due a modificare lo stesso file, uno <b>sovrascrive</b> il lavoro dell'altro.</li>
+<li>Non sai più <b>qual è l'ultima</b> davvero buona, né <b>cosa è cambiato</b> da una all'altra.</li>
+<li>Se cancelli una frase importante e te ne accorgi dopo, <b>non torni indietro</b>.</li>
+<li>Se tu e un compagno lavorate sullo stesso file e ve lo passate, uno finisce per <b>cancellare</b> il lavoro dell'altro senza volerlo.</li>
 </ol>
-<p><b>Git risolve tutto questo:</b> tiene <b>una sola cartella</b> con dentro <b>tutta la storia</b> delle modifiche. In ogni momento puoi vedere com'era il progetto ieri, la settimana scorsa, un mese fa — e tornarci.</p>
-<div class="box"><b>In una frase:</b> Git è un <b>sistema di controllo di versione</b> (<i>version control</i>): registra ogni modifica ai file e ti lascia navigare avanti e indietro nel tempo del progetto.</div>
+<p>Ecco: <b>Git nasce per risolvere esattamente questo</b>. E lo fa in modo elegante.</p>
 
-<h2 class="sec">2. La storia di Git</h2>
-<p>Git non è nato in un'azienda: è nato per <b>necessità</b>, da un problema molto concreto.</p>
-<ol>
-<li><b>2005.</b> Lo crea <b>Linus Torvalds</b> — lo stesso che aveva creato <b>Linux</b> (il sistema operativo). Gli serviva uno strumento per gestire il codice del <b>kernel Linux</b>, a cui lavoravano <b>migliaia di programmatori</b> sparsi nel mondo.</li>
-<li><b>Perché proprio allora.</b> Fino a quel momento usavano un programma di un'altra azienda (BitKeeper) che a un certo punto non poterono più usare gratis. Invece di arrendersi, Torvalds <b>ne scrisse uno nuovo in pochi giorni</b>.</li>
-<li><b>Gli obiettivi</b> erano chiari: doveva essere <b>veloce</b>, <b>affidabile</b> (non perdere mai i dati) e capace di gestire <b>tanti rami di lavoro in parallelo</b>.</li>
-<li><b>Oggi.</b> Git è diventato lo <b>standard mondiale</b>: lo usano dalle piccole scuole alle più grandi aziende di software del pianeta.</li>
-</ol>
-<div class="box"><b>Curiosità sul nome:</b> in inglese britannico "git" è una parola scherzosa per dire "testa dura / persona antipatica". Torvalds disse ridendo di aver chiamato così i suoi progetti (prima Linux, poi Git) "come se stesse dando un nome a sé stesso".</div>
-<div class="note"><b>Da ricordare:</b> Git è <b>gratuito</b> e <b>open source</b> — il suo codice è pubblico e chiunque può leggerlo, usarlo e migliorarlo. Nessuno "possiede" Git.</div>
+<h2>2. Cos'è Git, in due parole</h2>
+<p>Git è come una <b>macchina del tempo</b> per i tuoi file. Tu lavori normalmente, e ogni volta che vuoi dici a Git: "<i>ecco, salva com'è adesso</i>". Git scatta una <b>fotografia</b> e la mette in fila con le altre. Da quel momento puoi <b>tornare a qualsiasi fotografia del passato</b> quando vuoi: com'era ieri, la settimana scorsa, un mese fa.</p>
+<p>La cosa bella è che tutte queste fotografie stanno dentro <b>una sola cartella</b>, ordinata e pulita. Niente più venti file con nomi strani: uno solo, con dentro <b>tutta la storia</b>.</p>
+<div class="box"><b>In una frase:</b> Git è un <b>sistema di controllo di versione</b> — cioè un programma che tiene la storia di un progetto e ti lascia viaggiare avanti e indietro nel tempo.</div>
+<div class="ex"><b class="tag">Esempio.</b> Stai programmando un videogioco. Funziona tutto, poi provi a cambiare una cosa e… si rompe. Con Git non è un dramma: torni all'ultima fotografia che funzionava e riparti da lì. Zero panico.</div>
 
-<h2 class="sec">3. "L'azienda Git": Git, GitHub e chi ci sta dietro</h2>
-<p>Qui c'è un punto che confonde tutti all'inizio, quindi mettiamolo in chiaro: <b>Git</b> e <b>GitHub</b> sono <b>due cose diverse</b>.</p>
+<h2>3. Un po' di storia: chi l'ha inventato e perché</h2>
+<p>Git non è nato in un ufficio di marketing: è nato da un <b>bisogno reale</b>.</p>
+<p>Nel <b>2005</b> un programmatore famoso, <b>Linus Torvalds</b> (lo stesso che aveva creato <b>Linux</b>, il sistema operativo), aveva un problema grosso. Al codice di Linux lavoravano <b>migliaia di persone</b> sparse per il mondo, tutte insieme. Serviva uno strumento per mettere ordine in quel caos. Quello che usavano prima, a un certo punto, non si poté più usare gratis.</p>
+<p>Invece di arrendersi, Torvalds fece una cosa da film: <b>si scrisse lo strumento nuovo da solo, in pochi giorni</b>. Doveva essere <b>velocissimo</b>, non perdere <b>mai</b> i dati, e reggere <b>tantissime persone</b> che lavorano in parallelo. Quello strumento è Git.</p>
+<div class="note"><b class="tag">Curiosità.</b> In inglese "git" è una parola scherzosa per dire "testa dura". Torvalds disse ridendo di dare sempre ai suoi progetti "un nome ispirato a sé stesso". Oggi quel piccolo programma è lo <b>standard usato in tutto il mondo del lavoro</b>.</p></div>
+
+<h2>4. Git e GitHub non sono la stessa cosa</h2>
+<p>Qui all'inizio si confondono tutti, quindi fermiamoci un attimo. <b>Git</b> e <b>GitHub</b> sembrano gemelli ma fanno due mestieri diversi.</p>
+<ul>
+<li><b>Git</b> è lo <b>strumento</b> (la macchina del tempo di cui parlavamo). Non è di nessuno: è <b>gratis e "open source"</b>, cioè il suo codice è pubblico e chiunque può usarlo.</li>
+<li><b>GitHub</b> è un <b>sito web</b> dove metti i tuoi progetti Git <b>online</b>, per averli al sicuro, mostrarli e lavorarci in gruppo. Dietro GitHub c'è un'<b>azienda vera</b> (GitHub, Inc.), oggi di proprietà di <b>Microsoft</b>.</li>
+</ul>
+<div class="box"><b>Analogia della macchina:</b> Git è il <b>motore</b> — la tecnologia che fa funzionare tutto. GitHub è il <b>grande garage online</b> dove parcheggi le tue auto, le fai vedere agli altri e ci lavorate insieme. Il motore puoi usarlo anche senza quel garage; ma il garage è comodo.</div>
+<p>E attenzione: GitHub <b>non è l'unico garage</b>. Ci sono anche <b>GitLab</b> e <b>Bitbucket</b>, che fanno cose simili. Noi useremo GitHub perché è il più diffuso — quando cerchi lavoro, quello che quasi tutti conoscono è lui.</p>
+
+<h2>5. GitHub è un "servizio": PaaS e Freemium</h2>
+<p>Abbiamo detto che GitHub è un servizio online. Due parole che hai visto alla lavagna spiegano <b>che tipo</b> di servizio è.</p>
+<h3>PaaS — "la piattaforma come servizio"</h3>
+<p><b>PaaS</b> è la sigla di <b>Platform as a Service</b>, cioè "piattaforma <b>come servizio</b>". Vuol dire: qualcuno ti mette a disposizione online una <b>piattaforma già pronta</b>, e tu la usi senza doverti costruire e mantenere i computer, i server e tutto il resto.</p>
+<div class="ex"><b class="tag">Analogia della cucina.</b> Vuoi aprire un ristorante. Puoi <b>costruirti la cucina da zero</b> (comprare forni, frigoriferi, sistemare i tubi… tanta fatica), oppure <b>affittare una cucina già attrezzata</b> e pensare solo a cucinare. GitHub è la cucina già pronta: tu porti il tuo progetto, il resto lo mette lui.</div>
+<h3>Freemium — "gratis + premium"</h3>
+<p><b>Freemium</b> è una parola inventata unendo <b>FREE</b> (gratis) e <b>PREMIUM</b> (a pagamento). Significa: le funzioni <b>di base sono gratis</b> per tutti, e se vuoi funzioni <b>in più</b> paghi un abbonamento.</p>
+<div class="ex"><b class="tag">Esempio che conosci.</b> Tanti videogiochi per telefono sono così: giochi gratis, ma se vuoi lo scudo dorato o niente pubblicità, paghi. Anche Spotify: ascolti gratis con la pubblicità, oppure paghi il "premium" e la togli. <b>GitHub funziona allo stesso modo:</b> a te studente basta e avanza la parte gratis.</div>
+<h3>La famiglia "come servizio" (…aaS)</h3>
+<p>PaaS non è da solo: fa parte di una <b>famiglia</b> di servizi online, tutti con la sigla che finisce in <b>"aaS"</b> (<i>as a Service</i>, "come servizio"). Cambia <b>quanto lavoro fai tu</b> e quanto lo fa il fornitore. I tre principali, dal "fai più tu" al "fai meno tu":</p>
 <table>
-<tr><th>&nbsp;</th><th>Git</th><th>GitHub</th></tr>
-<tr><td><b>Cos'è</b></td><td>Lo <b>strumento</b> (il programma / il metodo) che tiene la storia.</td><td>Un <b>sito web</b> che <b>ospita online</b> i progetti gestiti con Git.</td></tr>
-<tr><td><b>Chi c'è dietro</b></td><td><b>Nessuna azienda</b>: è open source, nato da Linus Torvalds e portato avanti da una comunità di volontari.</td><td>È un'<b>azienda</b> vera e propria (<b>GitHub, Inc.</b>), fondata nel 2008 e dal 2018 di proprietà di <b>Microsoft</b>.</td></tr>
-<tr><td><b>Dove sta</b></td><td>Sul tuo computer (o come concetto).</td><td>Su Internet (i tuoi progetti "nel cloud").</td></tr>
+<tr><th>Sigla</th><th>Nome</th><th>Cosa ti danno già pronto</th><th>Esempio</th></tr>
+<tr><td><b>IaaS</b></td><td>Infrastructure as a Service</td><td>Solo i <b>muri e la corrente</b>: computer/server nudi. Il resto lo monti tu.</td><td>Amazon AWS, Google Cloud (server in affitto)</td></tr>
+<tr><td><b>PaaS</b></td><td>Platform as a Service</td><td>La <b>cucina già attrezzata</b>: piattaforma pronta, tu porti solo il progetto.</td><td>GitHub, Netlify</td></tr>
+<tr><td><b>SaaS</b></td><td>Software as a Service</td><td>Il <b>piatto già cucinato e servito</b>: un programma pronto, lo usi dal browser.</td><td>Gmail, Google Documenti, Spotify</td></tr>
 </table>
-<div class="box"><b>Analogia:</b> Git è come il <b>motore</b> di un'automobile (la tecnologia che fa funzionare tutto); GitHub è come un <b>grande garage/parcheggio online</b> dove tieni le tue auto, le mostri agli altri e ci lavorate insieme. Puoi usare il motore anche senza quel garage — ma il garage lo rende comodo.</div>
-<p>GitHub <b>non è l'unico</b> garage: esistono anche <b>GitLab</b> e <b>Bitbucket</b>, che fanno una cosa simile. Noi useremo <b>GitHub</b> perché è il più diffuso.</p>
+<div class="ex"><b class="tag">Come ricordarli — la pizzeria.</b> <b>IaaS</b> = affitti il <b>locale vuoto</b> e ti arrangi. <b>PaaS</b> = affitti la <b>cucina attrezzata</b> e pensi solo a cucinare la pizza. <b>SaaS</b> = ti fai <b>consegnare la pizza pronta</b> a casa. Più scendi, meno fatica fai (ma decidi meno cose).</div>
+<div class="box"><b>Riassunto della lavagna:</b> GitHub è un <b>servizio</b> — nello specifico una <b>piattaforma</b> (<b>PaaS</b>, uno della famiglia …aaS) — dove tieni <b>repository di codice</b>, e si paga col modello <b>Freemium</b>: gratis per l'uso normale, a pagamento per le cose avanzate.</div>
 
-<h2 class="sec">4. Quali servizi dà Git (e GitHub)</h2>
-<p>Mettendo insieme lo strumento (Git) e il sito (GitHub), ecco cosa ottieni:</p>
-<table>
-<tr><th>Servizio</th><th>A cosa serve</th></tr>
-<tr><td><b>Storia completa</b></td><td>Ogni modifica è registrata: puoi tornare a qualsiasi versione passata.</td></tr>
-<tr><td><b>Ritorno indietro</b></td><td>Hai rotto qualcosa? Torni all'ultima versione che funzionava, senza panico.</td></tr>
-<tr><td><b>Lavoro in parallelo (branch)</b></td><td>Provi idee nuove su un ramo separato senza toccare la versione buona.</td></tr>
-<tr><td><b>Collaborazione</b></td><td>Più persone lavorano sullo stesso progetto; Git unisce i contributi in modo ordinato.</td></tr>
-<tr><td><b>Copia di sicurezza (backup)</b></td><td>Il progetto è anche online: se si rompe il PC, non perdi niente.</td></tr>
-<tr><td><b>Chi ha fatto cosa</b></td><td>Per ogni riga si sa chi l'ha scritta e quando (utile nei gruppi).</td></tr>
-<tr><td><b>Versioni pubblicate (Release)</b></td><td>Pubblichi una versione "ufficiale" e stabile del tuo lavoro (es. <span class="lbl">v1.0</span>).</td></tr>
-<tr><td><b>Sito gratis (GitHub Pages)</b></td><td>GitHub può pubblicare online una pagina o un sito direttamente dal tuo progetto.</td></tr>
-</table>
-
-<h2 class="sec">5. I concetti base e la logica</h2>
+<h2>6. Le parole di Git spiegate facili</h2>
+<p>Git ha un suo piccolo vocabolario. Sono solo quattro parole importanti: impariamole con un esempio ciascuna.</p>
 <h3>Repository (repo)</h3>
-<p>È la <b>cartella-progetto</b> gestita da Git: contiene i file <b>e la loro storia completa</b>. Creare un repository = dire a Git "da qui in poi tieni la storia di questa cartella".</p>
+<p>È la <b>cartella-progetto</b> che Git tiene d'occhio, con dentro i file <b>e tutta la loro storia</b>. Creare un repository vuol dire dire a Git: "<i>da qui in poi, di questa cartella, tieni la storia</i>".</p>
+<div class="ex"><b class="tag">Esempio.</b> Il tuo videogioco "SpaceRun" è un repository: dentro c'è il gioco <b>e</b> il diario di tutte le modifiche fatte.</div>
 <h3>Commit</h3>
-<p>Un <b>commit</b> è una <b>fotografia</b> salvata del progetto in un certo momento, con un <b>messaggio</b> che spiega cosa hai cambiato (es. <i>"aggiunto il menu iniziale"</i>).</p>
+<p>Un <b>commit</b> è una delle nostre <b>fotografie</b>: un salvataggio, con attaccato un <b>messaggio</b> che dice cosa hai cambiato.</p>
 <div class="fig"><svg width="470" height="60" viewBox="0 0 470 60" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="28" x2="440" y2="28" stroke="#2b7cc4" stroke-width="2"/>
 <g fill="#2b7cc4"><circle cx="60" cy="28" r="6"/><circle cx="180" cy="28" r="6"/><circle cx="300" cy="28" r="6"/><circle cx="420" cy="28" r="6"/></g>
-<g text-anchor="middle" fill="#333"><text x="60" y="48">"menu"</text><text x="180" y="48">"punteggio"</text><text x="300" y="48">"grafica"</text><text x="420" y="48">"audio"</text></g>
-</svg><div class="cap">Una catena di commit: ognuno è un salvataggio con messaggio. Puoi tornare a qualsiasi punto.</div></div>
-<h3>La logica: come "ragiona" Git</h3>
-<p>Capire questa parte rende tutto il resto facile:</p>
-<ol>
-<li><b>Git salva fotografie, non differenze.</b> Ogni commit è lo stato dell'intero progetto in quel momento (come una foto). Non devi ricostruire niente: la foto c'è già.</li>
-<li><b>Ogni commit "punta" a quello prima di lui.</b> È come una <b>catena</b>: ogni anello sa qual è l'anello precedente. Seguendo la catena all'indietro, Git ricostruisce tutta la storia.</li>
-<li><b>Da qui nascono i rami.</b> Se da un anello partono <b>due strade</b>, hai due rami (branch) che vanno avanti in parallelo. Quando li riunisci, fai un <b>merge</b>.</li>
-<li><b>Niente si perde.</b> Un commit fatto resta lì: anche se cambi idea, la vecchia strada esiste ancora e ci puoi tornare.</li>
-</ol>
-<div class="box"><b>In parole semplici:</b> pensa alla storia del progetto come a una <b>metropolitana</b>. Ogni fermata è un commit. Di solito vai dritto, ma a volte parte una <b>linea nuova</b> (branch) che poi può <b>ricongiungersi</b> (merge). La mappa completa non si cancella mai.</div>
+<g text-anchor="middle" fill="#333"><text x="60" y="48">"menu"</text><text x="180" y="48">"punteggio"</text><text x="300" y="48">"grafica"</text><text x="420" y="48">"suoni"</text></g>
+</svg><div class="cap">Una fila di commit: ognuno è una foto con un messaggio. Puoi tornare a qualunque punto.</div></div>
+<div class="box"><b>Consiglio:</b> scrivi messaggi chiari (<span class="lbl">"aggiunto il menu iniziale"</span>). Riletti dopo un mese, sembrano il diario del progetto.</div>
+<h3>Branch (ramo)</h3>
+<p>Un <b>branch</b> è una <b>strada parallela</b>. Serve per provare un'idea nuova <b>senza rovinare</b> la versione che funziona (la strada principale si chiama <span class="lbl">main</span>).</p>
+<div class="ex"><b class="tag">Esempio.</b> Vuoi provare a mettere i colori dark nel gioco, ma non sei sicuro. Apri un branch "colori-scuri", provi lì. Se piace lo tieni; se no, lo butti e il gioco resta com'era.</div>
+<h3>Merge (unione)</h3>
+<p>Quando l'idea del branch funziona, la <b>unisci</b> alla strada principale: questo si chiama <b>merge</b>. Da quel momento anche il main ha la novità.</p>
 
-<h2 class="sec">6. Branch e merge</h2>
-<p>Il <b>branch</b> (ramo) è una <b>linea di lavoro parallela</b>. Serve per provare una funzione nuova o correggere un bug <b>senza toccare</b> la versione stabile (il ramo principale, <span class="lbl">main</span>). Quando la cosa funziona, si <b>unisce</b> al main con un <b>merge</b>.</p>
-<div class="fig"><svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
-<line x1="30" y1="60" x2="460" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
-<g fill="#2b7cc4"><circle cx="60" cy="60" r="6"/><circle cx="240" cy="60" r="6"/><circle cx="420" cy="60" r="6"/></g>
-<text x="20" y="55" fill="#12467a" font-weight="bold">main</text>
-<path d="M60 60 C120 20 150 20 240 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
-<circle cx="150" cy="27" r="5" fill="#cf3b3b"/><text x="150" y="18" text-anchor="middle" fill="#cf3b3b">bugfix</text>
-<path d="M240 60 C300 105 360 105 420 60" fill="none" stroke="#2f9e57" stroke-width="2"/>
-<circle cx="330" cy="97" r="5" fill="#2f9e57"/><text x="330" y="112" text-anchor="middle" fill="#2f7d47">nuova funzione</text>
-</svg><div class="cap">Rami che partono dal main, lavorano a parte e poi si fondono di nuovo nel main.</div></div>
-<div class="box"><b>Perché è potente:</b> più persone (o più idee) vanno avanti <b>in parallelo</b>; il main resta sempre funzionante finché non si decide di unire.</div>
-
-<h2 class="sec">7. Git e GitHub — il flusso di lavoro</h2>
-<h3>Il giro tipico</h3>
+<h2>7. Come si lavora davvero: la storia di due compagni</h2>
+<p>Aisha e Marco fanno insieme il gioco "SpaceRun" su GitHub. Guardiamo cosa fanno, passo passo:</p>
 <ol>
-<li><b>clone</b>: scarichi il repository dal sito sul tuo computer (la prima volta).</li>
-<li><b>modifichi</b> i file e li salvi normalmente.</li>
-<li><b>commit</b>: fotografi le modifiche con un messaggio.</li>
-<li><b>push</b>: mandi i tuoi commit <b>online</b> (su GitHub).</li>
-<li><b>pull</b>: scarichi le modifiche fatte dagli altri per restare aggiornato.</li>
+<li><b>clone</b> — la prima volta ognuno <b>scarica</b> il progetto dal sito sul proprio computer.</li>
+<li><b>lavora</b> — Aisha disegna i nemici, Marco scrive i movimenti. Ognuno sul suo pezzo.</li>
+<li><b>commit</b> — ogni tanto scattano una fotografia del proprio lavoro, con un messaggio.</li>
+<li><b>push</b> — <b>mandano</b> le loro fotografie <b>online</b>, su GitHub, così l'altro le vede.</li>
+<li><b>pull</b> — <b>scaricano</b> le novità dell'altro, per restare aggiornati.</li>
 </ol>
 <div class="fig"><svg width="470" height="70" viewBox="0 0 470 70" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="9">
 <rect x="20" y="24" width="120" height="26" rx="5" fill="#e5f5ea" stroke="#2f9e57"/><text x="80" y="41" text-anchor="middle" fill="#1f6e43">Il tuo computer</text>
@@ -143,46 +135,44 @@ th{background:#eaf2fb;color:#12467a;}
 <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2b7cc4"/></marker>
 <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2f9e57"/></marker></defs>
 </svg></div>
-<h3>Pull Request (PR)</h3>
-<p>Su GitHub, quando vuoi <b>proporre</b> di unire il tuo ramo al progetto, apri una <b>Pull Request</b>: gli altri la <b>guardano</b>, commentano, e se va bene si fa il <b>merge</b>. È il modo con cui i team lavorano insieme in modo ordinato: prima si guarda, poi si unisce.</p>
-<div class="note"><b>Noi useremo tutto dal browser</b> (dal sito GitHub, cliccando): niente comandi da digitare. I nomi <span class="lbl">commit</span>, <span class="lbl">push</span>, <span class="lbl">merge</span> restano gli stessi, ma li fai con i bottoni.</div>
+<p>E se Aisha vuole proporre a Marco una modifica importante, senza imporgliela? Apre una <b>Pull Request</b>: è come dire "<i>ehi, ho fatto questa cosa, la guardi? se ti va la uniamo</i>". Marco la legge, commenta, e se è d'accordo si fa il merge. Ordinato e senza litigi.</p>
+<div class="note"><b class="tag">Importante per noi:</b> faremo <b>tutto dal browser</b>, cliccando sui bottoni del sito GitHub. Le parole (commit, push, merge…) restano quelle, ma non si digita niente.</div>
 
-<h2 class="sec">8. Il versioning: cos'è e come si fa</h2>
-<p>Quando un progetto raggiunge un punto "buono", gli si dà un <b>numero di versione</b>. Lo standard più usato al mondo si chiama <b>versionamento semantico</b> e ha la forma <b class="lbl">vX.Y.Z</b>:</p>
+<h2>8. Il versioning: i numeri 1.2.3 e come si fa</h2>
+<p>Quando un progetto arriva a un punto "buono", gli si dà un <b>numero di versione</b>. Lo standard più usato al mondo ha la forma <b class="lbl">v1.2.3</b>, e ogni numero racconta una cosa:</p>
 <table>
-<tr><th>Cifra</th><th>Nome</th><th>Quando aumenta</th></tr>
-<tr><td><b>X</b></td><td>major</td><td>Cambiamento <b>grosso</b>, spesso incompatibile col passato (es. tutto rifatto).</td></tr>
-<tr><td><b>Y</b></td><td>minor</td><td><b>Nuova funzione</b>, ma le cose vecchie funzionano ancora.</td></tr>
-<tr><td><b>Z</b></td><td>patch</td><td>Solo <b>correzioni</b> di bug, niente di nuovo.</td></tr>
+<tr><th>Numero</th><th>Nome</th><th>Aumenta quando…</th></tr>
+<tr><td><b>1</b> (il primo)</td><td>major</td><td>cambi <b>tutto</b>, in modo grosso, magari incompatibile col vecchio</td></tr>
+<tr><td><b>2</b> (il secondo)</td><td>minor</td><td>aggiungi una <b>funzione nuova</b>, ma il resto funziona ancora</td></tr>
+<tr><td><b>3</b> (il terzo)</td><td>patch</td><td>correggi solo un <b>bug</b>, niente di nuovo</td></tr>
 </table>
-<div class="box"><b>Esempio (un gioco):</b> <b class="lbl">v1.0.0</b> giocabile → <b class="lbl">v1.1.0</b> (aggiungi i suoni) → <b class="lbl">v1.1.1</b> (correggi un bug) → <b class="lbl">v2.0.0</b> (nuovo motore, tutto diverso).</div>
-<h3>Come si fa, passo per passo</h3>
+<div class="ex"><b class="tag">Esempio con il gioco.</b> <span class="lbl">v1.0.0</span> è la prima versione giocabile → aggiungi i suoni e diventa <span class="lbl">v1.1.0</span> → trovi un bug e lo correggi: <span class="lbl">v1.1.1</span> → rifai il gioco da zero con un motore nuovo: <span class="lbl">v2.0.0</span>.</div>
+<h3>Come si fa, in pratica</h3>
 <ol>
-<li><b>Lavori</b> normalmente e fai i tuoi <b>commit</b> (i salvataggi con messaggio).</li>
-<li>Quando il progetto è <b>pronto e provato</b>, decidi il numero: parti da <b class="lbl">v1.0.0</b>.</li>
-<li>Metti un <b>tag</b> (un'etichetta) su quel commit con il numero di versione: è come piantare una bandierina che dice "questa è la v1.0.0".</li>
-<li>Su GitHub pubblichi una <b>Release</b>: quella versione diventa <b>ufficiale e "congelata"</b> (non cambia più).</li>
-<li>Continui a lavorare. Alla modifica successiva <b>aumenti (bumpi) il numero</b> secondo la regola sopra: una correzione → cambia la Z; una funzione nuova → cambia la Y; una rivoluzione → cambia la X.</li>
+<li>Lavori e fai i tuoi <b>commit</b> (le fotografie) come sempre.</li>
+<li>Quando il progetto è <b>pronto e provato</b>, scegli il numero: si parte da <span class="lbl">v1.0.0</span>.</li>
+<li>Metti una <b>bandierina</b> (si chiama <b>tag</b>) su quel commit con scritto il numero.</li>
+<li>Su GitHub pubblichi una <b>Release</b>: quella versione diventa <b>ufficiale</b> e <b>non cambia più</b>.</li>
+<li>Continui a lavorare e, alla modifica dopo, <b>aumenti il numero</b> secondo la regola sopra.</li>
 </ol>
-<div class="warn"><b>Regola d'oro:</b> un numero di versione <b>già pubblicato non si riusa mai</b>. Se cambi anche solo una cosa, prima <b>aumenti il numero</b>, poi pubblichi. Così due versioni diverse non si confondono mai.</div>
-<p class="cap">Per i grafi completi (branch, merge, release in team) vedi la scheda "Versioning — 5 livelli".</p>
+<div class="warn"><b>Regola d'oro:</b> un numero già pubblicato <b>non si riusa mai</b>. Se cambi anche una sola cosa, prima <b>aumenti</b> il numero e poi pubblichi. Così due versioni diverse non si confondono mai.</div>
 
-<h2 class="sec">9. Casi d'uso con esempi di grafi</h2>
-<p>Ecco alcune situazioni reali. In ogni grafo, ogni <b>pallino</b> è un commit e la <b>linea</b> è il tempo che scorre da sinistra a destra.</p>
+<h2>9. Tanti casi d'uso con i grafi</h2>
+<p>Vediamo Git "in azione" in situazioni vere. In ogni grafo ogni <b>pallino</b> è un commit (una foto) e la <b>linea</b> è il tempo, che va da sinistra a destra.</p>
 
 <div class="uc">
-<h3>Caso A — Lavoro da solo, dritto per dritto</h3>
-<p>Stai scrivendo un piccolo programma da solo. Salvi passo dopo passo: la storia è una <b>linea diritta</b>.</p>
+<h3>Caso A — Lavoro da solo, tutto dritto</h3>
+<p>Stai facendo un piccolo sito da solo. Salvi passo dopo passo: la storia è una <b>linea dritta</b>, semplice semplice.</p>
 <div class="fig"><svg width="440" height="55" viewBox="0 0 440 55" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="25" x2="410" y2="25" stroke="#2b7cc4" stroke-width="2"/>
 <g fill="#2b7cc4"><circle cx="55" cy="25" r="6"/><circle cx="175" cy="25" r="6"/><circle cx="295" cy="25" r="6"/><circle cx="390" cy="25" r="6"/></g>
-<g text-anchor="middle" fill="#333"><text x="55" y="44">inizio</text><text x="175" y="44">funziona</text><text x="295" y="44">migliorie</text><text x="390" y="44">finito</text></g>
+<g text-anchor="middle" fill="#333"><text x="55" y="44">inizio</text><text x="175" y="44">home page</text><text x="295" y="44">contatti</text><text x="390" y="44">finito</text></g>
 </svg></div>
 </div>
 
 <div class="uc">
 <h3>Caso B — Provo un'idea rischiosa</h3>
-<p>Vuoi provare un'idea che <b>potrebbe non funzionare</b>. Apri un <b>branch</b> a parte: se l'idea è buona la <b>unisci</b> (merge); se è un disastro, <b>butti il ramo</b> e il main resta intatto.</p>
+<p>Vuoi provare un'idea che <b>forse non funziona</b>. Apri un <b>branch</b> a parte: se l'idea è buona la <b>unisci</b> (merge); se è un disastro <b>butti il ramo</b> e il main resta intatto. Nessun rischio.</p>
 <div class="fig"><svg width="460" height="105" viewBox="0 0 460 105" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="55" x2="440" y2="55" stroke="#2b7cc4" stroke-width="2.5"/>
 <g fill="#2b7cc4"><circle cx="60" cy="55" r="6"/><circle cx="410" cy="55" r="6"/></g>
@@ -196,8 +186,8 @@ th{background:#eaf2fb;color:#12467a;}
 </div>
 
 <div class="uc">
-<h3>Caso C — Bug urgente mentre sto sviluppando</h3>
-<p>Stai lavorando a una funzione lunga, ma esce un <b>bug grave</b> nella versione pubblicata. Apri un ramo <b>hotfix</b> veloce, lo correggi, lo unisci subito al main — e poi torni tranquillo alla tua funzione.</p>
+<h3>Caso C — Bug urgente mentre sto lavorando</h3>
+<p>Stai costruendo una funzione lunga, ma salta fuori un <b>bug grave</b> nella versione già pubblicata. Apri un ramo <b>hotfix</b> (correzione veloce), sistemi il bug, lo unisci subito al main — e poi torni tranquillo alla tua funzione, senza aver perso niente.</p>
 <div class="fig"><svg width="460" height="115" viewBox="0 0 460 115" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="60" x2="440" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
 <g fill="#2b7cc4"><circle cx="60" cy="60" r="6"/><circle cx="250" cy="60" r="6"/><circle cx="410" cy="60" r="6"/></g>
@@ -212,7 +202,7 @@ th{background:#eaf2fb;color:#12467a;}
 
 <div class="uc">
 <h3>Caso D — Squadra: tanti rami e Pull Request</h3>
-<p>In un progetto di gruppo ognuno lavora sul <b>suo ramo</b> (scena, grafica, movimenti…). Ciascuno apre una <b>Pull Request</b>; il gruppo la controlla e la unisce al main. Il main cresce con i pezzi di tutti.</p>
+<p>Nel progetto di gruppo ognuno lavora sul <b>suo ramo</b> (chi la grafica, chi i movimenti, chi l'audio). Ciascuno apre una <b>Pull Request</b>; il gruppo la controlla e la unisce. Il main cresce con i pezzi di tutti, senza pestarsi i piedi.</p>
 <div class="fig"><svg width="460" height="140" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="70" x2="440" y2="70" stroke="#2b7cc4" stroke-width="2.5"/>
 <g fill="#2b7cc4"><circle cx="60" cy="70" r="6"/><circle cx="240" cy="70" r="6"/><circle cx="360" cy="70" r="6"/><circle cx="420" cy="70" r="6"/></g>
@@ -228,7 +218,7 @@ th{background:#eaf2fb;color:#12467a;}
 
 <div class="uc">
 <h3>Caso E — Le versioni pubblicate (Release)</h3>
-<p>Man mano che il progetto avanza, si pubblicano le <b>Release</b>. Le bandierine sul main segnano le versioni ufficiali che gli utenti (o i compagni) ricevono.</p>
+<p>Mentre il progetto avanza, si pubblicano le <b>Release</b>. Le bandierine sul main segnano le versioni ufficiali che gli utenti (o i compagni) ricevono. È esattamente il grafo che abbiamo disegnato alla lavagna.</p>
 <div class="fig"><svg width="460" height="80" viewBox="0 0 460 80" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
 <line x1="30" y1="45" x2="440" y2="45" stroke="#2b7cc4" stroke-width="2.5"/>
 <g fill="#2b7cc4"><circle cx="60" cy="45" r="6"/><circle cx="180" cy="45" r="6"/><circle cx="300" cy="45" r="6"/><circle cx="410" cy="45" r="6"/></g>
@@ -239,21 +229,28 @@ th{background:#eaf2fb;color:#12467a;}
 </svg></div>
 </div>
 
-<h2 class="sec">10. Glossario</h2>
+<h2>10. Riepilogo e glossario</h2>
+<p>Se ti ricordi solo tre cose, ricordati queste:</p>
+<ol>
+<li>Git è la <b>macchina del tempo</b> del tuo progetto: salva la storia e ti fa tornare indietro.</li>
+<li><b>Git</b> è lo strumento; <b>GitHub</b> è il sito-servizio (una piattaforma <b>PaaS</b>, gratis in modello <b>Freemium</b>) dove lo tieni online e collabori.</li>
+<li>Le <b>versioni</b> si scrivono <span class="lbl">v1.2.3</span> e una pubblicata non si tocca più: se cambi, aumenti il numero.</li>
+</ol>
 <table>
-<tr><th>Termine</th><th>Significato</th></tr>
-<tr><td class="lbl">Git</td><td>lo strumento (open source) che tiene la storia di un progetto</td></tr>
-<tr><td class="lbl">GitHub</td><td>il sito (azienda di Microsoft) che ospita i progetti Git online</td></tr>
+<tr><th>Parola</th><th>Vuol dire</th></tr>
+<tr><td class="lbl">Git</td><td>lo strumento (gratis, open source) che tiene la storia del progetto</td></tr>
+<tr><td class="lbl">GitHub</td><td>il sito-servizio (azienda di Microsoft) che ospita i progetti online</td></tr>
+<tr><td class="lbl">PaaS</td><td>"piattaforma come servizio": una piattaforma già pronta che usi online</td></tr>
+<tr><td class="lbl">Freemium</td><td>gratis nelle funzioni base, a pagamento per quelle avanzate</td></tr>
 <tr><td class="lbl">repository</td><td>la cartella-progetto con tutta la storia</td></tr>
-<tr><td class="lbl">commit</td><td>un salvataggio (fotografia) con un messaggio</td></tr>
-<tr><td class="lbl">branch</td><td>una linea di lavoro parallela (ramo)</td></tr>
-<tr><td class="lbl">merge</td><td>unire un branch a un altro</td></tr>
-<tr><td class="lbl">clone</td><td>scaricare un repository sul proprio computer la prima volta</td></tr>
-<tr><td class="lbl">push / pull</td><td>mandare / scaricare i commit da/verso GitHub</td></tr>
-<tr><td class="lbl">Pull Request</td><td>proposta di merge, da revisionare prima di unire</td></tr>
+<tr><td class="lbl">commit</td><td>un salvataggio (una fotografia) con un messaggio</td></tr>
+<tr><td class="lbl">branch</td><td>una strada di lavoro parallela (ramo)</td></tr>
+<tr><td class="lbl">merge</td><td>unire un ramo alla strada principale</td></tr>
+<tr><td class="lbl">clone</td><td>scaricare la prima volta un progetto sul proprio computer</td></tr>
+<tr><td class="lbl">push / pull</td><td>mandare / scaricare le fotografie da e verso GitHub</td></tr>
+<tr><td class="lbl">Pull Request</td><td>proposta di unione, da guardare prima di fare il merge</td></tr>
 <tr><td class="lbl">tag / Release</td><td>una versione pubblicata e "congelata"</td></tr>
-<tr><td class="lbl">versioning</td><td>dare un numero (vX.Y.Z) alle versioni del progetto</td></tr>
-<tr><td class="lbl">open source</td><td>codice pubblico, che tutti possono vedere e usare</td></tr>
+<tr><td class="lbl">versioning</td><td>dare un numero (v1.2.3) alle versioni del progetto</td></tr>
 </table>
 
 </body></html>
