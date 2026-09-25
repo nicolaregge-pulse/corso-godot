@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Versioning — casi d'uso con grafi</title>
+<style>
+@page{size:A4;margin:16mm 15mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.5;margin:0;}
+.cover{height:250mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;page-break-after:always;background:linear-gradient(160deg,#eef4fb,#f0ecfb);}
+.cover h1{font-size:30pt;color:#12467a;margin:4px 0;}
+.cover .t{font-size:13pt;color:#444;}
+.cover .s{font-size:11pt;color:#6a4ca8;max-width:130mm;margin-top:18px;}
+h2{font-size:14pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.2mm;margin:6mm 0 2mm;page-break-after:avoid;}
+p{margin:0 0 2mm;}
+.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.6pt;}
+.uc{background:#f6f8fa;border:1px solid #d6e0ea;border-radius:6px;padding:2mm 4mm 3mm;margin:3mm 0;page-break-inside:avoid;}
+.uc h2{margin-top:1mm;border:none;color:#12467a;font-size:13.5pt;}
+.exp{font-size:10.5pt;color:#33475b;margin-bottom:1mm;}
+.fig{text-align:center;margin:1mm 0;}
+.leg{background:#fdf6e3;border-left:5px solid #d0a516;padding:2mm 3mm;border-radius:3px;margin:3mm 0;font-size:10pt;}
+text{font-family:'DejaVu Sans Mono',monospace;}
+.intro{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.6pt;}
+</style></head><body>
+
+<div class="cover">
+<div class="t">Approfondimento</div>
+<h1>Versioning: 11 casi d'uso</h1>
+<div class="t">gli stessi concetti (commit, branch, merge, release) in situazioni tutte diverse</div>
+<div class="s">Ogni caso ha un <b>grafo</b> (pallino = commit/versione, linea = tempo che scorre da sinistra a destra) e una <b>spiegazione di massima</b>. Serve per imparare a <b>leggere</b> la storia di un progetto. Informatica.</div>
+</div>
+
+<div class="intro"><b>Come si legge un grafo:</b> ogni <b>pallino</b> è un <b>commit</b> (una fotografia salvata). La <b>linea orizzontale</b> in alto è di solito <span class="lbl">main</span>, il ramo principale. Le linee colorate che si staccano sono <b>branch</b> (rami di lavoro). Quando due linee si riuniscono è un <b>merge</b>. Le <b>bandierine gialle</b> sono le <b>release</b> (versioni pubblicate, es. <span class="lbl">v1.0</span>).</div>
+
+<div class="uc">
+<h2>1. Sviluppo lineare (da soli, tutto dritto)</h2>
+<p class="exp">Il caso più semplice: un solo autore, nessun ramo. Ogni commit segue il precedente in fila. La storia è una linea dritta. Va benissimo per progetti piccoli.</p>
+<div class="fig"><svg width="470" height="55" viewBox="0 0 470 55" font-size="8">
+<line x1="25" y1="27" x2="450" y2="27" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="27" r="6"/><circle cx="130" cy="27" r="6"/><circle cx="210" cy="27" r="6"/><circle cx="290" cy="27" r="6"/><circle cx="370" cy="27" r="6"/><circle cx="440" cy="27" r="6"/></g>
+<g text-anchor="middle" fill="#556"><text x="50" y="46">avvio</text><text x="130" y="46">pagina</text><text x="210" y="46">stile</text><text x="290" y="46">testi</text><text x="370" y="46">fix</text><text x="440" y="46">fine</text></g>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>2. Una funzione su un branch, poi merge</h2>
+<p class="exp">Provi una funzione nuova su un ramo separato, così il main resta sempre funzionante. Quando è pronta, la <b>unisci</b> (merge) al main.</p>
+<div class="fig"><svg width="470" height="110" viewBox="0 0 470 110" font-size="8">
+<line x1="25" y1="70" x2="450" y2="70" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="70" r="6"/><circle cx="140" cy="70" r="6"/><circle cx="430" cy="70" r="6"/></g>
+<text x="18" y="65" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M140 70 C200 35 210 35 250 35" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<g fill="#2f9e57"><circle cx="250" cy="35" r="5"/><circle cx="330" cy="35" r="5"/></g>
+<path d="M330 35 C390 35 400 70 430 70" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<text x="290" y="25" text-anchor="middle" fill="#2f7d47">funzione "login"</text>
+<text x="430" y="90" text-anchor="middle" fill="#12467a">merge</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>3. Due funzioni in parallelo, merge in tempi diversi</h2>
+<p class="exp">Due rami partono insieme ma finiscono in momenti diversi: uno si fonde prima, l'altro dopo. Il main raccoglie i pezzi man mano che sono pronti.</p>
+<div class="fig"><svg width="470" height="135" viewBox="0 0 470 135" font-size="8">
+<line x1="25" y1="68" x2="455" y2="68" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="68" r="6"/><circle cx="250" cy="68" r="6"/><circle cx="430" cy="68" r="6"/></g>
+<text x="18" y="63" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M90 68 C150 30 170 30 200 30" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="200" cy="30" r="5" fill="#cf3b3b"/><path d="M200 30 C230 30 235 68 250 68" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<text x="170" y="20" text-anchor="middle" fill="#cf3b3b">grafica</text>
+<path d="M90 68 C160 108 260 108 320 108" fill="none" stroke="#8d54c9" stroke-width="2"/>
+<g fill="#8d54c9"><circle cx="230" cy="108" r="5"/><circle cx="320" cy="108" r="5"/></g>
+<path d="M320 108 C380 108 400 68 430 68" fill="none" stroke="#8d54c9" stroke-width="2"/>
+<text x="250" y="126" text-anchor="middle" fill="#7a3fb8">suoni (finisce dopo)</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>4. Hotfix urgente durante una funzione lunga</h2>
+<p class="exp">Stai lavorando a una funzione che richiede giorni, ma esce un <b>bug grave</b> in produzione. Apri un ramo <b>hotfix</b> corto, lo correggi e lo unisci subito; poi torni alla tua funzione.</p>
+<div class="fig"><svg width="470" height="130" viewBox="0 0 470 130" font-size="8">
+<line x1="25" y1="60" x2="455" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="60" r="6"/><circle cx="250" cy="60" r="6"/><circle cx="440" cy="60" r="6"/></g>
+<text x="18" y="55" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M150 60 C185 28 210 28 250 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="200" cy="27" r="5" fill="#cf3b3b"/><text x="200" y="18" text-anchor="middle" fill="#cf3b3b">hotfix (bug)</text>
+<path d="M80 60 C150 105 320 105 400 92" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<g fill="#2f9e57"><circle cx="200" cy="102" r="5"/><circle cx="310" cy="99" r="5"/></g>
+<text x="250" y="122" text-anchor="middle" fill="#2f7d47">la mia funzione lunga (continua)</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>5. Le release pubblicate (bandierine sul main)</h2>
+<p class="exp">Man mano che il progetto avanza, si <b>pubblicano</b> le versioni: <span class="lbl">v1.0</span> giocabile, poi correzioni e aggiunte fino a un cambiamento grosso <span class="lbl">v2.0</span>. Ogni bandierina è una versione "congelata".</p>
+<div class="fig"><svg width="470" height="80" viewBox="0 0 470 80" font-size="7.5">
+<line x1="25" y1="52" x2="455" y2="52" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="55" cy="52" r="6"/><circle cx="150" cy="52" r="6"/><circle cx="245" cy="52" r="6"/><circle cx="340" cy="52" r="6"/><circle cx="435" cy="52" r="6"/></g>
+<g stroke="#d0a516" stroke-width="1.5"><line x1="55" y1="52" x2="55" y2="26"/><line x1="150" y1="52" x2="150" y2="26"/><line x1="245" y1="52" x2="245" y2="26"/><line x1="340" y1="52" x2="340" y2="26"/><line x1="435" y1="52" x2="435" y2="26"/></g>
+<g fill="#d0a516"><rect x="55" y="16" width="32" height="11"/><rect x="150" y="16" width="36" height="11"/><rect x="245" y="16" width="36" height="11"/><rect x="340" y="16" width="36" height="11"/><rect x="435" y="16" width="32" height="11"/></g>
+<g fill="#7a5b00"><text x="58" y="25">v1.0</text><text x="153" y="25">v1.1</text><text x="248" y="25">v1.2</text><text x="343" y="25">v1.3</text><text x="438" y="25">v2.0</text></g>
+<g text-anchor="middle" fill="#556"><text x="102" y="70">+suoni</text><text x="197" y="70">+livelli</text><text x="292" y="70">fix</text><text x="387" y="70">tutto nuovo</text></g>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>6. Un ramo abbandonato (idea scartata)</h2>
+<p class="exp">Non tutte le idee funzionano. Qui un ramo viene provato ma <b>mai unito</b>: si decide che non va e lo si lascia lì. Il bello di Git: il main non ne risente per niente.</p>
+<div class="fig"><svg width="470" height="115" viewBox="0 0 470 115" font-size="8">
+<line x1="25" y1="55" x2="455" y2="55" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="55" r="6"/><circle cx="180" cy="55" r="6"/><circle cx="310" cy="55" r="6"/><circle cx="440" cy="55" r="6"/></g>
+<text x="18" y="50" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M180 55 C230 92 250 92 290 92" fill="none" stroke="#b0492e" stroke-width="2" stroke-dasharray="1 0"/>
+<g fill="#b0492e"><circle cx="290" cy="92" r="5"/><circle cx="360" cy="92" r="5"/></g>
+<text x="330" y="108" text-anchor="middle" fill="#8a3a22">idea "grafica 3D" — abbandonata ✗</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>7. Un ramo che nasce da un altro ramo</h2>
+<p class="exp">A volte una funzione è così grande che, mentre la sviluppi, ne stacchi un pezzo su un <b>sotto-ramo</b>. Prima rientra il sotto-ramo nel ramo, poi il ramo nel main. Rami dentro rami.</p>
+<div class="fig"><svg width="470" height="140" viewBox="0 0 470 140" font-size="8">
+<line x1="25" y1="45" x2="455" y2="45" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="45" r="6"/><circle cx="440" cy="45" r="6"/></g>
+<text x="18" y="40" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M110 45 C160 85 170 85 210 85" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<g fill="#2f9e57"><circle cx="210" cy="85" r="5"/><circle cx="340" cy="85" r="5"/></g>
+<path d="M340 85 C390 85 400 45 440 45" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<text x="150" y="78" fill="#2f7d47">funzione "mappa"</text>
+<path d="M210 85 C245 120 255 120 290 120" fill="none" stroke="#c98a1a" stroke-width="2"/>
+<circle cx="290" cy="120" r="4.5" fill="#c98a1a"/>
+<path d="M290 120 C320 120 320 85 340 85" fill="none" stroke="#c98a1a" stroke-width="2"/>
+<text x="265" y="135" text-anchor="middle" fill="#9a6a10">sotto-ramo "zoom"</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>8. Grande integrazione (progetto di gruppo)</h2>
+<p class="exp">Nel lavoro di squadra ognuno ha il suo ramo (grafica, movimenti, audio, menu). Alla fine confluiscono tutti nel main con le loro Pull Request: nasce la versione completa.</p>
+<div class="fig"><svg width="470" height="150" viewBox="0 0 470 150" font-size="8">
+<line x1="25" y1="75" x2="455" y2="75" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="75" r="6"/><circle cx="400" cy="75" r="6"/><circle cx="445" cy="75" r="6"/></g>
+<text x="18" y="70" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M80 75 C130 33 160 33 200 33" fill="none" stroke="#cf3b3b" stroke-width="2"/><circle cx="200" cy="33" r="4.5" fill="#cf3b3b"/><path d="M200 33 C320 33 350 75 400 75" fill="none" stroke="#cf3b3b" stroke-width="2"/><text x="150" y="26" fill="#cf3b3b">grafica</text>
+<path d="M80 75 C140 52 175 52 230 52" fill="none" stroke="#2f9e57" stroke-width="2"/><circle cx="230" cy="52" r="4.5" fill="#2f9e57"/><path d="M230 52 C330 52 355 75 400 75" fill="none" stroke="#2f9e57" stroke-width="2"/><text x="250" y="48" fill="#2f7d47">movimenti</text>
+<path d="M80 75 C140 100 175 100 250 100" fill="none" stroke="#8d54c9" stroke-width="2"/><circle cx="250" cy="100" r="4.5" fill="#8d54c9"/><path d="M250 100 C340 100 360 75 400 75" fill="none" stroke="#8d54c9" stroke-width="2"/><text x="255" y="114" fill="#7a3fb8">audio</text>
+<path d="M80 75 C150 128 200 128 280 128" fill="none" stroke="#c98a1a" stroke-width="2"/><circle cx="280" cy="128" r="4.5" fill="#c98a1a"/><path d="M280 128 C360 128 375 75 400 75" fill="none" stroke="#c98a1a" stroke-width="2"/><text x="300" y="142" fill="#9a6a10">menu</text>
+<g stroke="#d0a516" stroke-width="1.5"><line x1="445" y1="75" x2="445" y2="52"/></g><rect x="430" y="42" width="34" height="11" fill="#d0a516"/><text x="433" y="51" fill="#7a5b00">v1.0</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>9. Ramo di manutenzione a lungo termine</h2>
+<p class="exp">Esci con la <span class="lbl">v1.0</span> e il main va avanti verso la <span class="lbl">v2.0</span> (tutto nuovo). Ma chi usa ancora la v1 ha bisogno di correzioni: si tiene un <b>ramo di manutenzione</b> parallelo dove escono <span class="lbl">v1.1</span>, <span class="lbl">v1.2</span> solo con i fix.</p>
+<div class="fig"><svg width="470" height="130" viewBox="0 0 470 130" font-size="7.5">
+<line x1="25" y1="40" x2="455" y2="40" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="40" r="6"/><circle cx="150" cy="40" r="6"/><circle cx="280" cy="40" r="6"/><circle cx="430" cy="40" r="6"/></g>
+<text x="18" y="35" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<rect x="410" y="18" width="34" height="11" fill="#d0a516"/><line x1="430" y1="40" x2="430" y2="29" stroke="#d0a516" stroke-width="1.5"/><text x="413" y="27" fill="#7a5b00">v2.0</text>
+<rect x="135" y="18" width="34" height="11" fill="#d0a516"/><line x1="150" y1="40" x2="150" y2="29" stroke="#d0a516" stroke-width="1.5"/><text x="138" y="27" fill="#7a5b00">v1.0</text>
+<path d="M150 40 C200 78 210 78 250 78" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<line x1="250" y1="78" x2="420" y2="78" stroke="#2f9e57" stroke-width="2"/>
+<g fill="#2f9e57"><circle cx="250" cy="78" r="5"/><circle cx="340" cy="78" r="5"/><circle cx="420" cy="78" r="5"/></g>
+<text x="150" y="103" fill="#2f7d47">ramo manutenzione v1.x</text>
+<g fill="#7a5b00"><text x="240" y="95">v1.1</text><text x="330" y="95">v1.2</text></g>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>10. Revert: annullare una modifica sbagliata</h2>
+<p class="exp">Un commit ha introdotto un problema. Invece di cancellare la storia (non si fa), si aggiunge un <b>nuovo commit</b> che <b>annulla</b> quello sbagliato: è il <b>revert</b>. La storia resta onesta e il progetto torna a posto.</p>
+<div class="fig"><svg width="470" height="80" viewBox="0 0 470 80" font-size="8">
+<line x1="25" y1="40" x2="455" y2="40" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="40" r="6"/><circle cx="150" cy="40" r="6"/></g>
+<circle cx="250" cy="40" r="6" fill="#cf3b3b"/>
+<g fill="#2b7cc4"><circle cx="350" cy="40" r="6"/></g>
+<circle cx="430" cy="40" r="6" fill="#2f9e57"/>
+<text x="18" y="35" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<text x="250" y="62" text-anchor="middle" fill="#cf3b3b">commit sbagliato</text>
+<text x="430" y="62" text-anchor="middle" fill="#2f7d47">revert (annulla)</text>
+<path d="M250 22 C300 5 385 5 425 30" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#ar)"/>
+<defs><marker id="ar" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L5 3 L0 6 Z" fill="#999"/></marker></defs>
+</svg></div>
+</div>
+
+<div class="uc">
+<h2>11. Conflitto di merge risolto</h2>
+<p class="exp">Due rami hanno cambiato <b>la stessa riga</b> in modo diverso. Quando si uniscono, Git non sa quale tenere: è un <b>conflitto</b>. Una persona decide cosa tenere e chiude il merge con un commit speciale di "risoluzione".</p>
+<div class="fig"><svg width="470" height="120" viewBox="0 0 470 120" font-size="8">
+<line x1="25" y1="45" x2="455" y2="45" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="50" cy="45" r="6"/><circle cx="180" cy="45" r="6"/></g>
+<text x="18" y="40" fill="#12467a" font-weight="bold" text-anchor="end">main</text>
+<path d="M180 45 C230 22 250 22 300 22" fill="none" stroke="#cf3b3b" stroke-width="2"/><circle cx="300" cy="22" r="5" fill="#cf3b3b"/><text x="240" y="15" fill="#cf3b3b">cambio A</text>
+<path d="M50 45 C120 92 250 92 300 92" fill="none" stroke="#8d54c9" stroke-width="2"/><circle cx="300" cy="92" r="5" fill="#8d54c9"/><text x="150" y="108" fill="#7a3fb8">cambio B (stessa riga)</text>
+<path d="M300 22 C360 22 380 45 405 45" fill="none" stroke="#d0a516" stroke-width="2"/>
+<path d="M300 92 C360 92 380 45 405 45" fill="none" stroke="#d0a516" stroke-width="2"/>
+<circle cx="415" cy="45" r="7" fill="#d0a516"/><text x="415" y="70" text-anchor="middle" fill="#7a5b00">merge risolto ⚡</text>
+</svg></div>
+</div>
+
+<div class="leg"><b>In sintesi:</b> con pochi elementi — commit, branch, merge, tag/release — si descrivono <b>tutte</b> le situazioni di un progetto reale, dalla più semplice (linea dritta) alle più complesse (integrazione di squadra, manutenzione parallela, conflitti). Saper <b>leggere</b> questi grafi è già metà del lavoro.</div>
+
+</body></html>
