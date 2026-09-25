@@ -194,6 +194,15 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
    "sciolti": così Nicola li rimette nell'albero con un clic.
 7. Vale da qui in poi; i file già dentro le loro cartelle non vanno rinominati.
 
+### 2.24 Incrociare SEMPRE i dati (chiesta da Nicola, VINCOLANTE)
+1. Prima di chiedere o produrre, **incrocio tutte le fonti che ho già**: foto dei
+   registri, archivi in scratchpad (elenchi allievi, presenze, ruoli, password),
+   messaggi precedenti. Le informazioni spesso ci sono già: non far domande su
+   cose ricavabili dai dati in mano.
+2. Uso il registro/foto come **fonte di verità** per nomi, classe, presenze; se
+   qualcosa non torna, prima **ricontrollo i dati** e solo se resta un vero
+   conflitto lo segnalo — non tiro a indovinare né chiedo il superfluo.
+
 ### 2.14 Lingue per classe (mappa da ricordare — chiesta da Nicola)
 0. **Ogni classe ha le SUE lingue.** Prima di produrre materiale per gli allievi,
    controllo questa mappa; **nel dubbio, CHIEDO a Nicola** (non tiro a indovinare):
