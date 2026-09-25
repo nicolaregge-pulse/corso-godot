@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Git — mini dispensa</title>
+<style>
+@page{size:A4;margin:16mm 15mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.5;margin:0;}
+.cover{height:250mm;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;page-break-after:always;background:linear-gradient(160deg,#eef4fb,#f0ecfb);}
+.cover h1{font-size:30pt;color:#12467a;margin:4px 0;}
+.cover .t{font-size:13pt;color:#444;}
+.cover .s{font-size:11pt;color:#6a4ca8;max-width:120mm;margin-top:18px;}
+h2{font-size:15pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1.5mm;margin:6mm 0 2.5mm;page-break-after:avoid;}
+h3{font-size:12pt;color:#1b3a5c;margin:4mm 0 1mm;page-break-after:avoid;}
+ol,ul{margin:0 0 2.5mm;padding-left:6mm;}li{margin:1.5mm 0;}
+.sec{}
+.box{background:#eaf3fb;border-left:5px solid #2b7cc4;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
+.warn{background:#fbecec;border-left:5px solid #cf3b3b;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
+.note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.4pt;}
+.addr,.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.6pt;}
+.fig{text-align:center;margin:3mm 0;page-break-inside:avoid;}
+.cap{font-size:9pt;color:#5a6b7b;}
+table{border-collapse:collapse;width:100%;font-size:10pt;margin:2mm 0;}
+th,td{border:1px solid #b9c8d6;padding:2mm 2.5mm;text-align:left;vertical-align:top;}
+th{background:#eaf2fb;color:#12467a;}
+.idx{font-size:11.5pt;line-height:1.9;}
+.idx b{color:#12467a;}
+.uc{background:#f5f7fa;border:1px solid #d6e0ea;border-radius:5px;padding:2mm 3mm 3mm;margin:3mm 0;page-break-inside:avoid;}
+.uc h3{margin-top:1mm;}
+</style></head><body>
+
+<div class="cover">
+<div class="t">Mini dispensa</div>
+<h1>Git</h1>
+<div class="t">cos'è, la storia, i servizi, il versioning e i casi d'uso</div>
+<div class="s">Git è lo strumento che tiene la <b>storia</b> di un progetto: puoi tornare indietro nel tempo, sapere chi ha cambiato cosa e lavorare in gruppo senza rovinare il lavoro degli altri. Classe 3 · Informatica.</div>
+</div>
+
+<h2>Argomenti</h2>
+<div class="idx">
+<b>1.</b> Il problema che Git risolve · cos'è<br>
+<b>2.</b> La storia di Git (chi l'ha inventato e perché)<br>
+<b>3.</b> "L'azienda Git": Git, GitHub e chi ci sta dietro<br>
+<b>4.</b> Quali servizi dà Git (e GitHub)<br>
+<b>5.</b> I concetti base e la logica (come "ragiona" Git)<br>
+<b>6.</b> Branch e merge<br>
+<b>7.</b> Git e GitHub — il flusso di lavoro (push, pull, Pull Request)<br>
+<b>8.</b> Il versioning: cos'è e <b>come si fa</b>, passo per passo<br>
+<b>9.</b> Casi d'uso con esempi di grafi<br>
+<b>10.</b> Glossario
+</div>
+
+<h2 class="sec">1. Il problema che Git risolve</h2>
+<p>Immagina di scrivere un programma (o una tesi) e di salvare i file così:</p>
+<div class="warn"><b class="lbl">progetto_finale.doc</b> · <b class="lbl">progetto_finale_v2.doc</b> · <b class="lbl">progetto_DEFINITIVO.doc</b> · <b class="lbl">progetto_DEFINITIVO_vero_QUESTO.doc</b></div>
+<ol>
+<li>Non sai più <b>qual è l'ultima versione</b> né <b>cosa è cambiato</b> tra una e l'altra.</li>
+<li>Se cancelli qualcosa per sbaglio, <b>non torni indietro</b>.</li>
+<li>Se siete in due a modificare lo stesso file, uno <b>sovrascrive</b> il lavoro dell'altro.</li>
+</ol>
+<p><b>Git risolve tutto questo:</b> tiene <b>una sola cartella</b> con dentro <b>tutta la storia</b> delle modifiche. In ogni momento puoi vedere com'era il progetto ieri, la settimana scorsa, un mese fa — e tornarci.</p>
+<div class="box"><b>In una frase:</b> Git è un <b>sistema di controllo di versione</b> (<i>version control</i>): registra ogni modifica ai file e ti lascia navigare avanti e indietro nel tempo del progetto.</div>
+
+<h2 class="sec">2. La storia di Git</h2>
+<p>Git non è nato in un'azienda: è nato per <b>necessità</b>, da un problema molto concreto.</p>
+<ol>
+<li><b>2005.</b> Lo crea <b>Linus Torvalds</b> — lo stesso che aveva creato <b>Linux</b> (il sistema operativo). Gli serviva uno strumento per gestire il codice del <b>kernel Linux</b>, a cui lavoravano <b>migliaia di programmatori</b> sparsi nel mondo.</li>
+<li><b>Perché proprio allora.</b> Fino a quel momento usavano un programma di un'altra azienda (BitKeeper) che a un certo punto non poterono più usare gratis. Invece di arrendersi, Torvalds <b>ne scrisse uno nuovo in pochi giorni</b>.</li>
+<li><b>Gli obiettivi</b> erano chiari: doveva essere <b>veloce</b>, <b>affidabile</b> (non perdere mai i dati) e capace di gestire <b>tanti rami di lavoro in parallelo</b>.</li>
+<li><b>Oggi.</b> Git è diventato lo <b>standard mondiale</b>: lo usano dalle piccole scuole alle più grandi aziende di software del pianeta.</li>
+</ol>
+<div class="box"><b>Curiosità sul nome:</b> in inglese britannico "git" è una parola scherzosa per dire "testa dura / persona antipatica". Torvalds disse ridendo di aver chiamato così i suoi progetti (prima Linux, poi Git) "come se stesse dando un nome a sé stesso".</div>
+<div class="note"><b>Da ricordare:</b> Git è <b>gratuito</b> e <b>open source</b> — il suo codice è pubblico e chiunque può leggerlo, usarlo e migliorarlo. Nessuno "possiede" Git.</div>
+
+<h2 class="sec">3. "L'azienda Git": Git, GitHub e chi ci sta dietro</h2>
+<p>Qui c'è un punto che confonde tutti all'inizio, quindi mettiamolo in chiaro: <b>Git</b> e <b>GitHub</b> sono <b>due cose diverse</b>.</p>
+<table>
+<tr><th>&nbsp;</th><th>Git</th><th>GitHub</th></tr>
+<tr><td><b>Cos'è</b></td><td>Lo <b>strumento</b> (il programma / il metodo) che tiene la storia.</td><td>Un <b>sito web</b> che <b>ospita online</b> i progetti gestiti con Git.</td></tr>
+<tr><td><b>Chi c'è dietro</b></td><td><b>Nessuna azienda</b>: è open source, nato da Linus Torvalds e portato avanti da una comunità di volontari.</td><td>È un'<b>azienda</b> vera e propria (<b>GitHub, Inc.</b>), fondata nel 2008 e dal 2018 di proprietà di <b>Microsoft</b>.</td></tr>
+<tr><td><b>Dove sta</b></td><td>Sul tuo computer (o come concetto).</td><td>Su Internet (i tuoi progetti "nel cloud").</td></tr>
+</table>
+<div class="box"><b>Analogia:</b> Git è come il <b>motore</b> di un'automobile (la tecnologia che fa funzionare tutto); GitHub è come un <b>grande garage/parcheggio online</b> dove tieni le tue auto, le mostri agli altri e ci lavorate insieme. Puoi usare il motore anche senza quel garage — ma il garage lo rende comodo.</div>
+<p>GitHub <b>non è l'unico</b> garage: esistono anche <b>GitLab</b> e <b>Bitbucket</b>, che fanno una cosa simile. Noi useremo <b>GitHub</b> perché è il più diffuso.</p>
+
+<h2 class="sec">4. Quali servizi dà Git (e GitHub)</h2>
+<p>Mettendo insieme lo strumento (Git) e il sito (GitHub), ecco cosa ottieni:</p>
+<table>
+<tr><th>Servizio</th><th>A cosa serve</th></tr>
+<tr><td><b>Storia completa</b></td><td>Ogni modifica è registrata: puoi tornare a qualsiasi versione passata.</td></tr>
+<tr><td><b>Ritorno indietro</b></td><td>Hai rotto qualcosa? Torni all'ultima versione che funzionava, senza panico.</td></tr>
+<tr><td><b>Lavoro in parallelo (branch)</b></td><td>Provi idee nuove su un ramo separato senza toccare la versione buona.</td></tr>
+<tr><td><b>Collaborazione</b></td><td>Più persone lavorano sullo stesso progetto; Git unisce i contributi in modo ordinato.</td></tr>
+<tr><td><b>Copia di sicurezza (backup)</b></td><td>Il progetto è anche online: se si rompe il PC, non perdi niente.</td></tr>
+<tr><td><b>Chi ha fatto cosa</b></td><td>Per ogni riga si sa chi l'ha scritta e quando (utile nei gruppi).</td></tr>
+<tr><td><b>Versioni pubblicate (Release)</b></td><td>Pubblichi una versione "ufficiale" e stabile del tuo lavoro (es. <span class="lbl">v1.0</span>).</td></tr>
+<tr><td><b>Sito gratis (GitHub Pages)</b></td><td>GitHub può pubblicare online una pagina o un sito direttamente dal tuo progetto.</td></tr>
+</table>
+
+<h2 class="sec">5. I concetti base e la logica</h2>
+<h3>Repository (repo)</h3>
+<p>È la <b>cartella-progetto</b> gestita da Git: contiene i file <b>e la loro storia completa</b>. Creare un repository = dire a Git "da qui in poi tieni la storia di questa cartella".</p>
+<h3>Commit</h3>
+<p>Un <b>commit</b> è una <b>fotografia</b> salvata del progetto in un certo momento, con un <b>messaggio</b> che spiega cosa hai cambiato (es. <i>"aggiunto il menu iniziale"</i>).</p>
+<div class="fig"><svg width="470" height="60" viewBox="0 0 470 60" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="28" x2="440" y2="28" stroke="#2b7cc4" stroke-width="2"/>
+<g fill="#2b7cc4"><circle cx="60" cy="28" r="6"/><circle cx="180" cy="28" r="6"/><circle cx="300" cy="28" r="6"/><circle cx="420" cy="28" r="6"/></g>
+<g text-anchor="middle" fill="#333"><text x="60" y="48">"menu"</text><text x="180" y="48">"punteggio"</text><text x="300" y="48">"grafica"</text><text x="420" y="48">"audio"</text></g>
+</svg><div class="cap">Una catena di commit: ognuno è un salvataggio con messaggio. Puoi tornare a qualsiasi punto.</div></div>
+<h3>La logica: come "ragiona" Git</h3>
+<p>Capire questa parte rende tutto il resto facile:</p>
+<ol>
+<li><b>Git salva fotografie, non differenze.</b> Ogni commit è lo stato dell'intero progetto in quel momento (come una foto). Non devi ricostruire niente: la foto c'è già.</li>
+<li><b>Ogni commit "punta" a quello prima di lui.</b> È come una <b>catena</b>: ogni anello sa qual è l'anello precedente. Seguendo la catena all'indietro, Git ricostruisce tutta la storia.</li>
+<li><b>Da qui nascono i rami.</b> Se da un anello partono <b>due strade</b>, hai due rami (branch) che vanno avanti in parallelo. Quando li riunisci, fai un <b>merge</b>.</li>
+<li><b>Niente si perde.</b> Un commit fatto resta lì: anche se cambi idea, la vecchia strada esiste ancora e ci puoi tornare.</li>
+</ol>
+<div class="box"><b>In parole semplici:</b> pensa alla storia del progetto come a una <b>metropolitana</b>. Ogni fermata è un commit. Di solito vai dritto, ma a volte parte una <b>linea nuova</b> (branch) che poi può <b>ricongiungersi</b> (merge). La mappa completa non si cancella mai.</div>
+
+<h2 class="sec">6. Branch e merge</h2>
+<p>Il <b>branch</b> (ramo) è una <b>linea di lavoro parallela</b>. Serve per provare una funzione nuova o correggere un bug <b>senza toccare</b> la versione stabile (il ramo principale, <span class="lbl">main</span>). Quando la cosa funziona, si <b>unisce</b> al main con un <b>merge</b>.</p>
+<div class="fig"><svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="60" x2="460" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="60" r="6"/><circle cx="240" cy="60" r="6"/><circle cx="420" cy="60" r="6"/></g>
+<text x="20" y="55" fill="#12467a" font-weight="bold">main</text>
+<path d="M60 60 C120 20 150 20 240 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="150" cy="27" r="5" fill="#cf3b3b"/><text x="150" y="18" text-anchor="middle" fill="#cf3b3b">bugfix</text>
+<path d="M240 60 C300 105 360 105 420 60" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<circle cx="330" cy="97" r="5" fill="#2f9e57"/><text x="330" y="112" text-anchor="middle" fill="#2f7d47">nuova funzione</text>
+</svg><div class="cap">Rami che partono dal main, lavorano a parte e poi si fondono di nuovo nel main.</div></div>
+<div class="box"><b>Perché è potente:</b> più persone (o più idee) vanno avanti <b>in parallelo</b>; il main resta sempre funzionante finché non si decide di unire.</div>
+
+<h2 class="sec">7. Git e GitHub — il flusso di lavoro</h2>
+<h3>Il giro tipico</h3>
+<ol>
+<li><b>clone</b>: scarichi il repository dal sito sul tuo computer (la prima volta).</li>
+<li><b>modifichi</b> i file e li salvi normalmente.</li>
+<li><b>commit</b>: fotografi le modifiche con un messaggio.</li>
+<li><b>push</b>: mandi i tuoi commit <b>online</b> (su GitHub).</li>
+<li><b>pull</b>: scarichi le modifiche fatte dagli altri per restare aggiornato.</li>
+</ol>
+<div class="fig"><svg width="470" height="70" viewBox="0 0 470 70" xmlns="http://www.w3.org/2000/svg" font-family="Liberation Sans,Arial" font-size="9">
+<rect x="20" y="24" width="120" height="26" rx="5" fill="#e5f5ea" stroke="#2f9e57"/><text x="80" y="41" text-anchor="middle" fill="#1f6e43">Il tuo computer</text>
+<rect x="330" y="24" width="120" height="26" rx="5" fill="#eaf3fb" stroke="#2b7cc4"/><text x="390" y="41" text-anchor="middle" fill="#12467a">GitHub (online)</text>
+<line x1="145" y1="31" x2="325" y2="31" stroke="#2b7cc4" stroke-width="1.6" marker-end="url(#a)"/><text x="235" y="26" text-anchor="middle" fill="#2b7cc4">push →</text>
+<line x1="325" y1="44" x2="145" y2="44" stroke="#2f9e57" stroke-width="1.6" marker-end="url(#b)"/><text x="235" y="57" text-anchor="middle" fill="#2f7d47">← pull</text>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2b7cc4"/></marker>
+<marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2f9e57"/></marker></defs>
+</svg></div>
+<h3>Pull Request (PR)</h3>
+<p>Su GitHub, quando vuoi <b>proporre</b> di unire il tuo ramo al progetto, apri una <b>Pull Request</b>: gli altri la <b>guardano</b>, commentano, e se va bene si fa il <b>merge</b>. È il modo con cui i team lavorano insieme in modo ordinato: prima si guarda, poi si unisce.</p>
+<div class="note"><b>Noi useremo tutto dal browser</b> (dal sito GitHub, cliccando): niente comandi da digitare. I nomi <span class="lbl">commit</span>, <span class="lbl">push</span>, <span class="lbl">merge</span> restano gli stessi, ma li fai con i bottoni.</div>
+
+<h2 class="sec">8. Il versioning: cos'è e come si fa</h2>
+<p>Quando un progetto raggiunge un punto "buono", gli si dà un <b>numero di versione</b>. Lo standard più usato al mondo si chiama <b>versionamento semantico</b> e ha la forma <b class="lbl">vX.Y.Z</b>:</p>
+<table>
+<tr><th>Cifra</th><th>Nome</th><th>Quando aumenta</th></tr>
+<tr><td><b>X</b></td><td>major</td><td>Cambiamento <b>grosso</b>, spesso incompatibile col passato (es. tutto rifatto).</td></tr>
+<tr><td><b>Y</b></td><td>minor</td><td><b>Nuova funzione</b>, ma le cose vecchie funzionano ancora.</td></tr>
+<tr><td><b>Z</b></td><td>patch</td><td>Solo <b>correzioni</b> di bug, niente di nuovo.</td></tr>
+</table>
+<div class="box"><b>Esempio (un gioco):</b> <b class="lbl">v1.0.0</b> giocabile → <b class="lbl">v1.1.0</b> (aggiungi i suoni) → <b class="lbl">v1.1.1</b> (correggi un bug) → <b class="lbl">v2.0.0</b> (nuovo motore, tutto diverso).</div>
+<h3>Come si fa, passo per passo</h3>
+<ol>
+<li><b>Lavori</b> normalmente e fai i tuoi <b>commit</b> (i salvataggi con messaggio).</li>
+<li>Quando il progetto è <b>pronto e provato</b>, decidi il numero: parti da <b class="lbl">v1.0.0</b>.</li>
+<li>Metti un <b>tag</b> (un'etichetta) su quel commit con il numero di versione: è come piantare una bandierina che dice "questa è la v1.0.0".</li>
+<li>Su GitHub pubblichi una <b>Release</b>: quella versione diventa <b>ufficiale e "congelata"</b> (non cambia più).</li>
+<li>Continui a lavorare. Alla modifica successiva <b>aumenti (bumpi) il numero</b> secondo la regola sopra: una correzione → cambia la Z; una funzione nuova → cambia la Y; una rivoluzione → cambia la X.</li>
+</ol>
+<div class="warn"><b>Regola d'oro:</b> un numero di versione <b>già pubblicato non si riusa mai</b>. Se cambi anche solo una cosa, prima <b>aumenti il numero</b>, poi pubblichi. Così due versioni diverse non si confondono mai.</div>
+<p class="cap">Per i grafi completi (branch, merge, release in team) vedi la scheda "Versioning — 5 livelli".</p>
+
+<h2 class="sec">9. Casi d'uso con esempi di grafi</h2>
+<p>Ecco alcune situazioni reali. In ogni grafo, ogni <b>pallino</b> è un commit e la <b>linea</b> è il tempo che scorre da sinistra a destra.</p>
+
+<div class="uc">
+<h3>Caso A — Lavoro da solo, dritto per dritto</h3>
+<p>Stai scrivendo un piccolo programma da solo. Salvi passo dopo passo: la storia è una <b>linea diritta</b>.</p>
+<div class="fig"><svg width="440" height="55" viewBox="0 0 440 55" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="25" x2="410" y2="25" stroke="#2b7cc4" stroke-width="2"/>
+<g fill="#2b7cc4"><circle cx="55" cy="25" r="6"/><circle cx="175" cy="25" r="6"/><circle cx="295" cy="25" r="6"/><circle cx="390" cy="25" r="6"/></g>
+<g text-anchor="middle" fill="#333"><text x="55" y="44">inizio</text><text x="175" y="44">funziona</text><text x="295" y="44">migliorie</text><text x="390" y="44">finito</text></g>
+</svg></div>
+</div>
+
+<div class="uc">
+<h3>Caso B — Provo un'idea rischiosa</h3>
+<p>Vuoi provare un'idea che <b>potrebbe non funzionare</b>. Apri un <b>branch</b> a parte: se l'idea è buona la <b>unisci</b> (merge); se è un disastro, <b>butti il ramo</b> e il main resta intatto.</p>
+<div class="fig"><svg width="460" height="105" viewBox="0 0 460 105" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="55" x2="440" y2="55" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="55" r="6"/><circle cx="410" cy="55" r="6"/></g>
+<text x="20" y="50" fill="#12467a" font-weight="bold">main</text>
+<path d="M60 55 C130 18 250 18 320 42" fill="none" stroke="#8d54c9" stroke-width="2"/>
+<g fill="#8d54c9"><circle cx="150" cy="24" r="5"/><circle cx="250" cy="20" r="5"/></g>
+<text x="200" y="12" text-anchor="middle" fill="#7a3fb8">idea nuova (branch)</text>
+<path d="M320 42 C360 55 385 55 410 55" fill="none" stroke="#2f9e57" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="360" y="80" text-anchor="middle" fill="#2f7d47">merge (se funziona)</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h3>Caso C — Bug urgente mentre sto sviluppando</h3>
+<p>Stai lavorando a una funzione lunga, ma esce un <b>bug grave</b> nella versione pubblicata. Apri un ramo <b>hotfix</b> veloce, lo correggi, lo unisci subito al main — e poi torni tranquillo alla tua funzione.</p>
+<div class="fig"><svg width="460" height="115" viewBox="0 0 460 115" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="60" x2="440" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="60" r="6"/><circle cx="250" cy="60" r="6"/><circle cx="410" cy="60" r="6"/></g>
+<text x="20" y="55" fill="#12467a" font-weight="bold">main</text>
+<path d="M120 60 C160 26 200 26 250 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="185" cy="27" r="5" fill="#cf3b3b"/><text x="185" y="18" text-anchor="middle" fill="#cf3b3b">hotfix (bug)</text>
+<path d="M60 60 C150 100 300 100 380 78" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<g fill="#2f9e57"><circle cx="220" cy="97" r="5"/><circle cx="330" cy="92" r="5"/></g>
+<text x="240" y="112" text-anchor="middle" fill="#2f7d47">la mia funzione lunga (branch)</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h3>Caso D — Squadra: tanti rami e Pull Request</h3>
+<p>In un progetto di gruppo ognuno lavora sul <b>suo ramo</b> (scena, grafica, movimenti…). Ciascuno apre una <b>Pull Request</b>; il gruppo la controlla e la unisce al main. Il main cresce con i pezzi di tutti.</p>
+<div class="fig"><svg width="460" height="140" viewBox="0 0 460 140" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="70" x2="440" y2="70" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="70" r="6"/><circle cx="240" cy="70" r="6"/><circle cx="360" cy="70" r="6"/><circle cx="420" cy="70" r="6"/></g>
+<text x="20" y="65" fill="#12467a" font-weight="bold">main</text>
+<path d="M60 70 C120 30 170 30 240 70" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="150" cy="34" r="5" fill="#cf3b3b"/><text x="150" y="25" text-anchor="middle" fill="#cf3b3b">grafica (PR)</text>
+<path d="M60 70 C150 118 250 118 360 70" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<circle cx="210" cy="110" r="5" fill="#2f9e57"/><text x="210" y="127" text-anchor="middle" fill="#2f7d47">movimenti (PR)</text>
+<path d="M240 70 C290 40 320 40 360 70" fill="none" stroke="#8d54c9" stroke-width="2"/>
+<circle cx="300" cy="45" r="5" fill="#8d54c9"/><text x="300" y="37" text-anchor="middle" fill="#7a3fb8">audio (PR)</text>
+</svg></div>
+</div>
+
+<div class="uc">
+<h3>Caso E — Le versioni pubblicate (Release)</h3>
+<p>Man mano che il progetto avanza, si pubblicano le <b>Release</b>. Le bandierine sul main segnano le versioni ufficiali che gli utenti (o i compagni) ricevono.</p>
+<div class="fig"><svg width="460" height="80" viewBox="0 0 460 80" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="45" x2="440" y2="45" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="45" r="6"/><circle cx="180" cy="45" r="6"/><circle cx="300" cy="45" r="6"/><circle cx="410" cy="45" r="6"/></g>
+<g stroke="#d0a516" stroke-width="1.5"><line x1="60" y1="45" x2="60" y2="20"/><line x1="180" y1="45" x2="180" y2="20"/><line x1="300" y1="45" x2="300" y2="20"/><line x1="410" y1="45" x2="410" y2="20"/></g>
+<g fill="#d0a516"><rect x="60" y="12" width="30" height="11"/><rect x="180" y="12" width="34" height="11"/><rect x="300" y="12" width="34" height="11"/><rect x="410" y="12" width="30" height="11"/></g>
+<g fill="#7a5b00" text-anchor="start" font-size="7.5"><text x="63" y="21">v1.0</text><text x="183" y="21">v1.1</text><text x="303" y="21">v1.2</text><text x="413" y="21">v2.0</text></g>
+<g text-anchor="middle" fill="#333"><text x="120" y="64">+ suoni</text><text x="240" y="64">+ livelli</text><text x="360" y="64">tutto nuovo</text></g>
+</svg></div>
+</div>
+
+<h2 class="sec">10. Glossario</h2>
+<table>
+<tr><th>Termine</th><th>Significato</th></tr>
+<tr><td class="lbl">Git</td><td>lo strumento (open source) che tiene la storia di un progetto</td></tr>
+<tr><td class="lbl">GitHub</td><td>il sito (azienda di Microsoft) che ospita i progetti Git online</td></tr>
+<tr><td class="lbl">repository</td><td>la cartella-progetto con tutta la storia</td></tr>
+<tr><td class="lbl">commit</td><td>un salvataggio (fotografia) con un messaggio</td></tr>
+<tr><td class="lbl">branch</td><td>una linea di lavoro parallela (ramo)</td></tr>
+<tr><td class="lbl">merge</td><td>unire un branch a un altro</td></tr>
+<tr><td class="lbl">clone</td><td>scaricare un repository sul proprio computer la prima volta</td></tr>
+<tr><td class="lbl">push / pull</td><td>mandare / scaricare i commit da/verso GitHub</td></tr>
+<tr><td class="lbl">Pull Request</td><td>proposta di merge, da revisionare prima di unire</td></tr>
+<tr><td class="lbl">tag / Release</td><td>una versione pubblicata e "congelata"</td></tr>
+<tr><td class="lbl">versioning</td><td>dare un numero (vX.Y.Z) alle versioni del progetto</td></tr>
+<tr><td class="lbl">open source</td><td>codice pubblico, che tutti possono vedere e usare</td></tr>
+</table>
+
+</body></html>
