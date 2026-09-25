@@ -194,7 +194,16 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
    "sciolti": così Nicola li rimette nell'albero con un clic.
 7. Vale da qui in poi; i file già dentro le loro cartelle non vanno rinominati.
 
-### 2.14 Classe 1: il materiale è SEMPRE trilingue (IT · AR · ZH)
+### 2.14 Lingue per classe (mappa da ricordare — chiesta da Nicola)
+0. **Ogni classe ha le SUE lingue.** Prima di produrre materiale per gli allievi,
+   controllo questa mappa; **nel dubbio, CHIEDO a Nicola** (non tiro a indovinare):
+   1. **Classe 1** → **trilingue: italiano · arabo · cinese semplificato** (IT/AR/ZH).
+   2. **Classe 2** → *da confermare con Nicola*.
+   3. **Classe 3 (terza)** → **italiano + bangla** (IT/BN) (confermato 25/09/2026).
+      Nota: singoli documenti possono essere solo-IT se Nicola lo chiede
+      esplicitamente (es. la *Dispensa Git* del 25/09 richiesta "solo italiano").
+   4. **Classe 4** → **solo italiano** (confermato 25/09/2026).
+   5. I materiali **interni del docente** restano sempre in **italiano** a prescindere.
 1. In **Classe 1** ogni materiale **destinato agli allievi** (schede, esercizi,
    guide, consegne, appunti) si produce **sempre** nelle **3 lingue** del gruppo:
    **italiano, arabo, cinese semplificato**. Non è un "quando serve": è la regola.
