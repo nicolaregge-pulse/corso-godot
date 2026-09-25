@@ -23,7 +23,7 @@ ragazzi (quelle stanno nei materiali di classe, es. `classe-1/regole-classe/`).*
 3. **Versione.** **Bump a ogni modifica**; mai riusare un numero; nome file e
    intestazione devono coincidere. *(§2.15)*
 4. **Controllo pre-invio.** Nessun file esce senza i controlli della sezione B.
-5. **File per il docente = SENZA password.** Le protezioni valgono solo per i
+5. **TUTTI i documenti per il docente = SENZA password.** Le protezioni valgono solo per i
    file destinati agli allievi. *(§2.11, §2.20)*
 6. **Esempi eterogenei + termini spiegati.** Non file di grafi uguali: esempi da
    mondi diversi; ogni termine tecnico spiegato con un'analogia. *(§2.25)*
