@@ -357,3 +357,19 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
 17. **v0.1 (21/09/2026)**: primo file delle convenzioni nostre; definita la
    sigla PPP nella versione precisa ("non dare output finché non dici avanti,
    ma inizia a preparare") e distinta dalle regole per i ragazzi.
+
+### 2.25 Esempi ETEROGENEI + spiegare SEMPRE i termini tecnici (chiesta da Nicola)
+1. **Esempi eterogenei, non ripetitivi.** I ragazzi capiscono per esempi **da
+   mondi diversi**, non da tante varianti della stessa cosa. Errore da non rifare:
+   mettere 5-15 grafi di Git quasi identici. Meglio **pochi esempi ma vari**
+   (app che si aggiorna, versioni di un videogioco, cronologia di Google Documenti,
+   Wikipedia, ricetta migliorata, salvataggi di un gioco…), ciascuno che illumina
+   un concetto da un'angolazione diversa.
+2. **Ogni termine tecnico va spiegato.** Parole come branch, commit, merge,
+   repository, push, pull NON si danno per scontate: alla prima occorrenza si
+   spiegano con **parole semplici + un'analogia**, e si raccolgono in un piccolo
+   **dizionario**. Vale doppio per allievi non italofoni (es. Rafi in 3ª ha detto
+   di non conoscere i termini tecnici).
+3. Conseguenza operativa: nelle dispense, la parte "casi d'uso" non è una fila di
+   grafi uguali, ma un insieme di **situazioni diverse**; i grafi di Git si usano
+   con parsimonia e solo dopo che i termini sono chiari.
