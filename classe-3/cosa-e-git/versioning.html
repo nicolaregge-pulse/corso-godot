@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Versioning — 5 livelli</title>
+<style>
+@font-face{font-family:'NotoBN';src:url('fonts/bn-400.woff2') format('woff2');}
+@font-face{font-family:'NotoBN';font-weight:bold;src:url('fonts/bn-700.woff2') format('woff2');}
+@page{size:A4;margin:14mm 14mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:10.4pt;line-height:1.45;margin:0;}
+h1{font-size:17pt;color:#12467a;margin:0 0 1mm;}
+.sub{color:#5a6b7b;font-size:9.4pt;margin:0 0 3mm;}
+.lev{border:1.5px solid #cfe0f0;border-radius:8px;margin:3mm 0;overflow:hidden;break-inside:avoid;}
+.lev .hd{background:#12467a;color:#fff;padding:2mm 3mm;font-weight:bold;font-size:11.5pt;}
+.lev .bd{padding:2.5mm 3.5mm;}
+.it{margin-bottom:1.5mm;}
+.bn{font-family:'NotoBN',"Liberation Sans",sans-serif;color:#333;background:#f7f4fb;border-left:4px solid #6a4ca8;padding:2mm 3mm;border-radius:3px;}
+.ex{background:#e9f6ee;border-left:4px solid #2f9e57;padding:1.5mm 3mm;border-radius:3px;margin:1.5mm 0;font-size:9.8pt;}
+.bn .ex{background:#eef7f1;}
+b.v{font-family:"DejaVu Sans Mono",monospace;color:#12467a;}
+.fig{text-align:center;margin:2mm 0;}
+.lbl{font-family:"DejaVu Sans Mono",monospace;}
+</style></head><body>
+
+<h1>Il Versioning — 5 livelli · ভার্সনিং — ৫টি স্তর</h1>
+<p class="sub">Classe 3 · Informatica · dalla versione singola fino a branch, merge e release in team · bilingue IT / বাংলা</p>
+
+<div class="lev"><div class="hd">Livello 1 · স্তর ১ — La versione (il numero)</div><div class="bd">
+<div class="it">Ogni salvataggio importante prende un <b>numero</b>: <b class="v">v1.0</b>. Se lo correggi diventa <b class="v">v1.1</b>. Il numero dice <b>a che punto sei</b>.</div>
+<div class="ex"><b>Esempio:</b> consegni un documento → <b class="v">v1.0</b>; lo sistemi → <b class="v">v1.1</b>.</div>
+<div class="bn">প্রতিটি গুরুত্বপূর্ণ সেভের একটি <b>নম্বর</b> থাকে: <b class="v">v1.0</b>। ঠিক করলে হয় <b class="v">v1.1</b>। নম্বর বলে দেয় তুমি <b>কোন পর্যায়ে</b> আছ।<div class="ex"><b>উদাহরণ:</b> একটি ডকুমেন্ট জমা দিলে → <b class="v">v1.0</b>; ঠিক করলে → <b class="v">v1.1</b>।</div></div>
+</div></div>
+
+<div class="lev"><div class="hd">Livello 2 · স্তর ২ — Major . minor . patch</div><div class="bd">
+<div class="it"><b class="v">vX.Y.Z</b>: <b>X</b> = cambiamento grosso (incompatibile), <b>Y</b> = nuova funzione, <b>Z</b> = correzione (bug).</div>
+<div class="ex"><b>Esempio (un gioco):</b> <b class="v">v1.0.0</b> giocabile → <b class="v">v1.1.0</b> (aggiungi i suoni) → <b class="v">v1.1.1</b> (correggi un bug) → <b class="v">v2.0.0</b> (nuovo motore, tutto cambiato).</div>
+<div class="bn"><b class="v">vX.Y.Z</b>: <b>X</b> = বড় পরিবর্তন, <b>Y</b> = নতুন ফিচার, <b>Z</b> = বাগ ঠিক করা।<div class="ex"><b>উদাহরণ (একটি গেম):</b> <b class="v">v1.0.0</b> (খেলা যায়) → <b class="v">v1.1.0</b> (সাউন্ড) → <b class="v">v1.1.1</b> (বাগ ঠিক) → <b class="v">v2.0.0</b> (নতুন ইঞ্জিন)।</div></div>
+</div></div>
+
+<div class="lev"><div class="hd">Livello 3 · স্তর ৩ — La storia dei commit</div><div class="bd">
+<div class="it">Non conta solo il numero finale: ogni modifica è un <b>commit</b> con un <b>messaggio</b>, in sequenza. Puoi <b>tornare a qualsiasi punto</b>.</div>
+<div class="fig"><svg width="470" height="60" viewBox="0 0 470 60" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="30" x2="440" y2="30" stroke="#2b7cc4" stroke-width="2"/>
+<g fill="#2b7cc4"><circle cx="60" cy="30" r="6"/><circle cx="180" cy="30" r="6"/><circle cx="300" cy="30" r="6"/><circle cx="420" cy="30" r="6"/></g>
+<g text-anchor="middle" fill="#333"><text x="60" y="50">"menu"</text><text x="180" y="50">"punteggio"</text><text x="300" y="50">"grafica"</text><text x="420" y="50">"audio"</text></g>
+<text x="30" y="18" fill="#5a6b7b">passato →</text><text x="440" y="18" text-anchor="end" fill="#5a6b7b">oggi</text>
+</svg></div>
+<div class="bn">শুধু শেষ নম্বর নয়: প্রতিটি পরিবর্তন হলো বার্তাসহ একটি <b>commit</b>, ক্রমানুসারে। তুমি <b>যেকোনো বিন্দুতে ফিরে</b> যেতে পারো। (উপরের চেইনটি দেখো: "মেনু" → "স্কোর" → "গ্রাফিক্স" → "অডিও"।)</div>
+</div></div>
+
+<div class="lev"><div class="hd">Livello 4 · স্তর ৪ — Branch e merge (linee parallele)</div><div class="bd">
+<div class="it">Mentre il <span class="lbl">main</span> (stabile) va avanti, apri un <b>branch</b> per una funzione o un bugfix <b>senza rompere</b> il main; poi lo <b>unisci</b> (<b>merge</b>).</div>
+<div class="fig"><svg width="480" height="120" viewBox="0 0 480 120" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<!-- main -->
+<line x1="30" y1="60" x2="460" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="60" cy="60" r="6"/><circle cx="240" cy="60" r="6"/><circle cx="420" cy="60" r="6"/></g>
+<text x="60" y="76" text-anchor="middle" fill="#12467a">v1.0</text>
+<text x="240" y="76" text-anchor="middle" fill="#12467a">v1.0.1</text>
+<text x="420" y="76" text-anchor="middle" fill="#12467a">v1.1</text>
+<text x="20" y="55" fill="#12467a" font-weight="bold">main</text>
+<!-- hotfix up -->
+<path d="M60 60 C120 20 150 20 240 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="150" cy="27" r="5" fill="#cf3b3b"/><text x="150" y="18" text-anchor="middle" fill="#cf3b3b">hotfix</text>
+<!-- audio down -->
+<path d="M240 60 C300 105 360 105 420 60" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<circle cx="330" cy="97" r="5" fill="#2f9e57"/><text x="330" y="112" text-anchor="middle" fill="#2f7d47">audio</text>
+</svg></div>
+<div class="ex"><b>Esempio:</b> <span class="lbl">main</span> a <b class="v">v1.0</b>; il branch <b style="color:#cf3b3b">hotfix</b> corregge un bug e si fonde subito (<b class="v">v1.0.1</b>); il branch <b style="color:#2f7d47">audio</b> aggiunge i suoni e si fonde dopo (<b class="v">v1.1</b>).</div>
+<div class="bn"><span class="lbl">main</span> (স্থিতিশীল) চলার সময়, main <b>নষ্ট না করে</b> একটি ফিচার/বাগফিক্সের জন্য একটি <b>branch</b> খোলো; পরে <b>merge</b> করো।<div class="ex"><b>উদাহরণ:</b> <span class="lbl">main</span> <b class="v">v1.0</b>-এ; <b style="color:#cf3b3b">hotfix</b> branch বাগ ঠিক করে সাথে সাথে merge (<b class="v">v1.0.1</b>); <b style="color:#2f7d47">audio</b> branch পরে merge (<b class="v">v1.1</b>)।</div></div>
+</div></div>
+
+<div class="lev"><div class="hd">Livello 5 · স্তর ৫ — Release, tag e collaborazione (in team)</div><div class="bd">
+<div class="it">Più persone lavorano insieme: <b>ognuno sul suo branch</b> → <b>Pull Request</b> (proposta) → <b>revisione</b> → <b>merge</b> → si <b>tagga una Release</b> (es. <b class="v">v2.0</b>).</div>
+<div class="fig"><svg width="480" height="150" viewBox="0 0 480 150" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="30" y1="75" x2="450" y2="75" stroke="#2b7cc4" stroke-width="2.5"/>
+<circle cx="55" cy="75" r="6" fill="#2b7cc4"/><text x="55" y="92" text-anchor="middle" fill="#12467a">v1.0</text>
+<text x="18" y="70" fill="#12467a" font-weight="bold">main</text>
+<!-- 3 branches converging via PR into release -->
+<path d="M55 75 C130 25 260 25 390 75" fill="none" stroke="#cf3b3b" stroke-width="1.8"/>
+<circle cx="200" cy="33" r="4.5" fill="#cf3b3b"/><text x="200" y="25" text-anchor="middle" fill="#cf3b3b">livelli (PR)</text>
+<path d="M55 75 C150 55 260 55 390 75" fill="none" stroke="#e08a1e" stroke-width="1.8"/>
+<circle cx="210" cy="58" r="4.5" fill="#e08a1e"/><text x="210" y="52" text-anchor="middle" fill="#c0700a">audio (PR)</text>
+<path d="M55 75 C150 120 260 120 390 75" fill="none" stroke="#2f9e57" stroke-width="1.8"/>
+<circle cx="205" cy="118" r="4.5" fill="#2f9e57"/><text x="205" y="132" text-anchor="middle" fill="#2f7d47">bugfix (PR)</text>
+<!-- release tag -->
+<circle cx="390" cy="75" r="7" fill="#12467a"/><rect x="405" y="66" width="60" height="18" rx="3" fill="#12467a"/><text x="435" y="79" text-anchor="middle" fill="#fff">Release v2.0</text>
+</svg></div>
+<div class="ex"><b>Esempio:</b> un team di 3 sul gioco — uno fa i <b>livelli</b>, uno l'<b>audio</b>, uno i <b>bug</b>; ognuno apre una <b>Pull Request</b>, si controlla e si fa <b>merge</b>; alla fine si pubblica la <b>Release <b class="v">v2.0</b> "multiplayer"</b>.</div>
+<div class="bn">একাধিক ব্যক্তি একসাথে কাজ করে: <b>প্রত্যেকে নিজের branch-এ</b> → <b>Pull Request</b> → <b>রিভিউ</b> → <b>merge</b> → একটি <b>Release</b> ট্যাগ করা হয় (যেমন <b class="v">v2.0</b>)।<div class="ex"><b>উদাহরণ:</b> গেমে ৩ জনের দল — একজন <b>লেভেল</b>, একজন <b>অডিও</b>, একজন <b>বাগ</b>; প্রত্যেকে একটি <b>Pull Request</b> খোলে, রিভিউ করে <b>merge</b> হয়; শেষে <b>Release <b class="v">v2.0</b> "মাল্টিপ্লেয়ার"</b> প্রকাশ করা হয়।</div></div>
+</div></div>
+
+</body></html>
