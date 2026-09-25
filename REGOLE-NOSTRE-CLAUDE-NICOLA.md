@@ -370,6 +370,10 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
    spiegano con **parole semplici + un'analogia**, e si raccolgono in un piccolo
    **dizionario**. Vale doppio per allievi non italofoni (es. Rafi in 3ª ha detto
    di non conoscere i termini tecnici).
+2b. **Il glossario/dizionario dei termini va in TUTTE le lingue presenti nella
+   classe** (non solo italiano): cosi ogni allievo ritrova il termine nella sua
+   lingua. Es.: Classe 1 -> IT/AR/ZH; Classe 3 -> IT + bangla (per Rafi);
+   Classe 2 e 4 -> italiano + le eventuali lingue dei non italofoni presenti.
 3. Conseguenza operativa: nelle dispense, la parte "casi d'uso" non è una fila di
    grafi uguali, ma un insieme di **situazioni diverse**; i grafi di Git si usano
    con parsimonia e solo dopo che i termini sono chiari.
