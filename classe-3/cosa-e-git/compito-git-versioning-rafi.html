@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>Compito — Git e Versioning</title>
+<style>
+@font-face{font-family:'NotoBN';src:url('fonts/bn-400.woff2') format('woff2');}
+@font-face{font-family:'NotoBN';font-weight:bold;src:url('fonts/bn-700.woff2') format('woff2');}
+@page{size:A4;margin:16mm 15mm;}*{box-sizing:border-box;}
+body{font-family:"Liberation Sans",Arial,sans-serif;color:#1a1a1a;font-size:11pt;line-height:1.5;margin:0;}
+h1{font-size:18pt;color:#12467a;margin:0 0 1mm;}
+.sub{color:#5a6b7b;font-size:9.6pt;margin:0 0 3mm;}
+.it h2{font-size:13pt;color:#12467a;border-bottom:2px solid #cfe0f0;padding-bottom:1mm;margin:5mm 0 2mm;page-break-after:avoid;}
+.bn{font-family:'NotoBN',"Liberation Sans",sans-serif;page-break-before:always;}
+.bn h2{font-size:13pt;color:#2f7d47;border-bottom:2px solid #cdecd8;padding-bottom:1mm;margin:5mm 0 2mm;page-break-after:avoid;}
+h3{font-size:11.5pt;color:#1b3a5c;margin:4mm 0 1mm;page-break-after:avoid;}
+.bn h3{color:#256b3d;}
+ol{margin:0 0 2mm;padding-left:6mm;}li{margin:1.8mm 0;}
+.addr,.lbl{font-family:"DejaVu Sans Mono",monospace;background:#eef3f8;padding:0 4px;border-radius:3px;font-size:9.5pt;}
+.goal{background:#e9f6ee;border-left:5px solid #2f9e57;padding:2.5mm 3mm;border-radius:3px;margin:0 0 3mm;font-size:10.3pt;}
+.note{background:#fdf6e3;border-left:5px solid #d0a516;padding:2.5mm 3mm;border-radius:3px;margin:3mm 0;font-size:10.2pt;}
+.fig{text-align:center;margin:2mm 0 3mm;page-break-inside:avoid;}
+.cap{font-size:9pt;color:#5a6b7b;}
+</style></head><body>
+
+<h1>Compito: Git e Versioning · কাজ: গিট ও ভার্সনিং</h1>
+<p class="sub">Classe 3 · Informatica · v1.2 (Rafi) · si scrive in Google Documenti e si consegna su Google Classroom · bilingue IT / বাংলা</p>
+
+<div class="it">
+<div class="goal"><b>Obiettivo:</b> dimostrare che hai capito <b>cos'è Git</b> e <b>come funzionano le versioni</b>, con parole tue. Conta la comprensione, non le frasi perfette.</div>
+
+<div class="note"><b>Ripasso lampo (prima di rispondere)</b>
+<ol style="margin-top:1mm">
+<li><b>Git</b> = la "macchina del tempo" del progetto: salva le modifiche (i <b>commit</b>) e ti fa tornare indietro.</li>
+<li><b>Git</b> è lo strumento; <b>GitHub</b> è il sito-servizio dove tieni il progetto online. GitHub è una <b>piattaforma (PaaS)</b>, della famiglia dei servizi <b>…aaS</b> (IaaS, PaaS, SaaS), e si paga in <b>Freemium</b> (base gratis, extra a pagamento).</li>
+<li><b>repository</b> = la cartella-progetto con la storia · <b>branch</b> = una strada parallela per provare · <b>merge</b> = unirla di nuovo al ramo principale.</li>
+<li><b>Versioning</b>: le versioni si scrivono <span class="lbl">v1.2.3</span> (1 = cambiamento grosso, 2 = funzione nuova, 3 = correzione bug). Una versione pubblicata non si riusa più.</li>
+</ol></div>
+
+<h2>Italiano</h2>
+<p>Apri un documento nuovo: nel browser vai su <span class="addr">docs.new</span> e dai un <b>titolo</b> (es. "Git e Versioning — Nome Cognome"). Rispondi alle tre parti.</p>
+
+<h3>Parte 1 — Git (con parole tue)</h3>
+<ol>
+<li>Cos'è <b>Git</b> e a che <b>problema</b> serve? (2-3 frasi)</li>
+<li>Spiega questi termini con una frase ciascuno: <b>repository</b>, <b>commit</b>, <b>branch</b>, <b>merge</b>.</li>
+<li>Qual è la <b>differenza tra Git e GitHub</b>?</li>
+</ol>
+
+<h3>Parte 2 — Versioning (ragiona)</h3>
+<p>Le versioni si scrivono come <b class="lbl">vX.Y.Z</b> (X = cambiamento grosso, Y = funzione nuova, Z = correzione bug). Un gioco è alla versione <b class="lbl">v1.2.0</b>. Scrivi <b>quale sarà la nuova versione</b> in ciascun caso e <b>perché</b>:</p>
+<ol>
+<li>Correggi un piccolo <b>bug</b>. → nuova versione: ______</li>
+<li>Aggiungi un <b>nuovo livello</b> al gioco (le cose vecchie funzionano ancora). → ______</li>
+<li>Riscrivi <b>tutto da capo</b> con un motore nuovo, incompatibile col vecchio. → ______</li>
+</ol>
+<p>Poi guarda questo grafo e rispondi: <b>quanti branch</b> vedi oltre al main? <b>Quanti merge</b>? A cosa serviva il ramo rosso?</p>
+<div class="fig"><svg width="440" height="115" viewBox="0 0 440 115" xmlns="http://www.w3.org/2000/svg" font-family="DejaVu Sans Mono,monospace" font-size="8">
+<line x1="25" y1="60" x2="415" y2="60" stroke="#2b7cc4" stroke-width="2.5"/>
+<g fill="#2b7cc4"><circle cx="55" cy="60" r="6"/><circle cx="230" cy="60" r="6"/><circle cx="390" cy="60" r="6"/></g>
+<text x="18" y="53" fill="#12467a" font-weight="bold">main</text>
+<path d="M110 60 C150 26 190 26 230 60" fill="none" stroke="#cf3b3b" stroke-width="2"/>
+<circle cx="170" cy="27" r="5" fill="#cf3b3b"/><text x="170" y="18" text-anchor="middle" fill="#cf3b3b">correzione bug</text>
+<path d="M55 60 C150 102 300 102 360 78" fill="none" stroke="#2f9e57" stroke-width="2"/>
+<circle cx="210" cy="98" r="5" fill="#2f9e57"/><text x="210" y="113" text-anchor="middle" fill="#2f7d47">nuova funzione</text>
+</svg></div>
+
+<h3>Parte 3 — La tua esperienza</h3>
+<ol>
+<li>Racconta <b>cosa hai fatto oggi</b> con GitHub (es. creare l'account, entrare). Cosa è stato <b>facile</b>, cosa <b>difficile</b>?</li>
+<li>Fai un <b>esempio tuo</b>, non del gioco: in quale altra situazione (una tesina, delle foto, un progetto) sarebbe utile avere la "storia delle versioni"?</li>
+</ol>
+<p>Quando hai finito, <b>consegna</b> il documento su <b>Classroom</b>.</p>
+<div class="note"><b>Nota:</b> puoi usare la dispensa per ripassare, ma le risposte devono essere <b>con parole tue</b>. Conta soprattutto <b>saperlo spiegare a voce</b>.</div>
+</div>
+
+<div class="bn">
+<h2>বাংলা</h2>
+<div class="goal"><b>লক্ষ্য:</b> নিজের ভাষায় দেখাও যে তুমি বুঝেছ <b>Git কী</b> এবং <b>ভার্সন কীভাবে কাজ করে</b>। নিখুঁত বাক্য নয়, বোঝাটাই গুরুত্বপূর্ণ।</div>
+
+<div class="note"><b>ঝটপট ঝালাই (উত্তর দেওয়ার আগে)</b>
+<ol style="margin-top:1mm">
+<li><b>Git</b> = প্রজেক্টের "টাইম মেশিন": পরিবর্তন (<b>commit</b>) সংরক্ষণ করে এবং পেছনে ফিরে যেতে দেয়।</li>
+<li><b>Git</b> হলো টুল; <b>GitHub</b> হলো সেই সাইট-সার্ভিস যেখানে প্রজেক্ট অনলাইনে রাখো। GitHub একটি <b>প্ল্যাটফর্ম (PaaS)</b>, <b>…aaS</b> পরিবারের (IaaS, PaaS, SaaS), এবং <b>Freemium</b> মডেলে চলে (বেসিক ফ্রি, অতিরিক্ত টাকায়)।</li>
+<li><b>repository</b> = ইতিহাসসহ প্রজেক্ট-ফোল্ডার · <b>branch</b> = পরীক্ষা করার সমান্তরাল পথ · <b>merge</b> = আবার মূল শাখায় যুক্ত করা।</li>
+<li><b>Versioning</b>: ভার্সন লেখা হয় <span class="lbl">v1.2.3</span> (১ = বড় পরিবর্তন, ২ = নতুন ফিচার, ৩ = বাগ সংশোধন)। প্রকাশিত ভার্সন আর ব্যবহার করা হয় না।</li>
+</ol></div>
+<p>একটি নতুন ডকুমেন্ট খোলো: ব্রাউজারে <span class="addr">docs.new</span>-এ যাও এবং একটি <b>শিরোনাম</b> দাও (যেমন "Git ও Versioning — নাম ও পদবি")। তিনটি অংশের উত্তর দাও।</p>
+
+<h3>অংশ ১ — Git (নিজের ভাষায়)</h3>
+<ol>
+<li><b>Git</b> কী এবং এটি কোন <b>সমস্যার</b> সমাধান করে? (২-৩ বাক্য)</li>
+<li>প্রতিটি শব্দ এক বাক্যে ব্যাখ্যা করো: <b>repository</b>, <b>commit</b>, <b>branch</b>, <b>merge</b>।</li>
+<li><b>Git ও GitHub-এর পার্থক্য</b> কী?</li>
+</ol>
+
+<h3>অংশ ২ — Versioning (চিন্তা করো)</h3>
+<p>ভার্সন লেখা হয় <b class="lbl">vX.Y.Z</b> হিসেবে (X = বড় পরিবর্তন, Y = নতুন ফিচার, Z = বাগ সংশোধন)। একটি গেম <b class="lbl">v1.2.0</b> ভার্সনে আছে। প্রতিটি ক্ষেত্রে <b>নতুন ভার্সন কী হবে</b> এবং <b>কেন</b> লেখো:</p>
+<ol>
+<li>একটি ছোট <b>বাগ</b> ঠিক করলে। → নতুন ভার্সন: ______</li>
+<li>গেমে একটি <b>নতুন লেভেল</b> যোগ করলে (পুরনো জিনিস এখনও কাজ করে)। → ______</li>
+<li>সম্পূর্ণ <b>নতুন করে</b>, পুরনোর সাথে বেমানান একটি নতুন ইঞ্জিন দিয়ে লিখলে। → ______</li>
+</ol>
+<p>তারপর এই গ্রাফটি দেখে উত্তর দাও: main ছাড়া <b>কতটি branch</b> দেখছ? <b>কতটি merge</b>? লাল শাখাটি কী কাজে লেগেছিল? <span class="cap">(গ্রাফটি উপরের ইতালীয় অংশে আছে)</span></p>
+
+<h3>অংশ ৩ — তোমার অভিজ্ঞতা</h3>
+<ol>
+<li>আজ GitHub দিয়ে <b>কী করেছ</b> বলো (যেমন অ্যাকাউন্ট তৈরি, লগইন)। কী <b>সহজ</b> ছিল, কী <b>কঠিন</b>?</li>
+<li>গেম ছাড়া <b>তোমার নিজের একটি উদাহরণ</b> দাও: আর কোন পরিস্থিতিতে (একটি রচনা, ছবি, একটি প্রজেক্ট) "ভার্সনের ইতিহাস" থাকা উপকারী হতো?</li>
+</ol>
+<p>শেষ হলে ডকুমেন্টটি <b>Classroom</b>-এ <b>জমা</b> দাও।</p>
+<div class="note"><b>মনে রাখো:</b> ঝালিয়ে নিতে দিসপেন্সা ব্যবহার করতে পারো, কিন্তু উত্তর হতে হবে <b>নিজের ভাষায়</b>। সবচেয়ে গুরুত্বপূর্ণ হলো নিজের ভাষায় <b>মুখে ব্যাখ্যা করতে পারা</b>।</div>
+</div>
+
+</body></html>

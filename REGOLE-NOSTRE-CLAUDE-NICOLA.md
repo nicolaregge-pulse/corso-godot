@@ -199,9 +199,10 @@ Obiettivo (chiesto da Nicola): dal **solo nome** di un file si deve capire
    controllo questa mappa; **nel dubbio, CHIEDO a Nicola** (non tiro a indovinare):
    1. **Classe 1** → **trilingue: italiano · arabo · cinese semplificato** (IT/AR/ZH).
    2. **Classe 2** → *da confermare con Nicola*.
-   3. **Classe 3 (terza)** → **italiano + bangla** (IT/BN) (confermato 25/09/2026).
-      Nota: singoli documenti possono essere solo-IT se Nicola lo chiede
-      esplicitamente (es. la *Dispensa Git* del 25/09 richiesta "solo italiano").
+   3. **Classe 3 (terza)** → **materiale della classe in SOLO ITALIANO**; **solo
+      per l'allievo Rafi** (unico non italofono) si produce **anche** una copia
+      **bilingue italiano + bangla** (IT/BN) (confermato 25/09/2026). Quindi:
+      versione IT per tutti + versione IT-BN personale per Rafi (nome file `...-Rafi_IT-BN`).
    4. **Classe 4** → **solo italiano** (confermato 25/09/2026).
    5. I materiali **interni del docente** restano sempre in **italiano** a prescindere.
 1. In **Classe 1** ogni materiale **destinato agli allievi** (schede, esercizi,
