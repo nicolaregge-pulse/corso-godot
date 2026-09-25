@@ -118,6 +118,12 @@ function creaQuiz() {
     }
   ];
 
+  // Prima domanda: CHI SEI (obbligatoria) — cosi il quiz NON e anonimo.
+  var nome = form.addTextItem();
+  nome.setTitle('Cognome e Nome');
+  nome.setHelpText('Scrivi il tuo cognome e nome, come ti chiama il prof.');
+  nome.setRequired(true);
+
   domande.forEach(function (d) {
     var item = form.addMultipleChoiceItem();
     item.setTitle(d.t);
