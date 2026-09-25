@@ -1,6 +1,6 @@
 # Regole nostre — Nicola & Claude (convenzioni di lavoro)
 
-**Versione 2.0** — 25/09/2026
+**Versione 2.1** — 25/09/2026
 *Convenzioni operative INTERNE tra Nicola e Claude. NON sono le regole per i
 ragazzi (quelle stanno nei materiali di classe, es. `classe-1/regole-classe/`).*
 
@@ -59,6 +59,8 @@ controllare. Solo **dopo l'ok** genero tutti gli altri della stessa tipologia.
 
 ### 2.19 Interazioni brevi (Nicola ha poco tempo)
 1. Rispondere con **poco testo**: confermare in poche righe, andare al sodo.
+2. Vale **solo per la chat** (mie risposte/domande a te). I **documenti** (teoria,
+   dispense, PDF) devono invece essere **il più esaurienti possibile**.
 
 ## D. Naming dei file
 
@@ -201,6 +203,8 @@ consegna** · **consegna** (Sì/Assente/Non consegnato, lista completa della cla
 1. Qualunque cosa da eseguire va in un **blocco di codice** (bottone copia), mai file.
 2. Dare la **scorciatoia più diretta** (es. `script.new`).
 3. Copie lunghe che si troncano: preferire versioni corte, far verificare l'ultima riga.
+4. **Contesto spiegato bene**; e per ogni script/procedura, **sempre anche un PDF
+   nel manuale docenti** (`manuale-docenti/`) che spiega come farla passo-passo, con esempio.
 
 ### 2.4 Il tempo della classe vale per tutti
 1. Ogni minuto perso va moltiplicato per il numero di allievi.
@@ -242,11 +246,32 @@ consegna** · **consegna** (Sì/Assente/Non consegnato, lista completa della cla
 3. **Diario di classe** (`ARGOMENTI-SVOLTI`): solo le cose realmente fatte, in ordine
    **cronologico** (cita, non contiene la teoria).
 4. **Libro totale** (`LIBRO-COMPLETO`): **non** è la somma dei 4; organizzato **per
-   argomento** (una volta sola, alla massima profondità), con livelli in sequenza
-   **[BASE · 1ª–2ª]** poi **[APPROFONDIMENTO · 3ª–4ª]** nello stesso capitolo.
+   argomento** (una volta sola, alla massima profondità), con **TRE livelli** in
+   sequenza nello stesso capitolo: **[Semplice · base]**, **[Approfondito]**,
+   **[Molto approfondito]** (chi è in 1ª si ferma al Semplice; salendo di anno si
+   leggono anche gli altri).
 
 ### 2.18 Schede per lezione
 1. Puntare al **più completo possibile** (teoria + esercitazione); ma può bastare 1 PDF.
+2. Lunghezza della teoria **secondo l'argomento**, ma **abbondante**: se si semplifica
+   si **aggiungono esempi/spiegazioni**. Meglio **una pagina in più** con una
+   spiegazione in più che due in meno.
+
+### 2.26 Arricchimento cumulativo trasversale (per TUTTE le classi, automatico)
+1. Ogni ripetizione di un argomento (altra classe/anno) **migliora la documentazione
+   di tutti**: non si riparte da zero.
+2. La dispensa di **ogni classe** porta come immagine la **foto della lavagna di QUELLA
+   classe**; ma la **teoria** tiene conto, **in automatico**, del lavoro fatto sullo
+   stesso argomento nelle **altre classi** (anche l'ora prima), arricchendosi (più
+   esempi/spiegazioni, anche più lunga).
+3. I ragazzi vedono sempre le **schermate delle LORO lezioni**.
+4. Esempio: GitHub con la 3ª → la teoria incorpora anche 1ª/2ª/4ª + il nuovo della 3ª.
+   *(collegato a 2.17)*
+
+### Allegato A (rimando)
+Il flusso dell'Allegato A **non è codificato qui**: vive in `allegato-a-stato/`
+(stato + `build_allegato.py`), `allegato-a-2026-27/` (`gen_allegati.py`),
+`MIE-PARTI-ALLEGATO-A.md`, `programmi-ufficiali/` (PFP .docx). *(da estrarre come regole)*
 
 ## K. Formattazione
 
@@ -256,7 +281,13 @@ consegna** · **consegna** (Sì/Assente/Non consegnato, lista completa della cla
 
 ## 3. Changelog
 
-1. **v2.0 (25/09/2026)**: **riorganizzazione per importanza** — Regole d'oro e
+1. **v2.1 (25/09/2026)**: precisazioni lette con Nicola — 2.19 vale solo per la chat
+   (documenti esaurienti); 2.18 teoria abbondante (meglio una pagina in più); 2.17
+   libro totale a **tre livelli** (Semplice/Approfondito/Molto approfondito); 2.2 +
+   PDF nel manuale docenti per ogni script; **2.26** arricchimento cumulativo
+   trasversale (foto lavagna della classe + teoria che ingloba le altre classi);
+   rimando Allegato A; regola d'oro "tutti i documenti per il docente senza password".
+2. **v2.0 (25/09/2026)**: **riorganizzazione per importanza** — Regole d'oro e
    Checklist pre-invio in cima, regole raggruppate per tema (numeri storici
    mantenuti); precisazioni: campione senza password da approvare (B.0), marcatore
    di classe e inversione naming dentro lo zip dei libri (2.9.3-4). Aggiunta **2.25**
